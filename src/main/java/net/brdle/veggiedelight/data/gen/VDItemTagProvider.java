@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 
 public class VDItemTagProvider extends ItemTagsProvider {
 	public VDItemTagProvider(DataGenerator gen, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {
@@ -20,6 +21,10 @@ public class VDItemTagProvider extends ItemTagsProvider {
 
 	@Override
 	protected void addTags() {
+		this.tag(VDItemTags.FRUITS_POMEGRANATE)
+			.add(VDItems.POMEGRANATE.get());
+		this.tag(VDItemTags.FRUITS)
+			.addTag(VDItemTags.FRUITS_POMEGRANATE);
 		this.tag(VDItemTags.MUSHROOMS_PORTOBELLO)
 			.add(VDItems.PORTOBELLO.get());
 		this.tag(Tags.Items.MUSHROOMS)
