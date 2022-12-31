@@ -1,0 +1,7 @@
+{
+  "type": "farmersdelight:add_features_by_filter",
+  "allowed_biomes": "#veggiedelight:portobello_spawns",
+  "denied_biomes": "#forge:is_underground",
+  "features": "veggiedelight:patch_portobello",
+  "step": "vegetal_decoration"
+}

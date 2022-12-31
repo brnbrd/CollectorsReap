@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "veggiedelight:enabled",
+          "value": "portobello_pasta"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "item": "veggiedelight:baked_portobello_cap"
+          },
+          {
+            "tag": "forge:pasta/raw_pasta"
+          },
+          {
+            "item": "minecraft:brown_mushroom"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "tag": "forge:milk"
+          }
+        ],
+        "result": {
+          "item": "veggiedelight:portobello_pasta"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[41,)"
+license="MIT License"
+issueTrackerURL="https://github.com/brdle/VeggieDelight/issues"
+
+[[mods]]
+modId="veggiedelight"
+version="${file.jarVersion}"
+displayName="Veggie Delight"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/veggiedelight"
+updateJSONURL="https://raw.githubusercontent.com/brdle/VeggieDelight/1.19/update/update.json"
+logoFile="veggiedelight.png"
+logoBlur=false
+credits="reNIK03, brdle"
+authors="reNIK03, brdle"
+description="Farmer's Delight addon with vegetables and fruit."
+itemIcon="veggiedelight:portobello"
+configBackground="farmersdelight:textures/block/tatami_mat_half.png"
+
+[[dependencies.veggiedelight]]
+    modId="forge"
+    mandatory=true
+    versionRange="[41.1.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.veggiedelight]]
+    modId="farmersdelight"
+    mandatory=true
+    versionRange="[1.19-1.2,)"
+    ordering="AFTER"
+    side="BOTH"

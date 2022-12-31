@@ -1,0 +1,48 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "veggiedelight:enabled",
+          "value": "portobello_quiche"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "farmersdelight:pie_crust"
+          },
+          {
+            "item": "veggiedelight:baked_portobello_cap"
+          },
+          {
+            "item": "veggiedelight:baked_portobello_cap"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "tag": "forge:eggs"
+          },
+          {
+            "tag": "forge:eggs"
+          },
+          {
+            "tag": "forge:milk"
+          }
+        ],
+        "result": {
+          "item": "veggiedelight:portobello_quiche"
+        }
+      }
+    }
+  ]
+}
