@@ -5,6 +5,14 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
 public class Nutrition {
+    public static final FoodProperties LEMON = (new FoodProperties.Builder())
+        .nutrition(3).saturationMod(0.2F).build();
+    public static final FoodProperties LEMON_PIE_SLICE = (new FoodProperties.Builder())
+        .nutrition(3).saturationMod(0.2F).build();
+    public static final FoodProperties LEMON_POPSICLE = (new FoodProperties.Builder())
+        .nutrition(3).saturationMod(0.2F).build();
+    public static final FoodProperties LEMON_COOKIE = (new FoodProperties.Builder())
+        .nutrition(3).saturationMod(0.2F).build();
     public static final FoodProperties POMEGRANATE = (new FoodProperties.Builder())
         .nutrition(3).saturationMod(0.2F).build();
     public static final FoodProperties BAKED_PORTOBELLO_CAP = (new FoodProperties.Builder())

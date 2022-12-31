@@ -43,6 +43,14 @@ public class VDItems extends ModItems {
         Nutrition.PORTOBELLO_QUICHE_SLICE);
     public static final RegistryObject<Item> POMEGRANATE = registerFood("pomegranate",
         Nutrition.POMEGRANATE);
+    public static final RegistryObject<Item> LEMON = registerFood("lemon",
+        Nutrition.LEMON);
+    public static final RegistryObject<Item> LEMON_PIE_SLICE = registerFood("lemon_pie_slice",
+        Nutrition.LEMON_PIE_SLICE);
+    public static final RegistryObject<Item> LEMON_POPSICLE = registerFood("lemon_popsicle",
+        Nutrition.LEMON_POPSICLE);
+    public static final RegistryObject<Item> LEMON_COOKIE = registerFood("lemon_cookie",
+        Nutrition.LEMON_COOKIE);
 
     // Sets Creative Tab
     public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {

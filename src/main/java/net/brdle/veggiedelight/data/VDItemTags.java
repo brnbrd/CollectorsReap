@@ -8,7 +8,9 @@ import net.minecraft.world.item.Item;
 public class VDItemTags {
 
 	public static final TagKey<Item> FRUITS = forge("fruits");
+	public static final TagKey<Item> FRUITS_CITRUS = forge("fruits/citrus");
 	public static final TagKey<Item> FRUITS_POMEGRANATE = forge("fruits/pomegranate");
+	public static final TagKey<Item> FRUITS_LEMON = forge("fruits/lemon");
 	public static final TagKey<Item> MUSHROOMS_PORTOBELLO = forge("mushrooms/portobello");
 
 	private static TagKey<Item> vd(String name) {
