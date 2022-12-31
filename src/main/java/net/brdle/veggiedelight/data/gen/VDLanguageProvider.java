@@ -32,5 +32,6 @@ public class VDLanguageProvider extends LanguageProvider {
         addItem(VDItems.PORTOBELLO_WRAP, "Veggie Wrap");
         addItem(VDItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
         addItem(VDItems.PORTOBELLO_QUICHE_SLICE, "Slice of Portobello Quiche");
+        addItem(VDItems.POMEGRANATE, "Pomegranate");
     }
 }

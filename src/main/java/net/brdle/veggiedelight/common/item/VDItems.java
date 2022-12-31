@@ -41,6 +41,8 @@ public class VDItems extends ModItems {
     public static final RegistryObject<Item> PORTOBELLO_QUICHE = registerBlock(VDBlocks.PORTOBELLO_QUICHE);
     public static final RegistryObject<Item> PORTOBELLO_QUICHE_SLICE = registerFood("portobello_quiche_slice",
         Nutrition.PORTOBELLO_QUICHE_SLICE);
+    public static final RegistryObject<Item> POMEGRANATE = registerFood("pomegranate",
+        Nutrition.POMEGRANATE);
 
     // Sets Creative Tab
     public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {
