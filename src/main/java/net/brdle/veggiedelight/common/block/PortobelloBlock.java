@@ -1,7 +1,10 @@
 package net.brdle.veggiedelight.common.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -10,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class PortobelloBlock extends BushBlock {
 	protected static final float AABB_OFFSET = 3.0F;
@@ -36,13 +40,20 @@ public class PortobelloBlock extends BushBlock {
 	}
 
 	@Override
-	public boolean canSurvive(@NotNull BlockState pState, LevelReader pLevel, BlockPos pPos) {
-		BlockPos blockpos = pPos.below();
-		BlockState blockstate = pLevel.getBlockState(blockpos);
-		if (blockstate.is(BlockTags.MUSHROOM_GROW_BLOCK)) {
-			return true;
-		} else {
-			return pLevel.getRawBrightness(pPos, 0) < 13 && blockstate.canSustainPlant(pLevel, blockpos, net.minecraft.core.Direction.UP, this);
+	public boolean canSurvive(@NotNull BlockState pState, LevelReader level, BlockPos pos) {
+		BlockPos below = pos.below();
+		BlockState blockstate = level.getBlockState(below);
+		return blockstate.is(BlockTags.MUSHROOM_GROW_BLOCK) ||
+			(level.getRawBrightness(pos, 0) < 13 && blockstate.canSustainPlant(level, below, Direction.UP, this));
+	}
+
+	// Grow into colony on Rich Soil
+	@Override
+	public void randomTick(@NotNull BlockState state, ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource rand) {
+		if (!level.isClientSide &&
+			level.getRawBrightness(pos, 0) < 13 &&
+			level.getBlockState(pos.below()).is(ModTags.MUSHROOM_COLONY_GROWABLE_ON)) {
+			level.setBlockAndUpdate(pos, VDBlocks.PORTOBELLO_COLONY.get().defaultBlockState());
 		}
 	}
 }

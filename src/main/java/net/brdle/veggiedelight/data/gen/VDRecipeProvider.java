@@ -16,11 +16,11 @@ import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
+import vectorwing.farmersdelight.common.block.RichSoilFarmlandBlock;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
-
 import java.util.function.Consumer;
 
 public class VDRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -35,6 +35,7 @@ public class VDRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         // Cutting
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(VDItems.PORTOBELLO_QUICHE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.PORTOBELLO_QUICHE_SLICE.get(), 4).build(finished);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(VDItems.PORTOBELLO_COLONY.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.PORTOBELLO.get(), 5).build(finished);
 
         // Cooking Pot
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(VDItems.PORTOBELLO_RISOTTO.get(), 1, 200, 1.0F, Items.BOWL)
@@ -85,16 +86,15 @@ public class VDRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(ForgeTags.CROPS_TOMATO)
                 .unlockedBy("has_baked_portobello_cap", has(VDItems.BAKED_PORTOBELLO_CAP.get())),
             "food/portobello_burger", finished, enabled("portobello_burger"));
-        wrap(ShapelessRecipeBuilder.shapeless(VDItems.PORTOBELLO_QUICHE.get())
-                .requires(ModItems.PIE_CRUST.get())
-                .requires(VDItems.BAKED_PORTOBELLO_CAP.get())
-                .requires(VDItems.BAKED_PORTOBELLO_CAP.get())
-                .requires(ForgeTags.CROPS_ONION)
-                .requires(ForgeTags.CROPS_ONION)
-                .requires(ForgeTags.CROPS_ONION)
-                .requires(ForgeTags.EGGS)
-                .requires(ForgeTags.EGGS)
-                .requires(ForgeTags.MILK)
+        wrap(ShapedRecipeBuilder.shaped(VDItems.PORTOBELLO_QUICHE.get())
+                .pattern("eme")
+                .pattern("ooo")
+                .pattern("pcp")
+                .define('e', ForgeTags.EGGS)
+                .define('m', ForgeTags.MILK)
+                .define('o', ForgeTags.CROPS_ONION)
+                .define('p', VDItems.BAKED_PORTOBELLO_CAP.get())
+                .define('c', ModItems.PIE_CRUST.get())
                 .unlockedBy("has_baked_portobello_cap", has(VDItems.BAKED_PORTOBELLO_CAP.get())),
             "food/portobello_quiche", finished, enabled("portobello_quiche"));
     }
