@@ -4,6 +4,7 @@ import net.brdle.veggiedelight.VeggieDelight;
 import net.brdle.veggiedelight.data.VDBlockTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
@@ -28,6 +29,8 @@ public class VDBlockTagProvider extends BlockTagsProvider {
 			.add(Blocks.DIRT)
 			.add(Blocks.ROOTED_DIRT)
 			.add(Blocks.MYCELIUM);
+		//this.tag(BlockTags.BEE_GROWABLES)
+		//	.add(Blocks.LEMON_BUSH)
 	}
 
 	/**

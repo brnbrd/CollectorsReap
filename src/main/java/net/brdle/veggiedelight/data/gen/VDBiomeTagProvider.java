@@ -16,5 +16,6 @@ public class VDBiomeTagProvider extends BiomeTagsProvider {
 	@Override
 	protected void addTags() {
 		this.tag(VDBiomeTags.PORTOBELLO_SPAWNS).add(Biomes.MEADOW);
+		this.tag(VDBiomeTags.LEMON_SPAWNS).add(Biomes.FLOWER_FOREST);
 	}
 }
