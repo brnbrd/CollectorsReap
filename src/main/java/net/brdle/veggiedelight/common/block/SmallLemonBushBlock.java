@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
@@ -73,11 +72,8 @@ public class SmallLemonBushBlock extends BushBlock implements BonemealableBlock 
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel world, @NotNull RandomSource rand, BlockPos pos, @NotNull BlockState state) {
-		if (world.isEmptyBlock(pos.above())) {
-			world.setBlockAndUpdate(pos, VDBlocks.LEMON_BUSH.get().defaultBlockState());
-			world.setBlockAndUpdate(pos.above(), VDBlocks.LEMON_BUSH.get().defaultBlockState().setValue(LemonBushBlock.HALF, DoubleBlockHalf.UPPER));
-		}
+	public void performBonemeal(ServerLevel world, @NotNull RandomSource rand, @NotNull BlockPos pos, @NotNull BlockState state) {
+		world.setBlockAndUpdate(pos, VDBlocks.MEDIUM_LEMON_BUSH.get().defaultBlockState());
 	}
 
 

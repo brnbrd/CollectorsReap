@@ -20,10 +20,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CropBlock;
-import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.*;
@@ -38,8 +35,8 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 
 public class LemonBushBlock extends CropBlock {
-	public static final int MAX_AGE = 3;
-	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
+	public static final int MAX_AGE = 2;
+	public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
 	public static final BooleanProperty STUNTED = BooleanProperty.create("stunted");
 	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
 	private static final VoxelShape SHAPE_LOWER = Shapes.or(Block.box(0.0D, 11.0D, 0.0D, 16.0D, 24.0D, 16.0D), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 11.0D, 10.0D));
@@ -78,6 +75,12 @@ public class LemonBushBlock extends CropBlock {
 		return state.getValue(HALF) == DoubleBlockHalf.UPPER ? SHAPE_UPPER : SHAPE_LOWER;
 	}
 
+	/**
+	 * Update the provided state given the provided neighbor direction and neighbor state, returning a new state.
+	 * For example, fences make their connections to the passed in state if possible, and wet concrete powder immediately
+	 * returns its solidified counterpart.
+	 * Note that this method should ideally consider only the specific direction passed in.
+	 */
 	@Override
 	public @NotNull BlockState updateShape(BlockState state, Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor world, @NotNull BlockPos pos, @NotNull BlockPos facingPos) {
 		DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
@@ -137,7 +140,7 @@ public class LemonBushBlock extends CropBlock {
 		if (pState.getValue(AGE) == this.getMaxAge()) {
 			popResource(pLevel, pPos, new ItemStack(VDItems.LEMON.get(), 2 + pLevel.getRandom().nextInt(2)));
 			pLevel.playSound(null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F);
-			pLevel.setBlockAndUpdate(pPos, pState.setValue(AGE, 1)); // Revert to pre-flowering
+			pLevel.setBlockAndUpdate(pPos, pState.setValue(AGE, 0)); // Revert to pre-flowering
 			return InteractionResult.sidedSuccess(pLevel.isClientSide());
 		} else if (pPlayer.getItemInHand(pHand).getItem() instanceof AxeItem && !pState.getValue(STUNTED)) {
 			pLevel.setBlockAndUpdate(pPos, pState.setValue(STUNTED, true));
@@ -175,26 +178,36 @@ public class LemonBushBlock extends CropBlock {
 		pLevel.setBlockAndUpdate(pPos, pState.setValue(AGE, Math.min(this.getMaxAge(), pState.getValue(AGE) + 1)));
 	}
 
-	@Nullable
-	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+	@Override
+	@Nullable public BlockState getStateForPlacement(BlockPlaceContext pContext) {
 		BlockPos blockpos = pContext.getClickedPos();
-		return blockpos.getY() < 255 && pContext.getLevel().getBlockState(blockpos.above()).canBeReplaced(pContext) ? (BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue(AGE, 0)).setValue(STUNTED, false)).setValue(HALF, DoubleBlockHalf.LOWER) : null;
+		return blockpos.getY() < 255 && pContext.getLevel().getBlockState(blockpos.above()).canBeReplaced(pContext) ?
+			this.defaultBlockState().setValue(AGE, 0).setValue(STUNTED, false).setValue(HALF, DoubleBlockHalf.LOWER) :
+			null;
 	}
 
+	/**
+	 * Called by BlockItem after this block has been placed.
+	 */
 	@Override
 	public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, @NotNull ItemStack pStack) {
 		pLevel.setBlock(pPos.above(), pState.setValue(HALF, DoubleBlockHalf.UPPER), 3);
 	}
 
+	public static void placeAt(LevelAccessor pLevel, BlockState pState, BlockPos pPos, int pFlags) {
+		pLevel.setBlock(pPos, pState.setValue(AGE, 0).setValue(HALF, DoubleBlockHalf.LOWER), pFlags);
+		pLevel.setBlock(pPos.above(), pState.setValue(AGE, 0).setValue(HALF, DoubleBlockHalf.UPPER), pFlags);
+	}
+
 	@Override
 	public void playerWillDestroy(Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, @NotNull Player pPlayer) {
-		if (!pLevel.isClientSide && pPlayer.isCreative()) {
+		if (!pLevel.isClientSide() && pPlayer.isCreative()) {
 			preventCreativeDropFromBottomPart(pLevel, pPos, pState, pPlayer);
 		}
 		super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
 	}
 
-	protected static void preventCreativeDropFromBottomPart(Level world, BlockPos pos, BlockState state, Player player) {
+	private void preventCreativeDropFromBottomPart(Level world, BlockPos pos, BlockState state, Player player) {
 		DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
 		if (doubleblockhalf == DoubleBlockHalf.UPPER) {
 			BlockPos blockpos = pos.below();

@@ -9,9 +9,6 @@
     "age=2,half=lower": {
       "model": "veggiedelight:block/lemon_bush_lower_stage2"
     },
-    "age=3,half=lower": {
-      "model": "veggiedelight:block/lemon_bush_lower_stage3"
-    },
     "age=0,half=upper": {
       "model": "veggiedelight:block/lemon_bush_upper_stage0"
     },
@@ -20,9 +17,6 @@
     },
     "age=2,half=upper": {
       "model": "veggiedelight:block/lemon_bush_upper_stage2"
-    },
-    "age=3,half=upper": {
-      "model": "veggiedelight:block/lemon_bush_upper_stage3"
     }
   }
 }

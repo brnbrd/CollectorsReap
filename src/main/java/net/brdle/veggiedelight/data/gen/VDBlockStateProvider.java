@@ -27,8 +27,16 @@ public class VDBlockStateProvider extends BlockStateProvider {
         this.stageBlock(VDBlocks.PORTOBELLO_COLONY.get(), PortobelloColonyBlock.COLONY_AGE);
         this.simpleBlock(VDBlocks.PORTOBELLO.get(),
             models().cross("block/" + Util.name(VDBlocks.PORTOBELLO),
-                VDBlockStateProvider.resourceBlock(Util.name(VDBlocks.PORTOBELLO))).renderType("cutout"));
+                VDBlockStateProvider.resourceBlock(Util.name(VDBlocks.PORTOBELLO)))
+                .renderType("cutout"));
         this.simpleBlock(VDBlocks.SMALL_LEMON_BUSH.get(), existingModel("small_lemon_bush"));
+        this.simpleBlock(VDBlocks.MEDIUM_LEMON_BUSH.get(), models()
+                .withExistingParent("block/medium_lemon_bush", Util.rl("minecraft", "block/template_azalea"))
+                .texture("side", VDBlockStateProvider.resourceBlock("medium_lemon_bush_side"))
+                .texture("top", VDBlockStateProvider.resourceBlock("medium_lemon_bush_top"))
+                .texture("plant", VDBlockStateProvider.resourceBlock("medium_lemon_bush_plant"))
+                .texture("particle", VDBlockStateProvider.resourceBlock("medium_lemon_bush_plant"))
+                .renderType("cutout"));
     }
 
     // Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java

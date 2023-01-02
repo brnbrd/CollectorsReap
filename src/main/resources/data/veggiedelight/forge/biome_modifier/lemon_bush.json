@@ -1,0 +1,7 @@
+{
+  "type": "farmersdelight:add_features_by_filter",
+  "allowed_biomes": "#veggiedelight:lemon_spawns",
+  "denied_biomes": "#forge:is_underground",
+  "features": "veggiedelight:lemon_bush",
+  "step": "vegetal_decoration"
+}

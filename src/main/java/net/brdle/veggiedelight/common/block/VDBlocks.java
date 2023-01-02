@@ -34,6 +34,8 @@ public class VDBlocks {
         () -> new LemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> SMALL_LEMON_BUSH = registerBlock("small_lemon_bush",
         () -> new SmallLemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> MEDIUM_LEMON_BUSH = registerBlock("medium_lemon_bush",
+        () -> new MediumLemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
 
     public static RegistryObject<Block> registerBlock(String name, Supplier<Block> block) {
         return BLOCKS.register(name, block);

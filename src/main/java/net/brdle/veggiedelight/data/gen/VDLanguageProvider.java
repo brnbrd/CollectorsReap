@@ -23,6 +23,7 @@ public class VDLanguageProvider extends LanguageProvider {
         addBlock(VDBlocks.PORTOBELLO_QUICHE, "Portobello Quiche");
         addBlock(VDBlocks.LEMON_BUSH, "Lemon Bush");
         addBlock(VDBlocks.SMALL_LEMON_BUSH, "Lemon Seeds");
+        addBlock(VDBlocks.MEDIUM_LEMON_BUSH, "Lemon Bush");
     }
 
     private void addItems() {

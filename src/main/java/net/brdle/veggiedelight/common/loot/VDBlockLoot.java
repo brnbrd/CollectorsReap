@@ -2,6 +2,7 @@ package net.brdle.veggiedelight.common.loot;
 
 import net.brdle.veggiedelight.common.block.PortobelloColonyBlock;
 import net.brdle.veggiedelight.common.block.VDBlocks;
+import net.brdle.veggiedelight.common.item.VDItems;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -15,7 +16,8 @@ public class VDBlockLoot extends BlockLoot {
         this.dropSelf(VDBlocks.PORTOBELLO.get());
         this.empty(VDBlocks.PORTOBELLO_QUICHE);
         this.dropSelf(VDBlocks.SMALL_LEMON_BUSH.get());
-        this.empty(VDBlocks.LEMON_BUSH);
+        this.dropOther(VDBlocks.MEDIUM_LEMON_BUSH.get(), VDItems.LEMON_SEEDS.get());
+        this.dropOther(VDBlocks.LEMON_BUSH.get(), VDItems.LEMON_SEEDS.get());
     }
 
     @Override

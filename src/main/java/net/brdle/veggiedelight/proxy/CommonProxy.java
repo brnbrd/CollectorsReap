@@ -6,6 +6,7 @@ import net.brdle.veggiedelight.common.block.VDBlocks;
 import net.brdle.veggiedelight.common.item.VDItems;
 import net.brdle.veggiedelight.common.loot.VDLootItemConditions;
 import net.brdle.veggiedelight.common.loot.VDLootModifiers;
+import net.brdle.veggiedelight.common.world.VDFeatures;
 import net.brdle.veggiedelight.data.gen.Generators;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -20,6 +21,7 @@ public class CommonProxy {
         modBus.register(Generators.class);
         VDBlocks.create(modBus);
         VDItems.create(modBus);
+        VDFeatures.create(modBus);
         VDLootItemConditions.create(modBus);
         VDLootModifiers.create(modBus);
     }
