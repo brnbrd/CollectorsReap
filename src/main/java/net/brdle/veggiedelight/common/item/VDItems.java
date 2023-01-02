@@ -43,6 +43,8 @@ public class VDItems extends ModItems {
         Nutrition.PORTOBELLO_QUICHE_SLICE);
     public static final RegistryObject<Item> POMEGRANATE = registerFood("pomegranate",
         Nutrition.POMEGRANATE);
+    public static final RegistryObject<Item> LEMON_SEEDS = registerBlock("lemon_seeds",
+        VDBlocks.SMALL_LEMON_BUSH);
     public static final RegistryObject<Item> LEMON = registerFood("lemon",
         Nutrition.LEMON);
     public static final RegistryObject<Item> LEMON_PIE_SLICE = registerFood("lemon_pie_slice",
@@ -54,7 +56,12 @@ public class VDItems extends ModItems {
 
     // Sets Creative Tab
     public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {
-        return registerItem(Util.name(block), () -> new BlockItem(block.get(), (new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
+        return registerBlock(Util.name(block), block);
+    }
+
+    // Sets Creative Tab
+    public static RegistryObject<Item> registerBlock(String name, RegistryObject<Block> block) {
+        return registerItem(name, () -> new BlockItem(block.get(), (new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
     }
 
     // Creative tab should be set before calling this function

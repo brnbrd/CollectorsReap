@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "veggiedelight:portobello_colony"
+    }
+  ],
+  "result": [
+    {
+      "count": 5,
+      "item": "veggiedelight:portobello"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

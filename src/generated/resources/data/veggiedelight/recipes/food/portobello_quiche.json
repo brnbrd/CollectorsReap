@@ -9,35 +9,28 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "ingredients": [
-          {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "c": {
             "item": "farmersdelight:pie_crust"
           },
-          {
-            "item": "veggiedelight:baked_portobello_cap"
-          },
-          {
-            "item": "veggiedelight:baked_portobello_cap"
-          },
-          {
-            "tag": "forge:crops/onion"
-          },
-          {
-            "tag": "forge:crops/onion"
-          },
-          {
-            "tag": "forge:crops/onion"
-          },
-          {
+          "e": {
             "tag": "forge:eggs"
           },
-          {
-            "tag": "forge:eggs"
-          },
-          {
+          "m": {
             "tag": "forge:milk"
+          },
+          "o": {
+            "tag": "forge:crops/onion"
+          },
+          "p": {
+            "item": "veggiedelight:baked_portobello_cap"
           }
+        },
+        "pattern": [
+          "eme",
+          "ooo",
+          "pcp"
         ],
         "result": {
           "item": "veggiedelight:portobello_quiche"

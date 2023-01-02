@@ -28,6 +28,7 @@ public class VDBlockStateProvider extends BlockStateProvider {
         this.simpleBlock(VDBlocks.PORTOBELLO.get(),
             models().cross("block/" + Util.name(VDBlocks.PORTOBELLO),
                 VDBlockStateProvider.resourceBlock(Util.name(VDBlocks.PORTOBELLO))).renderType("cutout"));
+        this.simpleBlock(VDBlocks.SMALL_LEMON_BUSH.get(), existingModel("small_lemon_bush"));
     }
 
     // Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java

@@ -36,6 +36,7 @@ public class VDRecipeProvider extends RecipeProvider implements IConditionBuilde
         // Cutting
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(VDItems.PORTOBELLO_QUICHE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.PORTOBELLO_QUICHE_SLICE.get(), 4).build(finished);
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(VDItems.PORTOBELLO_COLONY.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.PORTOBELLO.get(), 5).build(finished);
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(VDItems.LEMON.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.LEMON_SEEDS.get(), 2).build(finished);
 
         // Cooking Pot
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(VDItems.PORTOBELLO_RISOTTO.get(), 1, 200, 1.0F, Items.BOWL)

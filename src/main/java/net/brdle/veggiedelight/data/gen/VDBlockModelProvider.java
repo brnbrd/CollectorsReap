@@ -1,8 +1,6 @@
 package net.brdle.veggiedelight.data.gen;
 
-import net.brdle.veggiedelight.Util;
 import net.brdle.veggiedelight.VeggieDelight;
-import net.brdle.veggiedelight.common.item.VDItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;

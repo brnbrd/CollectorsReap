@@ -1,3 +1,5 @@
-// 1.19	2022-12-31T13:26:29.6567674	LootTables
+// 1.19	2023-01-01T18:27:40.4155283	LootTables
+1d4929d7d6176f60e5ea991a577527ed251ef375 data/veggiedelight/loot_tables/blocks/lemon_bush.json
 c8be0ffdc515bf09350a0f965f637a89f89a3887 data/veggiedelight/loot_tables/blocks/portobello.json
 1d4929d7d6176f60e5ea991a577527ed251ef375 data/veggiedelight/loot_tables/blocks/portobello_quiche.json
+0474a2ede8f9c36aecb7f72f1059941d52387024 data/veggiedelight/loot_tables/blocks/small_lemon_bush.json

@@ -9,13 +9,14 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import umpaz.farmersrespite.common.registry.FRItems;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
-
 import java.util.function.Supplier;
 
 public class VDBlocks {
@@ -29,6 +30,10 @@ public class VDBlocks {
         () -> new PortobelloColonyBlock(copy(ModBlocks.BROWN_MUSHROOM_COLONY), VDItems.PORTOBELLO));
     public static final RegistryObject<Block> PORTOBELLO_QUICHE = registerBlock("portobello_quiche",
         () -> new PieBlock(copy(ModBlocks.APPLE_PIE), VDItems.PORTOBELLO_QUICHE_SLICE));
+    public static final RegistryObject<Block> LEMON_BUSH = registerBlock("lemon_bush",
+        () -> new LemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> SMALL_LEMON_BUSH = registerBlock("small_lemon_bush",
+        () -> new SmallLemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
 
     public static RegistryObject<Block> registerBlock(String name, Supplier<Block> block) {
         return BLOCKS.register(name, block);

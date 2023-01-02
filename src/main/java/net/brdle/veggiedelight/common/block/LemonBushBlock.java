@@ -1,42 +1,57 @@
 package net.brdle.veggiedelight.common.block;
 
+import net.brdle.veggiedelight.VeggieDelight;
 import net.brdle.veggiedelight.common.item.VDItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.EntityCollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
 import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nullable;
 
 public class LemonBushBlock extends CropBlock {
-	public static final int MAX_AGE = 4;
-	public static final IntegerProperty AGE = BlockStateProperties.AGE_4;
-	private static final VoxelShape SAPLING_SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 8.0D, 13.0D);
-	private static final VoxelShape MID_GROWTH_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
+	public static final int MAX_AGE = 3;
+	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
+	public static final BooleanProperty STUNTED = BooleanProperty.create("stunted");
+	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
+	private static final VoxelShape SHAPE_LOWER = Shapes.or(Block.box(0.0D, 11.0D, 0.0D, 16.0D, 24.0D, 16.0D), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 11.0D, 10.0D));
+	private static final VoxelShape SHAPE_UPPER = Shapes.or(Block.box(0.0D, -5.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.box(6.0D, -16.0D, 6.0D, 10.0D, -5.0D, 10.0D));
 
 	public LemonBushBlock(Properties pProperties) {
 		super(pProperties);
-		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
+		this.registerDefaultState(this.stateDefinition.any()
+			.setValue(AGE, 0)
+			.setValue(STUNTED, false)
+			.setValue(HALF, DoubleBlockHalf.LOWER)
+		);
 	}
 
 	@Override
@@ -50,47 +65,70 @@ public class LemonBushBlock extends CropBlock {
 	}
 
 	@Override
-	protected @NotNull ItemLike getBaseSeedId() {
-		return Items.WHEAT_SEEDS; // Lemon Seeds
+	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
+		if (pContext instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee) {
+			return pState.getValue(HALF) == DoubleBlockHalf.LOWER ?
+				Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D) : Shapes.empty();
+		}
+		return getShape(pState, pLevel, pPos, pContext);
+	}
+
+	@Override
+	public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
+		return state.getValue(HALF) == DoubleBlockHalf.UPPER ? SHAPE_UPPER : SHAPE_LOWER;
+	}
+
+	@Override
+	public @NotNull BlockState updateShape(BlockState state, Direction facing, @NotNull BlockState facingState, @NotNull LevelAccessor world, @NotNull BlockPos pos, @NotNull BlockPos facingPos) {
+		DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
+		if (facing.getAxis() == Direction.Axis.Y && doubleblockhalf == DoubleBlockHalf.LOWER == (facing == Direction.UP)) {
+			return facingState.is(this) && facingState.getValue(HALF) != doubleblockhalf ? state.setValue(AGE, facingState.getValue(AGE)).setValue(STUNTED, facingState.getValue(STUNTED)) : Blocks.AIR.defaultBlockState();
+		} else {
+			return doubleblockhalf == DoubleBlockHalf.LOWER && facing == Direction.DOWN && !state.canSurvive(world, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, facing, facingState, world, pos, facingPos);
+		}
 	}
 
 	@Override
 	protected boolean mayPlaceOn(BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos) {
-		return pState.is(Blocks.FARMLAND);
+		return pState.is(BlockTags.DIRT);
+	}
+
+	@Override
+	public boolean canSurvive(BlockState state, @NotNull LevelReader level, BlockPos pos) {
+		BlockPos blockpos = pos.below();
+		return state.getValue(HALF) == DoubleBlockHalf.LOWER ? this.mayPlaceOn(level.getBlockState(blockpos), level, blockpos) : state.is(this);
+	}
+
+	@Override
+	protected @NotNull ItemLike getBaseSeedId() {
+		return VDItems.LEMON_SEEDS.get();
 	}
 
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
-		return new ItemStack(VDItems.LEMON.get());
+		return getBaseSeedId().asItem().getDefaultInstance();
 	}
 
 	@Override
-	public @NotNull VoxelShape getShape(BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
-		if (pState.getValue(AGE) == 0) {
-			return SAPLING_SHAPE;
-		} else {
-			return pState.getValue(AGE) < this.getMaxAge() ? MID_GROWTH_SHAPE : super.getShape(pState, pLevel, pPos, pContext);
-		}
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		builder.add(AGE, STUNTED, HALF);
 	}
 
 	/**
 	 * @return whether this block needs random ticking.
 	 */
 	@Override
-	public boolean isRandomlyTicking(BlockState pState) {
-		return pState.getValue(AGE) < MAX_AGE;
+	public boolean isRandomlyTicking(BlockState state) {
+		return state.getValue(AGE) < MAX_AGE && state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(STUNTED);
 	}
 
 	@Override
-	public void randomTick(BlockState pState, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
-		int age = pState.getValue(AGE);
-		if (age < (this.getMaxAge() - 1) && pLevel.getRawBrightness(pPos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt(5) == 0)) {
-			BlockState blockstate = pState.setValue(AGE, age + 1);
-			pLevel.setBlock(pPos, blockstate, 2);
-			pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(blockstate));
-			ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
+	public void randomTick(BlockState state, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
+		int age = state.getValue(AGE);
+		if (age < (this.getMaxAge() - 1) && state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(STUNTED) && ForgeHooks.onCropsGrowPre(pLevel, pPos, state, pRandom.nextInt(12) == 0)) {
+			this.performBonemeal(pLevel, pRandom, pPos, state);
+			ForgeHooks.onCropsGrowPost(pLevel, pPos, state);
 		}
-
 	}
 
 	@SuppressWarnings("deprecation")
@@ -99,20 +137,18 @@ public class LemonBushBlock extends CropBlock {
 		if (pState.getValue(AGE) == this.getMaxAge()) {
 			popResource(pLevel, pPos, new ItemStack(VDItems.LEMON.get(), 2 + pLevel.getRandom().nextInt(2)));
 			pLevel.playSound(null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F);
-			BlockState blockstate = pState.setValue(AGE, 2); // Revert to pre-flowering
-			pLevel.setBlock(pPos, blockstate, 2);
-			pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
-			return InteractionResult.sidedSuccess(pLevel.isClientSide);
+			pLevel.setBlockAndUpdate(pPos, pState.setValue(AGE, 1)); // Revert to pre-flowering
+			return InteractionResult.sidedSuccess(pLevel.isClientSide());
+		} else if (pPlayer.getItemInHand(pHand).getItem() instanceof AxeItem && !pState.getValue(STUNTED)) {
+			pLevel.setBlockAndUpdate(pPos, pState.setValue(STUNTED, true));
+			pLevel.playSound(pPlayer, pPos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
+			pPlayer.getItemInHand(pHand).hurtAndBreak(1, pPlayer, (b) -> b.broadcastBreakEvent(b.getUsedItemHand()));
+			return InteractionResult.sidedSuccess(pLevel.isClientSide());
 		} else if (pPlayer.getItemInHand(pHand).is(Items.BONE_MEAL)) {
 			return InteractionResult.PASS;
 		} else {
 			return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
 		}
-	}
-
-	@Override
-	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-		pBuilder.add(AGE);
 	}
 
 	/**
@@ -135,10 +171,58 @@ public class LemonBushBlock extends CropBlock {
 
 	@Override
 	public void performBonemeal(ServerLevel pLevel, @NotNull RandomSource pRandom, @NotNull BlockPos pPos, BlockState pState) {
-		pLevel.setBlock(pPos, pState.setValue(AGE, Math.min(this.getMaxAge() - 1, pState.getValue(AGE) + 1)), 2);
+		VeggieDelight.getLogger().warn("Performing bonemeal at " + pPos.toShortString());
+		pLevel.setBlockAndUpdate(pPos, pState.setValue(AGE, Math.min(this.getMaxAge(), pState.getValue(AGE) + 1)));
+	}
+
+	@Nullable
+	public BlockState getStateForPlacement(BlockPlaceContext pContext) {
+		BlockPos blockpos = pContext.getClickedPos();
+		return blockpos.getY() < 255 && pContext.getLevel().getBlockState(blockpos.above()).canBeReplaced(pContext) ? (BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue(AGE, 0)).setValue(STUNTED, false)).setValue(HALF, DoubleBlockHalf.LOWER) : null;
 	}
 
 	@Override
-	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity pEntity) {
+	public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, LivingEntity pPlacer, @NotNull ItemStack pStack) {
+		pLevel.setBlock(pPos.above(), pState.setValue(HALF, DoubleBlockHalf.UPPER), 3);
+	}
+
+	@Override
+	public void playerWillDestroy(Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, @NotNull Player pPlayer) {
+		if (!pLevel.isClientSide && pPlayer.isCreative()) {
+			preventCreativeDropFromBottomPart(pLevel, pPos, pState, pPlayer);
+		}
+		super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
+	}
+
+	protected static void preventCreativeDropFromBottomPart(Level world, BlockPos pos, BlockState state, Player player) {
+		DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
+		if (doubleblockhalf == DoubleBlockHalf.UPPER) {
+			BlockPos blockpos = pos.below();
+			BlockState blockstate = world.getBlockState(blockpos);
+			if (blockstate.getBlock() == state.getBlock() && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER) {
+				world.setBlock(blockpos, Blocks.AIR.defaultBlockState(), 35);
+				world.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
+			}
+		}
+	}
+
+	@Override
+	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
+		if (!pLevel.isClientSide() &&
+			e instanceof Bee bee &&
+			pState.getValue(AGE) == this.getMaxAge() - 1 &&
+			pLevel.getRandom().nextInt(100) == 0) {
+			this.performBonemeal((ServerLevel) pLevel, pLevel.getRandom(), pPos, pState);
+		}
+	}
+
+	@Override
+	public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+		return 60;
+	}
+
+	@Override
+	public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+		return 30;
 	}
 }
