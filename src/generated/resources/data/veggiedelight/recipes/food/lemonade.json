@@ -1,0 +1,33 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "veggiedelight:enabled",
+          "value": "lemonade"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "veggiedelight:lemon"
+          },
+          {
+            "item": "veggiedelight:lemon"
+          },
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "item": "minecraft:glass_bottle"
+          }
+        ],
+        "result": {
+          "item": "veggiedelight:lemonade"
+        }
+      }
+    }
+  ]
+}

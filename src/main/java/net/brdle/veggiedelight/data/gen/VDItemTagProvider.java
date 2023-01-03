@@ -24,11 +24,18 @@ public class VDItemTagProvider extends ItemTagsProvider {
 			.add(VDItems.POMEGRANATE.get());
 		this.tag(VDItemTags.FRUITS_LEMON)
 			.add(VDItems.LEMON.get());
+		this.tag(VDItemTags.LEMON_OR_SLICE)
+			.addTag(VDItemTags.FRUITS_LEMON)
+			.add(VDItems.LEMON_SLICE.get());
 		this.tag(VDItemTags.FRUITS_CITRUS)
 			.addTag(VDItemTags.FRUITS_LEMON);
 		this.tag(VDItemTags.FRUITS)
 			.addTag(VDItemTags.FRUITS_POMEGRANATE)
 			.addTag(VDItemTags.FRUITS_LEMON);
+		this.tag(VDItemTags.SEEDS_LEMON)
+			.add(VDItems.LEMON_SEEDS.get());
+		this.tag(Tags.Items.SEEDS)
+			.addTag(VDItemTags.SEEDS_LEMON);
 		this.tag(VDItemTags.MUSHROOMS_PORTOBELLO)
 			.add(VDItems.PORTOBELLO.get());
 		this.tag(Tags.Items.MUSHROOMS)

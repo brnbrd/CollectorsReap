@@ -1,0 +1,44 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_lemon_or_slice": {
+            "conditions": {
+              "items": [
+                {
+                  "tag": "veggiedelight:lemon_or_slice"
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "veggiedelight:food/mediterranean_salmon"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          }
+        },
+        "requirements": [
+          [
+            "has_lemon_or_slice",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "veggiedelight:food/mediterranean_salmon"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "veggiedelight:enabled",
+          "value": "mediterranean_salmon"
+        }
+      ]
+    }
+  ]
+}

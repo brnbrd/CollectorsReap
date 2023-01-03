@@ -36,10 +36,18 @@ public class VDLanguageProvider extends LanguageProvider {
         addItem(VDItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
         addItem(VDItems.PORTOBELLO_QUICHE_SLICE, "Slice of Portobello Quiche");
         addItem(VDItems.POMEGRANATE, "Pomegranate");
-        //addItem(VDItems.LEMON_SEEDS, "Lemon Seeds");
         addItem(VDItems.LEMON, "Lemon");
+        addItem(VDItems.LEMON_SLICE, "Lemon Slice");
         addItem(VDItems.LEMON_PIE_SLICE, "Lemon Pie Slice");
         addItem(VDItems.LEMON_POPSICLE, "Lemon Popsicle");
         addItem(VDItems.LEMON_COOKIE, "Lemon Cookie");
+        addItem(VDItems.CANDIED_LEMON, "Candied Lemon");
+        addItem(VDItems.HONEY_LEMON_CHICKEN, "Honey Lemon Chicken");
+        addItem(VDItems.COD_CEVICHE, "Cod Ceviche");
+        addItem(VDItems.MEDITERRANEAN_SALMON, "Mediterranean Salmon");
+        addItem(VDItems.SALMON_TARTARE, "Salmon Tartare");
+        addItem(VDItems.POTATO_FRITTERS, "Potato Fritters");
+        addItem(VDItems.LEMONADE, "Lemonade");
+        addItem(VDItems.BERRY_LEMONADE, "Berry Lemonade");
     }
 }

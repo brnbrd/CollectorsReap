@@ -13,7 +13,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.function.Supplier;
@@ -47,12 +49,32 @@ public class VDItems extends ModItems {
         VDBlocks.SMALL_LEMON_BUSH);
     public static final RegistryObject<Item> LEMON = registerFood("lemon",
         Nutrition.LEMON);
+    public static final RegistryObject<Item> LEMON_SLICE = registerFood("lemon_slice",
+        Nutrition.LEMON_SLICE);
+    public static final RegistryObject<Item> CANDIED_LEMON = registerFood("candied_lemon",
+        Nutrition.CANDIED_LEMON);
+    public static final RegistryObject<Item> LEMON_PIE = registerFood("lemon_pie",
+        Nutrition.LEMON_PIE_SLICE);
     public static final RegistryObject<Item> LEMON_PIE_SLICE = registerFood("lemon_pie_slice",
         Nutrition.LEMON_PIE_SLICE);
     public static final RegistryObject<Item> LEMON_POPSICLE = registerFood("lemon_popsicle",
         Nutrition.LEMON_POPSICLE);
     public static final RegistryObject<Item> LEMON_COOKIE = registerFood("lemon_cookie",
         Nutrition.LEMON_COOKIE);
+    public static final RegistryObject<Item> HONEY_LEMON_CHICKEN = registerFood("honey_lemon_chicken",
+        Nutrition.HONEY_LEMON_CHICKEN);
+    public static final RegistryObject<Item> MEDITERRANEAN_SALMON = registerFood("mediterranean_salmon",
+        Nutrition.MEDITERRANEAN_SALMON);
+    public static final RegistryObject<Item> SALMON_TARTARE = registerFood("salmon_tartare",
+        Nutrition.SALMON_TARTARE);
+    public static final RegistryObject<Item> POTATO_FRITTERS = registerFood("potato_fritters",
+        Nutrition.POTATO_FRITTERS);
+    public static final RegistryObject<Item> COD_CEVICHE = registerFood("cod_ceviche",
+        Nutrition.COD_CEVICHE);
+    public static final RegistryObject<Item> LEMONADE = registerItem("lemonade", () ->
+        new DrinkableItem(drinkItem().food(Nutrition.LEMONADE), false, false));
+    public static final RegistryObject<Item> BERRY_LEMONADE = registerItem("berry_lemonade", () ->
+        new DrinkableItem(drinkItem().food(Nutrition.BERRY_LEMONADE), false, false));
 
     // Sets Creative Tab
     public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {

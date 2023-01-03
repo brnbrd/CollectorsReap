@@ -1,0 +1,12 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "veggiedelight:enabled",
+          "value": "portobello"
+        }
+      ]
+    }
+  ]
+}

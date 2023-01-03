@@ -1,0 +1,38 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "veggiedelight:enabled",
+          "value": "potato_fritters"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "item": "minecraft:baked_potato"
+          },
+          {
+            "tag": "veggiedelight:lemon_or_slice"
+          },
+          {
+            "tag": "veggiedelight:lemon_or_slice"
+          },
+          {
+            "tag": "forge:crops/onion"
+          }
+        ],
+        "result": {
+          "item": "veggiedelight:potato_fritters"
+        }
+      }
+    }
+  ]
+}

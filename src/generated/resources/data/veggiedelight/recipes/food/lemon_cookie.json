@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "veggiedelight:enabled",
+          "value": "lemon_cookie"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "l": {
+            "item": "veggiedelight:lemon"
+          },
+          "w": {
+            "tag": "forge:crops/wheat"
+          }
+        },
+        "pattern": [
+          "wlw"
+        ],
+        "result": {
+          "item": "veggiedelight:lemon_cookie"
+        }
+      }
+    }
+  ]
+}

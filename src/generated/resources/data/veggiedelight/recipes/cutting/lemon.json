@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "veggiedelight:enabled",
+              "value": "lemon"
+            },
+            {
+              "type": "veggiedelight:enabled",
+              "value": "lemon_slice"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "veggiedelight:lemon"
+          }
+        ],
+        "result": [
+          {
+            "count": 2,
+            "item": "veggiedelight:lemon_slice"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}
