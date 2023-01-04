@@ -1,5 +1,6 @@
 {
   "block.veggiedelight.lemon_bush": "Lemon Bush",
+  "block.veggiedelight.lemon_pie": "Lemon Pie",
   "block.veggiedelight.medium_lemon_bush": "Lemon Bush",
   "block.veggiedelight.portobello": "Portobello",
   "block.veggiedelight.portobello_colony": "Portobello Colony",
@@ -12,7 +13,7 @@
   "item.veggiedelight.honey_lemon_chicken": "Honey Lemon Chicken",
   "item.veggiedelight.lemon": "Lemon",
   "item.veggiedelight.lemon_cookie": "Lemon Cookie",
-  "item.veggiedelight.lemon_pie_slice": "Lemon Pie Slice",
+  "item.veggiedelight.lemon_pie_slice": "Slice of Lemon Pie",
   "item.veggiedelight.lemon_popsicle": "Lemon Popsicle",
   "item.veggiedelight.lemon_slice": "Lemon Slice",
   "item.veggiedelight.lemonade": "Lemonade",

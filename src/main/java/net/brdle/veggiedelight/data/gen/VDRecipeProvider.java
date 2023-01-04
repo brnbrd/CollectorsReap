@@ -42,6 +42,8 @@ public class VDRecipeProvider extends RecipeProvider implements IConditionBuilde
             "cutting/portobello_colony", finished, enabled("portobello"));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(VDItems.LEMON.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.LEMON_SLICE.get(), 2),
             "cutting/lemon", finished, enabled("lemon"), enabled("lemon_slice"));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(VDItems.LEMON_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), VDItems.LEMON_PIE_SLICE.get(), 4),
+            "cutting/lemon_pie", finished, enabled("lemon_pie"), enabled("lemon_pie"));
 
         // Cooking Pot
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(VDItems.PORTOBELLO_RISOTTO.get(), 1, 200, 1.0F, Items.BOWL)
@@ -193,7 +195,7 @@ public class VDRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('s', Tags.Items.RODS_WOODEN)
                 .unlockedBy("has_lemon", has(VDItems.LEMON.get())),
             "food/lemon_popsicle", finished, enabled("lemon_popsicle"));
-        wrap(ShapedRecipeBuilder.shaped(VDItems.LEMON_COOKIE.get())
+        wrap(ShapedRecipeBuilder.shaped(VDItems.LEMON_COOKIE.get(), 8)
                 .pattern("wlw")
                 .define('l', VDItems.LEMON.get())
                 .define('w', Tags.Items.CROPS_WHEAT)

@@ -22,7 +22,8 @@ public class VDBlockTagProvider extends BlockTagsProvider {
 	protected void addTags() {
 		// Farmer's Delight
 		this.tag(ModTags.MINEABLE_WITH_KNIFE)
-			.add(VDBlocks.PORTOBELLO_QUICHE.get());
+			.add(VDBlocks.PORTOBELLO_QUICHE.get())
+			.add(VDBlocks.LEMON_PIE.get());
 
 		// VD
 		this.tag(VDBlockTags.PORTOBELLO_SPAWNS)

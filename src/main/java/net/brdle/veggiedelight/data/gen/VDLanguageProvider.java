@@ -21,6 +21,7 @@ public class VDLanguageProvider extends LanguageProvider {
         addBlock(VDBlocks.PORTOBELLO, "Portobello");
         addBlock(VDBlocks.PORTOBELLO_COLONY, "Portobello Colony");
         addBlock(VDBlocks.PORTOBELLO_QUICHE, "Portobello Quiche");
+        addBlock(VDBlocks.LEMON_PIE, "Lemon Pie");
         addBlock(VDBlocks.LEMON_BUSH, "Lemon Bush");
         addBlock(VDBlocks.SMALL_LEMON_BUSH, "Lemon Seeds");
         addBlock(VDBlocks.MEDIUM_LEMON_BUSH, "Lemon Bush");
@@ -35,10 +36,9 @@ public class VDLanguageProvider extends LanguageProvider {
         addItem(VDItems.PORTOBELLO_WRAP, "Veggie Wrap");
         addItem(VDItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
         addItem(VDItems.PORTOBELLO_QUICHE_SLICE, "Slice of Portobello Quiche");
-        addItem(VDItems.POMEGRANATE, "Pomegranate");
+        addItem(VDItems.LEMON_PIE_SLICE, "Slice of Lemon Pie");
         addItem(VDItems.LEMON, "Lemon");
         addItem(VDItems.LEMON_SLICE, "Lemon Slice");
-        addItem(VDItems.LEMON_PIE_SLICE, "Lemon Pie Slice");
         addItem(VDItems.LEMON_POPSICLE, "Lemon Popsicle");
         addItem(VDItems.LEMON_COOKIE, "Lemon Cookie");
         addItem(VDItems.CANDIED_LEMON, "Candied Lemon");
@@ -49,5 +49,6 @@ public class VDLanguageProvider extends LanguageProvider {
         addItem(VDItems.POTATO_FRITTERS, "Potato Fritters");
         addItem(VDItems.LEMONADE, "Lemonade");
         addItem(VDItems.BERRY_LEMONADE, "Berry Lemonade");
+        addItem(VDItems.POMEGRANATE, "Pomegranate");
     }
 }

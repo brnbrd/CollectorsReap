@@ -30,6 +30,8 @@ public class VDBlocks {
         () -> new PortobelloColonyBlock(copy(ModBlocks.BROWN_MUSHROOM_COLONY), VDItems.PORTOBELLO));
     public static final RegistryObject<Block> PORTOBELLO_QUICHE = registerBlock("portobello_quiche",
         () -> new PieBlock(copy(ModBlocks.APPLE_PIE), VDItems.PORTOBELLO_QUICHE_SLICE));
+    public static final RegistryObject<Block> LEMON_PIE = registerBlock("lemon_pie",
+        () -> new PieBlock(copy(ModBlocks.APPLE_PIE), VDItems.LEMON_PIE_SLICE));
     public static final RegistryObject<Block> LEMON_BUSH = registerBlock("lemon_bush",
         () -> new LemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> SMALL_LEMON_BUSH = registerBlock("small_lemon_bush",

@@ -53,8 +53,7 @@ public class VDItems extends ModItems {
         Nutrition.LEMON_SLICE);
     public static final RegistryObject<Item> CANDIED_LEMON = registerFood("candied_lemon",
         Nutrition.CANDIED_LEMON);
-    public static final RegistryObject<Item> LEMON_PIE = registerFood("lemon_pie",
-        Nutrition.LEMON_PIE_SLICE);
+    public static final RegistryObject<Item> LEMON_PIE = registerBlock(VDBlocks.LEMON_PIE);
     public static final RegistryObject<Item> LEMON_PIE_SLICE = registerFood("lemon_pie_slice",
         Nutrition.LEMON_PIE_SLICE);
     public static final RegistryObject<Item> LEMON_POPSICLE = registerFood("lemon_popsicle",

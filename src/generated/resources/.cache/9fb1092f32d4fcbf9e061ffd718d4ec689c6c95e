@@ -1,5 +1,6 @@
-// 1.19	2023-01-03T13:05:49.3493875	Recipes
+// 1.19	2023-01-04T13:59:50.079518	Recipes
 fc13f4d576194b30851700230f8d93f900a90c87 data/veggiedelight/advancements/recipes/cutting/lemon.json
+f057afc06741618feffd8215a5aac764ca48cf2a data/veggiedelight/advancements/recipes/cutting/lemon_pie.json
 e01d3c3d48053c55cd64bfab62d5c0db8182f94a data/veggiedelight/advancements/recipes/cutting/portobello_colony.json
 a704906eeb97549e851044366ec9e324bb710cda data/veggiedelight/advancements/recipes/cutting/portobello_quiche.json
 28c7f61524bd734cdc22d3cb7543db04b54cbe7f data/veggiedelight/advancements/recipes/farmersdelight/baked_portobello_cap.json
@@ -30,6 +31,7 @@ fbd5fa1ee90ef9bef5485c3c11a13e33570d2301 data/veggiedelight/recipes/baked_portob
 924fdf67d38815630ae5724ccc2998970148ae73 data/veggiedelight/recipes/baked_portobello_cap_from_campfire_cooking.json
 fbc89f980938220ff01d6f632f7c5bff57e3583f data/veggiedelight/recipes/baked_portobello_cap_from_smoking.json
 4996fcb109a5e17fc9cf296670c5f8493ecd6594 data/veggiedelight/recipes/cutting/lemon.json
+1f0b2a0e3a1b5f80de95bdf8b7f93da892fe95f7 data/veggiedelight/recipes/cutting/lemon_pie.json
 1f860119e3f0aea6fefe478d8aa001467975b77f data/veggiedelight/recipes/cutting/portobello_colony.json
 bc9af0b30ce02d3f06260c080705c68fcd42fbd0 data/veggiedelight/recipes/cutting/portobello_quiche.json
 c81295d82eead0ce961802fc8786c6cc344b471d data/veggiedelight/recipes/food/berry_lemonade.json
@@ -38,7 +40,7 @@ c81295d82eead0ce961802fc8786c6cc344b471d data/veggiedelight/recipes/food/berry_l
 8a3bc9c372598c08bb48175e6e64b6ecb574e2ef data/veggiedelight/recipes/food/cod_ceviche.json
 81270b80f9e39a05230642af28c2376b459aff46 data/veggiedelight/recipes/food/honey_lemon_chicken.json
 f72f1f51c0857bf505a30dc79e3c4d27850b47e1 data/veggiedelight/recipes/food/lemonade.json
-e799dd1be5b5e65d5fecb16cf6682a2b04df1ab3 data/veggiedelight/recipes/food/lemon_cookie.json
+d9785edac5ea064c6d8b9143070afe60d9140911 data/veggiedelight/recipes/food/lemon_cookie.json
 3025be1213d6eaf57d2b8002fad3fc9209f84646 data/veggiedelight/recipes/food/lemon_pie.json
 86d09d3b2f08df60f34ec717c09805cb727d53e9 data/veggiedelight/recipes/food/lemon_popsicle.json
 af9bf285facb9d5c845ea4f033c8ee998e891845 data/veggiedelight/recipes/food/mediterranean_salmon.json

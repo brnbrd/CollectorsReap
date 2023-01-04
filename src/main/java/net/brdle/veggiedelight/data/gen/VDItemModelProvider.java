@@ -27,7 +27,7 @@ public class VDItemModelProvider extends ItemModelProvider {
                 itemGeneratedModel(VDItems.PORTOBELLO.get(), VDBlockStateProvider.resourceBlock(Util.name(VDItems.PORTOBELLO)));
             } else if (entry == VDItems.PORTOBELLO_COLONY) {
                 itemGeneratedModel(VDItems.PORTOBELLO_COLONY.get(), VDBlockStateProvider.resourceBlock(Util.name(VDItems.PORTOBELLO_COLONY) + "_stage3"));
-            } else if (entry == VDItems.PORTOBELLO_QUICHE || entry == VDItems.LEMON_SEEDS) {
+            } else if (entry == VDItems.PORTOBELLO_QUICHE || entry == VDItems.LEMON_PIE || entry == VDItems.LEMON_SEEDS) {
                 basicItem(id);
             } else if (entry.get() instanceof BlockItem && !(entry.get() instanceof ItemNameBlockItem)) {
                 withExistingParent(id.getPath(), Util.rl(this.modid, "block/" + id.getPath()));

@@ -24,6 +24,7 @@ public class VDBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         this.pieBlock(VDBlocks.PORTOBELLO_QUICHE);
+        this.pieBlock(VDBlocks.LEMON_PIE);
         this.stageBlock(VDBlocks.PORTOBELLO_COLONY.get(), PortobelloColonyBlock.COLONY_AGE);
         this.simpleBlock(VDBlocks.PORTOBELLO.get(),
             models().cross("block/" + Util.name(VDBlocks.PORTOBELLO),

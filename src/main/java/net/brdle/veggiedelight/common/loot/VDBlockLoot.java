@@ -15,6 +15,7 @@ public class VDBlockLoot extends BlockLoot {
     protected void addTables() {
         this.dropSelf(VDBlocks.PORTOBELLO.get());
         this.empty(VDBlocks.PORTOBELLO_QUICHE);
+        this.empty(VDBlocks.LEMON_PIE);
         this.dropSelf(VDBlocks.SMALL_LEMON_BUSH.get());
         this.dropOther(VDBlocks.MEDIUM_LEMON_BUSH.get(), VDItems.LEMON_SEEDS.get());
         this.dropOther(VDBlocks.LEMON_BUSH.get(), VDItems.LEMON_SEEDS.get());

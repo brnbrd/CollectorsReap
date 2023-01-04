@@ -1,0 +1,10 @@
+{
+  "parent": "farmersdelight:block/pie_slice3",
+  "textures": {
+    "particle": "veggiedelight:block/lemon_pie_top",
+    "bottom": "veggiedelight:block/lemon_pie_bottom",
+    "inner": "veggiedelight:block/lemon_pie_inner",
+    "side": "veggiedelight:block/lemon_pie_side",
+    "top": "veggiedelight:block/lemon_pie_top"
+  }
+}
