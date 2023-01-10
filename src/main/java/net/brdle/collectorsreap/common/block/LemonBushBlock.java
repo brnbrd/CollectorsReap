@@ -222,9 +222,9 @@ public class LemonBushBlock extends CropBlock {
 	@Override
 	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
 		if (!pLevel.isClientSide() &&
-			e instanceof Bee bee &&
+			e instanceof Bee &&
 			pState.getValue(AGE) == this.getMaxAge() - 1 &&
-			pLevel.getRandom().nextInt(100) == 0) {
+			pLevel.getRandom().nextInt(150) == 0) {
 			this.performBonemeal((ServerLevel) pLevel, pLevel.getRandom(), pPos, pState);
 		}
 	}

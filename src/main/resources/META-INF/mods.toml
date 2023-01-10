@@ -1,18 +1,18 @@
 modLoader="javafml"
 loaderVersion="[41,)"
 license="MIT License"
-issueTrackerURL="https://github.com/brdle/CollectorsReap/issues"
+issueTrackerURL="https://github.com/brnbrd/CollectorsReap/issues"
 
 [[mods]]
 modId="collectorsreap"
 version="${file.jarVersion}"
 displayName="Collector's Reap"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/collectors-reap"
-updateJSONURL="https://raw.githubusercontent.com/brdle/CollectorsReap/1.19/update/update.json"
+updateJSONURL="https://raw.githubusercontent.com/brnbrd/CollectorsReap/1.19/update.json"
 logoFile="collectorsreap.png"
 logoBlur=false
-credits="reNIK03, brdle"
-authors="reNIK03, brdle"
+credits="reNIK03, brdbrn"
+authors="reNIK03, brdbrn"
 description="Farmer's Delight addon with vegetables and fruit."
 itemIcon="collectorsreap:portobello"
 configBackground="farmersdelight:textures/block/tatami_mat_half.png"

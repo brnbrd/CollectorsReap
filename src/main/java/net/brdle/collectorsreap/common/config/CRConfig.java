@@ -17,7 +17,7 @@ public class CRConfig {
     public static ForgeConfigSpec.IntValue CHANCE_LEMON_BUSH;
 
     CRConfig(ForgeConfigSpec.Builder builder) {
-        builder.comment(" Let's Configure Veggie Delight");
+        builder.comment("Configure Collector's Reap");
         stuff.clear();
         builder.push("Items");
             CRItems.ITEMS.getEntries().stream()
@@ -30,7 +30,7 @@ public class CRConfig {
               .comment("Chance of generating clusters. Smaller value = more frequent (once every ...). To disable, set the item Portobello to false above.")
               .defineInRange("chance_portobello", 30, 0, Integer.MAX_VALUE);
             CHANCE_LEMON_BUSH = builder
-                .comment("Chance of generating bushes. Smaller value = more frequent (once every ...). To disable, set the item Portobello to false above.")
+                .comment("Chance of generating bushes. Smaller value = more frequent (once every ...). To disable, set the item Lemon to false above.")
                 .defineInRange("chance_lemon_bush", 30, 0, Integer.MAX_VALUE);
         builder.pop();
     }

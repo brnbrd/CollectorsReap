@@ -1,11 +1,13 @@
 package net.brdle.collectorsreap.common.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BushBlock;
@@ -13,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class PortobelloBlock extends BushBlock {
@@ -43,8 +46,13 @@ public class PortobelloBlock extends BushBlock {
 	public boolean canSurvive(@NotNull BlockState pState, LevelReader level, BlockPos pos) {
 		BlockPos below = pos.below();
 		BlockState blockstate = level.getBlockState(below);
-		return blockstate.is(BlockTags.MUSHROOM_GROW_BLOCK) ||
-			(level.getRawBrightness(pos, 0) < 13 && blockstate.canSustainPlant(level, below, Direction.UP, this));
+		return blockstate.is(BlockTags.DIRT);
+		//|| (level.getRawBrightness(pos, 0) < 13 && blockstate.canSustainPlant(level, below, Direction.UP, this));
+	}
+
+	@Override
+	public void setPlacedBy(@NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, @Nullable LivingEntity pPlacer, @NotNull ItemStack pStack) {
+		super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
 	}
 
 	// Grow into colony on Rich Soil

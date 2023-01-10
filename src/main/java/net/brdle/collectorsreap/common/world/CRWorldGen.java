@@ -26,8 +26,8 @@ import java.util.List;
 public class CRWorldGen extends WildCropGeneration {
 	public static Holder<ConfiguredFeature<WildCropConfiguration, ?>> FEATURE_PATCH_PORTOBELLO;
 	public static Holder<PlacedFeature> PATCH_PORTOBELLO;
-	public static Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> FEATURE_LEMON_BUSH;
-	public static Holder<PlacedFeature> LEMON_BUSH;
+	public static Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> FEATURE_PATCH_LEMON_BUSH;
+	public static Holder<PlacedFeature> PATCH_LEMON_BUSH;
 
 
 	private static Holder<PlacedFeature> registerPlacement(ResourceLocation id, Holder<? extends ConfiguredFeature<?, ?>> feature, PlacementModifier... modifiers) {
@@ -40,23 +40,29 @@ public class CRWorldGen extends WildCropGeneration {
 
 	public static void registerGeneration() {
 		FEATURE_PATCH_PORTOBELLO = register(Util.rl(CollectorsReap.MODID, "patch_portobello"),
-			ModBiomeFeatures.WILD_CROP.get(), mushroomColonyConfig(CRBlocks.PORTOBELLO_COLONY.get(), CRBlocks.PORTOBELLO.get(), BlockPredicate.matchesTag(BLOCK_BELOW, CRBlockTags.PORTOBELLO_SPAWNS)));
+			ModBiomeFeatures.WILD_CROP.get(),
+			portobelloColonyConfig(CRBlocks.PORTOBELLO_COLONY.get(), CRBlocks.PORTOBELLO.get(), BlockPredicate.matchesTag(BLOCK_BELOW, CRBlockTags.PORTOBELLO_SPAWNS)));
 
 		PATCH_PORTOBELLO = registerConditionalPlacement(Util.rl(CollectorsReap.MODID, "patch_portobello"),
 			FEATURE_PATCH_PORTOBELLO,
-			CRConfig.verify("portobello") && CRConfig.CHANCE_PORTOBELLO.get() > 0, RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_PORTOBELLO.get()), CountPlacement.of(2), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+			CRConfig.verify("portobello") && CRConfig.CHANCE_PORTOBELLO.get() > 0, RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_PORTOBELLO.get()), CountPlacement.of(1), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
-		FEATURE_LEMON_BUSH = register(Util.rl(CollectorsReap.MODID, "lemon_bush"),
+		FEATURE_PATCH_LEMON_BUSH = register(Util.rl(CollectorsReap.MODID, "patch_lemon_bush"),
 			RandomPatchFeature.RANDOM_PATCH,
 			lemonBushConfig(CRBlocks.LEMON_BUSH.get(), 10, 5, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.DIRT))
 		);
 
-		LEMON_BUSH = registerConditionalPlacement(Util.rl(CollectorsReap.MODID, "lemon_bush"),
-			FEATURE_LEMON_BUSH, CRConfig.verify("lemon") && CRConfig.CHANCE_LEMON_BUSH.get() > 0, RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_LEMON_BUSH.get()), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+		PATCH_LEMON_BUSH = registerConditionalPlacement(Util.rl(CollectorsReap.MODID, "patch_lemon_bush"),
+			FEATURE_PATCH_LEMON_BUSH,
+			CRConfig.verify("lemon") && CRConfig.CHANCE_LEMON_BUSH.get() > 0, RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_LEMON_BUSH.get()), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 	}
 
 	public static RandomPatchConfiguration lemonBushConfig(Block block, int tries, int xzSpread, BlockPredicate plantedOn) {
 		return new RandomPatchConfiguration(tries, xzSpread, 3, PlacementUtils.filtered(CRFeatures.BUSH_BLOCK.get(),
 			new SimpleBlockConfiguration(BlockStateProvider.simple(block)), BlockPredicate.allOf(plantedOn, BlockPredicate.ONLY_IN_AIR_PREDICATE)));
+	}
+
+	public static WildCropConfiguration portobelloColonyConfig(Block colonyBlock, Block secondaryBlock, BlockPredicate plantedOn) {
+		return new WildCropConfiguration(32, 3, 3, colonyBlockConfig(colonyBlock, plantedOn), plantBlockConfig(secondaryBlock, plantedOn), null);
 	}
 }
