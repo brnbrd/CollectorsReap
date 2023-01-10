@@ -1,0 +1,37 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lemon"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lemon_slice"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lemon_seeds"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "collectorsreap:lemon_slice"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:lemon_seeds"
+        }
+      }
+    }
+  ]
+}

@@ -1,30 +1,30 @@
 modLoader="javafml"
 loaderVersion="[41,)"
 license="MIT License"
-issueTrackerURL="https://github.com/brdle/VeggieDelight/issues"
+issueTrackerURL="https://github.com/brdle/CollectorsReap/issues"
 
 [[mods]]
-modId="veggiedelight"
+modId="collectorsreap"
 version="${file.jarVersion}"
-displayName="Veggie Delight"
-displayURL="https://www.curseforge.com/minecraft/mc-mods/veggiedelight"
-updateJSONURL="https://raw.githubusercontent.com/brdle/VeggieDelight/1.19/update/update.json"
-logoFile="veggiedelight.png"
+displayName="Collector's Reap"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/collectors-reap"
+updateJSONURL="https://raw.githubusercontent.com/brdle/CollectorsReap/1.19/update/update.json"
+logoFile="collectorsreap.png"
 logoBlur=false
 credits="reNIK03, brdle"
 authors="reNIK03, brdle"
 description="Farmer's Delight addon with vegetables and fruit."
-itemIcon="veggiedelight:portobello"
+itemIcon="collectorsreap:portobello"
 configBackground="farmersdelight:textures/block/tatami_mat_half.png"
 
-[[dependencies.veggiedelight]]
+[[dependencies.collectorsreap]]
     modId="forge"
     mandatory=true
     versionRange="[41.1.0,)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.veggiedelight]]
+[[dependencies.collectorsreap]]
     modId="farmersdelight"
     mandatory=true
     versionRange="[1.19-1.2,)"

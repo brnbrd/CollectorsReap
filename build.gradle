@@ -17,8 +17,8 @@ apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
 
 version = "${mc_version}-${mod_version}"
-group = 'net.brdle.veggiedelight'
-archivesBaseName = 'veggiedelight'
+group = 'net.brdle.collectorsreap'
+archivesBaseName = 'collectorsreap'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
@@ -32,7 +32,7 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             mods {
-                veggiedelight {
+                collectorsreap {
                     source sourceSets.main
                 }
             }
@@ -42,7 +42,7 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             mods {
-                veggiedelight {
+                collectorsreap {
                     source sourceSets.main
                 }
             }
@@ -52,9 +52,9 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'veggiedelight', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'farmersdelight'
+            args '--mod', 'collectorsreap', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'farmersdelight'
             mods {
-                veggiedelight {
+                collectorsreap {
                     source sourceSets.main
                 }
             }
@@ -97,7 +97,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "veggiedelight",
+                "Specification-Title"     : "collectorsreap",
                 "Specification-Vendor"    : "brdle",
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,

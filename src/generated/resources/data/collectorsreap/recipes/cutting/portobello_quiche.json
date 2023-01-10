@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "portobello"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "portobello_quiche"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "collectorsreap:portobello_quiche"
+          }
+        ],
+        "result": [
+          {
+            "count": 4,
+            "item": "collectorsreap:portobello_quiche_slice"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}

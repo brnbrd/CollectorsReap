@@ -1,0 +1,33 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lemonade"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "collectorsreap:lemon"
+          },
+          {
+            "item": "collectorsreap:lemon"
+          },
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "item": "minecraft:glass_bottle"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:lemonade"
+        }
+      }
+    }
+  ]
+}

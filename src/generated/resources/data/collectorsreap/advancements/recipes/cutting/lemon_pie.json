@@ -1,0 +1,21 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lemon_pie"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lemon_pie"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

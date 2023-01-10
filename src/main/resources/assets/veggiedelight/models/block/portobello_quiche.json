@@ -1,9 +1,0 @@
-{
-  "parent": "farmersdelight:block/pie",
-  "textures": {
-    "particle": "veggiedelight:block/portobello_quiche_top",
-    "bottom": "veggiedelight:block/portobello_quiche_bottom",
-    "side": "veggiedelight:block/portobello_quiche_side",
-    "top": "veggiedelight:block/portobello_quiche_top"
-  }
-}

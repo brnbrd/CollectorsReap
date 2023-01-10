@@ -1,0 +1,36 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "salmon_tartare"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "forge:raw_fishes/salmon"
+          },
+          {
+            "tag": "forge:raw_fishes/salmon"
+          },
+          {
+            "tag": "forge:raw_fishes/salmon"
+          },
+          {
+            "item": "collectorsreap:lemon"
+          },
+          {
+            "item": "minecraft:bowl"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:salmon_tartare"
+        }
+      }
+    }
+  ]
+}

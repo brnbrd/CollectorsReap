@@ -1,9 +1,0 @@
-{
-	"parent": "veggiedelight:block/bush_upper",
-	"textures": {
-		"particle": "veggiedelight:block/lemon_bush_plant_upper_stage1",
-		"plant": "veggiedelight:block/lemon_bush_plant_upper_stage1",
-		"top": "veggiedelight:block/lemon_bush_top_stage1",
-		"side": "veggiedelight:block/lemon_bush_side_stage1"
-	}
-}
