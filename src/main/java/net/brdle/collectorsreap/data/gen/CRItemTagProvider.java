@@ -34,8 +34,11 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.FRUITS_LEMON);
 		this.tag(CRItemTags.SEEDS_LEMON)
 			.add(CRItems.LEMON_SEEDS.get());
+		this.tag(CRItemTags.SEEDS_POMEGRANATE)
+			.add(CRItems.POMEGRANATE_SEEDS.get());
 		this.tag(Tags.Items.SEEDS)
-			.addTag(CRItemTags.SEEDS_LEMON);
+			.addTag(CRItemTags.SEEDS_LEMON)
+			.addTag(CRItemTags.SEEDS_POMEGRANATE);
 		this.tag(CRItemTags.MUSHROOMS_PORTOBELLO)
 			.add(CRItems.PORTOBELLO.get());
 		this.tag(Tags.Items.MUSHROOMS)

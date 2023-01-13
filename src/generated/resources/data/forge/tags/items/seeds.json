@@ -1,5 +1,6 @@
 {
   "values": [
-    "#forge:seeds/lemon"
+    "#forge:seeds/lemon",
+    "#forge:seeds/pomegranate"
   ]
 }

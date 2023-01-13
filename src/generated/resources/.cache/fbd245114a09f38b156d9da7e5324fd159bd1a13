@@ -1,4 +1,4 @@
-// 1.19	2023-01-10T14:00:05.3518647	Item Models: collectorsreap
+// 1.19	2023-01-13T01:06:53.2096148	Item Models: collectorsreap
 5e9048f4721b73c750f56a005dda7ac5bf89e833 assets/collectorsreap/models/item/baked_portobello_cap.json
 7c52b118f68d2bdba4dfe337618be729294b3663 assets/collectorsreap/models/item/berry_lemonade.json
 230ca70956985d16ff216858c30c04a32b051d8a assets/collectorsreap/models/item/candied_lemon.json
@@ -14,6 +14,7 @@ abd5cd7fd66143f540a50bac37787652afd5b1c3 assets/collectorsreap/models/item/lemon
 61fd76c239008e6eaf15bab581f259ba43a9189f assets/collectorsreap/models/item/lemon_slice.json
 095a945e3d363cdf3f71f47a4fe32e93137cd6d4 assets/collectorsreap/models/item/mediterranean_salmon.json
 512cfbb5816f3fe1fbe23ebed1e808cf9e0e7011 assets/collectorsreap/models/item/pomegranate.json
+b745f5305be499a1dce464ba9c1430f6d8937c6f assets/collectorsreap/models/item/pomegranate_seeds.json
 1c91fc696380fcd160657dc1b93186d0d83463e5 assets/collectorsreap/models/item/portobello.json
 404696df3dad6d748a5062829b40eac1596c0c1f assets/collectorsreap/models/item/portobello_burger.json
 a2cd6bd2db99dc8457f6acd882f7ab0a29eb22c5 assets/collectorsreap/models/item/portobello_colony.json

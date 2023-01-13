@@ -44,6 +44,10 @@ public class CRItems extends ModItems {
         Nutrition.PORTOBELLO_QUICHE_SLICE);
     public static final RegistryObject<Item> POMEGRANATE = registerFood("pomegranate",
         Nutrition.POMEGRANATE);
+    public static final RegistryObject<Item> POMEGRANATE_SEEDS = registerItem("pomegranate_seeds",
+        () -> new BlockItem(CRBlocks.SMALL_POMEGRANATE_BUSH.get(), (new Item.Properties()
+            .tab(FarmersDelight.CREATIVE_TAB)
+            .food(Nutrition.POMEGRANATE_SEEDS))));
     public static final RegistryObject<Item> LEMON_SEEDS = registerBlock("lemon_seeds",
         CRBlocks.SMALL_LEMON_BUSH);
     public static final RegistryObject<Item> LEMON = registerFood("lemon",

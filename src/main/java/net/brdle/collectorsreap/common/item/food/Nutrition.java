@@ -29,6 +29,8 @@ public class Nutrition {
         .nutrition(11).saturationMod(0.73F).build();
     public static final FoodProperties POMEGRANATE = (new FoodProperties.Builder())
         .nutrition(4).saturationMod(0.5F).build();
+    public static final FoodProperties POMEGRANATE_SEEDS = (new FoodProperties.Builder())
+        .nutrition(2).saturationMod(0.5F).build();
     public static final FoodProperties BAKED_PORTOBELLO_CAP = (new FoodProperties.Builder())
         .nutrition(6).saturationMod(0.75F).build();
     public static final FoodProperties STUFFED_PORTOBELLO_CAP = (new FoodProperties.Builder())

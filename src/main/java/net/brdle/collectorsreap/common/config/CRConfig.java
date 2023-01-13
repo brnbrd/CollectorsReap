@@ -15,6 +15,7 @@ public class CRConfig {
     private static final Map<String, ForgeConfigSpec.BooleanValue> stuff = new HashMap<>();
     public static ForgeConfigSpec.IntValue CHANCE_PORTOBELLO;
     public static ForgeConfigSpec.IntValue CHANCE_LEMON_BUSH;
+    public static ForgeConfigSpec.IntValue CHANCE_WILD_POMEGRANATE;
 
     CRConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Configure Collector's Reap");
@@ -32,6 +33,9 @@ public class CRConfig {
             CHANCE_LEMON_BUSH = builder
                 .comment("Chance of generating bushes. Smaller value = more frequent (once every ...). To disable, set the item Lemon to false above.")
                 .defineInRange("chance_lemon_bush", 30, 0, Integer.MAX_VALUE);
+            CHANCE_WILD_POMEGRANATE = builder
+                .comment("Chance of generating bushes. Smaller value = more frequent (once every ...). To disable, set the item Pomegranate to false above.")
+                .defineInRange("chance_wild_pomegranate", 30, 0, Integer.MAX_VALUE);
         builder.pop();
     }
 

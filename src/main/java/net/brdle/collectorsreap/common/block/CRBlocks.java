@@ -15,6 +15,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.PieBlock;
+import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import java.util.function.Supplier;
 
@@ -37,6 +38,10 @@ public class CRBlocks {
         () -> new SmallLemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> MEDIUM_LEMON_BUSH = registerBlock("medium_lemon_bush",
         () -> new MediumLemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> WILD_POMEGRANATE_BUSH = registerBlock("wild_pomegranate_bush",
+        () -> new WildPomegranateBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> SMALL_POMEGRANATE_BUSH = registerBlock("small_pomegranate_bush",
+        () -> new SmallPomegranateBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
 
     public static RegistryObject<Block> registerBlock(String name, Supplier<Block> block) {
         return BLOCKS.register(name, block);

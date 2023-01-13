@@ -26,10 +26,7 @@ public class CRBlockStateProvider extends BlockStateProvider {
         this.pieBlock(CRBlocks.PORTOBELLO_QUICHE);
         this.pieBlock(CRBlocks.LEMON_PIE);
         this.stageBlock(CRBlocks.PORTOBELLO_COLONY.get(), PortobelloColonyBlock.COLONY_AGE);
-        this.simpleBlock(CRBlocks.PORTOBELLO.get(),
-            models().cross("block/" + Util.name(CRBlocks.PORTOBELLO),
-                CRBlockStateProvider.resourceBlock(Util.name(CRBlocks.PORTOBELLO)))
-                .renderType("cutout"));
+        this.cross(CRBlocks.PORTOBELLO.get());
         this.simpleBlock(CRBlocks.SMALL_LEMON_BUSH.get(), existingModel("small_lemon_bush"));
         this.simpleBlock(CRBlocks.MEDIUM_LEMON_BUSH.get(), models()
                 .withExistingParent("block/medium_lemon_bush", Util.rl("minecraft", "block/template_azalea"))
@@ -38,6 +35,8 @@ public class CRBlockStateProvider extends BlockStateProvider {
                 .texture("plant", CRBlockStateProvider.resourceBlock("medium_lemon_bush_plant"))
                 .texture("particle", CRBlockStateProvider.resourceBlock("medium_lemon_bush_plant"))
                 .renderType("cutout"));
+        this.cross(CRBlocks.WILD_POMEGRANATE_BUSH.get());
+        this.simpleBlock(CRBlocks.SMALL_POMEGRANATE_BUSH.get(), existingModel("small_pomegranate_bush"));
     }
 
     // Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java
@@ -47,6 +46,11 @@ public class CRBlockStateProvider extends BlockStateProvider {
 
     public ModelFile existingModel(String path) {
         return new ModelFile.ExistingModelFile(resourceBlock(path), models().existingFileHelper);
+    }
+
+    public void cross(Block block) {
+        this.simpleBlock(block, models().cross("block/" + Util.name(block),
+            CRBlockStateProvider.resourceBlock(Util.name(block))).renderType("cutout"));
     }
 
     // Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java

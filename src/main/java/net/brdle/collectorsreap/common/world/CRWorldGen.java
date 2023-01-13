@@ -28,6 +28,8 @@ public class CRWorldGen extends WildCropGeneration {
 	public static Holder<PlacedFeature> PATCH_PORTOBELLO;
 	public static Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> FEATURE_PATCH_LEMON_BUSH;
 	public static Holder<PlacedFeature> PATCH_LEMON_BUSH;
+	public static Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> FEATURE_PATCH_WILD_POMEGRANATE;
+	public static Holder<PlacedFeature> PATCH_WILD_POMEGRANATE;
 
 
 	private static Holder<PlacedFeature> registerPlacement(ResourceLocation id, Holder<? extends ConfiguredFeature<?, ?>> feature, PlacementModifier... modifiers) {
@@ -55,6 +57,15 @@ public class CRWorldGen extends WildCropGeneration {
 		PATCH_LEMON_BUSH = registerConditionalPlacement(Util.rl(CollectorsReap.MODID, "patch_lemon_bush"),
 			FEATURE_PATCH_LEMON_BUSH,
 			CRConfig.verify("lemon") && CRConfig.CHANCE_LEMON_BUSH.get() > 0, RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_LEMON_BUSH.get()), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+
+		FEATURE_PATCH_WILD_POMEGRANATE = register(Util.rl(CollectorsReap.MODID, "patch_wild_pomegranate"),
+			RandomPatchFeature.RANDOM_PATCH,
+			randomPatchConfig(CRBlocks.WILD_POMEGRANATE_BUSH.get(), 10, 5, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.NYLIUM))
+		);
+
+		PATCH_WILD_POMEGRANATE = registerConditionalPlacement(Util.rl(CollectorsReap.MODID, "patch_wild_pomegranate"),
+			FEATURE_PATCH_WILD_POMEGRANATE,
+			CRConfig.verify("pomegranate") && CRConfig.CHANCE_WILD_POMEGRANATE.get() > 0, RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_WILD_POMEGRANATE.get()), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 	}
 
 	public static RandomPatchConfiguration lemonBushConfig(Block block, int tries, int xzSpread, BlockPredicate plantedOn) {
