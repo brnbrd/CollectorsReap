@@ -41,7 +41,7 @@ public class PomegranateBushBlock extends BushBlock implements BonemealableBlock
 
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
-		return new ItemStack(CRItems.POMEGRANATE.get());
+		return new ItemStack(state.getValue(AGE) < 3 ? CRItems.POMEGRANATE_SEEDS.get() : CRItems.POMEGRANATE.get());
 	}
 
 	@SuppressWarnings("deprecation")
