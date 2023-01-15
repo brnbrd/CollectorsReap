@@ -1,0 +1,33 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "berry_limeade"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "collectorsreap:limeade"
+          },
+          {
+            "tag": "forge:berries"
+          },
+          {
+            "tag": "forge:berries"
+          },
+          {
+            "tag": "forge:berries"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:berry_limeade"
+        }
+      }
+    }
+  ]
+}

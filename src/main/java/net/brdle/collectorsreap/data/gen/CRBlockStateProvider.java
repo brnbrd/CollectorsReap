@@ -24,19 +24,17 @@ public class CRBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         this.pieBlock(CRBlocks.PORTOBELLO_QUICHE);
-        this.pieBlock(CRBlocks.LEMON_PIE);
+        this.pieBlock(CRBlocks.LIME_PIE);
         this.stageBlock(CRBlocks.PORTOBELLO_COLONY.get(), PortobelloColonyBlock.COLONY_AGE);
         this.cross(CRBlocks.PORTOBELLO.get());
-        this.simpleBlock(CRBlocks.SMALL_LEMON_BUSH.get(), existingModel("small_lemon_bush"));
-        this.simpleBlock(CRBlocks.MEDIUM_LEMON_BUSH.get(), models()
-                .withExistingParent("block/medium_lemon_bush", Util.rl("minecraft", "block/template_azalea"))
-                .texture("side", CRBlockStateProvider.resourceBlock("medium_lemon_bush_side"))
-                .texture("top", CRBlockStateProvider.resourceBlock("medium_lemon_bush_top"))
-                .texture("plant", CRBlockStateProvider.resourceBlock("medium_lemon_bush_plant"))
-                .texture("particle", CRBlockStateProvider.resourceBlock("medium_lemon_bush_plant"))
+        this.simpleBlock(CRBlocks.SMALL_LIME_BUSH.get(), existingModel("small_lime_bush"));
+        this.simpleBlock(CRBlocks.MEDIUM_LIME_BUSH.get(), models()
+                .withExistingParent("block/medium_lime_bush", Util.rl("minecraft", "block/template_azalea"))
+                .texture("side", CRBlockStateProvider.resourceBlock("medium_lime_bush_side"))
+                .texture("top", CRBlockStateProvider.resourceBlock("medium_lime_bush_top"))
+                .texture("plant", CRBlockStateProvider.resourceBlock("medium_lime_bush_plant"))
+                .texture("particle", CRBlockStateProvider.resourceBlock("medium_lime_bush_plant"))
                 .renderType("cutout"));
-        this.cross(CRBlocks.WILD_POMEGRANATE_BUSH.get());
-        this.simpleBlock(CRBlocks.SMALL_POMEGRANATE_BUSH.get(), existingModel("small_pomegranate_bush"));
     }
 
     // Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java

@@ -23,7 +23,7 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		// Farmer's Delight
 		this.tag(ModTags.MINEABLE_WITH_KNIFE)
 			.add(CRBlocks.PORTOBELLO_QUICHE.get())
-			.add(CRBlocks.LEMON_PIE.get());
+			.add(CRBlocks.LIME_PIE.get());
 
 		// VD
 		this.tag(CRBlockTags.PORTOBELLO_SPAWNS)
@@ -35,9 +35,9 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 
 		// Minecraft
 		this.tag(BlockTags.BEE_GROWABLES)
-			.add(CRBlocks.LEMON_BUSH.get());
+			.add(CRBlocks.LIME_BUSH.get());
 		this.tag(BlockTags.FLOWERS)
-			.add(CRBlocks.LEMON_BUSH.get());
+			.add(CRBlocks.LIME_BUSH.get());
 	}
 
 	/**

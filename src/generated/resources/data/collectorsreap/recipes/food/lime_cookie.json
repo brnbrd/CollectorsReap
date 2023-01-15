@@ -1,0 +1,31 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lime_cookie"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "l": {
+            "item": "collectorsreap:lime"
+          },
+          "w": {
+            "tag": "forge:crops/wheat"
+          }
+        },
+        "pattern": [
+          "wlw"
+        ],
+        "result": {
+          "count": 8,
+          "item": "collectorsreap:lime_cookie"
+        }
+      }
+    }
+  ]
+}

@@ -25,6 +25,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ForgeHooks;
 import org.jetbrains.annotations.NotNull;
 
 public class PomegranateBushBlock extends BushBlock implements BonemealableBlock {
@@ -58,18 +59,19 @@ public class PomegranateBushBlock extends BushBlock implements BonemealableBlock
 	 */
 	@Override
 	public boolean isRandomlyTicking(BlockState pState) {
-		return pState.getValue(AGE) < 3;
+		return pState.getValue(AGE) < MAX_AGE;
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
 	public void randomTick(BlockState pState, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
 		int i = pState.getValue(AGE);
-		if (i < 3 && pLevel.getRawBrightness(pPos.above(), 0) >= 9 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt(5) == 0)) {
+		if (i < MAX_AGE && pLevel.getRawBrightness(pPos.above(), 0) >= 9 &&
+			ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt(5) == 0)) {
 			BlockState blockstate = pState.setValue(AGE, i + 1);
 			pLevel.setBlock(pPos, blockstate, 2);
 			pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(blockstate));
-			net.minecraftforge.common.ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
+			ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
 		}
 
 	}
@@ -78,12 +80,12 @@ public class PomegranateBushBlock extends BushBlock implements BonemealableBlock
 	@Override
 	public @NotNull InteractionResult use(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
 		int i = pState.getValue(AGE);
-		boolean flag = i == 3;
+		boolean flag = i == MAX_AGE;
 		if (!flag && pPlayer.getItemInHand(pHand).is(Items.BONE_MEAL)) {
 			return InteractionResult.PASS;
 		} else if (i > 1) {
 			int j = 1 + pLevel.random.nextInt(2);
-			popResource(pLevel, pPos, new ItemStack(Items.SWEET_BERRIES, j + (flag ? 1 : 0)));
+			popResource(pLevel, pPos, new ItemStack(CRItems.POMEGRANATE.get(), j + (flag ? 1 : 0)));
 			pLevel.playSound(null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F);
 			BlockState blockstate = pState.setValue(AGE, 1);
 			pLevel.setBlock(pPos, blockstate, 2);
@@ -104,7 +106,7 @@ public class PomegranateBushBlock extends BushBlock implements BonemealableBlock
 	 */
 	@Override
 	public boolean isValidBonemealTarget(@NotNull BlockGetter pLevel, @NotNull BlockPos pPos, BlockState pState, boolean pIsClient) {
-		return pState.getValue(AGE) < 3;
+		return pState.getValue(AGE) < MAX_AGE;
 	}
 
 	@Override
@@ -114,7 +116,7 @@ public class PomegranateBushBlock extends BushBlock implements BonemealableBlock
 
 	@Override
 	public void performBonemeal(ServerLevel pLevel, @NotNull RandomSource pRandom, @NotNull BlockPos pPos, BlockState pState) {
-		int i = Math.min(3, pState.getValue(AGE) + 1);
+		int i = Math.min(MAX_AGE, pState.getValue(AGE) + 1);
 		pLevel.setBlock(pPos, pState.setValue(AGE, i), 2);
 	}
 }

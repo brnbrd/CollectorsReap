@@ -39,10 +39,13 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             "cutting/portobello_quiche", finished, enabled("portobello"), enabled("portobello_quiche"));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_COLONY.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.PORTOBELLO.get(), 5),
             "cutting/portobello_colony", finished, enabled("portobello"));
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LEMON.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LEMON_SLICE.get(), 2),
-            "cutting/lemon", finished, enabled("lemon"), enabled("lemon_slice"));
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LEMON_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LEMON_PIE_SLICE.get(), 4),
-            "cutting/lemon_pie", finished, enabled("lemon_pie"), enabled("lemon_pie"));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LIME_SLICE.get(), 2)
+            .addResultWithChance(Items.LIME_DYE, 0.25f),
+            "cutting/lime", finished, enabled("lime"), enabled("lime_slice"));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_SLICE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.LIME_DYE, 1),
+            "cutting/lime_slice", finished, enabled("lime"), enabled("lime_slice"));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LIME_PIE_SLICE.get(), 4),
+            "cutting/lime_pie", finished, enabled("lime_pie"), enabled("lime_pie"));
 
         // Cooking Pot
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PORTOBELLO_RISOTTO.get(), 1, 200, 1.0F, Items.BOWL)
@@ -75,43 +78,43 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .addIngredient(ForgeTags.MILK)
                 .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
             "food/portobello_pasta", finished, enabled("portobello_pasta"));
-        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.HONEY_LEMON_CHICKEN.get(), 1, 200, 1.0F, Items.BOWL)
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.HONEY_LIME_CHICKEN.get(), 1, 200, 1.0F, Items.BOWL)
                 .addIngredient(ForgeTags.RAW_CHICKEN)
                 .addIngredient(Items.HONEY_BOTTLE)
-                .addIngredient(CRItemTags.LEMON_OR_SLICE)
+                .addIngredient(CRItemTags.LIME_OR_SLICE)
                 .addIngredient(ForgeTags.CROPS_ONION)
                 .addIngredient(ForgeTags.CROPS_RICE)
-                .unlockedBy("has_lemon_or_slice", has(CRItemTags.LEMON_OR_SLICE)),
-            "food/honey_lemon_chicken", finished, enabled("honey_lemon_chicken"));
+                .unlockedBy("has_lime_or_slice", has(CRItemTags.LIME_OR_SLICE)),
+            "food/honey_lime_chicken", finished, enabled("honey_lime_chicken"));
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.MEDITERRANEAN_SALMON.get(), 1, 200, 1.0F, Items.BOWL)
                 .addIngredient(ForgeTags.RAW_FISHES_SALMON)
-                .addIngredient(CRItemTags.LEMON_OR_SLICE)
+                .addIngredient(CRItemTags.LIME_OR_SLICE)
                 .addIngredient(Tags.Items.CROPS_POTATO)
                 .addIngredient(ForgeTags.CROPS_TOMATO)
                 .addIngredient(ForgeTags.CROPS_ONION)
-                .unlockedBy("has_lemon_or_slice", has(CRItemTags.LEMON_OR_SLICE)),
+                .unlockedBy("has_lime_or_slice", has(CRItemTags.LIME_OR_SLICE)),
             "food/mediterranean_salmon", finished, enabled("mediterranean_salmon"));
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POTATO_FRITTERS.get(), 1, 200, 1.0F, Items.BOWL)
                 .addIngredient(Items.BAKED_POTATO)
-                .addIngredient(Ingredient.of(CRItemTags.LEMON_OR_SLICE), 2)
+                .addIngredient(Ingredient.of(CRItemTags.LIME_OR_SLICE), 2)
                 .addIngredient(ForgeTags.CROPS_ONION)
-                .unlockedBy("has_lemon_or_slice", has(CRItemTags.LEMON_OR_SLICE)),
+                .unlockedBy("has_lime_or_slice", has(CRItemTags.LIME_OR_SLICE)),
             "food/potato_fritters", finished, enabled("potato_fritters"));
-        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CANDIED_LEMON.get(), 3, 200, 1.0F, Items.BOWL)
-                .addIngredient(CRItems.LEMON_SLICE.get(), 3)
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CANDIED_LIME.get(), 3, 200, 1.0F, Items.BOWL)
+                .addIngredient(CRItems.LIME_SLICE.get(), 3)
                 .addIngredient(Items.HONEY_BOTTLE)
-                .unlockedBy("has_lemon_slice", has(CRItems.LEMON_SLICE.get())),
-            "food/candied_lemon", finished, enabled("candied_lemon"));
+                .unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
+            "food/candied_lime", finished, enabled("candied_lime"));
 
         // Crafting
-        wrap(ShapelessRecipeBuilder.shapeless(CRItems.LEMON_SEEDS.get(), 2)
-                .requires(CRItems.LEMON.get())
-                .unlockedBy("has_lemon", has(CRItems.LEMON.get())),
-            "lemon_seeds_from_lemon", finished, enabled("lemon"), enabled("lemon_seeds"));
-        wrap(ShapelessRecipeBuilder.shapeless(CRItems.LEMON_SEEDS.get())
-                .requires(CRItems.LEMON_SLICE.get())
-                .unlockedBy("has_lemon_slice", has(CRItems.LEMON_SLICE.get())),
-            "lemon_seeds_from_slice", finished, enabled("lemon"), enabled("lemon_slice"), enabled("lemon_seeds"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.LIME_SEEDS.get(), 2)
+                .requires(CRItems.LIME.get())
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
+            "lime_seeds_from_lime", finished, enabled("lime"), enabled("lime_seeds"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.LIME_SEEDS.get())
+                .requires(CRItems.LIME_SLICE.get())
+                .unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
+            "lime_seeds_from_slice", finished, enabled("lime"), enabled("lime_slice"), enabled("lime_seeds"));
         wrap(ShapelessRecipeBuilder.shapeless(CRItems.PORTOBELLO_WRAP.get())
                 .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
                 .requires(ForgeTags.BREAD)
@@ -128,38 +131,38 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(ForgeTags.CROPS_TOMATO)
                 .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
             "food/portobello_burger", finished, enabled("portobello_burger"));
-        wrap(ShapelessRecipeBuilder.shapeless(CRItems.LEMONADE.get())
-                .requires(CRItems.LEMON.get(), 2)
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.LIMEADE.get())
+                .requires(CRItems.LIME.get(), 2)
                 .requires(Items.SUGAR)
                 .requires(Items.GLASS_BOTTLE)
-                .unlockedBy("has_lemon", has(CRItems.LEMON.get())),
-            "food/lemonade", finished, enabled("lemonade"));
-        wrap(ShapelessRecipeBuilder.shapeless(CRItems.BERRY_LEMONADE.get())
-                .requires(CRItems.LEMON.get(), 2)
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
+            "food/limeade", finished, enabled("limeade"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.BERRY_LIMEADE.get())
+                .requires(CRItems.LIME.get(), 2)
                 .requires(Ingredient.of(ForgeTags.BERRIES), 3)
                 .requires(Items.SUGAR)
                 .requires(Items.GLASS_BOTTLE)
-                .unlockedBy("has_lemon", has(CRItems.LEMON.get())),
-            "food/berry_lemonade", finished, enabled("berry_lemonade"));
-        wrap(ShapelessRecipeBuilder.shapeless(CRItems.BERRY_LEMONADE.get())
-                .requires(CRItems.LEMONADE.get(), 1)
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
+            "food/berry_limeade", finished, enabled("berry_limeade"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.BERRY_LIMEADE.get())
+                .requires(CRItems.LIMEADE.get(), 1)
                 .requires(Ingredient.of(ForgeTags.BERRIES), 3)
-                .unlockedBy("has_lemonade", has(CRItems.LEMONADE.get())),
-            "food/berry_lemonade_from_lemonade", finished, enabled("berry_lemonade"));
+                .unlockedBy("has_limeade", has(CRItems.LIMEADE.get())),
+            "food/berry_limeade_from_limeade", finished, enabled("berry_limeade"));
         wrap(ShapelessRecipeBuilder.shapeless(CRItems.SALMON_TARTARE.get())
                 .requires(Ingredient.of(ForgeTags.RAW_FISHES_SALMON), 3)
-                .requires(CRItems.LEMON.get())
+                .requires(CRItems.LIME.get())
                 .requires(Items.BOWL)
-                .unlockedBy("has_lemon", has(CRItems.LEMON.get())),
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
             "food/salmon_tartare", finished, enabled("salmon_tartare"));
         wrap(ShapelessRecipeBuilder.shapeless(CRItems.COD_CEVICHE.get())
                 .requires(ForgeTags.RAW_FISHES_COD)
-                .requires(CRItems.LEMON.get())
+                .requires(CRItems.LIME.get())
                 .requires(ForgeTags.CROPS_ONION)
                 .requires(ForgeTags.CROPS_CABBAGE)
                 .requires(ForgeTags.CROPS_TOMATO)
                 .requires(Items.BOWL)
-                .unlockedBy("has_lemon", has(CRItems.LEMON.get())),
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
             "food/cod_ceviche", finished, enabled("cod_ceviche"));
 
         // Shaped Crafting
@@ -174,32 +177,32 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('c', ModItems.PIE_CRUST.get())
                 .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
             "food/portobello_quiche", finished, enabled("portobello_quiche"));
-        wrap(ShapedRecipeBuilder.shaped(CRItems.LEMON_PIE.get())
+        wrap(ShapedRecipeBuilder.shaped(CRItems.LIME_PIE.get())
                 .pattern("ese")
                 .pattern("lll")
                 .pattern("mcm")
                 .define('e', ForgeTags.EGGS)
                 .define('m', ForgeTags.MILK)
-                .define('l', CRItems.LEMON.get())
+                .define('l', CRItems.LIME.get())
                 .define('s', Items.SUGAR)
                 .define('c', ModItems.PIE_CRUST.get())
-                .unlockedBy("has_lemon", has(CRItems.LEMON.get())),
-            "food/lemon_pie", finished, enabled("lemon_pie"));
-        wrap(ShapedRecipeBuilder.shaped(CRItems.LEMON_POPSICLE.get())
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
+            "food/lime_pie", finished, enabled("lime_pie"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.LIME_POPSICLE.get())
                 .pattern(" ll")
                 .pattern("ill")
                 .pattern("si ")
-                .define('l', CRItems.LEMON.get())
+                .define('l', CRItems.LIME.get())
                 .define('i', Items.ICE)
                 .define('s', Tags.Items.RODS_WOODEN)
-                .unlockedBy("has_lemon", has(CRItems.LEMON.get())),
-            "food/lemon_popsicle", finished, enabled("lemon_popsicle"));
-        wrap(ShapedRecipeBuilder.shaped(CRItems.LEMON_COOKIE.get(), 8)
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
+            "food/lime_popsicle", finished, enabled("lime_popsicle"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.LIME_COOKIE.get(), 8)
                 .pattern("wlw")
-                .define('l', CRItems.LEMON.get())
+                .define('l', CRItems.LIME.get())
                 .define('w', Tags.Items.CROPS_WHEAT)
-                .unlockedBy("has_lemon", has(CRItems.LEMON.get())),
-            "food/lemon_cookie", finished, enabled("lemon_cookie"));
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
+            "food/lime_cookie", finished, enabled("lime_cookie"));
     }
 
 

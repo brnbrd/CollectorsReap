@@ -5,17 +5,17 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
 public class Nutrition {
-    public static final FoodProperties LEMON = (new FoodProperties.Builder())
+    public static final FoodProperties LIME = (new FoodProperties.Builder())
         .nutrition(2).saturationMod(0.2F).build();
-    public static final FoodProperties LEMON_SLICE = (new FoodProperties.Builder())
+    public static final FoodProperties LIME_SLICE = (new FoodProperties.Builder())
         .nutrition(1).saturationMod(0.2F).fast().build();
-    public static final FoodProperties LEMON_PIE_SLICE = (new FoodProperties.Builder())
+    public static final FoodProperties LIME_PIE_SLICE = (new FoodProperties.Builder())
         .nutrition(3).saturationMod(0.2F).build();
-    public static final FoodProperties LEMON_POPSICLE = (new FoodProperties.Builder())
+    public static final FoodProperties LIME_POPSICLE = (new FoodProperties.Builder())
         .nutrition(3).saturationMod(0.2F).build();
-    public static final FoodProperties LEMON_COOKIE = (new FoodProperties.Builder())
+    public static final FoodProperties LIME_COOKIE = (new FoodProperties.Builder())
         .nutrition(3).saturationMod(0.2F).build();
-    public static final FoodProperties HONEY_LEMON_CHICKEN = (new FoodProperties.Builder())
+    public static final FoodProperties HONEY_LIME_CHICKEN = (new FoodProperties.Builder())
         .nutrition(14).saturationMod(0.78F).build();
     public static final FoodProperties MEDITERRANEAN_SALMON = (new FoodProperties.Builder())
         .nutrition(14).saturationMod(0.78F).build();
@@ -23,7 +23,7 @@ public class Nutrition {
         .nutrition(6).saturationMod(0.67F).build();
     public static final FoodProperties POTATO_FRITTERS = (new FoodProperties.Builder())
         .nutrition(7).saturationMod(1.0F).build();
-    public static final FoodProperties CANDIED_LEMON = (new FoodProperties.Builder())
+    public static final FoodProperties CANDIED_LIME = (new FoodProperties.Builder())
         .nutrition(3).saturationMod(1.0F).fast().build();
     public static final FoodProperties COD_CEVICHE = (new FoodProperties.Builder())
         .nutrition(11).saturationMod(0.73F).build();
@@ -47,10 +47,10 @@ public class Nutrition {
         .nutrition(3).saturationMod(0.2F).build();
     public static final FoodProperties PORTOBELLO_BURGER = (new FoodProperties.Builder()).nutrition(12).saturationMod(0.8F)
         .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0F).build();
-    public static final FoodProperties LEMONADE = (new FoodProperties.Builder()).alwaysEat()
+    public static final FoodProperties LIMEADE = (new FoodProperties.Builder()).alwaysEat()
         .nutrition(3).saturationMod(0.2F)
         .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 1200, 0), 1.0F).build();
-    public static final FoodProperties BERRY_LEMONADE = (new FoodProperties.Builder()).alwaysEat()
+    public static final FoodProperties BERRY_LIMEADE = (new FoodProperties.Builder()).alwaysEat()
         .nutrition(5).saturationMod(0.2F)
         .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 1200, 0), 1.0F).build();
 }

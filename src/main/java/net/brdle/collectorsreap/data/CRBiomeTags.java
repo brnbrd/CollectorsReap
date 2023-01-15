@@ -9,7 +9,7 @@ import net.minecraft.world.level.biome.Biome;
 public class CRBiomeTags {
 
 	public static final TagKey<Biome> PORTOBELLO_SPAWNS = bind(CollectorsReap.MODID, "portobello_spawns");
-	public static final TagKey<Biome> LEMON_SPAWNS = bind(CollectorsReap.MODID, "lemon_spawns");
+	public static final TagKey<Biome> LIME_SPAWNS = bind(CollectorsReap.MODID, "lime_spawns");
 	public static final TagKey<Biome> POMEGRANATE_SPAWNS = bind(CollectorsReap.MODID, "pomegranate_spawns");
 
 	private static TagKey<Biome> bind(String modid, String name) {

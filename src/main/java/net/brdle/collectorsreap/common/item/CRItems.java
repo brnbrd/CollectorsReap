@@ -45,26 +45,26 @@ public class CRItems extends ModItems {
     public static final RegistryObject<Item> POMEGRANATE = registerFood("pomegranate",
         Nutrition.POMEGRANATE);
     public static final RegistryObject<Item> POMEGRANATE_SEEDS = registerItem("pomegranate_seeds",
-        () -> new BlockItem(CRBlocks.SMALL_POMEGRANATE_BUSH.get(), (new Item.Properties()
+        () -> new BlockItem(CRBlocks.POMEGRANATE_BUSH.get(), (new Item.Properties()
             .tab(FarmersDelight.CREATIVE_TAB)
             .food(Nutrition.POMEGRANATE_SEEDS))));
-    public static final RegistryObject<Item> LEMON_SEEDS = registerBlock("lemon_seeds",
-        CRBlocks.SMALL_LEMON_BUSH);
-    public static final RegistryObject<Item> LEMON = registerFood("lemon",
-        Nutrition.LEMON);
-    public static final RegistryObject<Item> LEMON_SLICE = registerFood("lemon_slice",
-        Nutrition.LEMON_SLICE);
-    public static final RegistryObject<Item> CANDIED_LEMON = registerFood("candied_lemon",
-        Nutrition.CANDIED_LEMON);
-    public static final RegistryObject<Item> LEMON_PIE = registerBlock(CRBlocks.LEMON_PIE);
-    public static final RegistryObject<Item> LEMON_PIE_SLICE = registerFood("lemon_pie_slice",
-        Nutrition.LEMON_PIE_SLICE);
-    public static final RegistryObject<Item> LEMON_POPSICLE = registerFood("lemon_popsicle",
-        Nutrition.LEMON_POPSICLE);
-    public static final RegistryObject<Item> LEMON_COOKIE = registerFood("lemon_cookie",
-        Nutrition.LEMON_COOKIE);
-    public static final RegistryObject<Item> HONEY_LEMON_CHICKEN = registerFood("honey_lemon_chicken",
-        Nutrition.HONEY_LEMON_CHICKEN);
+    public static final RegistryObject<Item> LIME_SEEDS = registerBlock("lime_seeds",
+        CRBlocks.SMALL_LIME_BUSH);
+    public static final RegistryObject<Item> LIME = registerFood("lime",
+        Nutrition.LIME);
+    public static final RegistryObject<Item> LIME_SLICE = registerFood("lime_slice",
+        Nutrition.LIME_SLICE);
+    public static final RegistryObject<Item> CANDIED_LIME = registerFood("candied_lime",
+        Nutrition.CANDIED_LIME);
+    public static final RegistryObject<Item> LIME_PIE = registerBlock(CRBlocks.LIME_PIE);
+    public static final RegistryObject<Item> LIME_PIE_SLICE = registerFood("lime_pie_slice",
+        Nutrition.LIME_PIE_SLICE);
+    public static final RegistryObject<Item> LIME_POPSICLE = registerFood("lime_popsicle",
+        Nutrition.LIME_POPSICLE);
+    public static final RegistryObject<Item> LIME_COOKIE = registerFood("lime_cookie",
+        Nutrition.LIME_COOKIE);
+    public static final RegistryObject<Item> HONEY_LIME_CHICKEN = registerFood("honey_lime_chicken",
+        Nutrition.HONEY_LIME_CHICKEN);
     public static final RegistryObject<Item> MEDITERRANEAN_SALMON = registerFood("mediterranean_salmon",
         Nutrition.MEDITERRANEAN_SALMON);
     public static final RegistryObject<Item> SALMON_TARTARE = registerFood("salmon_tartare",
@@ -73,10 +73,10 @@ public class CRItems extends ModItems {
         Nutrition.POTATO_FRITTERS);
     public static final RegistryObject<Item> COD_CEVICHE = registerFood("cod_ceviche",
         Nutrition.COD_CEVICHE);
-    public static final RegistryObject<Item> LEMONADE = registerItem("lemonade", () ->
-        new DrinkableItem(drinkItem().food(Nutrition.LEMONADE), false, false));
-    public static final RegistryObject<Item> BERRY_LEMONADE = registerItem("berry_lemonade", () ->
-        new DrinkableItem(drinkItem().food(Nutrition.BERRY_LEMONADE), false, false));
+    public static final RegistryObject<Item> LIMEADE = registerItem("limeade", () ->
+        new DrinkableItem(drinkItem().food(Nutrition.LIMEADE), false, false));
+    public static final RegistryObject<Item> BERRY_LIMEADE = registerItem("berry_limeade", () ->
+        new DrinkableItem(drinkItem().food(Nutrition.BERRY_LIMEADE), false, false));
 
     // Sets Creative Tab
     public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {

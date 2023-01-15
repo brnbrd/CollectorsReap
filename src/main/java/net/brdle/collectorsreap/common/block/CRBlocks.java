@@ -15,7 +15,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.PieBlock;
-import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import java.util.function.Supplier;
 
@@ -30,18 +29,16 @@ public class CRBlocks {
         () -> new PortobelloColonyBlock(copy(ModBlocks.BROWN_MUSHROOM_COLONY), CRItems.PORTOBELLO));
     public static final RegistryObject<Block> PORTOBELLO_QUICHE = registerBlock("portobello_quiche",
         () -> new PieBlock(copy(ModBlocks.APPLE_PIE), CRItems.PORTOBELLO_QUICHE_SLICE));
-    public static final RegistryObject<Block> LEMON_PIE = registerBlock("lemon_pie",
-        () -> new PieBlock(copy(ModBlocks.APPLE_PIE), CRItems.LEMON_PIE_SLICE));
-    public static final RegistryObject<Block> LEMON_BUSH = registerBlock("lemon_bush",
-        () -> new LemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
-    public static final RegistryObject<Block> SMALL_LEMON_BUSH = registerBlock("small_lemon_bush",
-        () -> new SmallLemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
-    public static final RegistryObject<Block> MEDIUM_LEMON_BUSH = registerBlock("medium_lemon_bush",
-        () -> new MediumLemonBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
-    public static final RegistryObject<Block> WILD_POMEGRANATE_BUSH = registerBlock("wild_pomegranate_bush",
-        () -> new WildPomegranateBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
-    public static final RegistryObject<Block> SMALL_POMEGRANATE_BUSH = registerBlock("small_pomegranate_bush",
-        () -> new SmallPomegranateBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> LIME_PIE = registerBlock("lime_pie",
+        () -> new PieBlock(copy(ModBlocks.APPLE_PIE), CRItems.LIME_PIE_SLICE));
+    public static final RegistryObject<Block> LIME_BUSH = registerBlock("lime_bush",
+        () -> new LimeBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> SMALL_LIME_BUSH = registerBlock("small_lime_bush",
+        () -> new SmallLimeBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> MEDIUM_LIME_BUSH = registerBlock("medium_lime_bush",
+        () -> new MediumLimeBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> POMEGRANATE_BUSH = registerBlock("pomegranate_bush",
+        () -> new PomegranateBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
 
     public static RegistryObject<Block> registerBlock(String name, Supplier<Block> block) {
         return BLOCKS.register(name, block);

@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_lemon_or_slice": {
+          "has_lime_or_slice": {
             "conditions": {
               "items": [
                 {
-                  "tag": "collectorsreap:lemon_or_slice"
+                  "tag": "collectorsreap:lime_or_slice"
                 }
               ]
             },
@@ -23,7 +23,7 @@
         },
         "requirements": [
           [
-            "has_lemon_or_slice",
+            "has_lime_or_slice",
             "has_the_recipe"
           ]
         ],

@@ -22,22 +22,22 @@ public class CRItemTagProvider extends ItemTagsProvider {
 	protected void addTags() {
 		this.tag(CRItemTags.FRUITS_POMEGRANATE)
 			.add(CRItems.POMEGRANATE.get());
-		this.tag(CRItemTags.FRUITS_LEMON)
-			.add(CRItems.LEMON.get());
-		this.tag(CRItemTags.LEMON_OR_SLICE)
-			.addTag(CRItemTags.FRUITS_LEMON)
-			.add(CRItems.LEMON_SLICE.get());
+		this.tag(CRItemTags.FRUITS_LIME)
+			.add(CRItems.LIME.get());
+		this.tag(CRItemTags.LIME_OR_SLICE)
+			.addTag(CRItemTags.FRUITS_LIME)
+			.add(CRItems.LIME_SLICE.get());
 		this.tag(CRItemTags.FRUITS_CITRUS)
-			.addTag(CRItemTags.FRUITS_LEMON);
+			.addTag(CRItemTags.FRUITS_LIME);
 		this.tag(CRItemTags.FRUITS)
 			.addTag(CRItemTags.FRUITS_POMEGRANATE)
-			.addTag(CRItemTags.FRUITS_LEMON);
-		this.tag(CRItemTags.SEEDS_LEMON)
-			.add(CRItems.LEMON_SEEDS.get());
+			.addTag(CRItemTags.FRUITS_LIME);
+		this.tag(CRItemTags.SEEDS_LIME)
+			.add(CRItems.LIME_SEEDS.get());
 		this.tag(CRItemTags.SEEDS_POMEGRANATE)
 			.add(CRItems.POMEGRANATE_SEEDS.get());
 		this.tag(Tags.Items.SEEDS)
-			.addTag(CRItemTags.SEEDS_LEMON)
+			.addTag(CRItemTags.SEEDS_LIME)
 			.addTag(CRItemTags.SEEDS_POMEGRANATE);
 		this.tag(CRItemTags.MUSHROOMS_PORTOBELLO)
 			.add(CRItems.PORTOBELLO.get());

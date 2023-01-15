@@ -21,12 +21,11 @@ public class CRLanguageProvider extends LanguageProvider {
         addBlock(CRBlocks.PORTOBELLO, "Portobello");
         addBlock(CRBlocks.PORTOBELLO_COLONY, "Portobello Colony");
         addBlock(CRBlocks.PORTOBELLO_QUICHE, "Portobello Quiche");
-        addBlock(CRBlocks.LEMON_PIE, "Lemon Pie");
-        addBlock(CRBlocks.LEMON_BUSH, "Lemon Bush");
-        addBlock(CRBlocks.SMALL_LEMON_BUSH, "Lemon Seeds");
-        addBlock(CRBlocks.MEDIUM_LEMON_BUSH, "Lemon Bush");
-        addBlock(CRBlocks.WILD_POMEGRANATE_BUSH, "Wild Pomegranate Bush");
-        addBlock(CRBlocks.SMALL_POMEGRANATE_BUSH, "Pomegranate Seeds");
+        addBlock(CRBlocks.LIME_PIE, "Lime Pie");
+        addBlock(CRBlocks.LIME_BUSH, "Lime Bush");
+        addBlock(CRBlocks.SMALL_LIME_BUSH, "Lime Seeds");
+        addBlock(CRBlocks.MEDIUM_LIME_BUSH, "Lime Bush");
+        addBlock(CRBlocks.POMEGRANATE_BUSH, "Pomegranate Seeds");
     }
 
     private void addItems() {
@@ -38,19 +37,19 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.PORTOBELLO_WRAP, "Veggie Wrap");
         addItem(CRItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
         addItem(CRItems.PORTOBELLO_QUICHE_SLICE, "Slice of Portobello Quiche");
-        addItem(CRItems.LEMON_PIE_SLICE, "Slice of Lemon Pie");
-        addItem(CRItems.LEMON, "Lemon");
-        addItem(CRItems.LEMON_SLICE, "Lemon Slice");
-        addItem(CRItems.LEMON_POPSICLE, "Lemon Popsicle");
-        addItem(CRItems.LEMON_COOKIE, "Lemon Cookie");
-        addItem(CRItems.CANDIED_LEMON, "Candied Lemon");
-        addItem(CRItems.HONEY_LEMON_CHICKEN, "Honey Lemon Chicken");
+        addItem(CRItems.LIME_PIE_SLICE, "Slice of Lime Pie");
+        addItem(CRItems.LIME, "Lime");
+        addItem(CRItems.LIME_SLICE, "Lime Slice");
+        addItem(CRItems.LIME_POPSICLE, "Lime Popsicle");
+        addItem(CRItems.LIME_COOKIE, "Lime Cookie");
+        addItem(CRItems.CANDIED_LIME, "Candied Lime");
+        addItem(CRItems.HONEY_LIME_CHICKEN, "Honey Lime Chicken");
         addItem(CRItems.COD_CEVICHE, "Cod Ceviche");
         addItem(CRItems.MEDITERRANEAN_SALMON, "Mediterranean Salmon");
         addItem(CRItems.SALMON_TARTARE, "Salmon Tartare");
         addItem(CRItems.POTATO_FRITTERS, "Potato Fritters");
-        addItem(CRItems.LEMONADE, "Lemonade");
-        addItem(CRItems.BERRY_LEMONADE, "Berry Lemonade");
+        addItem(CRItems.LIMEADE, "Limeade");
+        addItem(CRItems.BERRY_LIMEADE, "Berry Limeade");
         addItem(CRItems.POMEGRANATE, "Pomegranate");
     }
 }

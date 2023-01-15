@@ -16,7 +16,7 @@ public class CRBiomeTagProvider extends BiomeTagsProvider {
 	@Override
 	protected void addTags() {
 		this.tag(CRBiomeTags.PORTOBELLO_SPAWNS).add(Biomes.MEADOW);
-		this.tag(CRBiomeTags.LEMON_SPAWNS).add(Biomes.FLOWER_FOREST);
+		this.tag(CRBiomeTags.LIME_SPAWNS).add(Biomes.FLOWER_FOREST);
 		this.tag(CRBiomeTags.POMEGRANATE_SPAWNS)
 			.add(Biomes.WARPED_FOREST)
 			.add(Biomes.CRIMSON_FOREST);

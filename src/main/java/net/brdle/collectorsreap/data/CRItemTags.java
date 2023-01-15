@@ -12,12 +12,12 @@ public class CRItemTags {
 	public static final TagKey<Item> FRUITS_CITRUS = forge("fruits/citrus");
 	public static final TagKey<Item> FRUITS_POMEGRANATE = forge("fruits/pomegranate");
 	public static final TagKey<Item> SEEDS_POMEGRANATE = forge("seeds/pomegranate");
-	public static final TagKey<Item> FRUITS_LEMON = forge("fruits/lemon");
-	public static final TagKey<Item> SEEDS_LEMON = forge("seeds/lemon");
+	public static final TagKey<Item> FRUITS_LIME = forge("fruits/lime");
+	public static final TagKey<Item> SEEDS_LIME = forge("seeds/lime");
 	public static final TagKey<Item> MUSHROOMS_PORTOBELLO = forge("mushrooms/portobello");
 
 	// VD
-	public static final TagKey<Item> LEMON_OR_SLICE = vd("lemon_or_slice");
+	public static final TagKey<Item> LIME_OR_SLICE = vd("lime_or_slice");
 
 	private static TagKey<Item> vd(String name) {
 		return Util.it(CollectorsReap.MODID, name);

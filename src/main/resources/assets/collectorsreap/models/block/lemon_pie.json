@@ -1,9 +1,0 @@
-{
-  "parent": "farmersdelight:block/pie",
-  "textures": {
-    "particle": "collectorsreap:block/lemon_pie_top",
-    "bottom": "collectorsreap:block/lemon_pie_bottom",
-    "side": "collectorsreap:block/lemon_pie_side",
-    "top": "collectorsreap:block/lemon_pie_top"
-  }
-}

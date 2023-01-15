@@ -27,7 +27,7 @@ public class CRItemModelProvider extends ItemModelProvider {
                 itemGeneratedModel(CRItems.PORTOBELLO.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO)));
             } else if (entry == CRItems.PORTOBELLO_COLONY) {
                 itemGeneratedModel(CRItems.PORTOBELLO_COLONY.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO_COLONY) + "_stage3"));
-            } else if (entry == CRItems.PORTOBELLO_QUICHE || entry == CRItems.LEMON_PIE || entry == CRItems.LEMON_SEEDS || entry == CRItems.POMEGRANATE_SEEDS) {
+            } else if (entry == CRItems.PORTOBELLO_QUICHE || entry == CRItems.LIME_PIE || entry == CRItems.LIME_SEEDS || entry == CRItems.POMEGRANATE_SEEDS) {
                 basicItem(id);
             } else if (entry.get() instanceof BlockItem && !(entry.get() instanceof ItemNameBlockItem)) {
                 withExistingParent(id.getPath(), Util.rl(this.modid, "block/" + id.getPath()));
