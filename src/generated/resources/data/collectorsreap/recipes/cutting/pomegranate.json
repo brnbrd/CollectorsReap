@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate_seeds"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "collectorsreap:pomegranate"
+          }
+        ],
+        "result": [
+          {
+            "count": 3,
+            "item": "collectorsreap:pomegranate_seeds"
+          },
+          {
+            "chance": 0.25,
+            "item": "minecraft:red_dye"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}
