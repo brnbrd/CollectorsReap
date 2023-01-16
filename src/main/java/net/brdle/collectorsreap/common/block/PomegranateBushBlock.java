@@ -83,7 +83,7 @@ public class PomegranateBushBlock extends BushBlock implements BonemealableBlock
 		boolean flag = i == MAX_AGE;
 		if (!flag && pPlayer.getItemInHand(pHand).is(Items.BONE_MEAL)) {
 			return InteractionResult.PASS;
-		} else if (i > 1) {
+		} else if (i > 3) {
 			int j = 1 + pLevel.random.nextInt(2);
 			popResource(pLevel, pPos, new ItemStack(CRItems.POMEGRANATE.get(), j + (flag ? 1 : 0)));
 			pLevel.playSound(null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F);
