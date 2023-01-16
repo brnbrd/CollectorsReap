@@ -32,10 +32,6 @@ public class PortobelloColonyBlock extends MushroomColonyBlock {
 	}
 
 	@Override
-	public void performBonemeal(@NotNull ServerLevel level, @NotNull RandomSource random, @NotNull BlockPos pos, @NotNull BlockState state) {
-	}
-
-	@Override
 	public boolean isValidBonemealTarget(@NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull BlockState state, boolean isClient) {
 		return false;
 	}

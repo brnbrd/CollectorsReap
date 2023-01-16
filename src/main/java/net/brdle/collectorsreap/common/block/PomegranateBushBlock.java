@@ -1,13 +1,19 @@
 package net.brdle.collectorsreap.common.block;
 
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -26,6 +32,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 
 public class PomegranateBushBlock extends BushBlock implements BonemealableBlock {
@@ -50,7 +57,8 @@ public class PomegranateBushBlock extends BushBlock implements BonemealableBlock
 		if (pState.getValue(AGE) == 0) {
 			return SAPLING_SHAPE;
 		} else {
-			return pState.getValue(AGE) < 3 ? MID_GROWTH_SHAPE : super.getShape(pState, pLevel, pPos, pContext);
+			return pState.getValue(AGE) < 2 ? MID_GROWTH_SHAPE :
+				super.getShape(pState, pLevel, pPos, pContext);
 		}
 	}
 
@@ -73,21 +81,23 @@ public class PomegranateBushBlock extends BushBlock implements BonemealableBlock
 			pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(blockstate));
 			ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
 		}
+	}
 
+	@Override
+	protected boolean mayPlaceOn(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos) {
+		return pState.is(BlockTags.DIRT) || pState.is(CRBlockTags.POMEGRANATE_FAST_ON);
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull InteractionResult use(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
-		int i = pState.getValue(AGE);
-		boolean flag = i == MAX_AGE;
-		if (!flag && pPlayer.getItemInHand(pHand).is(Items.BONE_MEAL)) {
-			return InteractionResult.PASS;
-		} else if (i > 3) {
-			int j = 1 + pLevel.random.nextInt(2);
-			popResource(pLevel, pPos, new ItemStack(CRItems.POMEGRANATE.get(), j + (flag ? 1 : 0)));
+		if (pState.getValue(AGE) == MAX_AGE) {
+			if (!pPlayer.getItemInHand(pHand).is(Tags.Items.SHEARS)) {
+				pPlayer.hurt(DamageSource.SWEET_BERRY_BUSH, 1.0F);
+			}
+			popResource(pLevel, pPos, new ItemStack(CRItems.POMEGRANATE.get(), 1 + pLevel.random.nextInt(2)));
 			pLevel.playSound(null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F);
-			BlockState blockstate = pState.setValue(AGE, 1);
+			BlockState blockstate = pState.setValue(AGE, 2);
 			pLevel.setBlock(pPos, blockstate, 2);
 			pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
 			return InteractionResult.sidedSuccess(pLevel.isClientSide);
@@ -106,17 +116,36 @@ public class PomegranateBushBlock extends BushBlock implements BonemealableBlock
 	 */
 	@Override
 	public boolean isValidBonemealTarget(@NotNull BlockGetter pLevel, @NotNull BlockPos pPos, BlockState pState, boolean pIsClient) {
-		return pState.getValue(AGE) < MAX_AGE;
+		return false;
 	}
 
 	@Override
 	public boolean isBonemealSuccess(@NotNull Level pLevel, @NotNull RandomSource pRandom, @NotNull BlockPos pPos, @NotNull BlockState pState) {
-		return true;
+		return false;
 	}
 
 	@Override
 	public void performBonemeal(ServerLevel pLevel, @NotNull RandomSource pRandom, @NotNull BlockPos pPos, BlockState pState) {
-		int i = Math.min(MAX_AGE, pState.getValue(AGE) + 1);
-		pLevel.setBlock(pPos, pState.setValue(AGE, i), 2);
+		pLevel.setBlock(pPos, pState.setValue(AGE, Math.min(MAX_AGE, pState.getValue(AGE) + 1)), 2);
+	}
+
+	@Override
+	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
+		if (!pLevel.isClientSide() &&
+			e instanceof Bee &&
+			pState.getValue(AGE) == MAX_AGE - 1 &&
+			pLevel.getRandom().nextInt(150) == 0) {
+			this.performBonemeal((ServerLevel) pLevel, pLevel.getRandom(), pPos, pState);
+		}
+	}
+
+	@Override
+	public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+		return 60;
+	}
+
+	@Override
+	public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+		return 30;
 	}
 }

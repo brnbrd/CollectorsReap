@@ -174,7 +174,6 @@ public class LimeBushBlock extends CropBlock {
 
 	@Override
 	public void performBonemeal(ServerLevel pLevel, @NotNull RandomSource pRandom, @NotNull BlockPos pPos, BlockState pState) {
-		CollectorsReap.getLogger().warn("Performing bonemeal at " + pPos.toShortString());
 		pLevel.setBlockAndUpdate(pPos, pState.setValue(AGE, Math.min(this.getMaxAge(), pState.getValue(AGE) + 1)));
 	}
 

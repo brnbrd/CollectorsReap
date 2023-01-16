@@ -15,6 +15,7 @@ import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+import vectorwing.farmersdelight.common.item.MushroomColonyItem;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.function.Supplier;
@@ -23,7 +24,9 @@ public class CRItems extends ModItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CollectorsReap.MODID);
 
-    public static final RegistryObject<Item> PORTOBELLO_COLONY = registerBlock(CRBlocks.PORTOBELLO_COLONY);
+    public static final RegistryObject<Item> PORTOBELLO_COLONY = registerItem("portobello_colony",
+        () -> new MushroomColonyItem(CRBlocks.PORTOBELLO_COLONY.get(),
+        (new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
     public static final RegistryObject<Item> PORTOBELLO = registerBlock(CRBlocks.PORTOBELLO);
     public static final RegistryObject<Item> BAKED_PORTOBELLO_CAP = registerFood("baked_portobello_cap",
         Nutrition.BAKED_PORTOBELLO_CAP);
@@ -42,8 +45,11 @@ public class CRItems extends ModItems {
     public static final RegistryObject<Item> PORTOBELLO_QUICHE = registerBlock(CRBlocks.PORTOBELLO_QUICHE);
     public static final RegistryObject<Item> PORTOBELLO_QUICHE_SLICE = registerFood("portobello_quiche_slice",
         Nutrition.PORTOBELLO_QUICHE_SLICE);
-    public static final RegistryObject<Item> POMEGRANATE = registerFood("pomegranate",
-        Nutrition.POMEGRANATE);
+    public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate",
+        () -> new Item((new Item.Properties()
+            .tab(FarmersDelight.CREATIVE_TAB))));
+    public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",
+        Nutrition.POMEGRANATE_SLICE);
     public static final RegistryObject<Item> POMEGRANATE_SEEDS = registerItem("pomegranate_seeds",
         () -> new BlockItem(CRBlocks.POMEGRANATE_BUSH.get(), (new Item.Properties()
             .tab(FarmersDelight.CREATIVE_TAB)

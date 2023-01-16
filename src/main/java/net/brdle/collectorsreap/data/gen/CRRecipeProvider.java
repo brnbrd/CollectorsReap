@@ -46,7 +46,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             "cutting/lime_slice", finished, enabled("lime"), enabled("lime_slice"));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LIME_PIE_SLICE.get(), 4),
             "cutting/lime_pie", finished, enabled("lime_pie"), enabled("lime_pie"));
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.POMEGRANATE_SEEDS.get(), 3)
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.POMEGRANATE_SLICE.get(), 4)
             .addResultWithChance(Items.RED_DYE, 0.25f),
             "cutting/pomegranate", finished, enabled("pomegranate"), enabled("pomegranate_seeds"));
 
@@ -110,6 +110,14 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             "food/candied_lime", finished, enabled("candied_lime"));
 
         // Crafting
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.POMEGRANATE_SEEDS.get(), 8)
+                .requires(CRItems.POMEGRANATE.get())
+                .unlockedBy("has_pomegranate", has(CRItems.POMEGRANATE.get())),
+            "pomegranate_seeds_from_pomegranate", finished, enabled("pomegranate"), enabled("pomegranate_seeds"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.POMEGRANATE_SEEDS.get(), 2)
+                .requires(CRItems.POMEGRANATE_SLICE.get())
+                .unlockedBy("has_pomegranate_slice", has(CRItems.POMEGRANATE_SLICE.get())),
+            "pomegranate_seeds_from_pomegranate_slice", finished, enabled("pomegranate"), enabled("pomegranate_slice"), enabled("pomegranate_seeds"));
         wrap(ShapelessRecipeBuilder.shapeless(CRItems.LIME_SEEDS.get(), 2)
                 .requires(CRItems.LIME.get())
                 .unlockedBy("has_lime", has(CRItems.LIME.get())),

@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.data.gen;
 
 import net.brdle.collectorsreap.CollectorsReap;
+import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.data.DataGenerator;
@@ -33,11 +34,17 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(Blocks.ROOTED_DIRT)
 			.add(Blocks.MYCELIUM);
 
+		this.tag(CRBlockTags.POMEGRANATE_FAST_ON)
+			.addTag(BlockTags.NYLIUM)
+			.addOptionalTag(Util.rl("nethersdelight", "rich_soul_soil"));
+
 		// Minecraft
 		this.tag(BlockTags.BEE_GROWABLES)
-			.add(CRBlocks.LIME_BUSH.get());
+			.add(CRBlocks.LIME_BUSH.get())
+			.add(CRBlocks.POMEGRANATE_BUSH.get());
 		this.tag(BlockTags.FLOWERS)
-			.add(CRBlocks.LIME_BUSH.get());
+			.add(CRBlocks.LIME_BUSH.get())
+			.add(CRBlocks.POMEGRANATE_BUSH.get());
 	}
 
 	/**

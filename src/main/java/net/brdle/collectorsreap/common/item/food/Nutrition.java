@@ -27,7 +27,7 @@ public class Nutrition {
         .nutrition(3).saturationMod(1.0F).fast().build();
     public static final FoodProperties COD_CEVICHE = (new FoodProperties.Builder())
         .nutrition(11).saturationMod(0.73F).build();
-    public static final FoodProperties POMEGRANATE = (new FoodProperties.Builder())
+    public static final FoodProperties POMEGRANATE_SLICE = (new FoodProperties.Builder())
         .nutrition(4).saturationMod(0.5F).build();
     public static final FoodProperties POMEGRANATE_SEEDS = (new FoodProperties.Builder())
         .nutrition(2).saturationMod(0.5F).build();
