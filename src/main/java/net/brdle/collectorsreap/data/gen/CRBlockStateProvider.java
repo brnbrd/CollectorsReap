@@ -14,7 +14,9 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
+import vectorwing.farmersdelight.data.BlockStates;
 
 public class CRBlockStateProvider extends BlockStateProvider {
     public CRBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
@@ -35,6 +37,12 @@ public class CRBlockStateProvider extends BlockStateProvider {
                 .texture("plant", CRBlockStateProvider.resourceBlock("medium_lime_bush_plant"))
                 .texture("particle", CRBlockStateProvider.resourceBlock("medium_lime_bush_plant"))
                 .renderType("cutout"));
+        this.crateBlock(CRBlocks.LIME_CRATE.get(), "lime");
+        this.crateBlock(CRBlocks.POMEGRANATE_CRATE.get(), "pomegranate");
+    }
+
+    public void crateBlock(Block block, String cropName) {
+        this.simpleBlock(block, this.models().cubeBottomTop(Util.name(block), resourceBlock(cropName + "_crate_side"), Util.rl(FarmersDelight.MODID, "block/crate_bottom"), resourceBlock(cropName + "_crate_top")));
     }
 
     // Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java

@@ -83,6 +83,8 @@ public class CRItems extends ModItems {
         new DrinkableItem(drinkItem().food(Nutrition.LIMEADE), false, false));
     public static final RegistryObject<Item> BERRY_LIMEADE = registerItem("berry_limeade", () ->
         new DrinkableItem(drinkItem().food(Nutrition.BERRY_LIMEADE), false, false));
+    public static final RegistryObject<Item> LIME_CRATE = registerBlock(CRBlocks.LIME_CRATE);
+    public static final RegistryObject<Item> POMEGRANATE_CRATE = registerBlock(CRBlocks.POMEGRANATE_CRATE);
 
     // Sets Creative Tab
     public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {

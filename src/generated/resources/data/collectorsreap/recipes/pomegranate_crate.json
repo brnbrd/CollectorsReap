@@ -1,0 +1,57 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate_crate"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "collectorsreap:pomegranate"
+          },
+          {
+            "item": "collectorsreap:pomegranate"
+          },
+          {
+            "item": "collectorsreap:pomegranate"
+          },
+          {
+            "item": "collectorsreap:pomegranate"
+          },
+          {
+            "item": "collectorsreap:pomegranate"
+          },
+          {
+            "item": "collectorsreap:pomegranate"
+          },
+          {
+            "item": "collectorsreap:pomegranate"
+          },
+          {
+            "item": "collectorsreap:pomegranate"
+          },
+          {
+            "item": "collectorsreap:pomegranate"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:pomegranate_crate"
+        }
+      }
+    }
+  ]
+}

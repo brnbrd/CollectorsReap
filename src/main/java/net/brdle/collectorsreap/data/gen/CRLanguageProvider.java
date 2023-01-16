@@ -26,6 +26,8 @@ public class CRLanguageProvider extends LanguageProvider {
         addBlock(CRBlocks.SMALL_LIME_BUSH, "Lime Seeds");
         addBlock(CRBlocks.MEDIUM_LIME_BUSH, "Lime Bush");
         addBlock(CRBlocks.POMEGRANATE_BUSH, "Pomegranate Seeds");
+        addBlock(CRBlocks.LIME_CRATE, "Lime Crate");
+        addBlock(CRBlocks.POMEGRANATE_CRATE, "Pomegranate Crate");
     }
 
     private void addItems() {

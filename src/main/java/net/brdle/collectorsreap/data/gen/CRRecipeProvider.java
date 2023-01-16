@@ -110,6 +110,22 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             "food/candied_lime", finished, enabled("candied_lime"));
 
         // Crafting
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.LIME.get(), 9)
+                .requires(CRItems.LIME_CRATE.get())
+                .unlockedBy("has_lime_crate", has(CRItems.LIME_CRATE.get())),
+            "lime_from_lime_crate", finished, enabled("lime"), enabled("lime_crate"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.LIME_CRATE.get())
+                .requires(CRItems.LIME.get(), 9)
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
+            "lime_crate", finished, enabled("lime"), enabled("lime_crate"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.POMEGRANATE.get(), 9)
+                .requires(CRItems.POMEGRANATE_CRATE.get())
+                .unlockedBy("has_pomegranate_crate", has(CRItems.POMEGRANATE_CRATE.get())),
+            "pomegranate_from_pomegranate_crate", finished, enabled("pomegranate"), enabled("pomegranate_crate"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.POMEGRANATE_CRATE.get())
+                .requires(CRItems.POMEGRANATE.get(), 9)
+                .unlockedBy("has_pomegranate", has(CRItems.POMEGRANATE.get())),
+            "pomegranate_crate", finished, enabled("pomegranate"), enabled("pomegranate_crate"));
         wrap(ShapelessRecipeBuilder.shapeless(CRItems.POMEGRANATE_SEEDS.get(), 8)
                 .requires(CRItems.POMEGRANATE.get())
                 .unlockedBy("has_pomegranate", has(CRItems.POMEGRANATE.get())),

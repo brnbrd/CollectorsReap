@@ -1,0 +1,57 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_crate"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "collectorsreap:lime"
+          },
+          {
+            "item": "collectorsreap:lime"
+          },
+          {
+            "item": "collectorsreap:lime"
+          },
+          {
+            "item": "collectorsreap:lime"
+          },
+          {
+            "item": "collectorsreap:lime"
+          },
+          {
+            "item": "collectorsreap:lime"
+          },
+          {
+            "item": "collectorsreap:lime"
+          },
+          {
+            "item": "collectorsreap:lime"
+          },
+          {
+            "item": "collectorsreap:lime"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:lime_crate"
+        }
+      }
+    }
+  ]
+}

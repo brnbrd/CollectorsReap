@@ -39,6 +39,10 @@ public class CRBlocks {
         () -> new MediumLimeBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> POMEGRANATE_BUSH = registerBlock("pomegranate_bush",
         () -> new PomegranateBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> LIME_CRATE = BLOCKS.register("lime_crate",
+        () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> POMEGRANATE_CRATE = BLOCKS.register("pomegranate_crate",
+        () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     public static RegistryObject<Block> registerBlock(String name, Supplier<Block> block) {
         return BLOCKS.register(name, block);
