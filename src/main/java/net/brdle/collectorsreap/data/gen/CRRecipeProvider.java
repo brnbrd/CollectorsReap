@@ -46,6 +46,9 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             "cutting/lime_slice", finished, enabled("lime"), enabled("lime_slice"));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LIME_PIE_SLICE.get(), 4),
             "cutting/lime_pie", finished, enabled("lime_pie"), enabled("lime_pie"));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.POMEGRANATE_SEEDS.get(), 3)
+            .addResultWithChance(Items.RED_DYE, 0.25f),
+            "cutting/pomegranate", finished, enabled("pomegranate"), enabled("pomegranate_seeds"));
 
         // Cooking Pot
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PORTOBELLO_RISOTTO.get(), 1, 200, 1.0F, Items.BOWL)
