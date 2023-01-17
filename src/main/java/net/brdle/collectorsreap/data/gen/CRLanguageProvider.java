@@ -45,7 +45,7 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.LIME_POPSICLE, "Lime Popsicle");
         addItem(CRItems.LIME_COOKIE, "Lime Cookie");
         addItem(CRItems.CANDIED_LIME, "Candied Lime");
-        addItem(CRItems.HONEY_LIME_CHICKEN, "Honey Lemon Chicken");
+        addItem(CRItems.HONEY_LIME_CHICKEN, "Honey Lime Chicken");
         addItem(CRItems.COD_CEVICHE, "Cod Ceviche");
         addItem(CRItems.MEDITERRANEAN_SALMON, "Mediterranean Salmon");
         addItem(CRItems.SALMON_TARTARE, "Salmon Tartare");

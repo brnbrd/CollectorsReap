@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.common.world;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.block.CRBlocks;
+import net.brdle.collectorsreap.common.block.PomegranateBushBlock;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.Holder;
@@ -11,8 +12,10 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.RandomPatchFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
@@ -60,12 +63,18 @@ public class CRWorldGen extends WildCropGeneration {
 
 		FEATURE_PATCH_WILD_POMEGRANATE = register(Util.rl(CollectorsReap.MODID, "patch_wild_pomegranate"),
 			RandomPatchFeature.RANDOM_PATCH,
-			randomPatchConfig(CRBlocks.POMEGRANATE_BUSH.get(), 10, 5, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.NYLIUM))
+			pomegranateBushConfig(CRBlocks.POMEGRANATE_BUSH.get()
+				.defaultBlockState().setValue(PomegranateBushBlock.AGE, PomegranateBushBlock.MAX_AGE),
+				10, 10, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.NYLIUM))
 		);
 
 		PATCH_WILD_POMEGRANATE = registerConditionalPlacement(Util.rl(CollectorsReap.MODID, "patch_wild_pomegranate"),
 			FEATURE_PATCH_WILD_POMEGRANATE,
 			CRConfig.verify("pomegranate") && CRConfig.CHANCE_WILD_POMEGRANATE.get() > 0, RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_WILD_POMEGRANATE.get()), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+	}
+
+	public static RandomPatchConfiguration pomegranateBushConfig(BlockState block, int tries, int xzSpread, BlockPredicate plantedOn) {
+		return new RandomPatchConfiguration(tries, xzSpread, 3, PlacementUtils.filtered(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(block)), BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE, plantedOn)));
 	}
 
 	public static RandomPatchConfiguration limeBushConfig(Block block, int tries, int xzSpread, BlockPredicate plantedOn) {
