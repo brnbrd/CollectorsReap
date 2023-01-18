@@ -62,10 +62,18 @@ public class SmallPomegranateBushBlock extends BushBlock implements Bonemealable
 		return true;
 	}
 
+	// Can grow in overworld and nether (with boost). Receives boost from block below.
 	@SuppressWarnings("deprecation")
 	@Override
 	public void randomTick(@NotNull BlockState pState, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
-		if (ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt(5) == 0)){
+		int growthRate = 13;
+		if (pLevel.getBlockState(pPos.below()).is(CRBlockTags.POMEGRANATE_FAST_ON)) {
+			growthRate -= 3;
+		}
+		if (pLevel.dimension() == Level.NETHER) {
+			growthRate -= 4;
+		}
+		if (ForgeHooks.onCropsGrowPre(pLevel, pPos, pState, pRandom.nextInt(growthRate) == 0)){
 			this.performBonemeal(pLevel, pRandom, pPos, pState);
 			ForgeHooks.onCropsGrowPost(pLevel, pPos, pState);
 		}

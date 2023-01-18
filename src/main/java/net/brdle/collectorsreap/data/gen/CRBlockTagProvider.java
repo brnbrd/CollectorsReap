@@ -33,7 +33,6 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(Blocks.DIRT)
 			.add(Blocks.ROOTED_DIRT)
 			.add(Blocks.MYCELIUM);
-
 		this.tag(CRBlockTags.POMEGRANATE_FAST_ON)
 			.addTag(BlockTags.NYLIUM)
 			.addOptionalTag(Util.rl("nethersdelight", "rich_soul_soil"));

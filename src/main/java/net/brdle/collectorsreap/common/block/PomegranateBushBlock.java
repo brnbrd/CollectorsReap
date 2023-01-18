@@ -44,9 +44,7 @@ public class PomegranateBushBlock extends CropBlock {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
 	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
 	private static final VoxelShape SHAPE_LOWER = Block.box(5.0D, 0.0D, 5.0D, 11.0D, 16.0D, 11.0D);
-	//Shapes.or(Block.box(0.0D, 11.0D, 0.0D, 16.0D, 24.0D, 16.0D), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 11.0D, 10.0D));
 	private static final VoxelShape SHAPE_UPPER = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
-	//Shapes.or(Block.box(0.0D, -5.0D, 0.0D, 16.0D, 8.0D, 16.0D), Block.box(6.0D, -16.0D, 6.0D, 10.0D, -5.0D, 10.0D));
 
 	public PomegranateBushBlock(Properties pProperties) {
 		super(pProperties);
@@ -126,12 +124,20 @@ public class PomegranateBushBlock extends CropBlock {
 		return pState.getValue(AGE) < MAX_AGE;
 	}
 
+	// Can only grow to flowering if not in nether. Can receive boost from block below.
 	@Override
-	public void randomTick(BlockState state, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
-		if (state.getValue(AGE) < (MAX_AGE - 1) && state.getValue(HALF) == DoubleBlockHalf.LOWER &&
-			ForgeHooks.onCropsGrowPre(pLevel, pPos, state, pRandom.nextInt(12) == 0)) {
-			this.performBonemeal(pLevel, pRandom, pPos, state);
-			ForgeHooks.onCropsGrowPost(pLevel, pPos, state);
+	public void randomTick(@NotNull BlockState state, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
+		if (state.getValue(AGE) < MAX_AGE && state.getValue(HALF) == DoubleBlockHalf.LOWER) {
+			int growthRate = (pLevel.getBlockState(pPos.below()).is(CRBlockTags.POMEGRANATE_FAST_ON)) ? 9 : 13;
+			if (pLevel.dimension() == Level.NETHER) {
+				growthRate -= 4;
+			} else if (state.getValue(AGE) != 0) {
+				return;
+			}
+			if (ForgeHooks.onCropsGrowPre(pLevel, pPos, state, pRandom.nextInt(growthRate) == 0)) {
+				this.performBonemeal(pLevel, pRandom, pPos, state);
+				ForgeHooks.onCropsGrowPost(pLevel, pPos, state);
+			}
 		}
 	}
 
