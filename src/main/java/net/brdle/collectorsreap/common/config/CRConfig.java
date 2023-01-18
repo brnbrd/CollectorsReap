@@ -35,7 +35,7 @@ public class CRConfig {
                 .defineInRange("chance_lime_bush", 30, 0, Integer.MAX_VALUE);
             CHANCE_WILD_POMEGRANATE = builder
                 .comment("Chance of generating bushes. Smaller value = more frequent (once every ...). To disable, set the item Pomegranate to false above.")
-                .defineInRange("chance_wild_pomegranate", 30, 0, Integer.MAX_VALUE);
+                .defineInRange("chance_wild_pomegranate", 20, 0, Integer.MAX_VALUE);
         builder.pop();
     }
 

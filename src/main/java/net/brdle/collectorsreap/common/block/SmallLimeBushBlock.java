@@ -27,11 +27,13 @@ public class SmallLimeBushBlock extends BushBlock implements BonemealableBlock {
 		super(properties);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
 		return SHAPE;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull ItemStack getCloneItemStack(@NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull BlockState state) {
 		return new ItemStack(CRItems.LIME_SEEDS.get());
@@ -53,6 +55,7 @@ public class SmallLimeBushBlock extends BushBlock implements BonemealableBlock {
 		return true;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, RandomSource random) {
 		if (ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(20) == 0)) {

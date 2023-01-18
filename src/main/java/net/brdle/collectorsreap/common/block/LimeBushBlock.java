@@ -1,6 +1,5 @@
 package net.brdle.collectorsreap.common.block;
 
-import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -61,6 +60,7 @@ public class LimeBushBlock extends CropBlock {
 		return AGE;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
 		if (pContext instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee) {
@@ -109,7 +109,7 @@ public class LimeBushBlock extends CropBlock {
 
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
-		return getBaseSeedId().asItem().getDefaultInstance();
+		return new ItemStack(this.getBaseSeedId());
 	}
 
 	@Override

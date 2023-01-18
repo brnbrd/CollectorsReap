@@ -46,12 +46,11 @@ public class CRItems extends ModItems {
     public static final RegistryObject<Item> PORTOBELLO_QUICHE_SLICE = registerFood("portobello_quiche_slice",
         Nutrition.PORTOBELLO_QUICHE_SLICE);
     public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate",
-        () -> new Item((new Item.Properties()
-            .tab(FarmersDelight.CREATIVE_TAB))));
+        () -> new Item((new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
     public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",
         Nutrition.POMEGRANATE_SLICE);
     public static final RegistryObject<Item> POMEGRANATE_SEEDS = registerItem("pomegranate_seeds",
-        () -> new BlockItem(CRBlocks.POMEGRANATE_BUSH.get(), (new Item.Properties()
+        () -> new BlockItem(CRBlocks.SMALL_POMEGRANATE_BUSH.get(), (new Item.Properties()
             .tab(FarmersDelight.CREATIVE_TAB)
             .food(Nutrition.POMEGRANATE_SEEDS))));
     public static final RegistryObject<Item> LIME_SEEDS = registerBlock("lime_seeds",

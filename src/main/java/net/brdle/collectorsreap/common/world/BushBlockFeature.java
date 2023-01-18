@@ -2,6 +2,7 @@ package net.brdle.collectorsreap.common.world;
 
 import com.mojang.serialization.Codec;
 import net.brdle.collectorsreap.common.block.LimeBushBlock;
+import net.brdle.collectorsreap.common.block.PomegranateBushBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
@@ -24,13 +25,15 @@ public class BushBlockFeature extends Feature<SimpleBlockConfiguration> {
 		WorldGenLevel worldgenlevel = pContext.level();
 		BlockPos blockpos = pContext.origin();
 		BlockState blockstate = pContext.config().toPlace().getState(pContext.random(), blockpos);
-		if (blockstate.getBlock() instanceof LimeBushBlock &&
-			blockstate.canSurvive(worldgenlevel, blockpos) &&
-			worldgenlevel.isEmptyBlock(blockpos.above())) {
+		if (blockstate.canSurvive(worldgenlevel, blockpos) && worldgenlevel.isEmptyBlock(blockpos.above())) {
+			if (blockstate.getBlock() instanceof LimeBushBlock) {
 				LimeBushBlock.placeAt(worldgenlevel, blockstate, blockpos, 2);
 				return true;
-		} else {
-			return false;
+			} else if (blockstate.getBlock() instanceof PomegranateBushBlock) {
+				PomegranateBushBlock.placeAt(worldgenlevel, blockstate, blockpos, 2);
+				return true;
+			}
 		}
+		return false;
 	}
 }

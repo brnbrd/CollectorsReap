@@ -56,6 +56,7 @@ public class PortobelloBlock extends BushBlock {
 	}
 
 	// Grow into colony on Rich Soil
+	@SuppressWarnings("deprecation")
 	@Override
 	public void randomTick(@NotNull BlockState state, ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource rand) {
 		if (!level.isClientSide &&

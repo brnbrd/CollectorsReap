@@ -19,6 +19,7 @@ public class CRBlockLoot extends BlockLoot {
         this.dropSelf(CRBlocks.SMALL_LIME_BUSH.get());
         this.dropOther(CRBlocks.MEDIUM_LIME_BUSH.get(), CRItems.LIME_SEEDS.get());
         this.dropOther(CRBlocks.LIME_BUSH.get(), CRItems.LIME_SEEDS.get());
+        this.dropSelf(CRBlocks.SMALL_POMEGRANATE_BUSH.get());
         this.dropOther(CRBlocks.POMEGRANATE_BUSH.get(), CRItems.POMEGRANATE_SEEDS.get());
         this.dropSelf(CRBlocks.LIME_CRATE.get());
         this.dropSelf(CRBlocks.POMEGRANATE_CRATE.get());

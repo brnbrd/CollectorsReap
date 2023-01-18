@@ -1,6 +1,0 @@
-{
-  "type": "farmersdelight:add_features_by_filter",
-  "allowed_biomes": "#collectorsreap:pomegranate_spawns",
-  "features": "collectorsreap:patch_wild_pomegranate",
-  "step": "vegetal_decoration"
-}
