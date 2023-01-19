@@ -19,6 +19,10 @@ public class CRItemTags {
 	// VD
 	public static final TagKey<Item> LIME_OR_SLICE = vd("lime_or_slice");
 
+	// ND
+	public static final TagKey<Item> RAW_STRIDER = Util.it("nethersdelight", "raw_strider");
+	public static final TagKey<Item> PROPELPEARL = Util.it("nethersdelight", "propelpearl");
+
 	private static TagKey<Item> vd(String name) {
 		return Util.it(CollectorsReap.MODID, name);
 	}

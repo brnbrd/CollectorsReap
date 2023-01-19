@@ -92,6 +92,7 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:configured-457570:${configured_version}")
     implementation fg.deobf("curse.maven:farmers-d-398521:${farmers_delight_version}")
     implementation fg.deobf("curse.maven:farmers-respite-551453:${farmers_respite_version}")
+    implementation fg.deobf("curse.maven:nethers-delight-496394:${nethers_delight_version}")
 }
 
 jar {

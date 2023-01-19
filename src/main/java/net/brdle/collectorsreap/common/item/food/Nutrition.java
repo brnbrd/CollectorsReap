@@ -47,10 +47,30 @@ public class Nutrition {
         .nutrition(3).saturationMod(0.2F).build();
     public static final FoodProperties PORTOBELLO_BURGER = (new FoodProperties.Builder()).nutrition(12).saturationMod(0.8F)
         .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1.0F).build();
+    public static final FoodProperties CRIMSON_CARROT_ROAST = (new FoodProperties.Builder())
+        .nutrition(6).saturationMod(0.5F).build();
+    public static final FoodProperties POMEGRANATE_MUTTON = (new FoodProperties.Builder())
+        .nutrition(14).saturationMod(0.78F).build();
+    public static final FoodProperties DELUXE_SALAD = (new FoodProperties.Builder())
+        .nutrition(8).saturationMod(0.75F).build();
+    public static final FoodProperties POMEGRANATE_PORK = (new FoodProperties.Builder())
+        .nutrition(16).saturationMod(0.81F).build();
+    public static final FoodProperties POMEGRANATE_CHICKEN = (new FoodProperties.Builder())
+        .nutrition(14).saturationMod(0.78F).build();
+    public static final FoodProperties POMEGRANATE_CUSTARD = (new FoodProperties.Builder())
+        .nutrition(8).saturationMod(0.65F).build();
+    public static final FoodProperties GLAZED_STRIDER = (new FoodProperties.Builder())
+        .nutrition(10).saturationMod(0.8F).build();
+    public static final FoodProperties SPICY_GRENADINE_JELLY = (new FoodProperties.Builder())
+        .nutrition(6).saturationMod(2.33F)
+        .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1800, 0), 1.0F).build();
     public static final FoodProperties LIMEADE = (new FoodProperties.Builder()).alwaysEat()
         .nutrition(3).saturationMod(0.2F)
         .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 1200, 0), 1.0F).build();
     public static final FoodProperties BERRY_LIMEADE = (new FoodProperties.Builder()).alwaysEat()
         .nutrition(5).saturationMod(0.2F)
+        .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 1200, 0), 1.0F).build();
+    public static final FoodProperties PINK_LIMEADE = (new FoodProperties.Builder()).alwaysEat()
+        .nutrition(5).saturationMod(1.0F)
         .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, 1200, 0), 1.0F).build();
 }

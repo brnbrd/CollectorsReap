@@ -110,6 +110,57 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .addIngredient(Items.HONEY_BOTTLE)
                 .unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
             "food/candied_lime", finished, enabled("candied_lime"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRIMSON_CARROT_ROAST.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(Items.CARROT)
+                .addIngredient(CRItemTags.FRUITS_POMEGRANATE)
+                .addIngredient(Items.CRIMSON_FUNGUS)
+                .addIngredient(Items.WARPED_ROOTS)
+                .unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/crimson_carrot_roast", finished, enabled(CRItems.CRIMSON_CARROT_ROAST));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POMEGRANATE_MUTTON.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(ForgeTags.RAW_MUTTON)
+                .addIngredient(CRItemTags.FRUITS_POMEGRANATE)
+                .addIngredient(ForgeTags.CROPS_ONION)
+                .addIngredient(Items.WARPED_FUNGUS)
+                .unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_mutton", finished, enabled(CRItems.POMEGRANATE_MUTTON));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POMEGRANATE_PORK.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(ForgeTags.RAW_PORK)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(CRItemTags.FRUITS_POMEGRANATE)
+                .addIngredient(ForgeTags.CROPS_ONION)
+                .addIngredient(Items.CARROT)
+                .unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_pork", finished, enabled(CRItems.POMEGRANATE_PORK));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POMEGRANATE_CHICKEN.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(ForgeTags.RAW_CHICKEN)
+                .addIngredient(CRItemTags.FRUITS_POMEGRANATE)
+                .addIngredient(ForgeTags.CROPS_ONION)
+                .addIngredient(Items.CRIMSON_FUNGUS)
+                .addIngredient(Items.WARPED_FUNGUS)
+                .addIngredient(ForgeTags.CROPS_TOMATO)
+                .unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_chicken", finished, enabled(CRItems.POMEGRANATE_CHICKEN));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POMEGRANATE_CUSTARD.get(), 1, 200, 1.0F, Items.GLASS_BOTTLE)
+                .addIngredient(CRItemTags.FRUITS_POMEGRANATE)
+                .addIngredient(ForgeTags.MILK)
+                .addIngredient(ForgeTags.EGGS)
+                .addIngredient(Items.SUGAR)
+                .unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_custard", finished, enabled(CRItems.POMEGRANATE_CUSTARD));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.GLAZED_STRIDER.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(CRItemTags.RAW_STRIDER)
+                .addIngredient(CRItemTags.FRUITS_POMEGRANATE)
+                .addIngredient(Items.CRIMSON_FUNGUS)
+                .addIngredient(Items.CRIMSON_ROOTS)
+                .unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/glazed_strider", finished, enabled(CRItems.GLAZED_STRIDER), not(tagEmpty(CRItemTags.RAW_STRIDER)));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.SPICY_GRENADINE_JELLY.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(Ingredient.of(CRItemTags.PROPELPEARL), 2)
+                .addIngredient(Items.MAGMA_CREAM, 2)
+                .addIngredient(CRItemTags.FRUITS_POMEGRANATE)
+                .unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/spicy_grenadine_jelly", finished, enabled(CRItems.SPICY_GRENADINE_JELLY), not(tagEmpty(CRItemTags.PROPELPEARL)));
 
         // Crafting
         wrap(ShapelessRecipeBuilder.shapeless(CRItems.LIME.get(), 9)
@@ -178,6 +229,18 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(Ingredient.of(ForgeTags.BERRIES), 3)
                 .unlockedBy("has_limeade", has(CRItems.LIMEADE.get())),
             "food/berry_limeade_from_limeade", finished, enabled("berry_limeade"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.PINK_LIMEADE.get())
+                .requires(CRItems.LIME.get(), 2)
+                .requires(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 3)
+                .requires(Items.SUGAR)
+                .requires(Items.GLASS_BOTTLE)
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
+            "food/pink_limeade", finished, enabled(CRItems.PINK_LIMEADE));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.PINK_LIMEADE.get())
+                .requires(CRItems.LIMEADE.get(), 1)
+                .requires(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 3)
+                .unlockedBy("has_limeade", has(CRItems.LIMEADE.get())),
+            "food/pink_limeade_from_limeade", finished, enabled(CRItems.PINK_LIMEADE));
         wrap(ShapelessRecipeBuilder.shapeless(CRItems.SALMON_TARTARE.get())
                 .requires(Ingredient.of(ForgeTags.RAW_FISHES_SALMON), 3)
                 .requires(CRItems.LIME.get())
@@ -193,6 +256,17 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(Items.BOWL)
                 .unlockedBy("has_lime", has(CRItems.LIME.get())),
             "food/cod_ceviche", finished, enabled("cod_ceviche"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.DELUXE_SALAD.get())
+                .requires(Items.APPLE)
+                .requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+                .requires(Items.MELON_SLICE)
+                .requires(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE))
+                .requires(Ingredient.of(CRItemTags.FRUITS_LIME))
+                .requires(Items.SWEET_BERRIES)
+                .requires(ForgeTags.CROPS_TOMATO)
+                .requires(Items.BOWL)
+                .unlockedBy("has_lime", has(CRItems.LIME.get())),
+            "food/deluxe_salad", finished, enabled(CRItems.DELUXE_SALAD));
 
         // Shaped Crafting
         wrap(ShapedRecipeBuilder.shaped(CRItems.PORTOBELLO_QUICHE.get())

@@ -78,10 +78,28 @@ public class CRItems extends ModItems {
         Nutrition.POTATO_FRITTERS);
     public static final RegistryObject<Item> COD_CEVICHE = registerFood("cod_ceviche",
         Nutrition.COD_CEVICHE);
+    public static final RegistryObject<Item> CRIMSON_CARROT_ROAST = registerItem("crimson_carrot_roast",
+        () -> new ConsumableItem(bowlFoodItem(Nutrition.CRIMSON_CARROT_ROAST)));
+    public static final RegistryObject<Item> POMEGRANATE_MUTTON = registerItem("pomegranate_mutton",
+        () -> new ConsumableItem(bowlFoodItem(Nutrition.POMEGRANATE_MUTTON)));
+    public static final RegistryObject<Item> POMEGRANATE_PORK = registerItem("pomegranate_pork",
+        () -> new ConsumableItem(bowlFoodItem(Nutrition.POMEGRANATE_PORK)));
+    public static final RegistryObject<Item> POMEGRANATE_CHICKEN = registerItem("pomegranate_chicken",
+        () -> new ConsumableItem(bowlFoodItem(Nutrition.POMEGRANATE_CHICKEN)));
+    public static final RegistryObject<Item> DELUXE_SALAD = registerItem("deluxe_salad",
+        () -> new ConsumableItem(bowlFoodItem(Nutrition.DELUXE_SALAD)));
+    public static final RegistryObject<Item> GLAZED_STRIDER = registerItem("glazed_strider",
+        () -> new ConsumableItem(bowlFoodItem(Nutrition.GLAZED_STRIDER)));
+    public static final RegistryObject<Item> SPICY_GRENADINE_JELLY = registerItem("spicy_grenadine_jelly",
+        () -> new ConsumableItem(bowlFoodItem(Nutrition.SPICY_GRENADINE_JELLY)));
+    public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerItem("pomegranate_custard", () ->
+        new DrinkableItem(drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), false, false));
     public static final RegistryObject<Item> LIMEADE = registerItem("limeade", () ->
         new DrinkableItem(drinkItem().food(Nutrition.LIMEADE), false, false));
     public static final RegistryObject<Item> BERRY_LIMEADE = registerItem("berry_limeade", () ->
         new DrinkableItem(drinkItem().food(Nutrition.BERRY_LIMEADE), false, false));
+    public static final RegistryObject<Item> PINK_LIMEADE = registerItem("pink_limeade", () ->
+        new DrinkableItem(drinkItem().food(Nutrition.PINK_LIMEADE), false, false));
     public static final RegistryObject<Item> LIME_CRATE = registerBlock(CRBlocks.LIME_CRATE);
     public static final RegistryObject<Item> POMEGRANATE_CRATE = registerBlock(CRBlocks.POMEGRANATE_CRATE);
 
