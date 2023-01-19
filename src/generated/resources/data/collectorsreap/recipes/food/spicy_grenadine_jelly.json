@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "spicy_grenadine_jelly"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "nethersdelight:propelpearl"
+          },
+          {
+            "tag": "nethersdelight:propelpearl"
+          },
+          {
+            "item": "minecraft:magma_cream"
+          },
+          {
+            "item": "minecraft:magma_cream"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:spicy_grenadine_jelly"
+        }
+      }
+    }
+  ]
+}

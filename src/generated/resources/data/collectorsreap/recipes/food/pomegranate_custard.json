@@ -1,0 +1,38 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pomegranate_custard"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:glass_bottle"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "tag": "forge:milk"
+          },
+          {
+            "tag": "forge:eggs"
+          },
+          {
+            "item": "minecraft:sugar"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:pomegranate_custard"
+        }
+      }
+    }
+  ]
+}

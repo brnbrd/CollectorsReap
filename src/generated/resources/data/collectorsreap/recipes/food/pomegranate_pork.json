@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pomegranate_pork"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:raw_pork"
+          },
+          {
+            "item": "minecraft:honey_bottle"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "item": "minecraft:carrot"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:pomegranate_pork"
+        }
+      }
+    }
+  ]
+}

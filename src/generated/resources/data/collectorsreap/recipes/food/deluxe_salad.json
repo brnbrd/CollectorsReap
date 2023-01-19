@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "deluxe_salad"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:apple"
+          },
+          {
+            "tag": "forge:salad_ingredients/cabbage"
+          },
+          {
+            "item": "minecraft:melon_slice"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "tag": "forge:fruits/lime"
+          },
+          {
+            "item": "minecraft:sweet_berries"
+          },
+          {
+            "tag": "forge:crops/tomato"
+          },
+          {
+            "item": "minecraft:bowl"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:deluxe_salad"
+        }
+      }
+    }
+  ]
+}

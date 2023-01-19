@@ -1,0 +1,38 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pomegranate_mutton"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:raw_mutton"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "item": "minecraft:warped_fungus"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:pomegranate_mutton"
+        }
+      }
+    }
+  ]
+}

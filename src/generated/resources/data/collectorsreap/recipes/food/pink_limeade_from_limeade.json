@@ -1,0 +1,33 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pink_limeade"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "collectorsreap:limeade"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:pink_limeade"
+        }
+      }
+    }
+  ]
+}

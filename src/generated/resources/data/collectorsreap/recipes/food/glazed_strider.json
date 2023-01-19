@@ -1,0 +1,38 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "glazed_strider"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "nethersdelight:raw_strider"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "item": "minecraft:crimson_fungus"
+          },
+          {
+            "item": "minecraft:crimson_roots"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:glazed_strider"
+        }
+      }
+    }
+  ]
+}
