@@ -41,5 +41,6 @@
   "item.collectorsreap.potato_fritters": "Potato Fritters",
   "item.collectorsreap.salmon_tartare": "Salmon Tartare",
   "item.collectorsreap.spicy_grenadine_jelly": "Spicy Grenadine Jelly",
-  "item.collectorsreap.stuffed_portobello_cap": "Stuffed Portobello"
+  "item.collectorsreap.stuffed_portobello_cap": "Stuffed Portobello",
+  "tooltip.requires_modid": "Requires modid:"
 }

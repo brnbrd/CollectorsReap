@@ -22,6 +22,7 @@ public class CRItemTags {
 	// ND
 	public static final TagKey<Item> RAW_STRIDER = Util.it("nethersdelight", "raw_strider");
 	public static final TagKey<Item> PROPELPEARL = Util.it("nethersdelight", "propelpearl");
+	public static final TagKey<Item> HOGLIN_LOIN = Util.it("nethersdelight", "hoglin_loin");
 
 	private static TagKey<Item> vd(String name) {
 		return Util.it(CollectorsReap.MODID, name);

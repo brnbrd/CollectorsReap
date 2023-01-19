@@ -8,13 +8,13 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "glazed_strider"
+              "value": "pomegranate_pork"
             },
             {
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "nethersdelight:raw_strider"
+                "tag": "nethersdelight:hoglin_loin"
               }
             }
           ]
@@ -29,20 +29,23 @@
         "experience": 1.0,
         "ingredients": [
           {
-            "tag": "nethersdelight:raw_strider"
+            "tag": "nethersdelight:hoglin_loin"
+          },
+          {
+            "item": "minecraft:honey_bottle"
           },
           {
             "tag": "forge:fruits/pomegranate"
           },
           {
-            "item": "minecraft:crimson_fungus"
+            "tag": "forge:crops/onion"
           },
           {
-            "item": "minecraft:crimson_roots"
+            "item": "minecraft:carrot"
           }
         ],
         "result": {
-          "item": "collectorsreap:glazed_strider"
+          "item": "collectorsreap:pomegranate_pork"
         }
       }
     }

@@ -44,6 +44,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(Tags.Items.MUSHROOMS)
 			.addTag(CRItemTags.MUSHROOMS_PORTOBELLO);
 		this.addSelf(CRItemTags.PROPELPEARL);
+		this.addSelf(CRItemTags.HOGLIN_LOIN);
 	}
 
 	/**

@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_pomegranate_slice": {
+          "has_hoglin_loin": {
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:fruits/pomegranate"
+                  "tag": "nethersdelight:hoglin_loin"
                 }
               ]
             },
@@ -16,20 +16,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/glazed_strider"
+              "recipe": "collectorsreap:food/pomegranate_pork_from_hoglin"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_pomegranate_slice",
+            "has_hoglin_loin",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/glazed_strider"
+            "collectorsreap:food/pomegranate_pork_from_hoglin"
           ]
         }
       },
@@ -39,13 +39,13 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "glazed_strider"
+              "value": "pomegranate_pork"
             },
             {
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "nethersdelight:raw_strider"
+                "tag": "nethersdelight:hoglin_loin"
               }
             }
           ]

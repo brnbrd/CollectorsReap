@@ -89,9 +89,9 @@ public class CRItems extends ModItems {
     public static final RegistryObject<Item> DELUXE_SALAD = registerItem("deluxe_salad",
         () -> new ConsumableItem(bowlFoodItem(Nutrition.DELUXE_SALAD)));
     public static final RegistryObject<Item> GLAZED_STRIDER = registerItem("glazed_strider",
-        () -> new ConsumableItem(bowlFoodItem(Nutrition.GLAZED_STRIDER)));
+        () -> new CompatConsumable(bowlFoodItem(Nutrition.GLAZED_STRIDER), false, false, "nethersdelight"));
     public static final RegistryObject<Item> SPICY_GRENADINE_JELLY = registerItem("spicy_grenadine_jelly",
-        () -> new ConsumableItem(bowlFoodItem(Nutrition.SPICY_GRENADINE_JELLY)));
+        () -> new CompatConsumable(bowlFoodItem(Nutrition.SPICY_GRENADINE_JELLY), false,  false, "nethersdelight"));
     public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerItem("pomegranate_custard", () ->
         new DrinkableItem(drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), false, false));
     public static final RegistryObject<Item> LIMEADE = registerItem("limeade", () ->

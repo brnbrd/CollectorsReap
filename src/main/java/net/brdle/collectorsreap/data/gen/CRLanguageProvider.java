@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.data.gen;
 
 import net.brdle.collectorsreap.CollectorsReap;
+import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.data.DataGenerator;
@@ -64,5 +65,6 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.GLAZED_STRIDER, "Glazed Strider");
         addItem(CRItems.CRIMSON_CARROT_ROAST, "Crimson Carrot Roast");
         addItem(CRItems.DELUXE_SALAD, "Deluxe Salad");
+        add("tooltip.requires_modid", "Requires modid:");
     }
 }

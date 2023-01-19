@@ -4,8 +4,20 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "spicy_grenadine_jelly"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "spicy_grenadine_jelly"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "nethersdelight:propelpearl"
+              }
+            }
+          ]
         }
       ],
       "recipe": {
