@@ -18,7 +18,7 @@ import java.util.function.Predicate;
 @SuppressWarnings("unused")
 public class JEIPlugin implements IModPlugin
 {
-    private static final ResourceLocation ID = Util.rl(CollectorsReap.MODID, "jei_plugin");
+    private static final ResourceLocation ID = Util.cr("jei_plugin");
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {

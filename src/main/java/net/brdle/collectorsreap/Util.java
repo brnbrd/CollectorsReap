@@ -22,6 +22,10 @@ public class Util {
     return new ResourceLocation(separated);
   }
 
+  public static ResourceLocation cr(String path) {
+    return new ResourceLocation(CollectorsReap.MODID, path);
+  }
+
   public static TagKey<Item> it(String modid, String path) {
     return ItemTags.create(rl(modid, path));
   }

@@ -14,7 +14,7 @@ public class ForgeEvents {
 	public static void onMissingBlockMappings(MissingMappingsEvent e) {
 		if (e.getRegistry() == ForgeRegistries.ITEMS) {
 			for (var map : e.getMappings(ForgeRegistries.ITEMS.getRegistryKey(), CollectorsReap.MODID)) {
-				var remap = Util.rl(CollectorsReap.MODID, map.getKey().getPath().replace("lemon", "lime"));
+				var remap = Util.cr(map.getKey().getPath().replace("lemon", "lime"));
 				if (ForgeRegistries.ITEMS.containsKey(remap)) {
 					map.remap(ForgeRegistries.ITEMS.getValue(remap));
 				} else {
@@ -23,7 +23,7 @@ public class ForgeEvents {
 			}
 		} else if (e.getRegistry() == ForgeRegistries.BLOCKS) {
 			for (var map : e.getMappings(ForgeRegistries.BLOCKS.getRegistryKey(), CollectorsReap.MODID)) {
-				var remap = Util.rl(CollectorsReap.MODID, map.getKey().getPath().replace("lemon", "lime"));
+				var remap = Util.cr(map.getKey().getPath().replace("lemon", "lime"));
 				if (ForgeRegistries.BLOCKS.containsKey(remap)) {
 					map.remap(ForgeRegistries.BLOCKS.getValue(remap));
 				} else {

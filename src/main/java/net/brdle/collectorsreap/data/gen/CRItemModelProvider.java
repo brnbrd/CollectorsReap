@@ -42,6 +42,6 @@ public class CRItemModelProvider extends ItemModelProvider {
     }
 
     public ItemModelBuilder handheld(ResourceLocation item) {
-        return withExistingParent(item.getPath(), ItemModels.HANDHELD).texture("layer0", Util.rl(CollectorsReap.MODID, "item/" + item.getPath()));
+        return withExistingParent(item.getPath(), ItemModels.HANDHELD).texture("layer0", Util.cr("item/" + item.getPath()));
     }
 }

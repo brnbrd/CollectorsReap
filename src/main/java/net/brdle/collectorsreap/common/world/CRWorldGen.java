@@ -44,42 +44,48 @@ public class CRWorldGen extends WildCropGeneration {
 	}
 
 	public static void registerGeneration() {
-		FEATURE_PATCH_PORTOBELLO = register(Util.rl(CollectorsReap.MODID, "patch_portobello"),
+		FEATURE_PATCH_PORTOBELLO = register(Util.cr("patch_portobello"),
 			ModBiomeFeatures.WILD_CROP.get(),
-			portobelloColonyConfig(CRBlocks.PORTOBELLO_COLONY.get(), CRBlocks.PORTOBELLO.get(), BlockPredicate.matchesTag(BLOCK_BELOW, CRBlockTags.PORTOBELLO_SPAWNS)));
+			portobelloColonyConfig(CRBlocks.PORTOBELLO_COLONY.get(), CRBlocks.PORTOBELLO.get(),
+				BlockPredicate.matchesTag(BLOCK_BELOW, CRBlockTags.PORTOBELLO_SPAWNS))
+		);
 
-		PATCH_PORTOBELLO = registerConditionalPlacement(Util.rl(CollectorsReap.MODID, "patch_portobello"),
+		PATCH_PORTOBELLO = registerConditionalPlacement(Util.cr("patch_portobello"),
 			FEATURE_PATCH_PORTOBELLO,
-			CRConfig.verify(Util.name(CRItems.PORTOBELLO)) && CRConfig.CHANCE_PORTOBELLO.get() > 0,
+			CRConfig.verify(CRItems.PORTOBELLO) && CRConfig.CHANCE_PORTOBELLO.get() > 0,
 			RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_PORTOBELLO.get()),
-			CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-
-		FEATURE_PATCH_LIME_BUSH = register(Util.rl(CollectorsReap.MODID, "patch_lime_bush"),
-			RandomPatchFeature.RANDOM_PATCH,
-			bushConfig(CRBlocks.LIME_BUSH.get().defaultBlockState(), 10, 5, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.DIRT))
+			CountPlacement.of(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()
 		);
 
-		PATCH_LIME_BUSH = registerConditionalPlacement(Util.rl(CollectorsReap.MODID, "patch_lime_bush"),
+		FEATURE_PATCH_LIME_BUSH = register(Util.cr("patch_lime_bush"),
+			RandomPatchFeature.RANDOM_PATCH,
+			bushConfig(CRBlocks.LIME_BUSH.get().defaultBlockState(),
+				15, 5, 3, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.DIRT))
+		);
+
+		PATCH_LIME_BUSH = registerConditionalPlacement(Util.cr("patch_lime_bush"),
 			FEATURE_PATCH_LIME_BUSH,
-			CRConfig.verify(Util.name(CRItems.LIME)) && CRConfig.CHANCE_LIME_BUSH.get() > 0,
+			CRConfig.verify(CRItems.LIME) && CRConfig.CHANCE_LIME_BUSH.get() > 0,
 			RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_LIME_BUSH.get()),
-			InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-
-		FEATURE_PATCH_POMEGRANATE = register(Util.rl(CollectorsReap.MODID, "patch_pomegranate"),
-			RandomPatchFeature.RANDOM_PATCH,
-			bushConfig(CRBlocks.POMEGRANATE_BUSH.get().defaultBlockState().setValue(PomegranateBushBlock.AGE, PomegranateBushBlock.MAX_AGE), 10, 10,
-				BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.NYLIUM))
+			InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()
 		);
 
-		PATCH_POMEGRANATE = registerConditionalPlacement(Util.rl(CollectorsReap.MODID, "patch_pomegranate"),
+		FEATURE_PATCH_POMEGRANATE = register(Util.cr("patch_pomegranate"),
+			RandomPatchFeature.RANDOM_PATCH,
+			bushConfig(CRBlocks.POMEGRANATE_BUSH.get().defaultBlockState().setValue(PomegranateBushBlock.AGE, PomegranateBushBlock.MAX_AGE),
+				35, 10, 10, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.NYLIUM))
+		);
+
+		PATCH_POMEGRANATE = registerConditionalPlacement(Util.cr("patch_pomegranate"),
 			FEATURE_PATCH_POMEGRANATE,
-			CRConfig.verify(Util.name(CRItems.POMEGRANATE)) && CRConfig.CHANCE_WILD_POMEGRANATE.get() > 0,
-			RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_WILD_POMEGRANATE.get()),
-			CountPlacement.of(3), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome());
+			CRConfig.verify(CRItems.POMEGRANATE) && CRConfig.CHANCE_POMEGRANATE_BUSH.get() > 0,
+			RarityFilter.onAverageOnceEvery(CRConfig.CHANCE_POMEGRANATE_BUSH.get()),
+			CountPlacement.of(10), InSquarePlacement.spread(), PlacementUtils.FULL_RANGE, BiomeFilter.biome()
+		);
 	}
 
-	public static RandomPatchConfiguration bushConfig(BlockState block, int tries, int xzSpread, BlockPredicate plantedOn) {
-		return new RandomPatchConfiguration(tries, xzSpread, 3, PlacementUtils.filtered(CRFeatures.BUSH_BLOCK.get(),
+	public static RandomPatchConfiguration bushConfig(BlockState block, int tries, int xzSpread, int ySpread, BlockPredicate plantedOn) {
+		return new RandomPatchConfiguration(tries, xzSpread, ySpread, PlacementUtils.filtered(CRFeatures.BUSH_BLOCK.get(),
 			new SimpleBlockConfiguration(BlockStateProvider.simple(block)), BlockPredicate.allOf(plantedOn, BlockPredicate.ONLY_IN_AIR_PREDICATE)));
 	}
 

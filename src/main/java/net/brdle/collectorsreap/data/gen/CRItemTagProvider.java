@@ -21,7 +21,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 	@Override
 	protected void addTags() {
 		this.tag(CRItemTags.FRUITS_POMEGRANATE)
-			.add(CRItems.POMEGRANATE.get());
+			.add(CRItems.POMEGRANATE_SLICE.get());
 		this.tag(CRItemTags.FRUITS_LIME)
 			.add(CRItems.LIME.get());
 		this.tag(CRItemTags.LIME_OR_SLICE)

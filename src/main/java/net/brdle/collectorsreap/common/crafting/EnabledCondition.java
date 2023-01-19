@@ -10,7 +10,7 @@ import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionSerializer;
 
 public class EnabledCondition implements ICondition {
-    private static final ResourceLocation NAME = Util.rl(CollectorsReap.MODID, "enabled");
+    private static final ResourceLocation NAME = Util.cr("enabled");
     private final String value;
 
     public EnabledCondition(String value) {

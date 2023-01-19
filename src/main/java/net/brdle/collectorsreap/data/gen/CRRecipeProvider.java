@@ -9,6 +9,7 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -17,6 +18,7 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
@@ -36,19 +38,19 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         // Cutting
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_QUICHE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.PORTOBELLO_QUICHE_SLICE.get(), 4),
-            "cutting/portobello_quiche", finished, enabled("portobello"), enabled("portobello_quiche"));
+            "cutting/portobello_quiche", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.PORTOBELLO_QUICHE));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_COLONY.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.PORTOBELLO.get(), 5),
-            "cutting/portobello_colony", finished, enabled("portobello"));
+            "cutting/portobello_colony", finished, enabled(CRItems.PORTOBELLO));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LIME_SLICE.get(), 2)
-            .addResultWithChance(Items.LIME_DYE, 0.25f),
-            "cutting/lime", finished, enabled("lime"), enabled("lime_slice"));
+            .addResultWithChance(Items.LIME_DYE, 0.5f),
+            "cutting/lime", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_SLICE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.LIME_DYE, 1),
-            "cutting/lime_slice", finished, enabled("lime"), enabled("lime_slice"));
+            "cutting/lime_slice", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LIME_PIE_SLICE.get(), 4),
-            "cutting/lime_pie", finished, enabled("lime_pie"), enabled("lime_pie"));
+            "cutting/lime_pie", finished, enabled(CRItems.LIME_PIE), enabled(CRItems.LIME_PIE_SLICE));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.POMEGRANATE_SLICE.get(), 4)
-            .addResultWithChance(Items.RED_DYE, 0.25f),
-            "cutting/pomegranate", finished, enabled("pomegranate"), enabled("pomegranate_seeds"));
+            .addResultWithChance(Items.RED_DYE, 0.5f),
+            "cutting/pomegranate", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SEEDS));
 
         // Cooking Pot
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PORTOBELLO_RISOTTO.get(), 1, 200, 1.0F, Items.BOWL)
@@ -259,7 +261,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
     }
 
     private void wrap(UpgradeRecipeBuilder builder, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
-        ResourceLocation loc = Util.rl(CollectorsReap.MODID, name);
+        ResourceLocation loc = Util.cr(name);
         ConditionalRecipe.Builder cond;
         if (conds.length > 1) {
             cond = ConditionalRecipe.builder().addCondition(and(conds));
@@ -318,10 +320,14 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
     }
 
     private static void foodSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, Consumer<FinishedRecipe> consumer) {
-        String namePrefix = Util.rl(CollectorsReap.MODID, name).toString();
+        String namePrefix = Util.cr(name).toString();
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), result, experience, 200).unlockedBy(name, has(ingredient)).save(consumer);
         SimpleCookingRecipeBuilder.cooking(Ingredient.of(ingredient), result, experience, 600, RecipeSerializer.CAMPFIRE_COOKING_RECIPE).unlockedBy(name, has(ingredient)).save(consumer, namePrefix + "_from_campfire_cooking");
         SimpleCookingRecipeBuilder.cooking(Ingredient.of(ingredient), result, experience, 100, RecipeSerializer.SMOKING_RECIPE).unlockedBy(name, has(ingredient)).save(consumer, namePrefix + "_from_smoking");
+    }
+
+    private EnabledCondition enabled(RegistryObject<Item> item) {
+        return new EnabledCondition(Util.name(item));
     }
 
     private EnabledCondition enabled(String name) {

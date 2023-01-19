@@ -11,7 +11,7 @@
             },
             {
               "type": "collectorsreap:enabled",
-              "value": "lime_pie"
+              "value": "lime_pie_slice"
             }
           ]
         }

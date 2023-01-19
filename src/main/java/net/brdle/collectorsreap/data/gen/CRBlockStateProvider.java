@@ -47,7 +47,7 @@ public class CRBlockStateProvider extends BlockStateProvider {
 
     // Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java
     public static ResourceLocation resourceBlock(String path) {
-        return Util.rl(CollectorsReap.MODID, "block/" + path);
+        return Util.cr("block/" + path);
     }
 
     public ModelFile existingModel(String path) {
