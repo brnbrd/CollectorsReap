@@ -8,9 +8,7 @@
             "conditions": {
               "items": [
                 {
-                  "items": [
-                    "collectorsreap:lime"
-                  ]
+                  "tag": "forge:fruits/lime"
                 }
               ]
             },
@@ -37,8 +35,17 @@
       },
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "lime_popsicle"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_popsicle"
+            }
+          ]
         }
       ]
     }

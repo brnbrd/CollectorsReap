@@ -8,9 +8,7 @@
             "conditions": {
               "items": [
                 {
-                  "items": [
-                    "collectorsreap:lime"
-                  ]
+                  "tag": "forge:fruits/lime"
                 }
               ]
             },

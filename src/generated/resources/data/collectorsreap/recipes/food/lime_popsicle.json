@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "lime_popsicle"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_popsicle"
+            }
+          ]
         }
       ],
       "recipe": {
@@ -15,7 +24,7 @@
             "item": "minecraft:ice"
           },
           "l": {
-            "item": "collectorsreap:lime"
+            "tag": "forge:fruits/lime"
           },
           "s": {
             "tag": "forge:rods/wooden"

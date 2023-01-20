@@ -4,15 +4,24 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "lime_cookie"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_cookie"
+            }
+          ]
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
         "key": {
           "l": {
-            "item": "collectorsreap:lime"
+            "tag": "forge:fruits/lime"
           },
           "w": {
             "tag": "forge:crops/wheat"

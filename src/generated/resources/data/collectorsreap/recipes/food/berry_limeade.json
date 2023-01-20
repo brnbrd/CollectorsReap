@@ -12,10 +12,10 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "collectorsreap:lime"
+            "tag": "forge:fruits/lime"
           },
           {
-            "item": "collectorsreap:lime"
+            "tag": "forge:fruits/lime"
           },
           {
             "tag": "forge:berries"

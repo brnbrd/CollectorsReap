@@ -1,10 +1,11 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/collectors-reap",
   "1.19": {
-    "1.0": "Added Portobello and Lemon foods."
+    "1.0": "Added Portobello and Lemon foods.",
+    "1.1": "Added Pomegranate foods. Renamed Lemon to Lime. Bug fixes."
   },
   "promos": {
-    "1.19-latest": "1.0",
-    "1.19-recommended": "1.0"
+    "1.19-latest": "1.1",
+    "1.19-recommended": "1.1"
   }
 }
