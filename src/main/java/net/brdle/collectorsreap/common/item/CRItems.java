@@ -91,15 +91,15 @@ public class CRItems extends ModItems {
     public static final RegistryObject<Item> GLAZED_STRIDER = registerItem("glazed_strider",
         () -> new CompatConsumable(bowlFoodItem(Nutrition.GLAZED_STRIDER), false, false, "nethersdelight"));
     public static final RegistryObject<Item> SPICY_GRENADINE_JELLY = registerItem("spicy_grenadine_jelly",
-        () -> new CompatConsumable(bowlFoodItem(Nutrition.SPICY_GRENADINE_JELLY), false,  false, "nethersdelight"));
+        () -> new CompatConsumable(bowlFoodItem(Nutrition.SPICY_GRENADINE_JELLY), true,  false, "nethersdelight"));
     public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerItem("pomegranate_custard", () ->
         new DrinkableItem(drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), false, false));
     public static final RegistryObject<Item> LIMEADE = registerItem("limeade", () ->
-        new DrinkableItem(drinkItem().food(Nutrition.LIMEADE), false, false));
+        new DrinkableItem(drinkItem().food(Nutrition.LIMEADE), true, false));
     public static final RegistryObject<Item> BERRY_LIMEADE = registerItem("berry_limeade", () ->
-        new DrinkableItem(drinkItem().food(Nutrition.BERRY_LIMEADE), false, false));
+        new DrinkableItem(drinkItem().food(Nutrition.BERRY_LIMEADE), true, false));
     public static final RegistryObject<Item> PINK_LIMEADE = registerItem("pink_limeade", () ->
-        new DrinkableItem(drinkItem().food(Nutrition.PINK_LIMEADE), false, false));
+        new DrinkableItem(drinkItem().food(Nutrition.PINK_LIMEADE), true, false));
     public static final RegistryObject<Item> LIME_CRATE = registerBlock(CRBlocks.LIME_CRATE);
     public static final RegistryObject<Item> POMEGRANATE_CRATE = registerBlock(CRBlocks.POMEGRANATE_CRATE);
 
