@@ -4,9 +4,11 @@ import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.item.food.Nutrition;
+import net.brdle.collectorsreap.compat.ModCompat;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -89,9 +91,13 @@ public class CRItems extends ModItems {
     public static final RegistryObject<Item> DELUXE_SALAD = registerItem("deluxe_salad",
         () -> new ConsumableItem(bowlFoodItem(Nutrition.DELUXE_SALAD)));
     public static final RegistryObject<Item> GLAZED_STRIDER = registerItem("glazed_strider",
-        () -> new CompatConsumable(bowlFoodItem(Nutrition.GLAZED_STRIDER), false, false, "nethersdelight"));
+        () -> new CompatConsumable((new Item.Properties())
+            .food(Nutrition.GLAZED_STRIDER).craftRemainder(Items.BOWL).stacksTo(16).tab(ModCompat.getNDTab()),
+            false, false, "nethersdelight"));
     public static final RegistryObject<Item> SPICY_GRENADINE_JELLY = registerItem("spicy_grenadine_jelly",
-        () -> new CompatConsumable(bowlFoodItem(Nutrition.SPICY_GRENADINE_JELLY), true,  false, "nethersdelight"));
+        () -> new CompatConsumable((new Item.Properties())
+            .food(Nutrition.SPICY_GRENADINE_JELLY).craftRemainder(Items.BOWL).stacksTo(16).tab(ModCompat.getNDTab()),
+            true,  false, "nethersdelight"));
     public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerItem("pomegranate_custard", () ->
         new DrinkableItem(drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), false, false));
     public static final RegistryObject<Item> LIMEADE = registerItem("limeade", () ->

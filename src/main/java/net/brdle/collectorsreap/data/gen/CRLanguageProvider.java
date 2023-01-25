@@ -65,5 +65,8 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.CRIMSON_CARROT_ROAST, "Crimson Carrot Roast");
         addItem(CRItems.DELUXE_SALAD, "Deluxe Salad");
         add("tooltip.requires_modid", "Requires modid:");
+        add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO), "Found in Meadows.");
+        add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Found in Flower Forests.");
+        add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE), "Found in Warped Forests.");
     }
 }

@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.common.block;
 
+import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -52,7 +53,7 @@ public class SmallLimeBushBlock extends BushBlock implements BonemealableBlock {
 	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull ItemStack getCloneItemStack(@NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull BlockState state) {
-		return new ItemStack(CRItems.LIME_SEEDS.get());
+		return Util.gs(CRItems.LIME_SEEDS);
 	}
 
 	@Override

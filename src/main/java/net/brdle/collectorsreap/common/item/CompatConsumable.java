@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.common.item;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -21,8 +22,8 @@ public class CompatConsumable extends ConsumableItem {
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 		if (!ModList.get().isLoaded(this.modid)) {
-			tooltip.add(Component.translatable("tooltip.requires_modid"));
-			tooltip.add(Component.literal(this.modid));
+			tooltip.add(Component.translatable("tooltip.requires_modid").withStyle(ChatFormatting.GRAY));
+			tooltip.add(Component.literal(this.modid).withStyle(ChatFormatting.UNDERLINE));
 		}
 		super.appendHoverText(stack, level, tooltip, isAdvanced);
 	}

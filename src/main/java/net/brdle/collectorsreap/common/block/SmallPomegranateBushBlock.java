@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.common.block;
 
+import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.BlockPos;
@@ -29,8 +30,8 @@ import org.jetbrains.annotations.NotNull;
 public class SmallPomegranateBushBlock extends BushBlock implements BonemealableBlock {
 	public static final int MAX_AGE = 1;
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_1;
-	private static final VoxelShape SAPLING_SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 8.0D, 13.0D);
-	private static final VoxelShape MID_GROWTH_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
+	private static final VoxelShape SAPLING_SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 5.0D, 13.0D);
+	private static final VoxelShape MID_GROWTH_SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 15.0D, 14.0D);
 
 	public SmallPomegranateBushBlock(Properties pProperties) {
 		super(pProperties);
@@ -39,7 +40,7 @@ public class SmallPomegranateBushBlock extends BushBlock implements Bonemealable
 
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
-		return CRItems.POMEGRANATE_SEEDS.get().getDefaultInstance();
+		return Util.gs(CRItems.POMEGRANATE_SEEDS);
 	}
 
 	@SuppressWarnings("deprecation")
