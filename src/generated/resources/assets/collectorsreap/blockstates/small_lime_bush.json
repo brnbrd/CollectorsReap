@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "collectorsreap:block/small_lime_bush"
+    "age=0": {
+      "model": "collectorsreap:block/small_lime_bush_stage0"
+    },
+    "age=1": {
+      "model": "collectorsreap:block/small_lime_bush_stage1"
     }
   }
 }

@@ -15,22 +15,38 @@ import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
 import org.jetbrains.annotations.NotNull;
 
 public class SmallLimeBushBlock extends BushBlock implements BonemealableBlock {
-	public static final VoxelShape SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 11.0, 12.0);
+	public static final int MAX_AGE = 1;
+	public static final IntegerProperty AGE = BlockStateProperties.AGE_1;
+	public static final VoxelShape SMALL_SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 11.0, 12.0);
+	private static final VoxelShape MEDIUM_SHAPE = Shapes.or(Block.box(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 16.0D), Block.box(6.0D, 0.0D, 6.0D, 10.0D, 8.0D, 10.0D));
 
 	public SmallLimeBushBlock(BlockBehaviour.Properties properties) {
 		super(properties);
+		this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
-		return SHAPE;
+		return state.getValue(AGE) == MAX_AGE ? MEDIUM_SHAPE : SMALL_SHAPE;
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
+		return getShape(pState, pLevel, pPos, pContext);
 	}
 
 	@SuppressWarnings("deprecation")
@@ -65,6 +81,14 @@ public class SmallLimeBushBlock extends BushBlock implements BonemealableBlock {
 	}
 
 	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+		pBuilder.add(AGE);
+	}
+
+	/**
+	 * @return whether bonemeal can be used on this block
+	 */
+	@Override
 	public boolean isValidBonemealTarget(@NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull BlockState state, boolean isClient) {
 		return true;
 	}
@@ -75,8 +99,16 @@ public class SmallLimeBushBlock extends BushBlock implements BonemealableBlock {
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel world, @NotNull RandomSource rand, @NotNull BlockPos pos, @NotNull BlockState state) {
-		world.setBlockAndUpdate(pos, CRBlocks.MEDIUM_LIME_BUSH.get().defaultBlockState());
+	public void performBonemeal(@NotNull ServerLevel world, @NotNull RandomSource pRandom, @NotNull BlockPos pPos, BlockState pState) {
+		int i = pState.getValue(AGE);
+		if (i < MAX_AGE) {
+			BlockState newState = pState.setValue(AGE, Math.min(MAX_AGE, pState.getValue(AGE) + 1));
+			world.setBlock(pPos, newState, 2);
+			world.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(newState));
+		} else if (world.isEmptyBlock(pPos.above())) {
+			world.setBlockAndUpdate(pPos, CRBlocks.LIME_BUSH.get().defaultBlockState());
+			world.setBlockAndUpdate(pPos.above(), CRBlocks.LIME_BUSH.get().defaultBlockState().setValue(LimeBushBlock.HALF, DoubleBlockHalf.UPPER));
+		}
 	}
 
 

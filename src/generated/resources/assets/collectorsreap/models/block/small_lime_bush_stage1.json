@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/template_azalea",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "collectorsreap:block/small_lime_bush_plant_stage1",
+    "plant": "collectorsreap:block/small_lime_bush_plant_stage1",
+    "side": "collectorsreap:block/small_lime_bush_side_stage1",
+    "top": "collectorsreap:block/small_lime_bush_top_stage1"
+  }
+}

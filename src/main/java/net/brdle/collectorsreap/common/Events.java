@@ -14,7 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 
-@Mod.EventBusSubscriber(modid= CollectorsReap.MODID)
+@Mod.EventBusSubscriber(modid=CollectorsReap.MODID)
 public class Events {
 
     @SubscribeEvent
@@ -43,15 +43,15 @@ public class Events {
         });
     }
 
-    public static void compost(RegistryObject<Item> it, float value) {
-        ComposterBlock.COMPOSTABLES.put(it.get(), value);
-    }
-
     // Adds collectorsreap:enabled, etc. conditions
     @SubscribeEvent
     public static void registerSerializers(RegisterEvent event) {
         if (event.getRegistryKey() == ForgeRegistries.RECIPE_SERIALIZERS.getRegistryKey()) {
             CraftingHelper.register(EnabledCondition.Serializer.INSTANCE);
         }
+    }
+
+    public static void compost(RegistryObject<Item> it, float value) {
+        ComposterBlock.COMPOSTABLES.put(it.get(), value);
     }
 }

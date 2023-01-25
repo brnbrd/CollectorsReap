@@ -2,7 +2,6 @@ package net.brdle.collectorsreap.common.crafting;
 
 import com.google.gson.JsonObject;
 import net.brdle.collectorsreap.Util;
-import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;

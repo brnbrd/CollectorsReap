@@ -1,0 +1,7 @@
+{
+  "parent": "collectorsreap:block/pomegranate_bush_lower",
+  "textures": {
+    "0": "collectorsreap:block/pomegranate_bush_stage1",
+    "particle": "collectorsreap:block/pomegranate_bush_stage1"
+  }
+}

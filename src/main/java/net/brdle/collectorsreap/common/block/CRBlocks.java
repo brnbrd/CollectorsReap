@@ -35,8 +35,6 @@ public class CRBlocks {
         () -> new LimeBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> SMALL_LIME_BUSH = registerBlock("small_lime_bush",
         () -> new SmallLimeBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
-    public static final RegistryObject<Block> MEDIUM_LIME_BUSH = registerBlock("medium_lime_bush",
-        () -> new MediumLimeBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> SMALL_POMEGRANATE_BUSH = registerBlock("small_pomegranate_bush",
         () -> new SmallPomegranateBushBlock(BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> POMEGRANATE_BUSH = registerBlock("pomegranate_bush",

@@ -45,7 +45,7 @@ public class SmallPomegranateBushBlock extends BushBlock implements Bonemealable
 	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull VoxelShape getShape(BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
-		return (pState.getValue(AGE) == 0) ? SAPLING_SHAPE : MID_GROWTH_SHAPE;
+		return pState.getValue(AGE) == MAX_AGE ? MID_GROWTH_SHAPE : SAPLING_SHAPE;
 	}
 
 	@SuppressWarnings("deprecation")
