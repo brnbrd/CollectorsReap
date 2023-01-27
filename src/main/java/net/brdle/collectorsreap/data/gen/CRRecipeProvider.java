@@ -210,7 +210,15 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(ForgeTags.CROPS_CABBAGE)
                 .requires(ForgeTags.VEGETABLES_CARROT)
                 .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
-            "food/portobello_wrap", finished, enabled("portobello_wrap"));
+            "food/portobello_wrap", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.PORTOBELLO_WRAP), tagEmpty(CRItemTags.TORTILLA));
+        wrap(shapeless(CRItems.PORTOBELLO_WRAP)
+                .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
+                .requires(CRItemTags.TORTILLA)
+                .requires(ForgeTags.CROPS_ONION)
+                .requires(ForgeTags.CROPS_CABBAGE)
+                .requires(ForgeTags.VEGETABLES_CARROT)
+                .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
+            "food/portobello_wrap_from_tortilla", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.PORTOBELLO_WRAP), not(tagEmpty(CRItemTags.TORTILLA)));
         wrap(shapeless(CRItems.PORTOBELLO_BURGER)
                 .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
                 .requires(ForgeTags.BREAD)
@@ -287,7 +295,11 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('p', CRItems.BAKED_PORTOBELLO_CAP.get())
                 .define('c', ModItems.PIE_CRUST.get())
                 .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
-            "food/portobello_quiche", finished, enabled("portobello_quiche"));
+            "food/portobello_quiche", finished, enabled(CRItems.PORTOBELLO_QUICHE));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.PORTOBELLO_QUICHE.get(), 1)
+                .requires(CRItems.PORTOBELLO_QUICHE_SLICE.get(), 4)
+                .unlockedBy("has_portobello_quiche_slice", has(CRItems.PORTOBELLO_QUICHE_SLICE.get())),
+            "food/portobello_quiche_from_slices", finished, enabled(CRItems.PORTOBELLO_QUICHE), enabled(CRItems.PORTOBELLO_QUICHE_SLICE));
         wrap(shaped(CRItems.LIME_PIE)
                 .pattern("ese")
                 .pattern("lll")
@@ -299,6 +311,10 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('c', ModItems.PIE_CRUST.get())
                 .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
             "food/lime_pie", finished, enabled("lime_pie"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.LIME_PIE.get(), 1)
+                .requires(CRItems.LIME_PIE_SLICE.get(), 4)
+                .unlockedBy("has_lime_pie_slice", has(CRItems.LIME_PIE_SLICE.get())),
+            "food/lime_pie_from_slices", finished, enabled(CRItems.LIME_PIE), enabled(CRItems.LIME_PIE_SLICE));
         wrap(shaped(CRItems.LIME_POPSICLE)
                 .pattern(" ll")
                 .pattern("ill")

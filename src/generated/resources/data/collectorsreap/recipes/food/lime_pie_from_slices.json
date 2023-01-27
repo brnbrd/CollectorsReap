@@ -8,15 +8,11 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "portobello"
+              "value": "lime_pie"
             },
             {
               "type": "collectorsreap:enabled",
-              "value": "portobello_wrap"
-            },
-            {
-              "type": "forge:tag_empty",
-              "tag": "forge:tortilla"
+              "value": "lime_pie_slice"
             }
           ]
         }
@@ -25,23 +21,20 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "collectorsreap:baked_portobello_cap"
+            "item": "collectorsreap:lime_pie_slice"
           },
           {
-            "tag": "forge:bread"
+            "item": "collectorsreap:lime_pie_slice"
           },
           {
-            "tag": "forge:crops/onion"
+            "item": "collectorsreap:lime_pie_slice"
           },
           {
-            "tag": "forge:crops/cabbage"
-          },
-          {
-            "tag": "forge:vegetables/carrot"
+            "item": "collectorsreap:lime_pie_slice"
           }
         ],
         "result": {
-          "item": "collectorsreap:portobello_wrap"
+          "item": "collectorsreap:lime_pie"
         }
       }
     }

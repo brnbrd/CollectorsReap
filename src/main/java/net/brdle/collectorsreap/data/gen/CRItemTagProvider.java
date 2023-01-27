@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.data.gen;
 
 import net.brdle.collectorsreap.CollectorsReap;
+import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.data.CRItemTags;
 import net.minecraft.data.DataGenerator;
@@ -45,6 +46,8 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.MUSHROOMS_PORTOBELLO);
 		this.addSelf(CRItemTags.PROPELPEARL);
 		this.addSelf(CRItemTags.HOGLIN_LOIN);
+		this.tag(CRItemTags.TORTILLA)
+			.addOptional(Util.rl("culturaldelights", "tortilla"));
 	}
 
 	/**

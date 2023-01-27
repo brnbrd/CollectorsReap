@@ -15,6 +15,7 @@ public class CRItemTags {
 	public static final TagKey<Item> FRUITS_LIME = forge("fruits/lime");
 	public static final TagKey<Item> SEEDS_LIME = forge("seeds/lime");
 	public static final TagKey<Item> MUSHROOMS_PORTOBELLO = forge("mushrooms/portobello");
+	public static final TagKey<Item> TORTILLA = forge("tortilla");
 
 	// VD
 	public static final TagKey<Item> LIME_OR_SLICE = vd("lime_or_slice");

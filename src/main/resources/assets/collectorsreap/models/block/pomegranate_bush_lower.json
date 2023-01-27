@@ -3,6 +3,9 @@
 	"ambientocclusion": false,
 	"render_type": "minecraft:cutout",
 	"texture_size": [128, 128],
+	"textures": {
+		"particle": "collectorsreap:block/pomegranate_bush_particle"
+	},
 	"elements": [
 		{
 			"from": [5, 0, 5],

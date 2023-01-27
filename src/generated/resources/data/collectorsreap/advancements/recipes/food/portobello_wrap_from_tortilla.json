@@ -18,7 +18,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/portobello_wrap"
+              "recipe": "collectorsreap:food/portobello_wrap_from_tortilla"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -31,7 +31,7 @@
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/portobello_wrap"
+            "collectorsreap:food/portobello_wrap_from_tortilla"
           ]
         }
       },
@@ -48,8 +48,11 @@
               "value": "portobello_wrap"
             },
             {
-              "type": "forge:tag_empty",
-              "tag": "forge:tortilla"
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:tortilla"
+              }
             }
           ]
         }

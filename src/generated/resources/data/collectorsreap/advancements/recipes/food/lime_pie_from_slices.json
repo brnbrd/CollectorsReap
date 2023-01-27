@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_baked_portobello_cap": {
+          "has_lime_pie_slice": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "collectorsreap:baked_portobello_cap"
+                    "collectorsreap:lime_pie_slice"
                   ]
                 }
               ]
@@ -18,20 +18,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/portobello_wrap"
+              "recipe": "collectorsreap:food/lime_pie_from_slices"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_baked_portobello_cap",
+            "has_lime_pie_slice",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/portobello_wrap"
+            "collectorsreap:food/lime_pie_from_slices"
           ]
         }
       },
@@ -41,15 +41,11 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "portobello"
+              "value": "lime_pie"
             },
             {
               "type": "collectorsreap:enabled",
-              "value": "portobello_wrap"
-            },
-            {
-              "type": "forge:tag_empty",
-              "tag": "forge:tortilla"
+              "value": "lime_pie_slice"
             }
           ]
         }

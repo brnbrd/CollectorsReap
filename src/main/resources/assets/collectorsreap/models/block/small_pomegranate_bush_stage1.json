@@ -5,7 +5,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "collectorsreap:block/small_pomegranate_bush_stage1",
-		"particle": "collectorsreap:block/small_pomegranate_bush_stage1"
+		"particle": "collectorsreap:block/pomegranate_bush_particle"
 	},
 	"elements": [
 		{

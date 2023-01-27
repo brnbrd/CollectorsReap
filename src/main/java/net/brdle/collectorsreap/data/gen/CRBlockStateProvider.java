@@ -101,8 +101,7 @@ public class CRBlockStateProvider extends BlockStateProvider {
                 .modelFile(models()
                     .withExistingParent("block/" + halfStageName,
                         Util.cr(Util.name(block) + "_" + state.getValue(halfProperty).getSerializedName()))
-                    .texture("0", resourceBlock(name))
-                    .texture("particle", resourceBlock(name))).build();
+                    .texture("0", resourceBlock(name))).build();
         });
     }
 

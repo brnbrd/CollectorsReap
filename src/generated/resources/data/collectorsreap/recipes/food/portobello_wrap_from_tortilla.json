@@ -15,8 +15,11 @@
               "value": "portobello_wrap"
             },
             {
-              "type": "forge:tag_empty",
-              "tag": "forge:tortilla"
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:tortilla"
+              }
             }
           ]
         }
@@ -28,7 +31,7 @@
             "item": "collectorsreap:baked_portobello_cap"
           },
           {
-            "tag": "forge:bread"
+            "tag": "forge:tortilla"
           },
           {
             "tag": "forge:crops/onion"
