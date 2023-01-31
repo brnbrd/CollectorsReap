@@ -51,13 +51,13 @@ public class LimeBushBlock extends CropBlock {
 	}
 
 	@Override
-	public int getMaxAge() {
-		return MAX_AGE;
+	public @NotNull IntegerProperty getAgeProperty() {
+		return AGE;
 	}
 
 	@Override
-	public @NotNull IntegerProperty getAgeProperty() {
-		return AGE;
+	public int getMaxAge() {
+		return MAX_AGE;
 	}
 
 	@SuppressWarnings("deprecation")
@@ -122,7 +122,7 @@ public class LimeBushBlock extends CropBlock {
 	 */
 	@Override
 	public boolean isRandomlyTicking(BlockState state) {
-		return state.getValue(AGE) < MAX_AGE && state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(STUNTED);
+		return state.getValue(AGE) < this.getMaxAge() && state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(STUNTED);
 	}
 
 	@Override

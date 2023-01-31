@@ -59,6 +59,11 @@ public class PomegranateBushBlock extends CropBlock {
 		return AGE;
 	}
 
+	@Override
+	public int getMaxAge() {
+		return MAX_AGE;
+	}
+
 	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
@@ -108,7 +113,7 @@ public class PomegranateBushBlock extends CropBlock {
 
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter level, BlockPos pos, Player player) {
-		return new ItemStack(state.getValue(AGE) == MAX_AGE ? CRItems.POMEGRANATE.get() : this.getBaseSeedId());
+		return new ItemStack(state.getValue(AGE) == this.getMaxAge() ? CRItems.POMEGRANATE.get() : this.getBaseSeedId());
 	}
 
 	@Override
@@ -121,13 +126,13 @@ public class PomegranateBushBlock extends CropBlock {
 	 */
 	@Override
 	public boolean isRandomlyTicking(BlockState pState) {
-		return pState.getValue(AGE) < MAX_AGE;
+		return pState.getValue(AGE) < this.getMaxAge();
 	}
 
 	// Can only grow to flowering if not in nether. Can receive boost from block below.
 	@Override
 	public void randomTick(@NotNull BlockState state, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
-		if (state.getValue(AGE) < MAX_AGE && state.getValue(HALF) == DoubleBlockHalf.LOWER) {
+		if (state.getValue(AGE) < this.getMaxAge() && state.getValue(HALF) == DoubleBlockHalf.LOWER) {
 			int growthRate = (pLevel.getBlockState(pPos.below()).is(CRBlockTags.POMEGRANATE_FAST_ON)) ? 9 : 13;
 			if (pLevel.dimension() == Level.NETHER) {
 				growthRate -= 4;
@@ -144,7 +149,7 @@ public class PomegranateBushBlock extends CropBlock {
 	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull InteractionResult use(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
-		if (pState.getValue(AGE) == MAX_AGE) {
+		if (pState.getValue(AGE) == this.getMaxAge()) {
 			if (!pPlayer.getItemInHand(pHand).is(Tags.Items.SHEARS)) {
 				pPlayer.hurt(DamageSource.SWEET_BERRY_BUSH, 1.0F);
 			}
@@ -172,7 +177,7 @@ public class PomegranateBushBlock extends CropBlock {
 
 	@Override
 	public void performBonemeal(ServerLevel pLevel, @NotNull RandomSource pRandom, @NotNull BlockPos pPos, BlockState pState) {
-		pLevel.setBlockAndUpdate(pPos, pState.setValue(AGE, Math.min(MAX_AGE, pState.getValue(AGE) + 1)));
+		pLevel.setBlockAndUpdate(pPos, pState.setValue(AGE, Math.min(this.getMaxAge(), pState.getValue(AGE) + 1)));
 	}
 
 	@Override
@@ -221,7 +226,7 @@ public class PomegranateBushBlock extends CropBlock {
 	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
 		if (!pLevel.isClientSide() &&
 			e instanceof Bee &&
-			pState.getValue(AGE) == MAX_AGE - 1 &&
+			pState.getValue(AGE) == this.getMaxAge() - 1 &&
 			pLevel.getRandom().nextInt(150) == 0) {
 			this.performBonemeal((ServerLevel) pLevel, pLevel.getRandom(), pPos, pState);
 		}
