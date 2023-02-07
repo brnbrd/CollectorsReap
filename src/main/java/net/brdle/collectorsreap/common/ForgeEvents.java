@@ -4,12 +4,27 @@ import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.config.CRConfig;
+import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -52,6 +67,24 @@ public class ForgeEvents {
 			e.getGenericTrades()
 				.add((ent, r) ->
 					new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.gs(CRItems.LIME_SEEDS), 5, 1, 1));
+		}
+	}
+
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
+	public static void onCorrode(LivingAttackEvent e) {
+		Level world = e.getEntity().getLevel();
+		DamageSource d = e.getSource();
+		if (d.isProjectile() && e.getEntity().hasEffect(CREffects.CORROSION.get()) && d.getDirectEntity() != null) {
+			world.addParticle(CRParticleTypes.ACID.get(), (e.getEntity().getX() + d.getDirectEntity().getX()) / 2.0D, d.getDirectEntity().getY(), (e.getEntity().getZ() + d.getDirectEntity().getZ()) / 2.0D, 0.0D, 0.0D, 0.0D);
+			world.playSound(null, e.getEntity(), SoundEvents.REDSTONE_TORCH_BURNOUT, SoundSource.NEUTRAL, 0.4F, 1.1F);
+			d.getDirectEntity().kill();
+			e.setCanceled(true);
+		} else if (d.getEntity() instanceof Player p) {
+			InteractionHand hand = p.getUsedItemHand();
+			ItemStack stack = p.getItemInHand(hand);
+			if (p.hasEffect(CREffects.CORROSION.get()) && stack.isDamageableItem()) {
+				stack.hurtAndBreak(1, p, en -> en.broadcastBreakEvent(hand));
+			}
 		}
 	}
 

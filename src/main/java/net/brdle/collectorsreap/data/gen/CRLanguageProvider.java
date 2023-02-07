@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.data.gen;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
+import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -64,6 +65,8 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.GLAZED_STRIDER, "Glazed Strider");
         addItem(CRItems.CRIMSON_CARROT_ROAST, "Crimson Carrot Roast");
         addItem(CRItems.DELUXE_SALAD, "Deluxe Salad");
+        addEffect(CREffects.CORROSION, "Corrosion");
+        //addEffect(CREffects.VOLATILITY, "Volatility");
         add("tooltip.requires_modid", "Requires modid:");
         add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO), "Found in Meadows.");
         add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Found in Flower Forests.");

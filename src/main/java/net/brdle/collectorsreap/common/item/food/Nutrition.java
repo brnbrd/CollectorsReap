@@ -1,14 +1,17 @@
 package net.brdle.collectorsreap.common.item.food;
 
+import net.brdle.collectorsreap.common.effect.CREffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 
 public class Nutrition {
     public static final FoodProperties LIME = (new FoodProperties.Builder())
-        .nutrition(2).saturationMod(0.2F).build();
+        .nutrition(2).saturationMod(0.2F)
+        .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 0), 1.0F).build();
     public static final FoodProperties LIME_SLICE = (new FoodProperties.Builder())
-        .nutrition(1).saturationMod(0.2F).fast().build();
+        .nutrition(1).saturationMod(0.2F).fast()
+        .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 300, 0), 1.0F).build();
     public static final FoodProperties LIME_PIE_SLICE = (new FoodProperties.Builder())
         .nutrition(3).saturationMod(0.2F).build();
     public static final FoodProperties LIME_POPSICLE = (new FoodProperties.Builder())
