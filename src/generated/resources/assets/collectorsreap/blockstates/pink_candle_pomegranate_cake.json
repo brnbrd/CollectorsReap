@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "collectorsreap:block/pink_candle_pomegranate_cake"
+    },
+    "lit=true": {
+      "model": "collectorsreap:block/pink_candle_pomegranate_cake_lit"
+    }
+  }
+}

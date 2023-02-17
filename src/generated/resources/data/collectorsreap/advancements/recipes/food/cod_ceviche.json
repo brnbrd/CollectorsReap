@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_lime": {
+          "has_citrus": {
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:fruits/lime"
+                  "tag": "forge:fruits/citrus"
                 }
               ]
             },
@@ -23,7 +23,7 @@
         },
         "requirements": [
           [
-            "has_lime",
+            "has_citrus",
             "has_the_recipe"
           ]
         ],

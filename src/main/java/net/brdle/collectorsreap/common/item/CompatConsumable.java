@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CompatConsumable extends ConsumableItem {
 
-	private String modid;
+	private final String modid;
 	public CompatConsumable(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, String modid) {
 		super(properties, hasFoodEffectTooltip, hasCustomTooltip);
 		this.modid = modid;

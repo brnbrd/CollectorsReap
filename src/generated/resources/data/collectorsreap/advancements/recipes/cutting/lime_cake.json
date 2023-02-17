@@ -1,0 +1,21 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_cake"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_cake_slice"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

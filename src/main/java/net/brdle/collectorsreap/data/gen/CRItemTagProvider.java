@@ -29,7 +29,8 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.FRUITS_LIME)
 			.add(CRItems.LIME_SLICE.get());
 		this.tag(CRItemTags.FRUITS_CITRUS)
-			.addTag(CRItemTags.FRUITS_LIME);
+			.addTag(CRItemTags.FRUITS_LIME)
+			.addOptionalTag(Util.rl("forge", "fruits/lemon"));
 		this.tag(CRItemTags.FRUITS)
 			.addTag(CRItemTags.FRUITS_POMEGRANATE)
 			.addTag(CRItemTags.FRUITS_LIME);
@@ -48,6 +49,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.addSelf(CRItemTags.HOGLIN_LOIN);
 		this.tag(CRItemTags.TORTILLA)
 			.addOptional(Util.rl("culturaldelights", "tortilla"));
+		this.tag(CRItemTags.ICE_CREAM)
+			.add(CRItems.LIME_ICE_CREAM.get())
+			.add(CRItems.POMEGRANATE_ICE_CREAM.get());
 	}
 
 	/**

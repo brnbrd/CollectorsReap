@@ -11,6 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
+import java.util.function.Supplier;
 
 public class Util {
 
@@ -45,7 +46,7 @@ public class Util {
     return ForgeRegistries.ITEMS.getValue(rl);
   }
 
-  public static ItemStack gs(RegistryObject<Item> r) {
+  public static ItemStack gs(Supplier<Item> r) {
     return r.get().getDefaultInstance();
   }
 

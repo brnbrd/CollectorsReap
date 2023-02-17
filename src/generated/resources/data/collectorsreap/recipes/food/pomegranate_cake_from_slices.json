@@ -1,0 +1,51 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate_cake"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate_cake_slice"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "collectorsreap:pomegranate_cake_slice"
+          },
+          {
+            "item": "collectorsreap:pomegranate_cake_slice"
+          },
+          {
+            "item": "collectorsreap:pomegranate_cake_slice"
+          },
+          {
+            "item": "collectorsreap:pomegranate_cake_slice"
+          },
+          {
+            "item": "collectorsreap:pomegranate_cake_slice"
+          },
+          {
+            "item": "collectorsreap:pomegranate_cake_slice"
+          },
+          {
+            "item": "collectorsreap:pomegranate_cake_slice"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:pomegranate_cake"
+        }
+      }
+    }
+  ]
+}

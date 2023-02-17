@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate_ice_cream_block"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate_ice_cream"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "i": {
+            "item": "collectorsreap:pomegranate_ice_cream"
+          },
+          "s": {
+            "item": "minecraft:snow_block"
+          }
+        },
+        "pattern": [
+          "sss",
+          "sis",
+          "sss"
+        ],
+        "result": {
+          "item": "collectorsreap:pomegranate_ice_cream_block"
+        }
+      }
+    }
+  ]
+}

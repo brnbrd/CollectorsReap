@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/cake_slice4",
+  "textures": {
+    "bottom": "collectorsreap:block/pomegranate_cake_bottom",
+    "inside": "collectorsreap:block/pomegranate_cake_inner",
+    "particle": "collectorsreap:block/pomegranate_cake_side",
+    "side": "collectorsreap:block/pomegranate_cake_side",
+    "top": "collectorsreap:block/pomegranate_cake_top"
+  }
+}

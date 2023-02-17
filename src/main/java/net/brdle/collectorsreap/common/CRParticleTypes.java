@@ -12,6 +12,7 @@ public class CRParticleTypes {
 	public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, CollectorsReap.MODID);
 
 	public static final RegistryObject<SimpleParticleType> ACID = PARTICLE_TYPES.register("acid", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> SHOCKWAVE = PARTICLE_TYPES.register("shockwave", () -> new SimpleParticleType(true));
 
 	public static void create(IEventBus bus) {
 		PARTICLE_TYPES.register(bus);

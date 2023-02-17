@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pomegranate_cake"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "e": {
+            "tag": "forge:eggs"
+          },
+          "m": {
+            "tag": "forge:milk"
+          },
+          "p": {
+            "tag": "forge:fruits/pomegranate"
+          },
+          "s": {
+            "item": "minecraft:sugar"
+          },
+          "w": {
+            "tag": "forge:grain/wheat"
+          }
+        },
+        "pattern": [
+          "mpm",
+          "ses",
+          "wpw"
+        ],
+        "result": {
+          "item": "collectorsreap:pomegranate_cake"
+        }
+      }
+    }
+  ]
+}

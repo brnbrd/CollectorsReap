@@ -6,7 +6,9 @@ import net.brdle.collectorsreap.common.block.*;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.AbstractCandleBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
@@ -49,6 +51,44 @@ public class CRBlockStateProvider extends BlockStateProvider {
             .partialState().with(SmallPomegranateBushBlock.AGE, 1).modelForState().modelFile(existingModel("small_pomegranate_bush_stage1")).addModel();
         this.crateBlock(CRBlocks.LIME_CRATE.get(), "lime");
         this.crateBlock(CRBlocks.POMEGRANATE_CRATE.get(), "pomegranate");
+        this.cakeBlock(CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.WHITE_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.ORANGE_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.MAGENTA_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.LIGHT_BLUE_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.YELLOW_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.LIME_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.PINK_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.GRAY_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.LIGHT_GRAY_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.CYAN_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.PURPLE_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.BLUE_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.BROWN_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.GREEN_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.RED_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.candleCakeBlock(CRBlocks.BLACK_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
+        this.cakeBlock(CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.WHITE_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.ORANGE_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.MAGENTA_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.LIGHT_BLUE_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.YELLOW_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.LIME_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.PINK_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.GRAY_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.LIGHT_GRAY_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.CYAN_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.PURPLE_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.BLUE_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.BROWN_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.GREEN_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.RED_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.candleCakeBlock(CRBlocks.BLACK_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+        this.simpleBlock(CRBlocks.LIME_ICE_CREAM_BLOCK.get());
+        this.simpleBlock(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get());
     }
 
     public void crateBlock(Block block, String cropName) {
@@ -124,5 +164,40 @@ public class CRBlockStateProvider extends BlockStateProvider {
                 .rotationY(((int) state.getValue(PieBlock.FACING).toYRot() + 180) % 360).build();
             }
         );
+    }
+
+    public void cakeBlock(RegistryObject<Block> block) {
+        getVariantBuilder(block.get()).forAllStates(state -> {
+                int bites = state.getValue(CakeBlock.BITES);
+                String name = Util.name(block);
+                String suffix = bites > 0 ? "_slice" + bites : "";
+                var mod = models()
+                    .withExistingParent("block/" + name + suffix, Util.rl("minecraft", "cake" + suffix))
+                    .texture("top", resourceBlock(name + "_top"))
+                    .texture("bottom", resourceBlock(name + "_bottom"))
+                    .texture("side", resourceBlock(name + "_side"))
+                    .texture("particle", resourceBlock(name + "_side"));
+                if (bites > 0) {
+                    mod.texture("inside", resourceBlock(name + "_inner"));
+                }
+                return ConfiguredModel.builder().modelFile(mod).build();
+            }
+        );
+    }
+
+    public void candleCakeBlock(RegistryObject<Block> block, RegistryObject<Block> cake) {
+        getVariantBuilder(block.get()).forAllStates(state -> {
+            String lit = state.getValue(AbstractCandleBlock.LIT) ? "_lit" : "";
+            String name = Util.name(block);
+            String cakeName = Util.name(cake);
+            String candle = name.replace("_" + cakeName, "") + lit;
+            return ConfiguredModel.builder().modelFile(models()
+                .withExistingParent("block/" + name + lit, Util.rl("minecraft", "template_cake_with_candle"))
+                .texture("bottom", resourceBlock(cakeName + "_bottom"))
+                .texture("candle", Util.rl("minecraft", "block/" + candle))
+                .texture("particle", resourceBlock(cakeName + "_side"))
+                .texture("side", resourceBlock(cakeName + "_side"))
+                .texture("top", resourceBlock(cakeName + "_top"))).build();
+        });
     }
 }

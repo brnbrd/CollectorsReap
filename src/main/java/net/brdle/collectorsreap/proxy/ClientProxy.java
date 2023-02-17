@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.proxy;
 
 import net.brdle.collectorsreap.client.particle.AcidParticle;
+import net.brdle.collectorsreap.client.particle.ShockwaveParticle;
 import net.brdle.collectorsreap.common.CRParticleTypes;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,5 +25,6 @@ public class ClientProxy extends CommonProxy {
     @SubscribeEvent
     public void registerParticles(RegisterParticleProvidersEvent e) {
         e.register(CRParticleTypes.ACID.get(), AcidParticle.Provider::new);
+        e.register(CRParticleTypes.SHOCKWAVE.get(), ShockwaveParticle.Provider::new);
     }
 }

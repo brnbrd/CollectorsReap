@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.data.gen;
 
+import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
@@ -51,6 +53,10 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.POMEGRANATE_SLICE.get(), 4)
             .addResultWithChance(Items.RED_DYE, 0.5f),
             "cutting/pomegranate", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SEEDS));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LIME_CAKE_SLICE.get(), 7),
+            "cutting/lime_cake", finished, enabled(CRItems.LIME_CAKE), enabled(CRItems.LIME_CAKE_SLICE));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.POMEGRANATE_CAKE_SLICE.get(), 7),
+            "cutting/pomegranate_cake", finished, enabled(CRItems.POMEGRANATE_CAKE), enabled(CRItems.POMEGRANATE_CAKE_SLICE));
 
         // Cooking Pot
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PORTOBELLO_RISOTTO.get(), 1, 200, 1.0F, Items.BOWL)
@@ -182,27 +188,27 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
         wrap(shapeless(CRItems.POMEGRANATE, 9)
                 .requires(CRItems.POMEGRANATE_CRATE.get())
                 .unlockedBy("has_pomegranate_crate", has(CRItems.POMEGRANATE_CRATE.get())),
-            "pomegranate_from_pomegranate_crate", finished, enabled("pomegranate"), enabled("pomegranate_crate"));
+            "pomegranate_from_pomegranate_crate", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_CRATE));
         wrap(shapeless(CRItems.POMEGRANATE_CRATE)
                 .requires(CRItems.POMEGRANATE.get(), 9)
                 .unlockedBy("has_pomegranate", has(CRItems.POMEGRANATE.get())),
-            "pomegranate_crate", finished, enabled("pomegranate"), enabled("pomegranate_crate"));
+            "pomegranate_crate", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_CRATE));
         wrap(shapeless(CRItems.POMEGRANATE_SEEDS, 8)
                 .requires(CRItems.POMEGRANATE.get())
                 .unlockedBy("has_pomegranate", has(CRItems.POMEGRANATE.get())),
-            "pomegranate_seeds_from_pomegranate", finished, enabled("pomegranate"), enabled("pomegranate_seeds"));
+            "pomegranate_seeds_from_pomegranate", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SEEDS));
         wrap(shapeless(CRItems.POMEGRANATE_SEEDS, 2)
                 .requires(CRItems.POMEGRANATE_SLICE.get())
                 .unlockedBy("has_pomegranate_slice", has(CRItems.POMEGRANATE_SLICE.get())),
-            "pomegranate_seeds_from_pomegranate_slice", finished, enabled("pomegranate"), enabled("pomegranate_slice"), enabled("pomegranate_seeds"));
+            "pomegranate_seeds_from_pomegranate_slice", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SLICE), enabled(CRItems.POMEGRANATE_SEEDS));
         wrap(shapeless(CRItems.LIME_SEEDS, 2)
                 .requires(CRItems.LIME.get())
                 .unlockedBy("has_lime", has(CRItems.LIME.get())),
-            "lime_seeds_from_lime", finished, enabled("lime"), enabled("lime_seeds"));
+            "lime_seeds_from_lime", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SEEDS));
         wrap(shapeless(CRItems.LIME_SEEDS)
                 .requires(CRItems.LIME_SLICE.get())
                 .unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
-            "lime_seeds_from_slice", finished, enabled("lime"), enabled("lime_slice"), enabled("lime_seeds"));
+            "lime_seeds_from_slice", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.LIME_SEEDS));
         wrap(shapeless(CRItems.PORTOBELLO_WRAP)
                 .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
                 .requires(ForgeTags.BREAD)
@@ -226,7 +232,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(ForgeTags.CROPS_CABBAGE)
                 .requires(ForgeTags.CROPS_TOMATO)
                 .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
-            "food/portobello_burger", finished, enabled("portobello_burger"));
+            "food/portobello_burger", finished, enabled(CRItems.PORTOBELLO_BURGER));
         wrap(shapeless(CRItems.LIMEADE)
                 .requires(Ingredient.of(CRItemTags.FRUITS_LIME), 2)
                 .requires(Items.SUGAR)
@@ -259,19 +265,19 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             "food/pink_limeade_from_limeade", finished, enabled(CRItems.PINK_LIMEADE));
         wrap(shapeless(CRItems.SALMON_TARTARE)
                 .requires(Ingredient.of(ForgeTags.RAW_FISHES_SALMON), 3)
-                .requires(CRItemTags.FRUITS_LIME)
+                .requires(CRItemTags.FRUITS_CITRUS)
                 .requires(Items.BOWL)
-                .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-            "food/salmon_tartare", finished, enabled("salmon_tartare"));
+                .unlockedBy("has_citrus", has(CRItemTags.FRUITS_CITRUS)),
+            "food/salmon_tartare", finished, enabled(CRItems.SALMON_TARTARE));
         wrap(shapeless(CRItems.COD_CEVICHE)
                 .requires(ForgeTags.RAW_FISHES_COD)
-                .requires(CRItemTags.FRUITS_LIME)
+                .requires(CRItemTags.FRUITS_CITRUS)
                 .requires(ForgeTags.CROPS_ONION)
                 .requires(ForgeTags.CROPS_CABBAGE)
                 .requires(ForgeTags.CROPS_TOMATO)
                 .requires(Items.BOWL)
-                .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-            "food/cod_ceviche", finished, enabled("cod_ceviche"));
+                .unlockedBy("has_citrus", has(CRItemTags.FRUITS_CITRUS)),
+            "food/cod_ceviche", finished, enabled(CRItems.COD_CEVICHE));
         wrap(shapeless(CRItems.DELUXE_SALAD)
                 .requires(Items.APPLE)
                 .requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
@@ -323,13 +329,114 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('i', Items.ICE)
                 .define('s', Tags.Items.RODS_WOODEN)
                 .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-            "food/lime_popsicle", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_POPSICLE));
+            "food/lime_popsicle", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_POPSICLE), tagEmpty(CRItemTags.ICE_CUBES));
+        wrap(shaped(CRItems.LIME_POPSICLE)
+                .pattern(" ll")
+                .pattern("ill")
+                .pattern("si ")
+                .define('l', CRItemTags.FRUITS_LIME)
+                .define('i', CRItemTags.ICE_CUBES)
+                .define('s', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+            "food/lime_popsicle_from_ice_cubes", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_POPSICLE), not(tagEmpty(CRItemTags.ICE_CUBES)));
         wrap(shaped(CRItems.LIME_COOKIE, 8)
                 .pattern("wlw")
                 .define('l', CRItemTags.FRUITS_LIME)
                 .define('w', Tags.Items.CROPS_WHEAT)
                 .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
             "food/lime_cookie", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_COOKIE));
+        wrap(shaped(CRItems.LIME_CAKE)
+                .pattern("mlm")
+                .pattern("ses")
+                .pattern("wlw")
+                .define('e', ForgeTags.EGGS)
+                .define('m', ForgeTags.MILK)
+                .define('l', CRItemTags.FRUITS_LIME)
+                .define('s', Items.SUGAR)
+                .define('w', ForgeTags.GRAIN_WHEAT)
+                .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+            "food/lime_cake", finished, enabled("lime_cake"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.LIME_CAKE.get(), 1)
+                .requires(CRItems.LIME_CAKE_SLICE.get(), 7)
+                .unlockedBy("has_lime_cake_slice", has(CRItems.LIME_CAKE_SLICE.get())),
+            "food/lime_cake_from_slices", finished, enabled(CRItems.LIME_CAKE), enabled(CRItems.LIME_CAKE_SLICE));
+        wrap(shaped(CRItems.POMEGRANATE_CAKE)
+                .pattern("mpm")
+                .pattern("ses")
+                .pattern("wpw")
+                .define('e', ForgeTags.EGGS)
+                .define('m', ForgeTags.MILK)
+                .define('p', CRItemTags.FRUITS_POMEGRANATE)
+                .define('s', Items.SUGAR)
+                .define('w', ForgeTags.GRAIN_WHEAT)
+                .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_cake", finished, enabled("pomegranate_cake"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.POMEGRANATE_CAKE.get(), 1)
+                .requires(CRItems.POMEGRANATE_CAKE_SLICE.get(), 7)
+                .unlockedBy("has_pomegranate_cake_slice", has(CRItems.POMEGRANATE_CAKE_SLICE.get())),
+            "food/pomegranate_cake_from_slices", finished, enabled(CRItems.POMEGRANATE_CAKE), enabled(CRItems.POMEGRANATE_CAKE_SLICE));
+
+        // Neapolitan Compat
+        wrap(shapeless(CRItems.LIME_ICE_CREAM)
+                .requires(Items.BOWL)
+                .requires(CRItemTags.FRUITS_LIME)
+                .requires(ForgeTags.MILK)
+                .requires(CRItemTags.ICE_CUBES)
+                .requires(Items.SUGAR)
+                .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+            "food/lime_ice_cream", finished, enabled(CRItems.LIME_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
+        wrap(shapeless(CRItems.LIME_MILKSHAKE, 3)
+                .requires(Items.GLASS_BOTTLE, 3)
+                .requires(CRItemTags.FRUITS_LIME)
+                .requires(NeapolitanItems.VANILLA_ICE_CREAM.get())
+                .requires(ForgeTags.MILK)
+                .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+            "food/lime_milkshake", finished, enabled(CRItems.LIME_MILKSHAKE), modLoaded("neapolitan"));
+        wrap(shapeless(CRItems.LIME_MILKSHAKE, 3)
+                .requires(Items.GLASS_BOTTLE, 3)
+                .requires(CRItems.LIME_ICE_CREAM.get())
+                .requires(NeapolitanItems.DRIED_VANILLA_PODS.get())
+                .requires(ForgeTags.MILK)
+                .unlockedBy("has_lime_ice_cream", has(CRItems.LIME_ICE_CREAM.get())),
+            "food/lime_milkshake_from_ice_cream", finished, enabled(CRItems.LIME_ICE_CREAM), enabled(CRItems.LIME_MILKSHAKE), modLoaded("neapolitan"));
+        wrap(shaped(CRItems.LIME_ICE_CREAM_BLOCK)
+                .pattern("sss")
+                .pattern("sis")
+                .pattern("sss")
+                .define('s', Blocks.SNOW_BLOCK)
+                .define('i', CRItems.LIME_ICE_CREAM.get())
+                .unlockedBy("has_lime_ice_cream", has(CRItems.LIME_ICE_CREAM.get())),
+            "lime_ice_cream_block", finished, enabled(CRItems.LIME_ICE_CREAM_BLOCK), enabled(CRItems.LIME_ICE_CREAM), modLoaded("neapolitan"));
+        wrap(shapeless(CRItems.POMEGRANATE_ICE_CREAM)
+                .requires(Items.BOWL)
+                .requires(CRItemTags.FRUITS_POMEGRANATE)
+                .requires(ForgeTags.MILK)
+                .requires(CRItemTags.ICE_CUBES)
+                .requires(Items.SUGAR)
+                .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_ice_cream", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
+        wrap(shaped(CRItems.POMEGRANATE_ICE_CREAM_BLOCK)
+                .pattern("sss")
+                .pattern("sis")
+                .pattern("sss")
+                .define('s', Blocks.SNOW_BLOCK)
+                .define('i', CRItems.POMEGRANATE_ICE_CREAM.get())
+                .unlockedBy("has_pomegranate_ice_cream", has(CRItems.POMEGRANATE_ICE_CREAM.get())),
+            "pomegranate_ice_cream_block", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM_BLOCK), enabled(CRItems.POMEGRANATE_ICE_CREAM), modLoaded("neapolitan"));
+        wrap(shapeless(CRItems.POMEGRANATE_MILKSHAKE, 3)
+                .requires(Items.GLASS_BOTTLE, 3)
+                .requires(CRItemTags.FRUITS_POMEGRANATE)
+                .requires(NeapolitanItems.VANILLA_ICE_CREAM.get())
+                .requires(ForgeTags.MILK)
+                .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_milkshake", finished, enabled(CRItems.POMEGRANATE_MILKSHAKE), modLoaded("neapolitan"));
+        wrap(shapeless(CRItems.POMEGRANATE_MILKSHAKE, 3)
+                .requires(Items.GLASS_BOTTLE, 3)
+                .requires(CRItems.POMEGRANATE_ICE_CREAM.get())
+                .requires(NeapolitanItems.DRIED_VANILLA_PODS.get())
+                .requires(ForgeTags.MILK)
+                .unlockedBy("has_pomegranate_ice_cream", has(CRItems.POMEGRANATE_ICE_CREAM.get())),
+            "food/pomegranate_milkshake_from_ice_cream", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM), enabled(CRItems.POMEGRANATE_MILKSHAKE), modLoaded("neapolitan"));
     }
 
 

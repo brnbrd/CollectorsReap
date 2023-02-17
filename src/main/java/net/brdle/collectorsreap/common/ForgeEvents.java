@@ -6,18 +6,18 @@ import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.item.CRItems;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
@@ -31,6 +31,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.MissingMappingsEvent;
 
+import java.util.List;
 import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid=CollectorsReap.MODID)
@@ -79,7 +80,7 @@ public class ForgeEvents {
 		Level world = victim.getLevel();
 		DamageSource d = e.getSource();
 		if (victim.hasEffect(CREffects.CORROSION.get())) {
-			if (d.isProjectile() && d.getDirectEntity() != null) {
+			if (d.isProjectile() && d.getDirectEntity() != null && d.getDirectEntity() instanceof Projectile proj) {
 				if (d.getEntity() != null) {
 					double x = ((victim.getX() * 2.0D) + d.getEntity().getX()) / 3.0D;
 					double y = victim.getY() + 0.5D;
@@ -87,7 +88,11 @@ public class ForgeEvents {
 					world.addParticle(CRParticleTypes.ACID.get(), x, y, z, 0.0D, 0.0D, 0.0D);
 				}
 				world.playSound(null, e.getEntity(), SoundEvents.REDSTONE_TORCH_BURNOUT, SoundSource.NEUTRAL, 0.4F, 1.1F);
-				d.getDirectEntity().kill();
+				if (proj instanceof ThrownTrident trident) {
+					trident.hurt(DamageSource.mobAttack(victim), 3.0F);
+				} else {
+					proj.discard();
+				}
 				e.setCanceled(true);
 			} else if (d.getEntity() instanceof Player p) {
 				InteractionHand hand = p.getUsedItemHand();
@@ -102,26 +107,35 @@ public class ForgeEvents {
 	@SubscribeEvent(priority = EventPriority.HIGH)
 	public static void onVolatile(LivingAttackEvent e) {
 		LivingEntity victim = e.getEntity();
-		Level world = victim.getLevel();
-		if (world.isClientSide()) {
-			return;
-		}
-		DamageSource d = e.getSource();
-		if (d.getEntity() != null && d.getEntity() instanceof LivingEntity attacker && attacker.hasEffect(CREffects.VOLATILITY.get())) {
-			for (LivingEntity ent : world.getNearbyEntities(LivingEntity.class, TargetingConditions.forCombat().ignoreLineOfSight().range(5.0D), victim, victim.getBoundingBox().inflate(4.0D, 2.0D, 4.0D))) {
-				if (ent != attacker) {
-					Vec3 vec3 = attacker.position().add(0.0D, 1.6F, 0.0D);
+		if (!victim.getLevel().isClientSide() && victim.getLevel() instanceof ServerLevel server) {
+			DamageSource d = e.getSource();
+			if (d.getEntity() != null &&
+				d.getEntity() instanceof LivingEntity attacker &&
+				attacker.hasEffect(CREffects.VOLATILITY.get())) {
+				if (attacker instanceof Player p) {
+					ItemStack inHand = p.getMainHandItem();
+					if (p.getCooldowns().isOnCooldown(inHand.getItem())) {
+						return;
+					} else {
+						p.getCooldowns().addCooldown(inHand.getItem(), 40);
+					}
+				}
+				List<LivingEntity> nearby = server.getNearbyEntities(LivingEntity.class, TargetingConditions.forCombat().ignoreLineOfSight().range(5.0D), victim, victim.getBoundingBox().inflate(4.0D, 2.0D, 4.0D));
+				nearby.remove(attacker);
+				float damage = 2.0F + (4.0F / nearby.size());
+				server.sendParticles(CRParticleTypes.SHOCKWAVE.get(), victim.getX(), victim.getY(), victim.getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
+				for (LivingEntity ent : nearby) {
+					Vec3 vec3 = attacker.position().add(0.0D, 1.0F, 0.0D);
 					Vec3 vec31 = ent.getEyePosition().subtract(vec3);
 					Vec3 vec32 = vec31.normalize();
-					for (int i = 1; i < Mth.floor(vec31.length()) + 7; ++i) {
+					/*for (int i = 1; i < Mth.floor(vec31.length()) + 7; ++i) {
 						Vec3 vec33 = vec3.add(vec32.scale(i));
-						((ServerLevel)world).sendParticles(ParticleTypes.SONIC_BOOM, vec33.x, vec33.y, vec33.z, 1, 0.0D, 0.0D, 0.0D, 0.0D);
-					}
+						server.sendParticles(CRParticleTypes.SHOCKWAVE.get(), vec33.x, vec33.y, vec33.z, 1, 0.0D, 0.0D, 0.0D, 0.0D);
+					}*/
 					attacker.playSound(SoundEvents.WARDEN_SONIC_BOOM, 3.0F, 1.0F);
-					ent.hurt(DamageSource.mobAttack(ent), 10.0F);
-					double d1 = 0.5D * (1.0D - ent.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
-					double d0 = 2.5D * (1.0D - ent.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
-					ent.push(vec32.x() * d0, vec32.y() * d1, vec32.z() * d0);
+					ent.hurt(DamageSource.mobAttack(ent), damage);
+					double d1 = (1.0D - ent.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
+					ent.push(vec32.x() * d1, vec32.y() * d1 * 0.5D, vec32.z() * d1);
 				}
 			}
 		}

@@ -93,6 +93,8 @@ dependencies {
     implementation fg.deobf("curse.maven:farmers-d-398521:${farmers_delight_version}")
     implementation fg.deobf("curse.maven:farmers-respite-551453:${farmers_respite_version}")
     implementation fg.deobf("curse.maven:nethers-delight-496394:${nethers_delight_version}")
+    implementation fg.deobf("curse.maven:blueprint-382216:${blueprint_version}")
+    implementation fg.deobf("curse.maven:neapolitan-382016:${neapolitan_version}")
 }
 
 jar {

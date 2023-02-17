@@ -6,8 +6,12 @@ import org.jetbrains.annotations.Nullable;
 
 public class ModCompat {
 	@Nullable public static CreativeModeTab getNDTab() {
-		if (ModList.get().isLoaded("nethersdelight")) {
-			return NDCompat.CREATIVE_TAB.get();
+		return ifLoaded("nethersdelight", NDCompat.CREATIVE_TAB.get());
+	}
+
+	@Nullable public static CreativeModeTab ifLoaded(String modid, CreativeModeTab tab) {
+		if (ModList.get().isLoaded(modid)) {
+			return tab;
 		} else {
 			return null;
 		}

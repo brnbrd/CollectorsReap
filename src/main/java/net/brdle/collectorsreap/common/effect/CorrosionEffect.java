@@ -12,7 +12,7 @@ public class CorrosionEffect extends MobEffect {
 	 * Used weapon will take extra durability damage
 	 */
 	protected CorrosionEffect() {
-		super(MobEffectCategory.BENEFICIAL, 0);
+		super(MobEffectCategory.BENEFICIAL, 0x4EFF35);
 	}
 
 	@Override
@@ -25,6 +25,6 @@ public class CorrosionEffect extends MobEffect {
 	 */
 	@Override
 	public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
-		return pDuration % 9 == 0;
+		return pDuration % 10 == 0;
 	}
 }

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "collectorsreap:block/magenta_candle_lime_cake"
+    },
+    "lit=true": {
+      "model": "collectorsreap:block/magenta_candle_lime_cake_lit"
+    }
+  }
+}

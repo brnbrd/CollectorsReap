@@ -16,6 +16,7 @@ public class CRItemTags {
 	public static final TagKey<Item> SEEDS_LIME = forge("seeds/lime");
 	public static final TagKey<Item> MUSHROOMS_PORTOBELLO = forge("mushrooms/portobello");
 	public static final TagKey<Item> TORTILLA = forge("tortilla");
+	public static final TagKey<Item> ICE_CUBES = forge("ice_cubes");
 
 	// VD
 	public static final TagKey<Item> LIME_OR_SLICE = vd("lime_or_slice");
@@ -24,6 +25,9 @@ public class CRItemTags {
 	public static final TagKey<Item> RAW_STRIDER = Util.it("nethersdelight", "raw_strider");
 	public static final TagKey<Item> PROPELPEARL = Util.it("nethersdelight", "propelpearl");
 	public static final TagKey<Item> HOGLIN_LOIN = Util.it("nethersdelight", "hoglin_loin");
+
+	// Neapolitan
+	public static final TagKey<Item> ICE_CREAM = Util.it("neapolitan", "ice_cream");
 
 	private static TagKey<Item> vd(String name) {
 		return Util.it(CollectorsReap.MODID, name);

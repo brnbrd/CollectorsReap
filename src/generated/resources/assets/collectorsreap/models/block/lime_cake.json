@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cake",
+  "textures": {
+    "bottom": "collectorsreap:block/lime_cake_bottom",
+    "particle": "collectorsreap:block/lime_cake_side",
+    "side": "collectorsreap:block/lime_cake_side",
+    "top": "collectorsreap:block/lime_cake_top"
+  }
+}

@@ -30,6 +30,40 @@ public class CRLanguageProvider extends LanguageProvider {
         addBlock(CRBlocks.SMALL_POMEGRANATE_BUSH, "Pomegranate Seeds");
         addBlock(CRBlocks.POMEGRANATE_BUSH, "Pomegranate Bush");
         addBlock(CRBlocks.POMEGRANATE_CRATE, "Pomegranate Crate");
+        addBlock(CRBlocks.LIME_CAKE, "Lime Cake");
+        addBlock(CRBlocks.CANDLE_LIME_CAKE, "Lime Cake with Candle");
+        addBlock(CRBlocks.WHITE_CANDLE_LIME_CAKE, "Lime Cake with White Candle");
+        addBlock(CRBlocks.ORANGE_CANDLE_LIME_CAKE, "Lime Cake with Orange Candle");
+        addBlock(CRBlocks.MAGENTA_CANDLE_LIME_CAKE, "Lime Cake with Magenta Candle");
+        addBlock(CRBlocks.LIME_CANDLE_LIME_CAKE, "Lime Cake with Lime Candle");
+        addBlock(CRBlocks.PINK_CANDLE_LIME_CAKE, "Lime Cake with Pink Candle");
+        addBlock(CRBlocks.GRAY_CANDLE_LIME_CAKE, "Lime Cake with Gray Candle");
+        addBlock(CRBlocks.LIGHT_GRAY_CANDLE_LIME_CAKE, "Lime Cake with Light Gray Candle");
+        addBlock(CRBlocks.CYAN_CANDLE_LIME_CAKE, "Lime Cake with Cyan Candle");
+        addBlock(CRBlocks.PURPLE_CANDLE_LIME_CAKE, "Lime Cake with Purple Candle");
+        addBlock(CRBlocks.BLUE_CANDLE_LIME_CAKE, "Lime Cake with Blue Candle");
+        addBlock(CRBlocks.BROWN_CANDLE_LIME_CAKE, "Lime Cake with Brown Candle");
+        addBlock(CRBlocks.GREEN_CANDLE_LIME_CAKE, "Lime Cake with Green Candle");
+        addBlock(CRBlocks.RED_CANDLE_LIME_CAKE, "Lime Cake with Red Candle");
+        addBlock(CRBlocks.BLACK_CANDLE_LIME_CAKE, "Lime Cake with Black Candle");
+        addBlock(CRBlocks.POMEGRANATE_CAKE, "Pomegranate Cake");
+        addBlock(CRBlocks.CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Candle");
+        addBlock(CRBlocks.WHITE_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with White Candle");
+        addBlock(CRBlocks.ORANGE_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Orange Candle");
+        addBlock(CRBlocks.MAGENTA_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Magenta Candle");
+        addBlock(CRBlocks.LIME_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Lime Candle");
+        addBlock(CRBlocks.PINK_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Pink Candle");
+        addBlock(CRBlocks.GRAY_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Gray Candle");
+        addBlock(CRBlocks.LIGHT_GRAY_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Light Gray Candle");
+        addBlock(CRBlocks.CYAN_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Cyan Candle");
+        addBlock(CRBlocks.PURPLE_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Purple Candle");
+        addBlock(CRBlocks.BLUE_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Blue Candle");
+        addBlock(CRBlocks.BROWN_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Brown Candle");
+        addBlock(CRBlocks.GREEN_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Green Candle");
+        addBlock(CRBlocks.RED_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Red Candle");
+        addBlock(CRBlocks.BLACK_CANDLE_POMEGRANATE_CAKE, "Pomegranate Cake with Black Candle");
+        addBlock(CRBlocks.LIME_ICE_CREAM_BLOCK, "Lime Ice Cream Block");
+        addBlock(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK, "Pomegranate Ice Cream Block");
     }
 
     private void addItems() {
@@ -65,6 +99,12 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.GLAZED_STRIDER, "Glazed Strider");
         addItem(CRItems.CRIMSON_CARROT_ROAST, "Crimson Carrot Roast");
         addItem(CRItems.DELUXE_SALAD, "Deluxe Salad");
+        addItem(CRItems.LIME_CAKE_SLICE, "Slice of Lime Cake");
+        addItem(CRItems.POMEGRANATE_CAKE_SLICE, "Slice of Pomegranate Cake");
+        addItem(CRItems.LIME_ICE_CREAM, "Lime Ice Cream");
+        addItem(CRItems.POMEGRANATE_ICE_CREAM, "Pomegranate Ice Cream");
+        addItem(CRItems.LIME_MILKSHAKE, "Lime Milkshake");
+        addItem(CRItems.POMEGRANATE_MILKSHAKE, "Pomegranate Milkshake");
         addEffect(CREffects.CORROSION, "Corrosion");
         addEffect(CREffects.VOLATILITY, "Volatility");
         add("tooltip.requires_modid", "Requires modid:");
