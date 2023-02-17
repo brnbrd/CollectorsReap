@@ -1,0 +1,49 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_milkshake"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "minecraft:glass_bottle"
+          },
+          {
+            "item": "minecraft:glass_bottle"
+          },
+          {
+            "item": "minecraft:glass_bottle"
+          },
+          {
+            "tag": "forge:fruits/lime"
+          },
+          {
+            "item": "neapolitan:vanilla_ice_cream"
+          },
+          {
+            "tag": "forge:milk"
+          }
+        ],
+        "result": {
+          "count": 3,
+          "item": "collectorsreap:lime_milkshake"
+        }
+      }
+    }
+  ]
+}
