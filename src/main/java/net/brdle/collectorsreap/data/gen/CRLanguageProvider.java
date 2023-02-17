@@ -111,5 +111,7 @@ public class CRLanguageProvider extends LanguageProvider {
         add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO), "Found in Meadows.");
         add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Found in Flower Forests.");
         add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE), "Found in Warped Forests.");
+        add("effect." + CollectorsReap.MODID + ".corrosion.description", "Provides the user a defensive acid shield, corroding projectiles and damaging attack weapons.");
+        add("effect." + CollectorsReap.MODID + ".volatility.description", "Each hit the user inflicts on an entity creates a shockwave of splash damage.");
     }
 }
