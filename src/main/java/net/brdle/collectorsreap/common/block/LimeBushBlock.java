@@ -134,11 +134,15 @@ public class LimeBushBlock extends CropBlock {
 		}
 	}
 
+	public void dropResources(Level level, BlockPos pos) {
+		popResource(level, pos, new ItemStack(CRItems.LIME.get(), 2 + level.getRandom().nextInt(2)));
+	}
+
 	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull InteractionResult use(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
 		if (pState.getValue(AGE) == this.getMaxAge()) {
-			popResource(pLevel, pPos, new ItemStack(CRItems.LIME.get(), 2 + pLevel.getRandom().nextInt(2)));
+			dropResources(pLevel, pPos);
 			pLevel.playSound(null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.random.nextFloat() * 0.4F);
 			pLevel.setBlockAndUpdate(pPos, pState.setValue(AGE, 0)); // Revert to pre-flowering
 			return InteractionResult.sidedSuccess(pLevel.isClientSide());
@@ -200,15 +204,18 @@ public class LimeBushBlock extends CropBlock {
 
 	@Override
 	public void playerWillDestroy(Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, @NotNull Player pPlayer) {
-		if (!pLevel.isClientSide() && pPlayer.isCreative()) {
-			preventCreativeDropFromBottomPart(pLevel, pPos, pState, pPlayer);
+		if (!pLevel.isClientSide()) {
+			if (pPlayer.isCreative()) {
+				preventCreativeDropFromBottomPart(pLevel, pPos, pState, pPlayer);
+			} else if (pState.getValue(AGE) == this.getMaxAge()) {
+				dropResources(pLevel, pPos);
+			}
 		}
 		super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
 	}
 
 	private void preventCreativeDropFromBottomPart(Level world, BlockPos pos, BlockState state, Player player) {
-		DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
-		if (doubleblockhalf == DoubleBlockHalf.UPPER) {
+		if (state.getValue(HALF) == DoubleBlockHalf.UPPER) {
 			BlockPos blockpos = pos.below();
 			BlockState blockstate = world.getBlockState(blockpos);
 			if (blockstate.getBlock() == state.getBlock() && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER) {

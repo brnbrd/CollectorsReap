@@ -25,6 +25,7 @@ public class CorrosionEffect extends MobEffect {
 	 */
 	@Override
 	public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
-		return pDuration % 10 == 0;
+		return false;
+		//return pDuration % 60 == 0;
 	}
 }

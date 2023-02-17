@@ -146,6 +146,10 @@ public class PomegranateBushBlock extends CropBlock {
 		}
 	}
 
+	public void dropResources(Level level, BlockPos pos) {
+		popResource(level, pos, new ItemStack(CRItems.POMEGRANATE.get(), 1 + level.getRandom().nextInt(2)));
+	}
+
 	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull InteractionResult use(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
@@ -153,7 +157,7 @@ public class PomegranateBushBlock extends CropBlock {
 			if (!pPlayer.getItemInHand(pHand).is(Tags.Items.SHEARS)) {
 				pPlayer.hurt(DamageSource.SWEET_BERRY_BUSH, 1.0F);
 			}
-			popResource(pLevel, pPos, new ItemStack(CRItems.POMEGRANATE.get(), 1 + pLevel.getRandom().nextInt(2)));
+			dropResources(pLevel, pPos);
 			pLevel.playSound(null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.getRandom().nextFloat() * 0.4F);
 			pLevel.setBlockAndUpdate(pPos,  pState.setValue(AGE, 0));  // Revert to pre-flowering
 			return InteractionResult.sidedSuccess(pLevel.isClientSide());
@@ -204,8 +208,12 @@ public class PomegranateBushBlock extends CropBlock {
 
 	@Override
 	public void playerWillDestroy(Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, @NotNull Player pPlayer) {
-		if (!pLevel.isClientSide() && pPlayer.isCreative()) {
-			preventCreativeDropFromBottomPart(pLevel, pPos, pState, pPlayer);
+		if (!pLevel.isClientSide()) {
+			if (pPlayer.isCreative()) {
+				preventCreativeDropFromBottomPart(pLevel, pPos, pState, pPlayer);
+			} else if (pState.getValue(AGE) == this.getMaxAge()) {
+				dropResources(pLevel, pPos);
+			}
 		}
 		super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
 	}
