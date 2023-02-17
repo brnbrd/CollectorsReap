@@ -16,6 +16,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
@@ -39,7 +40,7 @@ import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nullable;
 
-public class PomegranateBushBlock extends CropBlock {
+public class PomegranateBushBlock extends CropBlock implements IFruiting {
 	public static final int MAX_AGE = 2;
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
 	public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
@@ -146,8 +147,14 @@ public class PomegranateBushBlock extends CropBlock {
 		}
 	}
 
-	public void dropResources(Level level, BlockPos pos) {
-		popResource(level, pos, new ItemStack(CRItems.POMEGRANATE.get(), 1 + level.getRandom().nextInt(2)));
+	@Override
+	public Item getFruit() {
+		return CRItems.POMEGRANATE.get();
+	}
+
+	@Override
+	public int getNumFruit(Level level) {
+		return 1 + level.getRandom().nextInt(2);
 	}
 
 	@SuppressWarnings("deprecation")
@@ -210,24 +217,15 @@ public class PomegranateBushBlock extends CropBlock {
 	public void playerWillDestroy(Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, @NotNull Player pPlayer) {
 		if (!pLevel.isClientSide()) {
 			if (pPlayer.isCreative()) {
-				preventCreativeDropFromBottomPart(pLevel, pPos, pState, pPlayer);
+				preventCreativeDropFromBottomPart(HALF, pLevel, pPos, pState, pPlayer);
 			} else if (pState.getValue(AGE) == this.getMaxAge()) {
+				if (!pPlayer.getMainHandItem().is(Tags.Items.SHEARS)) {
+					pPlayer.hurt(DamageSource.SWEET_BERRY_BUSH, 1.0F);
+				}
 				dropResources(pLevel, pPos);
 			}
 		}
 		super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
-	}
-
-	private void preventCreativeDropFromBottomPart(Level world, BlockPos pos, BlockState state, Player player) {
-		DoubleBlockHalf doubleblockhalf = state.getValue(HALF);
-		if (doubleblockhalf == DoubleBlockHalf.UPPER) {
-			BlockPos blockpos = pos.below();
-			BlockState blockstate = world.getBlockState(blockpos);
-			if (blockstate.getBlock() == state.getBlock() && blockstate.getValue(HALF) == DoubleBlockHalf.LOWER) {
-				world.setBlock(blockpos, Blocks.AIR.defaultBlockState(), 35);
-				world.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
-			}
-		}
 	}
 
 	@Override
