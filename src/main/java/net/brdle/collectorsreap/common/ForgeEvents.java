@@ -11,24 +11,24 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+import net.minecraft.world.entity.animal.IronGolem;
+import net.minecraft.world.entity.monster.Ravager;
+import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -72,14 +72,12 @@ public class ForgeEvents {
 	@SubscribeEvent
 	public static void onWanderingTrader(WandererTradesEvent e) {
 		if (CRConfig.verify(CRItems.LIME) && CRConfig.verify(CRItems.LIME_SEEDS)) {
-			e.getGenericTrades().add((ent, r) -> {
-				return new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.gs(CRItems.LIME_SEEDS), 5, 1, 1);
-			});
+			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.gs(CRItems.LIME_SEEDS), 5, 1, 1));
 		}
 	}
 
-	@SubscribeEvent
-	public static void onCorrode(LivingAttackEvent e) {
+	@SubscribeEvent(priority = EventPriority.HIGH)
+	public static void onCorrodeWeapon(LivingDamageEvent e) {
 		if (e.getEntity().hasEffect(CREffects.CORROSION.get()) && e.getSource().getEntity() instanceof Player p) {
 			InteractionHand hand = p.getUsedItemHand();
 			ItemStack stack = p.getItemInHand(hand);
@@ -115,28 +113,35 @@ public class ForgeEvents {
 		}
 	}
 
-	@SubscribeEvent(priority = EventPriority.HIGH)
-	public static void onVolatile(LivingAttackEvent e) {
+	private static boolean validateVolatile(LivingEntity victim, LivingEntity attacker) {
+		return victim != null &&
+				attacker.hasEffect(CREffects.VOLATILITY.get()) &&
+				!(attacker instanceof IronGolem) &&
+				!(attacker instanceof Warden) &&
+				!(attacker instanceof Ravager) &&
+				!(attacker instanceof Player p && p.getCooldowns().isOnCooldown(p.getMainHandItem().getItem()));
+	}
+
+	@SubscribeEvent
+	public static void onVolatile(LivingDamageEvent e) {
 		LivingEntity victim = e.getEntity();
-		if (victim != null &&
+		if (e.getSource().getEntity() != null &&
 			!victim.getLevel().isClientSide() &&
 			victim.getLevel() instanceof ServerLevel server &&
-			e.getSource().getEntity() != null &&
 			e.getSource().getEntity() instanceof LivingEntity attacker &&
-			attacker.hasEffect(CREffects.VOLATILITY.get()) &&
-			!(attacker instanceof Player p && p.getCooldowns().isOnCooldown(p.getMainHandItem().getItem()))) {
+			validateVolatile(victim, attacker)) {
+			server.sendParticles(CRParticleTypes.SHOCKWAVE.get(), victim.getX(), victim.getY(), victim.getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
 			List<LivingEntity> nearby = server.getNearbyEntities(LivingEntity.class,
 				TargetingConditions.DEFAULT.selector((living) -> (living != attacker && living != victim)),
 				victim, victim.getBoundingBox().inflate(5.0D, 2.0D, 5.0D)).stream().limit(4).toList();
-			if (nearby.size() == 0) {
+			if (nearby.isEmpty()) {
 				return;
 			} else if (attacker instanceof Player p) {
 				p.getCooldowns().addCooldown(p.getMainHandItem().getItem(), 40);
 			}
-			server.sendParticles(CRParticleTypes.SHOCKWAVE.get(), victim.getX(), victim.getY(), victim.getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
 			for (LivingEntity ent : nearby) {
 				Vec3 vec32 = ent.getEyePosition().subtract(victim.position().add(0.0D, 1.0F, 0.0D)).normalize();
-				ent.playSound(SoundEvents.LIGHTNING_BOLT_THUNDER, 0.15F, 1.75F);
+				ent.playSound(SoundEvents.LIGHTNING_BOLT_THUNDER, 0.2F, 1.75F);
 				ent.hurt(e.getSource(), (e.getAmount() * 0.65F) / nearby.size());
 				double d1 = (1.0D - ent.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE)) * 0.75D;
 				ent.push(vec32.x() * d1, vec32.y() * d1 * 0.35D, vec32.z() * d1);

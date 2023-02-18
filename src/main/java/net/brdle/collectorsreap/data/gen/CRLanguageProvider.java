@@ -106,12 +106,12 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.LIME_MILKSHAKE, "Lime Milkshake");
         addItem(CRItems.POMEGRANATE_MILKSHAKE, "Pomegranate Milkshake");
         addEffect(CREffects.CORROSION, "Corrosion");
+        add(CREffects.CORROSION.get().getDescriptionId() + ".description", "Provides the user a defensive acid shield, corroding projectiles and damaging attack weapons.");
         addEffect(CREffects.VOLATILITY, "Volatility");
+        add(CREffects.VOLATILITY.get().getDescriptionId() + ".description", "Each hit the user inflicts on an entity creates a shockwave of splash damage.");
         add("tooltip.requires_modid", "Requires modid:");
         add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO), "Found in Meadows.");
         add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Found in Flower Forests.");
         add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE), "Found in Warped Forests.");
-        add("effect." + CollectorsReap.MODID + ".corrosion.description", "Provides the user a defensive acid shield, corroding projectiles and damaging attack weapons.");
-        add("effect." + CollectorsReap.MODID + ".volatility.description", "Each hit the user inflicts on an entity creates a shockwave of splash damage.");
     }
 }

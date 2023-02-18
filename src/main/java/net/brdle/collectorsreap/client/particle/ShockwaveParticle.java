@@ -8,7 +8,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
 @OnlyIn(Dist.CLIENT)
-public class ShockwaveParticle extends SonicBoomParticle {
+public class ShockwaveParticle extends HugeExplosionParticle {
 	ShockwaveParticle(ClientLevel pLevel, double pX, double pY, double pZ, double pQuadSizeMultiplier, SpriteSet pSprites) {
 		super(pLevel, pX, pY, pZ, pQuadSizeMultiplier, pSprites);
 		this.lifetime = 12;
