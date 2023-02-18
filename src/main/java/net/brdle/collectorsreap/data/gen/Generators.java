@@ -15,6 +15,7 @@ public class Generators {
         CRBlockTagProvider blockTag = new CRBlockTagProvider(gen, helper);
         e.getGenerator().addProvider(e.includeServer(), blockTag);
         e.getGenerator().addProvider(e.includeServer(), new CRItemTagProvider(gen, blockTag, helper));
+        e.getGenerator().addProvider(e.includeServer(), new CREntityTagProvider(gen, helper));
         e.getGenerator().addProvider(e.includeServer(), new CRBiomeTagProvider(gen, helper));
         e.getGenerator().addProvider(e.includeServer(), new CRRecipeProvider(gen));
         e.getGenerator().addProvider(e.includeServer(), new CRLootTableProvider(gen));

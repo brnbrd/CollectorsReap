@@ -6,11 +6,13 @@ import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.data.CREntityTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
@@ -21,7 +23,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -72,30 +78,38 @@ public class ForgeEvents {
 		}
 	}
 
-	@SubscribeEvent(priority = EventPriority.HIGHEST)
+	@SubscribeEvent
 	public static void onCorrode(LivingAttackEvent e) {
-		LivingEntity victim = e.getEntity();
-		Level world = victim.getLevel();
-		DamageSource d = e.getSource();
-		if (victim.hasEffect(CREffects.CORROSION.get())) {
-			if (d.isProjectile() && d.getDirectEntity() != null && d.getDirectEntity() instanceof Projectile proj) {
-				if (d.getEntity() != null && world instanceof ServerLevel server) {
-					for (int i = 0; i < 3; i++) {
-						server.sendParticles(CRParticleTypes.ACID.get(), proj.getRandomX(0.3D), proj.getRandomY(), proj.getRandomZ(0.3D), 1, 0.0D, 0.0D, 0.0D, 0.0D);
-					}
+		if (e.getEntity().hasEffect(CREffects.CORROSION.get()) && e.getSource().getEntity() instanceof Player p) {
+			InteractionHand hand = p.getUsedItemHand();
+			ItemStack stack = p.getItemInHand(hand);
+			if (stack.isDamageableItem()) {
+				int damage = Objects.requireNonNull(e.getEntity().getEffect(CREffects.CORROSION.get())).getAmplifier();
+				stack.hurtAndBreak(damage, p, en -> en.broadcastBreakEvent(hand));
+			}
+		}
+	}
+
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
+	public static void onCorrodeProjectile(ProjectileImpactEvent e) {
+		if (e.getRayTraceResult().getType() == HitResult.Type.ENTITY &&
+			((EntityHitResult) e.getRayTraceResult()).getEntity() instanceof LivingEntity victim &&
+			victim.hasEffect(CREffects.CORROSION.get())) {
+			Projectile proj = e.getProjectile();
+			if (proj.getType().is(CREntityTags.CORROSION_IMMUNE)) {
+				return;
+			}
+			e.setCanceled(true);
+			if (!proj.getLevel().isClientSide() && proj.getLevel() instanceof ServerLevel server) {
+				for (int i = 0; i < 3; i++) {
+					server.sendParticles(CRParticleTypes.ACID.get(), proj.getRandomX(0.3D), proj.getRandomY(), proj.getRandomZ(0.3D), 1, 0.0D, 0.0D, 0.0D, 0.0D);
 				}
 				victim.playSound(SoundEvents.REDSTONE_TORCH_BURNOUT, 0.4F, 1.1F);
 				if (proj instanceof ThrownTrident trident) {
-					trident.hurt(e.getSource(), 3.0F);
+					trident.tridentItem.hurt(5 * Objects.requireNonNull(victim.getEffect(CREffects.CORROSION.get())).getAmplifier(), trident.getLevel().getRandom(), null);
 				} else {
 					proj.discard();
-				}
-				e.setCanceled(true);
-			} else if (d.getEntity() instanceof Player p) {
-				InteractionHand hand = p.getUsedItemHand();
-				ItemStack stack = p.getItemInHand(hand);
-				if (p.hasEffect(CREffects.CORROSION.get()) && stack.isDamageableItem()) {
-					stack.hurtAndBreak(Objects.requireNonNull(p.getEffect(CREffects.CORROSION.get())).getAmplifier(), p, en -> en.broadcastBreakEvent(hand));
+					proj.gameEvent(GameEvent.ENTITY_DIE);
 				}
 			}
 		}
