@@ -1,6 +1,7 @@
-package net.brdle.collectorsreap.common.item;
+package net.brdle.collectorsreap.common.item.food;
 
 import com.google.common.collect.Lists;
+import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.compat.NeapolitanCompat;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;

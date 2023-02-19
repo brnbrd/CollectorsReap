@@ -1,4 +1,4 @@
-package net.brdle.collectorsreap.common.item;
+package net.brdle.collectorsreap.common.item.food;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
