@@ -29,6 +29,12 @@ public class CRItemTags {
 	// Neapolitan
 	public static final TagKey<Item> ICE_CREAM = Util.it("neapolitan", "ice_cream");
 
+	// Serene Seasons
+	public static final TagKey<Item> WINTER_CROPS = Util.it("sereneseasons", "winter_crops");
+	public static final TagKey<Item> SUMMER_CROPS = Util.it("sereneseasons", "summer_crops");
+	public static final TagKey<Item> AUTUMN_CROPS = Util.it("sereneseasons", "autumn_crops");
+	public static final TagKey<Item> SPRING_CROPS = Util.it("sereneseasons", "spring_crops");
+
 	private static TagKey<Item> vd(String name) {
 		return Util.it(CollectorsReap.MODID, name);
 	}

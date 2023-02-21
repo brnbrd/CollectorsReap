@@ -52,6 +52,20 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.filter(b -> b instanceof EffectCandleCakeBlock)
 			.forEach(b -> this.tag(BlockTags.CANDLE_CAKES).add(b));
 		this.tag(BlockTags.CANDLE_CAKES);
+
+		// Serene Seasons
+		this.tag(CRBlockTags.WINTER_CROPS)
+			.add(CRBlocks.PORTOBELLO.get())
+			.add(CRBlocks.PORTOBELLO_COLONY.get());
+		this.tag(CRBlockTags.AUTUMN_CROPS)
+			.add(CRBlocks.SMALL_POMEGRANATE_BUSH.get())
+			.add(CRBlocks.POMEGRANATE_BUSH.get());
+		this.tag(CRBlockTags.SUMMER_CROPS)
+			.add(CRBlocks.SMALL_POMEGRANATE_BUSH.get())
+			.add(CRBlocks.POMEGRANATE_BUSH.get());
+		this.tag(CRBlockTags.SPRING_CROPS)
+			.add(CRBlocks.SMALL_LIME_BUSH.get())
+			.add(CRBlocks.LIME_BUSH.get());
 	}
 
 	/**

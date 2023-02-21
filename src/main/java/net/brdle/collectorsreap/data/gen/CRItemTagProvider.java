@@ -52,6 +52,17 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.ICE_CREAM)
 			.add(CRItems.LIME_ICE_CREAM.get())
 			.add(CRItems.POMEGRANATE_ICE_CREAM.get());
+
+		// Serene Seasons
+		this.tag(CRItemTags.WINTER_CROPS)
+			.add(CRItems.PORTOBELLO.get())
+			.add(CRItems.PORTOBELLO_COLONY.get());
+		this.tag(CRItemTags.SUMMER_CROPS)
+			.add(CRItems.POMEGRANATE_SEEDS.get());
+		this.tag(CRItemTags.AUTUMN_CROPS)
+			.add(CRItems.POMEGRANATE_SEEDS.get());
+		this.tag(CRItemTags.SPRING_CROPS)
+			.add(CRItems.LIME_SEEDS.get());
 	}
 
 	/**
