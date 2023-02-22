@@ -11,11 +11,11 @@ displayURL="https://www.curseforge.com/minecraft/mc-mods/collectors-reap"
 updateJSONURL="https://raw.githubusercontent.com/brnbrd/CollectorsReap/1.19/update.json"
 logoFile="collectorsreap.png"
 logoBlur=false
-credits="reNIK03, brdbrn"
+credits="reNIK03, brdbrn, Vectorwing"
 authors="reNIK03, brdbrn"
-description="Farmer's Delight addon with vegetables and fruit."
-itemIcon="collectorsreap:portobello"
-configBackground="farmersdelight:textures/block/tatami_mat_half.png"
+description="Farmer's Delight addon with foods scavenged from the wild."
+itemIcon="collectorsreap:lime_slice"
+configBackground="collectorsreap:textures/block/pomegranate_ice_cream_block.png"
 
 [[dependencies.collectorsreap]]
     modId="forge"
@@ -28,5 +28,19 @@ configBackground="farmersdelight:textures/block/tatami_mat_half.png"
     modId="farmersdelight"
     mandatory=true
     versionRange="[1.19-1.2,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.collectorsreap]]
+    modId="nethersdelight"
+    mandatory=false
+    versionRange="[1.19-3.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.collectorsreap]]
+    modId="neapolitan"
+    mandatory=false
+    versionRange="[4,)"
     ordering="AFTER"
     side="BOTH"
