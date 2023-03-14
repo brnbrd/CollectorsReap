@@ -45,13 +45,46 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.PORTOBELLO.get());
 		this.tag(Tags.Items.MUSHROOMS)
 			.addTag(CRItemTags.MUSHROOMS_PORTOBELLO);
-		this.addSelf(CRItemTags.PROPELPEARL);
-		this.addSelf(CRItemTags.HOGLIN_LOIN);
 		this.tag(CRItemTags.TORTILLA)
 			.addOptional(Util.rl("culturaldelights", "tortilla"));
 		this.tag(CRItemTags.ICE_CREAM)
 			.add(CRItems.LIME_ICE_CREAM.get())
 			.add(CRItems.POMEGRANATE_ICE_CREAM.get());
+		this.tag(CRItemTags.GUMMIES)
+			.add(CRItems.LIME_GUMMY.get())
+			.add(CRItems.POMEGRANATE_GUMMY.get())
+			.add(CRItems.MELON_GUMMY.get())
+			.add(CRItems.APPLE_GUMMY.get())
+			.add(CRItems.BANANA_GUMMY.get())
+			.add(CRItems.VANILLA_GUMMY.get())
+			.add(CRItems.CHOCOLATE_GUMMY.get())
+			.add(CRItems.STRAWBERRY_GUMMY.get())
+			.add(CRItems.MINT_GUMMY.get())
+			.add(CRItems.ADZUKI_GUMMY.get())
+			.add(CRItems.PUMPKIN_GUMMY.get())
+			.add(CRItems.ALOE_GUMMY.get())
+			.add(CRItems.PASSIONFRUIT_GUMMY.get())
+			.add(CRItems.YUCCA_GUMMY.get());
+
+		// Nether's Delight
+		this.addSelf(CRItemTags.PROPELPEARL);
+		this.addSelf(CRItemTags.HOGLIN_LOIN);
+
+		// Neapolitan
+		this.addSelf(CRItemTags.BANANA);
+		this.addSelf(CRItemTags.DRIED_VANILLA_PODS);
+		this.addSelf(CRItemTags.CHOCOLATE_BAR);
+		this.addSelf(CRItemTags.MINT_LEAVES);
+		this.addSelf(CRItemTags.ROASTED_ADZUKI_BEANS);
+		this.tag(CRItemTags.RED_STRAWBERRIES).addOptional(Util.rl("neapolitan", "strawberries"));
+
+		// Atmospheric
+		this.addSelf(CRItemTags.ALOE_LEAVES);
+		this.addSelf(CRItemTags.YUCCA_FRUIT);
+		this.addSelf(CRItemTags.PASSIONFRUIT);
+
+		// Seasonals
+		this.addSelf(CRItemTags.ROASTED_PUMPKIN);
 
 		// Serene Seasons
 		this.tag(CRItemTags.WINTER_CROPS)

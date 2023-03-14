@@ -4,6 +4,7 @@ import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.item.food.CompatConsumable;
+import net.brdle.collectorsreap.common.item.food.GummyItem;
 import net.brdle.collectorsreap.common.item.food.Nutrition;
 import net.brdle.collectorsreap.common.item.food.ShakeItem;
 import net.brdle.collectorsreap.compat.ModCompat;
@@ -17,6 +18,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
@@ -43,13 +45,13 @@ public class CRItems extends ModItems {
         Nutrition.PORTOBELLO_WRAP);
     public static final RegistryObject<Item> PORTOBELLO_RICE_SOUP = registerItem("portobello_rice_soup",
         () -> new ConsumableItem(bowlFoodItem(
-        Nutrition.PORTOBELLO_RICE_SOUP)));
+        Nutrition.PORTOBELLO_RICE_SOUP), true));
     public static final RegistryObject<Item> PORTOBELLO_RISOTTO = registerItem("portobello_risotto",
         () -> new ConsumableItem(bowlFoodItem(
-        Nutrition.PORTOBELLO_RISOTTO)));
+        Nutrition.PORTOBELLO_RISOTTO), true));
     public static final RegistryObject<Item> PORTOBELLO_PASTA = registerItem("portobello_pasta",
         () -> new ConsumableItem(bowlFoodItem(
-        Nutrition.PORTOBELLO_PASTA)));
+        Nutrition.PORTOBELLO_PASTA), true));
     public static final RegistryObject<Item> PORTOBELLO_QUICHE = registerBlock(CRBlocks.PORTOBELLO_QUICHE);
     public static final RegistryObject<Item> PORTOBELLO_QUICHE_SLICE = registerFood("portobello_quiche_slice",
         Nutrition.PORTOBELLO_QUICHE_SLICE);
@@ -78,17 +80,20 @@ public class CRItems extends ModItems {
         () -> new ConsumableItem((new Item.Properties()).food(
         Nutrition.LIME_COOKIE).tab(FarmersDelight.CREATIVE_TAB), true));
     public static final RegistryObject<Item> HONEY_LIME_CHICKEN = registerItem("honey_lime_chicken",
-        () -> new ConsumableItem((new Item.Properties()).food(
-        Nutrition.HONEY_LIME_CHICKEN).tab(FarmersDelight.CREATIVE_TAB), true));
-    public static final RegistryObject<Item> MEDITERRANEAN_SALMON = registerFood("mediterranean_salmon",
-        Nutrition.MEDITERRANEAN_SALMON);
-    public static final RegistryObject<Item> SALMON_TARTARE = registerFood("salmon_tartare",
-        Nutrition.SALMON_TARTARE);
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.HONEY_LIME_CHICKEN), true));
+    public static final RegistryObject<Item> MEDITERRANEAN_SALMON = registerItem("mediterranean_salmon",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.MEDITERRANEAN_SALMON), true));
+    public static final RegistryObject<Item> SALMON_TARTARE = registerItem("salmon_tartare",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.SALMON_TARTARE), true));
     public static final RegistryObject<Item> POTATO_FRITTERS = registerItem("potato_fritters",
         () -> new ConsumableItem((new Item.Properties()).food(
         Nutrition.POTATO_FRITTERS).tab(FarmersDelight.CREATIVE_TAB), true));
-    public static final RegistryObject<Item> COD_CEVICHE = registerFood("cod_ceviche",
-        Nutrition.COD_CEVICHE);
+    public static final RegistryObject<Item> COD_CEVICHE = registerItem("cod_ceviche",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.COD_CEVICHE), true));
     public static final RegistryObject<Item> CRIMSON_CARROT_ROAST = registerItem("crimson_carrot_roast",
         () -> new ConsumableItem(bowlFoodItem(
         Nutrition.CRIMSON_CARROT_ROAST), true));
@@ -121,8 +126,8 @@ public class CRItems extends ModItems {
     public static final RegistryObject<Item> POMEGRANATE_CAKE_SLICE = registerFood("pomegranate_cake_slice",
         Nutrition.POMEGRANATE_CAKE_SLICE);
 
-    public static final RegistryObject<Item> LIME_CAKE = registerBlock(CRBlocks.LIME_CAKE);
-    public static final RegistryObject<Item> POMEGRANATE_CAKE = registerBlock(CRBlocks.POMEGRANATE_CAKE);
+    public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake", () -> new BlockItem(CRBlocks.LIME_CAKE.get(), ((new Item.Properties()).stacksTo(1).tab(FarmersDelight.CREATIVE_TAB))));
+    public static final RegistryObject<Item> POMEGRANATE_CAKE = registerItem("pomegranate_cake", () -> new BlockItem(CRBlocks.POMEGRANATE_CAKE.get(), ((new Item.Properties()).stacksTo(1).tab(FarmersDelight.CREATIVE_TAB))));
     public static final RegistryObject<Item> LIME_CRATE = registerBlock(CRBlocks.LIME_CRATE);
     public static final RegistryObject<Item> POMEGRANATE_CRATE = registerBlock(CRBlocks.POMEGRANATE_CRATE);
 
@@ -160,6 +165,22 @@ public class CRItems extends ModItems {
         () -> new BlockItem(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get(), (new Item.Properties())
             .tab(ModCompat.ifLoaded("neapolitan", CreativeModeTab.TAB_BUILDING_BLOCKS))));
 
+    // Gummies
+    public static final RegistryObject<Item> LIME_GUMMY = registerGummy("lime", Nutrition.LIME_GUMMY, null);
+    public static final RegistryObject<Item> POMEGRANATE_GUMMY = registerGummy("pomegranate", Nutrition.POMEGRANATE_GUMMY, null);
+    public static final RegistryObject<Item> MELON_GUMMY = registerGummy("melon", Nutrition.MELON_GUMMY, null);
+    public static final RegistryObject<Item> APPLE_GUMMY = registerGummy("apple", Nutrition.APPLE_GUMMY, null);
+    public static final RegistryObject<Item> BANANA_GUMMY = registerGummy("banana", Nutrition.BANANA_GUMMY, "neapolitan");
+    public static final RegistryObject<Item> VANILLA_GUMMY = registerGummy("vanilla", Nutrition.VANILLA_GUMMY, "neapolitan");
+    public static final RegistryObject<Item> CHOCOLATE_GUMMY = registerGummy("chocolate", Nutrition.CHOCOLATE_GUMMY, "neapolitan");
+    public static final RegistryObject<Item> STRAWBERRY_GUMMY = registerGummy("strawberry", Nutrition.STRAWBERRY_GUMMY, "neapolitan");
+    public static final RegistryObject<Item> MINT_GUMMY = registerGummy("mint", Nutrition.MINT_GUMMY, "neapolitan");
+    public static final RegistryObject<Item> ADZUKI_GUMMY = registerGummy("adzuki", Nutrition.ADZUKI_GUMMY, "neapolitan");
+    public static final RegistryObject<Item> PUMPKIN_GUMMY = registerGummy("pumpkin", Nutrition.PUMPKIN_GUMMY, "seasonals");
+    public static final RegistryObject<Item> ALOE_GUMMY = registerGummy("aloe", Nutrition.ALOE_GUMMY, "atmospheric");
+    public static final RegistryObject<Item> PASSIONFRUIT_GUMMY = registerGummy("passionfruit", Nutrition.PASSIONFRUIT_GUMMY, "atmospheric");
+    public static final RegistryObject<Item> YUCCA_GUMMY = registerGummy("yucca", Nutrition.YUCCA_GUMMY, "atmospheric");
+
     // Sets Creative Tab
     public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {
         return registerBlock(Util.name(block), block);
@@ -171,9 +192,10 @@ public class CRItems extends ModItems {
     }
 
     // Creative tab should be set before calling this function
-    public static RegistryObject<Item> registerFood(FoodProperties properties) {
-        return registerItem(properties.toString().toLowerCase(Locale.ROOT), () -> new Item((new Item.Properties()
-            .tab(FarmersDelight.CREATIVE_TAB).food(properties))));
+    public static RegistryObject<Item> registerGummy(String name, FoodProperties properties, @Nullable String modid) {
+        return registerItem(name + "_gummy", () -> new GummyItem((new Item.Properties()
+            .tab(modid == null ? FarmersDelight.CREATIVE_TAB : ModCompat.ifLoaded(modid, FarmersDelight.CREATIVE_TAB))
+            .food(properties))));
     }
 
     // Creative tab should be set before calling this function

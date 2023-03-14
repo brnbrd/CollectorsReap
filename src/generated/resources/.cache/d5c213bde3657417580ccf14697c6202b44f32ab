@@ -1,11 +1,3 @@
-// 1.19	2023-02-20T16:27:41.4082324	collectorsreap
-057d34c386714f69ae8324b835cfdb749a33f4c1 data/collectorsreap/tags/blocks/pomegranate_fast_on.json
-7e190681490e91ba0d72238fde478a702cce76c2 data/collectorsreap/tags/blocks/portobello_spawns.json
-415e7acd9735c098449f477f80aab4c7b446c95c data/farmersdelight/tags/blocks/mineable/knife.json
-4d87b4a393ab3838dcb58ed62a1b411ef7830dca data/minecraft/tags/blocks/bee_growables.json
-bf7b13882111059a12f7b87d8409209a6757dfd1 data/minecraft/tags/blocks/candle_cakes.json
-4d87b4a393ab3838dcb58ed62a1b411ef7830dca data/minecraft/tags/blocks/flowers.json
-ddacb2232ce9c584dba8ab22748e8d9151eade3a data/sereneseasons/tags/blocks/autumn_crops.json
-e840823afe141c277413e2be5c08c3059cabb9cc data/sereneseasons/tags/blocks/spring_crops.json
-ddacb2232ce9c584dba8ab22748e8d9151eade3a data/sereneseasons/tags/blocks/summer_crops.json
-87063e8a36abef5e203f8b6dc7f619b2d11fa5a4 data/sereneseasons/tags/blocks/winter_crops.json
+// 1.19	2023-03-13T18:32:06.0653765	collectorsreap
+ddd907b6cb1b03c93f42247088b1f1fa5a81084f data/collectorsreap/tags/entity_types/involatile.json
+01c3f5cebabec10bf259b13ce1d6ce40be8bda20 data/collectorsreap/tags/entity_types/volatility_immune.json

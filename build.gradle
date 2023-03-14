@@ -95,6 +95,8 @@ dependencies {
     implementation fg.deobf("curse.maven:nethers-delight-496394:${nethers_delight_version}")
     implementation fg.deobf("curse.maven:blueprint-382216:${blueprint_version}")
     implementation fg.deobf("curse.maven:neapolitan-382016:${neapolitan_version}")
+    compileOnly fg.deobf("curse.maven:atmospheric-362393:${atmospheric_version}")
+    compileOnly fg.deobf("curse.maven:seasonals-416471:${seasonals_version}")
 }
 
 jar {

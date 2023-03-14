@@ -12,11 +12,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
-import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.monster.Ravager;
-import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrownTrident;
@@ -116,9 +114,7 @@ public class ForgeEvents {
 	private static boolean validateVolatile(LivingEntity victim, LivingEntity attacker) {
 		return victim != null &&
 				attacker.hasEffect(CREffects.VOLATILITY.get()) &&
-				!(attacker instanceof IronGolem) &&
-				!(attacker instanceof Warden) &&
-				!(attacker instanceof Ravager) &&
+				!(attacker.getType().is(CREntityTags.INVOLATILE)) &&
 				!(attacker instanceof Player p && p.getCooldowns().isOnCooldown(p.getMainHandItem().getItem()));
 	}
 
@@ -131,9 +127,15 @@ public class ForgeEvents {
 			e.getSource().getEntity() instanceof LivingEntity attacker &&
 			validateVolatile(victim, attacker)) {
 			server.sendParticles(CRParticleTypes.SHOCKWAVE.get(), victim.getX(), victim.getY(), victim.getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
+			int level = Objects.requireNonNull(attacker.getEffect(CREffects.VOLATILITY.get())).getAmplifier();
 			List<LivingEntity> nearby = server.getNearbyEntities(LivingEntity.class,
-				TargetingConditions.DEFAULT.selector((living) -> (living != attacker && living != victim)),
-				victim, victim.getBoundingBox().inflate(5.0D, 2.0D, 5.0D)).stream().limit(4).toList();
+				TargetingConditions.DEFAULT.selector((living) -> {
+					return living != attacker &&
+						living != victim &&
+						!living.getType().is(CREntityTags.VOLATILITY_IMMUNE) &&
+						!(living instanceof TamableAnimal tame && tame.isTame());
+				}),
+				victim, victim.getBoundingBox().inflate(4.0D + ((double) level), 2.0D, 4.0D + ((double) level))).stream().limit(3 + level).toList();
 			if (nearby.isEmpty()) {
 				return;
 			} else if (attacker instanceof Player p) {
@@ -142,7 +144,7 @@ public class ForgeEvents {
 			for (LivingEntity ent : nearby) {
 				Vec3 vec32 = ent.getEyePosition().subtract(victim.position().add(0.0D, 1.0F, 0.0D)).normalize();
 				ent.playSound(SoundEvents.LIGHTNING_BOLT_THUNDER, 0.2F, 1.75F);
-				ent.hurt(e.getSource(), (e.getAmount() * 0.65F) / nearby.size());
+				ent.hurt(e.getSource(), (e.getAmount() + ((float) (level - 1)) * 0.65F) / nearby.size());
 				double d1 = (1.0D - ent.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE)) * 0.75D;
 				ent.push(vec32.x() * d1, vec32.y() * d1 * 0.35D, vec32.z() * d1);
 			}

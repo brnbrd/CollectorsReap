@@ -175,6 +175,105 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .addIngredient(CRItemTags.FRUITS_POMEGRANATE)
                 .unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
             "food/spicy_grenadine_jelly", finished, enabled(CRItems.SPICY_GRENADINE_JELLY), not(tagEmpty(CRItemTags.PROPELPEARL)));
+          // Gummies
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.LIME_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.FRUITS_LIME)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+            "food/lime_gummy", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_GUMMY));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POMEGRANATE_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.FRUITS_POMEGRANATE)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_gummy", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_GUMMY));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.MELON_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(Items.MELON_SLICE)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_melon", has(Items.MELON_SLICE)),
+            "food/melon_gummy", finished, enabled(CRItems.MELON_GUMMY));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.APPLE_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(Items.APPLE)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_apple", has(Items.APPLE)),
+            "food/apple_gummy", finished, enabled(CRItems.APPLE_GUMMY));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.BANANA_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.BANANA)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_banana", has(CRItemTags.BANANA)),
+            "food/banana_gummy", finished, enabled(CRItems.BANANA_GUMMY), not(tagEmpty(CRItemTags.BANANA)), modLoaded("neapolitan"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.VANILLA_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.DRIED_VANILLA_PODS)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_vanilla", has(CRItemTags.DRIED_VANILLA_PODS)),
+            "food/vanilla_gummy", finished, enabled(CRItems.VANILLA_GUMMY), not(tagEmpty(CRItemTags.DRIED_VANILLA_PODS)), modLoaded("neapolitan"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CHOCOLATE_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.CHOCOLATE_BAR)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_chocolate", has(CRItemTags.CHOCOLATE_BAR)),
+            "food/chocolate_gummy", finished, enabled(CRItems.CHOCOLATE_GUMMY), not(tagEmpty(CRItemTags.CHOCOLATE_BAR)), modLoaded("neapolitan"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.STRAWBERRY_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.RED_STRAWBERRIES)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_strawberries", has(CRItemTags.RED_STRAWBERRIES)),
+            "food/strawberry_gummy", finished, enabled(CRItems.STRAWBERRY_GUMMY), not(tagEmpty(CRItemTags.RED_STRAWBERRIES)), modLoaded("neapolitan"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.MINT_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.MINT_LEAVES)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_mint", has(CRItemTags.MINT_LEAVES)),
+            "food/mint_gummy", finished, enabled(CRItems.MINT_GUMMY), not(tagEmpty(CRItemTags.MINT_LEAVES)), modLoaded("neapolitan"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.ADZUKI_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.ROASTED_ADZUKI_BEANS)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_adzuki", has(CRItemTags.ROASTED_ADZUKI_BEANS)),
+            "food/adzuki_gummy", finished, enabled(CRItems.ADZUKI_GUMMY), not(tagEmpty(CRItemTags.ROASTED_ADZUKI_BEANS)), modLoaded("neapolitan"));
+        /*wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PUMPKIN_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.ROASTED_PUMPKIN)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_roasted_pumpkin", has(CRItemTags.ROASTED_PUMPKIN)),
+            "food/pumpkin_gummy", finished, enabled(CRItems.PUMPKIN_GUMMY), not(tagEmpty(CRItemTags.ROASTED_PUMPKIN)), modLoaded("seasonals"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.ALOE_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.ALOE_LEAVES)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_aloe", has(CRItemTags.ALOE_LEAVES)),
+            "food/aloe_gummy", finished, enabled(CRItems.ALOE_GUMMY), not(tagEmpty(CRItemTags.ALOE_LEAVES)), modLoaded("atmospheric"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PASSIONFRUIT_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.PASSIONFRUIT)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_passionfruit", has(CRItemTags.PASSIONFRUIT)),
+            "food/passionfruit_gummy", finished, enabled(CRItems.PASSIONFRUIT_GUMMY), not(tagEmpty(CRItemTags.PASSIONFRUIT)), modLoaded("atmospheric"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.YUCCA_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.YUCCA_FRUIT)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_yucca", has(CRItemTags.YUCCA_FRUIT)),
+            "food/yucca_gummy", finished, enabled(CRItems.YUCCA_GUMMY), not(tagEmpty(CRItemTags.YUCCA_FRUIT)), modLoaded("atmospheric"));*/
 
         // Crafting
         wrap(shapeless(CRItems.LIME, 9)

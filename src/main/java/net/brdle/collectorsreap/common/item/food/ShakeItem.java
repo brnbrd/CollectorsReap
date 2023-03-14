@@ -2,6 +2,7 @@ package net.brdle.collectorsreap.common.item.food;
 
 import com.google.common.collect.Lists;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.compat.ModCompat;
 import net.brdle.collectorsreap.compat.NeapolitanCompat;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
@@ -20,6 +21,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.fml.ModList;
+import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import java.util.List;
 
@@ -31,13 +33,13 @@ public class ShakeItem extends ConsumableItem {
 	}
 
 	@Override
-	public ItemStack finishUsingItem(ItemStack stack, Level worldIn, LivingEntity entity) {
+	public @NotNull ItemStack finishUsingItem(@NotNull ItemStack stack, @NotNull Level worldIn, @NotNull LivingEntity entity) {
 		handleEffects(entity);
 		return super.finishUsingItem(stack, worldIn, entity);
 	}
 
 	@Override
-	public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity, InteractionHand hand) {
+	public @NotNull InteractionResult interactLivingEntity(@NotNull ItemStack stack, @NotNull Player player, @NotNull LivingEntity entity, @NotNull InteractionHand hand) {
 		if (!ModList.get().isLoaded("neapolitan")) {
 			return InteractionResult.FAIL;
 		}
@@ -49,7 +51,7 @@ public class ShakeItem extends ConsumableItem {
 			CriteriaTriggers.CONSUME_ITEM.trigger(serverplayerentity, stack);
 			serverplayerentity.awardStat(Stats.ITEM_USED.get(this));
 		}
-		if (entity.getEffect(NeapolitanCompat.VANILLA_SCRENT.get()) == null) {
+		if (entity.getEffect(NeapolitanCompat.VANILLA_SCENT.get()) == null) {
 			handleEffects(entity);
 		}
 		if (!player.getAbilities().instabuild) {
@@ -66,7 +68,7 @@ public class ShakeItem extends ConsumableItem {
 		List<MobEffectInstance> effects = Lists.newArrayList(user.getActiveEffects());
 		List<LivingEntity> nearest = user.level.getNearbyEntities(LivingEntity.class,
 			TargetingConditions.DEFAULT.selector((living) -> {
-				return (living != user && living.getEffect(NeapolitanCompat.VANILLA_SCRENT.get()) == null);
+				return (living != user && living.getEffect(ModCompat.getVanillaScent().get()) == null);
 			}), user, user.getBoundingBox().inflate(6.0D, 2.0D, 6.0D)).stream().limit(MAX_NEARBY).toList();
 		if (nearest.size() > 0) {
 			for (LivingEntity near : nearest) {
@@ -87,22 +89,22 @@ public class ShakeItem extends ConsumableItem {
 	}
 
 	@Override
-	public int getUseDuration(ItemStack stack) {
+	public int getUseDuration(@NotNull ItemStack stack) {
 		return 40;
 	}
 
 	@Override
-	public UseAnim getUseAnimation(ItemStack stack) {
+	public @NotNull UseAnim getUseAnimation(@NotNull ItemStack stack) {
 		return UseAnim.DRINK;
 	}
 
 	@Override
-	public SoundEvent getDrinkingSound() {
+	public @NotNull SoundEvent getDrinkingSound() {
 		return SoundEvents.HONEY_DRINK;
 	}
 
 	@Override
-	public SoundEvent getEatingSound() {
+	public @NotNull SoundEvent getEatingSound() {
 		return SoundEvents.HONEY_DRINK;
 	}
 }

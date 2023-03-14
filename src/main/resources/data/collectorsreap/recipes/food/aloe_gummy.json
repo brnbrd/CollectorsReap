@@ -1,0 +1,51 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "aloe_gummy"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "atmospheric:aloe_leaves"
+              }
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "atmospheric"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "atmospheric:aloe_leaves"
+          },
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "item": "minecraft:honey_bottle"
+          },
+          {
+            "item": "minecraft:kelp"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:aloe_gummy"
+        }
+      }
+    }
+  ]
+}
