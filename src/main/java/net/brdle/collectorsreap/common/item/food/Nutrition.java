@@ -5,6 +5,7 @@ import net.brdle.collectorsreap.compat.ModCompat;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import plus.dragons.respiteful.entries.RespitefulItems;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class Nutrition {
@@ -109,6 +110,28 @@ public class Nutrition {
         .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 0), 1.0F)
         .effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1.0F)
         .build();
+    public static final FoodProperties MINT_LIMEADE = (new FoodProperties.Builder())
+        .alwaysEat()
+        .nutrition(6).saturationMod(0.33F)
+        .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 0), 1.0F)
+        .effect(() -> new MobEffectInstance(ModCompat.getBerserking().get(), 1200, 0), 1.0F)
+        .build();
+    public static final FoodProperties LIME_GREEN_TEA = (new FoodProperties.Builder())
+        .alwaysEat()
+        .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 0), 1.0F)
+        .effect(() -> new MobEffectInstance(ModCompat.getBerserking().get(), 1200, 0), 1.0F)
+        .build();
+    public static final FoodProperties POMEGRANATE_BLACK_TEA = (new FoodProperties.Builder())
+        .alwaysEat()
+        .effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1.0F)
+        .effect(() -> new MobEffectInstance(ModCompat.getMaturity().get(), 1200, 0), 1.0F)
+        .build();
+    public static final FoodProperties POMEGRANATE_SMOOTHIE = (new FoodProperties.Builder())
+        .nutrition(3).saturationMod(0.166F)
+        .alwaysEat()
+        .effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 600, 0), 1.0F)
+        .effect(() -> new MobEffectInstance(ModCompat.getAgility().get(), 600, 0), 1.0F)
+        .build();
     public static final FoodProperties DELUXE_SALAD = (new FoodProperties.Builder())
         .nutrition(8).saturationMod(0.75F)
         .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 0), 1.0F)
@@ -133,6 +156,18 @@ public class Nutrition {
         .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2), 1.0F)
         .effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1600, 1), 1.0F)
         .build();
+    public static final FoodProperties STRAWBERRY_JAM_BUN = (new FoodProperties.Builder())
+        .nutrition(6).saturationMod(0.5F)
+        .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 0), 1.0F)
+        .build();
+    public static final FoodProperties POMEGRANATE_BEAN_SALAD = (new FoodProperties.Builder())
+        .nutrition(8).saturationMod(0.375F)
+        .effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 400, 0), 1.0F)
+        .effect(() -> new MobEffectInstance(ModCompat.getHarmony().get(), 400, 0), 1.0F).build();
+    public static final FoodProperties CHOCOLATE_ARILS = (new FoodProperties.Builder())
+        .nutrition(4).saturationMod(0.25F)
+        .effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 200, 1), 1.0F)
+        .effect(() -> new MobEffectInstance(ModCompat.getSugarRush().get(), 200, 1), 1.0F).build();
     public static final FoodProperties MILKSHAKE = (new FoodProperties.Builder())
         .nutrition(3).saturationMod(0.6F).alwaysEat().build();
 
@@ -181,4 +216,16 @@ public class Nutrition {
     public static final FoodProperties YUCCA_GUMMY = (new FoodProperties.Builder())
         .nutrition(2).saturationMod(0.0F).alwaysEat()
         .effect(() -> new MobEffectInstance(ModCompat.getPersistence().get(), 200, 3), 1.0F).build();
+    public static final FoodProperties GREEN_TEA_GUMMY = (new FoodProperties.Builder())
+        .nutrition(2).saturationMod(0.0F).alwaysEat()
+        .effect(() -> new MobEffectInstance(ModCompat.getVitality().get(), 200, 2), 1.0F).build();
+    public static final FoodProperties YELLOW_TEA_GUMMY = (new FoodProperties.Builder())
+        .nutrition(2).saturationMod(0.0F).alwaysEat()
+        .effect(() -> new MobEffectInstance(ModCompat.getTenacity().get(), 200, 2), 1.0F).build();
+    public static final FoodProperties BLACK_TEA_GUMMY = (new FoodProperties.Builder())
+        .nutrition(2).saturationMod(0.0F).alwaysEat()
+        .effect(() -> new MobEffectInstance(ModCompat.getMaturity().get(), 200, 2), 1.0F).build();
+    public static final FoodProperties COFFEE_GUMMY = (new FoodProperties.Builder())
+        .nutrition(2).saturationMod(0.0F).alwaysEat()
+        .effect(() -> new MobEffectInstance(ModCompat.getCaffeinated().get(), 400, 3), 1.0F).build();
 }

@@ -66,7 +66,8 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven {
-        url "https://www.cursemaven.com"
+        name = "Curse Maven"
+        url = "https://www.cursemaven.com"
         content {
             includeGroup "curse.maven"
         }
@@ -76,11 +77,13 @@ repositories {
         url = "https://dvs1.progwml6.com/files/maven/"
     }
     maven {
+        name = "Abnormals Maven"
         url = "https://maven.jaackson.me"
     }
-    // flatDir {
-    //     dir 'libs'
-    // }
+    maven {
+        name = "Registrate Maven"
+        url = "https://maven.tterrag.com/"
+    }
 }
 
 dependencies {
@@ -97,6 +100,8 @@ dependencies {
     implementation fg.deobf("curse.maven:neapolitan-382016:${neapolitan_version}")
     compileOnly fg.deobf("curse.maven:atmospheric-362393:${atmospheric_version}")
     compileOnly fg.deobf("curse.maven:seasonals-416471:${seasonals_version}")
+    compileOnly fg.deobf("curse.maven:respiteful-836471:${respiteful_version}")
+    compileOnly fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 }
 
 jar {
@@ -126,4 +131,8 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }

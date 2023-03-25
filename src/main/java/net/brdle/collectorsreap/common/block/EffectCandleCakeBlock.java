@@ -32,7 +32,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
-
 import java.util.Map;
 
 public class EffectCandleCakeBlock extends AbstractCandleBlock {
@@ -60,11 +59,13 @@ public class EffectCandleCakeBlock extends AbstractCandleBlock {
 		return PARTICLE_OFFSETS;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull VoxelShape getShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
 		return SHAPE;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult result) {
 		ItemStack itemstack = player.getItemInHand(hand);
@@ -119,6 +120,7 @@ public class EffectCandleCakeBlock extends AbstractCandleBlock {
 		pBuilder.add(LIT);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull ItemStack getCloneItemStack(@NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState) {
 		return this.getCake().getSlice().getDefaultInstance();
@@ -134,11 +136,13 @@ public class EffectCandleCakeBlock extends AbstractCandleBlock {
 	 * returns its solidified counterpart.
 	 * Note that this method should ideally consider only the specific direction passed in.
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull BlockState updateShape(@NotNull BlockState pState, @NotNull Direction pDirection, @NotNull BlockState pNeighborState, @NotNull LevelAccessor pLevel, @NotNull BlockPos pCurrentPos, @NotNull BlockPos pNeighborPos) {
 		return pDirection == Direction.DOWN && !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pDirection, pNeighborState, pLevel, pCurrentPos, pNeighborPos);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean canSurvive(@NotNull BlockState pState, LevelReader pLevel, BlockPos pPos) {
 		return pLevel.getBlockState(pPos.below()).getMaterial().isSolid();
@@ -149,6 +153,7 @@ public class EffectCandleCakeBlock extends AbstractCandleBlock {
 	 * net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#getAnalogOutputSignal} whenever possible.
 	 * Implementing/overriding is fine.
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public int getAnalogOutputSignal(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos) {
 		return CakeBlock.FULL_CAKE_SIGNAL;
@@ -159,11 +164,13 @@ public class EffectCandleCakeBlock extends AbstractCandleBlock {
 	 * net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase#hasAnalogOutputSignal} whenever possible.
 	 * Implementing/overriding is fine.
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean hasAnalogOutputSignal(@NotNull BlockState pState) {
 		return true;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean isPathfindable(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull PathComputationType pType) {
 		return false;

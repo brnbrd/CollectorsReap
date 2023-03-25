@@ -88,6 +88,9 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.POTATO_FRITTERS, "Potato Fritters");
         addItem(CRItems.LIMEADE, "Limeade");
         addItem(CRItems.BERRY_LIMEADE, "Berry Limeade");
+        addItem(CRItems.MINT_LIMEADE, "Mint Limeade");
+        addItem(CRItems.POMEGRANATE_BLACK_TEA, "Pomegranate Black Tea");
+        addItem(CRItems.POMEGRANATE_SMOOTHIE, "Pomegranate Smoothie");
         addItem(CRItems.POMEGRANATE, "Pomegranate");
         addItem(CRItems.POMEGRANATE_SLICE, "Pomegranate Slice");
         addItem(CRItems.POMEGRANATE_MUTTON, "Pomegranate Mutton");
@@ -105,6 +108,9 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.POMEGRANATE_ICE_CREAM, "Pomegranate Ice Cream");
         addItem(CRItems.LIME_MILKSHAKE, "Lime Milkshake");
         addItem(CRItems.POMEGRANATE_MILKSHAKE, "Pomegranate Milkshake");
+        addItem(CRItems.CHOCOLATE_ARILS, "Chocolate Arils");
+        addItem(CRItems.POMEGRANATE_BEAN_SALAD, "Pomegranate Bean Salad");
+        addItem(CRItems.STRAWBERRY_JAM_BUN, "Strawberry Jam Bun");
         addItem(CRItems.LIME_GUMMY, "Lime Gummy");
         addItem(CRItems.POMEGRANATE_GUMMY, "Pomegranate Gummy");
         addItem(CRItems.MELON_GUMMY, "Melon Gummy");
@@ -119,6 +125,10 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.ALOE_GUMMY, "Aloe Gummy");
         addItem(CRItems.PASSIONFRUIT_GUMMY, "Passionfruit Gummy");
         addItem(CRItems.YUCCA_GUMMY, "Yucca Gummy");
+        addItem(CRItems.GREEN_TEA_GUMMY, "Green Tea Gummy");
+        addItem(CRItems.YELLOW_TEA_GUMMY, "Yellow Tea Gummy");
+        addItem(CRItems.BLACK_TEA_GUMMY, "Black Tea Gummy");
+        addItem(CRItems.COFFEE_GUMMY, "Coffee Gummy");
         addEffect(CREffects.CORROSION, "Corrosion");
         add(CREffects.CORROSION.get().getDescriptionId() + ".description", "Provides the user a defensive acid shield, corroding projectiles and damaging attack weapons.");
         addEffect(CREffects.VOLATILITY, "Volatility");

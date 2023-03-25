@@ -22,6 +22,7 @@ import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
+import umpaz.farmersrespite.data.builder.KettleRecipeBuilder;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
@@ -362,6 +363,18 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 3)
                 .unlockedBy("has_limeade", has(CRItems.LIMEADE.get())),
             "food/pink_limeade_from_limeade", finished, enabled(CRItems.PINK_LIMEADE));
+        wrap(shapeless(CRItems.MINT_LIMEADE)
+                .requires(Ingredient.of(CRItemTags.FRUITS_LIME), 2)
+                .requires(Ingredient.of(CRItemTags.MINT_LEAVES), 2)
+                .requires(Items.SUGAR)
+                .requires(Items.GLASS_BOTTLE)
+                .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+            "food/mint_limeade", finished, enabled(CRItems.MINT_LIMEADE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.MINT_LEAVES)));
+        wrap(shapeless(CRItems.MINT_LIMEADE)
+                .requires(CRItems.LIMEADE.get(), 1)
+                .requires(Ingredient.of(CRItemTags.MINT_LEAVES), 2)
+                .unlockedBy("has_limeade", has(CRItems.LIMEADE.get())),
+            "food/mint_limeade_from_limeade", finished, enabled(CRItems.MINT_LIMEADE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.MINT_LEAVES)));
         wrap(shapeless(CRItems.SALMON_TARTARE)
                 .requires(Ingredient.of(ForgeTags.RAW_FISHES_SALMON), 3)
                 .requires(CRItemTags.FRUITS_CITRUS)
@@ -608,6 +621,23 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 
     private void wrap(CookingPotRecipeBuilder builder, String modid, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
         ResourceLocation loc = Util.rl(modid, name);
+        ConditionalRecipe.Builder cond;
+        if (conds.length > 1) {
+            cond = ConditionalRecipe.builder().addCondition(and(conds));
+        } else if (conds.length == 1) {
+            cond = ConditionalRecipe.builder().addCondition(conds[0]);
+        } else {
+            cond = ConditionalRecipe.builder();
+        }
+        FinishedRecipe[] recipe = new FinishedRecipe[1];
+        builder.build(f -> recipe[0] = f, loc);
+        cond.addRecipe(recipe[0])
+            .generateAdvancement()
+            .build(consumer, loc);
+    }
+
+    private void wrap(KettleRecipeBuilder builder, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
+        ResourceLocation loc = Util.cr(name);
         ConditionalRecipe.Builder cond;
         if (conds.length > 1) {
             cond = ConditionalRecipe.builder().addCondition(and(conds));

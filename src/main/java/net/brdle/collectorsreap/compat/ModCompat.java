@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.Supplier;
 
 public class ModCompat {
+
 	@Nullable public static CreativeModeTab getNDTab() {
 		return ifLoaded("nethersdelight", NDCompat.CREATIVE_TAB);
 	}
@@ -22,6 +23,10 @@ public class ModCompat {
 		} else {
 			return null;
 		}
+	}
+
+	public static Supplier<MobEffect> getCaffeinated() {
+		return (ModList.get().isLoaded("farmersrespite")) ? FarmersRespiteCompat.CAFFEINATED : () -> MobEffects.CONFUSION;
 	}
 
 	public static Supplier<MobEffect> getAgility() {
@@ -58,5 +63,17 @@ public class ModCompat {
 
 	public static Supplier<MobEffect> getFallFlavor() {
 		return (ModList.get().isLoaded("seasonals")) ? SeasonalsCompat.FALL_FLAVOR : () -> MobEffects.CONFUSION;
+	}
+
+	public static Supplier<MobEffect> getVitality() {
+		return (ModList.get().isLoaded("respiteful")) ? RespitefulCompat.VITALITY : () -> MobEffects.DIG_SPEED;
+	}
+
+	public static Supplier<MobEffect> getTenacity() {
+		return (ModList.get().isLoaded("respiteful")) ? RespitefulCompat.TENACITY : () -> MobEffects.DAMAGE_RESISTANCE;
+	}
+
+	public static Supplier<MobEffect> getMaturity() {
+		return (ModList.get().isLoaded("respiteful")) ? RespitefulCompat.MATURITY : getCaffeinated();
 	}
 }
