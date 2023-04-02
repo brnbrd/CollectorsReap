@@ -405,8 +405,8 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_limeade", has(CRItems.LIMEADE.get())),
             "food/mint_limeade_from_limeade", finished, enabled(CRItems.MINT_LIMEADE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.MINT_LEAVES)));
         wrap(shapeless(CRItems.POMEGRANATE_SMOOTHIE)
-                .requires(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 2)
                 .requires(Ingredient.of(CRItemTags.BANANA), 1)
+                .requires(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 2)
                 .requires(Items.GLASS_BOTTLE)
                 .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
             "food/pomegranate_smoothie", finished, enabled(CRItems.POMEGRANATE_SMOOTHIE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.BANANA)));
