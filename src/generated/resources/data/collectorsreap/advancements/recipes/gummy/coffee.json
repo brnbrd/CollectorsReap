@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_pomegranate": {
+          "has_coffee_beans": {
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:fruits/pomegranate"
+                  "tag": "forge:coffee_beans"
                 }
               ]
             },
@@ -16,20 +16,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/pomegranate_gummy"
+              "recipe": "collectorsreap:gummy/coffee"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_pomegranate",
+            "has_coffee_beans",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/pomegranate_gummy"
+            "collectorsreap:gummy/coffee"
           ]
         }
       },
@@ -39,11 +39,18 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "pomegranate"
+              "value": "coffee_gummy"
             },
             {
-              "type": "collectorsreap:enabled",
-              "value": "pomegranate_gummy"
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:coffee_beans"
+              }
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "farmersrespite"
             }
           ]
         }

@@ -4,32 +4,32 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_mint": {
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "collectorsreap:gummy/yellow_tea"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          },
+          "has_yellow_tea": {
             "conditions": {
               "items": [
                 {
-                  "tag": "neapolitan:mint_leaves"
+                  "tag": "forge:tea_leaves/yellow"
                 }
               ]
             },
             "trigger": "minecraft:inventory_changed"
-          },
-          "has_the_recipe": {
-            "conditions": {
-              "recipe": "collectorsreap:food/mint_gummy"
-            },
-            "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_mint",
+            "has_yellow_tea",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/mint_gummy"
+            "collectorsreap:gummy/yellow_tea"
           ]
         }
       },
@@ -39,18 +39,18 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "mint_gummy"
+              "value": "yellow_tea_gummy"
             },
             {
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "neapolitan:mint_leaves"
+                "tag": "forge:tea_leaves/yellow"
               }
             },
             {
               "type": "forge:mod_loaded",
-              "modid": "neapolitan"
+              "modid": "farmersrespite"
             }
           ]
         }

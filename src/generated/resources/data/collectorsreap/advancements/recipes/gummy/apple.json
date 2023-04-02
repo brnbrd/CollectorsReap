@@ -4,12 +4,12 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_melon": {
+          "has_apple": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "minecraft:melon_slice"
+                    "minecraft:apple"
                   ]
                 }
               ]
@@ -18,27 +18,27 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/melon_gummy"
+              "recipe": "collectorsreap:gummy/apple"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_melon",
+            "has_apple",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/melon_gummy"
+            "collectorsreap:gummy/apple"
           ]
         }
       },
       "conditions": [
         {
           "type": "collectorsreap:enabled",
-          "value": "melon_gummy"
+          "value": "apple_gummy"
         }
       ]
     }

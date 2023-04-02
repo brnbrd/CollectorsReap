@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_lime": {
+          "has_pomegranate": {
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:fruits/lime"
+                  "tag": "forge:fruits/pomegranate"
                 }
               ]
             },
@@ -16,20 +16,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/lime_gummy"
+              "recipe": "collectorsreap:gummy/pomegranate"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_lime",
+            "has_pomegranate",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/lime_gummy"
+            "collectorsreap:gummy/pomegranate"
           ]
         }
       },
@@ -39,11 +39,11 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "lime"
+              "value": "pomegranate"
             },
             {
               "type": "collectorsreap:enabled",
-              "value": "lime_gummy"
+              "value": "pomegranate_gummy"
             }
           ]
         }

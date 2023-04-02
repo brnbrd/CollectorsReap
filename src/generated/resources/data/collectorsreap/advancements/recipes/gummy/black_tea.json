@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_chocolate": {
+          "has_black_tea": {
             "conditions": {
               "items": [
                 {
-                  "tag": "neapolitan:chocolate_bar"
+                  "tag": "forge:tea_leaves/black"
                 }
               ]
             },
@@ -16,20 +16,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/chocolate_gummy"
+              "recipe": "collectorsreap:gummy/black_tea"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_chocolate",
+            "has_black_tea",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/chocolate_gummy"
+            "collectorsreap:gummy/black_tea"
           ]
         }
       },
@@ -39,18 +39,18 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "chocolate_gummy"
+              "value": "black_tea_gummy"
             },
             {
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "neapolitan:chocolate_bar"
+                "tag": "forge:tea_leaves/black"
               }
             },
             {
               "type": "forge:mod_loaded",
-              "modid": "neapolitan"
+              "modid": "farmersrespite"
             }
           ]
         }

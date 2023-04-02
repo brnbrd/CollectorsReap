@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_strawberries": {
+          "has_mint": {
             "conditions": {
               "items": [
                 {
-                  "tag": "neapolitan:red_strawberries"
+                  "tag": "neapolitan:mint_leaves"
                 }
               ]
             },
@@ -16,20 +16,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/strawberry_gummy"
+              "recipe": "collectorsreap:gummy/mint"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_strawberries",
+            "has_mint",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/strawberry_gummy"
+            "collectorsreap:gummy/mint"
           ]
         }
       },
@@ -39,13 +39,13 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "strawberry_gummy"
+              "value": "mint_gummy"
             },
             {
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "neapolitan:red_strawberries"
+                "tag": "neapolitan:mint_leaves"
               }
             },
             {

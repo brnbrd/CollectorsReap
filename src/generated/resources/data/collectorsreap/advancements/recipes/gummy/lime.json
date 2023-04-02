@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_banana": {
+          "has_lime": {
             "conditions": {
               "items": [
                 {
-                  "tag": "neapolitan:banana"
+                  "tag": "forge:fruits/lime"
                 }
               ]
             },
@@ -16,20 +16,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/banana_gummy"
+              "recipe": "collectorsreap:gummy/lime"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_banana",
+            "has_lime",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/banana_gummy"
+            "collectorsreap:gummy/lime"
           ]
         }
       },
@@ -39,18 +39,11 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "banana_gummy"
+              "value": "lime"
             },
             {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:tag_empty",
-                "tag": "neapolitan:banana"
-              }
-            },
-            {
-              "type": "forge:mod_loaded",
-              "modid": "neapolitan"
+              "type": "collectorsreap:enabled",
+              "value": "lime_gummy"
             }
           ]
         }

@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_black_tea": {
+          "has_strawberries": {
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:tea_leaves/black"
+                  "tag": "neapolitan:red_strawberries"
                 }
               ]
             },
@@ -16,20 +16,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/black_tea_gummy"
+              "recipe": "collectorsreap:gummy/strawberry"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_black_tea",
+            "has_strawberries",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/black_tea_gummy"
+            "collectorsreap:gummy/strawberry"
           ]
         }
       },
@@ -39,18 +39,18 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "black_tea_gummy"
+              "value": "strawberry_gummy"
             },
             {
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "forge:tea_leaves/black"
+                "tag": "neapolitan:red_strawberries"
               }
             },
             {
               "type": "forge:mod_loaded",
-              "modid": "farmersrespite"
+              "modid": "neapolitan"
             }
           ]
         }
