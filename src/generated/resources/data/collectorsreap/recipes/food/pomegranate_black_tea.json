@@ -1,0 +1,49 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate_black_tea"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "respiteful"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:tea_leaves/black"
+              }
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:brewing",
+        "container": {
+          "item": "minecraft:glass_bottle"
+        },
+        "cookingtime": 2400,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "tag": "forge:tea_leaves/black"
+          }
+        ],
+        "needwater": true,
+        "result": {
+          "item": "collectorsreap:pomegranate_black_tea"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "strawberry_jam_bun"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "neapolitan:red_strawberries"
+              }
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "forge:grain/wheat"
+          },
+          {
+            "tag": "forge:milk"
+          },
+          {
+            "tag": "neapolitan:red_strawberries"
+          },
+          {
+            "tag": "collectorsreap:lime_or_slice"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:strawberry_jam_bun"
+        }
+      }
+    }
+  ]
+}

@@ -17,6 +17,10 @@ public class CRItemTags {
 	public static final TagKey<Item> MUSHROOMS_PORTOBELLO = forge("mushrooms/portobello");
 	public static final TagKey<Item> TORTILLA = forge("tortilla");
 	public static final TagKey<Item> ICE_CUBES = forge("ice_cubes");
+	public static final TagKey<Item> TEA_LEAVES_GREEN = forge("tea_leaves/green");
+	public static final TagKey<Item> TEA_LEAVES_YELLOW = forge("tea_leaves/yellow");
+	public static final TagKey<Item> TEA_LEAVES_BLACK = forge("tea_leaves/black");
+	public static final TagKey<Item> COFFEE_BEANS = forge("coffee_beans");
 
 	// CR
 	public static final TagKey<Item> GUMMIES = cr("gummies");

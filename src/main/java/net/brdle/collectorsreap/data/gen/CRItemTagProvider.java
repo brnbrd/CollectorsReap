@@ -13,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
+import umpaz.farmersrespite.common.registry.FRItems;
 
 public class CRItemTagProvider extends ItemTagsProvider {
 	public CRItemTagProvider(DataGenerator gen, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {
@@ -96,6 +97,16 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.POMEGRANATE_SEEDS.get());
 		this.tag(CRItemTags.SPRING_CROPS)
 			.add(CRItems.LIME_SEEDS.get());
+
+		// Tea and Coffee
+		this.tag(CRItemTags.TEA_LEAVES_GREEN)
+			.addOptional(FRItems.GREEN_TEA_LEAVES.getId());
+		this.tag(CRItemTags.TEA_LEAVES_YELLOW)
+			.addOptional(FRItems.YELLOW_TEA_LEAVES.getId());
+		this.tag(CRItemTags.TEA_LEAVES_BLACK)
+			.addOptional(FRItems.BLACK_TEA_LEAVES.getId());
+		this.tag(CRItemTags.COFFEE_BEANS)
+			.addOptional(FRItems.COFFEE_BEANS.getId());
 	}
 
 	/**

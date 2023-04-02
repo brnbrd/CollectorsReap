@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "chocolate_arils"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "neapolitan:chocolate_bar"
+              }
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "forge:seeds/pomegranate"
+          },
+          {
+            "tag": "neapolitan:chocolate_bar"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:chocolate_arils"
+        }
+      }
+    }
+  ]
+}

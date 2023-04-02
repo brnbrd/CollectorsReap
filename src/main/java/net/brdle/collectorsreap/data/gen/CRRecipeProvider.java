@@ -247,6 +247,35 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .addIngredient(Items.KELP)
                 .unlockedBy("has_adzuki", has(CRItemTags.ROASTED_ADZUKI_BEANS)),
             "food/adzuki_gummy", finished, enabled(CRItems.ADZUKI_GUMMY), not(tagEmpty(CRItemTags.ROASTED_ADZUKI_BEANS)), modLoaded("neapolitan"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.GREEN_TEA_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.TEA_LEAVES_GREEN)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_green_tea", has(CRItemTags.TEA_LEAVES_GREEN)),
+            "food/green_tea_gummy", finished, enabled(CRItems.GREEN_TEA_GUMMY), not(tagEmpty(CRItemTags.TEA_LEAVES_GREEN)), modLoaded("farmersrespite"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.YELLOW_TEA_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.TEA_LEAVES_YELLOW)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_yellow_tea", has(CRItemTags.TEA_LEAVES_YELLOW)),
+            "food/yellow_tea_gummy", finished, enabled(CRItems.YELLOW_TEA_GUMMY), not(tagEmpty(CRItemTags.TEA_LEAVES_YELLOW)), modLoaded("farmersrespite"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.BLACK_TEA_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.TEA_LEAVES_BLACK)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_black_tea", has(CRItemTags.TEA_LEAVES_BLACK)),
+            "food/black_tea_gummy", finished, enabled(CRItems.BLACK_TEA_GUMMY), not(tagEmpty(CRItemTags.TEA_LEAVES_BLACK)), modLoaded("farmersrespite"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.COFFEE_GUMMY.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.COFFEE_BEANS)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .addIngredient(Items.KELP)
+                .unlockedBy("has_coffee_beans", has(CRItemTags.COFFEE_BEANS)),
+            "food/coffee_gummy", finished, enabled(CRItems.COFFEE_GUMMY), not(tagEmpty(CRItemTags.COFFEE_BEANS)), modLoaded("farmersrespite"));
+
         /*wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PUMPKIN_GUMMY.get(), 1, 200, 1.0F)
                 .addIngredient(CRItemTags.ROASTED_PUMPKIN)
                 .addIngredient(Items.SUGAR)
@@ -375,6 +404,12 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(Ingredient.of(CRItemTags.MINT_LEAVES), 2)
                 .unlockedBy("has_limeade", has(CRItems.LIMEADE.get())),
             "food/mint_limeade_from_limeade", finished, enabled(CRItems.MINT_LIMEADE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.MINT_LEAVES)));
+        wrap(shapeless(CRItems.POMEGRANATE_SMOOTHIE)
+                .requires(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 2)
+                .requires(Ingredient.of(CRItemTags.BANANA), 1)
+                .requires(Items.GLASS_BOTTLE)
+                .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_smoothie", finished, enabled(CRItems.POMEGRANATE_SMOOTHIE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.BANANA)));
         wrap(shapeless(CRItems.SALMON_TARTARE)
                 .requires(Ingredient.of(ForgeTags.RAW_FISHES_SALMON), 3)
                 .requires(CRItemTags.FRUITS_CITRUS)
@@ -401,6 +436,26 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(Items.BOWL)
                 .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
             "food/deluxe_salad", finished, enabled(CRItems.DELUXE_SALAD));
+        wrap(shapeless(CRItems.POMEGRANATE_BEAN_SALAD)
+                .requires(CRItemTags.FRUITS_POMEGRANATE)
+                .requires(CRItemTags.ROASTED_ADZUKI_BEANS)
+                .requires(ForgeTags.CROPS_TOMATO)
+                .requires(ForgeTags.CROPS_ONION)
+                .requires(Items.BOWL)
+                .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_bean_salad", finished, enabled(CRItems.POMEGRANATE_BEAN_SALAD), not(tagEmpty(CRItemTags.ROASTED_ADZUKI_BEANS)), modLoaded("neapolitan"));
+        wrap(shapeless(CRItems.CHOCOLATE_ARILS)
+                .requires(CRItemTags.SEEDS_POMEGRANATE)
+                .requires(CRItemTags.CHOCOLATE_BAR)
+                .unlockedBy("has_pomegranate_seeds", has(CRItemTags.SEEDS_POMEGRANATE)),
+            "food/chocolate_arils", finished, enabled(CRItems.CHOCOLATE_ARILS), not(tagEmpty(CRItemTags.CHOCOLATE_BAR)), modLoaded("neapolitan"));
+        wrap(shapeless(CRItems.STRAWBERRY_JAM_BUN)
+                .requires(ForgeTags.GRAIN_WHEAT)
+                .requires(ForgeTags.MILK)
+                .requires(CRItemTags.RED_STRAWBERRIES)
+                .requires(CRItemTags.LIME_OR_SLICE)
+                .unlockedBy("has_strawberries", has(CRItemTags.RED_STRAWBERRIES)),
+            "food/strawberry_jam_bun", finished, enabled(CRItems.STRAWBERRY_JAM_BUN), not(tagEmpty(CRItemTags.RED_STRAWBERRIES)), modLoaded("neapolitan"));
 
         // Shaped Crafting
         wrap(shaped(CRItems.PORTOBELLO_QUICHE)
@@ -487,6 +542,18 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(CRItems.POMEGRANATE_CAKE_SLICE.get(), 7)
                 .unlockedBy("has_pomegranate_cake_slice", has(CRItems.POMEGRANATE_CAKE_SLICE.get())),
             "food/pomegranate_cake_from_slices", finished, enabled(CRItems.POMEGRANATE_CAKE), enabled(CRItems.POMEGRANATE_CAKE_SLICE));
+
+        // Kettle
+        wrap(KettleRecipeBuilder.kettleRecipe(CRItems.LIME_GREEN_TEA.get(), 1, 2400, true, 0.35F, Items.GLASS_BOTTLE)
+                .addIngredient(Ingredient.of(CRItemTags.FRUITS_LIME), 1)
+                .addIngredient(Ingredient.of(CRItemTags.TEA_LEAVES_GREEN), 1)
+                .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+            "food/lime_green_tea", finished, enabled(CRItems.LIME_GREEN_TEA), modLoaded("respiteful"), not(tagEmpty(CRItemTags.TEA_LEAVES_GREEN)));
+        wrap(KettleRecipeBuilder.kettleRecipe(CRItems.POMEGRANATE_BLACK_TEA.get(), 1, 2400, true, 0.35F, Items.GLASS_BOTTLE)
+                .addIngredient(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 1)
+                .addIngredient(Ingredient.of(CRItemTags.TEA_LEAVES_BLACK), 1)
+                .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
+            "food/pomegranate_black_tea", finished, enabled(CRItems.POMEGRANATE_BLACK_TEA), modLoaded("respiteful"), not(tagEmpty(CRItemTags.TEA_LEAVES_BLACK)));
 
         // Neapolitan Compat
         wrap(shapeless(CRItems.LIME_ICE_CREAM)

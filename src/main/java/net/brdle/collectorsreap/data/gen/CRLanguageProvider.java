@@ -89,6 +89,7 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.LIMEADE, "Limeade");
         addItem(CRItems.BERRY_LIMEADE, "Berry Limeade");
         addItem(CRItems.MINT_LIMEADE, "Mint Limeade");
+        addItem(CRItems.LIME_GREEN_TEA, "Lime Green Tea");
         addItem(CRItems.POMEGRANATE_BLACK_TEA, "Pomegranate Black Tea");
         addItem(CRItems.POMEGRANATE_SMOOTHIE, "Pomegranate Smoothie");
         addItem(CRItems.POMEGRANATE, "Pomegranate");

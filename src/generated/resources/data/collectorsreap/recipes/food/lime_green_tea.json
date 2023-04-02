@@ -1,0 +1,49 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_green_tea"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "respiteful"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:tea_leaves/green"
+              }
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:brewing",
+        "container": {
+          "item": "minecraft:glass_bottle"
+        },
+        "cookingtime": 2400,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "tag": "forge:fruits/lime"
+          },
+          {
+            "tag": "forge:tea_leaves/green"
+          }
+        ],
+        "needwater": true,
+        "result": {
+          "item": "collectorsreap:lime_green_tea"
+        }
+      }
+    }
+  ]
+}

@@ -158,7 +158,7 @@ public class Nutrition {
         .build();
     public static final FoodProperties STRAWBERRY_JAM_BUN = (new FoodProperties.Builder())
         .nutrition(6).saturationMod(0.5F)
-        .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 0), 1.0F)
+        .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 400, 0), 1.0F)
         .build();
     public static final FoodProperties POMEGRANATE_BEAN_SALAD = (new FoodProperties.Builder())
         .nutrition(8).saturationMod(0.375F)
