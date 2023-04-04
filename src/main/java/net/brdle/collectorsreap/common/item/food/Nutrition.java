@@ -5,7 +5,6 @@ import net.brdle.collectorsreap.compat.ModCompat;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import plus.dragons.respiteful.entries.RespitefulItems;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class Nutrition {
@@ -119,7 +118,7 @@ public class Nutrition {
     public static final FoodProperties LIME_GREEN_TEA = (new FoodProperties.Builder())
         .alwaysEat()
         .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 0), 1.0F)
-        .effect(() -> new MobEffectInstance(ModCompat.getBerserking().get(), 1200, 0), 1.0F)
+        .effect(() -> new MobEffectInstance(ModCompat.getVitality().get(), 1200, 0), 1.0F)
         .build();
     public static final FoodProperties POMEGRANATE_BLACK_TEA = (new FoodProperties.Builder())
         .alwaysEat()
