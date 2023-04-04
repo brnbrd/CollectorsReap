@@ -43,7 +43,7 @@
             },
             {
               "type": "forge:mod_loaded",
-              "modid": "respiteful"
+              "modid": "farmersrespite"
             },
             {
               "type": "forge:not",

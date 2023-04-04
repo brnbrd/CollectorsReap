@@ -28,13 +28,13 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "tag": "forge:fruits/pomegranate"
-          },
-          {
-            "tag": "forge:fruits/pomegranate"
-          },
-          {
             "tag": "neapolitan:banana"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
           },
           {
             "item": "minecraft:glass_bottle"

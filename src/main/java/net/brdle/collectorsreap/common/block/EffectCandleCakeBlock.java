@@ -154,6 +154,7 @@ public class EffectCandleCakeBlock extends AbstractCandleBlock {
 	 * Implementing/overriding is fine.
 	 */
 	@SuppressWarnings("deprecation")
+	@Deprecated
 	@Override
 	public int getAnalogOutputSignal(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos) {
 		return CakeBlock.FULL_CAKE_SIGNAL;
@@ -165,6 +166,7 @@ public class EffectCandleCakeBlock extends AbstractCandleBlock {
 	 * Implementing/overriding is fine.
 	 */
 	@SuppressWarnings("deprecation")
+	@Deprecated
 	@Override
 	public boolean hasAnalogOutputSignal(@NotNull BlockState pState) {
 		return true;

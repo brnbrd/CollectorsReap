@@ -548,12 +548,12 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .addIngredient(Ingredient.of(CRItemTags.FRUITS_LIME), 1)
                 .addIngredient(Ingredient.of(CRItemTags.TEA_LEAVES_GREEN), 1)
                 .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-            "food/lime_green_tea", finished, enabled(CRItems.LIME_GREEN_TEA), modLoaded("respiteful"), not(tagEmpty(CRItemTags.TEA_LEAVES_GREEN)));
+            "food/lime_green_tea", finished, enabled(CRItems.LIME_GREEN_TEA), modLoaded("farmersrespite"), not(tagEmpty(CRItemTags.TEA_LEAVES_GREEN)));
         wrap(KettleRecipeBuilder.kettleRecipe(CRItems.POMEGRANATE_BLACK_TEA.get(), 1, 2400, true, 0.35F, Items.GLASS_BOTTLE)
                 .addIngredient(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 1)
                 .addIngredient(Ingredient.of(CRItemTags.TEA_LEAVES_BLACK), 1)
                 .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
-            "food/pomegranate_black_tea", finished, enabled(CRItems.POMEGRANATE_BLACK_TEA), modLoaded("respiteful"), not(tagEmpty(CRItemTags.TEA_LEAVES_BLACK)));
+            "food/pomegranate_black_tea", finished, enabled(CRItems.POMEGRANATE_BLACK_TEA), modLoaded("farmersrespite"), not(tagEmpty(CRItemTags.TEA_LEAVES_BLACK)));
 
         // Neapolitan Compat
         wrap(shapeless(CRItems.LIME_ICE_CREAM)
