@@ -123,10 +123,10 @@ public class CRItems extends ModItems {
             Nutrition.MINT_LIMEADE), true, false, "neapolitan"));
     public static final RegistryObject<Item> LIME_GREEN_TEA = registerItem("lime_green_tea", () ->
         new CompatDrinkable((new Item.Properties()).food(
-            Nutrition.LIME_GREEN_TEA), true, false, "respiteful"));
+            Nutrition.LIME_GREEN_TEA), true, false, "farmersrespite"));
     public static final RegistryObject<Item> POMEGRANATE_BLACK_TEA = registerItem("pomegranate_black_tea", () ->
         new CompatDrinkable((new Item.Properties()).food(
-            Nutrition.POMEGRANATE_BLACK_TEA), true, false, "respiteful"));
+            Nutrition.POMEGRANATE_BLACK_TEA), true, false, "farmersrespite"));
     public static final RegistryObject<Item> POMEGRANATE_SMOOTHIE = registerItem("pomegranate_smoothie", () ->
         new CompatDrinkable((new Item.Properties()).food(
             Nutrition.POMEGRANATE_SMOOTHIE), true, false, "neapolitan"));
