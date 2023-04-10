@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.common.block;
 
+import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -217,16 +218,6 @@ public class LimeBushBlock extends CropBlock implements IFruiting {
 	}
 
 	@Override
-	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
-		if (!pLevel.isClientSide() &&
-			e instanceof Bee &&
-			pState.getValue(AGE) == this.getMaxAge() - 1 &&
-			pLevel.getRandom().nextInt(150) == 0) {
-			this.performBonemeal((ServerLevel) pLevel, pLevel.getRandom(), pPos, pState);
-		}
-	}
-
-	@Override
 	public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
 		return 60;
 	}
@@ -234,5 +225,16 @@ public class LimeBushBlock extends CropBlock implements IFruiting {
 	@Override
 	public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
 		return 30;
+	}
+
+	@Override
+	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
+		if (!pLevel.isClientSide() &&
+			CRConfig.FAST_POLLINATE.get() &&
+			e instanceof Bee &&
+			pState.getValue(AGE) == this.getMaxAge() - 1 &&
+			pLevel.getRandom().nextInt(150) == 0) {
+			this.performBonemeal((ServerLevel) pLevel, pLevel.getRandom(), pPos, pState);
+		}
 	}
 }

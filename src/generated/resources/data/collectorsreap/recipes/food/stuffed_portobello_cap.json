@@ -11,14 +11,11 @@
       "recipe": {
         "type": "farmersdelight:cooking",
         "container": {
-          "item": "minecraft:bowl"
+          "item": "collectorsreap:baked_portobello_cap"
         },
         "cookingtime": 200,
         "experience": 1.0,
         "ingredients": [
-          {
-            "item": "collectorsreap:baked_portobello_cap"
-          },
           {
             "item": "minecraft:brown_mushroom"
           },

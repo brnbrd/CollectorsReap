@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.common.block;
 
+import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.BlockPos;
@@ -231,6 +232,7 @@ public class PomegranateBushBlock extends CropBlock implements IFruiting {
 	@Override
 	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
 		if (!pLevel.isClientSide() &&
+			CRConfig.FAST_POLLINATE.get() &&
 			e instanceof Bee &&
 			pState.getValue(AGE) == this.getMaxAge() - 1 &&
 			pLevel.getRandom().nextInt(150) == 0) {

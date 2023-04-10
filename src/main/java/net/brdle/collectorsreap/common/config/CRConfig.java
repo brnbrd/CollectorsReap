@@ -16,6 +16,7 @@ public class CRConfig {
     public static ForgeConfigSpec.IntValue CHANCE_PORTOBELLO;
     public static ForgeConfigSpec.IntValue CHANCE_LIME_BUSH;
     public static ForgeConfigSpec.IntValue CHANCE_POMEGRANATE_BUSH;
+    public static ForgeConfigSpec.BooleanValue FAST_POLLINATE;
 
     CRConfig(ForgeConfigSpec.Builder builder) {
         builder.comment("Configure Collector's Reap");
@@ -36,6 +37,11 @@ public class CRConfig {
             CHANCE_POMEGRANATE_BUSH = builder
                 .comment("Chance of generating bushes. Smaller value = more frequent (once every ...). To disable, set the item Pomegranate to false above.")
                 .defineInRange("chance_pomegranate_bush", 15, 0, Integer.MAX_VALUE);
+        builder.pop();
+        builder.push("Behavior");
+            FAST_POLLINATE = builder
+                .comment("Whether bee pollination of bushes should occur much quicker (when Bee collides with it) rather than on Bee's AI scheduled timing. Use this if having issues with pollination.")
+                .define("fast_pollinate", false);
         builder.pop();
     }
 

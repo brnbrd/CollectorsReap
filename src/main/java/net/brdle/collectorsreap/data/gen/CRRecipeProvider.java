@@ -75,8 +75,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .addIngredient(Items.DRIED_KELP)
                 .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
             "food/portobello_rice_soup", finished, enabled("portobello_rice_soup"));
-        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.STUFFED_PORTOBELLO_CAP.get(), 1, 200, 1.0F, Items.BOWL)
-                .addIngredient(CRItems.BAKED_PORTOBELLO_CAP.get())
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.STUFFED_PORTOBELLO_CAP.get(), 1, 200, 1.0F, CRItems.BAKED_PORTOBELLO_CAP.get())
                 .addIngredient(Items.BROWN_MUSHROOM)
                 .addIngredient(ForgeTags.CROPS_ONION)
                 .addIngredient(ForgeTags.CROPS_TOMATO)
@@ -106,13 +105,13 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .addIngredient(ForgeTags.CROPS_ONION)
                 .unlockedBy("has_lime_or_slice", has(CRItemTags.LIME_OR_SLICE)),
             "food/mediterranean_salmon", finished, enabled("mediterranean_salmon"));
-        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POTATO_FRITTERS.get(), 1, 200, 1.0F, Items.BOWL)
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POTATO_FRITTERS.get(), 1, 200, 1.0F)
                 .addIngredient(Items.BAKED_POTATO)
                 .addIngredient(Ingredient.of(CRItemTags.LIME_OR_SLICE), 2)
                 .addIngredient(ForgeTags.CROPS_ONION)
                 .unlockedBy("has_lime_or_slice", has(CRItemTags.LIME_OR_SLICE)),
             "food/potato_fritters", finished, enabled("potato_fritters"));
-        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CANDIED_LIME.get(), 3, 200, 1.0F, Items.BOWL)
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CANDIED_LIME.get(), 3, 200, 1.0F)
                 .addIngredient(CRItems.LIME_SLICE.get(), 3)
                 .addIngredient(Items.HONEY_BOTTLE)
                 .unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
@@ -578,7 +577,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(ForgeTags.MILK)
                 .unlockedBy("has_lime_ice_cream", has(CRItems.LIME_ICE_CREAM.get())),
             "food/lime_milkshake_from_ice_cream", finished, enabled(CRItems.LIME_ICE_CREAM), enabled(CRItems.LIME_MILKSHAKE), modLoaded("neapolitan"));
-        wrap(shaped(CRItems.LIME_ICE_CREAM_BLOCK)
+        wrap(shaped(CRItems.LIME_ICE_CREAM_BLOCK, 8)
                 .pattern("sss")
                 .pattern("sis")
                 .pattern("sss")
@@ -594,14 +593,6 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(Items.SUGAR)
                 .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
             "food/pomegranate_ice_cream", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
-        wrap(shaped(CRItems.POMEGRANATE_ICE_CREAM_BLOCK)
-                .pattern("sss")
-                .pattern("sis")
-                .pattern("sss")
-                .define('s', Blocks.SNOW_BLOCK)
-                .define('i', CRItems.POMEGRANATE_ICE_CREAM.get())
-                .unlockedBy("has_pomegranate_ice_cream", has(CRItems.POMEGRANATE_ICE_CREAM.get())),
-            "pomegranate_ice_cream_block", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM_BLOCK), enabled(CRItems.POMEGRANATE_ICE_CREAM), modLoaded("neapolitan"));
         wrap(shapeless(CRItems.POMEGRANATE_MILKSHAKE, 3)
                 .requires(Items.GLASS_BOTTLE, 3)
                 .requires(CRItemTags.FRUITS_POMEGRANATE)
@@ -616,7 +607,15 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(ForgeTags.MILK)
                 .unlockedBy("has_pomegranate_ice_cream", has(CRItems.POMEGRANATE_ICE_CREAM.get())),
             "food/pomegranate_milkshake_from_ice_cream", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM), enabled(CRItems.POMEGRANATE_MILKSHAKE), modLoaded("neapolitan"));
-    }
+        wrap(shaped(CRItems.POMEGRANATE_ICE_CREAM_BLOCK, 8)
+                .pattern("sss")
+                .pattern("sis")
+                .pattern("sss")
+                .define('s', Blocks.SNOW_BLOCK)
+                .define('i', CRItems.POMEGRANATE_ICE_CREAM.get())
+                .unlockedBy("has_pomegranate_ice_cream", has(CRItems.POMEGRANATE_ICE_CREAM.get())),
+            "pomegranate_ice_cream_block", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM_BLOCK), enabled(CRItems.POMEGRANATE_ICE_CREAM), modLoaded("neapolitan"));
+}
 
 
     private InventoryChangeTrigger.TriggerInstance has(ItemLike... items) {
