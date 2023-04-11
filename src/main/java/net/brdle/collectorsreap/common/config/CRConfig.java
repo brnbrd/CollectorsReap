@@ -16,6 +16,8 @@ public class CRConfig {
     public static ForgeConfigSpec.IntValue CHANCE_PORTOBELLO;
     public static ForgeConfigSpec.IntValue CHANCE_LIME_BUSH;
     public static ForgeConfigSpec.IntValue CHANCE_POMEGRANATE_BUSH;
+    public static ForgeConfigSpec.BooleanValue LIME_POLLINATION;
+    public static ForgeConfigSpec.BooleanValue POMEGRANATE_POLLINATION;
     public static ForgeConfigSpec.BooleanValue FAST_POLLINATE;
 
     CRConfig(ForgeConfigSpec.Builder builder) {
@@ -39,6 +41,12 @@ public class CRConfig {
                 .defineInRange("chance_pomegranate_bush", 15, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Behavior");
+            LIME_POLLINATION = builder
+                .comment("Whether Lime Bushes require Bee pollination to reach final growth stage.")
+                .define("lime_pollination", true);
+            POMEGRANATE_POLLINATION = builder
+                .comment("Whether Pomegranate Bushes require Bee pollination to reach final growth stage in overworld.")
+                .define("pomegranate_pollination", true);
             FAST_POLLINATE = builder
                 .comment("Whether bee pollination of bushes should occur much quicker (when Bee collides with it) rather than on Bee's AI scheduled timing. Use this if having issues with pollination.")
                 .define("fast_pollinate", false);

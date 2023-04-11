@@ -65,7 +65,7 @@ public class LimeBushBlock extends CropBlock implements IFruiting {
 	@SuppressWarnings("deprecation")
 	@Override
 	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
-		if (pContext instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee) {
+		if (pContext instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee && CRConfig.LIME_POLLINATION.get()) {
 			return pState.getValue(HALF) == DoubleBlockHalf.LOWER ?
 				Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D) : Shapes.empty();
 		}
@@ -130,7 +130,9 @@ public class LimeBushBlock extends CropBlock implements IFruiting {
 	@Override
 	public void randomTick(BlockState state, @NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull RandomSource pRandom) {
 		int age = state.getValue(AGE);
-		if (age < (this.getMaxAge() - 1) && state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(STUNTED) && ForgeHooks.onCropsGrowPre(pLevel, pPos, state, pRandom.nextInt(12) == 0)) {
+		if (((age < (this.getMaxAge() - 1) && CRConfig.LIME_POLLINATION.get()) ||
+			(age < (this.getMaxAge()) && !CRConfig.LIME_POLLINATION.get())) &&
+			state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(STUNTED) && ForgeHooks.onCropsGrowPre(pLevel, pPos, state, pRandom.nextInt(12) == 0)) {
 			this.performBonemeal(pLevel, pRandom, pPos, state);
 			ForgeHooks.onCropsGrowPost(pLevel, pPos, state);
 		}
@@ -230,6 +232,7 @@ public class LimeBushBlock extends CropBlock implements IFruiting {
 	@Override
 	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
 		if (!pLevel.isClientSide() &&
+			CRConfig.LIME_POLLINATION.get() &&
 			CRConfig.FAST_POLLINATE.get() &&
 			e instanceof Bee &&
 			pState.getValue(AGE) == this.getMaxAge() - 1 &&
