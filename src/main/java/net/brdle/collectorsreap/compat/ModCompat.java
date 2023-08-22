@@ -61,8 +61,8 @@ public class ModCompat {
 		return (ModList.get().isLoaded("atmospheric")) ? AtmosphericCompat.RELIEF : () -> MobEffects.CONFUSION;
 	}
 
-	public static Supplier<MobEffect> getFallFlavor() {
-		return (ModList.get().isLoaded("seasonals")) ? SeasonalsCompat.FALL_FLAVOR : () -> MobEffects.CONFUSION;
+	public static Supplier<MobEffect> getStuffed() {
+		return (ModList.get().isLoaded("seasonals")) ? SeasonalsCompat.STUFFED : () -> MobEffects.CONFUSION;
 	}
 
 	public static Supplier<MobEffect> getVitality() {
