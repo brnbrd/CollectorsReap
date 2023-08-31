@@ -204,7 +204,7 @@ public class Nutrition {
         .effect(() -> new MobEffectInstance(ModCompat.getHarmony().get(), 40, 2), 1.0F).build();
     public static final FoodProperties PUMPKIN_GUMMY = (new FoodProperties.Builder())
         .nutrition(2).saturationMod(0.0F).alwaysEat()
-        .effect(() -> new MobEffectInstance(ModCompat.getFallFlavor().get(), 100, 0), 1.0F)
+        .effect(() -> new MobEffectInstance(ModCompat.getStuffed().get(), 100, 0), 1.0F)
         .effect(() -> new MobEffectInstance(MobEffects.SATURATION, 200, 0), 1.0F).build();
     public static final FoodProperties ALOE_GUMMY = (new FoodProperties.Builder())
         .nutrition(2).saturationMod(0.0F).alwaysEat()
