@@ -6,10 +6,14 @@
     "1.1.1": "Wandering Trader sells Lime Seeds. JEI descriptions. Fixes.",
     "1.1.2": "Veggie Wrap craftable from CD Tortilla. Fixes.",
     "1.1.3": "Critical fixes.",
-    "1.2": "Added Corrosion and Volatility effects from Lime and Pomegranate foods respectively. Added Neapolitan compat."
+    "1.2": "Added Corrosion and Volatility effects from Lime and Pomegranate foods respectively. Added Neapolitan compat.",
+    "1.2.1": "Added Gummies. New foods for Neapolitan and Farmer's Respite. Fixes.",
+    "1.2.2": "Fixes and translations.",
+    "1.2.3": "Configuration options and fixes.",
+    "1.2.4": "Fixed crash with Seasonals."
   },
   "promos": {
-    "1.19-latest": "1.2",
-    "1.19-recommended": "1.2"
+    "1.19-latest": "1.2.4",
+    "1.19-recommended": "1.2.4"
   }
 }
