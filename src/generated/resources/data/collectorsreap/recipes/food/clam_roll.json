@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "clam_roll"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "forge:raw_clam"
+          },
+          {
+            "tag": "forge:raw_clam"
+          },
+          {
+            "item": "farmersdelight:cooked_rice"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:clam_roll"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "cookingtime": 100,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "collectorsreap:platinum_bass_slice"
+  },
+  "result": "collectorsreap:cooked_platinum_bass_slice"
+}

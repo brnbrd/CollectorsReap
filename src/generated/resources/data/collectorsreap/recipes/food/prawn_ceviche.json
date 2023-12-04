@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "prawn_ceviche"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "forge:raw_prawn"
+          },
+          {
+            "tag": "forge:fruits/citrus"
+          },
+          {
+            "tag": "forge:crops/cabbage"
+          },
+          {
+            "tag": "forge:crops/tomato"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "item": "minecraft:bowl"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:prawn_ceviche"
+        }
+      }
+    }
+  ]
+}

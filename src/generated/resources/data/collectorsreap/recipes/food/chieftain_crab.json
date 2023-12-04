@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "chieftain_crab"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 600,
+        "experience": 6.0,
+        "ingredients": [
+          {
+            "item": "collectorsreap:chieftain_crab_bucket"
+          },
+          {
+            "tag": "forge:vegetables/carrot"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "tag": "forge:crops/tomato"
+          },
+          {
+            "item": "minecraft:dried_kelp"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:chieftain_crab"
+        }
+      }
+    }
+  ]
+}

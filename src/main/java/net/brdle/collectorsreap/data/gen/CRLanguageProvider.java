@@ -4,6 +4,7 @@ import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.effect.CREffects;
+import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -15,8 +16,33 @@ public class CRLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        addEntities();
+        addText();
+        addEffects();
         addBlocks();
         addItems();
+    }
+
+    private void addEntities() {
+        addEntityType(CREntities.TIGER_PRAWN, "Tiger Prawn");
+        addEntityType(CREntities.URCHIN, "Urchin");
+        addEntityType(CREntities.PLATINUM_BASS, "Platinum Bass");
+        addEntityType(CREntities.CHIEFTAIN_CRAB, "Chieftain Crab");
+        addEntityType(CREntities.CLAM, "Clam");
+    }
+
+    private void addText() {
+        add("tooltip.requires_modid", "Requires modid:");
+        add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO), "Found in Meadows.");
+        add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Found in Flower Forests.");
+        add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE), "Found in Warped Forests.");
+    }
+
+    private void addEffects() {
+        addEffect(CREffects.CORROSION, "Corrosion");
+        add(CREffects.CORROSION.get().getDescriptionId() + ".description", "Provides the user a defensive acid shield, corroding projectiles and damaging attack weapons.");
+        addEffect(CREffects.VOLATILITY, "Volatility");
+        add(CREffects.VOLATILITY.get().getDescriptionId() + ".description", "Each hit the user inflicts on an entity creates a shockwave of splash damage.");
     }
 
     private void addBlocks() {
@@ -70,7 +96,7 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.BAKED_PORTOBELLO_CAP, "Baked Portobello Cap");
         addItem(CRItems.STUFFED_PORTOBELLO_CAP, "Stuffed Portobello");
         addItem(CRItems.PORTOBELLO_BURGER, "Portoburger");
-        addItem(CRItems.PORTOBELLO_PASTA, "Mushroom Pasta");
+        addItem(CRItems.PORTOBELLO_PASTA, "Pasta with Mushroom");
         addItem(CRItems.PORTOBELLO_RISOTTO, "Portobello Risotto");
         addItem(CRItems.PORTOBELLO_WRAP, "Veggie Wrap");
         addItem(CRItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
@@ -130,13 +156,54 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.YELLOW_TEA_GUMMY, "Yellow Tea Gummy");
         addItem(CRItems.BLACK_TEA_GUMMY, "Black Tea Gummy");
         addItem(CRItems.COFFEE_GUMMY, "Coffee Gummy");
-        addEffect(CREffects.CORROSION, "Corrosion");
-        add(CREffects.CORROSION.get().getDescriptionId() + ".description", "Provides the user a defensive acid shield, corroding projectiles and damaging attack weapons.");
-        addEffect(CREffects.VOLATILITY, "Volatility");
-        add(CREffects.VOLATILITY.get().getDescriptionId() + ".description", "Each hit the user inflicts on an entity creates a shockwave of splash damage.");
-        add("tooltip.requires_modid", "Requires modid:");
-        add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO), "Found in Meadows.");
-        add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Found in Flower Forests.");
-        add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE), "Found in Warped Forests.");
+        addItem(CRItems.TIGER_PRAWN_SPAWN_EGG, "Spawn Tiger Prawn");
+        addItem(CRItems.TIGER_PRAWN_BUCKET, "Bucket of Tiger Prawn");
+        addItem(CRItems.TIGER_PRAWN, "Raw Tiger Prawn");
+        addItem(CRItems.COOKED_TIGER_PRAWN, "Cooked Tiger Prawn");
+        addItem(CRItems.PRAWN_ROLL, "Prawn Roll");
+        addItem(CRItems.PRAWN_PO_BOY, "Prawn Po' Boy");
+        addItem(CRItems.PRAWN_STEW, "Prawn Stew");
+        addItem(CRItems.PRAWN_CEVICHE, "Prawn Ceviche");
+        addItem(CRItems.PRAWN_NOODLES, "Prawn Noodles");
+        addItem(CRItems.SALMON_WRAPPED_PRAWN, "Salmon Wrapped Prawn");
+        addItem(CRItems.URCHIN_SPAWN_EGG, "Spawn Urchin");
+        addItem(CRItems.URCHIN_BUCKET, "Bucket of Urchin");
+        addItem(CRItems.URCHIN, "Urchin");
+        addItem(CRItems.URCHIN_TEST, "Urchin Test");
+        addItem(CRItems.URCHIN_NEEDLE, "Urchin Needle");
+        addItem(CRItems.UNI, "Uni");
+        addItem(CRItems.UNI_ROLL, "Uni Roll");
+        addItem(CRItems.PLATINUM_BASS_SPAWN_EGG, "Spawn Platinum Bass");
+        addItem(CRItems.PLATINUM_BASS_BUCKET, "Bucket of Platinum Bass");
+        addItem(CRItems.PLATINUM_BASS, "Raw Platinum Bass");
+        addItem(CRItems.COOKED_PLATINUM_BASS, "Cooked Platinum Bass");
+        addItem(CRItems.PLATINUM_BASS_HEAD, "Platinum Bass Head");
+        addItem(CRItems.COOKED_PLATINUM_BASS_HEAD, "Cooked Platinum Bass Head");
+        addItem(CRItems.PLATINUM_BASS_SLICE, "Raw Platinum Bass Slice");
+        addItem(CRItems.COOKED_PLATINUM_BASS_SLICE, "Cooked Platinum Bass Slice");
+        addItem(CRItems.PLATINUM_BASS_STEW, "Platinum Bass Stew");
+        addItem(CRItems.FISH_MIX, "Fish Mix");
+        addItem(CRItems.CHIEFTAIN_CRAB_SPAWN_EGG, "Spawn Chieftain Crab");
+        addItem(CRItems.CHIEFTAIN_CRAB_BUCKET, "Bucket of Chieftain Crab");
+        addItem(CRItems.CHIEFTAIN_CRAB, "Chieftain Crab");
+        addItem(CRItems.CHIEFTAIN_CLAW, "Chieftain Crab Claw");
+        addItem(CRItems.CHIEFTAIN_LEG, "Chieftain Crab Leg");
+        addItem(CRItems.CHIEFTAIN_CRAB_MEAT, "Chieftain Crab Meat");
+        addItem(CRItems.CRAB_MISO, "Crab Miso");
+        addItem(CRItems.LAND_AND_SEA_BURGER, "Land and Sea Burger");
+        addItem(CRItems.CRAB_NOODLES, "Crab Noodles");
+        addItem(CRItems.CRAB_LASAGNA, "Crab Lasagna");
+        addItem(CRItems.BUTTERED_LEGS, "Buttered Legs");
+        addItem(CRItems.BIG_RICE_BALL, "Big Rice Ball");
+        addItem(CRItems.PEARL, "Pearl");
+        addItem(CRItems.CLAM_SPAWN_EGG, "Spawn Clam");
+        addItem(CRItems.CLAM_BUCKET, "Bucket of Clam");
+        addItem(CRItems.CLAM, "Clam");
+        addItem(CRItems.CLAM_MEAT, "Clam Meat");
+        addItem(CRItems.CLAM_ROLL, "Clam Roll");
+        addItem(CRItems.CLAM_CHOWDER, "Clam Chowder");
+        addItem(CRItems.CLAM_PASTA, "Pasta with Clams");
+        addItem(CRItems.CLAM_MEATBALL_STEW, "Clam and Meatball Stew");
+        addItem(CRItems.SEAFOOD_BURRITO, "Seafood Burrito");
     }
 }

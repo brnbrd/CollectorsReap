@@ -37,8 +37,17 @@
       },
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "portobello_burger"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "portobello_burger"
+            },
+            {
+              "type": "forge:tag_empty",
+              "tag": "some_assembly_required:burger_bun"
+            }
+          ]
         }
       ]
     }

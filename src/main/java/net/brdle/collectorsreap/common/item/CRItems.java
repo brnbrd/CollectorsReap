@@ -3,14 +3,15 @@ package net.brdle.collectorsreap.common.item;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.block.CRBlocks;
+import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.item.food.*;
 import net.brdle.collectorsreap.compat.ModCompat;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -21,7 +22,7 @@ import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
 import vectorwing.farmersdelight.common.registry.ModItems;
-import java.util.Locale;
+
 import java.util.function.Supplier;
 
 public class CRItems extends ModItems {
@@ -134,11 +135,104 @@ public class CRItems extends ModItems {
         Nutrition.LIME_CAKE_SLICE);
     public static final RegistryObject<Item> POMEGRANATE_CAKE_SLICE = registerFood("pomegranate_cake_slice",
         Nutrition.POMEGRANATE_CAKE_SLICE);
-
     public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake", () -> new BlockItem(CRBlocks.LIME_CAKE.get(), ((new Item.Properties()).stacksTo(1).tab(FarmersDelight.CREATIVE_TAB))));
     public static final RegistryObject<Item> POMEGRANATE_CAKE = registerItem("pomegranate_cake", () -> new BlockItem(CRBlocks.POMEGRANATE_CAKE.get(), ((new Item.Properties()).stacksTo(1).tab(FarmersDelight.CREATIVE_TAB))));
     public static final RegistryObject<Item> LIME_CRATE = registerBlock(CRBlocks.LIME_CRATE);
     public static final RegistryObject<Item> POMEGRANATE_CRATE = registerBlock(CRBlocks.POMEGRANATE_CRATE);
+
+    // Tiger Prawn
+    public static final RegistryObject<Item> TIGER_PRAWN_SPAWN_EGG = registerItem("tiger_prawn_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.TIGER_PRAWN, 0x7c7248, 0x613432, new Item.Properties().tab(FarmersDelight.CREATIVE_TAB)));
+    public static final RegistryObject<Item> TIGER_PRAWN_BUCKET = registerItem("tiger_prawn_bucket",
+        () -> new MobBucketItem(CREntities.TIGER_PRAWN, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1).tab(FarmersDelight.CREATIVE_TAB)));
+    public static final RegistryObject<Item> TIGER_PRAWN = registerFood("tiger_prawn", Nutrition.TIGER_PRAWN);
+    public static final RegistryObject<Item> COOKED_TIGER_PRAWN = registerFood("cooked_tiger_prawn", Nutrition.COOKED_TIGER_PRAWN);
+    public static final RegistryObject<Item> PRAWN_ROLL = registerFood("prawn_roll", Nutrition.TIGER_PRAWN);
+    public static final RegistryObject<Item> PRAWN_PO_BOY = registerFood("prawn_po_boy", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> PRAWN_STEW = registerItem("prawn_stew",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+    public static final RegistryObject<Item> PRAWN_CEVICHE = registerItem("prawn_ceviche",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+    public static final RegistryObject<Item> PRAWN_NOODLES = registerItem("prawn_noodles",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+    public static final RegistryObject<Item> SALMON_WRAPPED_PRAWN = registerItem("salmon_wrapped_prawn",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+
+    // Urchin
+    public static final RegistryObject<Item> URCHIN_SPAWN_EGG = registerItem("urchin_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.URCHIN, 0x9990d7, 0x21132d, new Item.Properties().tab(FarmersDelight.CREATIVE_TAB)));
+    public static final RegistryObject<Item> URCHIN_BUCKET = registerItem("urchin_bucket",
+        () -> new MobBucketItem(CREntities.URCHIN, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1).tab(FarmersDelight.CREATIVE_TAB)));
+    public static final RegistryObject<Item> URCHIN = registerItem("urchin",
+        () -> new Item((new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
+    public static final RegistryObject<Item> URCHIN_TEST = registerItem("urchin_test",
+        () -> new Item((new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
+    public static final RegistryObject<Item> URCHIN_NEEDLE = registerItem("urchin_needle",
+        () -> new Item((new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
+    public static final RegistryObject<Item> UNI = registerFood("uni", Nutrition.UNI);
+    public static final RegistryObject<Item> UNI_ROLL = registerFood("uni_roll", Nutrition.UNI);
+
+    // Platinum Bass
+    public static final RegistryObject<Item> PLATINUM_BASS_SPAWN_EGG = registerItem("platinum_bass_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.PLATINUM_BASS, 0x091442, 0x7B8698, new Item.Properties().tab(FarmersDelight.CREATIVE_TAB)));
+    public static final RegistryObject<Item> PLATINUM_BASS_BUCKET = registerItem("platinum_bass_bucket",
+        () -> new MobBucketItem(CREntities.PLATINUM_BASS, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1).tab(FarmersDelight.CREATIVE_TAB)));
+    public static final RegistryObject<Item> PLATINUM_BASS = registerFood("platinum_bass", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> COOKED_PLATINUM_BASS = registerFood("cooked_platinum_bass", Nutrition.COOKED_PLATINUM_BASS);
+    public static final RegistryObject<Item> PLATINUM_BASS_HEAD = registerFood("platinum_bass_head", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> COOKED_PLATINUM_BASS_HEAD = registerFood("cooked_platinum_bass_head", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> PLATINUM_BASS_SLICE = registerFood("platinum_bass_slice", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> COOKED_PLATINUM_BASS_SLICE = registerFood("cooked_platinum_bass_slice", Nutrition.COOKED_PLATINUM_BASS);
+    public static final RegistryObject<Item> PLATINUM_BASS_STEW = registerItem("platinum_bass_stew",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+    public static final RegistryObject<Item> FISH_MIX = registerItem("fish_mix",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+
+    // Chieftain Crab
+    public static final RegistryObject<Item> CHIEFTAIN_CRAB_SPAWN_EGG = registerItem("chieftain_crab_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.CHIEFTAIN_CRAB, 0xB13125, 0xE1B865, new Item.Properties().tab(FarmersDelight.CREATIVE_TAB)));
+    public static final RegistryObject<Item> CHIEFTAIN_CRAB_BUCKET = registerItem("chieftain_crab_bucket",
+        () -> new MobBucketItem(CREntities.CHIEFTAIN_CRAB, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_AXOLOTL, (new Item.Properties()).stacksTo(1).craftRemainder(Items.BUCKET).tab(FarmersDelight.CREATIVE_TAB)));
+    public static final RegistryObject<Item> CHIEFTAIN_CRAB = registerFood("chieftain_crab", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> CHIEFTAIN_CLAW = registerFood("chieftain_claw", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> CHIEFTAIN_LEG = registerFood("chieftain_leg", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> CHIEFTAIN_CRAB_MEAT = registerFood("chieftain_crab_meat", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> CRAB_MISO = registerItem("crab_miso",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+    public static final RegistryObject<Item> CRAB_NOODLES = registerItem("crab_noodles",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+    public static final RegistryObject<Item> CRAB_LASAGNA = registerFood("crab_lasagna", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> BUTTERED_LEGS = registerItem("buttered_legs",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+    public static final RegistryObject<Item> BIG_RICE_BALL = registerFood("big_rice_ball", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> LAND_AND_SEA_BURGER = registerFood("land_and_sea_burger", Nutrition.PLATINUM_BASS);
+
+    // Clam
+    public static final RegistryObject<Item> CLAM_SPAWN_EGG = registerItem("clam_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.CLAM, 0x775745, 0xC5A877, new Item.Properties().tab(FarmersDelight.CREATIVE_TAB)));
+    public static final RegistryObject<Item> CLAM_BUCKET = registerItem("clam_bucket",
+        () -> new MobBucketItem(CREntities.CLAM, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1).tab(FarmersDelight.CREATIVE_TAB)));
+    public static final RegistryObject<Item> CLAM = registerItem("clam",
+        () -> new Item((new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
+    public static final RegistryObject<Item> PEARL = registerItem("pearl",
+        () -> new Item((new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
+    public static final RegistryObject<Item> CLAM_MEAT = registerFood("clam_meat", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> CLAM_ROLL = registerFood("clam_roll", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> CLAM_CHOWDER = registerItem("clam_chowder",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+    public static final RegistryObject<Item> CLAM_PASTA = registerItem("clam_pasta",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+    public static final RegistryObject<Item> CLAM_MEATBALL_STEW = registerItem("clam_meatball_stew",
+        () -> new ConsumableItem(bowlFoodItem(
+            Nutrition.PLATINUM_BASS), false));
+
+    public static final RegistryObject<Item> SEAFOOD_BURRITO = registerFood("seafood_burrito", Nutrition.PLATINUM_BASS);
 
     // Nether's Delight Compat
     public static final RegistryObject<Item> GLAZED_STRIDER = registerItem("glazed_strider",

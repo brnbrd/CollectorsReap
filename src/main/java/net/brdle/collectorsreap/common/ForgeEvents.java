@@ -2,12 +2,10 @@ package net.brdle.collectorsreap.common;
 
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
-import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.data.CREntityTags;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -31,8 +29,6 @@ import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.MissingMappingsEvent;
 import java.util.List;
 import java.util.Objects;
 
@@ -40,37 +36,10 @@ import java.util.Objects;
 public class ForgeEvents {
 
 	@SubscribeEvent
-	public static void onMissingMappings(MissingMappingsEvent e) {
-		if (e.getRegistry() == ForgeRegistries.ITEMS) {
-			for (var map : e.getMappings(ForgeRegistries.ITEMS.getRegistryKey(), CollectorsReap.MODID)) {
-				var remap = Util.cr(map.getKey().getPath().replace("lemon", "lime"));
-				if (ForgeRegistries.ITEMS.containsKey(remap)) {
-					map.remap(ForgeRegistries.ITEMS.getValue(remap));
-				} else {
-					map.warn();
-				}
-			}
-		} else if (e.getRegistry() == ForgeRegistries.BLOCKS) {
-			for (var map : e.getMappings(ForgeRegistries.BLOCKS.getRegistryKey(), CollectorsReap.MODID)) {
-				String path = map.getKey().getPath();
-				if (path.equalsIgnoreCase("medium_lime_bush") || path.equalsIgnoreCase("medium_lemon_bush")) {
-					map.remap(CRBlocks.LIME_BUSH.get());
-				} else {
-					ResourceLocation remap = Util.cr(path.replace("lemon", "lime"));
-					if (ForgeRegistries.BLOCKS.containsKey(remap)) {
-						map.remap(ForgeRegistries.BLOCKS.getValue(remap));
-					} else {
-						map.warn();
-					}
-				}
-			}
-		}
-	}
-
-	@SubscribeEvent
 	public static void onWanderingTrader(WandererTradesEvent e) {
 		if (CRConfig.verify(CRItems.LIME) && CRConfig.verify(CRItems.LIME_SEEDS)) {
 			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.gs(CRItems.LIME_SEEDS), 5, 1, 1));
+			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.BROWN_MUSHROOM, 4), Util.gs(CRItems.PORTOBELLO), 10, 1, 1));
 		}
 	}
 
@@ -112,34 +81,39 @@ public class ForgeEvents {
 	}
 
 	private static boolean validateVolatile(LivingEntity victim, LivingEntity attacker) {
-		return victim != null &&
-				attacker.hasEffect(CREffects.VOLATILITY.get()) &&
-				!(attacker.getType().is(CREntityTags.INVOLATILE)) &&
-				!(attacker instanceof Player p && p.getCooldowns().isOnCooldown(p.getMainHandItem().getItem()));
+		return (
+			victim != null &&
+			attacker.hasEffect(CREffects.VOLATILITY.get()) &&
+			!attacker.getType().is(CREntityTags.INVOLATILE) &&
+			!(attacker instanceof Player p && p.getAttackStrengthScale(0F) != 1F)
+		);
 	}
 
 	@SubscribeEvent
 	public static void onVolatile(LivingDamageEvent e) {
 		LivingEntity victim = e.getEntity();
-		if (e.getSource().getEntity() != null &&
+		if (
+			e.getSource().getEntity() != null &&
 			!victim.getLevel().isClientSide() &&
 			victim.getLevel() instanceof ServerLevel server &&
 			e.getSource().getEntity() instanceof LivingEntity attacker &&
-			validateVolatile(victim, attacker)) {
+			validateVolatile(victim, attacker)
+		) {
 			server.sendParticles(CRParticleTypes.SHOCKWAVE.get(), victim.getX(), victim.getY(), victim.getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
 			int level = Objects.requireNonNull(attacker.getEffect(CREffects.VOLATILITY.get())).getAmplifier();
 			List<LivingEntity> nearby = server.getNearbyEntities(LivingEntity.class,
-				TargetingConditions.DEFAULT.selector((living) -> {
-					return living != attacker &&
-						living != victim &&
-						!living.getType().is(CREntityTags.VOLATILITY_IMMUNE) &&
-						!(living instanceof TamableAnimal tame && tame.isTame());
-				}),
-				victim, victim.getBoundingBox().inflate(4.0D + ((double) level), 2.0D, 4.0D + ((double) level))).stream().limit(3 + level).toList();
+				TargetingConditions.DEFAULT.selector(living -> (
+					living != attacker &&
+					living != victim &&
+					!living.getType().is(CREntityTags.VOLATILITY_IMMUNE) &&
+					!(living instanceof TamableAnimal tame && tame.isTame())
+				)),
+				victim, victim.getBoundingBox().inflate(4.0D + ((double) level), 2.0D, 4.0D + ((double) level)))
+				.stream()
+				.limit(3 + level)
+				.toList();
 			if (nearby.isEmpty()) {
 				return;
-			} else if (attacker instanceof Player p) {
-				p.getCooldowns().addCooldown(p.getMainHandItem().getItem(), 40);
 			}
 			for (LivingEntity ent : nearby) {
 				Vec3 vec32 = ent.getEyePosition().subtract(victim.position().add(0.0D, 1.0F, 0.0D)).normalize();

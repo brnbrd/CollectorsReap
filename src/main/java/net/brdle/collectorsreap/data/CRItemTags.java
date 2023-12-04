@@ -21,6 +21,12 @@ public class CRItemTags {
 	public static final TagKey<Item> TEA_LEAVES_YELLOW = forge("tea_leaves/yellow");
 	public static final TagKey<Item> TEA_LEAVES_BLACK = forge("tea_leaves/black");
 	public static final TagKey<Item> COFFEE_BEANS = forge("coffee_beans");
+	public static final TagKey<Item> COOKED_CRAB = forge("cooked_crab");
+	public static final TagKey<Item> RAW_CLAM = forge("raw_clam");
+	public static final TagKey<Item> RAW_PRAWN = forge("raw_prawn");
+	public static final TagKey<Item> COOKED_PRAWN = forge("cooked_prawn");
+	public static final TagKey<Item> RAW_FISHES_BASS = forge("raw_fishes/bass");
+	public static final TagKey<Item> COOKED_FISHES_BASS = forge("cooked_fishes/bass");
 
 	// CR
 	public static final TagKey<Item> GUMMIES = cr("gummies");
@@ -53,6 +59,9 @@ public class CRItemTags {
 	public static final TagKey<Item> SUMMER_CROPS = Util.it("sereneseasons", "summer_crops");
 	public static final TagKey<Item> AUTUMN_CROPS = Util.it("sereneseasons", "autumn_crops");
 	public static final TagKey<Item> SPRING_CROPS = Util.it("sereneseasons", "spring_crops");
+
+	// SAS
+	public static final TagKey<Item> BURGER_BUN = Util.it("some_assembly_required", "burger_bun");
 
 	private static TagKey<Item> cr(String name) {
 		return Util.it(CollectorsReap.MODID, name);

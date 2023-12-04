@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "clam_meatball_stew"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:raw_clam"
+          },
+          {
+            "item": "farmersdelight:minced_beef"
+          },
+          {
+            "item": "farmersdelight:tomato_sauce"
+          },
+          {
+            "tag": "forge:vegetables/carrot"
+          },
+          {
+            "tag": "forge:cooked_eggs"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:clam_meatball_stew"
+        }
+      }
+    }
+  ]
+}

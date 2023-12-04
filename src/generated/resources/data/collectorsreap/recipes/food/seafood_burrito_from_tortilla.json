@@ -1,0 +1,57 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "seafood_burrito"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:tortilla"
+              }
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "forge:tortilla"
+          },
+          {
+            "item": "collectorsreap:chieftain_claw"
+          },
+          {
+            "tag": "forge:raw_clam"
+          },
+          {
+            "tag": "forge:cooked_fishes/cod"
+          },
+          {
+            "tag": "forge:cooked_fishes/salmon"
+          },
+          {
+            "tag": "forge:cooked_prawn"
+          },
+          {
+            "item": "minecraft:dried_kelp"
+          },
+          {
+            "item": "farmersdelight:cooked_rice"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:seafood_burrito"
+        }
+      }
+    }
+  ]
+}

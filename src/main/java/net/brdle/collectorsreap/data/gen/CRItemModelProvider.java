@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.data.ItemModels;
@@ -23,7 +24,9 @@ public class CRItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         for (RegistryObject<Item> entry : CRItems.ITEMS.getEntries()) {
             ResourceLocation id = entry.getId();
-            if (entry == CRItems.PORTOBELLO) {
+            if (entry.get() instanceof ForgeSpawnEggItem) {
+                spawnEgg(id);
+            } else if (entry == CRItems.PORTOBELLO) {
                 itemGeneratedModel(CRItems.PORTOBELLO.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO)));
             } else if (entry == CRItems.PORTOBELLO_COLONY) {
                 itemGeneratedModel(CRItems.PORTOBELLO_COLONY.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO_COLONY) + "_stage3"));
@@ -43,6 +46,10 @@ public class CRItemModelProvider extends ItemModelProvider {
 
     public ItemModelBuilder handheld(ResourceLocation item) {
         return withExistingParent(item.getPath(), ItemModels.HANDHELD).texture("layer0", Util.cr("item/" + item.getPath()));
+    }
+
+    public ItemModelBuilder spawnEgg(ResourceLocation item) {
+        return withExistingParent(item.getPath(), "item/template_spawn_egg");
     }
 
     private boolean isBasic(RegistryObject<Item> entry) {

@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "crab_noodles"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:cooked_crab"
+          },
+          {
+            "tag": "forge:cooked_crab"
+          },
+          {
+            "tag": "forge:pasta/raw_pasta"
+          },
+          {
+            "tag": "forge:milk"
+          },
+          {
+            "tag": "forge:crops/tomato"
+          },
+          {
+            "tag": "forge:crops/onion"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:crab_noodles"
+        }
+      }
+    }
+  ]
+}

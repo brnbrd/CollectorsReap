@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "prawn_po_boy"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "forge:bread"
+          },
+          {
+            "tag": "forge:cooked_prawn"
+          },
+          {
+            "tag": "forge:eggs"
+          },
+          {
+            "tag": "forge:crops/cabbage"
+          },
+          {
+            "tag": "forge:crops/tomato"
+          },
+          {
+            "tag": "forge:crops/onion"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:prawn_po_boy"
+        }
+      }
+    }
+  ]
+}

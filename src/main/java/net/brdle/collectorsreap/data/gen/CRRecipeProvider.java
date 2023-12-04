@@ -38,26 +38,65 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
     protected void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> finished) {
         // Smelting
         foodSmeltingRecipes("baked_portobello_cap", CRItems.PORTOBELLO.get(), CRItems.BAKED_PORTOBELLO_CAP.get(), 0.35F, finished);
+        foodSmeltingRecipes("platinum_bass", CRItems.PLATINUM_BASS.get(), CRItems.COOKED_PLATINUM_BASS.get(), 0.35F, finished);
+        foodSmeltingRecipes("platinum_bass_head", CRItems.PLATINUM_BASS_HEAD.get(), CRItems.COOKED_PLATINUM_BASS_HEAD.get(), 0.35F, finished);
+        foodSmeltingRecipes("platinum_bass_slice", CRItems.PLATINUM_BASS_SLICE.get(), CRItems.COOKED_PLATINUM_BASS_SLICE.get(), 0.35F, finished);
+        foodSmeltingRecipes("tiger_prawn", CRItems.TIGER_PRAWN.get(), CRItems.COOKED_TIGER_PRAWN.get(), 0.35F, finished);
 
         // Cutting
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_QUICHE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.PORTOBELLO_QUICHE_SLICE.get(), 4),
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_QUICHE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.PORTOBELLO_QUICHE_SLICE.get(), 4),
             "cutting/portobello_quiche", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.PORTOBELLO_QUICHE));
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_COLONY.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.PORTOBELLO.get(), 5),
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_COLONY.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.PORTOBELLO.get(), 5),
             "cutting/portobello_colony", finished, enabled(CRItems.PORTOBELLO));
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LIME_SLICE.get(), 2)
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.LIME_SLICE.get(), 2)
             .addResultWithChance(Items.LIME_DYE, 0.5f),
             "cutting/lime", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE));
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_SLICE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), Items.LIME_DYE, 1),
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_SLICE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            Items.LIME_DYE, 1),
             "cutting/lime_slice", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE));
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LIME_PIE_SLICE.get(), 4),
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.LIME_PIE_SLICE.get(), 4),
             "cutting/lime_pie", finished, enabled(CRItems.LIME_PIE), enabled(CRItems.LIME_PIE_SLICE));
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.POMEGRANATE_SLICE.get(), 4)
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.POMEGRANATE_SLICE.get(), 4)
             .addResultWithChance(Items.RED_DYE, 0.5f),
             "cutting/pomegranate", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SEEDS));
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.LIME_CAKE_SLICE.get(), 7),
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.LIME_CAKE_SLICE.get(), 7),
             "cutting/lime_cake", finished, enabled(CRItems.LIME_CAKE), enabled(CRItems.LIME_CAKE_SLICE));
-        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES), CRItems.POMEGRANATE_CAKE_SLICE.get(), 7),
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.POMEGRANATE_CAKE_SLICE.get(), 7),
             "cutting/pomegranate_cake", finished, enabled(CRItems.POMEGRANATE_CAKE), enabled(CRItems.POMEGRANATE_CAKE_SLICE));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.URCHIN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.UNI.get(), 1)
+            .addResult(CRItems.URCHIN_TEST.get())
+            .addResultWithChance(CRItems.URCHIN_TEST.get(), 0.75F)
+            .addResult(CRItems.URCHIN_NEEDLE.get(), 5)
+            .addResultWithChance(CRItems.URCHIN_NEEDLE.get(), 0.5F, 2),
+            "cutting/urchin", finished, enabled(CRItems.URCHIN), enabled(CRItems.UNI));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PLATINUM_BASS.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.PLATINUM_BASS_SLICE.get(), 3)
+            .addResult(CRItems.PLATINUM_BASS_HEAD.get()),
+            "cutting/platinum_bass", finished, enabled(CRItems.PLATINUM_BASS), enabled(CRItems.PLATINUM_BASS_SLICE));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CHIEFTAIN_CRAB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.CHIEFTAIN_CLAW.get(), 2)
+            .addResult(CRItems.CHIEFTAIN_LEG.get(), 8)
+            .addResult(CRItems.CHIEFTAIN_CRAB_MEAT.get(), 4)
+            .addResult(CRItems.CRAB_MISO.get()),
+            "cutting/chieftain_crab", finished, enabled(CRItems.CHIEFTAIN_CRAB));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CHIEFTAIN_CLAW.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.CHIEFTAIN_CRAB_MEAT.get(), 3),
+            "cutting/chieftain_claw", finished, enabled(CRItems.CHIEFTAIN_CLAW), enabled(CRItems.CHIEFTAIN_CRAB_MEAT));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CHIEFTAIN_LEG.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.CHIEFTAIN_CRAB_MEAT.get(), 2),
+            "cutting/chieftain_legs", finished, enabled(CRItems.CHIEFTAIN_LEG), enabled(CRItems.CHIEFTAIN_CRAB_MEAT));
+        wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CLAM.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+            CRItems.CLAM_MEAT.get(), 2)
+            .addResultWithChance(CRItems.PEARL.get(), 0.05f),
+            "cutting/clam", finished, enabled(CRItems.CLAM), enabled(CRItems.CLAM_MEAT));
 
         // Cooking Pot
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PORTOBELLO_RISOTTO.get(), 1, 200, 1.0F, Items.BOWL)
@@ -175,7 +214,91 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .addIngredient(CRItemTags.FRUITS_POMEGRANATE)
                 .unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
             "food/spicy_grenadine_jelly", finished, enabled(CRItems.SPICY_GRENADINE_JELLY), not(tagEmpty(CRItemTags.PROPELPEARL)));
-          // Gummies
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CHIEFTAIN_CRAB.get(), 1, 600, 6.0F, Items.BOWL)
+                .addIngredient(CRItems.CHIEFTAIN_CRAB_BUCKET.get())
+                .addIngredient(ForgeTags.VEGETABLES_CARROT)
+                .addIngredient(ForgeTags.CROPS_ONION)
+                .addIngredient(ForgeTags.CROPS_TOMATO)
+                .addIngredient(Items.DRIED_KELP)
+                .unlockedBy("has_crab_bucket", has(CRItems.CHIEFTAIN_CRAB_BUCKET.get())),
+            "food/chieftain_crab", finished, enabled("chieftain_crab"));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_LASAGNA.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB), 3)
+                .addIngredient(ForgeTags.DOUGH_WHEAT)
+                .addIngredient(ModItems.TOMATO_SAUCE.get())
+                .addIngredient(ForgeTags.MILK)
+                .unlockedBy("has_crab_meat", has(CRItemTags.COOKED_CRAB)),
+            "food/crab_lasagna", finished, enabled(CRItems.CRAB_LASAGNA));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_NOODLES.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB), 2)
+                .addIngredient(ForgeTags.PASTA_RAW_PASTA)
+                .addIngredient(ForgeTags.MILK)
+                .addIngredient(ForgeTags.CROPS_TOMATO)
+                .addIngredient(ForgeTags.CROPS_ONION)
+                .unlockedBy("has_crab_meat", has(CRItemTags.COOKED_CRAB)),
+            "food/crab_noodles", finished, enabled(CRItems.CRAB_NOODLES));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.BUTTERED_LEGS.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(CRItems.CHIEFTAIN_LEG.get(), 3)
+                .addIngredient(ForgeTags.MILK)
+                .unlockedBy("has_chieftain_legs", has(CRItems.CHIEFTAIN_LEG.get())),
+            "food/buttered_legs", finished, enabled(CRItems.BUTTERED_LEGS));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CLAM_CHOWDER.get(), 1, 200, 1.0F, Items.BREAD)
+                .addIngredient(CRItemTags.RAW_CLAM)
+                .addIngredient(ForgeTags.MILK)
+                .addIngredient(ForgeTags.CROPS_ONION)
+                .addIngredient(Items.DRIED_KELP)
+                .unlockedBy("has_clam_meat", has(CRItems.CLAM_MEAT.get())),
+            "food/clam_chowder", finished, enabled(CRItems.CLAM_CHOWDER));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CLAM_PASTA.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(CRItemTags.RAW_CLAM)
+                .addIngredient(ModItems.RAW_PASTA.get())
+                .addIngredient(ForgeTags.MILK)
+                .addIngredient(ForgeTags.EGGS)
+                .addIngredient(ForgeTags.CROPS_TOMATO)
+                .addIngredient(ForgeTags.CROPS_ONION)
+                .unlockedBy("has_clam_meat", has(CRItems.CLAM_MEAT.get())),
+            "food/clam_pasta", finished, enabled(CRItems.CLAM_PASTA));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CLAM_MEATBALL_STEW.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(CRItemTags.RAW_CLAM)
+                .addIngredient(ModItems.MINCED_BEEF.get())
+                .addIngredient(ModItems.TOMATO_SAUCE.get())
+                .addIngredient(ForgeTags.VEGETABLES_CARROT)
+                .addIngredient(ForgeTags.COOKED_EGGS)
+                .unlockedBy("has_clam_meat", has(CRItems.CLAM_MEAT.get())),
+            "food/clam_meatball_stew", finished, enabled(CRItems.CLAM_MEATBALL_STEW));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PRAWN_NOODLES.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(CRItemTags.COOKED_PRAWN)
+                .addIngredient(ModItems.RAW_PASTA.get())
+                .addIngredient(ForgeTags.CROPS_ONION)
+                .addIngredient(Items.DRIED_KELP)
+                .unlockedBy("has_cooked_prawn", has(CRItemTags.COOKED_PRAWN)),
+            "food/prawn_noodles", finished, enabled(CRItems.PRAWN_NOODLES));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PRAWN_STEW.get(), 1, 200, 1.0F, Items.BOWL)
+                .addIngredient(CRItemTags.COOKED_PRAWN)
+                .addIngredient(ModItems.TOMATO_SAUCE.get())
+                .addIngredient(ForgeTags.MILK)
+                .addIngredient(ForgeTags.EGGS)
+                .addIngredient(ForgeTags.VEGETABLES_POTATO)
+                .unlockedBy("has_cooked_prawn", has(CRItemTags.COOKED_PRAWN)),
+            "food/prawn_stew", finished, enabled(CRItems.PRAWN_STEW));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.SALMON_WRAPPED_PRAWN.get(), 1, 200, 1.0F)
+                .addIngredient(CRItemTags.COOKED_PRAWN)
+                .addIngredient(ModItems.SALMON_SLICE.get())
+                .addIngredient(CRItemTags.LIME_OR_SLICE)
+                .addIngredient(Items.HONEY_BOTTLE)
+                .unlockedBy("has_cooked_prawn", has(CRItemTags.COOKED_PRAWN)),
+            "food/salmon_wrapped_prawn", finished, enabled(CRItems.SALMON_WRAPPED_PRAWN));
+        wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PLATINUM_BASS_STEW.get(), 1, 200, 1.0F)
+                .addIngredient(CRItems.PLATINUM_BASS_HEAD.get())
+                .addIngredient(CRItems.PLATINUM_BASS_SLICE.get())
+                .addIngredient(CRItems.COOKED_RICE.get())
+                .addIngredient(CRItemTags.LIME_OR_SLICE)
+                .addIngredient(ForgeTags.CROPS_ONION)
+                .addIngredient(Items.DRIED_KELP)
+                .unlockedBy("has_platinum_bass_head", has(CRItems.PLATINUM_BASS_HEAD.get())),
+            "food/platinum_bass_stew", finished, enabled(CRItems.PLATINUM_BASS_STEW));
+
+            // Gummies
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.LIME_GUMMY.get(), 1, 200, 1.0F)
                 .addIngredient(CRItemTags.FRUITS_LIME)
                 .addIngredient(Items.SUGAR)
@@ -338,29 +461,37 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
             "lime_seeds_from_slice", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.LIME_SEEDS));
         wrap(shapeless(CRItems.PORTOBELLO_WRAP)
-                .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
                 .requires(ForgeTags.BREAD)
+                .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
                 .requires(ForgeTags.CROPS_ONION)
                 .requires(ForgeTags.CROPS_CABBAGE)
                 .requires(ForgeTags.VEGETABLES_CARROT)
                 .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
             "food/portobello_wrap", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.PORTOBELLO_WRAP), tagEmpty(CRItemTags.TORTILLA));
         wrap(shapeless(CRItems.PORTOBELLO_WRAP)
-                .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
                 .requires(CRItemTags.TORTILLA)
+                .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
                 .requires(ForgeTags.CROPS_ONION)
                 .requires(ForgeTags.CROPS_CABBAGE)
                 .requires(ForgeTags.VEGETABLES_CARROT)
                 .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
             "food/portobello_wrap_from_tortilla", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.PORTOBELLO_WRAP), not(tagEmpty(CRItemTags.TORTILLA)));
         wrap(shapeless(CRItems.PORTOBELLO_BURGER)
-                .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
                 .requires(ForgeTags.BREAD)
-                .requires(ForgeTags.CROPS_ONION)
+                .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
                 .requires(ForgeTags.CROPS_CABBAGE)
                 .requires(ForgeTags.CROPS_TOMATO)
+                .requires(ForgeTags.CROPS_ONION)
                 .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
-            "food/portobello_burger", finished, enabled(CRItems.PORTOBELLO_BURGER));
+            "food/portobello_burger", finished, enabled(CRItems.PORTOBELLO_BURGER), tagEmpty(CRItemTags.BURGER_BUN));
+        wrap(shapeless(CRItems.PORTOBELLO_BURGER)
+                .requires(CRItemTags.BURGER_BUN)
+                .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
+                .requires(ForgeTags.CROPS_CABBAGE)
+                .requires(ForgeTags.CROPS_TOMATO)
+                .requires(ForgeTags.CROPS_ONION)
+                .unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
+            "food/portobello_burger_from_bun", finished, enabled(CRItems.PORTOBELLO_BURGER), not(tagEmpty(CRItemTags.BURGER_BUN)));
         wrap(shapeless(CRItems.LIMEADE)
                 .requires(Ingredient.of(CRItemTags.FRUITS_LIME), 2)
                 .requires(Items.SUGAR)
@@ -418,9 +549,9 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
         wrap(shapeless(CRItems.COD_CEVICHE)
                 .requires(ForgeTags.RAW_FISHES_COD)
                 .requires(CRItemTags.FRUITS_CITRUS)
-                .requires(ForgeTags.CROPS_ONION)
                 .requires(ForgeTags.CROPS_CABBAGE)
                 .requires(ForgeTags.CROPS_TOMATO)
+                .requires(ForgeTags.CROPS_ONION)
                 .requires(Items.BOWL)
                 .unlockedBy("has_citrus", has(CRItemTags.FRUITS_CITRUS)),
             "food/cod_ceviche", finished, enabled(CRItems.COD_CEVICHE));
@@ -447,7 +578,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(CRItemTags.SEEDS_POMEGRANATE)
                 .requires(CRItemTags.CHOCOLATE_BAR)
                 .unlockedBy("has_pomegranate_seeds", has(CRItemTags.SEEDS_POMEGRANATE)),
-            "food/chocolate_arils", finished, enabled(CRItems.CHOCOLATE_ARILS), not(tagEmpty(CRItemTags.CHOCOLATE_BAR)), modLoaded("neapolitan"));
+            "food/chocolate_arils", finished, enabled(CRItems.CHOCOLATE_ARILS), not(tagEmpty(CRItemTags.CHOCOLATE_BAR)), modLoaded("neapolitan"), not(modLoaded("create")));
         wrap(shapeless(CRItems.STRAWBERRY_JAM_BUN)
                 .requires(ForgeTags.GRAIN_WHEAT)
                 .requires(ForgeTags.MILK)
@@ -455,6 +586,96 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(CRItemTags.LIME_OR_SLICE)
                 .unlockedBy("has_strawberries", has(CRItemTags.RED_STRAWBERRIES)),
             "food/strawberry_jam_bun", finished, enabled(CRItems.STRAWBERRY_JAM_BUN), not(tagEmpty(CRItemTags.RED_STRAWBERRIES)), modLoaded("neapolitan"));
+        wrap(shapeless(CRItems.BIG_RICE_BALL)
+                .requires(Items.DRIED_KELP)
+                .requires(ModItems.COOKED_RICE.get(), 3)
+                .requires(CRItemTags.COOKED_CRAB)
+                .unlockedBy("has_cooked_crab", has(CRItemTags.COOKED_CRAB)),
+            "food/big_rice_ball", finished, enabled(CRItems.BIG_RICE_BALL));
+        wrap(shapeless(CRItems.LAND_AND_SEA_BURGER)
+                .requires(ForgeTags.BREAD)
+                .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
+                .requires(CRItems.CHIEFTAIN_CLAW.get())
+                .requires(ModItems.BEEF_PATTY.get())
+                .requires(ForgeTags.CROPS_TOMATO)
+                .requires(ForgeTags.CROPS_ONION)
+                .unlockedBy("has_chieftain_claw", has(CRItems.CHIEFTAIN_CLAW.get())),
+            "food/land_and_sea_burger", finished, enabled(CRItems.LAND_AND_SEA_BURGER), tagEmpty(CRItemTags.BURGER_BUN));
+        wrap(shapeless(CRItems.LAND_AND_SEA_BURGER)
+                .requires(CRItemTags.BURGER_BUN)
+                .requires(CRItems.BAKED_PORTOBELLO_CAP.get())
+                .requires(CRItems.CHIEFTAIN_CLAW.get())
+                .requires(ModItems.BEEF_PATTY.get())
+                .requires(ForgeTags.CROPS_TOMATO)
+                .requires(ForgeTags.CROPS_ONION)
+                .unlockedBy("has_chieftain_claw", has(CRItems.CHIEFTAIN_CLAW.get())),
+            "food/land_and_sea_burger_from_bun", finished, enabled(CRItems.LAND_AND_SEA_BURGER), not(tagEmpty(CRItemTags.BURGER_BUN)));
+        wrap(shapeless(CRItems.CLAM_ROLL)
+                .requires(Ingredient.of(CRItemTags.RAW_CLAM), 2)
+                .requires(ModItems.COOKED_RICE.get())
+                .unlockedBy("has_raw_claw", has(CRItemTags.RAW_CLAM)),
+            "food/clam_roll", finished, enabled(CRItems.CLAM_ROLL));
+        wrap(shapeless(CRItems.UNI_ROLL)
+                .requires(CRItems.UNI.get())
+                .requires(ModItems.COOKED_RICE.get())
+                .requires(Items.DRIED_KELP)
+                .unlockedBy("has_uni", has(CRItems.UNI.get())),
+            "food/uni_roll", finished, enabled(CRItems.UNI_ROLL));
+        wrap(shapeless(CRItems.PRAWN_ROLL)
+                .requires(Ingredient.of(CRItemTags.RAW_PRAWN), 2)
+                .requires(ModItems.COOKED_RICE.get())
+                .unlockedBy("has_raw_prawn", has(CRItemTags.RAW_PRAWN)),
+            "food/prawn_roll", finished, enabled(CRItems.PRAWN_ROLL));
+        wrap(shapeless(CRItems.PRAWN_PO_BOY)
+                .requires(ForgeTags.BREAD)
+                .requires(CRItemTags.COOKED_PRAWN)
+                .requires(ForgeTags.EGGS)
+                .requires(ForgeTags.CROPS_CABBAGE)
+                .requires(ForgeTags.CROPS_TOMATO)
+                .requires(ForgeTags.CROPS_ONION)
+                .unlockedBy("has_cooked_prawn", has(CRItemTags.COOKED_PRAWN)),
+            "food/prawn_po_boy", finished, enabled(CRItems.PRAWN_PO_BOY));
+        wrap(shapeless(CRItems.PRAWN_CEVICHE)
+                .requires(CRItemTags.RAW_PRAWN)
+                .requires(CRItemTags.FRUITS_CITRUS)
+                .requires(ForgeTags.CROPS_CABBAGE)
+                .requires(ForgeTags.CROPS_TOMATO)
+                .requires(ForgeTags.CROPS_ONION)
+                .requires(Items.BOWL)
+                .unlockedBy("has_raw_prawn", has(CRItemTags.RAW_PRAWN)),
+            "food/prawn_ceviche", finished, enabled(CRItems.PRAWN_CEVICHE));
+        wrap(shapeless(CRItems.FISH_MIX)
+                .requires(ModItems.SALMON_SLICE.get())
+                .requires(ModItems.COD_SLICE.get())
+                .requires(CRItems.PLATINUM_BASS_SLICE.get())
+                .requires(ForgeTags.CROPS_CABBAGE)
+                .requires(ForgeTags.CROPS_TOMATO)
+                .requires(ForgeTags.CROPS_ONION)
+                .requires(Items.BOWL)
+                .unlockedBy("has_slice", has(CRItems.PLATINUM_BASS_SLICE.get())),
+            "food/fish_mix", finished, enabled(CRItems.FISH_MIX));
+        wrap(shapeless(CRItems.SEAFOOD_BURRITO)
+                .requires(ForgeTags.BREAD)
+                .requires(CRItems.CHIEFTAIN_CLAW.get())
+                .requires(CRItemTags.RAW_CLAM)
+                .requires(ForgeTags.COOKED_FISHES_COD)
+                .requires(ForgeTags.COOKED_FISHES_SALMON)
+                .requires(CRItemTags.COOKED_PRAWN)
+                .requires(Items.DRIED_KELP)
+                .requires(ModItems.COOKED_RICE.get())
+                .unlockedBy("has_claw", has(CRItems.CHIEFTAIN_CLAW.get())),
+            "food/seafood_burrito", finished, enabled(CRItems.SEAFOOD_BURRITO), tagEmpty(CRItemTags.TORTILLA));
+        wrap(shapeless(CRItems.SEAFOOD_BURRITO)
+                .requires(CRItemTags.TORTILLA)
+                .requires(CRItems.CHIEFTAIN_CLAW.get())
+                .requires(CRItemTags.RAW_CLAM)
+                .requires(ForgeTags.COOKED_FISHES_COD)
+                .requires(ForgeTags.COOKED_FISHES_SALMON)
+                .requires(CRItemTags.COOKED_PRAWN)
+                .requires(Items.DRIED_KELP)
+                .requires(ModItems.COOKED_RICE.get())
+                .unlockedBy("has_claw", has(CRItems.CHIEFTAIN_CLAW.get())),
+            "food/seafood_burrito_from_tortilla", finished, enabled(CRItems.SEAFOOD_BURRITO), not(tagEmpty(CRItemTags.TORTILLA)));
 
         // Shaped Crafting
         wrap(shaped(CRItems.PORTOBELLO_QUICHE)

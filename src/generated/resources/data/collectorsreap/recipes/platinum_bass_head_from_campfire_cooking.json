@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "collectorsreap:platinum_bass_head"
+  },
+  "result": "collectorsreap:cooked_platinum_bass_head"
+}

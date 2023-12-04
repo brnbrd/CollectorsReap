@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "platinum_bass"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "platinum_bass_slice"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "collectorsreap:platinum_bass"
+          }
+        ],
+        "result": [
+          {
+            "count": 3,
+            "item": "collectorsreap:platinum_bass_slice"
+          },
+          {
+            "item": "collectorsreap:platinum_bass_head"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}

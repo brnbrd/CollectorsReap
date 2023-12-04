@@ -1,0 +1,12 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "chieftain_crab"
+        }
+      ]
+    }
+  ]
+}

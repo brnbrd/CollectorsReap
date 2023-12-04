@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "prawn_roll"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "tag": "forge:raw_prawn"
+          },
+          {
+            "tag": "forge:raw_prawn"
+          },
+          {
+            "item": "farmersdelight:cooked_rice"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:prawn_roll"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "chieftain_crab"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "collectorsreap:chieftain_crab"
+          }
+        ],
+        "result": [
+          {
+            "count": 2,
+            "item": "collectorsreap:chieftain_claw"
+          },
+          {
+            "count": 8,
+            "item": "collectorsreap:chieftain_leg"
+          },
+          {
+            "count": 4,
+            "item": "collectorsreap:chieftain_crab_meat"
+          },
+          {
+            "item": "collectorsreap:crab_miso"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}

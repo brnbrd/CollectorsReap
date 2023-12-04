@@ -66,6 +66,20 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.ALOE_GUMMY.get())
 			.add(CRItems.PASSIONFRUIT_GUMMY.get())
 			.add(CRItems.YUCCA_GUMMY.get());
+		this.tag(CRItemTags.COOKED_CRAB)
+			.add(CRItems.CHIEFTAIN_CRAB_MEAT.get());
+		this.tag(CRItemTags.RAW_CLAM)
+			.add(CRItems.CLAM_MEAT.get());
+		this.tag(CRItemTags.RAW_PRAWN)
+			.add(CRItems.TIGER_PRAWN.get());
+		this.tag(CRItemTags.COOKED_PRAWN)
+			.add(CRItems.COOKED_TIGER_PRAWN.get());
+		this.tag(CRItemTags.RAW_FISHES_BASS)
+			.add(CRItems.PLATINUM_BASS.get())
+			.add(CRItems.PLATINUM_BASS_SLICE.get());
+		this.tag(CRItemTags.COOKED_FISHES_BASS)
+			.add(CRItems.COOKED_PLATINUM_BASS.get())
+			.add(CRItems.COOKED_PLATINUM_BASS_SLICE.get());
 
 		// Nether's Delight
 		this.addSelf(CRItemTags.PROPELPEARL);
@@ -107,6 +121,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addOptional(FRItems.BLACK_TEA_LEAVES.getId());
 		this.tag(CRItemTags.COFFEE_BEANS)
 			.addOptional(FRItems.COFFEE_BEANS.getId());
+
+		// SAS
+		this.addSelf(CRItemTags.BURGER_BUN);
 	}
 
 	/**

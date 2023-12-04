@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "platinum_bass_stew"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "item": "collectorsreap:platinum_bass_head"
+          },
+          {
+            "item": "collectorsreap:platinum_bass_slice"
+          },
+          {
+            "item": "farmersdelight:cooked_rice"
+          },
+          {
+            "tag": "collectorsreap:lime_or_slice"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "item": "minecraft:dried_kelp"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:platinum_bass_stew"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "prawn_noodles"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:cooked_prawn"
+          },
+          {
+            "item": "farmersdelight:raw_pasta"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "item": "minecraft:dried_kelp"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:prawn_noodles"
+        }
+      }
+    }
+  ]
+}

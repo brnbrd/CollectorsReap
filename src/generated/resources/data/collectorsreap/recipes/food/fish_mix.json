@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "fish_mix"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "farmersdelight:salmon_slice"
+          },
+          {
+            "item": "farmersdelight:cod_slice"
+          },
+          {
+            "item": "collectorsreap:platinum_bass_slice"
+          },
+          {
+            "tag": "forge:crops/cabbage"
+          },
+          {
+            "tag": "forge:crops/tomato"
+          },
+          {
+            "tag": "forge:crops/onion"
+          },
+          {
+            "item": "minecraft:bowl"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:fish_mix"
+        }
+      }
+    }
+  ]
+}

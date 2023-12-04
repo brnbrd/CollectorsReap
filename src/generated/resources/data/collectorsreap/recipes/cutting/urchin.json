@@ -1,0 +1,54 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "urchin"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "uni"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "collectorsreap:urchin"
+          }
+        ],
+        "result": [
+          {
+            "item": "collectorsreap:uni"
+          },
+          {
+            "item": "collectorsreap:urchin_test"
+          },
+          {
+            "chance": 0.75,
+            "item": "collectorsreap:urchin_test"
+          },
+          {
+            "count": 5,
+            "item": "collectorsreap:urchin_needle"
+          },
+          {
+            "chance": 0.5,
+            "count": 2,
+            "item": "collectorsreap:urchin_needle"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}

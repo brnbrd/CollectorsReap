@@ -1,32 +1,53 @@
 package net.brdle.collectorsreap.common.block;
 
+import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BushBlock;
+import net.minecraft.world.level.block.MushroomBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
-public class PortobelloBlock extends BushBlock {
-	protected static final float AABB_OFFSET = 3.0F;
-	protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 7.0D, 12.0D);
+public class PortobelloBlock extends MushroomBlock {
+	private static final float AABB_OFFSET = 2.0F;
+	private static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 7.0D, 12.0D);
 
 	public PortobelloBlock(Properties pProperties) {
-		super(pProperties);
+		super(pProperties, () -> null);
 	}
 
-	@SuppressWarnings("deprecation")
+	// Grow into colony on Rich Soil
+	@Override
+	public void randomTick(@NotNull BlockState state, ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource rand) {
+		if (
+			!level.isClientSide() &&
+			level.getRawBrightness(pos, 0) < 13 &&
+			level.getBlockState(pos.below()).is(ModTags.MUSHROOM_COLONY_GROWABLE_ON)
+		) {
+			level.setBlockAndUpdate(pos, CRBlocks.PORTOBELLO_COLONY.get().defaultBlockState());
+		} else {
+			super.randomTick(state, level, pos, rand);
+		}
+	}
+
+	@Override
+	public boolean canSurvive(@NotNull BlockState pState, LevelReader level, BlockPos pos) {
+		BlockPos blockpos = pos.below();
+		BlockState blockstate = level.getBlockState(blockpos);
+		if (blockstate.is(CRBlockTags.PORTOBELLO_SPAWNS)) {
+			return true;
+		} else {
+			return level.getRawBrightness(pos, 0) < 13 && blockstate.canSustainPlant(level, blockpos, net.minecraft.core.Direction.UP, this);
+		}
+	}
+
 	@Override
 	public @NotNull VoxelShape getShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
 		return SHAPE;
@@ -38,31 +59,22 @@ public class PortobelloBlock extends BushBlock {
 	}
 
 	@Override
-	protected boolean mayPlaceOn(BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos) {
-		return pState.isSolidRender(pLevel, pPos);
+	public boolean growMushroom(@NotNull ServerLevel pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, @NotNull RandomSource pRandom) {
+		return false;
 	}
 
 	@Override
-	public boolean canSurvive(@NotNull BlockState pState, LevelReader level, BlockPos pos) {
-		BlockPos below = pos.below();
-		BlockState blockstate = level.getBlockState(below);
-		return blockstate.is(BlockTags.DIRT);
-		//|| (level.getRawBrightness(pos, 0) < 13 && blockstate.canSustainPlant(level, below, Direction.UP, this));
+	public boolean isValidBonemealTarget(@NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, boolean pIsClient) {
+		return false;
 	}
 
 	@Override
-	public void setPlacedBy(@NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, @Nullable LivingEntity pPlacer, @NotNull ItemStack pStack) {
-		super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+	public boolean isBonemealSuccess(@NotNull Level pLevel, @NotNull RandomSource pRandom, @NotNull BlockPos pPos, @NotNull BlockState pState) {
+		return false;
 	}
 
-	// Grow into colony on Rich Soil
-	@SuppressWarnings("deprecation")
 	@Override
-	public void randomTick(@NotNull BlockState state, ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource rand) {
-		if (!level.isClientSide &&
-			level.getRawBrightness(pos, 0) < 13 &&
-			level.getBlockState(pos.below()).is(ModTags.MUSHROOM_COLONY_GROWABLE_ON)) {
-			level.setBlockAndUpdate(pos, CRBlocks.PORTOBELLO_COLONY.get().defaultBlockState());
-		}
+	public void performBonemeal(@NotNull ServerLevel level, @NotNull RandomSource random, @NotNull BlockPos pos, @NotNull BlockState state) {
+		level.setBlock(pos, CRBlocks.PORTOBELLO_COLONY.get().defaultBlockState(), 2);
 	}
 }

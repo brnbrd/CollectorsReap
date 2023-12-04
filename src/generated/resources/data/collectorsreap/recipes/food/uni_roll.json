@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "uni_roll"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "collectorsreap:uni"
+          },
+          {
+            "item": "farmersdelight:cooked_rice"
+          },
+          {
+            "item": "minecraft:dried_kelp"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:uni_roll"
+        }
+      }
+    }
+  ]
+}

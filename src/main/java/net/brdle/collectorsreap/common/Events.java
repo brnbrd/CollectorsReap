@@ -2,11 +2,15 @@ package net.brdle.collectorsreap.common;
 
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
+import net.brdle.collectorsreap.common.entity.*;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.common.world.CRWorldGen;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.crafting.CraftingHelper;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -43,10 +47,19 @@ public class Events {
         });
     }
 
+    @SubscribeEvent
+    public static void registerEntityAttributes(EntityAttributeCreationEvent e) {
+        e.put(CREntities.TIGER_PRAWN.get(), TigerPrawn.createAttributes().build());
+        e.put(CREntities.URCHIN.get(), Urchin.createAttributes().build());
+        e.put(CREntities.PLATINUM_BASS.get(), PlatinumBass.createAttributes().build());
+        e.put(CREntities.CHIEFTAIN_CRAB.get(), ChieftainCrab.createAttributes().build());
+        e.put(CREntities.CLAM.get(), Clam.createAttributes().build());
+    }
+
     // Adds collectorsreap:enabled, etc. conditions
     @SubscribeEvent
-    public static void registerSerializers(RegisterEvent event) {
-        if (event.getRegistryKey() == ForgeRegistries.RECIPE_SERIALIZERS.getRegistryKey()) {
+    public static void registerSerializers(RegisterEvent e) {
+        if (e.getRegistryKey() == ForgeRegistries.RECIPE_SERIALIZERS.getRegistryKey()) {
             CraftingHelper.register(EnabledCondition.Serializer.INSTANCE);
         }
     }

@@ -1,4 +1,4 @@
-// 1.19	2023-03-13T12:16:01.9872269	LootTables
+// 1.19	2023-06-22T11:05:49.6059045	LootTables
 a00f50d4e2270ceab7811af1795f92ed69f20746 data/collectorsreap/loot_tables/blocks/black_candle_lime_cake.json
 a00f50d4e2270ceab7811af1795f92ed69f20746 data/collectorsreap/loot_tables/blocks/black_candle_pomegranate_cake.json
 b32c88c147e66e7868d5080dad3b3f28768c5c47 data/collectorsreap/loot_tables/blocks/blue_candle_lime_cake.json
@@ -46,3 +46,8 @@ ace4cf712096409839181255ea6c746b8721a02c data/collectorsreap/loot_tables/blocks/
 ace4cf712096409839181255ea6c746b8721a02c data/collectorsreap/loot_tables/blocks/white_candle_pomegranate_cake.json
 49669323f7193e40904980ada4c932301750883e data/collectorsreap/loot_tables/blocks/yellow_candle_lime_cake.json
 49669323f7193e40904980ada4c932301750883e data/collectorsreap/loot_tables/blocks/yellow_candle_pomegranate_cake.json
+ef017fe8afbc1e704a7cfb4818ece7ba018f9c91 data/collectorsreap/loot_tables/entities/chieftain_crab.json
+cb78f980a09b87aea08f2821d4f4f42aaf180a38 data/collectorsreap/loot_tables/entities/clam.json
+f30ec341bfd7f345f5325f7228deb1e9f71c5a33 data/collectorsreap/loot_tables/entities/platinum_bass.json
+c3eaa217721bdcb9f054b9c82cb1c2ee48f8bf11 data/collectorsreap/loot_tables/entities/tiger_prawn.json
+a83f216be53e85831ec0377040c42145b2b8f867 data/collectorsreap/loot_tables/entities/urchin.json

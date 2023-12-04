@@ -5,6 +5,7 @@ import net.brdle.collectorsreap.compat.ModCompat;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.Foods;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class Nutrition {
@@ -227,4 +228,12 @@ public class Nutrition {
     public static final FoodProperties COFFEE_GUMMY = (new FoodProperties.Builder())
         .nutrition(2).saturationMod(0.0F).alwaysEat()
         .effect(() -> new MobEffectInstance(ModCompat.getCaffeinated().get(), 400, 3), 1.0F).build();
+    public static final FoodProperties TIGER_PRAWN = (new FoodProperties.Builder())
+        .nutrition(2).saturationMod(0.1F).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.75F).build();
+    public static final FoodProperties COOKED_TIGER_PRAWN = (new FoodProperties.Builder())
+        .nutrition(5).saturationMod(0.6F).build();
+    public static final FoodProperties UNI = (new FoodProperties.Builder())
+        .nutrition(5).saturationMod(0.6F).build();
+    public static final FoodProperties PLATINUM_BASS = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1F).build();
+    public static final FoodProperties COOKED_PLATINUM_BASS = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.8F).build();
 }

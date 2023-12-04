@@ -4,27 +4,36 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "portobello_burger"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "portobello_burger"
+            },
+            {
+              "type": "forge:tag_empty",
+              "tag": "some_assembly_required:burger_bun"
+            }
+          ]
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "item": "collectorsreap:baked_portobello_cap"
-          },
-          {
             "tag": "forge:bread"
           },
           {
-            "tag": "forge:crops/onion"
+            "item": "collectorsreap:baked_portobello_cap"
           },
           {
             "tag": "forge:crops/cabbage"
           },
           {
             "tag": "forge:crops/tomato"
+          },
+          {
+            "tag": "forge:crops/onion"
           }
         ],
         "result": {

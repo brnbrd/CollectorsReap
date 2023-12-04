@@ -1,0 +1,21 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "clam"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "clam_meat"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

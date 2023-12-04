@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "crab_lasagna"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:cooked_crab"
+          },
+          {
+            "tag": "forge:cooked_crab"
+          },
+          {
+            "tag": "forge:cooked_crab"
+          },
+          {
+            "tag": "forge:dough/wheat"
+          },
+          {
+            "item": "farmersdelight:tomato_sauce"
+          },
+          {
+            "tag": "forge:milk"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:crab_lasagna"
+        }
+      }
+    }
+  ]
+}

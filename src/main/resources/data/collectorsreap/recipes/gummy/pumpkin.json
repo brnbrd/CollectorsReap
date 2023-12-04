@@ -11,11 +11,8 @@
               "value": "pumpkin_gummy"
             },
             {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:tag_empty",
-                "tag": "seasonals:roasted_pumpkin"
-              }
+              "type": "forge:item_exists",
+              "item": "seasonals:pumpkin_puree"
             },
             {
               "type": "forge:mod_loaded",
@@ -30,7 +27,7 @@
         "experience": 1.0,
         "ingredients": [
           {
-            "tag": "seasonals:roasted_pumpkin"
+            "item": "seasonals:pumpkin_puree"
           },
           {
             "item": "minecraft:sugar"

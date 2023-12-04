@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "clam_pasta"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:raw_clam"
+          },
+          {
+            "item": "farmersdelight:raw_pasta"
+          },
+          {
+            "tag": "forge:milk"
+          },
+          {
+            "tag": "forge:eggs"
+          },
+          {
+            "tag": "forge:crops/tomato"
+          },
+          {
+            "tag": "forge:crops/onion"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:clam_pasta"
+        }
+      }
+    }
+  ]
+}

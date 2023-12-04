@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.data.gen;
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
 import net.brdle.collectorsreap.common.loot.CRBlockLoot;
+import net.brdle.collectorsreap.common.loot.CREntityLoot;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -21,7 +22,10 @@ import java.util.function.Supplier;
 public class CRLootTableProvider extends LootTableProvider {
 
 	private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>>
-		loot_tables = ImmutableList.of(Pair.of(CRBlockLoot::new, LootContextParamSets.BLOCK));
+		loot_tables = ImmutableList.of(
+			Pair.of(CRBlockLoot::new, LootContextParamSets.BLOCK),
+			Pair.of(CREntityLoot::new, LootContextParamSets.ENTITY)
+	);
 
 	public CRLootTableProvider(DataGenerator pGenerator) {
 		super(pGenerator);

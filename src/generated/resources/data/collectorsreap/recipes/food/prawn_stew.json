@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "prawn_stew"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:cooked_prawn"
+          },
+          {
+            "item": "farmersdelight:tomato_sauce"
+          },
+          {
+            "tag": "forge:milk"
+          },
+          {
+            "tag": "forge:eggs"
+          },
+          {
+            "tag": "forge:vegetables/potato"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:prawn_stew"
+        }
+      }
+    }
+  ]
+}
