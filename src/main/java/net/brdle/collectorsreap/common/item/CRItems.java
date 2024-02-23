@@ -195,7 +195,7 @@ public class CRItems extends ModItems {
     public static final RegistryObject<Item> CHIEFTAIN_CRAB_SPAWN_EGG = registerItem("chieftain_crab_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.CHIEFTAIN_CRAB, 0xB13125, 0xE1B865, new Item.Properties().tab(FarmersDelight.CREATIVE_TAB)));
     public static final RegistryObject<Item> CHIEFTAIN_CRAB_BUCKET = registerItem("chieftain_crab_bucket",
         () -> new MobBucketItem(CREntities.CHIEFTAIN_CRAB, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_AXOLOTL, (new Item.Properties()).stacksTo(1).craftRemainder(Items.BUCKET).tab(FarmersDelight.CREATIVE_TAB)));
-    public static final RegistryObject<Item> CHIEFTAIN_CRAB = registerFood("chieftain_crab", Nutrition.PLATINUM_BASS);
+    public static final RegistryObject<Item> CHIEFTAIN_CRAB = registerItem("chieftain_crab", () -> new Item((new Item.Properties()).stacksTo(1).craftRemainder(Items.BOWL).tab(FarmersDelight.CREATIVE_TAB)));
     public static final RegistryObject<Item> CHIEFTAIN_CLAW = registerFood("chieftain_claw", Nutrition.PLATINUM_BASS);
     public static final RegistryObject<Item> CHIEFTAIN_LEG = registerFood("chieftain_leg", Nutrition.PLATINUM_BASS);
     public static final RegistryObject<Item> CHIEFTAIN_CRAB_MEAT = registerFood("chieftain_crab_meat", Nutrition.PLATINUM_BASS);

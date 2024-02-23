@@ -9,7 +9,6 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.util.TimeUtil;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.DifficultyInstance;
@@ -38,8 +37,6 @@ import javax.annotation.Nonnull;
 import java.util.UUID;
 
 public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
-	public static final int VARIANTS = 3;
-	private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(ChieftainCrab.class, EntityDataSerializers.INT);
 	private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(ChieftainCrab.class, EntityDataSerializers.BOOLEAN);
 	private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
 	private int remainingPersistentAngerTime;
@@ -66,7 +63,7 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	@Override
 	public float getSpeed() {
 		float speed = super.getSpeed();
-		return this.isInWater() ? speed * 2.5F : speed;
+		return this.isInWater() ? speed * 10F : speed;
 	}
 
 	@Override
@@ -101,18 +98,9 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 		return 1.125F;
 	}
 
-	public int getVariant() {
-		return this.entityData.get(VARIANT);
-	}
-
-	private void setVariant(int variant) {
-		this.entityData.set(VARIANT, variant);
-	}
-
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(VARIANT, 0);
 		this.entityData.define(FROM_BUCKET, false);
 	}
 
@@ -134,29 +122,23 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	@Override
 	public void addAdditionalSaveData(@NotNull CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
-		compound.putInt("Variant", getVariant());
 		compound.putBoolean("FromBucket", this.fromBucket());
 	}
 
 	@Override
 	public void readAdditionalSaveData(@NotNull CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		setVariant(Mth.clamp(compound.getInt("Variant"), 0, VARIANTS - 1));
 		this.setFromBucket(compound.getBoolean("FromBucket"));
 	}
 
 	@Override
 	public void saveToBucketTag(ItemStack bucket) {
 		CompoundTag nbt = bucket.getOrCreateTag();
-		nbt.putInt("Variant", this.getVariant());
 		nbt.putFloat("Health", this.getHealth());
 	}
 
 	@Override
 	public void loadFromBucketTag(CompoundTag nbt) {
-		if (nbt.contains("Variant")) {
-			this.setVariant(nbt.getInt("Variant"));
-		}
 		if (nbt.contains("Health", 99)) {
 			this.setHealth(nbt.getFloat("Health"));
 		}
@@ -183,7 +165,7 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	private boolean isMoving() {
-		return this.getDeltaMovement().horizontalDistanceSqr() > 1.0E-4D;
+		return this.getDeltaMovement().horizontalDistanceSqr() > 5.0E-4D;
 	}
 
 	private boolean isMovingInWater() {
@@ -213,11 +195,7 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 
 	@Override
 	public @Nullable SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor worldIn, @NotNull DifficultyInstance difficultyIn, @NotNull MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
-		if (dataTag == null) {
-			setVariant(getRandom().nextInt(VARIANTS));
-		} else if (dataTag.contains("Variant", 3)) {
-			this.setVariant(dataTag.getInt("Variant"));
-		} else if (dataTag.contains("Health", 99)) {
+		if (dataTag != null && dataTag.contains("Health", 99)) {
 			this.setHealth(dataTag.getFloat("Health"));
 		}
 		return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
@@ -297,6 +275,6 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 
 	@Override
 	public void startPersistentAngerTimer() {
-		this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(this.random));
+		this.setRemainingPersistentAngerTime(PERSISTENT_ANGER_TIME.sample(this.getRandom()));
 	}
 }

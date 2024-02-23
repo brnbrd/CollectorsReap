@@ -19,7 +19,7 @@ public class CREntities {
 	public static final RegistryObject<EntityType<PlatinumBass>> PLATINUM_BASS = reg("platinum_bass",
 		EntityType.Builder.of(PlatinumBass::new, MobCategory.WATER_AMBIENT).sized(1.2F, 0.5F));
 	public static final RegistryObject<EntityType<ChieftainCrab>> CHIEFTAIN_CRAB = reg("chieftain_crab",
-		EntityType.Builder.of(ChieftainCrab::new, MobCategory.WATER_AMBIENT).sized(1.2F, 1.0F));
+		EntityType.Builder.of(ChieftainCrab::new, MobCategory.WATER_AMBIENT).sized(0.85F, 0.65F));
 	public static final RegistryObject<EntityType<Clam>> CLAM = reg("clam",
 		EntityType.Builder.of(Clam::new, MobCategory.WATER_AMBIENT).sized(1.0F, 0.5F));
 
