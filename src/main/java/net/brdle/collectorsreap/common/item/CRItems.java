@@ -259,11 +259,11 @@ public class CRItems extends ModItems {
             .tab(ModCompat.ifLoaded("neapolitan", CreativeModeTab.TAB_FOOD)), true, false, "neapolitan"));
     public static final RegistryObject<Item> LIME_MILKSHAKE = registerItem("lime_milkshake",
         () -> new ShakeItem(new Item.Properties().food(
-                Nutrition.MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
+                Nutrition.LIME_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
             .tab(ModCompat.ifLoaded("neapolitan", CreativeModeTab.TAB_FOOD))));
     public static final RegistryObject<Item> POMEGRANATE_MILKSHAKE = registerItem("pomegranate_milkshake",
         () -> new ShakeItem(new Item.Properties().food(
-                Nutrition.MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
+                Nutrition.POMEGRANATE_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
             .tab(ModCompat.ifLoaded("neapolitan", CreativeModeTab.TAB_FOOD))));
     public static final RegistryObject<Item> LIME_ICE_CREAM = registerItem("lime_ice_cream",
         () -> new CompatConsumable((new Item.Properties()).food(
