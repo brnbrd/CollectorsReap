@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.common.block;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -89,6 +91,18 @@ public class CRBlocks {
         () -> new Block(BlockBehaviour.Properties.of(Material.SNOW, MaterialColor.COLOR_LIGHT_GREEN).strength(0.2F).sound(SoundType.SNOW)));
     public static final RegistryObject<Block> POMEGRANATE_ICE_CREAM_BLOCK = BLOCKS.register("pomegranate_ice_cream_block",
         () -> new Block(BlockBehaviour.Properties.of(Material.SNOW, MaterialColor.COLOR_RED).strength(0.2F).sound(SoundType.SNOW)));
+    public static final RegistryObject<Block> LIME_MILKSHAKE_CAULDRON = BLOCKS.register("lime_milkshake_cauldron",
+        () -> new CRMilkshakeCauldronBlock(
+            ModList.get().isLoaded("neapolitan") ?
+            CRCauldronInteractions.LIME_MILKSHAKE.map() :
+            CauldronInteraction.newInteractionMap())
+    );
+    public static final RegistryObject<Block> POMEGRANATE_MILKSHAKE_CAULDRON = BLOCKS.register("pomegranate_milkshake_cauldron",
+        () -> new CRMilkshakeCauldronBlock(
+            ModList.get().isLoaded("neapolitan") ?
+                CRCauldronInteractions.POMEGRANATE_MILKSHAKE.map() :
+                CauldronInteraction.newInteractionMap())
+    );
 
     public static RegistryObject<Block> registerBlock(String name, Supplier<Block> block) {
         return BLOCKS.register(name, block);

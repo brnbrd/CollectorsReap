@@ -21,14 +21,13 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
+import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
@@ -36,7 +35,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.annotation.Nonnull;
 import java.util.UUID;
 
-public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
+public class ChieftainCrab extends WaterAnimal implements NeutralMob, Bucketable {
 	private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(ChieftainCrab.class, EntityDataSerializers.BOOLEAN);
 	private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
 	private int remainingPersistentAngerTime;
@@ -44,15 +43,15 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	public final AnimationState idleAnimationState = new AnimationState();
 	public final AnimationState movingAnimationState = new AnimationState();
 
-	public ChieftainCrab(EntityType<? extends Animal> type, Level level) {
+	public ChieftainCrab(EntityType<? extends WaterAnimal> type, Level level) {
 		super(type, level);
-		this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
+		this.setAirSupply(300);
 	}
 
 	public static AttributeSupplier.@NotNull Builder createAttributes() {
 		return Mob.createMobAttributes()
 			.add(Attributes.MAX_HEALTH, 30.0D)
-			.add(Attributes.MOVEMENT_SPEED, 0.1D)
+			.add(Attributes.MOVEMENT_SPEED, 0.15D)
 			.add(Attributes.ATTACK_DAMAGE, 8.0D)
 			.add(Attributes.ATTACK_KNOCKBACK, 0.5D)
 			.add(Attributes.ARMOR, 3.0D)
@@ -61,9 +60,13 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	@Override
+	protected void handleAirSupply(int pAirSupply) {
+	}
+
+	@Override
 	public float getSpeed() {
 		float speed = super.getSpeed();
-		return this.isInWater() ? speed * 10F : speed;
+		return this.isInWater() ? speed * 3F : speed;
 	}
 
 	@Override
@@ -173,11 +176,6 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	@Override
-	public boolean isFood(@NotNull ItemStack pStack) {
-		return false;
-	}
-
-	@Override
 	public void tick() {
 		super.tick();
 		if (this.level.isClientSide()) {
@@ -199,12 +197,6 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 			this.setHealth(dataTag.getFloat("Health"));
 		}
 		return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
-	}
-
-	@Nullable
-	@Override
-	public AgeableMob getBreedOffspring(@NotNull ServerLevel pLevel, @NotNull AgeableMob pOtherParent) {
-		return null;
 	}
 
 	@Override

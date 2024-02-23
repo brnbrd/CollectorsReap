@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.common;
 
 import net.brdle.collectorsreap.CollectorsReap;
+import net.brdle.collectorsreap.common.block.CRCauldronInteractions;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
 import net.brdle.collectorsreap.common.entity.*;
 import net.brdle.collectorsreap.common.item.CRItems;
@@ -12,6 +13,7 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -44,6 +46,11 @@ public class Events {
             compost(CRItems.POMEGRANATE, 0.3F);
             compost(CRItems.POMEGRANATE_SLICE, 0.2F);
             compost(CRItems.POMEGRANATE_SEEDS, 0.1F);
+
+            //
+            if (ModList.get().isLoaded("neapolitan")) {
+                CRCauldronInteractions.registerCauldronInteractions();
+            }
         });
     }
 
