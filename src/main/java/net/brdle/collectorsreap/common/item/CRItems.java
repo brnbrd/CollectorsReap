@@ -266,13 +266,9 @@ public class CRItems extends ModItems {
                 Nutrition.POMEGRANATE_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
             .tab(ModCompat.ifLoaded("neapolitan", CreativeModeTab.TAB_FOOD))));
     public static final RegistryObject<Item> LIME_ICE_CREAM = registerItem("lime_ice_cream",
-        () -> new CompatConsumable((new Item.Properties()).food(
-        Nutrition.LIME_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1)
-        .tab(ModCompat.ifLoaded("neapolitan", CreativeModeTab.TAB_FOOD)), false, false, "neapolitan"));
+        () -> new IceCreamItem((new Item.Properties()).food(Nutrition.LIME_ICE_CREAM)));
     public static final RegistryObject<Item> POMEGRANATE_ICE_CREAM = registerItem("pomegranate_ice_cream",
-        () -> new CompatConsumable((new Item.Properties()).food(
-        Nutrition.POMEGRANATE_ICE_CREAM).craftRemainder(Items.BOWL).stacksTo(1)
-        .tab(ModCompat.ifLoaded("neapolitan", CreativeModeTab.TAB_FOOD)), false, false, "neapolitan"));
+        () -> new IceCreamItem((new Item.Properties()).food(Nutrition.POMEGRANATE_ICE_CREAM)));
     public static final RegistryObject<Item> LIME_ICE_CREAM_BLOCK = registerItem("lime_ice_cream_block",
         () -> new BlockItem(CRBlocks.LIME_ICE_CREAM_BLOCK.get(), (new Item.Properties())
             .tab(ModCompat.ifLoaded("neapolitan", CreativeModeTab.TAB_BUILDING_BLOCKS))));

@@ -8,6 +8,10 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
+              "value": "lime_ice_cream"
+            },
+            {
+              "type": "collectorsreap:enabled",
               "value": "lime_milkshake"
             },
             {
@@ -30,10 +34,7 @@
             "item": "minecraft:glass_bottle"
           },
           {
-            "tag": "forge:fruits/lime"
-          },
-          {
-            "item": "neapolitan:vanilla_ice_cream"
+            "item": "collectorsreap:lime_ice_cream"
           },
           {
             "tag": "forge:milk"

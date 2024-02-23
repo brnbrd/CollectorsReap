@@ -4,11 +4,13 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_pomegranate": {
+          "has_pomegranate_ice_cream": {
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:fruits/pomegranate"
+                  "items": [
+                    "collectorsreap:pomegranate_ice_cream"
+                  ]
                 }
               ]
             },
@@ -23,7 +25,7 @@
         },
         "requirements": [
           [
-            "has_pomegranate",
+            "has_pomegranate_ice_cream",
             "has_the_recipe"
           ]
         ],
@@ -37,6 +39,10 @@
         {
           "type": "forge:and",
           "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate_ice_cream"
+            },
             {
               "type": "collectorsreap:enabled",
               "value": "pomegranate_milkshake"

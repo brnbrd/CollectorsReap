@@ -786,18 +786,10 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             "food/lime_ice_cream", finished, enabled(CRItems.LIME_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
         wrap(shapeless(CRItems.LIME_MILKSHAKE, 3)
                 .requires(Items.GLASS_BOTTLE, 3)
-                .requires(CRItemTags.FRUITS_LIME)
-                .requires(NeapolitanItems.VANILLA_ICE_CREAM.get())
-                .requires(ForgeTags.MILK)
-                .unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-            "food/lime_milkshake", finished, enabled(CRItems.LIME_MILKSHAKE), modLoaded("neapolitan"));
-        wrap(shapeless(CRItems.LIME_MILKSHAKE, 3)
-                .requires(Items.GLASS_BOTTLE, 3)
                 .requires(CRItems.LIME_ICE_CREAM.get())
-                .requires(NeapolitanItems.DRIED_VANILLA_PODS.get())
                 .requires(ForgeTags.MILK)
                 .unlockedBy("has_lime_ice_cream", has(CRItems.LIME_ICE_CREAM.get())),
-            "food/lime_milkshake_from_ice_cream", finished, enabled(CRItems.LIME_ICE_CREAM), enabled(CRItems.LIME_MILKSHAKE), modLoaded("neapolitan"));
+            "food/lime_milkshake", finished, enabled(CRItems.LIME_ICE_CREAM), enabled(CRItems.LIME_MILKSHAKE), modLoaded("neapolitan"));
         wrap(shaped(CRItems.LIME_ICE_CREAM_BLOCK, 8)
                 .pattern("sss")
                 .pattern("sis")
@@ -816,18 +808,10 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             "food/pomegranate_ice_cream", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
         wrap(shapeless(CRItems.POMEGRANATE_MILKSHAKE, 3)
                 .requires(Items.GLASS_BOTTLE, 3)
-                .requires(CRItemTags.FRUITS_POMEGRANATE)
-                .requires(NeapolitanItems.VANILLA_ICE_CREAM.get())
-                .requires(ForgeTags.MILK)
-                .unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
-            "food/pomegranate_milkshake", finished, enabled(CRItems.POMEGRANATE_MILKSHAKE), modLoaded("neapolitan"));
-        wrap(shapeless(CRItems.POMEGRANATE_MILKSHAKE, 3)
-                .requires(Items.GLASS_BOTTLE, 3)
                 .requires(CRItems.POMEGRANATE_ICE_CREAM.get())
-                .requires(NeapolitanItems.DRIED_VANILLA_PODS.get())
                 .requires(ForgeTags.MILK)
                 .unlockedBy("has_pomegranate_ice_cream", has(CRItems.POMEGRANATE_ICE_CREAM.get())),
-            "food/pomegranate_milkshake_from_ice_cream", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM), enabled(CRItems.POMEGRANATE_MILKSHAKE), modLoaded("neapolitan"));
+            "food/pomegranate_milkshake", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM), enabled(CRItems.POMEGRANATE_MILKSHAKE), modLoaded("neapolitan"));
         wrap(shaped(CRItems.POMEGRANATE_ICE_CREAM_BLOCK, 8)
                 .pattern("sss")
                 .pattern("sis")

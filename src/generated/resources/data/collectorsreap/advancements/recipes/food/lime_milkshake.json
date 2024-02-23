@@ -4,11 +4,13 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_lime": {
+          "has_lime_ice_cream": {
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:fruits/lime"
+                  "items": [
+                    "collectorsreap:lime_ice_cream"
+                  ]
                 }
               ]
             },
@@ -23,7 +25,7 @@
         },
         "requirements": [
           [
-            "has_lime",
+            "has_lime_ice_cream",
             "has_the_recipe"
           ]
         ],
@@ -37,6 +39,10 @@
         {
           "type": "forge:and",
           "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_ice_cream"
+            },
             {
               "type": "collectorsreap:enabled",
               "value": "lime_milkshake"

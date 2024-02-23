@@ -148,22 +148,18 @@ public class Nutrition {
         .build();
     public static final FoodProperties LIME_ICE_CREAM = (new FoodProperties.Builder())
         .nutrition(6).saturationMod(0.4F)
-        .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2), 1.0F)
         .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 1), 1.0F)
         .build();
     public static final FoodProperties LIME_MILKSHAKE = (new FoodProperties.Builder())
-        .nutrition(2).saturationMod(3.0F)
-        .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 1), 1.0F)
-        .alwaysEat().build();
+        .nutrition(2).saturationMod(1.5F).alwaysEat()
+        .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 1), 1.0F).build();
     public static final FoodProperties POMEGRANATE_ICE_CREAM = (new FoodProperties.Builder())
         .nutrition(6).saturationMod(0.4F)
-        .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 2), 1.0F)
         .effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1600, 1), 1.0F)
         .build();
     public static final FoodProperties POMEGRANATE_MILKSHAKE = (new FoodProperties.Builder())
-        .nutrition(2).saturationMod(3.0F)
-        .effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 800, 1), 1.0F)
-        .alwaysEat().build();
+        .nutrition(2).saturationMod(1.5F).alwaysEat()
+        .effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 800, 1), 1.0F).build();
     public static final FoodProperties STRAWBERRY_JAM_BUN = (new FoodProperties.Builder())
         .nutrition(6).saturationMod(0.5F)
         .effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 400, 0), 1.0F)
