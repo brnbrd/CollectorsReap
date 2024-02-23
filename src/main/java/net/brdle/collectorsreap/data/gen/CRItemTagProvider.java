@@ -66,7 +66,8 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.ALOE_GUMMY.get())
 			.add(CRItems.PASSIONFRUIT_GUMMY.get())
 			.add(CRItems.YUCCA_GUMMY.get());
-		this.tag(CRItemTags.COOKED_CRAB)
+		this.tag(CRItemTags.CRAB_MEAT)
+			.addOptionalTag(Util.rl("forge", "cooked_crab"))
 			.add(CRItems.CHIEFTAIN_CRAB_MEAT.get());
 		this.tag(CRItemTags.RAW_CLAM)
 			.add(CRItems.CLAM_MEAT.get());

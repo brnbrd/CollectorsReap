@@ -223,19 +223,19 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("has_crab_bucket", has(CRItems.CHIEFTAIN_CRAB_BUCKET.get())),
             "food/chieftain_crab", finished, enabled("chieftain_crab"));
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_LASAGNA.get(), 1, 200, 1.0F, Items.BOWL)
-                .addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB), 3)
+                .addIngredient(Ingredient.of(CRItemTags.CRAB_MEAT), 3)
                 .addIngredient(ForgeTags.DOUGH_WHEAT)
                 .addIngredient(ModItems.TOMATO_SAUCE.get())
                 .addIngredient(ForgeTags.MILK)
-                .unlockedBy("has_crab_meat", has(CRItemTags.COOKED_CRAB)),
+                .unlockedBy("has_crab_meat", has(CRItemTags.CRAB_MEAT)),
             "food/crab_lasagna", finished, enabled(CRItems.CRAB_LASAGNA));
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_NOODLES.get(), 1, 200, 1.0F, Items.BOWL)
-                .addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB), 2)
+                .addIngredient(Ingredient.of(CRItemTags.CRAB_MEAT), 2)
                 .addIngredient(ForgeTags.PASTA_RAW_PASTA)
                 .addIngredient(ForgeTags.MILK)
                 .addIngredient(ForgeTags.CROPS_TOMATO)
                 .addIngredient(ForgeTags.CROPS_ONION)
-                .unlockedBy("has_crab_meat", has(CRItemTags.COOKED_CRAB)),
+                .unlockedBy("has_crab_meat", has(CRItemTags.CRAB_MEAT)),
             "food/crab_noodles", finished, enabled(CRItems.CRAB_NOODLES));
         wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.BUTTERED_LEGS.get(), 1, 200, 1.0F, Items.BOWL)
                 .addIngredient(CRItems.CHIEFTAIN_LEG.get(), 3)
@@ -589,8 +589,8 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
         wrap(shapeless(CRItems.BIG_RICE_BALL)
                 .requires(Items.DRIED_KELP)
                 .requires(ModItems.COOKED_RICE.get(), 3)
-                .requires(CRItemTags.COOKED_CRAB)
-                .unlockedBy("has_cooked_crab", has(CRItemTags.COOKED_CRAB)),
+                .requires(CRItemTags.CRAB_MEAT)
+                .unlockedBy("has_cooked_crab", has(CRItemTags.CRAB_MEAT)),
             "food/big_rice_ball", finished, enabled(CRItems.BIG_RICE_BALL));
         wrap(shapeless(CRItems.LAND_AND_SEA_BURGER)
                 .requires(ForgeTags.BREAD)
