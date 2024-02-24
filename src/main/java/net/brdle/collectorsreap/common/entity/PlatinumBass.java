@@ -34,7 +34,7 @@ public class PlatinumBass extends AbstractFish {
 
 	@Override
 	public @NotNull ItemStack getBucketItemStack() {
-		return CRItems.TIGER_PRAWN_BUCKET.get().getDefaultInstance();
+		return CRItems.PLATINUM_BASS_BUCKET.get().getDefaultInstance();
 	}
 
 	private boolean isMovingInWater() {

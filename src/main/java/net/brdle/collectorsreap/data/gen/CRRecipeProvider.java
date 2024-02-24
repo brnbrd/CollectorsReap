@@ -71,11 +71,9 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             CRItems.POMEGRANATE_CAKE_SLICE.get(), 7),
             "cutting/pomegranate_cake", finished, enabled(CRItems.POMEGRANATE_CAKE), enabled(CRItems.POMEGRANATE_CAKE_SLICE));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.URCHIN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-            CRItems.UNI.get(), 1)
+            CRItems.UNI.get(), 2)
             .addResult(CRItems.URCHIN_TEST.get())
-            .addResultWithChance(CRItems.URCHIN_TEST.get(), 0.75F)
-            .addResult(CRItems.URCHIN_NEEDLE.get(), 5)
-            .addResultWithChance(CRItems.URCHIN_NEEDLE.get(), 0.5F, 2),
+            .addResult(CRItems.URCHIN_NEEDLE.get(), 6),
             "cutting/urchin", finished, enabled(CRItems.URCHIN), enabled(CRItems.UNI));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PLATINUM_BASS.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
             CRItems.PLATINUM_BASS_SLICE.get(), 3)

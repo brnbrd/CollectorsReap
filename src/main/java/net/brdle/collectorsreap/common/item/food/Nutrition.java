@@ -5,7 +5,6 @@ import net.brdle.collectorsreap.compat.ModCompat;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.Foods;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class Nutrition {
@@ -234,8 +233,45 @@ public class Nutrition {
         .nutrition(2).saturationMod(0.1F).effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.75F).build();
     public static final FoodProperties COOKED_TIGER_PRAWN = (new FoodProperties.Builder())
         .nutrition(5).saturationMod(0.6F).build();
+    public static final FoodProperties PRAWN_ROLL = (new FoodProperties.Builder())
+        .nutrition(7).saturationMod(0.5F).build();
+    public static final FoodProperties SALMON_WRAPPED_PRAWN = (new FoodProperties.Builder())
+        .nutrition(7).saturationMod(0.5F).build();
+    public static final FoodProperties PRAWN_PO_BOY = (new FoodProperties.Builder())
+        .nutrition(10).saturationMod(0.5F).build();
+    public static final FoodProperties PRAWN_STEW = (new FoodProperties.Builder())
+        .nutrition(10).saturationMod(0.8F).build();
+    public static final FoodProperties PRAWN_CEVICHE = (new FoodProperties.Builder())
+        .nutrition(10).saturationMod(0.8F).build();
+    public static final FoodProperties PRAWN_NOODLES = (new FoodProperties.Builder())
+        .nutrition(10).saturationMod(0.8F).build();
     public static final FoodProperties UNI = (new FoodProperties.Builder())
         .nutrition(5).saturationMod(0.6F).build();
-    public static final FoodProperties PLATINUM_BASS = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1F).build();
-    public static final FoodProperties COOKED_PLATINUM_BASS = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.8F).build();
+    public static final FoodProperties UNI_ROLL = (new FoodProperties.Builder())
+        .nutrition(7).saturationMod(0.5F).build();
+    public static final FoodProperties PLATINUM_BASS = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.1F).build();
+    public static final FoodProperties COOKED_PLATINUM_BASS = (new FoodProperties.Builder()).nutrition(7).saturationMod(0.8F).build();
+    public static final FoodProperties PLATINUM_BASS_HEAD = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1F).build();
+    public static final FoodProperties COOKED_PLATINUM_BASS_HEAD = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.5F).build();
+    public static final FoodProperties PLATINUM_BASS_SLICE = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1F).build();
+    public static final FoodProperties COOKED_PLATINUM_BASS_SLICE = (new FoodProperties.Builder()).nutrition(6).saturationMod(0.8F).build();
+    public static final FoodProperties PLATINUM_BASS_STEW = (new FoodProperties.Builder()).nutrition(14).saturationMod(1.0F).build();
+    public static final FoodProperties FISH_MIX = (new FoodProperties.Builder()).nutrition(14).saturationMod(1.0F).build();
+    public static final FoodProperties CHIEFTAIN_CLAW = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.5F).build();
+    public static final FoodProperties CHIEFTAIN_LEG = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).build();
+    public static final FoodProperties CHIEFTAIN_CRAB_MEAT = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.5F).build();
+    public static final FoodProperties CRAB_MISO = (new FoodProperties.Builder()).nutrition(4).saturationMod(1.0F).build();
+    public static final FoodProperties CRAB_NOODLES = (new FoodProperties.Builder()).nutrition(10).saturationMod(1.0F).build();
+    public static final FoodProperties CRAB_LASAGNA = (new FoodProperties.Builder()).nutrition(10).saturationMod(1.0F).build();
+    public static final FoodProperties BUTTERED_LEGS = (new FoodProperties.Builder()).nutrition(10).saturationMod(1.0F).build();
+    public static final FoodProperties BIG_RICE_BALL = (new FoodProperties.Builder()).nutrition(9).saturationMod(0.6F).build();
+    public static final FoodProperties LAND_AND_SEA_BURGER = (new FoodProperties.Builder()).nutrition(10).saturationMod(1.0F).build();
+    public static final FoodProperties CLAM_MEAT = (new FoodProperties.Builder())
+        .nutrition(2).saturationMod(0.3F).build();
+    public static final FoodProperties CLAM_ROLL = (new FoodProperties.Builder())
+        .nutrition(7).saturationMod(0.5F).build();
+    public static final FoodProperties CLAM_CHOWDER = (new FoodProperties.Builder()).nutrition(10).saturationMod(1.0F).build();
+    public static final FoodProperties CLAM_PASTA = (new FoodProperties.Builder()).nutrition(10).saturationMod(1.0F).build();
+    public static final FoodProperties CLAM_MEATBALL_STEW = (new FoodProperties.Builder()).nutrition(10).saturationMod(1.0F).build();
+    public static final FoodProperties SEAFOOD_BURRITO = (new FoodProperties.Builder()).nutrition(12).saturationMod(1.0F).build();
 }

@@ -1,4 +1,4 @@
-// 1.19.2	2024-02-23T13:28:00.6539264	Recipes
+// 1.19.2	2024-02-23T15:27:40.2957415	Recipes
 ffff41205e9b83cc8ab9d38ce39c06fa7e8f6ae7 data/collectorsreap/advancements/recipes/cutting/chieftain_claw.json
 51d613fd6d246740518e1ed57afea6e6deea518e data/collectorsreap/advancements/recipes/cutting/chieftain_crab.json
 9b0a0bcd6fcfaa47533acece578c274c902901bf data/collectorsreap/advancements/recipes/cutting/chieftain_legs.json
@@ -145,7 +145,7 @@ d1daf56f17963efde267a7641d1271472e07e008 data/collectorsreap/recipes/cutting/lim
 774a780fe53a6057a36f2dd295e58fca08fa6ece data/collectorsreap/recipes/cutting/pomegranate_cake.json
 55c4077cd29190ec1ca4cb8b58f98f90d0151cf0 data/collectorsreap/recipes/cutting/portobello_colony.json
 4ac3dbe9d0de280e9d6bfc344903f5fed0e83ad3 data/collectorsreap/recipes/cutting/portobello_quiche.json
-3d4bfb1cbe6f228a792cdcf87b5eb7a0ac8efd6f data/collectorsreap/recipes/cutting/urchin.json
+63391b9ea4627c09578afb7f3471fc83b43e5edb data/collectorsreap/recipes/cutting/urchin.json
 cb89406a14d6ae78f71915c2d49a1f58cb30fcb2 data/collectorsreap/recipes/food/berry_limeade.json
 4f40ff025f76330370603ee075ec5110ad13b879 data/collectorsreap/recipes/food/berry_limeade_from_limeade.json
 2e666d23db92aebfd8a59400152414ba626f1be8 data/collectorsreap/recipes/food/big_rice_ball.json

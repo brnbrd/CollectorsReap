@@ -1,6 +1,5 @@
 package net.brdle.collectorsreap.common.world;
 
-import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.PomegranateBushBlock;
