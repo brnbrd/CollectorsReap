@@ -89,6 +89,12 @@ public class CRBlockStateProvider extends BlockStateProvider {
         this.candleCakeBlock(CRBlocks.BLACK_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
         this.simpleBlock(CRBlocks.LIME_ICE_CREAM_BLOCK.get());
         this.simpleBlock(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get());
+        this.simpleBlock(CRBlocks.URCHIN_TEST_BLOCK.get(), this.models().cubeBottomTop(
+            "urchin_test_block",
+            resourceBlock("urchin_test_block_side"),
+            resourceBlock("urchin_test_block_bottom"),
+            resourceBlock("urchin_test_block_top")
+        ));
     }
 
     public void crateBlock(Block block, String cropName) {

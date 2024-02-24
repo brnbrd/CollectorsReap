@@ -1,4 +1,4 @@
-// 1.19.2	2024-02-23T14:25:30.9343545	LootTables
+// 1.19.2	2024-02-23T17:18:39.1224048	LootTables
 a00f50d4e2270ceab7811af1795f92ed69f20746 data/collectorsreap/loot_tables/blocks/black_candle_lime_cake.json
 a00f50d4e2270ceab7811af1795f92ed69f20746 data/collectorsreap/loot_tables/blocks/black_candle_pomegranate_cake.json
 b32c88c147e66e7868d5080dad3b3f28768c5c47 data/collectorsreap/loot_tables/blocks/blue_candle_lime_cake.json
@@ -44,6 +44,7 @@ c3af8c240827287b73b78b78ae57bb99c47e0007 data/collectorsreap/loot_tables/blocks/
 c3af8c240827287b73b78b78ae57bb99c47e0007 data/collectorsreap/loot_tables/blocks/red_candle_pomegranate_cake.json
 32a1e2b6326a30e87dbd8a2ce2f1243c7f416f25 data/collectorsreap/loot_tables/blocks/small_lime_bush.json
 592962ef4637ff7d06afc4b41761d584c102cc0a data/collectorsreap/loot_tables/blocks/small_pomegranate_bush.json
+e268e392e183953c3fec3d88584bcacea5d338fd data/collectorsreap/loot_tables/blocks/urchin_test_block.json
 ace4cf712096409839181255ea6c746b8721a02c data/collectorsreap/loot_tables/blocks/white_candle_lime_cake.json
 ace4cf712096409839181255ea6c746b8721a02c data/collectorsreap/loot_tables/blocks/white_candle_pomegranate_cake.json
 49669323f7193e40904980ada4c932301750883e data/collectorsreap/loot_tables/blocks/yellow_candle_lime_cake.json

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "collectorsreap:block/urchin_test_block_bottom",
+    "side": "collectorsreap:block/urchin_test_block_side",
+    "top": "collectorsreap:block/urchin_test_block_top"
+  }
+}

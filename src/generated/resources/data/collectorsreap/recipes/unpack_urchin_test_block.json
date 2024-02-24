@@ -1,0 +1,25 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "urchin_test"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+          {
+            "item": "collectorsreap:urchin_test_block"
+          }
+        ],
+        "result": {
+          "count": 9,
+          "item": "collectorsreap:urchin_test"
+        }
+      }
+    }
+  ]
+}

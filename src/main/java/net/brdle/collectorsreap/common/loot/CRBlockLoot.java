@@ -63,6 +63,7 @@ public class CRBlockLoot extends BlockLoot {
         this.dropSelf(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get());
         this.dropOther(CRBlocks.LIME_MILKSHAKE_CAULDRON.get(), Blocks.CAULDRON);
         this.dropOther(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON.get(), Blocks.CAULDRON);
+        this.dropSelf(CRBlocks.URCHIN_TEST_BLOCK.get());
     }
 
     @Override

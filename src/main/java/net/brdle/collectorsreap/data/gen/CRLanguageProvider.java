@@ -92,6 +92,7 @@ public class CRLanguageProvider extends LanguageProvider {
         addBlock(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK, "Pomegranate Ice Cream Block");
         addBlock(CRBlocks.LIME_MILKSHAKE_CAULDRON, "Lime Milkshake Cauldron");
         addBlock(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON, "Pomegranate Milkshake Cauldron");
+        addBlock(CRBlocks.URCHIN_TEST_BLOCK, "Urchin Test Block");
     }
 
     private void addItems() {

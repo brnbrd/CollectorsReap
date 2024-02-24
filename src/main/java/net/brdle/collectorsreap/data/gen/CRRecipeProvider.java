@@ -760,6 +760,17 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(CRItems.POMEGRANATE_CAKE_SLICE.get(), 7)
                 .unlockedBy("has_pomegranate_cake_slice", has(CRItems.POMEGRANATE_CAKE_SLICE.get())),
             "food/pomegranate_cake_from_slices", finished, enabled(CRItems.POMEGRANATE_CAKE), enabled(CRItems.POMEGRANATE_CAKE_SLICE));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.URCHIN_TEST_BLOCK.get())
+                .pattern("xxx")
+                .pattern("xxx")
+                .pattern("xxx")
+                .define('x', CRItems.URCHIN_TEST.get())
+                .unlockedBy("has_urchin_test", has(CRItems.URCHIN_TEST.get())),
+            "urchin_test_block", finished, enabled("urchin_test"));
+        wrap(ShapelessRecipeBuilder.shapeless(CRItems.URCHIN_TEST.get(), 9)
+            .requires(CRItems.URCHIN_TEST_BLOCK.get(), 1)
+            .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            "unpack_urchin_test_block", finished, enabled("urchin_test"));
 
         // Kettle
         wrap(KettleRecipeBuilder.kettleRecipe(CRItems.LIME_GREEN_TEA.get(), 1, 2400, true, 0.35F, Items.GLASS_BOTTLE)

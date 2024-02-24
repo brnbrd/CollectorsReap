@@ -296,6 +296,7 @@ public class CRItems extends ModItems {
     public static final RegistryObject<Item> BLACK_TEA_GUMMY = registerGummy("black_tea", Nutrition.BLACK_TEA_GUMMY, "farmersrespite");
     public static final RegistryObject<Item> COFFEE_GUMMY = registerGummy("coffee", Nutrition.COFFEE_GUMMY, "farmersrespite");
 
+    public static final RegistryObject<Item> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block", CRBlocks.URCHIN_TEST_BLOCK);
 
     // Sets Creative Tab
     public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {

@@ -104,6 +104,9 @@ public class CRBlocks {
                 CauldronInteraction.newInteractionMap())
     );
 
+    public static final RegistryObject<Block> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block",
+        () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GILDED_BLACKSTONE)));
+
     public static RegistryObject<Block> registerBlock(String name, Supplier<Block> block) {
         return BLOCKS.register(name, block);
     }
