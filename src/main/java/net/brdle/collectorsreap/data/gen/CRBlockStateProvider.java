@@ -95,6 +95,8 @@ public class CRBlockStateProvider extends BlockStateProvider {
             resourceBlock("urchin_test_block_bottom"),
             resourceBlock("urchin_test_block_top")
         ));
+        this.simpleBlock(CRBlocks.URCHIN_TEST_BRICKS.get());
+        this.simpleBlock(CRBlocks.URCHIN_TEST_TILES.get());
     }
 
     public void crateBlock(Block block, String cropName) {

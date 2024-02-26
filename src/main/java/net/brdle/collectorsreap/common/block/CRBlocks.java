@@ -106,6 +106,10 @@ public class CRBlocks {
 
     public static final RegistryObject<Block> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block",
         () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GILDED_BLACKSTONE)));
+    public static final RegistryObject<Block> URCHIN_TEST_BRICKS = registerBlock("urchin_test_bricks",
+        () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GILDED_BLACKSTONE)));
+    public static final RegistryObject<Block> URCHIN_TEST_TILES = registerBlock("urchin_test_tiles",
+        () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.GILDED_BLACKSTONE)));
 
     public static RegistryObject<Block> registerBlock(String name, Supplier<Block> block) {
         return BLOCKS.register(name, block);

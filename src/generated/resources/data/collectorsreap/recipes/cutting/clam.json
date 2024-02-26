@@ -30,8 +30,12 @@
             "item": "collectorsreap:clam_meat"
           },
           {
-            "chance": 0.05,
-            "item": "collectorsreap:pearl"
+            "chance": 0.5,
+            "item": "collectorsreap:clam_meat"
+          },
+          {
+            "chance": 0.1,
+            "item": "collectorsreap:lunar_pearl"
           }
         ],
         "tool": {

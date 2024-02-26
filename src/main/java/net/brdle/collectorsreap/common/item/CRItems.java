@@ -218,7 +218,7 @@ public class CRItems extends ModItems {
         () -> new MobBucketItem(CREntities.CLAM, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1).tab(FarmersDelight.CREATIVE_TAB)));
     public static final RegistryObject<Item> CLAM = registerItem("clam",
         () -> new Item((new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
-    public static final RegistryObject<Item> PEARL = registerItem("pearl",
+    public static final RegistryObject<Item> LUNAR_PEARL = registerItem("lunar_pearl",
         () -> new Item((new Item.Properties().tab(FarmersDelight.CREATIVE_TAB))));
     public static final RegistryObject<Item> CLAM_MEAT = registerFood("clam_meat", Nutrition.CLAM_MEAT);
     public static final RegistryObject<Item> CLAM_ROLL = registerFood("clam_roll", Nutrition.CLAM_ROLL);
@@ -297,6 +297,8 @@ public class CRItems extends ModItems {
     public static final RegistryObject<Item> COFFEE_GUMMY = registerGummy("coffee", Nutrition.COFFEE_GUMMY, "farmersrespite");
 
     public static final RegistryObject<Item> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block", CRBlocks.URCHIN_TEST_BLOCK);
+    public static final RegistryObject<Item> URCHIN_TEST_BRICKS = registerBlock("urchin_test_bricks", CRBlocks.URCHIN_TEST_BRICKS);
+    public static final RegistryObject<Item> URCHIN_TEST_TILES = registerBlock("urchin_test_tiles", CRBlocks.URCHIN_TEST_TILES);
 
     // Sets Creative Tab
     public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {

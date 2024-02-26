@@ -1,0 +1,21 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "urchin_test"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:stonecutting",
+        "count": 1,
+        "ingredient": {
+          "item": "collectorsreap:urchin_test_block"
+        },
+        "result": "collectorsreap:urchin_test_tiles"
+      }
+    }
+  ]
+}

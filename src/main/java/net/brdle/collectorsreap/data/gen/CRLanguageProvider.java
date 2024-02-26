@@ -28,7 +28,7 @@ public class CRLanguageProvider extends LanguageProvider {
         addEntityType(CREntities.URCHIN, "Urchin");
         addEntityType(CREntities.PLATINUM_BASS, "Platinum Bass");
         addEntityType(CREntities.CHIEFTAIN_CRAB, "Chieftain Crab");
-        addEntityType(CREntities.CLAM, "Clam");
+        addEntityType(CREntities.CLAM, "Tide Clam");
     }
 
     private void addText() {
@@ -93,6 +93,8 @@ public class CRLanguageProvider extends LanguageProvider {
         addBlock(CRBlocks.LIME_MILKSHAKE_CAULDRON, "Lime Milkshake Cauldron");
         addBlock(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON, "Pomegranate Milkshake Cauldron");
         addBlock(CRBlocks.URCHIN_TEST_BLOCK, "Urchin Test Block");
+        addBlock(CRBlocks.URCHIN_TEST_BRICKS, "Urchin Test Bricks");
+        addBlock(CRBlocks.URCHIN_TEST_TILES, "Urchin Test Tiles");
     }
 
     private void addItems() {
@@ -198,10 +200,10 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.CRAB_LASAGNA, "Crab Lasagna");
         addItem(CRItems.BUTTERED_LEGS, "Buttered Legs");
         addItem(CRItems.BIG_RICE_BALL, "Big Rice Ball");
-        addItem(CRItems.PEARL, "Pearl");
-        addItem(CRItems.CLAM_SPAWN_EGG, "Spawn Clam");
-        addItem(CRItems.CLAM_BUCKET, "Bucket of Clam");
-        addItem(CRItems.CLAM, "Clam");
+        addItem(CRItems.LUNAR_PEARL, "Lunar Pearl");
+        addItem(CRItems.CLAM_SPAWN_EGG, "Spawn Tide Clam");
+        addItem(CRItems.CLAM_BUCKET, "Bucket of Tide Clam");
+        addItem(CRItems.CLAM, "Tide Clam");
         addItem(CRItems.CLAM_MEAT, "Clam Meat");
         addItem(CRItems.CLAM_ROLL, "Clam Roll");
         addItem(CRItems.CLAM_CHOWDER, "Clam Chowder");

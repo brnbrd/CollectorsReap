@@ -33,8 +33,8 @@ public class ClamModel extends HierarchicalModel<Clam> {
 	@Override
 	public void setupAnim(@NotNull Clam entity, float limbSwing, float limbSwingAmount, float age, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
-		this.animate(entity.closedAnimationState, ClamAnimation.CLAM_CLOSED, age);
-		//this.animate(entity.openAnimationState, ClamAnimation.CLAM_OPEN, age);
+		this.animate(entity.closedAnimationState, ClamAnimation.CLAM_IDLE, age);
+		this.animate(entity.openAnimationState, ClamAnimation.CLAM_IDLE, age);
 	}
 
 	@Override

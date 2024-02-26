@@ -1,6 +1,5 @@
 package net.brdle.collectorsreap.data.gen;
 
-import com.teamabnormals.neapolitan.core.registry.NeapolitanItems;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
@@ -80,9 +79,9 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             .addResult(CRItems.PLATINUM_BASS_HEAD.get()),
             "cutting/platinum_bass", finished, enabled(CRItems.PLATINUM_BASS), enabled(CRItems.PLATINUM_BASS_SLICE));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CHIEFTAIN_CRAB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-            CRItems.CHIEFTAIN_CLAW.get(), 2)
-            .addResult(CRItems.CHIEFTAIN_LEG.get(), 8)
-            .addResult(CRItems.CHIEFTAIN_CRAB_MEAT.get(), 4)
+            CRItems.CHIEFTAIN_CLAW.get(), 1)
+            .addResult(CRItems.CHIEFTAIN_LEG.get(), 4)
+            .addResult(CRItems.CHIEFTAIN_CRAB_MEAT.get(), 2)
             .addResult(CRItems.CRAB_MISO.get()),
             "cutting/chieftain_crab", finished, enabled(CRItems.CHIEFTAIN_CRAB));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CHIEFTAIN_CLAW.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
@@ -93,7 +92,8 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             "cutting/chieftain_legs", finished, enabled(CRItems.CHIEFTAIN_LEG), enabled(CRItems.CHIEFTAIN_CRAB_MEAT));
         wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CLAM.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
             CRItems.CLAM_MEAT.get(), 2)
-            .addResultWithChance(CRItems.PEARL.get(), 0.05f),
+            .addResultWithChance(CRItems.CLAM_MEAT.get(), 0.5f)
+            .addResultWithChance(CRItems.LUNAR_PEARL.get(), 0.1f),
             "cutting/clam", finished, enabled(CRItems.CLAM), enabled(CRItems.CLAM_MEAT));
 
         // Cooking Pot
@@ -771,6 +771,30 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
             .requires(CRItems.URCHIN_TEST_BLOCK.get(), 1)
             .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
             "unpack_urchin_test_block", finished, enabled("urchin_test"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.URCHIN_TEST_BRICKS.get(), 4)
+                .pattern("xx")
+                .pattern("xx")
+                .define('x', CRItems.URCHIN_TEST_BLOCK.get())
+                .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            "urchin_test_bricks", finished, enabled("urchin_test"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.URCHIN_TEST_TILES.get(), 4)
+                .pattern("xx")
+                .pattern("xx")
+                .define('x', CRItems.URCHIN_TEST_BRICKS.get())
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            "urchin_test_tiles", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()),
+                CRItems.URCHIN_TEST_BRICKS.get())
+                .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_bricks", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()),
+                CRItems.URCHIN_TEST_TILES.get())
+                .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tiles", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()),
+                CRItems.URCHIN_TEST_TILES.get())
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tiles_from_bricks", finished, enabled("urchin_test"));
 
         // Kettle
         wrap(KettleRecipeBuilder.kettleRecipe(CRItems.LIME_GREEN_TEA.get(), 1, 2400, true, 0.35F, Items.GLASS_BOTTLE)
@@ -855,6 +879,23 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
         cond.addRecipe(recipe[0])
           .generateAdvancement()
           .build(consumer, loc);
+    }
+
+    private void wrap(SingleItemRecipeBuilder builder, String modid, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
+        ResourceLocation loc = Util.rl(modid, name);
+        ConditionalRecipe.Builder cond;
+        if (conds.length > 1) {
+            cond = ConditionalRecipe.builder().addCondition(and(conds));
+        } else if (conds.length == 1) {
+            cond = ConditionalRecipe.builder().addCondition(conds[0]);
+        } else {
+            cond = ConditionalRecipe.builder();
+        }
+        FinishedRecipe[] recipe = new FinishedRecipe[1];
+        builder.save(f -> recipe[0] = f, loc);
+        cond.addRecipe(recipe[0])
+            .generateAdvancement()
+            .build(consumer, loc);
     }
 
     private void wrap(UpgradeRecipeBuilder builder, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
