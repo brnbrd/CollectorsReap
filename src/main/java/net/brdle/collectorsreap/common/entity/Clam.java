@@ -107,6 +107,10 @@ public class Clam extends WaterCreature {
 	}
 
 	@Override
+	public void knockback(double pStrength, double pX, double pZ) {
+	}
+
+	@Override
 	public boolean canSwimInFluidType(FluidType type) {
 		return false;
 	}

@@ -232,7 +232,7 @@ public class CRItems extends ModItems {
         () -> new ConsumableItem(bowlFoodItem(
             Nutrition.CLAM_MEATBALL_STEW), false));
 
-    public static final RegistryObject<Item> SEAFOOD_BURRITO = registerFood("seafood_burrito", Nutrition.SEAFOOD_BURRITO);
+    public static final RegistryObject<Item> SEA_WRAP = registerFood("sea_wrap", Nutrition.SEA_WRAP);
 
     // Nether's Delight Compat
     public static final RegistryObject<Item> GLAZED_STRIDER = registerItem("glazed_strider",

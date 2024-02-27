@@ -37,6 +37,7 @@ public class Urchin extends WaterCreature {
 		this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 0.5D, 40));
 	}
 
+
 	@Override
 	public @NotNull ItemStack getBucketItemStack() {
 		return CRItems.URCHIN_BUCKET.get().getDefaultInstance();
@@ -45,6 +46,10 @@ public class Urchin extends WaterCreature {
 	@Override
 	public boolean removeWhenFarAway(double pDistanceToClosestPlayer) {
 		return false;
+	}
+
+	@Override
+	public void knockback(double pStrength, double pX, double pZ) {
 	}
 
 	@Override

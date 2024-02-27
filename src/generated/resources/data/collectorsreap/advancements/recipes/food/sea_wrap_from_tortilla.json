@@ -18,7 +18,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/seafood_burrito_from_tortilla"
+              "recipe": "collectorsreap:food/sea_wrap_from_tortilla"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -31,7 +31,7 @@
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/seafood_burrito_from_tortilla"
+            "collectorsreap:food/sea_wrap_from_tortilla"
           ]
         }
       },
@@ -41,7 +41,7 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "seafood_burrito"
+              "value": "sea_wrap"
             },
             {
               "type": "forge:not",

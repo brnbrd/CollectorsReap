@@ -209,6 +209,6 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.CLAM_CHOWDER, "Clam Chowder");
         addItem(CRItems.CLAM_PASTA, "Pasta with Clams");
         addItem(CRItems.CLAM_MEATBALL_STEW, "Clam and Meatball Stew");
-        addItem(CRItems.SEAFOOD_BURRITO, "Seafood Burrito");
+        addItem(CRItems.SEA_WRAP, "Sea Wrap");
     }
 }

@@ -18,9 +18,9 @@ public class AddSpawnBiomeModifier implements BiomeModifier {
 	@Override
 	public void modify(Holder<Biome> biome, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder) {
 		if (phase.equals(Phase.ADD)) {
-			addMobSpawn(builder, biome, CRBiomeTags.PLATINUM_BASS_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.PLATINUM_BASS.get(), 7, 2, 4);
-			addMobSpawn(builder, biome, CRBiomeTags.TIGER_PRAWN_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.TIGER_PRAWN.get(), 6, 2, 4);
-			addMobSpawn(builder, biome, CRBiomeTags.URCHIN_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.URCHIN.get(), 7, 2, 4);
+			addMobSpawn(builder, biome, CRBiomeTags.PLATINUM_BASS_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.PLATINUM_BASS.get(), 7, 2, 5);
+			addMobSpawn(builder, biome, CRBiomeTags.TIGER_PRAWN_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.TIGER_PRAWN.get(), 6, 2, 5);
+			addMobSpawn(builder, biome, CRBiomeTags.URCHIN_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.URCHIN.get(), 8, 3, 7);
 			addMobSpawn(builder, biome, CRBiomeTags.CLAM_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.CLAM.get(), 7, 2, 4);
 			addMobSpawn(builder, biome, CRBiomeTags.CHIEFTAIN_CRAB_SPAWNS, MobCategory.WATER_CREATURE, CREntities.CHIEFTAIN_CRAB.get(), 6, 2, 4);
 			addMobSpawn(builder, biome, BiomeTags.IS_BEACH, MobCategory.CREATURE, CREntities.CHIEFTAIN_CRAB.get(), 7, 2, 4);

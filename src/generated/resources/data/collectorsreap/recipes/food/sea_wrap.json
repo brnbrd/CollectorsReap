@@ -8,14 +8,11 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "seafood_burrito"
+              "value": "sea_wrap"
             },
             {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:tag_empty",
-                "tag": "forge:tortilla"
-              }
+              "type": "forge:tag_empty",
+              "tag": "forge:tortilla"
             }
           ]
         }
@@ -24,7 +21,7 @@
         "type": "minecraft:crafting_shapeless",
         "ingredients": [
           {
-            "tag": "forge:tortilla"
+            "tag": "forge:bread"
           },
           {
             "item": "collectorsreap:chieftain_claw"
@@ -49,7 +46,7 @@
           }
         ],
         "result": {
-          "item": "collectorsreap:seafood_burrito"
+          "item": "collectorsreap:sea_wrap"
         }
       }
     }

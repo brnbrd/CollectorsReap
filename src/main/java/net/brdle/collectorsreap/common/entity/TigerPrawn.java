@@ -61,6 +61,14 @@ public class TigerPrawn extends WaterCreature {
 		super.tick();
 	}
 
+	@Override
+	public void aiStep() {
+		if (this.isInWater() && !this.isOnGround()) {
+			this.sinkInFluid(ForgeMod.WATER_TYPE.get());
+		}
+		super.aiStep();
+	}
+
 	static class PrawnMoveControl extends MoveControl {
 		private final TigerPrawn prawn;
 
@@ -71,9 +79,6 @@ public class TigerPrawn extends WaterCreature {
 
 		@Override
 		public void tick() {
-			if (this.prawn.isEyeInFluidType(ForgeMod.WATER_TYPE.get())) {
-				this.prawn.setDeltaMovement(this.prawn.getDeltaMovement().add(0.0D, 0.005D, 0.0D));
-			}
 			if (this.operation == MoveControl.Operation.MOVE_TO && !this.prawn.getNavigation().isDone()) {
 				float f = (float)(this.speedModifier * this.prawn.getAttributeValue(Attributes.MOVEMENT_SPEED));
 				this.prawn.setSpeed(Mth.lerp(0.125F, this.prawn.getSpeed(), f));

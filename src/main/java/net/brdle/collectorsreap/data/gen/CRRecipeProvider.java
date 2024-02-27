@@ -652,7 +652,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(Items.BOWL)
                 .unlockedBy("has_slice", has(CRItems.PLATINUM_BASS_SLICE.get())),
             "food/fish_mix", finished, enabled(CRItems.FISH_MIX));
-        wrap(shapeless(CRItems.SEAFOOD_BURRITO)
+        wrap(shapeless(CRItems.SEA_WRAP)
                 .requires(ForgeTags.BREAD)
                 .requires(CRItems.CHIEFTAIN_CLAW.get())
                 .requires(CRItemTags.RAW_CLAM)
@@ -662,8 +662,8 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(Items.DRIED_KELP)
                 .requires(ModItems.COOKED_RICE.get())
                 .unlockedBy("has_claw", has(CRItems.CHIEFTAIN_CLAW.get())),
-            "food/seafood_burrito", finished, enabled(CRItems.SEAFOOD_BURRITO), tagEmpty(CRItemTags.TORTILLA));
-        wrap(shapeless(CRItems.SEAFOOD_BURRITO)
+            "food/sea_wrap", finished, enabled(CRItems.SEA_WRAP), tagEmpty(CRItemTags.TORTILLA));
+        wrap(shapeless(CRItems.SEA_WRAP)
                 .requires(CRItemTags.TORTILLA)
                 .requires(CRItems.CHIEFTAIN_CLAW.get())
                 .requires(CRItemTags.RAW_CLAM)
@@ -673,7 +673,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .requires(Items.DRIED_KELP)
                 .requires(ModItems.COOKED_RICE.get())
                 .unlockedBy("has_claw", has(CRItems.CHIEFTAIN_CLAW.get())),
-            "food/seafood_burrito_from_tortilla", finished, enabled(CRItems.SEAFOOD_BURRITO), not(tagEmpty(CRItemTags.TORTILLA)));
+            "food/sea_wrap_from_tortilla", finished, enabled(CRItems.SEA_WRAP), not(tagEmpty(CRItemTags.TORTILLA)));
 
         // Shaped Crafting
         wrap(shaped(CRItems.PORTOBELLO_QUICHE)
