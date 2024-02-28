@@ -1,0 +1,30 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "urchin_test"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "x": {
+            "item": "collectorsreap:urchin_test_bricks"
+          }
+        },
+        "pattern": [
+          "x  ",
+          "xx ",
+          "xxx"
+        ],
+        "result": {
+          "count": 4,
+          "item": "collectorsreap:urchin_test_brick_stairs"
+        }
+      }
+    }
+  ]
+}

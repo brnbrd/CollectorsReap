@@ -1,0 +1,46 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "collectorsreap:stonecutting/urchin_test_tile_stairs_from_bricks"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          },
+          "has_urchin_test_bricks": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "collectorsreap:urchin_test_bricks"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          }
+        },
+        "requirements": [
+          [
+            "has_urchin_test_bricks",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "collectorsreap:stonecutting/urchin_test_tile_stairs_from_bricks"
+          ]
+        }
+      },
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "urchin_test"
+        }
+      ]
+    }
+  ]
+}

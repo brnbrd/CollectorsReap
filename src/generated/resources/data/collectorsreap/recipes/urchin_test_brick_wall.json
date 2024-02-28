@@ -1,0 +1,29 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "urchin_test"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "key": {
+          "x": {
+            "item": "collectorsreap:urchin_test_bricks"
+          }
+        },
+        "pattern": [
+          "xxx",
+          "xxx"
+        ],
+        "result": {
+          "count": 6,
+          "item": "collectorsreap:urchin_test_brick_wall"
+        }
+      }
+    }
+  ]
+}
