@@ -203,8 +203,8 @@ public class LimeBushBlock extends CropBlock implements IFruiting {
 	}
 
 	public static void placeAt(LevelAccessor pLevel, BlockState pState, BlockPos pPos, int pFlags) {
-		pLevel.setBlock(pPos, pState.setValue(AGE, 0).setValue(HALF, DoubleBlockHalf.LOWER), pFlags);
-		pLevel.setBlock(pPos.above(), pState.setValue(AGE, 0).setValue(HALF, DoubleBlockHalf.UPPER), pFlags);
+		pLevel.setBlock(pPos, pState.setValue(AGE, MAX_AGE).setValue(HALF, DoubleBlockHalf.LOWER), pFlags);
+		pLevel.setBlock(pPos.above(), pState.setValue(AGE, MAX_AGE).setValue(HALF, DoubleBlockHalf.UPPER), pFlags);
 	}
 
 	@Override
