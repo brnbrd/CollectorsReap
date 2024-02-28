@@ -24,7 +24,6 @@ public class Clam extends WaterCreature {
 	public static final int VARIANTS = 4;
 	private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Clam.class, EntityDataSerializers.INT);
 	public final AnimationState openAnimationState = new AnimationState();
-	public final AnimationState closedAnimationState = new AnimationState();
 
 	public Clam(EntityType<? extends WaterCreature> type, Level level) {
 		super(type, level);
@@ -141,11 +140,9 @@ public class Clam extends WaterCreature {
 		super.tick();
 		if (this.level.isClientSide()) {
 			if (this.isInWater()) {
-				this.openAnimationState.stop();
-				this.closedAnimationState.startIfStopped(this.tickCount);
-			} else {
-				this.closedAnimationState.stop();
 				this.openAnimationState.startIfStopped(this.tickCount);
+			} else {
+				this.openAnimationState.stop();
 			}
 		}
 	}

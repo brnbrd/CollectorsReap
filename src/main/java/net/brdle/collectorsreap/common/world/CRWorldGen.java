@@ -2,6 +2,7 @@ package net.brdle.collectorsreap.common.world;
 
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
+import net.brdle.collectorsreap.common.block.LimeBushBlock;
 import net.brdle.collectorsreap.common.block.PomegranateBushBlock;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.item.CRItems;
@@ -58,8 +59,8 @@ public class CRWorldGen extends WildCropGeneration {
 
 		FEATURE_PATCH_LIME_BUSH = register(Util.cr("patch_lime_bush"),
 			RandomPatchFeature.RANDOM_PATCH,
-			bushConfig(CRBlocks.LIME_BUSH.get().defaultBlockState(),
-				15, 5, 3, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.DIRT))
+			bushConfig(CRBlocks.LIME_BUSH.get().defaultBlockState().setValue(LimeBushBlock.AGE, LimeBushBlock.MAX_AGE),
+				18, 5, 3, BlockPredicate.matchesTag(BLOCK_BELOW, BlockTags.DIRT))
 		);
 
 		PATCH_LIME_BUSH = registerConditionalPlacement(Util.cr("patch_lime_bush"),

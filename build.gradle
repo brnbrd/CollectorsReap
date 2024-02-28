@@ -102,6 +102,7 @@ dependencies {
     compileOnly fg.deobf("curse.maven:seasonals-416471:${seasonals_version}")
     compileOnly fg.deobf("curse.maven:respiteful-836471:${respiteful_version}")
     compileOnly fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+    runtimeOnly fg.deobf("curse.maven:crabbers-delight-892827:${crabbers_delight_version}")
 }
 
 jar {

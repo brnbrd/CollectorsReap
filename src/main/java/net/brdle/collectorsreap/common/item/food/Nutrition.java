@@ -255,7 +255,9 @@ public class Nutrition {
     public static final FoodProperties COOKED_PLATINUM_BASS_HEAD = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.85F).build();
     public static final FoodProperties PLATINUM_BASS_SLICE = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.1F).build();
     public static final FoodProperties COOKED_PLATINUM_BASS_SLICE = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.85F).build();
-    public static final FoodProperties PLATINUM_BASS_STEW = (new FoodProperties.Builder()).nutrition(17).saturationMod(1.25F).build();
+    public static final FoodProperties PLATINUM_BASS_STEW = (new FoodProperties.Builder()).nutrition(14).saturationMod(1.25F)
+        .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1.0F)
+        .build();
     public static final FoodProperties FISH_MIX = (new FoodProperties.Builder()).nutrition(8).saturationMod(0.85F).build();
     public static final FoodProperties CHIEFTAIN_CLAW = (new FoodProperties.Builder()).nutrition(5).saturationMod(0.5F).build();
     public static final FoodProperties CHIEFTAIN_LEG = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.5F).build();

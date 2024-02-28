@@ -8,6 +8,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.Tags;
@@ -22,6 +23,17 @@ public class CRItemTagProvider extends ItemTagsProvider {
 
 	@Override
 	protected void addTags() {
+		// Minecraft
+		this.tag(ItemTags.WALLS)
+			.add(CRItems.URCHIN_TEST_BRICK_WALL.get())
+			.add(CRItems.URCHIN_TEST_TILE_WALL.get());
+		this.tag(ItemTags.SLABS)
+			.add(CRItems.URCHIN_TEST_BRICK_SLAB.get())
+			.add(CRItems.URCHIN_TEST_TILE_SLAB.get());
+		this.tag(ItemTags.STAIRS)
+			.add(CRItems.URCHIN_TEST_BRICK_STAIRS.get())
+			.add(CRItems.URCHIN_TEST_TILE_STAIRS.get());
+		
 		this.tag(CRItemTags.FRUITS_POMEGRANATE)
 			.add(CRItems.POMEGRANATE_SLICE.get());
 		this.tag(CRItemTags.FRUITS_LIME)
@@ -68,9 +80,12 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.YUCCA_GUMMY.get());
 		this.tag(CRItemTags.CRAB_MEAT)
 			.addOptionalTag(Util.rl("forge", "cooked_crab"))
-			.add(CRItems.CHIEFTAIN_CRAB_MEAT.get());
+			.add(CRItems.CHIEFTAIN_LEG.get())
+			.add(CRItems.CHIEFTAIN_CRAB_MEAT.get())
+			.addOptional(Util.rl("crabbersdelight", "crab_legs"));
 		this.tag(CRItemTags.RAW_CLAM)
-			.add(CRItems.CLAM_MEAT.get());
+			.add(CRItems.CLAM_MEAT.get())
+			.addOptional(Util.rl("crabbersdelight", "raw_clam_meat"));
 		this.tag(CRItemTags.RAW_PRAWN)
 			.add(CRItems.TIGER_PRAWN.get());
 		this.tag(CRItemTags.COOKED_PRAWN)

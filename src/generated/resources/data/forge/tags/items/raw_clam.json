@@ -1,5 +1,9 @@
 {
   "values": [
-    "collectorsreap:clam_meat"
+    "collectorsreap:clam_meat",
+    {
+      "id": "crabbersdelight:raw_clam_meat",
+      "required": false
+    }
   ]
 }

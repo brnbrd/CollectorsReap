@@ -777,12 +777,54 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('x', CRItems.URCHIN_TEST_BLOCK.get())
                 .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
             "urchin_test_bricks", finished, enabled("urchin_test"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.URCHIN_TEST_BRICK_SLAB.get(), 6)
+                .pattern("xxx")
+                .define('x', CRItems.URCHIN_TEST_BRICKS.get())
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            "urchin_test_brick_slab", finished, enabled("urchin_test"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.URCHIN_TEST_BRICK_STAIRS.get(), 4)
+                .pattern("x  ")
+                .pattern("xx ")
+                .pattern("xxx")
+                .define('x', CRItems.URCHIN_TEST_BRICKS.get())
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            "urchin_test_brick_stairs", finished, enabled("urchin_test"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.URCHIN_TEST_BRICK_WALL.get(), 6)
+                .pattern("xxx")
+                .pattern("xxx")
+                .define('x', CRItems.URCHIN_TEST_BRICKS.get())
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            "urchin_test_brick_wall", finished, enabled("urchin_test"));
         wrap(ShapedRecipeBuilder.shaped(CRItems.URCHIN_TEST_TILES.get(), 4)
                 .pattern("xx")
                 .pattern("xx")
                 .define('x', CRItems.URCHIN_TEST_BRICKS.get())
                 .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
             "urchin_test_tiles", finished, enabled("urchin_test"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.URCHIN_TEST_TILE_SLAB.get(), 6)
+                .pattern("xxx")
+                .define('x', CRItems.URCHIN_TEST_TILES.get())
+                .unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
+            "urchin_test_tile_slab", finished, enabled("urchin_test"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.URCHIN_TEST_TILE_STAIRS.get(), 4)
+                .pattern("x  ")
+                .pattern("xx ")
+                .pattern("xxx")
+                .define('x', CRItems.URCHIN_TEST_TILES.get())
+                .unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
+            "urchin_test_tile_stairs", finished, enabled("urchin_test"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.URCHIN_TEST_TILE_WALL.get(), 6)
+                .pattern("xxx")
+                .pattern("xxx")
+                .define('x', CRItems.URCHIN_TEST_TILES.get())
+                .unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
+            "urchin_test_tile_wall", finished, enabled("urchin_test"));
+        wrap(ShapedRecipeBuilder.shaped(CRItems.CHISELED_URCHIN_TEST_BRICKS.get())
+                .pattern("x")
+                .pattern("x")
+                .define('x', CRItems.URCHIN_TEST_BRICK_SLAB.get())
+                .unlockedBy("has_urchin_test_brick_slab", has(CRItems.URCHIN_TEST_BRICK_SLAB.get())),
+            "chiseled_urchin_test_bricks", finished, enabled("urchin_test"));
         wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()),
                 CRItems.URCHIN_TEST_BRICKS.get())
                 .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
@@ -795,6 +837,75 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
                 CRItems.URCHIN_TEST_TILES.get())
                 .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
             CollectorsReap.MODID, "stonecutting/urchin_test_tiles_from_bricks", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()),
+                    CRItems.CHISELED_URCHIN_TEST_BRICKS.get())
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.CHISELED_URCHIN_TEST_BRICKS.get())),
+            CollectorsReap.MODID, "stonecutting/chiseled_urchin_test_bricks", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()),
+                    CRItems.CHISELED_URCHIN_TEST_BRICKS.get())
+                .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            CollectorsReap.MODID, "stonecutting/chiseled_urchin_test_bricks_from_block", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()),
+                    CRItems.URCHIN_TEST_BRICK_SLAB.get(), 2)
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_brick_slab", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()),
+                    CRItems.URCHIN_TEST_BRICK_SLAB.get(), 2)
+                .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_brick_slab_from_block", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()),
+                    CRItems.URCHIN_TEST_BRICK_STAIRS.get(), 1)
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_brick_stairs", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()),
+                    CRItems.URCHIN_TEST_BRICK_STAIRS.get(), 1)
+                .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_brick_stairs_from_block", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()),
+                    CRItems.URCHIN_TEST_BRICK_WALL.get(), 1)
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_brick_wall", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()),
+                    CRItems.URCHIN_TEST_BRICK_WALL.get(), 1)
+                .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_brick_wall_from_block", finished, enabled("urchin_test"));
+
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_TILES.get()),
+                    CRItems.URCHIN_TEST_TILE_SLAB.get(), 2)
+                .unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()),
+                    CRItems.URCHIN_TEST_TILE_SLAB.get(), 2)
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab_from_bricks", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()),
+                    CRItems.URCHIN_TEST_TILE_SLAB.get(), 2)
+                .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab_from_block", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_TILES.get()),
+                    CRItems.URCHIN_TEST_TILE_STAIRS.get(), 1)
+                .unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()),
+                    CRItems.URCHIN_TEST_TILE_STAIRS.get(), 1)
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs_from_bricks", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()),
+                    CRItems.URCHIN_TEST_TILE_STAIRS.get(), 1)
+                .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs_from_block", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_TILES.get()),
+                    CRItems.URCHIN_TEST_TILE_WALL.get(), 1)
+                .unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()),
+                    CRItems.URCHIN_TEST_TILE_WALL.get(), 1)
+                .unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall_from_bricks", finished, enabled("urchin_test"));
+        wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()),
+                    CRItems.URCHIN_TEST_TILE_WALL.get(), 1)
+                .unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
+            CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall_from_block", finished, enabled("urchin_test"));
 
         // Kettle
         wrap(KettleRecipeBuilder.kettleRecipe(CRItems.LIME_GREEN_TEA.get(), 1, 2400, true, 0.35F, Items.GLASS_BOTTLE)

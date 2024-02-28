@@ -4,6 +4,11 @@
       "id": "#forge:cooked_crab",
       "required": false
     },
-    "collectorsreap:chieftain_crab_meat"
+    "collectorsreap:chieftain_leg",
+    "collectorsreap:chieftain_crab_meat",
+    {
+      "id": "crabbersdelight:crab_legs",
+      "required": false
+    }
   ]
 }

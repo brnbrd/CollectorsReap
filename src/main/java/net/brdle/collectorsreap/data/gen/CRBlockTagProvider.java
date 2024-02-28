@@ -62,6 +62,15 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.PORTOBELLO.get())
 			.add(CRBlocks.LIME_CRATE.get())
 			.add(CRBlocks.POMEGRANATE_CRATE.get());
+		this.tag(BlockTags.WALLS)
+			.add(CRBlocks.URCHIN_TEST_BRICK_WALL.get())
+			.add(CRBlocks.URCHIN_TEST_TILE_WALL.get());
+		this.tag(BlockTags.SLABS)
+			.add(CRBlocks.URCHIN_TEST_BRICK_SLAB.get())
+			.add(CRBlocks.URCHIN_TEST_TILE_SLAB.get());
+		this.tag(BlockTags.STAIRS)
+			.add(CRBlocks.URCHIN_TEST_BRICK_STAIRS.get())
+			.add(CRBlocks.URCHIN_TEST_TILE_STAIRS.get());
 
 		// Serene Seasons
 		this.tag(CRBlockTags.WINTER_CROPS)

@@ -298,7 +298,14 @@ public class CRItems extends ModItems {
 
     public static final RegistryObject<Item> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block", CRBlocks.URCHIN_TEST_BLOCK);
     public static final RegistryObject<Item> URCHIN_TEST_BRICKS = registerBlock("urchin_test_bricks", CRBlocks.URCHIN_TEST_BRICKS);
+    public static final RegistryObject<Item> URCHIN_TEST_BRICK_SLAB = registerBlock("urchin_test_brick_slab", CRBlocks.URCHIN_TEST_BRICK_SLAB);
+    public static final RegistryObject<Item> URCHIN_TEST_BRICK_STAIRS = registerBlock("urchin_test_brick_stairs", CRBlocks.URCHIN_TEST_BRICK_STAIRS);
+    public static final RegistryObject<Item> URCHIN_TEST_BRICK_WALL = registerBlock("urchin_test_brick_wall", CRBlocks.URCHIN_TEST_BRICK_WALL);
+    public static final RegistryObject<Item> CHISELED_URCHIN_TEST_BRICKS = registerBlock("chiseled_urchin_test_bricks", CRBlocks.CHISELED_URCHIN_TEST_BRICKS);
     public static final RegistryObject<Item> URCHIN_TEST_TILES = registerBlock("urchin_test_tiles", CRBlocks.URCHIN_TEST_TILES);
+    public static final RegistryObject<Item> URCHIN_TEST_TILE_SLAB = registerBlock("urchin_test_tile_slab", CRBlocks.URCHIN_TEST_TILE_SLAB);
+    public static final RegistryObject<Item> URCHIN_TEST_TILE_STAIRS = registerBlock("urchin_test_tile_stairs", CRBlocks.URCHIN_TEST_TILE_STAIRS);
+    public static final RegistryObject<Item> URCHIN_TEST_TILE_WALL = registerBlock("urchin_test_tile_wall", CRBlocks.URCHIN_TEST_TILE_WALL);
 
     // Sets Creative Tab
     public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {

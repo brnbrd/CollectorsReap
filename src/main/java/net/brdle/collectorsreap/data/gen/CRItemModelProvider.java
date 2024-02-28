@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -24,19 +25,27 @@ public class CRItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         for (RegistryObject<Item> entry : CRItems.ITEMS.getEntries()) {
             ResourceLocation id = entry.getId();
-            if (entry.get() instanceof ForgeSpawnEggItem) {
-                spawnEgg(id);
-            } else if (entry == CRItems.PORTOBELLO) {
-                itemGeneratedModel(CRItems.PORTOBELLO.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO)));
-            } else if (entry == CRItems.PORTOBELLO_COLONY) {
-                itemGeneratedModel(CRItems.PORTOBELLO_COLONY.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO_COLONY) + "_stage3"));
-            } else if (isBasic(entry)) {
-                basicItem(id);
-            } else if (entry.get() instanceof BlockItem && !(entry.get() instanceof ItemNameBlockItem)) {
-                withExistingParent(id.getPath(), Util.rl(this.modid, "block/" + id.getPath()));
-            } else {
-                basicItem(id);
+            if (!(isBasic(entry))) {
+                if (entry.get() instanceof ForgeSpawnEggItem) {
+                    spawnEgg(id);
+                    continue;
+                } else if (entry == CRItems.PORTOBELLO) {
+                    itemGeneratedModel(CRItems.PORTOBELLO.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO)));
+                    continue;
+                } else if (entry == CRItems.PORTOBELLO_COLONY) {
+                    itemGeneratedModel(CRItems.PORTOBELLO_COLONY.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO_COLONY) + "_stage3"));
+                    continue;
+                } else if (entry.get() instanceof BlockItem b) {
+                    if (b.getBlock() instanceof WallBlock) {
+                        wallInventory(id.getPath(), Util.rl(id.getNamespace(), "block/" + id.getPath().replace("_wall", "s")));
+                        continue;
+                    } else if (!(entry.get() instanceof ItemNameBlockItem)) {
+                        withExistingParent(id.getPath(), Util.rl(this.modid, "block/" + id.getPath()));
+                        continue;
+                    }
+                }
             }
+            basicItem(id);
         }
     }
 

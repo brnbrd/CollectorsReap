@@ -94,7 +94,14 @@ public class CRLanguageProvider extends LanguageProvider {
         addBlock(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON, "Pomegranate Milkshake Cauldron");
         addBlock(CRBlocks.URCHIN_TEST_BLOCK, "Urchin Test Block");
         addBlock(CRBlocks.URCHIN_TEST_BRICKS, "Urchin Test Bricks");
+        addBlock(CRBlocks.URCHIN_TEST_BRICK_SLAB, "Urchin Test Brick Slab");
+        addBlock(CRBlocks.URCHIN_TEST_BRICK_STAIRS, "Urchin Test Brick Stairs");
+        addBlock(CRBlocks.URCHIN_TEST_BRICK_WALL, "Urchin Test Brick Wall");
+        addBlock(CRBlocks.CHISELED_URCHIN_TEST_BRICKS, "Chiseled Urchin Test Bricks");
         addBlock(CRBlocks.URCHIN_TEST_TILES, "Urchin Test Tiles");
+        addBlock(CRBlocks.URCHIN_TEST_TILE_SLAB, "Urchin Test Tile Slab");
+        addBlock(CRBlocks.URCHIN_TEST_TILE_STAIRS, "Urchin Test Tile Stairs");
+        addBlock(CRBlocks.URCHIN_TEST_TILE_WALL, "Urchin Test Tile Wall");
     }
 
     private void addItems() {
@@ -204,7 +211,7 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.CLAM_SPAWN_EGG, "Spawn Tide Clam");
         addItem(CRItems.CLAM_BUCKET, "Bucket of Tide Clam");
         addItem(CRItems.CLAM, "Tide Clam");
-        addItem(CRItems.CLAM_MEAT, "Clam Meat");
+        addItem(CRItems.CLAM_MEAT, "Tide Clam Meat");
         addItem(CRItems.CLAM_ROLL, "Clam Roll");
         addItem(CRItems.CLAM_CHOWDER, "Clam Chowder");
         addItem(CRItems.CLAM_PASTA, "Pasta with Clams");

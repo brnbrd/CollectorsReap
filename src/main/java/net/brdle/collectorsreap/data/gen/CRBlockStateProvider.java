@@ -6,10 +6,7 @@ import net.brdle.collectorsreap.common.block.*;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.AbstractCandleBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CakeBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
@@ -96,7 +93,14 @@ public class CRBlockStateProvider extends BlockStateProvider {
             resourceBlock("urchin_test_block_top")
         ));
         this.simpleBlock(CRBlocks.URCHIN_TEST_BRICKS.get());
+        this.slabBlock((SlabBlock) CRBlocks.URCHIN_TEST_BRICK_SLAB.get(), resourceBlock("urchin_test_bricks"), resourceBlock("urchin_test_bricks"));
+        this.stairsBlock((StairBlock) CRBlocks.URCHIN_TEST_BRICK_STAIRS.get(), resourceBlock("urchin_test_bricks"));
+        this.wallBlock((WallBlock) CRBlocks.URCHIN_TEST_BRICK_WALL.get(), resourceBlock("urchin_test_bricks"));
+        this.simpleBlock(CRBlocks.CHISELED_URCHIN_TEST_BRICKS.get());
         this.simpleBlock(CRBlocks.URCHIN_TEST_TILES.get());
+        this.slabBlock((SlabBlock) CRBlocks.URCHIN_TEST_TILE_SLAB.get(), resourceBlock("urchin_test_tiles"), resourceBlock("urchin_test_tiles"));
+        this.stairsBlock((StairBlock) CRBlocks.URCHIN_TEST_TILE_STAIRS.get(), resourceBlock("urchin_test_tiles"));
+        this.wallBlock((WallBlock) CRBlocks.URCHIN_TEST_TILE_WALL.get(), resourceBlock("urchin_test_tiles"));
     }
 
     public void crateBlock(Block block, String cropName) {

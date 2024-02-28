@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "collectorsreap:item/land_and_sea_burger"
-  }
-}

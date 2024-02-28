@@ -32,10 +32,10 @@ public class CRConfig {
         builder.push("Generation");
             CHANCE_PORTOBELLO = builder
               .comment("Chance of generating clusters. Smaller value = more frequent (once every ...). To disable, set the item Portobello to false above.")
-              .defineInRange("chance_portobello", 30, 0, Integer.MAX_VALUE);
+              .defineInRange("chance_portobello", 27, 0, Integer.MAX_VALUE);
             CHANCE_LIME_BUSH = builder
                 .comment("Chance of generating bushes. Smaller value = more frequent (once every ...). To disable, set the item Lime to false above.")
-                .defineInRange("chance_lime_bush", 22, 0, Integer.MAX_VALUE);
+                .defineInRange("chance_lime_bush", 20, 0, Integer.MAX_VALUE);
             CHANCE_POMEGRANATE_BUSH = builder
                 .comment("Chance of generating bushes. Smaller value = more frequent (once every ...). To disable, set the item Pomegranate to false above.")
                 .defineInRange("chance_pomegranate_bush", 15, 0, Integer.MAX_VALUE);

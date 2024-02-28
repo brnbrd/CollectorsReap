@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "collectorsreap:block/urchin_test_tile_slab"
+    },
+    "type=double": {
+      "model": "collectorsreap:block/urchin_test_tiles"
+    },
+    "type=top": {
+      "model": "collectorsreap:block/urchin_test_tile_slab_top"
+    }
+  }
+}
