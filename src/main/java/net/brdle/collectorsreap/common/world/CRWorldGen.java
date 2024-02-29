@@ -8,7 +8,6 @@ import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.Holder;
-import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;

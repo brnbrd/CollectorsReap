@@ -145,7 +145,7 @@ public class EffectCandleCakeBlock extends AbstractCandleBlock {
 	@SuppressWarnings("deprecation")
 	@Override
 	public boolean canSurvive(@NotNull BlockState pState, LevelReader pLevel, BlockPos pPos) {
-		return pLevel.getBlockState(pPos.below()).getMaterial().isSolid();
+		return pLevel.getBlockState(pPos.below()).isSolidRender(pLevel, pPos);
 	}
 
 	/**

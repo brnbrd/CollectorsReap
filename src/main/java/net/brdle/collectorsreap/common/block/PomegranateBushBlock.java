@@ -163,7 +163,7 @@ public class PomegranateBushBlock extends CropBlock implements IFruiting {
 	public @NotNull InteractionResult use(BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Player pPlayer, @NotNull InteractionHand pHand, @NotNull BlockHitResult pHit) {
 		if (pState.getValue(AGE) == this.getMaxAge()) {
 			if (!pPlayer.getItemInHand(pHand).is(Tags.Items.SHEARS)) {
-				pPlayer.hurt(DamageSource.SWEET_BERRY_BUSH, 1.0F);
+				pPlayer.hurt(pPlayer.damageSources().sweetBerryBush(), 1.0F);
 			}
 			dropResources(pLevel, pPos);
 			pLevel.playSound(null, pPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + pLevel.getRandom().nextFloat() * 0.4F);
@@ -174,11 +174,8 @@ public class PomegranateBushBlock extends CropBlock implements IFruiting {
 		}
 	}
 
-	/**
-	 * @return whether bonemeal can be used on this block
-	 */
 	@Override
-	public boolean isValidBonemealTarget(@NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, boolean pIsClient) {
+	public boolean isValidBonemealTarget(@NotNull LevelReader pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, boolean pIsClient) {
 		return false;
 	}
 
@@ -221,7 +218,7 @@ public class PomegranateBushBlock extends CropBlock implements IFruiting {
 				preventCreativeDropFromBottomPart(HALF, pLevel, pPos, pState, pPlayer);
 			} else if (pState.getValue(AGE) == this.getMaxAge()) {
 				if (!pPlayer.getMainHandItem().is(Tags.Items.SHEARS)) {
-					pPlayer.hurt(DamageSource.SWEET_BERRY_BUSH, 1.0F);
+					pPlayer.hurt(pPlayer.damageSources().sweetBerryBush(), 1.0F);
 				}
 				dropResources(pLevel, pPos);
 			}

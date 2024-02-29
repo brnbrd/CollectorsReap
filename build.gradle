@@ -94,14 +94,10 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:appleskin-248787:${appleskin_version}")
     runtimeOnly fg.deobf("curse.maven:configured-457570:${configured_version}")
     implementation fg.deobf("curse.maven:farmers-d-398521:${farmers_delight_version}")
-    implementation fg.deobf("curse.maven:farmers-respite-551453:${farmers_respite_version}")
+    compileOnly fg.deobf("curse.maven:farmers-respite-551453:${farmers_respite_version}")
     implementation fg.deobf("curse.maven:nethers-delight-496394:${nethers_delight_version}")
     implementation fg.deobf("curse.maven:blueprint-382216:${blueprint_version}")
-    implementation fg.deobf("curse.maven:neapolitan-382016:${neapolitan_version}")
-    compileOnly fg.deobf("curse.maven:atmospheric-362393:${atmospheric_version}")
-    compileOnly fg.deobf("curse.maven:seasonals-416471:${seasonals_version}")
-    compileOnly fg.deobf("curse.maven:respiteful-836471:${respiteful_version}")
-    compileOnly fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+    compileOnly fg.deobf("curse.maven:neapolitan-382016:${neapolitan_version}")
     runtimeOnly fg.deobf("curse.maven:crabbers-delight-892827:${crabbers_delight_version}")
 }
 

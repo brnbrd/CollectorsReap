@@ -86,12 +86,9 @@ public class SmallLimeBushBlock extends BushBlock implements BonemealableBlock {
 		pBuilder.add(AGE);
 	}
 
-	/**
-	 * @return whether bonemeal can be used on this block
-	 */
 	@Override
-	public boolean isValidBonemealTarget(@NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull BlockState state, boolean isClient) {
-		return true;
+	public boolean isValidBonemealTarget(@NotNull LevelReader pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, boolean pIsClient) {
+		return false;
 	}
 
 	@Override

@@ -1,6 +1,5 @@
 package net.brdle.collectorsreap.common.item.food;
 
-import net.brdle.collectorsreap.compat.ModCompat;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -10,15 +9,12 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-import vectorwing.farmersdelight.FarmersDelight;
 import java.util.Objects;
 
 public class CompatDrinkable extends CompatConsumable {
 
 	public CompatDrinkable(Properties properties, boolean hasPotionEffectTooltip, boolean hasCustomTooltip, String modid) {
-		super(properties.craftRemainder(Items.GLASS_BOTTLE)
-			.stacksTo(16).tab(ModCompat.ifLoaded(modid, FarmersDelight.CREATIVE_TAB)),
-			hasPotionEffectTooltip, hasCustomTooltip, modid);
+		super(properties.craftRemainder(Items.GLASS_BOTTLE).stacksTo(16), hasPotionEffectTooltip, hasCustomTooltip, modid);
 	}
 
 	@Override

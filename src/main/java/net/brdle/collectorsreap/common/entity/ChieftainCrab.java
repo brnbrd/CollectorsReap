@@ -85,7 +85,7 @@ public class ChieftainCrab extends WaterAnimal implements NeutralMob, Bucketable
 
 	@Override
 	public void aiStep() {
-		if (this.isInWater() && !this.isOnGround()) {
+		if (this.isInWater() && !this.onGround()) {
 			this.sinkInFluid(ForgeMod.WATER_TYPE.get());
 		}
 		super.aiStep();
@@ -178,7 +178,7 @@ public class ChieftainCrab extends WaterAnimal implements NeutralMob, Bucketable
 	@Override
 	public void tick() {
 		super.tick();
-		if (this.level.isClientSide()) {
+		if (this.level().isClientSide()) {
 			if (this.isMoving()) {
 				this.idleAnimationState.stop();
 				this.movingAnimationState.startIfStopped(this.tickCount);
@@ -187,7 +187,7 @@ public class ChieftainCrab extends WaterAnimal implements NeutralMob, Bucketable
 				this.idleAnimationState.startIfStopped(this.tickCount);
 			}
 		} else {
-			this.updatePersistentAnger((ServerLevel)this.level, true);
+			this.updatePersistentAnger((ServerLevel)this.level(), true);
 		}
 	}
 

@@ -14,7 +14,7 @@ public class BeeGoToBushGoal extends Goal {
 
 	public BeeGoToBushGoal(Bee bee) {
 		this.bee = bee;
-		this.travellingTicks = bee.level.random.nextInt(10);
+		this.travellingTicks = bee.level().random.nextInt(10);
 	}
 
 	public boolean validateLime(BlockPos pos, Level world) {
@@ -24,7 +24,7 @@ public class BeeGoToBushGoal extends Goal {
 	}
 
 	public boolean canBeeUse() {
-		return (this.bee.getSavedFlowerPos() == null || validateLime(this.bee.getSavedFlowerPos(), this.bee.getLevel())) && !this.bee.hasRestriction() && this.wantsToGoToBush() && this.bee.isFlowerValid(this.bee.getSavedFlowerPos()) && !this.bee.closerThan(this.bee.getSavedFlowerPos(), 2);
+		return (this.bee.getSavedFlowerPos() == null || validateLime(this.bee.getSavedFlowerPos(), this.bee.level())) && !this.bee.hasRestriction() && this.wantsToGoToBush() && this.bee.isFlowerValid(this.bee.getSavedFlowerPos()) && !this.bee.closerThan(this.bee.getSavedFlowerPos(), 2);
 	}
 
 	public boolean canBeeContinueToUse() {

@@ -6,8 +6,6 @@ import net.brdle.collectorsreap.common.crafting.EnabledCondition;
 import net.brdle.collectorsreap.common.entity.*;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.common.world.CRWorldGen;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.crafting.CraftingHelper;

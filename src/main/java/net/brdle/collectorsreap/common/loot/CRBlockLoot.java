@@ -3,17 +3,23 @@ package net.brdle.collectorsreap.common.loot;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.PortobelloColonyBlock;
 import net.brdle.collectorsreap.common.item.CRItems;
-import net.minecraft.data.loot.BlockLoot;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
+import java.util.Collections;
 
-public class CRBlockLoot extends BlockLoot {
+public class CRBlockLoot extends BlockLootSubProvider {
+
+    protected CRBlockLoot() {
+        super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags());
+    }
 
     @Override
-    protected void addTables() {
+    protected void generate() {
         this.dropSelf(CRBlocks.PORTOBELLO.get());
         this.empty(CRBlocks.PORTOBELLO_QUICHE);
         this.empty(CRBlocks.LIME_PIE);

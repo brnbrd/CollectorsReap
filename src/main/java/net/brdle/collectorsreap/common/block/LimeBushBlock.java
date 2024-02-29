@@ -163,11 +163,8 @@ public class LimeBushBlock extends CropBlock implements IFruiting {
 		}
 	}
 
-	/**
-	 * @return whether bonemeal can be used on this block
-	 */
 	@Override
-	public boolean isValidBonemealTarget(@NotNull BlockGetter pLevel, @NotNull BlockPos pPos, BlockState pState, boolean pIsClient) {
+	public boolean isValidBonemealTarget(@NotNull LevelReader pLevel, @NotNull BlockPos pPos, BlockState pState, boolean pIsClient) {
 		return pState.getValue(AGE) < (this.getMaxAge() - 1);
 	}
 
