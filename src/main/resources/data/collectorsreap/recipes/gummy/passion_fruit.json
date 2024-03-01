@@ -14,7 +14,7 @@
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "atmospheric:passionfruit"
+                "tag": "atmospheric:passion_fruit"
               }
             },
             {
@@ -30,7 +30,7 @@
         "experience": 1.0,
         "ingredients": [
           {
-            "tag": "atmospheric:passionfruit"
+            "tag": "atmospheric:passion_fruit"
           },
           {
             "item": "minecraft:sugar"

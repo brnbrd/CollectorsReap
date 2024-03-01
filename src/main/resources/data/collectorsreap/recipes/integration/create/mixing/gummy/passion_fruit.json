@@ -14,7 +14,7 @@
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "atmospheric:passionfruit"
+                "tag": "atmospheric:passion_fruit"
               }
             },
             {
@@ -33,7 +33,7 @@
         "heatRequirement": "heated",
         "ingredients": [
           {
-            "tag": "atmospheric:passionfruit"
+            "tag": "atmospheric:passion_fruit"
           },
           {
             "item": "minecraft:sugar"

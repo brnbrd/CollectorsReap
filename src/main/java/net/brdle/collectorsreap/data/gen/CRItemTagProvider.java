@@ -76,7 +76,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.ADZUKI_GUMMY.get())
 			.add(CRItems.PUMPKIN_GUMMY.get())
 			.add(CRItems.ALOE_GUMMY.get())
-			.add(CRItems.PASSIONFRUIT_GUMMY.get())
+			.add(CRItems.PASSION_FRUIT_GUMMY.get())
 			.add(CRItems.YUCCA_GUMMY.get());
 		this.tag(CRItemTags.CRAB_MEAT)
 			.addOptionalTag(Util.rl("forge", "cooked_crab"))
@@ -112,7 +112,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		// Atmospheric
 		this.addSelf(CRItemTags.ALOE_LEAVES);
 		this.addSelf(CRItemTags.YUCCA_FRUIT);
-		this.addSelf(CRItemTags.PASSIONFRUIT);
+		this.addSelf(CRItemTags.PASSION_FRUIT);
 
 		// Seasonals
 		this.addSelf(CRItemTags.ROASTED_PUMPKIN);

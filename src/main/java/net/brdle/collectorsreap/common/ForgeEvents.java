@@ -29,11 +29,27 @@ import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.MissingMappingsEvent;
 import java.util.List;
 import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid=CollectorsReap.MODID)
 public class ForgeEvents {
+
+	@SubscribeEvent
+	public static void onMissingMappings(MissingMappingsEvent e) {
+		if (e.getRegistry() == ForgeRegistries.ITEMS) {
+			for (var map : e.getMappings(ForgeRegistries.ITEMS.getRegistryKey(), CollectorsReap.MODID)) {
+				var remap = Util.cr(map.getKey().getPath().replace("passionfruit", "passion_fruit"));
+				if (ForgeRegistries.ITEMS.containsKey(remap)) {
+					map.remap(ForgeRegistries.ITEMS.getValue(remap));
+				} else {
+					map.warn();
+				}
+			}
+		}
+	}
 
 	@SubscribeEvent
 	public static void onWanderingTrader(WandererTradesEvent e) {

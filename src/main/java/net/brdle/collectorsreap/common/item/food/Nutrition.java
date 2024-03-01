@@ -211,7 +211,7 @@ public class Nutrition {
     public static final FoodProperties ALOE_GUMMY = (new FoodProperties.Builder())
         .nutrition(2).saturationMod(0.0F).alwaysEat()
         .effect(() -> new MobEffectInstance(ModCompat.getRelief().get(), 200, 3), 1.0F).build();
-    public static final FoodProperties PASSIONFRUIT_GUMMY = (new FoodProperties.Builder())
+    public static final FoodProperties PASSION_FRUIT_GUMMY = (new FoodProperties.Builder())
         .nutrition(2).saturationMod(0.0F).alwaysEat()
         .effect(() -> new MobEffectInstance(ModCompat.getSpitting().get(), 40, 3), 1.0F).build();
     public static final FoodProperties YUCCA_GUMMY = (new FoodProperties.Builder())
