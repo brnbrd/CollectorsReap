@@ -47,7 +47,7 @@ public class ClientProxy extends CommonProxy {
 
     @SubscribeEvent
     public void registerParticles(RegisterParticleProvidersEvent e) {
-        e.registerSpecial(CRParticleTypes.ACID.get(), new AcidParticle.Provider());
-        e.registerSpecial(CRParticleTypes.SHOCKWAVE.get(), );
+        e.registerSpecial(CRParticleTypes.ACID.get(), AcidParticle.Provider::new);
+        e.registerSpecial(CRParticleTypes.SHOCKWAVE.get(), ShockwaveParticle.Provider::new);
     }
 }
