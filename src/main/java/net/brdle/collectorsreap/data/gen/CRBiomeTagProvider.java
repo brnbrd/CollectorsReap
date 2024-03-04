@@ -21,10 +21,7 @@ public class CRBiomeTagProvider extends BiomeTagsProvider {
 		this.tag(CRBiomeTags.LIME_SPAWNS).add(Biomes.FLOWER_FOREST);
 		this.tag(CRBiomeTags.POMEGRANATE_SPAWNS).add(Biomes.WARPED_FOREST);
 		this.tag(CRBiomeTags.PLATINUM_BASS_SPAWNS)
-			.addTag(BiomeTags.IS_OCEAN)
-			.addTag(BiomeTags.IS_DEEP_OCEAN)
-			.addTag(BiomeTags.IS_RIVER)
-			.addTag(Tags.Biomes.IS_WATER);
+			.addTag(BiomeTags.IS_RIVER);
 		this.tag(CRBiomeTags.TIGER_PRAWN_SPAWNS)
 			.addTag(BiomeTags.IS_RIVER);
 		this.tag(CRBiomeTags.URCHIN_SPAWNS)
