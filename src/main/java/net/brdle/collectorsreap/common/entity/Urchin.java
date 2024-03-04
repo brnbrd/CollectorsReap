@@ -11,7 +11,6 @@ import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
@@ -72,26 +71,27 @@ public class Urchin extends WaterCreature {
 
 	@Override
 	public void aiStep() {
-		if (this.isInWater() && !this.isOnGround()) {
+		if (this.isInWater() && !this.onGround()) {
 			this.sinkInFluid(ForgeMod.WATER_TYPE.get());
 		}
 		super.aiStep();
 	}
 
 	@Override
-	public boolean hurt(@NotNull DamageSource pSource, float pAmount) {
-		if (this.isInvulnerableTo(pSource)) {
-			return false;
-		} else {
-			Entity entity = pSource.getEntity();
-			if (!this.level.isClientSide() && entity instanceof LivingEntity living) {
-				DamageSource thorns = DamageSource.mobAttack(this);
-				if (!living.isInvulnerableTo(thorns)) {
-					living.hurt(thorns, 3.0F);
-				}
-				living.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0), this);
+	public boolean hurt(@NotNull DamageSource source, float pAmount) {
+		Entity entity = source.getEntity();
+		if (
+			!this.level().isClientSide() &&
+				entity instanceof LivingEntity living &&
+				!this.isInvulnerableTo(source) &&
+				!source.isIndirect()
+		) {
+			DamageSource thorns = living.damageSources().thorns(this);
+			if (!living.isInvulnerableTo(thorns)) {
+				living.hurt(thorns, 3.0F);
 			}
-			return super.hurt(pSource, pAmount);
+			living.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0), this);
 		}
+		return super.hurt(source, pAmount);
 	}
 }
