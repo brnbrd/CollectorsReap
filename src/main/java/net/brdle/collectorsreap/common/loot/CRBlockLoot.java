@@ -1,13 +1,23 @@
 package net.brdle.collectorsreap.common.loot;
 
 import net.brdle.collectorsreap.common.block.CRBlocks;
+import net.brdle.collectorsreap.common.block.LimeBushBlock;
+import net.brdle.collectorsreap.common.block.PomegranateBushBlock;
 import net.brdle.collectorsreap.common.block.PortobelloColonyBlock;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
@@ -24,9 +34,45 @@ public class CRBlockLoot extends BlockLootSubProvider {
         this.empty(CRBlocks.PORTOBELLO_QUICHE);
         this.empty(CRBlocks.LIME_PIE);
         this.dropSelf(CRBlocks.SMALL_LIME_BUSH.get());
-        this.dropOther(CRBlocks.LIME_BUSH.get(), CRItems.LIME_SEEDS.get());
+        // Lime Bush drops Seeds and optional Limes
+        this.add(CRBlocks.LIME_BUSH.get(), (b) -> applyExplosionDecay(b,
+            LootTable.lootTable()
+                .withPool(this.applyExplosionCondition(CRItems.LIME_SEEDS.get(),
+                    LootPool.lootPool()
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
+                            .setProperties(StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(LimeBushBlock.HALF, DoubleBlockHalf.UPPER)))
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(CRItems.LIME_SEEDS.get()))))
+                .withPool(this.applyExplosionCondition(CRItems.LIME.get(),
+                    LootPool.lootPool()
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
+                            .setProperties(StatePropertiesPredicate.Builder.properties()
+                                .hasProperty(LimeBushBlock.AGE, LimeBushBlock.MAX_AGE)
+                                .hasProperty(LimeBushBlock.HALF, DoubleBlockHalf.UPPER)))
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(CRItems.LIME.get()))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, (float) 3)))))));
         this.dropSelf(CRBlocks.SMALL_POMEGRANATE_BUSH.get());
-        this.dropOther(CRBlocks.POMEGRANATE_BUSH.get(), CRItems.POMEGRANATE_SEEDS.get());
+        // Pomegranate Bush drops Seeds and optional Pomegranates
+        this.add(CRBlocks.POMEGRANATE_BUSH.get(), (b) -> applyExplosionDecay(b,
+            LootTable.lootTable()
+                .withPool(this.applyExplosionCondition(CRItems.POMEGRANATE_SEEDS.get(),
+                LootPool.lootPool()
+                    .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
+                        .setProperties(StatePropertiesPredicate.Builder.properties()
+                            .hasProperty(PomegranateBushBlock.HALF, DoubleBlockHalf.UPPER)))
+                    .setRolls(ConstantValue.exactly(1.0F))
+                    .add(LootItem.lootTableItem(CRItems.POMEGRANATE_SEEDS.get()))))
+                .withPool(this.applyExplosionCondition(CRItems.POMEGRANATE.get(),
+                LootPool.lootPool()
+                    .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
+                        .setProperties(StatePropertiesPredicate.Builder.properties()
+                            .hasProperty(PomegranateBushBlock.AGE, PomegranateBushBlock.MAX_AGE)
+                            .hasProperty(PomegranateBushBlock.HALF, DoubleBlockHalf.UPPER)))
+                    .setRolls(ConstantValue.exactly(1.0F))
+                    .add(LootItem.lootTableItem(CRItems.POMEGRANATE.get()))
+                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, (float) 3)))))));
         this.dropSelf(CRBlocks.LIME_CRATE.get());
         this.dropSelf(CRBlocks.POMEGRANATE_CRATE.get());
         this.empty(CRBlocks.LIME_CAKE);

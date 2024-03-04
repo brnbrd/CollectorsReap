@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.common.entity;
 
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class Urchin extends WaterCreature {
 
@@ -79,19 +81,20 @@ public class Urchin extends WaterCreature {
 	}
 
 	@Override
-	public boolean hurt(@NotNull DamageSource pSource, float pAmount) {
-		if (this.isInvulnerableTo(pSource)) {
-			return false;
-		} else {
-			Entity entity = pSource.getEntity();
-			if (!this.level().isClientSide() && entity instanceof LivingEntity living) {
-				DamageSource thorns = living.damageSources().thorns(this);
-				if (!living.isInvulnerableTo(thorns)) {
-					living.hurt(thorns, 3.0F);
-				}
-				living.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0), this);
+	public boolean hurt(@NotNull DamageSource source, float pAmount) {
+		Entity entity = source.getEntity();
+		if (
+			!this.level().isClientSide() &&
+			entity instanceof LivingEntity living &&
+			!this.isInvulnerableTo(source) &&
+			!source.isIndirect()
+		) {
+			DamageSource thorns = living.damageSources().thorns(this);
+			if (!living.isInvulnerableTo(thorns)) {
+				living.hurt(thorns, 3.0F);
 			}
-			return super.hurt(pSource, pAmount);
+			living.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0), this);
 		}
+		return super.hurt(source, pAmount);
 	}
 }

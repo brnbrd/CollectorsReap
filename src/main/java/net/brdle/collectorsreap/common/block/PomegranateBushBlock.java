@@ -212,21 +212,6 @@ public class PomegranateBushBlock extends CropBlock implements IFruiting {
 	}
 
 	@Override
-	public void playerWillDestroy(Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, @NotNull Player pPlayer) {
-		if (!pLevel.isClientSide()) {
-			if (pPlayer.isCreative()) {
-				preventCreativeDropFromBottomPart(HALF, pLevel, pPos, pState, pPlayer);
-			} else if (pState.getValue(AGE) == this.getMaxAge()) {
-				if (!pPlayer.getMainHandItem().is(Tags.Items.SHEARS)) {
-					pPlayer.hurt(pPlayer.damageSources().sweetBerryBush(), 1.0F);
-				}
-				dropResources(pLevel, pPos);
-			}
-		}
-		super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
-	}
-
-	@Override
 	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
 		if (!pLevel.isClientSide() &&
 			CRConfig.POMEGRANATE_POLLINATION.get() &&

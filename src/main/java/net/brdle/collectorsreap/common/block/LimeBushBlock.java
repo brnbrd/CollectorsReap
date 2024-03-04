@@ -203,19 +203,6 @@ public class LimeBushBlock extends CropBlock implements IFruiting {
 		pLevel.setBlock(pPos, pState.setValue(AGE, MAX_AGE).setValue(HALF, DoubleBlockHalf.LOWER), pFlags);
 		pLevel.setBlock(pPos.above(), pState.setValue(AGE, MAX_AGE).setValue(HALF, DoubleBlockHalf.UPPER), pFlags);
 	}
-
-	@Override
-	public void playerWillDestroy(Level pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, @NotNull Player pPlayer) {
-		if (!pLevel.isClientSide()) {
-			if (pPlayer.isCreative()) {
-				preventCreativeDropFromBottomPart(HALF, pLevel, pPos, pState, pPlayer);
-			} else if (pState.getValue(AGE) == this.getMaxAge()) {
-				dropResources(pLevel, pPos);
-			}
-		}
-		super.playerWillDestroy(pLevel, pPos, pState, pPlayer);
-	}
-
 	@Override
 	public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
 		return 60;

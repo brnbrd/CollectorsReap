@@ -1,9 +1,21 @@
 {
   "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:explosion_decay"
+    }
+  ],
   "pools": [
     {
       "bonus_rolls": 0.0,
       "conditions": [
+        {
+          "block": "collectorsreap:lime_bush",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "half": "upper"
+          }
+        },
         {
           "condition": "minecraft:survives_explosion"
         }
@@ -12,6 +24,40 @@
         {
           "type": "minecraft:item",
           "name": "collectorsreap:lime_seeds"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "collectorsreap:lime_bush",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "2",
+            "half": "upper"
+          }
+        },
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "collectorsreap:lime"
+        }
+      ],
+      "functions": [
+        {
+          "add": false,
+          "count": {
+            "type": "minecraft:uniform",
+            "max": 3.0,
+            "min": 1.0
+          },
+          "function": "minecraft:set_count"
         }
       ],
       "rolls": 1.0
