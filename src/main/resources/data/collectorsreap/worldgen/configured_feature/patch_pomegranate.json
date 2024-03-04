@@ -3,7 +3,7 @@
   "config": {
     "primary_feature": {
       "feature": {
-        "type": "minecraft:simple_block",
+        "type": "collectorsreap:bush_block",
         "config": {
           "to_place": {
             "type": "minecraft:simple_state_provider",
@@ -48,7 +48,7 @@
     },
     "secondary_feature": {
       "feature": {
-        "type": "minecraft:simple_block",
+        "type": "collectorsreap:bush_block",
         "config": {
           "to_place": {
             "type": "minecraft:simple_state_provider",
