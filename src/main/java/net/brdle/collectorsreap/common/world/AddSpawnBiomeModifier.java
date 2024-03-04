@@ -20,7 +20,7 @@ public class AddSpawnBiomeModifier implements BiomeModifier {
 		if (phase.equals(Phase.ADD)) {
 			addMobSpawn(builder, biome, CRBiomeTags.PLATINUM_BASS_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.PLATINUM_BASS.get(), 2, 1, 4);
 			addMobSpawn(builder, biome, CRBiomeTags.TIGER_PRAWN_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.TIGER_PRAWN.get(), 4, 2, 5);
-			addMobSpawn(builder, biome, CRBiomeTags.URCHIN_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.URCHIN.get(), 6, 3, 7);
+			addMobSpawn(builder, biome, CRBiomeTags.URCHIN_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.URCHIN.get(), 5, 3, 7);
 			addMobSpawn(builder, biome, CRBiomeTags.CLAM_SPAWNS, MobCategory.WATER_AMBIENT, CREntities.CLAM.get(), 5, 2, 4);
 			addMobSpawn(builder, biome, CRBiomeTags.CHIEFTAIN_CRAB_SPAWNS, MobCategory.WATER_CREATURE, CREntities.CHIEFTAIN_CRAB.get(), 4, 2, 4);
 			addMobSpawn(builder, biome, BiomeTags.IS_BEACH, MobCategory.CREATURE, CREntities.CHIEFTAIN_CRAB.get(), 5, 2, 4);
