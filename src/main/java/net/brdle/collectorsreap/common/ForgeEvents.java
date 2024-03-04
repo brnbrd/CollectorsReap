@@ -33,7 +33,7 @@ import java.util.Objects;
 public class ForgeEvents {
 
 	@SubscribeEvent
-	public static void onWanderingTrader(WandererTradesEvent e) {
+	public void onWanderingTrader(WandererTradesEvent e) {
 		if (CRConfig.verify(CRItems.LIME) && CRConfig.verify(CRItems.LIME_SEEDS)) {
 			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.gs(CRItems.LIME_SEEDS), 5, 1, 1));
 			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.BROWN_MUSHROOM, 4), Util.gs(CRItems.PORTOBELLO), 10, 1, 1));
@@ -41,7 +41,7 @@ public class ForgeEvents {
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGH)
-	public static void onCorrodeWeapon(LivingDamageEvent e) {
+	public void onCorrodeWeapon(LivingDamageEvent e) {
 		if (e.getEntity().hasEffect(CREffects.CORROSION.get()) && e.getSource().getEntity() instanceof Player p) {
 			InteractionHand hand = p.getUsedItemHand();
 			ItemStack stack = p.getItemInHand(hand);
@@ -53,7 +53,7 @@ public class ForgeEvents {
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
-	public static void onCorrodeProjectile(ProjectileImpactEvent e) {
+	public void onCorrodeProjectile(ProjectileImpactEvent e) {
 		if (e.getRayTraceResult().getType() == HitResult.Type.ENTITY &&
 			((EntityHitResult) e.getRayTraceResult()).getEntity() instanceof LivingEntity victim &&
 			victim.hasEffect(CREffects.CORROSION.get())) {
@@ -87,7 +87,7 @@ public class ForgeEvents {
 	}
 
 	@SubscribeEvent
-	public static void onVolatile(LivingDamageEvent e) {
+	public void onVolatile(LivingDamageEvent e) {
 		LivingEntity victim = e.getEntity();
 		if (
 			e.getSource().getEntity() != null &&

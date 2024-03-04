@@ -22,7 +22,7 @@ import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
 public class ModEvents {
 
     @SubscribeEvent
-    public static void setup(FMLCommonSetupEvent e) {
+    public void setup(FMLCommonSetupEvent e) {
         e.enqueueWork(() -> {
             //Flammables
 
@@ -50,12 +50,12 @@ public class ModEvents {
         });
     }
 
-    public static void compost(RegistryObject<Item> it, float value) {
+    public void compost(RegistryObject<Item> it, float value) {
         ComposterBlock.COMPOSTABLES.put(it.get(), value);
     }
 
     @SubscribeEvent
-    public static void registerEntityAttributes(EntityAttributeCreationEvent e) {
+    public void registerEntityAttributes(EntityAttributeCreationEvent e) {
         e.put(CREntities.TIGER_PRAWN.get(), TigerPrawn.createAttributes().build());
         e.put(CREntities.URCHIN.get(), Urchin.createAttributes().build());
         e.put(CREntities.PLATINUM_BASS.get(), PlatinumBass.createAttributes().build());
@@ -65,7 +65,7 @@ public class ModEvents {
 
     // Adds collectorsreap:enabled, etc. conditions
     @SubscribeEvent
-    public static void registerSerializers(RegisterEvent e) {
+    public void registerSerializers(RegisterEvent e) {
         if (e.getRegistryKey() == ForgeRegistries.RECIPE_SERIALIZERS.getRegistryKey()) {
             CraftingHelper.register(EnabledCondition.Serializer.INSTANCE);
         }

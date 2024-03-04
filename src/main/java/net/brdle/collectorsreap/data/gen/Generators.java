@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
 public class Generators {
 
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent e) {
+    public void gatherData(GatherDataEvent e) {
         DataGenerator gen = e.getGenerator();
         PackOutput output = gen.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookup = e.getLookupProvider();

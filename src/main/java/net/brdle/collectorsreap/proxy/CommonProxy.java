@@ -20,9 +20,9 @@ public class CommonProxy {
     public void start() {
         final var modBus = FMLJavaModLoadingContext.get().getModEventBus();
         final var forgeBus = MinecraftForge.EVENT_BUS;
-        forgeBus.register(ForgeEvents.class);
-        modBus.register(ModEvents.class);
-        modBus.register(Generators.class);
+        forgeBus.register(new ForgeEvents());
+        modBus.register(new ModEvents());
+        modBus.register(new Generators());
         CRBlocks.create(modBus);
         CRItems.create(modBus);
         CREntities.create(modBus);
