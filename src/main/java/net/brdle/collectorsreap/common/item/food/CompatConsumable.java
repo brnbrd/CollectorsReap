@@ -28,6 +28,10 @@ public class CompatConsumable extends ConsumableItem {
 		this.heal = heal;
 	}
 
+	public String getModid() {
+		return this.modid;
+	}
+
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> tooltip, @NotNull TooltipFlag isAdvanced) {
 		setTooltip(tooltip, this.modid);

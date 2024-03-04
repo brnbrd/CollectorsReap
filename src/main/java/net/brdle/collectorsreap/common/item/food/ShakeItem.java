@@ -5,12 +5,11 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import org.jetbrains.annotations.NotNull;
-import vectorwing.farmersdelight.common.item.ConsumableItem;
 
-public class ShakeItem extends ConsumableItem {
+public class ShakeItem extends CompatConsumable {
 
 	public ShakeItem(Properties properties) {
-		super(properties);
+		super(properties, false, false, "neapolitan");
 	}
 
 	@Override

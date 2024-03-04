@@ -1,7 +1,7 @@
 package net.brdle.collectorsreap.proxy;
 
 import net.brdle.collectorsreap.common.CRParticleTypes;
-import net.brdle.collectorsreap.common.Events;
+import net.brdle.collectorsreap.common.ModEvents;
 import net.brdle.collectorsreap.common.ForgeEvents;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.effect.CREffects;
@@ -21,7 +21,7 @@ public class CommonProxy {
         final var modBus = FMLJavaModLoadingContext.get().getModEventBus();
         final var forgeBus = MinecraftForge.EVENT_BUS;
         forgeBus.register(ForgeEvents.class);
-        modBus.register(Events.class);
+        modBus.register(ModEvents.class);
         modBus.register(Generators.class);
         CRBlocks.create(modBus);
         CRItems.create(modBus);

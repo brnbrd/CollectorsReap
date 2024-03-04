@@ -4,9 +4,12 @@ import net.brdle.collectorsreap.common.block.CRCauldronInteractions;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
 import net.brdle.collectorsreap.common.entity.*;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.common.item.food.CompatConsumable;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.crafting.CraftingHelper;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -14,8 +17,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
 
-public class Events {
+public class ModEvents {
 
     @SubscribeEvent
     public static void setup(FMLCommonSetupEvent e) {
@@ -46,6 +50,10 @@ public class Events {
         });
     }
 
+    public static void compost(RegistryObject<Item> it, float value) {
+        ComposterBlock.COMPOSTABLES.put(it.get(), value);
+    }
+
     @SubscribeEvent
     public static void registerEntityAttributes(EntityAttributeCreationEvent e) {
         e.put(CREntities.TIGER_PRAWN.get(), TigerPrawn.createAttributes().build());
@@ -63,7 +71,16 @@ public class Events {
         }
     }
 
-    public static void compost(RegistryObject<Item> it, float value) {
-        ComposterBlock.COMPOSTABLES.put(it.get(), value);
+    @SubscribeEvent
+    public void buildContents(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == ModCreativeTabs.TAB_FARMERS_DELIGHT.getKey()) {
+            CRItems.ITEMS.getEntries().stream().filter(RegistryObject::isPresent).forEach((item) -> {
+                Item i = item.get();
+                if (i instanceof CompatConsumable compat && !ModList.get().isLoaded(compat.getModid())) {
+                    return;
+                }
+                event.accept(i.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            });
+        }
     }
 }
