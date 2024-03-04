@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/mint_limeade_from_limeade"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

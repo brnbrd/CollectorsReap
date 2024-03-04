@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:stonecutting/urchin_test_tile_wall_from_block"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

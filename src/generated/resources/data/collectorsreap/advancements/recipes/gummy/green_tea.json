@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:gummy/green_tea"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

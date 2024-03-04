@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/portobello_rice_soup"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

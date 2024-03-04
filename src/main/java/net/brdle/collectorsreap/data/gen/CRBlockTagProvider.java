@@ -5,24 +5,26 @@ import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.EffectCandleCakeBlock;
 import net.brdle.collectorsreap.data.CRBlockTags;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.tag.ModTags;
+import java.util.concurrent.CompletableFuture;
 
 public class CRBlockTagProvider extends BlockTagsProvider {
 
-	protected CRBlockTagProvider(DataGenerator pGenerator, @Nullable ExistingFileHelper existingFileHelper) {
-		super(pGenerator, CollectorsReap.MODID, existingFileHelper);
+	public CRBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+		super(output, lookupProvider, CollectorsReap.MODID, existingFileHelper);
 	}
 
 	@Override
-	protected void addTags() {
+	public void addTags(HolderLookup.@NotNull Provider provider)
+	{
 		// Farmer's Delight
 		this.tag(ModTags.MINEABLE_WITH_KNIFE)
 			.add(CRBlocks.PORTOBELLO_QUICHE.get())
@@ -90,13 +92,5 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.create(Util.rl("twilightforest", "portal/decoration"))).add(CRBlocks.PORTOBELLO.get());
 		this.tag(BlockTags.create(Util.rl("immersive_weathering", "small_mushrooms"))).add(CRBlocks.PORTOBELLO.get());
 		this.tag(BlockTags.create(Util.rl("autumnity", "snail_snacks"))).add(CRBlocks.PORTOBELLO.get());
-	}
-
-	/**
-	 * Gets a name for this provider, to use in logging.
-	 */
-	@Override
-	public @NotNull String getName() {
-		return CollectorsReap.MODID;
 	}
 }

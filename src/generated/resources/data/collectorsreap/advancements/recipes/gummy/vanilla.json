@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:gummy/vanilla"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

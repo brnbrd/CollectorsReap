@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/chieftain_crab"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

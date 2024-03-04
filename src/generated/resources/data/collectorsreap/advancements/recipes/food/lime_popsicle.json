@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/lime_popsicle"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

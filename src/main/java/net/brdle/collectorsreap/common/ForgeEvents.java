@@ -1,6 +1,5 @@
 package net.brdle.collectorsreap.common;
 
-import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.effect.CREffects;
@@ -28,11 +27,9 @@ import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import java.util.List;
 import java.util.Objects;
 
-@Mod.EventBusSubscriber(modid=CollectorsReap.MODID)
 public class ForgeEvents {
 
 	@SubscribeEvent

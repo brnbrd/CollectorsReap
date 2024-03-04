@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/pomegranate_ice_cream"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

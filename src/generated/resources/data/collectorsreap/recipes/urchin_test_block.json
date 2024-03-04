@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "x": {
             "item": "collectorsreap:urchin_test"
@@ -22,7 +23,8 @@
         ],
         "result": {
           "item": "collectorsreap:urchin_test_block"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

@@ -6,12 +6,12 @@ import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.item.CRItems;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class CRLanguageProvider extends LanguageProvider {
-    public CRLanguageProvider(DataGenerator gen) {
-        super(gen, CollectorsReap.MODID, "en_us");
+    public CRLanguageProvider(PackOutput output) {
+        super(output, CollectorsReap.MODID, "en_us");
     }
 
     @Override
@@ -162,7 +162,7 @@ public class CRLanguageProvider extends LanguageProvider {
         addItem(CRItems.ADZUKI_GUMMY, "Adzuki Gummy");
         addItem(CRItems.PUMPKIN_GUMMY, "Pumpkin Gummy");
         addItem(CRItems.ALOE_GUMMY, "Aloe Gummy");
-        addItem(CRItems.PASSIONFRUIT_GUMMY, "Passionfruit Gummy");
+        addItem(CRItems.PASSION_FRUIT_GUMMY, "Passion Fruit Gummy");
         addItem(CRItems.YUCCA_GUMMY, "Yucca Gummy");
         addItem(CRItems.GREEN_TEA_GUMMY, "Green Tea Gummy");
         addItem(CRItems.YELLOW_TEA_GUMMY, "Yellow Tea Gummy");

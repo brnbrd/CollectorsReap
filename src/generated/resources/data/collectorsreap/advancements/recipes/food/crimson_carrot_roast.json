@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/crimson_carrot_roast"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/pomegranate_bean_salad"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

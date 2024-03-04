@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/berry_limeade_from_limeade"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

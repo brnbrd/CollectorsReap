@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/prawn_po_boy"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

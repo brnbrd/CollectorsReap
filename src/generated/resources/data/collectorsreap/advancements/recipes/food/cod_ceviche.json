@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/cod_ceviche"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/sea_wrap"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

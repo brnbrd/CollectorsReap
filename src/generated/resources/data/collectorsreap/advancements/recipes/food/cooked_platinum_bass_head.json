@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "collectorsreap:platinum_bass_from_smoking"
+        "recipe": "collectorsreap:cooked_platinum_bass_head"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "platinum_bass": {
+    "platinum_bass_head": {
       "conditions": {
         "items": [
           {
             "items": [
-              "collectorsreap:platinum_bass"
+              "collectorsreap:platinum_bass_head"
             ]
           }
         ]
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "platinum_bass",
+      "platinum_bass_head",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "collectorsreap:platinum_bass_from_smoking"
+      "collectorsreap:cooked_platinum_bass_head"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

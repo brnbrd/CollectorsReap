@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/chocolate_arils"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

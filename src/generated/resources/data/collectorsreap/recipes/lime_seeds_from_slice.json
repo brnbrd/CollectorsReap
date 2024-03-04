@@ -23,6 +23,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shapeless",
+        "category": "misc",
         "ingredients": [
           {
             "item": "collectorsreap:lime_slice"

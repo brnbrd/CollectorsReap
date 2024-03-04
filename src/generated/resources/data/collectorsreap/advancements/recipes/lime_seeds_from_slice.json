@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:lime_seeds_from_slice"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

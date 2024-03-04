@@ -1,28 +1,33 @@
 package net.brdle.collectorsreap.data.gen;
 
-import net.brdle.collectorsreap.CollectorsReap;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import java.util.concurrent.CompletableFuture;
 
-@Mod.EventBusSubscriber(modid=CollectorsReap.MODID)
 public class Generators {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent e) {
-        var gen = e.getGenerator();
-        var helper = e.getExistingFileHelper();
-        CRBlockTagProvider blockTag = new CRBlockTagProvider(gen, helper);
-        e.getGenerator().addProvider(e.includeServer(), blockTag);
-        e.getGenerator().addProvider(e.includeServer(), new CRItemTagProvider(gen, blockTag, helper));
-        e.getGenerator().addProvider(e.includeServer(), new CREntityTagProvider(gen, helper));
-        e.getGenerator().addProvider(e.includeServer(), new CRBiomeTagProvider(gen, helper));
-        e.getGenerator().addProvider(e.includeServer(), new CRRecipeProvider(gen));
-        e.getGenerator().addProvider(e.includeServer(), new CRLootTableProvider(gen));
-        e.getGenerator().addProvider(e.includeServer(), new CRLootModifierProvider(gen));
+        DataGenerator gen = e.getGenerator();
+        PackOutput output = gen.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookup = e.getLookupProvider();
+        ExistingFileHelper helper = e.getExistingFileHelper();
 
-        e.getGenerator().addProvider(e.includeClient(), new CRBlockStateProvider(gen, helper));
-        e.getGenerator().addProvider(e.includeClient(), new CRItemModelProvider(gen, helper));
-        e.getGenerator().addProvider(e.includeClient(), new CRLanguageProvider(gen));
+        CRBlockTagProvider blockTags = new CRBlockTagProvider(output, lookup, helper);
+        gen.addProvider(e.includeServer(), blockTags);
+        gen.addProvider(e.includeServer(), new CRItemTagProvider(output, lookup, blockTags.contentsGetter(), helper));
+        gen.addProvider(e.includeServer(), new CREntityTagProvider(output, lookup, helper));
+        gen.addProvider(e.includeServer(), new CRBiomeTagProvider(output, lookup, helper));
+        gen.addProvider(e.includeServer(), new CRRecipeProvider(output));
+        gen.addProvider(e.includeServer(), new CRLootTableProvider(output));
+        gen.addProvider(e.includeServer(), new CRLootModifierProvider(output));
+
+        gen.addProvider(e.includeClient(), new CRBlockStateProvider(output, helper));
+        gen.addProvider(e.includeClient(), new CRItemModelProvider(output, helper));
+        gen.addProvider(e.includeClient(), new CRLanguageProvider(output));
     }
 }

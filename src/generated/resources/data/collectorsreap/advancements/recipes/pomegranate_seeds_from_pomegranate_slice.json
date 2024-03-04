@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:pomegranate_seeds_from_pomegranate_slice"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

@@ -1,17 +1,14 @@
 package net.brdle.collectorsreap.data.gen;
 
 import net.brdle.collectorsreap.CollectorsReap;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
 
 public class CRLootModifierProvider extends GlobalLootModifierProvider {
-	public CRLootModifierProvider(DataGenerator gen) {
-		super(gen, CollectorsReap.MODID);
+	public CRLootModifierProvider(PackOutput output) {
+		super(output, CollectorsReap.MODID);
 	}
 
-	/**
-	 * Call {@link #add} here, which will pass in the necessary information to write the jsons.
-	 */
 	@Override
 	protected void start() {
 		/*add("straw_from_compat", new AddItemLootModifier(

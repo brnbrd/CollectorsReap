@@ -14,7 +14,7 @@ import java.util.Collections;
 
 public class CRBlockLoot extends BlockLootSubProvider {
 
-    protected CRBlockLoot() {
+    public CRBlockLoot() {
         super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags());
     }
 

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "collectorsreap:baked_portobello_cap_from_smoking"
+        "recipe": "collectorsreap:baked_portobello_cap"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "collectorsreap:baked_portobello_cap_from_smoking"
+      "collectorsreap:baked_portobello_cap"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

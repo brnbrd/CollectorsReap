@@ -31,15 +31,9 @@ public class JEIPlugin implements IModPlugin
         if (!items.isEmpty()) {
             registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, items);
         }
-        if (CRConfig.CHANCE_PORTOBELLO.get() > 0 && CRConfig.verify(CRItems.PORTOBELLO)) {
-            registration.addItemStackInfo(Util.gs(CRItems.PORTOBELLO), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO)));
-        }
-        if (CRConfig.CHANCE_LIME_BUSH.get() > 0 && CRConfig.verify(CRItems.LIME)) {
-            registration.addItemStackInfo(Util.gs(CRItems.LIME), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME)));
-        }
-        if (CRConfig.CHANCE_POMEGRANATE_BUSH.get() > 0 && CRConfig.verify(CRItems.POMEGRANATE)) {
-            registration.addItemStackInfo(Util.gs(CRItems.POMEGRANATE), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE)));
-        }
+        registration.addItemStackInfo(Util.gs(CRItems.PORTOBELLO), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO)));
+        registration.addItemStackInfo(Util.gs(CRItems.LIME), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME)));
+        registration.addItemStackInfo(Util.gs(CRItems.POMEGRANATE), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE)));
     }
 
     @Override

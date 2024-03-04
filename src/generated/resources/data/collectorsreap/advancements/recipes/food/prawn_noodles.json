@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/prawn_noodles"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

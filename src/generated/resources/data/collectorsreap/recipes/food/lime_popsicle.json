@@ -23,6 +23,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "i": {
             "item": "minecraft:ice"
@@ -41,7 +42,8 @@
         ],
         "result": {
           "item": "collectorsreap:lime_popsicle"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

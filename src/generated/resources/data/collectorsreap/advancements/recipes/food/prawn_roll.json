@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/prawn_roll"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

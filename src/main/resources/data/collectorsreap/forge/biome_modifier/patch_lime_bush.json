@@ -1,7 +1,6 @@
 {
-  "type": "farmersdelight:add_features_by_filter",
-  "allowed_biomes": "#collectorsreap:lime_spawns",
-  "denied_biomes": "#forge:is_underground",
+  "type": "forge:add_features",
+  "biomes": "#collectorsreap:lime_spawns",
   "features": "collectorsreap:patch_lime_bush",
   "step": "vegetal_decoration"
 }

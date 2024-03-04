@@ -19,6 +19,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "l": {
             "tag": "forge:fruits/lime"
@@ -33,7 +34,8 @@
         "result": {
           "count": 8,
           "item": "collectorsreap:lime_cookie"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

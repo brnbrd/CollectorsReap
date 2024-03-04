@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/honey_lime_chicken"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

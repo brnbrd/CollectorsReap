@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/pomegranate_mutton"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

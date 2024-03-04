@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "e": {
             "tag": "forge:eggs"
@@ -34,7 +35,8 @@
         ],
         "result": {
           "item": "collectorsreap:lime_cake"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

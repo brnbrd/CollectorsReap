@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/lime_milkshake"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

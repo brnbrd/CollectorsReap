@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/clam_roll"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

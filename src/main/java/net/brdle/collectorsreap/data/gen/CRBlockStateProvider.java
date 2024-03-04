@@ -3,8 +3,7 @@ package net.brdle.collectorsreap.data.gen;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.block.*;
-import net.minecraft.core.Direction;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
@@ -14,16 +13,14 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.client.model.generators.VariantBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
-import vectorwing.farmersdelight.data.BlockStates;
 
 public class CRBlockStateProvider extends BlockStateProvider {
-    public CRBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, CollectorsReap.MODID, exFileHelper);
+    public CRBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
+        super(output, CollectorsReap.MODID, exFileHelper);
     }
 
     @Override

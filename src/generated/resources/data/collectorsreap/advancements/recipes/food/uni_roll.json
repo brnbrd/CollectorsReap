@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/uni_roll"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

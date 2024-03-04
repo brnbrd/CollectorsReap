@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/pomegranate_milkshake"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

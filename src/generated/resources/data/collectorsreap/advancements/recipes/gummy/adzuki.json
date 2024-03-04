@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:gummy/adzuki"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

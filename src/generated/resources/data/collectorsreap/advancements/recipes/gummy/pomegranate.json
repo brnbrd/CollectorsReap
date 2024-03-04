@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:gummy/pomegranate"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

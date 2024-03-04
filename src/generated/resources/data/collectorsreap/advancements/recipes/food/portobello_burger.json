@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/portobello_burger"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

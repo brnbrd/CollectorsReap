@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "collectorsreap:cooked_platinum_bass"
+        "recipe": "collectorsreap:cooked_platinum_bass_slice"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "platinum_bass": {
+    "platinum_bass_slice": {
       "conditions": {
         "items": [
           {
             "items": [
-              "collectorsreap:platinum_bass"
+              "collectorsreap:platinum_bass_slice"
             ]
           }
         ]
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "platinum_bass",
+      "platinum_bass_slice",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "collectorsreap:cooked_platinum_bass"
+      "collectorsreap:cooked_platinum_bass_slice"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

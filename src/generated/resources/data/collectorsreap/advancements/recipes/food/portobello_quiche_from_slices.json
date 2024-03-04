@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/portobello_quiche_from_slices"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

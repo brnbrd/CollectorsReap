@@ -13,9 +13,6 @@ public class CRConfig {
     private static final CRConfig CONFIG;
     public static final ForgeConfigSpec SPEC;
     private static final Map<String, ForgeConfigSpec.BooleanValue> stuff = new HashMap<>();
-    public static ForgeConfigSpec.IntValue CHANCE_PORTOBELLO;
-    public static ForgeConfigSpec.IntValue CHANCE_LIME_BUSH;
-    public static ForgeConfigSpec.IntValue CHANCE_POMEGRANATE_BUSH;
     public static ForgeConfigSpec.BooleanValue LIME_POLLINATION;
     public static ForgeConfigSpec.BooleanValue POMEGRANATE_POLLINATION;
     public static ForgeConfigSpec.BooleanValue FAST_POLLINATE;
@@ -28,17 +25,6 @@ public class CRConfig {
                     .map(obj -> obj.getId().getPath())
                     .sorted()
                     .forEach(not -> put(builder, stuff, not, true));
-        builder.pop();
-        builder.push("Generation");
-            CHANCE_PORTOBELLO = builder
-              .comment("Chance of generating clusters. Smaller value = more frequent (once every ...). To disable, set the item Portobello to false above.")
-              .defineInRange("chance_portobello", 27, 0, Integer.MAX_VALUE);
-            CHANCE_LIME_BUSH = builder
-                .comment("Chance of generating bushes. Smaller value = more frequent (once every ...). To disable, set the item Lime to false above.")
-                .defineInRange("chance_lime_bush", 20, 0, Integer.MAX_VALUE);
-            CHANCE_POMEGRANATE_BUSH = builder
-                .comment("Chance of generating bushes. Smaller value = more frequent (once every ...). To disable, set the item Pomegranate to false above.")
-                .defineInRange("chance_pomegranate_bush", 15, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Behavior");
             LIME_POLLINATION = builder

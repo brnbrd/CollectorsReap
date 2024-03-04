@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/clam_chowder"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

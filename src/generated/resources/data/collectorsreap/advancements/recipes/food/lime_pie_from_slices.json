@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/lime_pie_from_slices"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

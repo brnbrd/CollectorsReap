@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:gummy/black_tea"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/pomegranate_smoothie"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

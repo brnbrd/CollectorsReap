@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:gummy/apple"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

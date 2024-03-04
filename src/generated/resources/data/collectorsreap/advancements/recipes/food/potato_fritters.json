@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/potato_fritters"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

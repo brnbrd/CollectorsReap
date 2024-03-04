@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:gummy/coffee"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

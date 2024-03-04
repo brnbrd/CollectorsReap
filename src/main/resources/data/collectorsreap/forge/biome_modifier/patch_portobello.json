@@ -1,7 +1,6 @@
 {
-  "type": "farmersdelight:add_features_by_filter",
-  "allowed_biomes": "#collectorsreap:portobello_spawns",
-  "denied_biomes": "#forge:is_underground",
+  "type": "forge:add_features",
+  "biomes": "#collectorsreap:portobello_spawns",
   "features": "collectorsreap:patch_portobello",
   "step": "vegetal_decoration"
 }

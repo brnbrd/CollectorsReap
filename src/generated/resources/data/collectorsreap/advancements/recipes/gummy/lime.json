@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:gummy/lime"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

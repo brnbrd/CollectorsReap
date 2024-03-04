@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/mint_limeade"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

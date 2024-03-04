@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "collectorsreap:platinum_bass_slice_from_smoking"
+        "recipe": "collectorsreap:tiger_prawn_from_campfire_cooking"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "platinum_bass_slice": {
+    "tiger_prawn": {
       "conditions": {
         "items": [
           {
             "items": [
-              "collectorsreap:platinum_bass_slice"
+              "collectorsreap:tiger_prawn"
             ]
           }
         ]
@@ -22,13 +22,14 @@
   },
   "requirements": [
     [
-      "platinum_bass_slice",
+      "tiger_prawn",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "collectorsreap:platinum_bass_slice_from_smoking"
+      "collectorsreap:tiger_prawn_from_campfire_cooking"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

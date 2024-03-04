@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:gummy/banana"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

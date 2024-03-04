@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/berry_limeade"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

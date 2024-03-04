@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/portobello_pasta"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

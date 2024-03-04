@@ -4,25 +4,29 @@ import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.data.CRItemTags;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
-import umpaz.farmersrespite.common.registry.FRItems;
+import org.jetbrains.annotations.Nullable;
+import java.util.concurrent.CompletableFuture;
 
 public class CRItemTagProvider extends ItemTagsProvider {
-	public CRItemTagProvider(DataGenerator gen, BlockTagsProvider blockTagProvider, ExistingFileHelper existingFileHelper) {
-		super(gen, blockTagProvider, CollectorsReap.MODID, existingFileHelper);
+
+	public CRItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, CompletableFuture<TagLookup<Block>> blockTagProvider, @Nullable ExistingFileHelper existingFileHelper) {
+		super(output, provider, blockTagProvider, CollectorsReap.MODID, existingFileHelper);
 	}
 
 	@Override
-	protected void addTags() {
+	public void addTags(HolderLookup.@NotNull Provider provider)
+	{
 		// Minecraft
 		this.tag(ItemTags.WALLS)
 			.add(CRItems.URCHIN_TEST_BRICK_WALL.get())
@@ -76,12 +80,12 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.ADZUKI_GUMMY.get())
 			.add(CRItems.PUMPKIN_GUMMY.get())
 			.add(CRItems.ALOE_GUMMY.get())
-			.add(CRItems.PASSIONFRUIT_GUMMY.get())
+			.add(CRItems.PASSION_FRUIT_GUMMY.get())
 			.add(CRItems.YUCCA_GUMMY.get());
 		this.tag(CRItemTags.CRAB_MEAT)
-			.addOptionalTag(Util.rl("forge", "cooked_crab"))
 			.add(CRItems.CHIEFTAIN_LEG.get())
 			.add(CRItems.CHIEFTAIN_CRAB_MEAT.get())
+			.addOptionalTag(Util.rl("forge", "cooked_crab"))
 			.addOptional(Util.rl("crabbersdelight", "crab_legs"));
 		this.tag(CRItemTags.RAW_CLAM)
 			.add(CRItems.CLAM_MEAT.get())
@@ -130,24 +134,16 @@ public class CRItemTagProvider extends ItemTagsProvider {
 
 		// Tea and Coffee
 		this.tag(CRItemTags.TEA_LEAVES_GREEN)
-			.addOptional(FRItems.GREEN_TEA_LEAVES.getId());
+			.addOptional(Util.rl("farmersrespite", "green_tea_leaves"));
 		this.tag(CRItemTags.TEA_LEAVES_YELLOW)
-			.addOptional(FRItems.YELLOW_TEA_LEAVES.getId());
+			.addOptional(Util.rl("farmersrespite", "yellow_tea_leaves"));
 		this.tag(CRItemTags.TEA_LEAVES_BLACK)
-			.addOptional(FRItems.BLACK_TEA_LEAVES.getId());
+			.addOptional(Util.rl("farmersrespite", "black_tea_leaves"));
 		this.tag(CRItemTags.COFFEE_BEANS)
-			.addOptional(FRItems.COFFEE_BEANS.getId());
+			.addOptional(Util.rl("farmersrespite", "coffee_beans"));
 
 		// SAS
 		this.addSelf(CRItemTags.BURGER_BUN);
-	}
-
-	/**
-	 * Gets a name for this provider, to use in logging.
-	 */
-	@Override
-	public @NotNull String getName() {
-		return CollectorsReap.MODID;
 	}
 
 	private TagsProvider.TagAppender<Item> addSelf(TagKey<Item> item) {

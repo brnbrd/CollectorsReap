@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:gummy/chocolate"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

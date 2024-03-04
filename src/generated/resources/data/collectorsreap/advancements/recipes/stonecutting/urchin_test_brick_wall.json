@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:stonecutting/urchin_test_brick_wall"
           ]
-        }
+        },
+        "sends_telemetry_event": false
       },
       "conditions": [
         {

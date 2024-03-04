@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:food/salmon_wrapped_prawn"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

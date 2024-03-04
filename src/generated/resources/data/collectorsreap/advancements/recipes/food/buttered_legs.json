@@ -33,7 +33,8 @@
           "recipes": [
             "collectorsreap:food/buttered_legs"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

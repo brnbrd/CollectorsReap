@@ -31,7 +31,8 @@
           "recipes": [
             "collectorsreap:gummy/strawberry"
           ]
-        }
+        },
+        "sends_telemetry_event": true
       },
       "conditions": [
         {

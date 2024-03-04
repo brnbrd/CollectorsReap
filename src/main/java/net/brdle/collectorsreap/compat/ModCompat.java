@@ -1,9 +1,11 @@
 package net.brdle.collectorsreap.compat;
 
+import net.brdle.collectorsreap.Util;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 import java.util.function.Supplier;
 
@@ -62,18 +64,26 @@ public class ModCompat {
 	}
 
 	public static Supplier<MobEffect> getStuffed() {
-		return (ModList.get().isLoaded("seasonals")) ? SeasonalsCompat.STUFFED : () -> MobEffects.CONFUSION;
+		return (ModList.get().isLoaded("seasonals")) ?
+			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("seasonals", "stuffed")) :
+			() -> MobEffects.CONFUSION;
 	}
 
 	public static Supplier<MobEffect> getVitality() {
-		return (ModList.get().isLoaded("respiteful")) ? RespitefulCompat.VITALITY : () -> MobEffects.DIG_SPEED;
+		return (ModList.get().isLoaded("respiteful")) ?
+			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("respiteful", "vitality")) :
+			() -> MobEffects.DIG_SPEED;
 	}
 
 	public static Supplier<MobEffect> getTenacity() {
-		return (ModList.get().isLoaded("respiteful")) ? RespitefulCompat.TENACITY : () -> MobEffects.DAMAGE_RESISTANCE;
+		return (ModList.get().isLoaded("respiteful")) ?
+			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("respiteful", "tenacity")) :
+			() -> MobEffects.DAMAGE_RESISTANCE;
 	}
 
 	public static Supplier<MobEffect> getMaturity() {
-		return (ModList.get().isLoaded("respiteful")) ? RespitefulCompat.MATURITY : getCaffeinated();
+		return (ModList.get().isLoaded("respiteful")) ?
+			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("respiteful", "maturity")) :
+			getCaffeinated();
 	}
 }

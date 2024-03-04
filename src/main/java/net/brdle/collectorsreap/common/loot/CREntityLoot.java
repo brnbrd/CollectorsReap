@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 
 public class CREntityLoot extends EntityLootSubProvider {
 
-    protected CREntityLoot() {
+    public CREntityLoot() {
         super(FeatureFlags.REGISTRY.allFlags());
     }
 

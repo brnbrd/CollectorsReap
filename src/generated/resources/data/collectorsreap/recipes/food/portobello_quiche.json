@@ -10,6 +10,7 @@
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
+        "category": "misc",
         "key": {
           "c": {
             "item": "farmersdelight:pie_crust"
@@ -34,7 +35,8 @@
         ],
         "result": {
           "item": "collectorsreap:portobello_quiche"
-        }
+        },
+        "show_notification": true
       }
     }
   ]

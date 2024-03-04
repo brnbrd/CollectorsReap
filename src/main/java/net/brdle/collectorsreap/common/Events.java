@@ -1,31 +1,25 @@
 package net.brdle.collectorsreap.common;
 
-import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.block.CRCauldronInteractions;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
 import net.brdle.collectorsreap.common.entity.*;
 import net.brdle.collectorsreap.common.item.CRItems;
-import net.brdle.collectorsreap.common.world.CRWorldGen;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 
-@Mod.EventBusSubscriber(modid=CollectorsReap.MODID)
 public class Events {
 
     @SubscribeEvent
     public static void setup(FMLCommonSetupEvent e) {
         e.enqueueWork(() -> {
-            CRWorldGen.registerGeneration();
-
             //Flammables
 
             //Compostables
