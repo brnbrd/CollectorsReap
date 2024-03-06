@@ -44,3 +44,10 @@ configBackground="collectorsreap:textures/block/pomegranate_ice_cream_block.png"
     versionRange="[4,)"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.collectorsreap]]
+    modId="crabbersdelight"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
