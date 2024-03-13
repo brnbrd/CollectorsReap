@@ -48,7 +48,7 @@ public class CRItemTags {
 
 	// Atmospheric
 	public static final TagKey<Item> ALOE_LEAVES = Util.it("atmospheric", "aloe_leaves");
-	public static final TagKey<Item> PASSIONFRUIT = Util.it("atmospheric", "passionfruit");
+	public static final TagKey<Item> PASSION_FRUIT = Util.it("atmospheric", "passion_fruit");
 	public static final TagKey<Item> YUCCA_FRUIT = Util.it("atmospheric", "yucca_fruit");
 
 	// Seasonals

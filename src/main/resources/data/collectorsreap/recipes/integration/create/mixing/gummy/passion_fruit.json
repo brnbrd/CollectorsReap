@@ -8,13 +8,13 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "passionfruit_gummy"
+              "value": "passion_fruit_gummy"
             },
             {
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "atmospheric:passionfruit"
+                "tag": "atmospheric:passion_fruit"
               }
             },
             {
@@ -33,7 +33,7 @@
         "heatRequirement": "heated",
         "ingredients": [
           {
-            "tag": "atmospheric:passionfruit"
+            "tag": "atmospheric:passion_fruit"
           },
           {
             "item": "minecraft:sugar"
@@ -48,7 +48,7 @@
         "results": [
           {
             "count": 9,
-            "item": "collectorsreap:passionfruit_gummy"
+            "item": "collectorsreap:passion_fruit_gummy"
           }
         ]
       }

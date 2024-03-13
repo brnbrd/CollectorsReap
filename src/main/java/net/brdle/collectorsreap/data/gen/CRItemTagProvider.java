@@ -116,7 +116,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		// Atmospheric
 		this.addSelf(CRItemTags.ALOE_LEAVES);
 		this.addSelf(CRItemTags.YUCCA_FRUIT);
-		this.addSelf(CRItemTags.PASSIONFRUIT);
+		this.addSelf(CRItemTags.PASSION_FRUIT);
 
 		// Seasonals
 		this.addSelf(CRItemTags.ROASTED_PUMPKIN);
