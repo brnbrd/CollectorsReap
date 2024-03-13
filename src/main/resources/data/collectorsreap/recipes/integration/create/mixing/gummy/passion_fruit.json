@@ -8,7 +8,7 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "passionfruit_gummy"
+              "value": "passion_fruit_gummy"
             },
             {
               "type": "forge:not",
@@ -48,7 +48,7 @@
         "results": [
           {
             "count": 9,
-            "item": "collectorsreap:passionfruit_gummy"
+            "item": "collectorsreap:passion_fruit_gummy"
           }
         ]
       }
