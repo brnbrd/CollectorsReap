@@ -6,7 +6,6 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -23,7 +22,9 @@ public class CRBiomeTagProvider extends BiomeTagsProvider {
 		this.tag(CRBiomeTags.PLATINUM_BASS_SPAWNS)
 			.addTag(BiomeTags.IS_RIVER);
 		this.tag(CRBiomeTags.TIGER_PRAWN_SPAWNS)
-			.addTag(BiomeTags.IS_RIVER);
+			.addTag(BiomeTags.IS_RIVER)
+			.add(Biomes.SWAMP)
+			.add(Biomes.MANGROVE_SWAMP);
 		this.tag(CRBiomeTags.URCHIN_SPAWNS)
 			.addTag(BiomeTags.IS_OCEAN)
 			.addTag(BiomeTags.IS_DEEP_OCEAN);
