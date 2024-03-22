@@ -252,11 +252,9 @@ public class CRItems extends ModItems {
         () -> new CompatConsumable((new Item.Properties()).food(
                 Nutrition.CHOCOLATE_ARILS), true, false, "neapolitan"));
     public static final RegistryObject<Item> LIME_MILKSHAKE = registerItem("lime_milkshake",
-        () -> new ShakeItem(new Item.Properties().food(
-                Nutrition.LIME_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+        () -> new ShakeItem(new Item.Properties().food(Nutrition.LIME_MILKSHAKE)));
     public static final RegistryObject<Item> POMEGRANATE_MILKSHAKE = registerItem("pomegranate_milkshake",
-        () -> new ShakeItem(new Item.Properties().food(
-                Nutrition.POMEGRANATE_MILKSHAKE).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
+        () -> new ShakeItem(new Item.Properties().food(Nutrition.POMEGRANATE_MILKSHAKE)));
     public static final RegistryObject<Item> LIME_ICE_CREAM = registerItem("lime_ice_cream",
         () -> new IceCreamItem((new Item.Properties()).food(Nutrition.LIME_ICE_CREAM)));
     public static final RegistryObject<Item> POMEGRANATE_ICE_CREAM = registerItem("pomegranate_ice_cream",
