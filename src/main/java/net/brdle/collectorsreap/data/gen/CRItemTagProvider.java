@@ -116,6 +116,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.addSelf(CRItemTags.MINT_LEAVES);
 		this.addSelf(CRItemTags.ROASTED_ADZUKI_BEANS);
 		this.tag(CRItemTags.RED_STRAWBERRIES).addOptional(Util.rl("neapolitan", "strawberries"));
+		this.tag(Util.it("neapolitan", "ice_cream"))
+			.add(CRItems.LIME_ICE_CREAM.get())
+			.add(CRItems.POMEGRANATE_ICE_CREAM.get());
 
 		// Atmospheric
 		this.addSelf(CRItemTags.ALOE_LEAVES);

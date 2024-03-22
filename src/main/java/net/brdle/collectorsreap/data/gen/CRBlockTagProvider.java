@@ -73,6 +73,9 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.STAIRS)
 			.add(CRBlocks.URCHIN_TEST_BRICK_STAIRS.get())
 			.add(CRBlocks.URCHIN_TEST_TILE_STAIRS.get());
+		this.tag(BlockTags.CAULDRONS)
+			.add(CRBlocks.LIME_MILKSHAKE_CAULDRON.get())
+			.add(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON.get());
 
 		// Serene Seasons
 		this.tag(CRBlockTags.WINTER_CROPS)
