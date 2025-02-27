@@ -96,6 +96,7 @@ public class CRBlockStateProvider extends BlockStateProvider {
 		this.stairsBlock((StairBlock) CRBlocks.URCHIN_TEST_TILE_STAIRS.get(), resourceBlock("urchin_test_tiles"));
 		this.wallBlock((WallBlock) CRBlocks.URCHIN_TEST_TILE_WALL.get(), resourceBlock("urchin_test_tiles"));
 		this.roeBlock(CRBlocks.PLATINUM_BASS_ROE.get());
+		this.roeBlock(CRBlocks.TIGER_PRAWN_ROE.get());
 	}
 
 	private void crateBlock(Block block, String cropName) {

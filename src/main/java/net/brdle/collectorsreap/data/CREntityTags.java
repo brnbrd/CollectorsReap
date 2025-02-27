@@ -7,10 +7,9 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EntityType;
 
 public class CREntityTags {
-
 	// Forge
 
-	// CR
+	// Collector's Reap
 	public static final TagKey<EntityType<?>> CORROSION_IMMUNE = cr("corrosion_immune");
 	public static final TagKey<EntityType<?>> VOLATILITY_IMMUNE = cr("volatility_immune");
 	public static final TagKey<EntityType<?>> INVOLATILE = cr("involatile");

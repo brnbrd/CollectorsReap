@@ -78,7 +78,10 @@ public class CRItemTags {
 	public static final TagKey<Item> SUPP_COOKIES = Util.it("supplementaries", "cookies");
 
 	// Let Fish Love
-	public static final TagKey<Item> FISH_FOOD_PLATINUM_BASS = Util.it("letfishlove", "fish_food/" + CollectorsReap.MODID + "/" + CREntities.PLATINUM_BASS.getId().getPath());
+	public static final TagKey<Item> FISH_FOOD_PLATINUM_BASS = Util.it("letfishlove",
+		"fish_food/" + CollectorsReap.MODID + "/" + CREntities.PLATINUM_BASS.getId().getPath());
+	public static final TagKey<Item> FISH_FOOD_TIGER_PRAWN = Util.it("letfishlove",
+		"fish_food/" + CollectorsReap.MODID + "/" + CREntities.TIGER_PRAWN.getId().getPath());
 
 	private static TagKey<Item> cr(String name) {
 		return Util.it(CollectorsReap.MODID, name);

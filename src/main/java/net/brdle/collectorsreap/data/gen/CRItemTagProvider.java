@@ -58,9 +58,11 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addOptional(Util.rl("letmorefishlove", "pike_roe"))
 			.addOptional(Util.rl("letmorefishlove", "lionfish_roe"))
 			.addOptional(Util.rl("letmorefishlove", "perch_roe"));
+		this.tag(CRItemTags.ROE_PRAWN)
+			.add(CRItems.TIGER_PRAWN_ROE.get());
 		this.tag(CRItemTags.ROE)
-			.addTag(CRItemTags.ROE_FISH);
-			//.addTag(CRItemTags.ROE_PRAWN)
+			.addTag(CRItemTags.ROE_FISH)
+			.addTag(CRItemTags.ROE_PRAWN);
 
 		// Forge
 		this.tag(CRItemTags.CHEESE).addOptional(Util.rl("brewinandchewin", "flaxen_cheese_wedge"));
@@ -216,6 +218,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 
 		// Let Fish Love
 		this.tag(CRItemTags.FISH_FOOD_PLATINUM_BASS).add(CRItems.TIGER_PRAWN.get());
+		this.tag(CRItemTags.FISH_FOOD_TIGER_PRAWN).add(Items.SEAGRASS);
 	}
 
 	@SuppressWarnings("UnusedReturnValue")

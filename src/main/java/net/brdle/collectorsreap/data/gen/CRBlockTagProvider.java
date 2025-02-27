@@ -106,6 +106,7 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 
 		// Let Fish Love
 		this.tag(CRBlockTags.FISH_ROE_PLATINUM_BASS).add(CRBlocks.PLATINUM_BASS_ROE.get());
+		this.tag(CRBlockTags.FISH_ROE_TIGER_PRAWN).add(CRBlocks.TIGER_PRAWN_ROE.get());
 
 		// Other
 		this.tag(BlockTags.create(Util.rl("twilightforest", "portal/decoration"))).add(CRBlocks.PORTOBELLO.get());

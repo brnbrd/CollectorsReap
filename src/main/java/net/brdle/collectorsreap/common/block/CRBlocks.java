@@ -124,7 +124,12 @@ public class CRBlocks {
 	// Let Fish Love
 	public static final RegistryObject<Block> PLATINUM_BASS_ROE = BLOCKS.register("platinum_bass_roe_block", () ->
 		ModList.get().isLoaded("letfishlove") ?
-		LetFishLoveCompat.roeBlock() :
+		LetFishLoveCompat.platinumBassRoeBlock() :
+		new Block(BlockBehaviour.Properties.of())
+	);
+	public static final RegistryObject<Block> TIGER_PRAWN_ROE = BLOCKS.register("tiger_prawn_roe_block", () ->
+		ModList.get().isLoaded("letfishlove") ?
+		LetFishLoveCompat.tigerPrawnRoeBlock() :
 		new Block(BlockBehaviour.Properties.of())
 	);
 

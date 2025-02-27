@@ -5,7 +5,6 @@ import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.item.food.*;
-import net.brdle.collectorsreap.compat.letfishlove.CRRoeItem;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
@@ -323,8 +322,13 @@ public class CRItems extends ModItems {
 	// Let Fish Love
 	public static final RegistryObject<Item> PLATINUM_BASS_ROE = registerItem("platinum_bass_roe", () ->
 		ModList.get().isLoaded("letfishlove") ?
-		LetFishLoveCompat.roeItem() :
+		LetFishLoveCompat.platinumBassRoeItem() :
 		new CompatItem(new Item.Properties(), "letfishlove")
+	);
+	public static final RegistryObject<Item> TIGER_PRAWN_ROE = registerItem("tiger_prawn_roe", () ->
+		ModList.get().isLoaded("letfishlove") ?
+			LetFishLoveCompat.tigerPrawnRoeItem() :
+			new CompatItem(new Item.Properties(), "letfishlove")
 	);
 
 	public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {
