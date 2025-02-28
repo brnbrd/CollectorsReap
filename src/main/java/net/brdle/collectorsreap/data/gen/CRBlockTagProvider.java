@@ -60,7 +60,8 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(CRBlocks.LIME_ICE_CREAM_BLOCK.get())
 			.add(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get())
-			.addOptionalTag(CRBlockTags.FISH_ROE_PLATINUM_BASS.location());
+			.add(CRBlocks.PLATINUM_BASS_ROE.get())
+			.add(CRBlocks.TIGER_PRAWN_ROE.get());
 		this.tag(BlockTags.MINEABLE_WITH_AXE)
 			.add(CRBlocks.PORTOBELLO.get())
 			.add(CRBlocks.LIME_CRATE.get())
@@ -73,7 +74,6 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.map(RegistryObject::get)
 			.filter(b -> b instanceof EffectCandleCakeBlock)
 			.forEach(b -> this.tag(BlockTags.CANDLE_CAKES).add(b));
-		this.tag(BlockTags.CANDLE_CAKES);
 		this.tag(BlockTags.WALLS)
 			.add(CRBlocks.URCHIN_TEST_BRICK_WALL.get())
 			.add(CRBlocks.URCHIN_TEST_TILE_WALL.get());

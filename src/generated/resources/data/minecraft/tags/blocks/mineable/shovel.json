@@ -2,9 +2,7 @@
   "values": [
     "collectorsreap:lime_ice_cream_block",
     "collectorsreap:pomegranate_ice_cream_block",
-    {
-      "id": "#letfishlove:fish_roe/collectorsreap/platinum_bass",
-      "required": false
-    }
+    "collectorsreap:platinum_bass_roe_block",
+    "collectorsreap:tiger_prawn_roe_block"
   ]
 }
