@@ -97,13 +97,12 @@ dependencies {
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
     runtimeOnly fg.deobf("squeek.appleskin:appleskin-forge:${appleskin_version}")
     implementation fg.deobf("curse.maven:jade-324717:${jade_version}")
-    runtimeOnly fg.deobf("curse.maven:configured-457570:${configured_version}")
     implementation fg.deobf("curse.maven:farmers-d-398521:${farmers_delight_version}")
+	implementation fg.deobf("curse.maven:farmers-respite-551453:${farmers_respite_version}")
+	implementation fg.deobf("curse.maven:let-fish-love-941186:${let_fish_love_version}")
     compileOnly fg.deobf("curse.maven:blueprint-382216:${blueprint_version}")
     compileOnly fg.deobf("curse.maven:neapolitan-382016:${neapolitan_version}")
     compileOnly fg.deobf("curse.maven:atmospheric-362393:${atmospheric_version}")
-	implementation fg.deobf("curse.maven:let-fish-love-941186:${let_fish_love_version}")
-    implementation fg.deobf("curse.maven:farmers-respite-551453:${farmers_respite_version}")
 }
 
 jar {
