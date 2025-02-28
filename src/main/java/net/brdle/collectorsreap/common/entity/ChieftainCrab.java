@@ -154,11 +154,7 @@ public class ChieftainCrab extends PathfinderMob implements NeutralMob, Bucketab
 	}
 
 	private boolean isMoving() {
-		return this.getDeltaMovement().horizontalDistanceSqr() > 5.0E-4D;
-	}
-
-	private boolean isMovingInWater() {
-		return this.isMoving() && this.isInWaterOrBubble();
+		return this.getDeltaMovement().horizontalDistanceSqr() > 5E-2D;
 	}
 
 	@Override

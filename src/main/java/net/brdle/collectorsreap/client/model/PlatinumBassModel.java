@@ -26,27 +26,36 @@ public class PlatinumBassModel extends HierarchicalModel<PlatinumBass> {
 	}
 
 	public static LayerDefinition createBodyLayer() {
-		MeshDefinition meshdefinition = new MeshDefinition();
-		PartDefinition root = meshdefinition.getRoot();
-		PartDefinition body = root.addOrReplaceChild("Body", CubeListBuilder.create().texOffs(0, 0).addBox(-3.0F, -12.0F, -1.0F, 6.0F, 10.0F, 16.0F, new CubeDeformation(0.0F))
-			.texOffs(0, 11).addBox(0.0F, -15.0F, 3.0F, 0.0F, 16.0F, 15.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 23.0F, -8.0F));
-		PartDefinition LeftFin = body.addOrReplaceChild("LeftFin", CubeListBuilder.create().texOffs(30, 26).addBox(0.0F, -3.0F, 0.0F, 0.0F, 6.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(3.0F, -6.0F, 0.0F, 0.0F, 0.6981F, 0.0F));
-		PartDefinition RightFin = body.addOrReplaceChild("RightFin", CubeListBuilder.create().texOffs(30, 20).addBox(0.0F, -3.0F, 0.0F, 0.0F, 6.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(-3.0F, -6.0F, 0.0F, 0.0F, -0.6981F, 0.0F));
-		PartDefinition Head = body.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(0, 0).addBox(-2.0F, -2.0F, -7.0F, 4.0F, 4.0F, 1.0F, new CubeDeformation(0.0F))
-			.texOffs(28, 0).addBox(-3.0F, -4.0F, -6.0F, 6.0F, 7.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -6.0F, -1.0F));
-		PartDefinition Tail = body.addOrReplaceChild("Tail", CubeListBuilder.create().texOffs(26, 38).addBox(-1.0F, -4.0F, 0.0F, 2.0F, 7.0F, 4.0F, new CubeDeformation(0.0F))
-			.texOffs(0, 0).addBox(0.0F, -5.0F, 3.0F, 0.0F, 9.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -6.0F, 15.0F));
-		return LayerDefinition.create(meshdefinition, 64, 64);
+		MeshDefinition mesh = new MeshDefinition();
+		PartDefinition body = mesh.getRoot().addOrReplaceChild("Body", CubeListBuilder.create()
+			.texOffs(0, 0).addBox(-3F, -12F, -1F, 6F, 10F, 16F, new CubeDeformation(0F))
+			.texOffs(0, 11).addBox(0F, -15F, 3F, 0F, 16F, 15F, new CubeDeformation(0F)),
+			PartPose.offset(0F, 26F, -8F));
+		body.addOrReplaceChild("LeftFin", CubeListBuilder.create()
+			.texOffs(30, 26).addBox(0F, -3F, 0F, 0F, 6F, 6F, new CubeDeformation(0F)),
+			PartPose.offsetAndRotation(3F, -6F, 0F, 0F, 0.6981F, 0F));
+		body.addOrReplaceChild("RightFin", CubeListBuilder.create()
+			.texOffs(30, 20).addBox(0F, -3F, 0F, 0F, 6F, 6F, new CubeDeformation(0F)),
+			PartPose.offsetAndRotation(-3F, -6F, 0F, 0F, -0.6981F, 0F));
+		body.addOrReplaceChild("Head", CubeListBuilder.create()
+			.texOffs(0, 0).addBox(-2F, -2F, -7F, 4F, 4F, 1F, new CubeDeformation(0F))
+			.texOffs(28, 0).addBox(-3F, -4F, -6F, 6F, 7F, 6F, new CubeDeformation(0F)),
+			PartPose.offset(0F, -6F, -1F));
+		body.addOrReplaceChild("Tail", CubeListBuilder.create()
+			.texOffs(26, 38).addBox(-1F, -4F, 0F, 2F, 7F, 4F, new CubeDeformation(0F))
+			.texOffs(0, 0).addBox(0F, -5F, 3F, 0F, 9F, 6F, new CubeDeformation(0F)),
+			PartPose.offset(0F, -6F, 15F));
+		return LayerDefinition.create(mesh, 64, 64);
 	}
 
 	@Override
 	public void renderToBuffer(@NotNull PoseStack poseStack, @NotNull VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		this.body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 
 	@Override
-	public ModelPart root() {
-		return body;
+	public @NotNull ModelPart root() {
+		return this.body;
 	}
 
 	@Override
