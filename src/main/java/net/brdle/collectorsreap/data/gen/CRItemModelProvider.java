@@ -72,7 +72,8 @@ public class CRItemModelProvider extends ItemModelProvider {
 			CRItems.POMEGRANATE_CAKE,
 			CRItems.LIME_SEEDS,
 			CRItems.POMEGRANATE_SEEDS,
-			CRItems.PLATINUM_BASS_ROE
+			CRItems.PLATINUM_BASS_ROE,
+			CRItems.TIGER_PRAWN_ROE
 		).contains(entry);
 	}
 }

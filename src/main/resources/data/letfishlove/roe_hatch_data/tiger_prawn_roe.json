@@ -1,0 +1,7 @@
+{
+  "registry_name": "collectorsreap:tiger_prawn_roe_block",
+  "minHatchAmount": 2,
+  "maxHatchAmount": 3,
+  "minHatchDuration": 3600,
+  "maxHatchDuration": 12000
+}

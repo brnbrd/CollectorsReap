@@ -116,6 +116,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addBlock(CRBlocks.URCHIN_TEST_TILE_STAIRS, "Urchin Test Tile Stairs");
 		addBlock(CRBlocks.URCHIN_TEST_TILE_WALL, "Urchin Test Tile Wall");
 		addBlock(CRBlocks.PLATINUM_BASS_ROE, "Platinum Bass Roe");
+		addBlock(CRBlocks.TIGER_PRAWN_ROE, "Tiger Prawn Roe");
 	}
 
 	private void addItems() {

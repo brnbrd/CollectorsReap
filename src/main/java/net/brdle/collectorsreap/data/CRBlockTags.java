@@ -27,6 +27,8 @@ public class CRBlockTags {
 	// Let Fish Love
 	public static final TagKey<Block> FISH_ROE_PLATINUM_BASS = bind("letfishlove",
 		"fish_roe/" + CollectorsReap.MODID + "/" + CREntities.PLATINUM_BASS.getId().getPath());
+	public static final TagKey<Block> FISH_ROE_TIGER_PRAWN = bind("letfishlove",
+		"fish_roe/" + CollectorsReap.MODID + "/" + CREntities.TIGER_PRAWN.getId().getPath());
 
 	private static TagKey<Block> bind(String modid, String name) {
 		return BlockTags.create(Util.rl(modid, name));
