@@ -2,6 +2,7 @@ package net.brdle.collectorsreap.data.gen;
 
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
+import net.brdle.collectorsreap.common.block.BuddingDragonFruitBlock;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.PortobelloColonyBlock;
 import net.minecraft.data.PackOutput;
@@ -16,8 +17,11 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
+import java.util.Arrays;
+import java.util.List;
 
 public class CRBlockStateProvider extends BlockStateProvider {
 	public CRBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -40,8 +44,12 @@ public class CRBlockStateProvider extends BlockStateProvider {
 		this.pieBlock(CRBlocks.LIME_PIE);
 		this.stageBlock(CRBlocks.PORTOBELLO_COLONY.get(), PortobelloColonyBlock.COLONY_AGE);
 		this.cross(CRBlocks.PORTOBELLO.get());
-		this.crateBlock(CRBlocks.LIME_CRATE.get(), "lime");
-		this.crateBlock(CRBlocks.POMEGRANATE_CRATE.get(), "pomegranate");
+		this.cross(CRBlocks.WILD_DRAGON_FRUITS.get());
+		this.crateBlock(CRBlocks.LIME_CRATE.get(), "lime", false);
+		this.crateBlock(CRBlocks.POMEGRANATE_CRATE.get(), "pomegranate", true);
+		this.crateBlock(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get(), "stygian_pomegranate", true);
+		this.crateBlock(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get(), "pink_dragon_fruit", false);
+		this.customStageBlock(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), Util.rl(FarmersDelight.MODID, "crop_cross"), "cross", BuddingDragonFruitBlock.AGE, Arrays.asList(0, 1, 2, 3, 3));
 		this.cakeBlock(CRBlocks.LIME_CAKE);
 		this.candleCakeBlock(CRBlocks.CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
 		this.candleCakeBlock(CRBlocks.WHITE_CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);
@@ -99,8 +107,15 @@ public class CRBlockStateProvider extends BlockStateProvider {
 		this.roeBlock(CRBlocks.TIGER_PRAWN_ROE.get());
 	}
 
-	private void crateBlock(Block block, String cropName) {
-		this.simpleBlock(block, this.models().cubeBottomTop(Util.name(block), resourceBlock(cropName + "_crate_side"), Util.rl(FarmersDelight.MODID, "block/crate_bottom"), resourceBlock(cropName + "_crate_top")));
+	public void crateBlock(Block block, String cropName, boolean customBottom) {
+		this.simpleBlock(block, models().cubeBottomTop(
+			Util.name(block),
+			resourceBlock(cropName + "_crate_side"),
+				customBottom ?
+				resourceBlock(cropName + "_crate_bottom") :
+				Util.rl(FarmersDelight.MODID, "block/crate_bottom"),
+			resourceBlock(cropName + "_crate_top")
+		));
 	}
 
 	private ModelFile existingModel(String path) {
@@ -110,6 +125,21 @@ public class CRBlockStateProvider extends BlockStateProvider {
 	private void cross(Block block) {
 		this.simpleBlock(block, models().cross("block/" + Util.name(block),
 			CRBlockStateProvider.resourceBlock(Util.name(block))).renderType("cutout"));
+	}
+	// Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.20/src/main/java/vectorwing/farmersdelight/data/BlockStates.java
+	public void customStageBlock(Block block, @Nullable ResourceLocation parent, String textureKey, IntegerProperty ageProperty, List<Integer> suffixes, Property<?>... ignored) {
+		getVariantBuilder(block)
+			.forAllStatesExcept(state -> {
+				int ageSuffix = state.getValue(ageProperty);
+				String stageName = Util.name(block) + "_stage";
+				stageName += suffixes.isEmpty() ? ageSuffix : suffixes.get(Math.min(suffixes.size(), ageSuffix));
+				if (parent == null) {
+					return ConfiguredModel.builder()
+						.modelFile(models().cross(stageName, resourceBlock(stageName)).renderType("cutout")).build();
+				}
+				return ConfiguredModel.builder()
+					.modelFile(models().singleTexture(stageName, parent, textureKey, resourceBlock(stageName)).renderType("cutout")).build();
+			}, ignored);
 	}
 
 	// Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java

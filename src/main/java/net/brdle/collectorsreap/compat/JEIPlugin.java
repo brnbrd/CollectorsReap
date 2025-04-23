@@ -70,6 +70,13 @@ public class JEIPlugin implements IModPlugin {
 			}
 		}
 
+		// Pink Dragon Fruit
+		String dragonFruitTranslationKey = "desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PINK_DRAGON_FRUIT);
+		List<ItemStack> dragonFruitStack = List.of(Util.gs(CRItems.WILD_DRAGON_FRUITS), Util.gs(CRItems.PINK_DRAGON_FRUIT));
+		if (CRConfig.verify(CRItems.PINK_DRAGON_FRUIT)) {
+			registration.addItemStackInfo(dragonFruitStack, Component.translatable(dragonFruitTranslationKey));
+		}
+
 		// Urchin Dart
 		String dartTranslationKey = "desc." + CollectorsReap.MODID + "." + Util.name(CRItems.URCHIN_DART);
 		if (CRConfig.verify(CRItems.URCHIN_DART)) {

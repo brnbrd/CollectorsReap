@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
+import vectorwing.farmersdelight.common.tag.ModTags;
 import java.util.concurrent.CompletableFuture;
 
 public class CRItemTagProvider extends ItemTagsProvider {
@@ -64,8 +65,19 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.ROE_FISH)
 			.addTag(CRItemTags.ROE_PRAWN);
 
+		// Farmer's Delight
+		this.tag(ModTags.WILD_CROPS_ITEM)
+			.add(CRItems.WILD_DRAGON_FRUITS.get());
+		this.tag(ItemTags.SMALL_FLOWERS)
+			.add(CRItems.WILD_DRAGON_FRUITS.get());
+
 		// Forge
 		this.tag(CRItemTags.CHEESE).addOptional(Util.rl("brewinandchewin", "flaxen_cheese_wedge"));
+		this.tag(CRItemTags.forge("fruits/dragonfruit"))
+			.add(CRItems.PINK_DRAGON_FRUIT.get())
+			.addOptional(Util.rl("atmospheric", "dragon_fruit"))
+			.addOptional(Util.rl("pamhc2trees", "dragonfruititem"));
+		this.tag(CRItemTags.FRUITS_DRAGON_FRUIT).addTag(CRItemTags.forge("fruits/dragonfruit"));
 		this.tag(CRItemTags.FRUITS_POMEGRANATE).add(CRItems.POMEGRANATE_SLICE.get());
 		this.tag(CRItemTags.FRUITS_LIME)
 			.add(CRItems.LIME.get())
@@ -76,12 +88,15 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addOptional(Util.rl("fruitsdelight", "lemon_slice"));
 		this.tag(CRItemTags.FRUITS)
 			.addTag(CRItemTags.FRUITS_CITRUS)
-			.addTag(CRItemTags.FRUITS_POMEGRANATE);
+			.addTag(CRItemTags.FRUITS_POMEGRANATE)
+			.addTag(CRItemTags.FRUITS_DRAGON_FRUIT);
 		this.tag(CRItemTags.SEEDS_LIME).add(CRItems.LIME_SEEDS.get());
 		this.tag(CRItemTags.SEEDS_POMEGRANATE).add(CRItems.POMEGRANATE_SEEDS.get());
+		this.tag(CRItemTags.SEEDS_DRAGON_FRUIT).add(CRItems.DRAGON_FRUIT_SEEDS.get());
 		this.tag(Tags.Items.SEEDS)
 			.addTag(CRItemTags.SEEDS_LIME)
-			.addTag(CRItemTags.SEEDS_POMEGRANATE);
+			.addTag(CRItemTags.SEEDS_POMEGRANATE)
+			.addTag(CRItemTags.SEEDS_DRAGON_FRUIT);
 		this.tag(CRItemTags.MUSHROOMS_PORTOBELLO).add(CRItems.PORTOBELLO.get());
 		this.tag(Tags.Items.MUSHROOMS).addTag(CRItemTags.MUSHROOMS_PORTOBELLO);
 		this.tag(CRItemTags.TORTILLA).addOptional(Util.rl("culturaldelights", "tortilla"));
@@ -191,13 +206,16 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.addSelf(CRItemTags.ALOE_LEAVES);
 		this.addSelf(CRItemTags.YUCCA_FRUIT);
 		this.addSelf(CRItemTags.PASSION_FRUIT);
+		this.tag(CRItemTags.COCHINEAL_FOOD).addTag(CRItemTags.FRUITS_DRAGON_FRUIT);
 
 		// Seasonals
 		this.addSelf(CRItemTags.PUMPKIN_PUREE);
 
 		// Serene Seasons
 		//this.tag(CRItemTags.WINTER_CROPS);
-		this.tag(CRItemTags.SUMMER_CROPS).add(CRItems.POMEGRANATE_SEEDS.get());
+		this.tag(CRItemTags.SUMMER_CROPS)
+			.add(CRItems.POMEGRANATE_SEEDS.get())
+			.add(CRItems.DRAGON_FRUIT_SEEDS.get());
 		this.tag(CRItemTags.AUTUMN_CROPS).add(CRItems.POMEGRANATE_SEEDS.get());
 		this.tag(CRItemTags.SPRING_CROPS).add(CRItems.LIME_SEEDS.get());
 

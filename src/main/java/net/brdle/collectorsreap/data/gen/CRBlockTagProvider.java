@@ -19,7 +19,6 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 import java.util.concurrent.CompletableFuture;
 
 public class CRBlockTagProvider extends BlockTagsProvider {
-
 	public CRBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
 		super(output, lookupProvider, CollectorsReap.MODID, existingFileHelper);
 	}
@@ -35,12 +34,19 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.PORTOBELLO_COLONY.get());
 		this.tag(ModTags.UNAFFECTED_BY_RICH_SOIL)
 			.add(CRBlocks.PORTOBELLO_COLONY.get());
+		this.tag(ModTags.WILD_CROPS)
+			.add(CRBlocks.WILD_DRAGON_FRUITS.get());
+		this.tag(BlockTags.SMALL_FLOWERS)
+			.add(CRBlocks.WILD_DRAGON_FRUITS.get());
+
 
 		// Collector's Reap
 		this.tag(CRBlockTags.PORTOBELLO_SPAWNABLE_ON)
 			.addTag(ModTags.MUSHROOM_COLONY_GROWABLE_ON)
 			.addTag(BlockTags.MUSHROOM_GROW_BLOCK)
 			.addTag(BlockTags.DIRT);
+		this.tag(CRBlockTags.DRAGON_FRUIT_SPAWNABLE_ON)
+			.addTag(Tags.Blocks.SAND_RED);
 		this.tag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
 			.addOptional(Util.rl("mynethersdelight", "resurgent_soil"))
 			.addOptional(Util.rl("mynethersdelight", "resurgent_soil_farmland"));
@@ -65,7 +71,12 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.MINEABLE_WITH_AXE)
 			.add(CRBlocks.PORTOBELLO.get())
 			.add(CRBlocks.LIME_CRATE.get())
-			.add(CRBlocks.POMEGRANATE_CRATE.get());
+			.add(CRBlocks.POMEGRANATE_CRATE.get())
+			.add(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get())
+			.add(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get());
+		this.tag(BlockTags.CLIMBABLE).add(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
+		this.tag(BlockTags.CROPS)
+			.add(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get());
 		this.tag(BlockTags.BEE_GROWABLES)
 			.add(CRBlocks.LIME_BUSH.get())
 			.add(CRBlocks.POMEGRANATE_BUSH.get());
@@ -92,7 +103,9 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(CRBlockTags.AUTUMN_CROPS)
 			.add(CRBlocks.POMEGRANATE_BUSH.get());
 		this.tag(CRBlockTags.SUMMER_CROPS)
-			.add(CRBlocks.POMEGRANATE_BUSH.get());
+			.add(CRBlocks.POMEGRANATE_BUSH.get())
+			.add(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get())
+			.add(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
 		this.tag(CRBlockTags.SPRING_CROPS)
 			.add(CRBlocks.LIME_BUSH.get());
 
@@ -107,6 +120,9 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		// Let Fish Love
 		this.tag(CRBlockTags.FISH_ROE_PLATINUM_BASS).add(CRBlocks.PLATINUM_BASS_ROE.get());
 		this.tag(CRBlockTags.FISH_ROE_TIGER_PRAWN).add(CRBlocks.TIGER_PRAWN_ROE.get());
+
+		// Supplementaries
+		this.tag(CRBlockTags.HANG_FROM_ROPES).add(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
 
 		// Other
 		this.tag(BlockTags.create(Util.rl("twilightforest", "portal/decoration"))).add(CRBlocks.PORTOBELLO.get());

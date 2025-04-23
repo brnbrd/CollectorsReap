@@ -29,22 +29,13 @@
         "category": "misc",
         "ingredients": [
           {
-            "tag": "forge:fruits/lime"
-          },
-          {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:limeade"
           },
           {
             "tag": "neapolitan:mint_leaves"
           },
           {
             "tag": "neapolitan:mint_leaves"
-          },
-          {
-            "item": "minecraft:sugar"
-          },
-          {
-            "item": "minecraft:glass_bottle"
           }
         ],
         "result": {

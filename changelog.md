@@ -1,6 +1,15 @@
 ## Version History
 
 
+# 1.3.5
+
+### Updates
+- Added Pink Dragon Fruit
+
+### Fixes
+- Some items that previously didn't display effects in their tooltip now do
+
+
 ## 1.3.4
 
 ### Updates

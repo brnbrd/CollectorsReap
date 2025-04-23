@@ -13,10 +13,7 @@
         "category": "misc",
         "ingredients": [
           {
-            "tag": "forge:fruits/lime"
-          },
-          {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:limeade"
           },
           {
             "tag": "forge:fruits/pomegranate"
@@ -26,12 +23,6 @@
           },
           {
             "tag": "forge:fruits/pomegranate"
-          },
-          {
-            "item": "minecraft:sugar"
-          },
-          {
-            "item": "minecraft:glass_bottle"
           }
         ],
         "result": {

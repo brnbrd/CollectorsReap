@@ -5,6 +5,7 @@ import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -18,6 +19,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.block.PieBlock;
+import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
@@ -77,10 +79,20 @@ public class CRBlocks {
 		() -> new LimeBushBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).forceSolidOff().instabreak().sound(SoundType.SWEET_BERRY_BUSH).noOcclusion().pushReaction(PushReaction.DESTROY)));
 	public static final RegistryObject<Block> POMEGRANATE_BUSH = registerBlock("pomegranate_bush",
 		() -> new PomegranateBushBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).forceSolidOff().instabreak().sound(SoundType.SWEET_BERRY_BUSH).noOcclusion().pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> WILD_DRAGON_FRUITS = registerBlock("wild_dragon_fruits",
+		() -> new WildCropBlock(MobEffects.GLOWING, 6, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
+	public static final RegistryObject<Block> BUDDING_PINK_DRAGON_FRUIT_CROP = BLOCKS.register("budding_pink_dragon_fruits",
+		() -> new BuddingDragonFruitBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+	public static final RegistryObject<Block> PINK_DRAGON_FRUIT_CROP = BLOCKS.register("pink_dragon_fruits",
+		() -> new DragonFruitVineBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 	public static final RegistryObject<Block> LIME_CRATE = BLOCKS.register("lime_crate",
 		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> POMEGRANATE_CRATE = BLOCKS.register("pomegranate_crate",
 		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> STYGIAN_POMEGRANATE_CRATE = BLOCKS.register("stygian_pomegranate_crate",
+		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+	public static final RegistryObject<Block> PINK_DRAGON_FRUIT_CRATE = BLOCKS.register("pink_dragon_fruit_crate",
+		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 	public static final RegistryObject<Block> LIME_ICE_CREAM_BLOCK = BLOCKS.register("lime_ice_cream_block",
 		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(0.2F).sound(SoundType.SNOW)));
 	public static final RegistryObject<Block> POMEGRANATE_ICE_CREAM_BLOCK = BLOCKS.register("pomegranate_ice_cream_block",

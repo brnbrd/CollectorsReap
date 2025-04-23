@@ -1,0 +1,58 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pink_dragon_fruit"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pink_dragon_fruit_crate"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "building",
+        "ingredients": [
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:pink_dragon_fruit_crate"
+        }
+      }
+    }
+  ]
+}

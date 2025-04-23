@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#collectorsreap:has_spawn/dragon_fruit",
+  "features": "collectorsreap:patch_dragon_fruit",
+  "step": "vegetal_decoration"
+}

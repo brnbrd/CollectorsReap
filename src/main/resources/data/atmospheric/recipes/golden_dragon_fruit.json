@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "atmospheric"
+        },
+        {
+          "type": "forge:item_exists",
+          "item": "atmospheric:golden_dragon_fruit"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "#": {
+            "tag": "forge:ingots/gold"
+          },
+          "d": [
+            {
+              "item": "atmospheric:dragon_fruit"
+            },
+            {
+              "item": "collectorsreap:pink_dragon_fruit"
+            }
+          ]
+        },
+        "pattern": [
+          "###",
+          "#d#",
+          "###"
+        ],
+        "result": {
+          "item": "atmospheric:golden_dragon_fruit"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

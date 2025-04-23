@@ -49,6 +49,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE), "Pomegranates can be found as a wild bush in warped forests.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE) + ".pollination", "A flowering Pomegranate Bush will grow fruit in the Overworld when pollinated by a Bee.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.STYGIAN_POMEGRANATE), "A dangerous variant that can be rarely picked from Pomegranate Bushes growing on Resurgent Soil.");
+		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PINK_DRAGON_FRUIT), "Pink Dragon Fruits can be found as a wild plant in the badlands.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.URCHIN_DART), "Throwable projectiles that poison enemies for five seconds upon contact. Holding a bamboo in your offhand shoots the dart for higher velocity.");
 		add("config.jade.plugin_" + CollectorsReap.MODID + ".crop_progress", "Crop Progress");
 	}
@@ -69,6 +70,11 @@ public class CRLanguageProvider extends LanguageProvider {
 		addBlock(CRBlocks.LIME_CRATE, "Lime Crate");
 		addBlock(CRBlocks.POMEGRANATE_BUSH, "Pomegranate Bush");
 		addBlock(CRBlocks.POMEGRANATE_CRATE, "Pomegranate Crate");
+		addBlock(CRBlocks.STYGIAN_POMEGRANATE_CRATE, "Stygian Pomegranate Crate");
+		addBlock(CRBlocks.WILD_DRAGON_FRUITS, "Wild Dragon Fruits");
+		addBlock(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP, "Budding Pink Dragon Fruit Vine");
+		addBlock(CRBlocks.PINK_DRAGON_FRUIT_CROP, "Pink Dragon Fruit Vine");
+		addBlock(CRBlocks.PINK_DRAGON_FRUIT_CRATE, "Pink Dragon Fruit Crate");
 		addBlock(CRBlocks.LIME_CAKE, "Lime Cake");
 		addBlock(CRBlocks.CANDLE_LIME_CAKE, "Lime Cake with Candle");
 		addBlock(CRBlocks.WHITE_CANDLE_LIME_CAKE, "Lime Cake with White Candle");
@@ -128,6 +134,8 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.PORTOBELLO_WRAP, "Veggie Wrap");
 		addItem(CRItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
 		addItem(CRItems.PORTOBELLO_QUICHE_SLICE, "Slice of Portobello Quiche");
+		addItem(CRItems.PINK_DRAGON_FRUIT, "Pink Dragon Fruit");
+		addItem(CRItems.DRAGON_FRUIT_SEEDS, "Dragon Fruit Seeds");
 		addItem(CRItems.LIME_PIE_SLICE, "Slice of Key Lime Pie");
 		addItem(CRItems.LIME, "Lime");
 		addItem(CRItems.LIME_SEEDS, "Lime Seeds");
@@ -252,5 +260,6 @@ public class CRLanguageProvider extends LanguageProvider {
 		add(CollectorsReap.MODID + ".subtitle.platinum_bass.death", "Platinum Bass dies");
 		add(CollectorsReap.MODID + ".subtitle.platinum_bass.flop", "Platinum Bass flops");
 		add(CollectorsReap.MODID + ".subtitle.platinum_bass.hurt", "Platinum Bass hurts");
+		add(CollectorsReap.MODID + ".subtitle.dragon_fruit.pick", "Dragon Fruits pop");
 	}
 }

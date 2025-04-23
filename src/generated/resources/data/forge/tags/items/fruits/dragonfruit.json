@@ -1,0 +1,13 @@
+{
+  "values": [
+    "collectorsreap:pink_dragon_fruit",
+    {
+      "id": "atmospheric:dragon_fruit",
+      "required": false
+    },
+    {
+      "id": "pamhc2trees:dragonfruititem",
+      "required": false
+    }
+  ]
+}

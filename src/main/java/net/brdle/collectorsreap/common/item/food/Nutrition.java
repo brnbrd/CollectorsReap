@@ -11,6 +11,9 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class Nutrition {
+	public static final FoodProperties PINK_DRAGON_FRUIT = (new FoodProperties.Builder())
+		.nutrition(3).saturationMod(0.2F)
+		.build();
 	public static final FoodProperties LIME = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(0.2F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 100, 0), 1F).build();
@@ -24,7 +27,7 @@ public class Nutrition {
 	public static final FoodProperties LIME_POPSICLE = (new FoodProperties.Builder())
 		.nutrition(3).saturationMod(0.2F)
 		.fast()
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 900, 0), 1F).build();
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 0), 1F).build();
 	public static final FoodProperties LIME_COOKIE = (new FoodProperties.Builder())
 		.nutrition(3).saturationMod(0.2F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 100, 0), 1F).build();
@@ -243,7 +246,7 @@ public class Nutrition {
 	public static final FoodProperties BIG_RICE_BALL = (new FoodProperties.Builder())
 		.nutrition(10).saturationMod(0.9F).build();
 	public static final FoodProperties LAND_AND_SEA_BURGER = (new FoodProperties.Builder())
-		.nutrition(15).saturationMod(0.85F)
+		.nutrition(12).saturationMod(0.8F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1F)
 		.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200, 0), 1F).build();

@@ -2,6 +2,7 @@ package net.brdle.collectorsreap.common;
 
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,6 +26,8 @@ public class CRSoundEvents {
 		() -> SoundEvent.createVariableRangeEvent(Util.cr("entity.platinum_bass.hurt")));
 	public static final RegistryObject<SoundEvent> PLATINUM_BASS_FLOP = SOUNDS.register("platinum_bass_flop",
 		() -> SoundEvent.createVariableRangeEvent(Util.cr("entity.platinum_bass.flop")));
+	public static final RegistryObject<SoundEvent> PICK_DRAGON_FRUITS = SOUNDS.register("pick_dragon_fruits",
+		() -> SoundEvent.createVariableRangeEvent(Util.cr("block.dragon_fruit_bush.pick_dragon_fruits")));
 
 	public static void create(IEventBus bus) {
 		SOUNDS.register(bus);

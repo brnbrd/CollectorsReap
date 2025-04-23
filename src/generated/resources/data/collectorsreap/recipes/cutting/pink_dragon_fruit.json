@@ -1,0 +1,32 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pink_dragon_fruit"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          }
+        ],
+        "result": [
+          {
+            "item": "collectorsreap:dragon_fruit_seeds"
+          },
+          {
+            "item": "minecraft:pink_dye"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}

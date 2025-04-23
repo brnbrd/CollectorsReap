@@ -48,7 +48,14 @@ configBackground = "collectorsreap:textures/block/pomegranate_ice_cream_block.pn
 [[dependencies.collectorsreap]]
 	modId = "neapolitan"
 	mandatory = false
-	versionRange = "[0,)"
+	versionRange = "[5.1,)"
+	ordering = "AFTER"
+	side = "BOTH"
+
+[[dependencies.collectorsreap]]
+	modId = "atmospheric"
+	mandatory = false
+	versionRange = "[6.1,)"
 	ordering = "AFTER"
 	side = "BOTH"
 

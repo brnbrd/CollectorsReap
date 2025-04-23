@@ -1,4 +1,13 @@
 {
+  "block.dragon_fruit_bush.pick_dragon_fruits": {
+    "subtitle": "collectorsreap.subtitle.dragon_fruit.pick",
+    "sounds": [
+      {
+        "name": "block.sweet_berry_bush.pick_berries",
+        "type": "event"
+      }
+    ]
+  },
   "entity.urchin_dart.throw": {
     "subtitle": "collectorsreap.subtitle.urchin_dart.throw",
     "sounds": [

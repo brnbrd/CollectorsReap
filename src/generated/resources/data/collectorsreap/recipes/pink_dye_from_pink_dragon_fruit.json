@@ -1,0 +1,25 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pink_dragon_fruit"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          }
+        ],
+        "result": {
+          "item": "minecraft:pink_dye"
+        }
+      }
+    }
+  ]
+}

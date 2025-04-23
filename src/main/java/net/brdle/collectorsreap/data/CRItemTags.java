@@ -14,6 +14,8 @@ public class CRItemTags {
 	public static final TagKey<Item> SEEDS_POMEGRANATE = forge("seeds/pomegranate");
 	public static final TagKey<Item> FRUITS_LIME = forge("fruits/lime");
 	public static final TagKey<Item> SEEDS_LIME = forge("seeds/lime");
+	public static final TagKey<Item> FRUITS_DRAGON_FRUIT = forge("fruits/dragon_fruit");
+	public static final TagKey<Item> SEEDS_DRAGON_FRUIT = forge("seeds/dragon_fruit");
 	public static final TagKey<Item> MUSHROOMS_PORTOBELLO = forge("mushrooms/portobello");
 	public static final TagKey<Item> TORTILLA = forge("tortilla");
 	public static final TagKey<Item> ICE_CUBES = forge("ice_cubes");
@@ -60,6 +62,7 @@ public class CRItemTags {
 	public static final TagKey<Item> ALOE_LEAVES = Util.it("atmospheric", "aloe_leaves");
 	public static final TagKey<Item> PASSION_FRUIT = Util.it("atmospheric", "passion_fruit");
 	public static final TagKey<Item> YUCCA_FRUIT = Util.it("atmospheric", "yucca_fruit");
+	public static final TagKey<Item> COCHINEAL_FOOD = Util.it("atmospheric", "cochineal_food");
 
 	// Seasonals
 	public static final TagKey<Item> PUMPKIN_PUREE = Util.it("seasonals", "pumpkin_puree");
@@ -87,7 +90,7 @@ public class CRItemTags {
 		return Util.it(CollectorsReap.MODID, name);
 	}
 
-	private static TagKey<Item> forge(String name) {
+	public static TagKey<Item> forge(String name) {
 		return Util.it("forge", name);
 	}
 }

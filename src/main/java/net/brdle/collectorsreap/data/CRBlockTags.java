@@ -5,11 +5,13 @@ import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.entity.CREntities;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class CRBlockTags {
 	// Collector's Reap
 	public static final TagKey<Block> PORTOBELLO_SPAWNABLE_ON = bind(CollectorsReap.MODID, "portobello_spawnable_on");
+	public static final TagKey<Block> DRAGON_FRUIT_SPAWNABLE_ON = bind(CollectorsReap.MODID, "dragon_fruit_spawnable_on");
 	public static final TagKey<Block> POMEGRANATE_FAST_ON = bind(CollectorsReap.MODID, "pomegranate_fast_on");
 	public static final TagKey<Block> STYGIAN_POMEGRANATE_GROWABLE_ON = bind(CollectorsReap.MODID, "stygian_pomegranate_growable_on");
 	public static final TagKey<Block> CRAB_SPAWNABLE_ON = bind(CollectorsReap.MODID, "crab_spawnable_on");
@@ -29,6 +31,9 @@ public class CRBlockTags {
 		"fish_roe/" + CollectorsReap.MODID + "/" + CREntities.PLATINUM_BASS.getId().getPath());
 	public static final TagKey<Block> FISH_ROE_TIGER_PRAWN = bind("letfishlove",
 		"fish_roe/" + CollectorsReap.MODID + "/" + CREntities.TIGER_PRAWN.getId().getPath());
+
+	// Supplementaries
+	public static final TagKey<Block> HANG_FROM_ROPES = bind("supplementaries", "hang_from_ropes");
 
 	private static TagKey<Block> bind(String modid, String name) {
 		return BlockTags.create(Util.rl(modid, name));

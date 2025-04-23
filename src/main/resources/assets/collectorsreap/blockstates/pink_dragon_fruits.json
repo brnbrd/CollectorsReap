@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0,ropelogged=false": {
+      "model": "collectorsreap:block/pink_dragon_fruits_stage0"
+    },
+    "age=1,ropelogged=false": {
+      "model": "collectorsreap:block/pink_dragon_fruits_stage1"
+    },
+    "age=2,ropelogged=false": {
+      "model": "collectorsreap:block/pink_dragon_fruits_stage2"
+    },
+    "age=3,ropelogged=false": {
+      "model": "collectorsreap:block/pink_dragon_fruits_stage3"
+    },
+    "age=0,ropelogged=true": {
+      "model": "collectorsreap:block/pink_dragon_fruits_vine_stage0"
+    },
+    "age=1,ropelogged=true": {
+      "model": "collectorsreap:block/pink_dragon_fruits_vine_stage1"
+    },
+    "age=2,ropelogged=true": {
+      "model": "collectorsreap:block/pink_dragon_fruits_vine_stage2"
+    },
+    "age=3,ropelogged=true": {
+      "model": "collectorsreap:block/pink_dragon_fruits_vine_stage3"
+    }
+  }
+}

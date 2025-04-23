@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-25T12:07:55.0522323	Item Models: collectorsreap
+// 1.20.1	2025-04-23T00:44:20.1037359	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -38,6 +38,7 @@ b3ec01ff2712dee8521a256be1d817a14a150226 assets/collectorsreap/models/item/crab_
 a9eacaf29650dd5297e36ce042addb5086185ceb assets/collectorsreap/models/item/crab_noodles.json
 65c1291027378fac40205c9b17c349f6299f38c1 assets/collectorsreap/models/item/crimson_carrot_roast.json
 607b14139019a384422dc58f34b4f71748b2d7d6 assets/collectorsreap/models/item/deluxe_salad.json
+6d75bb922ef792900ad98eacaaaa723cd456bcc1 assets/collectorsreap/models/item/dragon_fruit_seeds.json
 1166c9d7b97213bf472e8eb1bdaaee85f7fe92de assets/collectorsreap/models/item/fish_mix.json
 20d358545ae7a12561cf0bd01d35762e21cdf67f assets/collectorsreap/models/item/glazed_strider.json
 824066299419f1fa231c5242d0168a6ebacbeb3f assets/collectorsreap/models/item/glow_berry_gummy.json
@@ -67,6 +68,8 @@ abbae41fa500c207b8ede0586c4b43c6620d7c16 assets/collectorsreap/models/item/melon
 08ec6f2a6c9a3d81f0b480208c83557d3fdf7af9 assets/collectorsreap/models/item/mint_limeade.json
 a7150a1969018156361fcbdba77c1d10b4f616cc assets/collectorsreap/models/item/passion_fruit_gummy.json
 af50504de896b1973158a3155c5e644d4053eb54 assets/collectorsreap/models/item/pearly_claw.json
+ad3adb14616f4d2d21ad47372bb78d7bf8fe2608 assets/collectorsreap/models/item/pink_dragon_fruit.json
+7ab46f4bab67342d465d4e8ef44f873d2f79b9f5 assets/collectorsreap/models/item/pink_dragon_fruit_crate.json
 9ad1425ace53a2b261c77a078310a3ca37f1d258 assets/collectorsreap/models/item/pink_limeade.json
 d15323f24282273a5eeb030b02299f5ebb84128d assets/collectorsreap/models/item/platinum_bass.json
 1ea1761e7cf163cb117b7ed86f2c0a03fedfee93 assets/collectorsreap/models/item/platinum_bass_bucket.json
@@ -118,6 +121,7 @@ f9c1c80c837f61e1eee3928977783485c864a673 assets/collectorsreap/models/item/shimm
 7fb6fe8fb5b5ba66c4a4acf564e784fd5fd98ecd assets/collectorsreap/models/item/strawberry_jam_bun.json
 cddcebeb532ce4a936fe7204cffe82c53c30b420 assets/collectorsreap/models/item/stuffed_portobello_cap.json
 103579a809c5fde720a8d08d0ae50bc226655d01 assets/collectorsreap/models/item/stygian_pomegranate.json
+fa7623caf87b472ccad3f99718b11a36a7682ac0 assets/collectorsreap/models/item/stygian_pomegranate_crate.json
 e5228d2dfd4bb91cfc3b6b7a9a500682b9603b6f assets/collectorsreap/models/item/sweet_berry_gummy.json
 a4955f6c14565ca6fb1991ef1bf9f6c3da3ac07c assets/collectorsreap/models/item/tiger_prawn.json
 fd32a2fe94ec010eda341c9d00cdff3f6718185f assets/collectorsreap/models/item/tiger_prawn_bucket.json
@@ -140,5 +144,6 @@ aaed0000ce2b18934bfac46113220580fd6e7e19 assets/collectorsreap/models/item/urchi
 bbb7a34e85ae5b1b4545a40414e8db020ecd1e7b assets/collectorsreap/models/item/urchin_test_tile_stairs.json
 ed8af4cc2240b0ade0ce885eb02c5efa4b67670c assets/collectorsreap/models/item/urchin_test_tile_wall.json
 94ef0e8c9d82264e8e9a12cd41e959ac9bb4b547 assets/collectorsreap/models/item/vanilla_gummy.json
+6780426f5eb8a21f7d7c7e5d6781857a56353033 assets/collectorsreap/models/item/wild_dragon_fruits.json
 9861271ee993e81ef854c2be87b37e2394d601d7 assets/collectorsreap/models/item/yellow_tea_gummy.json
 c90b934ced721de797d3ca0139302beed276b8df assets/collectorsreap/models/item/yucca_gummy.json

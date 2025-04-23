@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "collectorsreap:block/budding_pink_dragon_fruits_stage0"
+    },
+    "age=1": {
+      "model": "collectorsreap:block/budding_pink_dragon_fruits_stage1"
+    },
+    "age=2": {
+      "model": "collectorsreap:block/budding_pink_dragon_fruits_stage2"
+    },
+    "age=3": {
+      "model": "collectorsreap:block/budding_pink_dragon_fruits_stage3"
+    },
+    "age=4": {
+      "model": "collectorsreap:block/budding_pink_dragon_fruits_stage3"
+    }
+  }
+}

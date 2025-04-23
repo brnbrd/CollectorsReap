@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "bottom": "farmersdelight:block/crate_bottom",
+    "bottom": "collectorsreap:block/pomegranate_crate_bottom",
     "side": "collectorsreap:block/pomegranate_crate_side",
     "top": "collectorsreap:block/pomegranate_crate_top"
   }

@@ -7,8 +7,8 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 
 public class CRBiomeTags {
-
 	public static final TagKey<Biome> PORTOBELLO_SPAWNS = bind(CollectorsReap.MODID, "has_spawn/portobello");
+	public static final TagKey<Biome> DRAGON_FRUIT_SPAWNS = bind(CollectorsReap.MODID, "has_spawn/dragon_fruit");
 	public static final TagKey<Biome> LIME_SPAWNS = bind(CollectorsReap.MODID, "has_spawn/lime");
 	public static final TagKey<Biome> POMEGRANATE_SPAWNS = bind(CollectorsReap.MODID, "has_spawn/pomegranate");
 	public static final TagKey<Biome> PLATINUM_BASS_SPAWNS = bind(CollectorsReap.MODID, "has_spawn/platinum_bass");

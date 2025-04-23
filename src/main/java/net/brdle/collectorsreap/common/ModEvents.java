@@ -28,6 +28,9 @@ public class ModEvents {
 			//Flammables
 
 			//Compostables
+			compost(CRItems.WILD_DRAGON_FRUITS, 0.65F);
+			compost(CRItems.PINK_DRAGON_FRUIT, 0.3F);
+			compost(CRItems.DRAGON_FRUIT_SEEDS, 0.3F);
 			compost(CRItems.PORTOBELLO, 0.65F);
 			compost(CRItems.PORTOBELLO_COLONY, 1.0F);
 			compost(CRItems.BAKED_PORTOBELLO_CAP, 0.65F);

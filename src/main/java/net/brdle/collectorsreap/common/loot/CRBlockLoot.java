@@ -3,7 +3,6 @@ package net.brdle.collectorsreap.common.loot;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.LimeBushBlock;
 import net.brdle.collectorsreap.common.block.PomegranateBushBlock;
-import net.brdle.collectorsreap.common.block.PortobelloColonyBlock;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -19,11 +18,10 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
+import org.jetbrains.annotations.NotNull;
 
 public class CRBlockLoot extends BlockLootSubProvider {
-
 	public CRBlockLoot() {
 		super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags());
 	}
@@ -71,8 +69,12 @@ public class CRBlockLoot extends BlockLootSubProvider {
 						.setRolls(ConstantValue.exactly(1.0F))
 						.add(LootItem.lootTableItem(CRItems.POMEGRANATE.get()))
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))))));
+		this.dropOther(CRBlocks.WILD_DRAGON_FRUITS.get(), CRItems.DRAGON_FRUIT_SEEDS.get());
+		this.dropOther(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), CRItems.DRAGON_FRUIT_SEEDS.get());
 		this.dropSelf(CRBlocks.LIME_CRATE.get());
 		this.dropSelf(CRBlocks.POMEGRANATE_CRATE.get());
+		this.dropSelf(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get());
+		this.dropSelf(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get());
 		this.empty(CRBlocks.LIME_CAKE);
 		this.dropOther(CRBlocks.CANDLE_LIME_CAKE.get(), Blocks.CANDLE);
 		this.dropOther(CRBlocks.WHITE_CANDLE_LIME_CAKE.get(), Blocks.WHITE_CANDLE);
@@ -129,8 +131,15 @@ public class CRBlockLoot extends BlockLootSubProvider {
 
 	@Override
 	protected @NotNull Iterable<Block> getKnownBlocks() {
-		return CRBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
-			.filter(b -> !(b instanceof PortobelloColonyBlock))
+		return CRBlocks.BLOCKS.getEntries()
+			.stream()
+			.filter(reg -> {
+				return (
+					reg != CRBlocks.PORTOBELLO_COLONY &&
+					reg != CRBlocks.PINK_DRAGON_FRUIT_CROP
+				);
+			})
+			.map(RegistryObject::get)
 			::iterator;
 	}
 

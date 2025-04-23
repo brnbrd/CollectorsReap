@@ -1,0 +1,58 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "stygian_pomegranate"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "stygian_pomegranate_crate"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "building",
+        "ingredients": [
+          {
+            "item": "collectorsreap:stygian_pomegranate"
+          },
+          {
+            "item": "collectorsreap:stygian_pomegranate"
+          },
+          {
+            "item": "collectorsreap:stygian_pomegranate"
+          },
+          {
+            "item": "collectorsreap:stygian_pomegranate"
+          },
+          {
+            "item": "collectorsreap:stygian_pomegranate"
+          },
+          {
+            "item": "collectorsreap:stygian_pomegranate"
+          },
+          {
+            "item": "collectorsreap:stygian_pomegranate"
+          },
+          {
+            "item": "collectorsreap:stygian_pomegranate"
+          },
+          {
+            "item": "collectorsreap:stygian_pomegranate"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:stygian_pomegranate_crate"
+        }
+      }
+    }
+  ]
+}

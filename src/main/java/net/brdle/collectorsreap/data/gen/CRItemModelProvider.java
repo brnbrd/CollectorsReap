@@ -32,6 +32,9 @@ public class CRItemModelProvider extends ItemModelProvider {
 				if (entry.get() instanceof ForgeSpawnEggItem) {
 					spawnEgg(id);
 					continue;
+				} else if (entry == CRItems.WILD_DRAGON_FRUITS) {
+					itemGeneratedModel(CRItems.WILD_DRAGON_FRUITS.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.WILD_DRAGON_FRUITS)));
+					continue;
 				} else if (entry == CRItems.PORTOBELLO) {
 					itemGeneratedModel(CRItems.PORTOBELLO.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO)));
 					continue;

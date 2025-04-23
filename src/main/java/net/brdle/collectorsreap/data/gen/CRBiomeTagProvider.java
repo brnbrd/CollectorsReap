@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -20,6 +21,7 @@ public class CRBiomeTagProvider extends BiomeTagsProvider {
 	@Override
 	protected void addTags(HolderLookup.@NotNull Provider pProvider) {
 		this.tag(CRBiomeTags.PORTOBELLO_SPAWNS).add(Biomes.MEADOW);
+		this.tag(CRBiomeTags.DRAGON_FRUIT_SPAWNS).addTag(BiomeTags.IS_BADLANDS);
 		this.tag(CRBiomeTags.LIME_SPAWNS).add(Biomes.FLOWER_FOREST);
 		this.tag(CRBiomeTags.POMEGRANATE_SPAWNS).add(Biomes.WARPED_FOREST);
 		this.tag(CRBiomeTags.CHIEFTAIN_CRAB_SPAWNS).addTag(BiomeTags.IS_BEACH);
