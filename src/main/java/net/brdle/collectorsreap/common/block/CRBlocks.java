@@ -86,13 +86,13 @@ public class CRBlocks {
 	public static final RegistryObject<Block> PINK_DRAGON_FRUIT_CROP = BLOCKS.register("pink_dragon_fruits",
 		() -> new DragonFruitVineBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 	public static final RegistryObject<Block> LIME_CRATE = BLOCKS.register("lime_crate",
-		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+		() -> new WoodenCrateBlock(MapColor.COLOR_LIGHT_GREEN));
 	public static final RegistryObject<Block> POMEGRANATE_CRATE = BLOCKS.register("pomegranate_crate",
-		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+		() -> new WoodenCrateBlock(MapColor.COLOR_RED));
 	public static final RegistryObject<Block> STYGIAN_POMEGRANATE_CRATE = BLOCKS.register("stygian_pomegranate_crate",
-		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_CYAN).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+		() -> new StygianPomegranateCrateBlock(MapColor.COLOR_CYAN));
 	public static final RegistryObject<Block> PINK_DRAGON_FRUIT_CRATE = BLOCKS.register("pink_dragon_fruit_crate",
-		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+		() -> new WoodenCrateBlock(MapColor.COLOR_PINK));
 	public static final RegistryObject<Block> LIME_ICE_CREAM_BLOCK = BLOCKS.register("lime_ice_cream_block",
 		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(0.2F).sound(SoundType.SNOW)));
 	public static final RegistryObject<Block> POMEGRANATE_ICE_CREAM_BLOCK = BLOCKS.register("pomegranate_ice_cream_block",
