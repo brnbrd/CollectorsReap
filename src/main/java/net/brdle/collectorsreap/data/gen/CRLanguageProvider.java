@@ -49,7 +49,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE), "Pomegranates can be found as a wild bush in warped forests.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE) + ".pollination", "A flowering Pomegranate Bush will grow fruit in the Overworld when pollinated by a Bee.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.STYGIAN_POMEGRANATE), "A dangerous variant that can be rarely picked from Pomegranate Bushes growing on Resurgent Soil.");
-		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PINK_DRAGON_FRUIT), "Pink Dragon Fruits can be found as a wild plant in the badlands.");
+		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PINK_DRAGON_FRUIT), "Pink Dragon Fruits can be found as a wild bush in the badlands.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.URCHIN_DART), "Throwable projectiles that poison enemies for five seconds upon contact. Holding a bamboo in your offhand shoots the dart for higher velocity.");
 		add("config.jade.plugin_" + CollectorsReap.MODID + ".crop_progress", "Crop Progress");
 	}
@@ -71,7 +71,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addBlock(CRBlocks.POMEGRANATE_BUSH, "Pomegranate Bush");
 		addBlock(CRBlocks.POMEGRANATE_CRATE, "Pomegranate Crate");
 		addBlock(CRBlocks.STYGIAN_POMEGRANATE_CRATE, "Stygian Pomegranate Crate");
-		addBlock(CRBlocks.WILD_DRAGON_FRUITS, "Wild Dragon Fruits");
+		addBlock(CRBlocks.DRAGON_BUSH, "Dragon Bush");
 		addBlock(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP, "Budding Pink Dragon Fruit Vine");
 		addBlock(CRBlocks.PINK_DRAGON_FRUIT_CROP, "Pink Dragon Fruit Vine");
 		addBlock(CRBlocks.PINK_DRAGON_FRUIT_CRATE, "Pink Dragon Fruit Crate");

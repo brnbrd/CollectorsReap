@@ -16,11 +16,11 @@ public class StygianPomegranateCrateBlock extends WoodenCrateBlock {
 	@Override
 	public void animateTick(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull RandomSource random) {
 		super.animateTick(state, level, pos, random);
-		if (random.nextFloat() < 0.35F) {
+		if (random.nextFloat() < 0.3F) {
 			level.addParticle(
 				ParticleTypes.SOUL,
 				(double) pos.getX() + 0.5D + (random.nextDouble() * 0.75D - 0.3D),
-				pos.getY() + 1.1D,
+				(double) pos.getY() + 1.15D,
 				(double) pos.getZ() + 0.5D + (random.nextDouble() * 0.75D - 0.3D),
 				0.0D,
 				0.0D,

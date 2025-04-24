@@ -6,7 +6,6 @@ import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.common.item.CompatItem;
 import net.brdle.collectorsreap.common.item.food.CompatConsumable;
 import net.brdle.collectorsreap.common.item.food.CompatDrinkable;
-import net.brdle.collectorsreap.common.item.food.GummyItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -28,7 +27,7 @@ public class ModEvents {
 			//Flammables
 
 			//Compostables
-			compost(CRItems.WILD_DRAGON_FRUITS, 0.65F);
+			compost(CRItems.DRAGON_BUSH, 0.65F);
 			compost(CRItems.PINK_DRAGON_FRUIT, 0.3F);
 			compost(CRItems.DRAGON_FRUIT_SEEDS, 0.3F);
 			compost(CRItems.PORTOBELLO, 0.65F);

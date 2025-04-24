@@ -69,7 +69,7 @@ public class CRBlockLoot extends BlockLootSubProvider {
 						.setRolls(ConstantValue.exactly(1.0F))
 						.add(LootItem.lootTableItem(CRItems.POMEGRANATE.get()))
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))))));
-		this.dropOther(CRBlocks.WILD_DRAGON_FRUITS.get(), CRItems.DRAGON_FRUIT_SEEDS.get());
+		this.dropOther(CRBlocks.DRAGON_BUSH.get(), CRItems.DRAGON_FRUIT_SEEDS.get());
 		this.dropOther(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), CRItems.DRAGON_FRUIT_SEEDS.get());
 		this.dropSelf(CRBlocks.LIME_CRATE.get());
 		this.dropSelf(CRBlocks.POMEGRANATE_CRATE.get());

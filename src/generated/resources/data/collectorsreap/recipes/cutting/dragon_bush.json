@@ -8,7 +8,7 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "wild_dragon_fruits"
+              "value": "dragon_bush"
             },
             {
               "type": "collectorsreap:enabled",
@@ -21,7 +21,7 @@
         "type": "farmersdelight:cutting",
         "ingredients": [
           {
-            "item": "collectorsreap:wild_dragon_fruits"
+            "item": "collectorsreap:dragon_bush"
           }
         ],
         "result": [

@@ -58,10 +58,10 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 					CRItems.LIME_SLICE.get(), 2)
 				.addResultWithChance(CRItems.LIME_SEEDS.get(), 0.5F),
 			"cutting/lime", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.WILD_DRAGON_FRUITS.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.DRAGON_BUSH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 					CRItems.PINK_DRAGON_FRUIT.get(), 1)
 				.addResultWithChance(Items.PINK_DYE, 0.3F, 1),
-			"cutting/wild_dragon_fruits", finished, enabled(CRItems.WILD_DRAGON_FRUITS), enabled(CRItems.PINK_DRAGON_FRUIT));
+			"cutting/dragon_bush", finished, enabled(CRItems.DRAGON_BUSH), enabled(CRItems.PINK_DRAGON_FRUIT));
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PINK_DRAGON_FRUIT.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 					CRItems.DRAGON_FRUIT_SEEDS.get(), 1)
 				.addResultWithChance(Items.PINK_DYE, 1F, 1),

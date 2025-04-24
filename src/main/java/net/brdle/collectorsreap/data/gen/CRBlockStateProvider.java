@@ -44,7 +44,7 @@ public class CRBlockStateProvider extends BlockStateProvider {
 		this.pieBlock(CRBlocks.LIME_PIE);
 		this.stageBlock(CRBlocks.PORTOBELLO_COLONY.get(), PortobelloColonyBlock.COLONY_AGE);
 		this.cross(CRBlocks.PORTOBELLO.get());
-		this.cross(CRBlocks.WILD_DRAGON_FRUITS.get());
+		this.cross(CRBlocks.DRAGON_BUSH.get());
 		this.crateBlock(CRBlocks.LIME_CRATE.get(), "lime", false);
 		this.crateBlock(CRBlocks.POMEGRANATE_CRATE.get(), "pomegranate", true);
 		this.crateBlock(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get(), "stygian_pomegranate", true);

@@ -67,9 +67,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 
 		// Farmer's Delight
 		this.tag(ModTags.WILD_CROPS_ITEM)
-			.add(CRItems.WILD_DRAGON_FRUITS.get());
+			.add(CRItems.DRAGON_BUSH.get());
 		this.tag(ItemTags.SMALL_FLOWERS)
-			.add(CRItems.WILD_DRAGON_FRUITS.get());
+			.add(CRItems.DRAGON_BUSH.get());
 
 		// Forge
 		this.tag(CRItemTags.CHEESE).addOptional(Util.rl("brewinandchewin", "flaxen_cheese_wedge"));

@@ -35,9 +35,9 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(ModTags.UNAFFECTED_BY_RICH_SOIL)
 			.add(CRBlocks.PORTOBELLO_COLONY.get());
 		this.tag(ModTags.WILD_CROPS)
-			.add(CRBlocks.WILD_DRAGON_FRUITS.get());
+			.add(CRBlocks.DRAGON_BUSH.get());
 		this.tag(BlockTags.SMALL_FLOWERS)
-			.add(CRBlocks.WILD_DRAGON_FRUITS.get());
+			.add(CRBlocks.DRAGON_BUSH.get());
 
 
 		// Collector's Reap

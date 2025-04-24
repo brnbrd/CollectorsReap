@@ -79,7 +79,7 @@ public class CRBlocks {
 		() -> new LimeBushBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).forceSolidOff().instabreak().sound(SoundType.SWEET_BERRY_BUSH).noOcclusion().pushReaction(PushReaction.DESTROY)));
 	public static final RegistryObject<Block> POMEGRANATE_BUSH = registerBlock("pomegranate_bush",
 		() -> new PomegranateBushBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).forceSolidOff().instabreak().sound(SoundType.SWEET_BERRY_BUSH).noOcclusion().pushReaction(PushReaction.DESTROY)));
-	public static final RegistryObject<Block> WILD_DRAGON_FRUITS = registerBlock("wild_dragon_fruits",
+	public static final RegistryObject<Block> DRAGON_BUSH = registerBlock("dragon_bush",
 		() -> new WildCropBlock(MobEffects.GLOWING, 6, BlockBehaviour.Properties.copy(Blocks.TALL_GRASS)));
 	public static final RegistryObject<Block> BUDDING_PINK_DRAGON_FRUIT_CROP = BLOCKS.register("budding_pink_dragon_fruits",
 		() -> new BuddingDragonFruitBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));

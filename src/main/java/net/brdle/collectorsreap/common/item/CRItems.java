@@ -59,8 +59,8 @@ public class CRItems extends ModItems {
 				blockToItemMap.remove(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
 			}
 		});
-	public static final RegistryObject<Item> WILD_DRAGON_FRUITS = registerItem("wild_dragon_fruits",
-		() -> new BlockItem(CRBlocks.WILD_DRAGON_FRUITS.get(), new Item.Properties()));
+	public static final RegistryObject<Item> DRAGON_BUSH = registerItem("dragon_bush",
+		() -> new BlockItem(CRBlocks.DRAGON_BUSH.get(), new Item.Properties()));
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT = registerFood("pink_dragon_fruit",
 		Nutrition.PINK_DRAGON_FRUIT);
 	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate",

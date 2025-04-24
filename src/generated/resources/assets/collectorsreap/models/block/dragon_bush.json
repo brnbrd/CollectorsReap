@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "cross": "collectorsreap:block/wild_dragon_fruits"
+    "cross": "collectorsreap:block/dragon_bush"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "collectorsreap:block/wild_dragon_fruits"
+    "layer0": "collectorsreap:block/dragon_bush"
   }
 }
