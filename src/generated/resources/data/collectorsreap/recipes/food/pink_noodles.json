@@ -5,7 +5,7 @@
       "conditions": [
         {
           "type": "collectorsreap:enabled",
-          "value": "clam_pasta"
+          "value": "pink_noodles"
         }
       ],
       "recipe": {
@@ -17,26 +17,23 @@
         "experience": 1.0,
         "ingredients": [
           {
-            "tag": "forge:raw_clam"
+            "item": "collectorsreap:pink_dragon_fruit"
           },
           {
             "tag": "forge:pasta/raw_pasta"
           },
           {
-            "tag": "forge:milk"
-          },
-          {
-            "tag": "forge:eggs"
+            "tag": "forge:raw_pork"
           },
           {
             "tag": "forge:vegetables/tomato"
           },
           {
-            "tag": "forge:vegetables/onion"
+            "tag": "forge:vegetables/carrot"
           }
         ],
         "result": {
-          "item": "collectorsreap:clam_pasta"
+          "item": "collectorsreap:pink_noodles"
         }
       }
     }

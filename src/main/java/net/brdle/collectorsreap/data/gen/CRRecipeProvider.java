@@ -136,12 +136,20 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/stuffed_portobello_cap", finished, enabled("stuffed_portobello_cap"));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PORTOBELLO_PASTA.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItems.BAKED_PORTOBELLO_CAP.get())
-				.addIngredient(ForgeTags.PASTA)
+				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
 				.addIngredient(Items.BROWN_MUSHROOM)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(ForgeTags.MILK)
 				.unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
 			"food/portobello_pasta", finished, enabled("portobello_pasta"));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PINK_NOODLES.get(), 1, 200, 1F, Items.BOWL)
+				.addIngredient(CRItems.PINK_DRAGON_FRUIT.get())
+				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
+				.addIngredient(ForgeTags.RAW_PORK)
+				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
+				.addIngredient(ForgeTags.VEGETABLES_CARROT)
+				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
+			"food/pink_noodles", finished, enabled(CRItems.PINK_NOODLES));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.HONEY_LIME_CHICKEN.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_CHICKEN)
 				.addIngredient(Items.HONEY_BOTTLE)
@@ -252,7 +260,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/crab_lasagna_from_milk", finished, enabled(CRItems.CRAB_LASAGNA), tagEmpty(CRItemTags.CHEESE));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_NOODLES.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(Ingredient.of(CRItemTags.CRAB_MEAT), 2)
-				.addIngredient(ForgeTags.PASTA)
+				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
 				.addIngredient(ForgeTags.MILK)
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
@@ -272,7 +280,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/clam_chowder", finished, enabled(CRItems.CLAM_CHOWDER));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CLAM_PASTA.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItemTags.RAW_CLAM)
-				.addIngredient(ForgeTags.PASTA)
+				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
 				.addIngredient(ForgeTags.MILK)
 				.addIngredient(Tags.Items.EGGS)
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
@@ -288,7 +296,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/clam_meatball_stew", finished, enabled(CRItems.CLAM_MEATBALL_STEW));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PRAWN_NOODLES.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItemTags.COOKED_PRAWN)
-				.addIngredient(ForgeTags.PASTA)
+				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(Items.DRIED_KELP)
 				.unlockedBy("has_cooked_prawn", has(CRItemTags.COOKED_PRAWN)),

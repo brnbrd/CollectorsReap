@@ -14,6 +14,9 @@ public class Nutrition {
 	public static final FoodProperties PINK_DRAGON_FRUIT = (new FoodProperties.Builder())
 		.nutrition(3).saturationMod(0.2F)
 		.build();
+	public static final FoodProperties PINK_NOODLES = (new FoodProperties.Builder())
+		.nutrition(15).saturationMod(1.1F)
+		.build();
 	public static final FoodProperties LIME = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(0.2F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 100, 0), 1F).build();

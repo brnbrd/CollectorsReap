@@ -27,6 +27,7 @@ import java.util.function.Supplier;
 public class CRItems extends ModItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CollectorsReap.MODID);
 
+	// Portobello
 	public static final RegistryObject<Item> PORTOBELLO_COLONY = registerItem("portobello_colony",
 		() -> new MushroomColonyItem(CRBlocks.PORTOBELLO_COLONY.get(),
 			(new Item.Properties())));
@@ -48,6 +49,7 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> PORTOBELLO_QUICHE = registerBlock(CRBlocks.PORTOBELLO_QUICHE);
 	public static final RegistryObject<Item> PORTOBELLO_QUICHE_SLICE = registerFood("portobello_quiche_slice",
 		Nutrition.PORTOBELLO_QUICHE_SLICE);
+
 	public static final RegistryObject<Item> DRAGON_FRUIT_SEEDS = registerItem("dragon_fruit_seeds",
 		() -> new ItemNameBlockItem(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), basicItem()) {
 			public void registerBlocks(Map<Block, Item> blockToItemMap, Item item) {
@@ -63,6 +65,8 @@ public class CRItems extends ModItems {
 		() -> new BlockItem(CRBlocks.DRAGON_BUSH.get(), new Item.Properties()));
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT = registerFood("pink_dragon_fruit",
 		Nutrition.PINK_DRAGON_FRUIT);
+	public static final RegistryObject<Item> PINK_NOODLES = registerFood("pink_noodles",
+		bowlFoodItem(Nutrition.PINK_NOODLES), false, false);
 	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate",
 		() -> new Item((new Item.Properties())));
 	public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",

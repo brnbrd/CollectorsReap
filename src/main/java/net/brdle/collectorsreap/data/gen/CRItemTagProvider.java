@@ -15,12 +15,12 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import java.util.concurrent.CompletableFuture;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class CRItemTagProvider extends ItemTagsProvider {
 	public CRItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, CompletableFuture<TagLookup<Block>> blockTagProvider, @Nullable ExistingFileHelper existingFileHelper) {
@@ -30,6 +30,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 	@Override
 	public void addTags(HolderLookup.@NotNull Provider provider) {
 		// Minecraft
+		this.tag(ItemTags.TRIM_MATERIALS).add(CRItems.LUNAR_PEARL.get());
 		this.tag(ItemTags.WALLS)
 			.add(CRItems.URCHIN_TEST_BRICK_WALL.get())
 			.add(CRItems.URCHIN_TEST_TILE_WALL.get());
@@ -39,7 +40,6 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(ItemTags.STAIRS)
 			.add(CRItems.URCHIN_TEST_BRICK_STAIRS.get())
 			.add(CRItems.URCHIN_TEST_TILE_STAIRS.get());
-		this.tag(ItemTags.TRIM_MATERIALS).add(CRItems.LUNAR_PEARL.get());
 
 		// Fish
 		this.tag(ForgeTags.RAW_FISHES).addTag(CRItemTags.RAW_FISHES_BASS);
