@@ -1,0 +1,34 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "tropical_shaved_ice"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "minecraft:bowl"
+          },
+          {
+            "tag": "neapolitan:red_strawberries"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "tag": "forge:ice_cubes"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:tropical_shaved_ice"
+        }
+      }
+    }
+  ]
+}

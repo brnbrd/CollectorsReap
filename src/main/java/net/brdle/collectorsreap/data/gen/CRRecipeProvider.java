@@ -145,11 +145,17 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PINK_NOODLES.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItems.PINK_DRAGON_FRUIT.get())
 				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
+				.addIngredient(ForgeTags.VEGETABLES_CARROT)
+				.addIngredient(ForgeTags.VEGETABLES_BEETROOT)
+				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
+			"food/pink_noodles", finished, enabled(CRItems.PINK_NOODLES));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.DRAGON_STEW.get(), 1, 200, 1F, Items.BOWL)
+				.addIngredient(CRItems.PINK_DRAGON_FRUIT.get())
 				.addIngredient(ForgeTags.RAW_PORK)
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
 				.addIngredient(ForgeTags.VEGETABLES_CARROT)
 				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
-			"food/pink_noodles", finished, enabled(CRItems.PINK_NOODLES));
+			"food/dragon_stew", finished, enabled(CRItems.DRAGON_STEW));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.HONEY_LIME_CHICKEN.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_CHICKEN)
 				.addIngredient(Items.HONEY_BOTTLE)
@@ -372,6 +378,20 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.requires(CRItems.LIME_SLICE.get())
 				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
 			"lime_dye_from_slice", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE));
+		wrap(shapeless(RecipeCategory.FOOD, CRItems.TROPICAL_SHAVED_ICE)
+				.requires(Items.BOWL)
+				.requires(CRItemTags.RED_STRAWBERRIES)
+				.requires(CRItems.PINK_DRAGON_FRUIT.get())
+				.requires(CRItemTags.ICE_CUBES)
+				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
+			"food/tropical_shaved_ice", finished, enabled(CRItems.TROPICAL_SHAVED_ICE));
+		wrap(shapeless(RecipeCategory.FOOD, CRItems.DRAGONS_PASSION)
+				.requires(Items.GLASS_BOTTLE)
+				.requires(CRItems.PINK_DRAGON_FRUIT.get(), 2)
+				.requires(CRItemTags.PASSION_FRUIT)
+				.requires(Ingredient.of(Items.SUGAR, Items.HONEY_BOTTLE))
+				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
+			"food/dragons_passion", finished, enabled(CRItems.DRAGONS_PASSION));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.PORTOBELLO_WRAP)
 				.requires(ForgeTags.BREAD)
 				.requires(CRItems.BAKED_PORTOBELLO_CAP.get())

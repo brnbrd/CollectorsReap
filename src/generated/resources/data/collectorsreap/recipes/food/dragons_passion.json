@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "dragons_passion"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "minecraft:glass_bottle"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "tag": "atmospheric:passion_fruit"
+          },
+          [
+            {
+              "item": "minecraft:sugar"
+            },
+            {
+              "item": "minecraft:honey_bottle"
+            }
+          ]
+        ],
+        "result": {
+          "item": "collectorsreap:dragons_passion"
+        }
+      }
+    }
+  ]
+}

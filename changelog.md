@@ -5,6 +5,10 @@
 
 ### Updates
 - Added Pink Dragon Fruit
+- Added Pink Noodles
+- Added Dragon Stew
+- Added Tropical Shaved Ice
+- Added Dragon's Passion
 
 ### Fixes
 - Some items that previously didn't display effects in their tooltip now do

@@ -5,7 +5,7 @@
       "conditions": [
         {
           "type": "collectorsreap:enabled",
-          "value": "pink_noodles"
+          "value": "dragon_stew"
         }
       ],
       "recipe": {
@@ -20,17 +20,17 @@
             "item": "collectorsreap:pink_dragon_fruit"
           },
           {
-            "tag": "forge:pasta/raw_pasta"
+            "tag": "forge:raw_pork"
+          },
+          {
+            "tag": "forge:vegetables/tomato"
           },
           {
             "tag": "forge:vegetables/carrot"
-          },
-          {
-            "tag": "forge:vegetables/beetroot"
           }
         ],
         "result": {
-          "item": "collectorsreap:pink_noodles"
+          "item": "collectorsreap:dragon_stew"
         }
       }
     }

@@ -208,6 +208,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.addSelf(CRItemTags.PASSION_FRUIT);
 		this.tag(CRItemTags.COCHINEAL_FOOD).addTag(CRItemTags.FRUITS_DRAGON_FRUIT);
 
+		// Autumnity
+		this.tag(CRItemTags.SNAIL_SNACKS).add(CRItems.PORTOBELLO.get());
+
 		// Seasonals
 		this.addSelf(CRItemTags.PUMPKIN_PUREE);
 

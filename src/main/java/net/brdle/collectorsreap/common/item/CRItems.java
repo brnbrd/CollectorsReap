@@ -67,6 +67,12 @@ public class CRItems extends ModItems {
 		Nutrition.PINK_DRAGON_FRUIT);
 	public static final RegistryObject<Item> PINK_NOODLES = registerFood("pink_noodles",
 		bowlFoodItem(Nutrition.PINK_NOODLES), false, false);
+	public static final RegistryObject<Item> DRAGON_STEW = registerFood("dragon_stew",
+		bowlFoodItem(Nutrition.DRAGON_STEW), false, false);
+	public static final RegistryObject<Item> TROPICAL_SHAVED_ICE = registerFood("tropical_shaved_ice",
+		bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE), false, false);
+	public static final RegistryObject<Item> DRAGONS_PASSION = registerDrink("dragons_passion",
+		drinkItem().food(Nutrition.DRAGONS_PASSION), false, false);
 	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate",
 		() -> new Item((new Item.Properties())));
 	public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",
@@ -114,18 +120,14 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.POMEGRANATE_CHICKEN), true, false);
 	public static final RegistryObject<Item> DELUXE_SALAD = registerFood("deluxe_salad",
 		bowlFoodItem(Nutrition.DELUXE_SALAD), true, false);
-	public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerItem("pomegranate_custard", () ->
-		new DrinkableItem(drinkItem().food(
-			Nutrition.POMEGRANATE_CUSTARD), true));
-	public static final RegistryObject<Item> LIMEADE = registerItem("limeade", () ->
-		new DrinkableItem(drinkItem().food(
-			Nutrition.LIMEADE), true));
-	public static final RegistryObject<Item> BERRY_LIMEADE = registerItem("berry_limeade", () ->
-		new DrinkableItem(drinkItem().food(
-			Nutrition.BERRY_LIMEADE), true));
-	public static final RegistryObject<Item> PINK_LIMEADE = registerItem("pink_limeade", () ->
-		new DrinkableItem(drinkItem().food(
-			Nutrition.PINK_LIMEADE), true));
+	public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerDrink("pomegranate_custard",
+		drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), true, false);
+	public static final RegistryObject<Item> LIMEADE = registerDrink("limeade",
+		drinkItem().food(Nutrition.LIMEADE), true, false);
+	public static final RegistryObject<Item> BERRY_LIMEADE = registerDrink("berry_limeade",
+		drinkItem().food(Nutrition.BERRY_LIMEADE), true, false);
+	public static final RegistryObject<Item> PINK_LIMEADE = registerDrink("pink_limeade",
+		drinkItem().food(Nutrition.PINK_LIMEADE), true, false);
 	public static final RegistryObject<Item> MINT_LIMEADE = registerItem("mint_limeade", () ->
 		new CompatDrinkable((new Item.Properties()).food(
 			Nutrition.MINT_LIMEADE), true, false, "neapolitan"));
@@ -346,6 +348,14 @@ public class CRItems extends ModItems {
 
 	public static RegistryObject<Item> registerFood(String name, Item.Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
 		return registerItem(name, () -> new ConsumableItem(
+			properties,
+			hasFoodEffectTooltip,
+			hasCustomTooltip
+		));
+	}
+
+	public static RegistryObject<Item> registerDrink(String name, Item.Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {
+		return registerItem(name, () -> new DrinkableItem(
 			properties,
 			hasFoodEffectTooltip,
 			hasCustomTooltip
