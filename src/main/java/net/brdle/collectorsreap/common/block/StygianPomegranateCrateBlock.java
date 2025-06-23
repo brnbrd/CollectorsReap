@@ -22,9 +22,9 @@ public class StygianPomegranateCrateBlock extends WoodenCrateBlock {
 				(double) pos.getX() + 0.5D + (random.nextDouble() * 0.75D - 0.3D),
 				(double) pos.getY() + 1.15D,
 				(double) pos.getZ() + 0.5D + (random.nextDouble() * 0.75D - 0.3D),
-				0.0D,
-				0.0D,
-				0.0D
+				0D,
+				0D,
+				0D
 			);
 		}
 	}

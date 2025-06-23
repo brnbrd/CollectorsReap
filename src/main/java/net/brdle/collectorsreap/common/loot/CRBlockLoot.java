@@ -39,7 +39,7 @@ public class CRBlockLoot extends BlockLootSubProvider {
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
 							.setProperties(StatePropertiesPredicate.Builder.properties()
 								.hasProperty(LimeBushBlock.HALF, DoubleBlockHalf.LOWER)))
-						.setRolls(ConstantValue.exactly(1.0F))
+						.setRolls(ConstantValue.exactly(1F))
 						.add(LootItem.lootTableItem(CRItems.LIME_SEEDS.get()))))
 				.withPool(this.applyExplosionCondition(CRItems.LIME.get(),
 					LootPool.lootPool()
@@ -47,9 +47,9 @@ public class CRBlockLoot extends BlockLootSubProvider {
 							.setProperties(StatePropertiesPredicate.Builder.properties()
 								.hasProperty(LimeBushBlock.AGE, LimeBushBlock.MAX_AGE)
 								.hasProperty(LimeBushBlock.HALF, DoubleBlockHalf.LOWER)))
-						.setRolls(ConstantValue.exactly(1.0F))
+						.setRolls(ConstantValue.exactly(1F))
 						.add(LootItem.lootTableItem(CRItems.LIME.get()))
-						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))))));
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(2F, 3F)))))));
 		// Pomegranate Bush drops Seeds and optional Pomegranates
 		this.add(CRBlocks.POMEGRANATE_BUSH.get(), (b) -> applyExplosionDecay(b,
 			LootTable.lootTable()
@@ -58,7 +58,7 @@ public class CRBlockLoot extends BlockLootSubProvider {
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b)
 							.setProperties(StatePropertiesPredicate.Builder.properties()
 								.hasProperty(PomegranateBushBlock.HALF, DoubleBlockHalf.LOWER)))
-						.setRolls(ConstantValue.exactly(1.0F))
+						.setRolls(ConstantValue.exactly(1F))
 						.add(LootItem.lootTableItem(CRItems.POMEGRANATE_SEEDS.get()))))
 				.withPool(this.applyExplosionCondition(CRItems.POMEGRANATE.get(),
 					LootPool.lootPool()
@@ -66,9 +66,9 @@ public class CRBlockLoot extends BlockLootSubProvider {
 							.setProperties(StatePropertiesPredicate.Builder.properties()
 								.hasProperty(PomegranateBushBlock.AGE, PomegranateBushBlock.MAX_AGE)
 								.hasProperty(PomegranateBushBlock.HALF, DoubleBlockHalf.LOWER)))
-						.setRolls(ConstantValue.exactly(1.0F))
+						.setRolls(ConstantValue.exactly(1F))
 						.add(LootItem.lootTableItem(CRItems.POMEGRANATE.get()))
-						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 3.0F)))))));
+						.apply(SetItemCountFunction.setCount(UniformGenerator.between(1F, 3F)))))));
 		this.dropOther(CRBlocks.DRAGON_BUSH.get(), CRItems.DRAGON_FRUIT_SEEDS.get());
 		this.dropOther(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), CRItems.DRAGON_FRUIT_SEEDS.get());
 		this.dropSelf(CRBlocks.LIME_CRATE.get());

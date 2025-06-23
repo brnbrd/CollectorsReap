@@ -25,13 +25,13 @@ public class Urchin extends WaterGroundCreature {
 	public static AttributeSupplier.@NotNull Builder createAttributes() {
 		return Mob.createMobAttributes()
 			.add(Attributes.MOVEMENT_SPEED, 0.1D)
-			.add(Attributes.MAX_HEALTH, 10.0D);
+			.add(Attributes.MAX_HEALTH, 10D);
 	}
 
 	@Override
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new PanicGoal(this, 1.5D));
-		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 6.0F, 1.25D, 1.35D, EntitySelector.NO_SPECTATORS::test));
+		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 6F, 1.25D, 1.35D, EntitySelector.NO_SPECTATORS::test));
 		this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 0.5D, 40));
 	}
 
@@ -64,7 +64,7 @@ public class Urchin extends WaterGroundCreature {
 		) {
 			DamageSource thorns = living.damageSources().thorns(this);
 			if (!living.isInvulnerableTo(thorns)) {
-				living.hurt(thorns, 3.0F);
+				living.hurt(thorns, 3F);
 			}
 			living.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0), this);
 		}

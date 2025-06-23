@@ -49,7 +49,7 @@ public class GummyItem extends CompatConsumable {
 						near.getEffect(vanilla) == null ||
 						!near.hasEffect(ModCompat.getVanillaScent().get())
 					)
-				), consumer, consumer.getBoundingBox().inflate(6.0D, 2.0D, 6.0D))
+				), consumer, consumer.getBoundingBox().inflate(6D, 2D, 6D))
 				.stream().limit(MAX_NEARBY)
 				.forEach(n -> n.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 3)));
 			}

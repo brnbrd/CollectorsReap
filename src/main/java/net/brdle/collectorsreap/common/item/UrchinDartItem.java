@@ -49,7 +49,7 @@ public class UrchinDartItem extends Item {
 					float velocity = player.getItemInHand(InteractionHand.OFF_HAND).is(CRItemTags.DART_SHOOTERS) ?
 						2.8F : 2.1F;
 					UrchinDart dart = new UrchinDart(player, level);
-					dart.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, velocity, 1.0F);
+					dart.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, velocity, 1F);
 					level.addFreshEntity(dart);
 				}
 				player.awardStat(Stats.ITEM_USED.get(this));

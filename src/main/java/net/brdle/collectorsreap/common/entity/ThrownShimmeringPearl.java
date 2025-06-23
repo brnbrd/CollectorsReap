@@ -42,7 +42,7 @@ public class ThrownShimmeringPearl extends ThrowableItemProjectile {
 	@Override
 	public void onHitEntity(@NotNull EntityHitResult result) {
 		super.onHitEntity(result);
-		result.getEntity().hurt(this.damageSources().thrown(this, this.getOwner()), 1.0F);
+		result.getEntity().hurt(this.damageSources().thrown(this, this.getOwner()), 1F);
 		this.level().playSound(null, this.getX(), this.getY(), this.getZ(), CRSoundEvents.SHIMMERING_PEARL_BREAK.get(), SoundSource.NEUTRAL, 0.5F, 0.4F / (this.level().getRandom().nextFloat() * 0.4F + 0.8F));
 		this.discard();
 	}
@@ -62,7 +62,7 @@ public class ThrownShimmeringPearl extends ThrowableItemProjectile {
 	public void onHit(@NotNull HitResult result) {
 		super.onHit(result);
 		for (int i = 0; i < 32; ++i) {
-			this.level().addParticle(ParticleTypes.BUBBLE_POP, this.getX(), this.getY() + this.random.nextDouble() * 2.0, this.getZ(), this.random.nextGaussian(), 0.0, this.random.nextGaussian());
+			this.level().addParticle(ParticleTypes.BUBBLE_POP, this.getX(), this.getY() + this.random.nextDouble() * 2, this.getZ(), this.random.nextGaussian(), 0, this.random.nextGaussian());
 		}
 		if (!this.level().isClientSide() && !this.isRemoved()) {
 			Entity entity = this.getOwner();

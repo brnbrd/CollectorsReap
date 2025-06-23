@@ -36,10 +36,10 @@ import java.util.Map;
 
 public class EffectCandleCakeBlock extends AbstractCandleBlock {
 
-	protected static final VoxelShape CAKE_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 8.0D, 15.0D);
-	protected static final VoxelShape CANDLE_SHAPE = Block.box(7.0D, 8.0D, 7.0D, 9.0D, 14.0D, 9.0D);
+	protected static final VoxelShape CAKE_SHAPE = Block.box(1D, 0D, 1D, 15D, 8D, 15D);
+	protected static final VoxelShape CANDLE_SHAPE = Block.box(7D, 8D, 7D, 9D, 14D, 9D);
 	protected static final VoxelShape SHAPE = Shapes.or(CAKE_SHAPE, CANDLE_SHAPE);
-	private static final Iterable<Vec3> PARTICLE_OFFSETS = ImmutableList.of(new Vec3(0.5D, 1.0D, 0.5D));
+	private static final Iterable<Vec3> PARTICLE_OFFSETS = ImmutableList.of(new Vec3(0.5D, 1D, 0.5D));
 	private static final Map<Pair<Block, Block>, Block> BY_CAKE_CANDLE = Maps.newHashMap();
 	private final EffectCakeBlock cake;
 

@@ -34,7 +34,7 @@ public abstract class WaterCreature extends WaterAnimal implements Bucketable {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(0, new PanicGoal(this, 1.25D));
-		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 8.0F, 1.6D, 1.4D, EntitySelector.NO_SPECTATORS::test));
+		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 8F, 1.6D, 1.4D, EntitySelector.NO_SPECTATORS::test));
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public abstract class WaterCreature extends WaterAnimal implements Bucketable {
 			this.move(MoverType.SELF, this.getDeltaMovement());
 			this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
 			if (this.getTarget() == null) {
-				this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
+				this.setDeltaMovement(this.getDeltaMovement().add(0D, -0.005D, 0D));
 			}
 		} else {
 			super.travel(pTravelVector);

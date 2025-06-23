@@ -9,7 +9,7 @@ import net.minecraft.world.level.material.MapColor;
 public class WoodenCrateBlock extends Block {
 	public WoodenCrateBlock(MapColor color) {
 		super(BlockBehaviour.Properties.of()
-			.strength(2.0F, 3.0F)
+			.strength(2F, 3F)
 			.sound(SoundType.WOOD)
 			.mapColor(color)
 		);
@@ -17,7 +17,7 @@ public class WoodenCrateBlock extends Block {
 
 	public WoodenCrateBlock(DyeColor color) {
 		super(BlockBehaviour.Properties.of()
-			.strength(2.0F, 3.0F)
+			.strength(2F, 3F)
 			.sound(SoundType.WOOD)
 			.mapColor(color)
 		);

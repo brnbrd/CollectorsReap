@@ -118,7 +118,7 @@ public class CRBlocks {
 		() -> new StairBlock(() -> URCHIN_TEST_BRICKS.get().defaultBlockState(),
 			BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.GILDED_BLACKSTONE)));
 	public static final RegistryObject<Block> URCHIN_TEST_BRICK_SLAB = registerBlock("urchin_test_brick_slab",
-		() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.GILDED_BLACKSTONE).strength(2.0F, 6.0F)));
+		() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.GILDED_BLACKSTONE).strength(2F, 6F)));
 	public static final RegistryObject<Block> URCHIN_TEST_BRICK_WALL = registerBlock("urchin_test_brick_wall",
 		() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.GILDED_BLACKSTONE)));
 	public static final RegistryObject<Block> CHISELED_URCHIN_TEST_BRICKS = registerBlock("chiseled_urchin_test_bricks",
@@ -129,7 +129,7 @@ public class CRBlocks {
 		() -> new StairBlock(() -> URCHIN_TEST_TILES.get().defaultBlockState(),
 			BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.GILDED_BLACKSTONE)));
 	public static final RegistryObject<Block> URCHIN_TEST_TILE_SLAB = registerBlock("urchin_test_tile_slab",
-		() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.GILDED_BLACKSTONE).strength(2.0F, 6.0F)));
+		() -> new SlabBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.GILDED_BLACKSTONE).strength(2F, 6F)));
 	public static final RegistryObject<Block> URCHIN_TEST_TILE_WALL = registerBlock("urchin_test_tile_wall",
 		() -> new WallBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).sound(SoundType.GILDED_BLACKSTONE)));
 

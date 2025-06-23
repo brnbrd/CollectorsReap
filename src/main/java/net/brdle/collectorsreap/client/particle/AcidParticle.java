@@ -19,7 +19,7 @@ public class AcidParticle extends TextureSheetParticle {
 		this.x += (this.random.nextFloat() - this.random.nextFloat()) * 0.05F;
 		this.y += (this.random.nextFloat() - this.random.nextFloat()) * 0.05F;
 		this.z += (this.random.nextFloat() - this.random.nextFloat()) * 0.05F;
-		this.lifetime = (int) (8.0D / (Math.random() * 0.8D + 0.2D)) + 6;
+		this.lifetime = (int) (8D / (Math.random() * 0.8D + 0.2D)) + 6;
 	}
 
 	public void tick() {

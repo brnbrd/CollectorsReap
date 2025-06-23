@@ -16,40 +16,40 @@ import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = CollectorsReap.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class CREntities {
-	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, CollectorsReap.MODID);
+	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, CollectorsReap.MODID);
 
-	public static final RegistryObject<EntityType<TigerPrawn>> TIGER_PRAWN = ENTITY_TYPES.register("tiger_prawn",
+	public static final RegistryObject<EntityType<TigerPrawn>> TIGER_PRAWN = ENTITIES.register("tiger_prawn",
 		() -> EntityType.Builder.of(TigerPrawn::new, MobCategory.WATER_AMBIENT)
-			.sized(0.725F, 0.35F)
+			.sized(0.7F, 0.35F)
 			.clientTrackingRange(4)
 			.build(CollectorsReap.MODID + ".tiger_prawn"));
-	public static final RegistryObject<EntityType<Urchin>> URCHIN = ENTITY_TYPES.register("urchin",
+	public static final RegistryObject<EntityType<Urchin>> URCHIN = ENTITIES.register("urchin",
 		() -> EntityType.Builder.of(Urchin::new, MobCategory.WATER_AMBIENT)
 			.sized(0.5F, 0.4F)
 			.clientTrackingRange(4)
 			.build(CollectorsReap.MODID + ".urchin"));
-	public static final RegistryObject<EntityType<PlatinumBass>> PLATINUM_BASS = ENTITY_TYPES.register("platinum_bass",
+	public static final RegistryObject<EntityType<PlatinumBass>> PLATINUM_BASS = ENTITIES.register("platinum_bass",
 		() -> EntityType.Builder.of(PlatinumBass::new, MobCategory.WATER_AMBIENT)
 			.sized(1F, 0.6F)
 			.clientTrackingRange(4)
 			.build(CollectorsReap.MODID + ".platinum_bass"));
-	public static final RegistryObject<EntityType<Clam>> CLAM = ENTITY_TYPES.register("clam",
+	public static final RegistryObject<EntityType<Clam>> CLAM = ENTITIES.register("clam",
 		() -> EntityType.Builder.of(Clam::new, MobCategory.WATER_AMBIENT)
 			.sized(0.6F, 0.5F)
 			.clientTrackingRange(8)
 			.build(CollectorsReap.MODID + ".clam"));
-	public static final RegistryObject<EntityType<ChieftainCrab>> CHIEFTAIN_CRAB = ENTITY_TYPES.register("chieftain_crab",
+	public static final RegistryObject<EntityType<ChieftainCrab>> CHIEFTAIN_CRAB = ENTITIES.register("chieftain_crab",
 	 	() -> EntityType.Builder.of(ChieftainCrab::new, MobCategory.CREATURE)
-			.sized(0.65F, 0.4F)
+			.sized(0.7F, 0.6F)
 			.clientTrackingRange(10)
 			.build(CollectorsReap.MODID + ".chieftain_crab"));
-	public static final RegistryObject<EntityType<UrchinDart>> URCHIN_DART = ENTITY_TYPES.register("urchin_dart",
+	public static final RegistryObject<EntityType<UrchinDart>> URCHIN_DART = ENTITIES.register("urchin_dart",
 		() -> EntityType.Builder.<UrchinDart>of(UrchinDart::new, MobCategory.MISC)
 			.sized(0.5F, 0.5F)
 			.clientTrackingRange(4)
 			.updateInterval(20)
 			.build(CollectorsReap.MODID + ".urchin_dart"));
-	public static final RegistryObject<EntityType<ThrownShimmeringPearl>> SHIMMERING_PEARL = ENTITY_TYPES.register("shimmering_pearl",
+	public static final RegistryObject<EntityType<ThrownShimmeringPearl>> SHIMMERING_PEARL = ENTITIES.register("shimmering_pearl",
 		() -> EntityType.Builder.<ThrownShimmeringPearl>of(ThrownShimmeringPearl::new, MobCategory.MISC)
 			.sized(0.25F, 0.25F)
 			.clientTrackingRange(4)
@@ -75,6 +75,6 @@ public class CREntities {
 	}
 
 	public static void create(IEventBus bus) {
-		ENTITY_TYPES.register(bus);
+		ENTITIES.register(bus);
 	}
 }

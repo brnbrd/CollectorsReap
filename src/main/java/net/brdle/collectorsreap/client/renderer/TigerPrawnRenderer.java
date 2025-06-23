@@ -36,7 +36,7 @@ public class TigerPrawnRenderer extends MobRenderer<TigerPrawn, TigerPrawnModel>
 		stack.mulPose(Axis.YP.rotationDegrees(f));
 		if (!entityLiving.isInWater()) {
 			stack.translate(0.1D, 0.1D, -0.1D);
-			stack.mulPose(Axis.ZP.rotationDegrees(90.0F));
+			stack.mulPose(Axis.ZP.rotationDegrees(90F));
 		}
 	}
 }

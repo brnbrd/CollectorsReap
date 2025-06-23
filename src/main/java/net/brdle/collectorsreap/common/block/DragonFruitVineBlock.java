@@ -39,7 +39,7 @@ import org.jetbrains.annotations.NotNull;
 public class DragonFruitVineBlock extends CropBlock {
 	public static final IntegerProperty VINE_AGE = BlockStateProperties.AGE_3;
 	public static final BooleanProperty ROPELOGGED = BooleanProperty.create("ropelogged");
-	private static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
+	private static final VoxelShape SHAPE = Block.box(2D, 0D, 2D, 14D, 16D, 14D);
 
 	public DragonFruitVineBlock(Properties properties) {
 		super(properties);
@@ -57,7 +57,7 @@ public class DragonFruitVineBlock extends CropBlock {
 		} else if (isMature) {
 			RandomSource random = level.getRandom();
 			Block.popResource(level, pos, new ItemStack(CRItems.PINK_DRAGON_FRUIT.get(), 1 + random.nextInt(2)));
-			level.playSound(null, pos, CRSoundEvents.PICK_DRAGON_FRUITS.get(), SoundSource.BLOCKS, 1.0F, 0.8F + random.nextFloat() * 0.4F);
+			level.playSound(null, pos, CRSoundEvents.PICK_DRAGON_FRUITS.get(), SoundSource.BLOCKS, 1F, 0.8F + random.nextFloat() * 0.4F);
 			level.setBlock(pos, state.setValue(this.getAgeProperty(), 0), 2);
 			return InteractionResult.SUCCESS;
 		} else {
@@ -77,7 +77,7 @@ public class DragonFruitVineBlock extends CropBlock {
 			int age = this.getAge(state);
 			if (age < this.getMaxAge()) {
 				float speed = getGrowthSpeed(this, level, pos);
-				if (ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt((int) (25.0F / speed) + 1) == 0)) {
+				if (ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt((int) (25F / speed) + 1) == 0)) {
 					level.setBlock(pos, state.setValue(this.getAgeProperty(), age + 1), 2);
 					ForgeHooks.onCropsGrowPost(level, pos, state);
 				}

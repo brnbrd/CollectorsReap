@@ -25,14 +25,14 @@ public class TigerPrawn extends WaterCreature {
 
 	public static AttributeSupplier.@NotNull Builder createAttributes() {
 		return Mob.createMobAttributes()
-			.add(Attributes.MOVEMENT_SPEED, 1.0D)
-			.add(Attributes.MAX_HEALTH, 6.0D);
+			.add(Attributes.MOVEMENT_SPEED, 1D)
+			.add(Attributes.MAX_HEALTH, 6D);
 	}
 
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.0D, 40));
+		this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1D, 40));
 	}
 
 	@Override
@@ -85,17 +85,17 @@ public class TigerPrawn extends WaterCreature {
 				double d0 = this.wantedX - this.prawn.getX();
 				double d1 = this.wantedY - this.prawn.getY();
 				double d2 = this.wantedZ - this.prawn.getZ();
-				if (d1 != 0.0D) {
+				if (d1 != 0D) {
 					double d3 = Math.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
-					this.prawn.setDeltaMovement(this.prawn.getDeltaMovement().add(0.0D, (double) this.prawn.getSpeed() * (d1 / d3) * 0.1D, 0.0D));
+					this.prawn.setDeltaMovement(this.prawn.getDeltaMovement().add(0D, (double) this.prawn.getSpeed() * (d1 / d3) * 0.1D, 0D));
 				}
-				if (d0 != 0.0D || d2 != 0.0D) {
-					float f1 = (float) (Mth.atan2(d2, d0) * (double) (180F / (float) Math.PI)) - 90.0F;
-					this.prawn.setYRot(this.rotlerp(this.prawn.getYRot(), f1, 90.0F));
+				if (d0 != 0D || d2 != 0D) {
+					float f1 = (float) (Mth.atan2(d2, d0) * (double) (180F / (float) Math.PI)) - 90F;
+					this.prawn.setYRot(this.rotlerp(this.prawn.getYRot(), f1, 90F));
 					this.prawn.yBodyRot = this.prawn.getYRot();
 				}
 			} else {
-				this.prawn.setSpeed(0.0F);
+				this.prawn.setSpeed(0F);
 			}
 		}
 	}

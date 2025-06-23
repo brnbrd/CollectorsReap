@@ -19,7 +19,7 @@ public class CompatConsumable extends ConsumableItem {
 
 	public CompatConsumable(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, String... modid) {
 		super(properties, hasFoodEffectTooltip, hasCustomTooltip);
-		this.heal = 0.0F;
+		this.heal = 0F;
 		this.modid = modid;
 	}
 
@@ -54,7 +54,7 @@ public class CompatConsumable extends ConsumableItem {
 	@Override
 	public void affectConsumer(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
 		super.affectConsumer(stack, level, consumer);
-		if (this.loaded() && this.heal > 0.0F) {
+		if (this.loaded() && this.heal > 0F) {
 			consumer.heal(this.heal);
 		}
 	}

@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class StygianPomegranateItem extends CompatConsumable {
 	public StygianPomegranateItem(Properties properties) {
-		super(properties, false, true, 1.0F, "mynethersdelight");
+		super(properties, false, true, 1F, "mynethersdelight");
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class StygianPomegranateItem extends CompatConsumable {
 				consumer.getX(),
 				consumer.getY(),
 				consumer.getZ(),
-				3.0F,
+				3F,
 				Level.ExplosionInteraction.NONE
 			);
 		}

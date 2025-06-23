@@ -15,7 +15,7 @@ public class ShockwaveParticle extends HugeExplosionParticle {
 	ShockwaveParticle(ClientLevel pLevel, double pX, double pY, double pZ, double pQuadSizeMultiplier, SpriteSet pSprites) {
 		super(pLevel, pX, pY, pZ, pQuadSizeMultiplier, pSprites);
 		this.lifetime = 12;
-		this.quadSize = 3.0F;
+		this.quadSize = 3F;
 		this.setSpriteFromAge(pSprites);
 	}
 

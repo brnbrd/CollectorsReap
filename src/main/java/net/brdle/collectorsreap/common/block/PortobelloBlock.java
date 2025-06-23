@@ -18,8 +18,8 @@ import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.tag.ModTags;
 
 public class PortobelloBlock extends MushroomBlock {
-	private static final float AABB_OFFSET = 2.0F;
-	private static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 7.0D, 12.0D);
+	private static final float AABB_OFFSET = 2F;
+	private static final VoxelShape SHAPE = Block.box(4D, 0D, 4D, 12D, 7D, 12D);
 
 	public PortobelloBlock(Properties pProperties) {
 		super(pProperties, TreeFeatures.HUGE_BROWN_MUSHROOM);

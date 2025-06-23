@@ -31,7 +31,7 @@ public class ShimmeringPearlItem extends PearlItem {
 		if (!level.isClientSide()) {
 			ThrownShimmeringPearl thrown = new ThrownShimmeringPearl(level, player);
 			thrown.setItem(itemstack);
-			thrown.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.75F, 1.0F);
+			thrown.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, 1.75F, 1F);
 			level.addFreshEntity(thrown);
 		}
 		player.awardStat(Stats.ITEM_USED.get(this));

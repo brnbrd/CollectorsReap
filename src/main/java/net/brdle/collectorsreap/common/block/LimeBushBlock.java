@@ -24,15 +24,15 @@ import org.jetbrains.annotations.NotNull;
 
 public class LimeBushBlock extends FruitBushBlock {
 
-	public static final VoxelShape SMALL_SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 11.0, 12.0);
+	public static final VoxelShape SMALL_SHAPE = Block.box(4, 0, 4, 12, 11, 12);
 	private static final VoxelShape MEDIUM_SHAPE = Shapes.or(
-		Block.box(0.0D, 8.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-		Block.box(6.0D, 0.0D, 6.0D, 10.0D, 8.0D, 10.0D)
+		Block.box(0D, 8D, 0D, 16D, 16D, 16D),
+		Block.box(6D, 0D, 6D, 10D, 8D, 10D)
 	);
 	private static final VoxelShape SHAPE_LOWER = Shapes.or(
-		Block.box(0.0D, 12.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-		Block.box(6.0D, 0.0D, 6.0D, 10.0D, 12.0D, 10.0D));
-	private static final VoxelShape SHAPE_UPPER = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
+		Block.box(0D, 12D, 0D, 16D, 16D, 16D),
+		Block.box(6D, 0D, 6D, 10D, 12D, 10D));
+	private static final VoxelShape SHAPE_UPPER = Block.box(0D, 0D, 0D, 16D, 8D, 16D);
 
 	public LimeBushBlock(Properties properties) {
 		super(properties);
@@ -107,7 +107,7 @@ public class LimeBushBlock extends FruitBushBlock {
 		if (pContext instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee && CRConfig.LIME_POLLINATION.get()) {
 			return (
 				pState.getValue(HALF) == DoubleBlockHalf.LOWER ?
-					Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D) : Shapes.empty()
+					Block.box(0D, 0D, 0D, 16D, 8D, 16D) : Shapes.empty()
 			);
 		}
 		return getShape(pState, pLevel, pPos, pContext);

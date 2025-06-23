@@ -34,7 +34,7 @@ public class ScentedCandleBlock extends AbstractCandleBlock implements SimpleWat
 	public static final BooleanProperty LIT = AbstractCandleBlock.LIT;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final ToIntFunction<BlockState> LIGHT_EMISSION = (c) -> c.getValue(LIT) ? 3 : 0;
-	private static final VoxelShape SHAPE = Block.box(7.0D, 0.0D, 7.0D, 9.0D, 6.0D, 9.0D);
+	private static final VoxelShape SHAPE = Block.box(7D, 0D, 7D, 9D, 6D, 9D);
 
 	public ScentedCandleBlock(BlockBehaviour.Properties pProperties) {
 		super(pProperties);

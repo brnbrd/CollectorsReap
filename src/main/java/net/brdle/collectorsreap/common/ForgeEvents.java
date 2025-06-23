@@ -92,7 +92,7 @@ public class ForgeEvents {
 			e.setCanceled(true);
 			if (!proj.level().isClientSide() && proj.level() instanceof ServerLevel server) {
 				for (int i = 0; i < 3; i++) {
-					server.sendParticles(CRParticleTypes.ACID.get(), proj.getRandomX(0.3D), proj.getRandomY(), proj.getRandomZ(0.3D), 1, 0.0D, 0.0D, 0.0D, 0.0D);
+					server.sendParticles(CRParticleTypes.ACID.get(), proj.getRandomX(0.3D), proj.getRandomY(), proj.getRandomZ(0.3D), 1, 0D, 0D, 0D, 0D);
 				}
 				victim.playSound(SoundEvents.REDSTONE_TORCH_BURNOUT, 0.4F, 1.1F);
 				if (proj instanceof ThrownTrident trident) {
@@ -118,7 +118,7 @@ public class ForgeEvents {
 			attacker != victim &&
 			validateVolatile(attacker)
 		) {
-			server.sendParticles(CRParticleTypes.SHOCKWAVE.get(), victim.getX(), victim.getY(), victim.getZ(), 1, 0.0D, 0.0D, 0.0D, 0.0D);
+			server.sendParticles(CRParticleTypes.SHOCKWAVE.get(), victim.getX(), victim.getY(), victim.getZ(), 1, 0D, 0D, 0D, 0D);
 			int level = Objects.requireNonNull(attacker.getEffect(CREffects.VOLATILITY.get())).getAmplifier();
 			List<Mob> mobs = server.getNearbyEntities(Mob.class,
 					TargetingConditions.DEFAULT.selector(mob -> (
@@ -127,16 +127,16 @@ public class ForgeEvents {
 						!mob.getType().is(CREntityTags.VOLATILITY_IMMUNE) &&
 						!(mob instanceof TamableAnimal tame && tame.isTame())
 					)),
-					victim, victim.getBoundingBox().inflate(4.0D + ((double) level), 2.0D, 4.0D + ((double) level)))
+					victim, victim.getBoundingBox().inflate(4D + ((double) level), 2D, 4D + ((double) level)))
 				.stream().limit(3 + level).toList();
 			if (!mobs.isEmpty()) {
-				float hurtAmount = Math.round(((e.getAmount() + ((level + 2.0F) * 0.85F)) / (mobs.size() + 1)) * 2.0F) / 2.0F;
+				float hurtAmount = Math.round(((e.getAmount() + ((level + 2F) * 0.85F)) / (mobs.size() + 1)) * 2F) / 2F;
 				mobs.forEach(mob -> {
 					mob.forceAddEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 10, 0), null);
-					Vec3 vec32 = mob.getEyePosition().subtract(victim.position().add(0.0D, 1.0F, 0.0D)).normalize();
+					Vec3 vec32 = mob.getEyePosition().subtract(victim.position().add(0D, 1F, 0D)).normalize();
 					mob.playSound(SoundEvents.LIGHTNING_BOLT_THUNDER, 0.2F, 1.75F);
 					mob.hurt(e.getSource(), hurtAmount);
-					double d1 = (1.0D - mob.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE)) * 0.75D;
+					double d1 = (1D - mob.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE)) * 0.75D;
 					mob.push(vec32.x() * d1, vec32.y() * d1 * 0.35D, vec32.z() * d1);
 				});
 			}

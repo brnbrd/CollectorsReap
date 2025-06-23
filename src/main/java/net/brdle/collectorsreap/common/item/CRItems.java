@@ -254,7 +254,7 @@ public class CRItems extends ModItems {
 	// Neapolitan Compat
 	public static final RegistryObject<Item> STRAWBERRY_JAM_BUN = registerItem("strawberry_jam_bun",
 		() -> new CompatConsumable((new Item.Properties()).food(
-			Nutrition.STRAWBERRY_JAM_BUN), true, false, 1.0F, "neapolitan"));
+			Nutrition.STRAWBERRY_JAM_BUN), true, false, 1F, "neapolitan"));
 	public static final RegistryObject<Item> POMEGRANATE_BEAN_SALAD = registerItem("pomegranate_bean_salad",
 		() -> new CompatConsumable(bowlFoodItem(Nutrition.POMEGRANATE_BEAN_SALAD),
 			true, false, "neapolitan"));

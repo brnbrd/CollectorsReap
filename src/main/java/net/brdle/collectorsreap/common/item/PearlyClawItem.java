@@ -20,7 +20,7 @@ public class PearlyClawItem extends PearlItem {
 		this.attributes = Lazy.of(() -> {
 			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 			builder.put(ForgeMod.BLOCK_REACH.get(), new AttributeModifier(Util.BLOCK_REACH,
-				"Block reach modifier", 2.0D, AttributeModifier.Operation.ADDITION));
+				"Block reach modifier", 2D, AttributeModifier.Operation.ADDITION));
 			return builder.build();
 		});
 	}

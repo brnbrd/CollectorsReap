@@ -61,7 +61,7 @@ public class EffectCakeBlock extends CakeBlock {
 			if (!player.isCreative()) {
 				itemstack.shrink(1);
 			}
-			level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
+			level.playSound(null, pos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1F, 1F);
 			level.setBlockAndUpdate(pos, EffectCandleCakeBlock.byCakeCandle(this, candle));
 			level.gameEvent(player, GameEvent.BLOCK_CHANGE, pos);
 			player.awardStat(Stats.ITEM_USED.get(itemstack.getItem()));

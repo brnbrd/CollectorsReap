@@ -137,10 +137,10 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 		}
 		if (state.getValue(AGE) == MAX_AGE) {
 			if (state.getBlock() instanceof PomegranateBushBlock && !player.getItemInHand(hand).is(Tags.Items.SHEARS)) {
-				player.hurt(player.damageSources().sweetBerryBush(), 1.0F);
+				player.hurt(player.damageSources().sweetBerryBush(), 1F);
 			}
 			dropFruit(level, pos);
-			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
+			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1F, 0.8F + level.random.nextFloat() * 0.4F);
 			BlockState picked = state.setValue(AGE, MAX_AGE - 2);
 			level.setBlock(pos, picked, 2); // Revert to pre-flowering
 			level.setBlock(pos.above(), picked.setValue(HALF, DoubleBlockHalf.UPPER), 2); // Revert upper to pre-flowering
@@ -148,7 +148,7 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 			return InteractionResult.sidedSuccess(level.isClientSide());
 		} else if (player.getItemInHand(hand).getItem() instanceof AxeItem && !state.hasProperty(STUNTED)) {
 			BlockState stunted = state.setValue(STUNTED, true);
-			level.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1.0F, 1.0F);
+			level.playSound(player, pos, SoundEvents.AXE_STRIP, SoundSource.BLOCKS, 1F, 1F);
 			level.setBlockAndUpdate(pos, stunted);
 			level.setBlockAndUpdate(pos.above(), stunted.setValue(HALF, DoubleBlockHalf.UPPER));
 			level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, stunted));

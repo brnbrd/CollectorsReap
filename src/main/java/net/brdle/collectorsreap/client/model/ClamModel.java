@@ -20,13 +20,13 @@ public class ClamModel extends HierarchicalModel<Clam> {
 	public static LayerDefinition createBodyLayer() {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
-		PartDefinition Main = partdefinition.addOrReplaceChild("Main", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
-		PartDefinition Top = Main.addOrReplaceChild("Top", CubeListBuilder.create().texOffs(0, 13).addBox(-5.0F, -1.0F, -8.0F, 10.0F, 3.0F, 10.0F, new CubeDeformation(0.0F))
-			.texOffs(24, 28).addBox(-4.0F, -3.0F, -7.0F, 8.0F, 2.0F, 8.0F, new CubeDeformation(0.1F)), PartPose.offset(0.0F, -6.0F, 2.0F));
-		PartDefinition Hinge = Main.addOrReplaceChild("Hinge", CubeListBuilder.create().texOffs(30, 4).addBox(-4.0F, -5.0F, 4.0F, 8.0F, 2.0F, 1.0F, new CubeDeformation(0.1F))
-			.texOffs(30, 0).addBox(-5.0F, -5.0F, 5.0F, 10.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
-		PartDefinition Bottom = Main.addOrReplaceChild("Bottom", CubeListBuilder.create().texOffs(0, 26).addBox(-4.0F, -2.0F, -5.0F, 8.0F, 2.0F, 8.0F, new CubeDeformation(0.1F))
-			.texOffs(0, 0).addBox(-5.0F, -5.0F, -6.0F, 10.0F, 3.0F, 10.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition Main = partdefinition.addOrReplaceChild("Main", CubeListBuilder.create(), PartPose.offset(0F, 24F, 0F));
+		PartDefinition Top = Main.addOrReplaceChild("Top", CubeListBuilder.create().texOffs(0, 13).addBox(-5F, -1F, -8F, 10F, 3F, 10F, new CubeDeformation(0F))
+			.texOffs(24, 28).addBox(-4F, -3F, -7F, 8F, 2F, 8F, new CubeDeformation(0.1F)), PartPose.offset(0F, -6F, 2F));
+		PartDefinition Hinge = Main.addOrReplaceChild("Hinge", CubeListBuilder.create().texOffs(30, 4).addBox(-4F, -5F, 4F, 8F, 2F, 1F, new CubeDeformation(0.1F))
+			.texOffs(30, 0).addBox(-5F, -5F, 5F, 10F, 2F, 2F, new CubeDeformation(0F)), PartPose.offset(0F, 0F, 0F));
+		PartDefinition Bottom = Main.addOrReplaceChild("Bottom", CubeListBuilder.create().texOffs(0, 26).addBox(-4F, -2F, -5F, 8F, 2F, 8F, new CubeDeformation(0.1F))
+			.texOffs(0, 0).addBox(-5F, -5F, -6F, 10F, 3F, 10F, new CubeDeformation(0F)), PartPose.offset(0F, 0F, 0F));
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 

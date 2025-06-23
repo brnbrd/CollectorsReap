@@ -52,9 +52,9 @@ public class ChieftainCrab extends PathfinderMob implements NeutralMob, Bucketab
 	public static AttributeSupplier.@NotNull Builder createAttributes() {
 		return (
 			Mob.createMobAttributes()
-				.add(Attributes.MAX_HEALTH, 25.0D)
+				.add(Attributes.MAX_HEALTH, 25D)
 				.add(Attributes.MOVEMENT_SPEED, 0.25D)
-				.add(Attributes.ATTACK_DAMAGE, 2.0D)
+				.add(Attributes.ATTACK_DAMAGE, 2D)
 		);
 	}
 
@@ -69,10 +69,10 @@ public class ChieftainCrab extends PathfinderMob implements NeutralMob, Bucketab
 
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 8.0F, 2.0D, 2.0D));
+		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 8F, 2D, 2D));
 		this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1.0D));
-		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6.0F));
+		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1D));
+		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6F));
 		this.goalSelector.addGoal(6, new RandomSwimmingGoal(this, 0.75D, 50));
 		this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
 	}
@@ -236,7 +236,7 @@ public class ChieftainCrab extends PathfinderMob implements NeutralMob, Bucketab
 
 	@Override
 	protected void playStepSound(@NotNull BlockPos pPos, @NotNull BlockState pBlock) {
-		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
+		this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1F);
 	}
 
 	@Override

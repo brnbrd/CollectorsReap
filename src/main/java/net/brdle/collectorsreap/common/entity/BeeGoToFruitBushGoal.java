@@ -15,7 +15,7 @@ public class BeeGoToFruitBushGoal extends MoveToBlockGoal {
 	private final Bee bee;
 
 	public BeeGoToFruitBushGoal(Bee bee) {
-		super(bee, 1.0D, 3, 2);
+		super(bee, 1D, 3, 2);
 		this.bee = bee;
 		this.setFlags(EnumSet.of(Goal.Flag.MOVE));
 	}
