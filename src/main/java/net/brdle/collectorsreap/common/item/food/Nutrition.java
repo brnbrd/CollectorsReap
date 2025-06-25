@@ -5,6 +5,7 @@ import net.brdle.collectorsreap.compat.ModCompat;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraftforge.fml.ModList;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 import java.util.Collections;
 import java.util.List;
@@ -292,7 +293,11 @@ public class Nutrition {
 	public static final FoodProperties APPLE_GUMMY = GUMMY(() ->
 		new MobEffectInstance(ModEffects.COMFORT.get(), 200, 0));
 	public static final FoodProperties GLOW_BERRY_GUMMY = GUMMY(() ->
-		new MobEffectInstance(MobEffects.GLOWING, 600, 0));
+		new MobEffectInstance(
+			ModCompat.getTracer().get(),
+			600,
+			ModList.get().isLoaded("cosmopolitan") ? 2 : 0
+		));
 	public static final FoodProperties BANANA_GUMMY = GUMMY(List.of(() ->
 		new MobEffectInstance(ModCompat.getAgility().get(), 200, 0), () ->
 		new MobEffectInstance(MobEffects.JUMP, 200, 2)));

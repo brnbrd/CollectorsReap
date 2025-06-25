@@ -114,4 +114,10 @@ public class ModCompat {
 			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("brewinandchewin", "raging")) :
 			getCaffeinated();
 	}
+
+	public static Supplier<MobEffect> getTracer() {
+		return (ModList.get().isLoaded("cosmopolitan")) ?
+			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("cosmopolitan", "tracer")) :
+			() -> MobEffects.GLOWING;
+	}
 }
