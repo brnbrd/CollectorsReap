@@ -11,6 +11,7 @@
 - Added Dragon's Passion
 - Added Deific Blood (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin))
 - Glow Berry Gummy will now provide Tracer III in presence of [Cosmopolitan](https://www.curseforge.com/minecraft/mc-mods/cosmopolitan)
+- Added more Coaster item models for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin)
 
 ### Fixes
 - Some items that previously didn't display effects in their tooltip now do
