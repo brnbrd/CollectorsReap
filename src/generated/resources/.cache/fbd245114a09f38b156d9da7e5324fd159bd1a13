@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-23T11:06:15.2473453	Item Models: collectorsreap
+// 1.20.1	2025-06-25T13:28:52.2487192	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -37,6 +37,7 @@ b3ec01ff2712dee8521a256be1d817a14a150226 assets/collectorsreap/models/item/crab_
 28e8f563d25f51caff9f497bf65f2209b5d6c99b assets/collectorsreap/models/item/crab_miso.json
 a9eacaf29650dd5297e36ce042addb5086185ceb assets/collectorsreap/models/item/crab_noodles.json
 65c1291027378fac40205c9b17c349f6299f38c1 assets/collectorsreap/models/item/crimson_carrot_roast.json
+a46ae0d5ee7b83356ffa9fba928491773b45a2f1 assets/collectorsreap/models/item/deific_blood.json
 607b14139019a384422dc58f34b4f71748b2d7d6 assets/collectorsreap/models/item/deluxe_salad.json
 e89f2586d27b34dba93468db984c5b608d09e0d2 assets/collectorsreap/models/item/dragons_passion.json
 bf7ce6001cd0cb881bd3e5c97b6781a79ccfb97a assets/collectorsreap/models/item/dragon_bush.json

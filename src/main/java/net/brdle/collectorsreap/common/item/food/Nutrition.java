@@ -155,6 +155,14 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 600, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModCompat.getAgility().get(), 600, 0), 1F)
 		.build();
+	public static final FoodProperties DEIFIC_BLOOD = (new FoodProperties.Builder())
+		.alwaysEat()
+		.effect(() -> new MobEffectInstance(ModCompat.getTipsy().get(), 1200, 2), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication().get(), 1200, 1), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getRaging().get(), 1200, 1), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 2), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 4), 1F)
+		.build();
 	public static final FoodProperties DELUXE_SALAD = (new FoodProperties.Builder())
 		.nutrition(10).saturationMod(0.75F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 0), 1F)

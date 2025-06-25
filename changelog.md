@@ -9,6 +9,7 @@
 - Added Dragon Stew
 - Added Tropical Shaved Ice
 - Added Dragon's Passion
+- Added Deific Blood (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin))
 
 ### Fixes
 - Some items that previously didn't display effects in their tooltip now do

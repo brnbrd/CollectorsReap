@@ -96,4 +96,22 @@ public class ModCompat {
 			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("respiteful", "maturity")) :
 			getCaffeinated();
 	}
+
+	public static Supplier<MobEffect> getTipsy() {
+		return (ModList.get().isLoaded("brewinandchewin")) ?
+			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("brewinandchewin", "tipsy")) :
+			getCaffeinated();
+	}
+
+	public static Supplier<MobEffect> getIntoxication() {
+		return (ModList.get().isLoaded("brewinandchewin")) ?
+			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("brewinandchewin", "intoxication")) :
+			getCaffeinated();
+	}
+
+	public static Supplier<MobEffect> getRaging() {
+		return (ModList.get().isLoaded("brewinandchewin")) ?
+			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("brewinandchewin", "raging")) :
+			getCaffeinated();
+	}
 }

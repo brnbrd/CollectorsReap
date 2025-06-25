@@ -44,6 +44,11 @@ public class JEIPlugin implements IModPlugin {
 				new FluidStack(CRFluids.POMEGRANATE_BLACK_TEA.get(), 1000)
 			));
 		}
+		if (!ModList.get().isLoaded("brewinandchewin")) {
+			registration.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, List.of(
+				new FluidStack(CRFluids.DEIFIC_BLOOD.get(), 1000)
+			));
+		}
 
 		// Lime
 		String limeTranslationKey = "desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME);
