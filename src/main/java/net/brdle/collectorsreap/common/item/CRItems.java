@@ -5,6 +5,7 @@ import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.item.food.*;
+import net.brdle.collectorsreap.compat.Mods;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
@@ -141,14 +142,13 @@ public class CRItems extends ModItems {
 		new CompatDrinkable((new Item.Properties()).food(
 			Nutrition.POMEGRANATE_SMOOTHIE), true, false, "neapolitan"));
 	public static final RegistryObject<Item> DEIFIC_BLOOD = registerItem("deific_blood", () ->
-		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.DEIFIC_BLOOD),
+		new CompatDrinkable(
+			(new Item.Properties()).food(Nutrition.DEIFIC_BLOOD),
 			true,
 			false,
-			ModList.get().isLoaded("brewinandchewin") ?
-				Util.item("brewinandchewin", "tankard") :
-				Items.GLASS_BOTTLE,
-			"brewinandchewin"));
+			Util.item(Util.rl("brewinandchewin", "tankard"), Items.GLASS_BOTTLE),
+			"brewinandchewin"
+		));
 	public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake", () -> new BlockItem(CRBlocks.LIME_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
 	public static final RegistryObject<Item> LIME_CAKE_SLICE = registerItem("lime_cake_slice", () ->
 		new EffectSliceItem((new Item.Properties()).food(Nutrition.LIME_CAKE_SLICE)));
@@ -322,12 +322,12 @@ public class CRItems extends ModItems {
 
 	// Let Fish Love
 	public static final RegistryObject<Item> PLATINUM_BASS_ROE = registerItem("platinum_bass_roe", () ->
-		ModList.get().isLoaded("letfishlove") ?
+		Mods.stringLoaded("letfishlove") ?
 		LetFishLoveCompat.platinumBassRoeItem() :
 		new CompatItem(new Item.Properties(), "letfishlove")
 	);
 	public static final RegistryObject<Item> TIGER_PRAWN_ROE = registerItem("tiger_prawn_roe", () ->
-		ModList.get().isLoaded("letfishlove") ?
+		Mods.stringLoaded("letfishlove") ?
 		LetFishLoveCompat.tigerPrawnRoeItem() :
 		new CompatItem(new Item.Properties(), "letfishlove")
 	);

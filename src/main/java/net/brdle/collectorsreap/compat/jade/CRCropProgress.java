@@ -15,9 +15,10 @@ public enum CRCropProgress implements IBlockComponentProvider {
 	INSTANCE;
 
 	private static void addMaturityTooltip(ITooltip tooltip, int age, int maxAge) {
-		tooltip.add(Component.translatable("tooltip.jade.crop_growth", age == maxAge ?
+		tooltip.add(Component.translatable("tooltip.jade.crop_growth",
+			age == maxAge ?
 			Component.translatable("tooltip.jade.crop_mature").withStyle(ChatFormatting.GREEN) :
-			Component.literal(String.format("%F%%", (age / (float) maxAge) * 100F)).withStyle(ChatFormatting.WHITE)
+			Component.literal(String.format("%.0f%%", (age / (float) maxAge) * 100F)).withStyle(ChatFormatting.WHITE)
 		));
 	}
 

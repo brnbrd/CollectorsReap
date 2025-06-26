@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.common.item.food;
 
 import joptsimple.internal.Strings;
+import net.brdle.collectorsreap.compat.Mods;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
@@ -42,7 +43,7 @@ public class CompatDrinkable extends DrinkableItem {
 
 	public boolean loaded() {
 		for (String mod : this.getModid()) {
-			if (ModList.get().isLoaded(mod)) {
+			if (Mods.stringLoaded(mod)) {
 				return true;
 			}
 		}

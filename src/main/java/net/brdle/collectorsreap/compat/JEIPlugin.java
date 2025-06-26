@@ -38,13 +38,13 @@ public class JEIPlugin implements IModPlugin {
 		}
 		registration.addItemStackInfo(Util.gs(CRItems.PORTOBELLO), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO)));
 
-		if (!ModList.get().isLoaded("farmersrespite")) {
+		if (!Mods.stringLoaded("farmersrespite")) {
 			registration.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, List.of(
 				new FluidStack(CRFluids.LIME_GREEN_TEA.get(), 1000),
 				new FluidStack(CRFluids.POMEGRANATE_BLACK_TEA.get(), 1000)
 			));
 		}
-		if (!ModList.get().isLoaded("brewinandchewin")) {
+		if (!Mods.stringLoaded("brewinandchewin")) {
 			registration.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, List.of(
 				new FluidStack(CRFluids.DEIFIC_BLOOD.get(), 1000)
 			));
@@ -88,7 +88,7 @@ public class JEIPlugin implements IModPlugin {
 			registration.addItemStackInfo(Util.gs(CRItems.URCHIN_DART), Component.translatable(dartTranslationKey));
 		}
 
-		if (ModList.get().isLoaded("mynethersdelight")) {
+		if (Mods.stringLoaded("mynethersdelight")) {
 			if (CRConfig.verify(CRItems.STYGIAN_POMEGRANATE)) {
 				registration.addItemStackInfo(
 					Util.gs(CRItems.STYGIAN_POMEGRANATE),

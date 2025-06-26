@@ -1,5 +1,6 @@
 {
   "credit": "Made with Blockbench",
+  "ambientocclusion": false,
   "textures": {
     "particle": "collectorsreap:block/coaster/lime",
     "lime": "collectorsreap:block/coaster/lime"

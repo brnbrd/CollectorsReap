@@ -1,5 +1,6 @@
 {
   "credit": "Made with Blockbench",
+  "ambientocclusion": false,
   "textures": {
     "fruit": "collectorsreap:block/coaster/pink_dragon_fruit",
     "particle": "collectorsreap:block/coaster/pink_dragon_fruit"

@@ -38,16 +38,16 @@ public class GummyItem extends CompatConsumable {
 	@Override
 	public void affectConsumer(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
 		super.affectConsumer(stack, level, consumer);
-		if (loaded()) {
+		if (this.loaded()) {
 			if (stack.is(CRItems.ALOE_GUMMY.get())) {
 				consumer.clearFire();
 			} else if (stack.is(CRItems.ADZUKI_GUMMY.get())) {
-				MobEffect vanilla = ModCompat.getVanillaScent().get();
+				MobEffect vanilla = ModCompat.getVanillaScent();
 				level.getNearbyEntities(LivingEntity.class, TargetingConditions.DEFAULT.selector(near ->
 					near != consumer &&
 					(
 						near.getEffect(vanilla) == null ||
-						!near.hasEffect(ModCompat.getVanillaScent().get())
+						!near.hasEffect(ModCompat.getVanillaScent())
 					)
 				), consumer, consumer.getBoundingBox().inflate(6D, 2D, 6D))
 				.stream().limit(MAX_NEARBY)

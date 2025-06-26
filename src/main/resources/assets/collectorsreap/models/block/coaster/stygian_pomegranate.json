@@ -1,5 +1,6 @@
 {
   "credit": "Made with Blockbench",
+  "ambientocclusion": false,
   "textures": {
     "particle": "collectorsreap:block/coaster/stygian_pomegranate",
     "stygian": "collectorsreap:block/coaster/stygian_pomegranate"

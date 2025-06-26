@@ -1,5 +1,6 @@
 {
   "credit": "Made with Blockbench",
+  "ambientocclusion": false,
   "textures": {
     "urchin": "collectorsreap:block/coaster/urchin",
     "particle": "collectorsreap:block/coaster/urchin"

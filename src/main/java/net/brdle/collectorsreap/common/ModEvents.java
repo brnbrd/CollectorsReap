@@ -6,6 +6,7 @@ import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.common.item.CompatItem;
 import net.brdle.collectorsreap.common.item.food.CompatConsumable;
 import net.brdle.collectorsreap.common.item.food.CompatDrinkable;
+import net.brdle.collectorsreap.compat.Mods;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -48,7 +49,7 @@ public class ModEvents {
 			compost(CRItems.STYGIAN_POMEGRANATE, 0.35F);
 
 			//
-			if (ModList.get().isLoaded("neapolitan")) {
+			if (Mods.stringLoaded("neapolitan")) {
 				CRCauldronInteractions.registerCauldronInteractions();
 			}
 		});

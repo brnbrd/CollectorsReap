@@ -2,6 +2,7 @@ package net.brdle.collectorsreap.common.block;
 
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.compat.Mods;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
@@ -99,13 +100,13 @@ public class CRBlocks {
 		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(0.2F).sound(SoundType.SNOW)));
 	public static final RegistryObject<Block> LIME_MILKSHAKE_CAULDRON = BLOCKS.register("lime_milkshake_cauldron",
 		() -> new CRMilkshakeCauldronBlock(
-			ModList.get().isLoaded("neapolitan") ?
+			Mods.stringLoaded("neapolitan") ?
 				CRCauldronInteractions.LIME_MILKSHAKE.map() :
 				CauldronInteraction.newInteractionMap())
 	);
 	public static final RegistryObject<Block> POMEGRANATE_MILKSHAKE_CAULDRON = BLOCKS.register("pomegranate_milkshake_cauldron",
 		() -> new CRMilkshakeCauldronBlock(
-			ModList.get().isLoaded("neapolitan") ?
+			Mods.stringLoaded("neapolitan") ?
 				CRCauldronInteractions.POMEGRANATE_MILKSHAKE.map() :
 				CauldronInteraction.newInteractionMap())
 	);
@@ -135,12 +136,12 @@ public class CRBlocks {
 
 	// Let Fish Love
 	public static final RegistryObject<Block> PLATINUM_BASS_ROE = BLOCKS.register("platinum_bass_roe_block", () ->
-		ModList.get().isLoaded("letfishlove") ?
+		Mods.stringLoaded("letfishlove") ?
 		LetFishLoveCompat.platinumBassRoeBlock() :
 		new Block(BlockBehaviour.Properties.of())
 	);
 	public static final RegistryObject<Block> TIGER_PRAWN_ROE = BLOCKS.register("tiger_prawn_roe_block", () ->
-		ModList.get().isLoaded("letfishlove") ?
+		Mods.stringLoaded("letfishlove") ?
 		LetFishLoveCompat.tigerPrawnRoeBlock() :
 		new Block(BlockBehaviour.Properties.of())
 	);

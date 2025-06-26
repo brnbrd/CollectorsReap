@@ -4,13 +4,10 @@ import net.brdle.collectorsreap.Util;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.ForgeRegistries;
-import org.jetbrains.annotations.Nullable;
 import java.util.function.Supplier;
+import org.jetbrains.annotations.Nullable;
 
 public class ModCompat {
-
 	@Nullable
 	public static CreativeModeTab ifLoaded(String modid, CreativeModeTab tab) {
 		return ifLoaded(modid, () -> tab);
@@ -18,106 +15,86 @@ public class ModCompat {
 
 	@Nullable
 	public static CreativeModeTab ifLoaded(String modid, Supplier<CreativeModeTab> tab) {
-		if (ModList.get().isLoaded(modid)) {
+		if (Mods.stringLoaded(modid)) {
 			return tab.get();
 		} else {
 			return null;
 		}
 	}
 
-	public static Supplier<MobEffect> getCaffeinated() {
-		return (ModList.get().isLoaded("farmersrespite")) ? FarmersRespiteCompat.CAFFEINATED : () -> MobEffects.CONFUSION;
+	public static MobEffect getCaffeinated() {
+		return Util.effect("farmersrespite", "caffeinated", MobEffects.CONFUSION);
 	}
 
-	public static Supplier<MobEffect> getAgility() {
-		return (ModList.get().isLoaded("neapolitan")) ? NeapolitanCompat.AGILITY : () -> MobEffects.CONFUSION;
+	public static MobEffect getAgility() {
+		return Util.effect("neapolitan", "agility", MobEffects.CONFUSION);
 	}
 
-	public static Supplier<MobEffect> getVanillaScent() {
-		return (ModList.get().isLoaded("neapolitan")) ? NeapolitanCompat.VANILLA_SCENT : () -> MobEffects.CONFUSION;
+	public static MobEffect getVanillaScent() {
+		return Util.effect("neapolitan", "vanilla_scent", MobEffects.CONFUSION);
 	}
 
-	public static Supplier<MobEffect> getSugarRush() {
-		return (ModList.get().isLoaded("neapolitan")) ? NeapolitanCompat.SUGAR_RUSH : () -> MobEffects.CONFUSION;
+	public static MobEffect getSugarRush() {
+		return Util.effect("neapolitan", "sugar_rush", MobEffects.MOVEMENT_SPEED);
 	}
 
-	public static Supplier<MobEffect> getBerserking() {
-		return (ModList.get().isLoaded("neapolitan")) ? NeapolitanCompat.BERSERKING : () -> MobEffects.CONFUSION;
+	public static MobEffect getBerserking() {
+		return Util.effect("neapolitan", "berserking", MobEffects.CONFUSION);
 	}
 
-	public static Supplier<MobEffect> getHarmony() {
-		return (ModList.get().isLoaded("neapolitan")) ? NeapolitanCompat.HARMONY : () -> MobEffects.CONFUSION;
+	public static MobEffect getHarmony() {
+		return Util.effect("neapolitan", "harmony", MobEffects.CONFUSION);
 	}
 
-	public static Supplier<MobEffect> getSpitting() {
-		return (ModList.get().isLoaded("atmospheric")) ? AtmosphericCompat.SPITTING : () -> MobEffects.CONFUSION;
+	public static MobEffect getSpitting() {
+		return Util.effect("atmospheric", "spitting", MobEffects.CONFUSION);
 	}
 
-	public static Supplier<MobEffect> getPersistence() {
-		return (ModList.get().isLoaded("atmospheric")) ? AtmosphericCompat.PERSISTENCE : () -> MobEffects.CONFUSION;
+	public static MobEffect getPersistence() {
+		return Util.effect("atmospheric", "persistence", MobEffects.CONFUSION);
 	}
 
-	public static Supplier<MobEffect> getRelief() {
-		return (ModList.get().isLoaded("atmospheric")) ? AtmosphericCompat.RELIEF : () -> MobEffects.CONFUSION;
+	public static MobEffect getRelief() {
+		return Util.effect("atmospheric", "relief", MobEffects.CONFUSION);
 	}
 
-	public static Supplier<MobEffect> getStuffed() {
-		return (ModList.get().isLoaded("seasonals")) ?
-			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("seasonals", "stuffed")) :
-			() -> MobEffects.CONFUSION;
+	public static MobEffect getStuffed() {
+		return Util.effect("seasonals", "stuffed", MobEffects.CONFUSION);
 	}
 
-	public static Supplier<MobEffect> getThornResistance() {
-		return (ModList.get().isLoaded("seasonals")) ?
-			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("seasonals", "thorn_resistance")) :
-			() -> MobEffects.FIRE_RESISTANCE;
+	public static MobEffect getThornResistance() {
+		return Util.effect("seasonals", "thorn_resistance", MobEffects.FIRE_RESISTANCE);
 	}
 
-	public static Supplier<MobEffect> getRooted() {
-		return (ModList.get().isLoaded("seasonals")) ?
-			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("seasonals", "rooted")) :
-			() -> MobEffects.DAMAGE_RESISTANCE;
+	public static MobEffect getRooted() {
+		return Util.effect("seasonals", "rooted", MobEffects.DAMAGE_RESISTANCE);
 	}
 
-	public static Supplier<MobEffect> getVitality() {
-		return (ModList.get().isLoaded("respiteful")) ?
-			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("respiteful", "vitality")) :
-			() -> MobEffects.DIG_SPEED;
+	public static MobEffect getVitality() {
+		return Util.effect("respiteful", "vitality", MobEffects.DIG_SPEED);
 	}
 
-	public static Supplier<MobEffect> getTenacity() {
-		return (ModList.get().isLoaded("respiteful")) ?
-			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("respiteful", "tenacity")) :
-			() -> MobEffects.DAMAGE_RESISTANCE;
+	public static MobEffect getTenacity() {
+		return Util.effect("respiteful", "tenacity", MobEffects.DAMAGE_RESISTANCE);
 	}
 
-	public static Supplier<MobEffect> getMaturity() {
-		return (ModList.get().isLoaded("respiteful")) ?
-			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("respiteful", "maturity")) :
-			getCaffeinated();
+	public static MobEffect getMaturity() {
+		return Util.effect("respiteful", "maturity", getCaffeinated());
 	}
 
-	public static Supplier<MobEffect> getTipsy() {
-		return (ModList.get().isLoaded("brewinandchewin")) ?
-			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("brewinandchewin", "tipsy")) :
-			getCaffeinated();
+	public static MobEffect getTipsy() {
+		return Util.effect("brewinandchewin", "tipsy", getCaffeinated());
 	}
 
-	public static Supplier<MobEffect> getIntoxication() {
-		return (ModList.get().isLoaded("brewinandchewin")) ?
-			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("brewinandchewin", "intoxication")) :
-			getCaffeinated();
+	public static MobEffect getIntoxication() {
+		return Util.effect("brewinandchewin", "intoxication", getCaffeinated());
 	}
 
-	public static Supplier<MobEffect> getRaging() {
-		return (ModList.get().isLoaded("brewinandchewin")) ?
-			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("brewinandchewin", "raging")) :
-			getCaffeinated();
+	public static MobEffect getRaging() {
+		return Util.effect("brewinandchewin", "raging", getCaffeinated());
 	}
 
-	public static Supplier<MobEffect> getTracer() {
-		return (ModList.get().isLoaded("cosmopolitan")) ?
-			() -> ForgeRegistries.MOB_EFFECTS.getValue(Util.rl("cosmopolitan", "tracer")) :
-			() -> MobEffects.GLOWING;
+	public static MobEffect getTracer() {
+		return Util.effect("cosmopolitan", "tracer", MobEffects.GLOWING);
 	}
 }
