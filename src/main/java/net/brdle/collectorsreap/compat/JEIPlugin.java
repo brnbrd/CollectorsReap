@@ -46,7 +46,10 @@ public class JEIPlugin implements IModPlugin {
 		}
 		if (!Mods.stringLoaded("brewinandchewin")) {
 			registration.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, List.of(
-				new FluidStack(CRFluids.DEIFIC_BLOOD.get(), 1000)
+				new FluidStack(CRFluids.DEIFIC_BLOOD.get(), 1000),
+				new FluidStack(CRFluids.HERMITS_SOUR.get(), 1000),
+				new FluidStack(CRFluids.ROSE_MOON.get(), 1000),
+				new FluidStack(CRFluids.REANIMATORS_GARDEN.get(), 1000)
 			));
 		}
 

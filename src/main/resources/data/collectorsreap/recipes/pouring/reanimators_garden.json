@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "brewinandchewin"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "reanimators_garden"
+        }
+      ],
+      "recipe": {
+        "type": "brewinandchewin:keg_pouring",
+        "amount": 250,
+        "filling": true,
+        "fluid": "collectorsreap:reanimators_garden",
+        "output": {
+          "item": "collectorsreap:reanimators_garden"
+        },
+        "strict": false
+      }
+    }
+  ]
+}

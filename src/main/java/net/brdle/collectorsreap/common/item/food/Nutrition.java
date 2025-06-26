@@ -209,6 +209,29 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 2), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 2400, 4), 1F)
 		.build();
+	public static final FoodProperties HERMITS_SOUR = (new FoodProperties.Builder())
+		.alwaysEat()
+		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 2400, 0), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 1200, 0), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getSweetHeart(), 2400, 1), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 2400, 4), 1F)
+		.build();
+	public static final FoodProperties ROSE_MOON = (new FoodProperties.Builder())
+		.alwaysEat()
+		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 2400, 1), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 2400, 0), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.CONDUIT_POWER, 2400, 0), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2400, 0), 1F)
+		.build();
+	public static final FoodProperties REANIMATORS_GARDEN = (new FoodProperties.Builder())
+		.alwaysEat()
+		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 2400, 2), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 2400, 0), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getSweetHeart(), 2400, 4), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 2400, 3), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 2), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 2400, 2), 1F)
+		.build();
 
 	public static final FoodProperties TIGER_PRAWN = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(0.1F)

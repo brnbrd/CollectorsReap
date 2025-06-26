@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-26T13:09:12.3068444	Item Models: collectorsreap
+// 1.20.1	2025-06-26T14:36:59.546864	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -47,6 +47,7 @@ bf7ce6001cd0cb881bd3e5c97b6781a79ccfb97a assets/collectorsreap/models/item/drago
 20d358545ae7a12561cf0bd01d35762e21cdf67f assets/collectorsreap/models/item/glazed_strider.json
 824066299419f1fa231c5242d0168a6ebacbeb3f assets/collectorsreap/models/item/glow_berry_gummy.json
 d38fe28806758cf25f86c122eafa764677f1f721 assets/collectorsreap/models/item/green_tea_gummy.json
+98baf3ea1e6ca61695c353903970f4d9c2decab7 assets/collectorsreap/models/item/hermits_sour.json
 2192f4d9d4bea2b407f39f945a85e6dc973c0760 assets/collectorsreap/models/item/honey_lime_chicken.json
 e8d5b9be9760a736d6d53265db81ef2e0995c6d8 assets/collectorsreap/models/item/land_and_sea_burger.json
 46f7f63c581b8219a5925ac32cc6d8bb9b958787 assets/collectorsreap/models/item/lime.json
@@ -116,6 +117,8 @@ e96c4fb3c05e04c258c07e928c26037c9313d319 assets/collectorsreap/models/item/prawn
 f61de317c2d2db4ce52bf3a0ddcb35abd77e1c17 assets/collectorsreap/models/item/prawn_roll.json
 adcc8f9ece8fbf46ac646677c04db9d8e83f93be assets/collectorsreap/models/item/prawn_stew.json
 8d76357ffae0339aeb4806f99200ca82ca6a3eb2 assets/collectorsreap/models/item/pumpkin_gummy.json
+8e86a679bd990c410708c4df61bdf4d2162a9852 assets/collectorsreap/models/item/reanimators_garden.json
+df84e4261ed47b8ade92dece95b40b82ee56d7f3 assets/collectorsreap/models/item/rose_moon.json
 996f6744ca4822a2f3377eb97c0c30aea18a8c8b assets/collectorsreap/models/item/salmon_tartare.json
 0d4001d9492e0c575ca0724b6bfbf9c56d145c4c assets/collectorsreap/models/item/salmon_wrapped_prawn.json
 d8ad6caa6919bbd5c300b96fefd0845b284a0daa assets/collectorsreap/models/item/sea_wrap.json

@@ -288,6 +288,30 @@ public class CRItems extends ModItems {
 				.food(Nutrition.DEIFIC_BLOOD)) :
 			new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
 	);
+	public static final RegistryObject<Item> HERMITS_SOUR = registerItem("hermits_sour", () ->
+		Mods.stringLoaded("brewinandchewin") ?
+			new CRBoozeItem(CRFluids.HERMITS_SOUR.get(), (new Item.Properties())
+				.stacksTo(16)
+				.craftRemainder(Util.item(tankard, Items.GLASS_BOTTLE))
+				.food(Nutrition.HERMITS_SOUR)) :
+			new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+	);
+	public static final RegistryObject<Item> ROSE_MOON = registerItem("rose_moon", () ->
+		Mods.stringLoaded("brewinandchewin") ?
+			new CRBoozeItem(CRFluids.ROSE_MOON.get(), (new Item.Properties())
+				.stacksTo(16)
+				.craftRemainder(Util.item(tankard, Items.GLASS_BOTTLE))
+				.food(Nutrition.ROSE_MOON)) :
+			new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+	);
+	public static final RegistryObject<Item> REANIMATORS_GARDEN = registerItem("reanimators_garden", () ->
+		Mods.stringLoaded("brewinandchewin") ?
+			new CRBoozeItem(CRFluids.REANIMATORS_GARDEN.get(), (new Item.Properties())
+				.stacksTo(16)
+				.craftRemainder(Util.item(tankard, Items.GLASS_BOTTLE))
+				.food(Nutrition.REANIMATORS_GARDEN)) :
+			new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+	);
 
 	// Urchin Test
 	public static final RegistryObject<Item> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block", CRBlocks.URCHIN_TEST_BLOCK);

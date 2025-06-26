@@ -183,7 +183,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 
 		// Brewin and Chewin
 		this.tag(CRItemTags.FERMENTED_DRINKS)
-			.add(CRItems.DEIFIC_BLOOD.get());
+			.add(CRItems.DEIFIC_BLOOD.get())
+			.add(CRItems.HERMITS_SOUR.get())
+			.add(CRItems.ROSE_MOON.get())
+			.add(CRItems.REANIMATORS_GARDEN.get());
 
 		// Diet
 		this.tag(CRItemTags.DIET_FRUITS)

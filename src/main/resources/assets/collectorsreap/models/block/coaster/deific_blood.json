@@ -1,0 +1,7 @@
+{
+  "parent": "brewinandchewin:block/coaster_tankard",
+  "textures": {
+    "particle": "collectorsreap:block/coaster/deific_blood",
+    "tankard": "collectorsreap:block/coaster/deific_blood"
+  }
+}

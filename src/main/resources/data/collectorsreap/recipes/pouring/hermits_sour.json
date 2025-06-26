@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "brewinandchewin"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "hermits_sour"
+        }
+      ],
+      "recipe": {
+        "type": "brewinandchewin:keg_pouring",
+        "amount": 250,
+        "filling": true,
+        "fluid": "collectorsreap:hermits_sour",
+        "output": {
+          "item": "collectorsreap:hermits_sour"
+        },
+        "strict": false
+      }
+    }
+  ]
+}

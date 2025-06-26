@@ -1,0 +1,7 @@
+{
+  "parent": "brewinandchewin:block/coaster_tankard",
+  "textures": {
+    "particle": "collectorsreap:block/coaster/hermits_sour",
+    "tankard": "collectorsreap:block/coaster/hermits_sour"
+  }
+}

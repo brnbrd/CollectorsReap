@@ -43,6 +43,9 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("fluid_type." + CollectorsReap.MODID + ".lime_green_tea_type", "Lime Green Tea");
 		add("fluid_type." + CollectorsReap.MODID + ".pomegranate_black_tea_type", "Pomegranate Black Tea");
 		add("fluid_type." + CollectorsReap.MODID + ".deific_blood_type", "Deific Blood");
+		add("fluid_type." + CollectorsReap.MODID + ".hermits_sour_type", "Hermit's Sour");
+		add("fluid_type." + CollectorsReap.MODID + ".rose_moon_type", "Rosé Moon");
+		add("fluid_type." + CollectorsReap.MODID + ".reanimators_garden_type", "Reanimator's Garden");
 		add("tooltip.requires_modid", "Requires modid:");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO), "Portobellos can be rarely found in meadows.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Limes can be found as a wild bush in flower forests.");
@@ -159,7 +162,6 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.LIME_GREEN_TEA, "Lime Green Tea");
 		addItem(CRItems.POMEGRANATE_BLACK_TEA, "Pomegranate Black Tea");
 		addItem(CRItems.POMEGRANATE_SMOOTHIE, "Pomegranate Smoothie");
-		addItem(CRItems.DEIFIC_BLOOD, "Deific Blood");
 		addItem(CRItems.POMEGRANATE, "Pomegranate");
 		addItem(CRItems.POMEGRANATE_SEEDS, "Pomegranate Seeds");
 		addItem(CRItems.POMEGRANATE_SLICE, "Pomegranate Slice");
@@ -182,6 +184,10 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.CHOCOLATE_ARILS, "Chocolate Arils");
 		addItem(CRItems.POMEGRANATE_BEAN_SALAD, "Pomegranate Bean Salad");
 		addItem(CRItems.STRAWBERRY_JAM_BUN, "Strawberry Jam Bun");
+		addItem(CRItems.DEIFIC_BLOOD, "Deific Blood");
+		addItem(CRItems.HERMITS_SOUR, "Hermit's Sour");
+		addItem(CRItems.ROSE_MOON, "Rosé Moon");
+		addItem(CRItems.REANIMATORS_GARDEN, "Reanimator's Garden");
 		addItem(CRItems.LIME_GUMMY, "Lime Gummy");
 		addItem(CRItems.POMEGRANATE_GUMMY, "Pomegranate Gummy");
 		addItem(CRItems.MELON_GUMMY, "Melon Gummy");
