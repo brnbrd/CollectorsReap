@@ -16,7 +16,20 @@ public class CompatDrinkable extends DrinkableItem {
 
 	public CompatDrinkable(Properties properties, boolean hasPotionEffectTooltip, boolean hasCustomTooltip, String... modid) {
 		super(
-			properties.craftRemainder(Items.GLASS_BOTTLE).stacksTo(16),
+			properties
+				.stacksTo(16)
+				.craftRemainder(Items.GLASS_BOTTLE),
+			hasPotionEffectTooltip,
+			hasCustomTooltip
+		);
+		this.modid = modid;
+	}
+
+	public CompatDrinkable(Properties properties, boolean hasPotionEffectTooltip, boolean hasCustomTooltip, Item remainder, String... modid) {
+		super(
+			properties
+				.stacksTo(16)
+				.craftRemainder(remainder),
 			hasPotionEffectTooltip,
 			hasCustomTooltip
 		);

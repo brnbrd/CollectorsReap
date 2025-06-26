@@ -142,7 +142,13 @@ public class CRItems extends ModItems {
 			Nutrition.POMEGRANATE_SMOOTHIE), true, false, "neapolitan"));
 	public static final RegistryObject<Item> DEIFIC_BLOOD = registerItem("deific_blood", () ->
 		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.DEIFIC_BLOOD), true, false, "brewinandchewin"));
+			Nutrition.DEIFIC_BLOOD),
+			true,
+			false,
+			ModList.get().isLoaded("brewinandchewin") ?
+				Util.item("brewinandchewin", "tankard") :
+				Items.GLASS_BOTTLE,
+			"brewinandchewin"));
 	public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake", () -> new BlockItem(CRBlocks.LIME_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
 	public static final RegistryObject<Item> LIME_CAKE_SLICE = registerItem("lime_cake_slice", () ->
 		new EffectSliceItem((new Item.Properties()).food(Nutrition.LIME_CAKE_SLICE)));
