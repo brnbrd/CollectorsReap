@@ -8,32 +8,35 @@ import net.minecraftforge.fluids.FluidType;
 import java.util.function.Consumer;
 
 public class DrinkFluidType extends FluidType {
-	private final int tint;
+	public static final ResourceLocation FLUID_STILL_TEXTURE = new  ResourceLocation("block/water_still");
+	public static final ResourceLocation FLUID_FLOWING_TEXTURE = new ResourceLocation("block/water_flow");
+	private final int tintColor;
 
-	public DrinkFluidType(int tint) {
+	public DrinkFluidType(int tintColor) {
 		super(Properties.create()
 			.sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
 			.sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
+			.sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH)
 		);
-		this.tint = tint;
+		this.tintColor = tintColor;
 	}
 
 	@Override
 	public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
 		consumer.accept(new IClientFluidTypeExtensions() {
 			@Override
-			public int getTintColor() {
-				return tint;
-			}
-
-			@Override
 			public ResourceLocation getStillTexture() {
-				return new ResourceLocation("block/water_still");
+				return FLUID_STILL_TEXTURE;
 			}
 
 			@Override
 			public ResourceLocation getFlowingTexture() {
-				return new ResourceLocation("block/water_flow");
+				return FLUID_FLOWING_TEXTURE;
+			}
+
+			@Override
+			public int getTintColor() {
+				return tintColor;
 			}
 		});
 	}

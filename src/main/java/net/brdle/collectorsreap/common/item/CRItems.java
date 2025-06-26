@@ -4,9 +4,12 @@ import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.entity.CREntities;
+import net.brdle.collectorsreap.common.fluid.CRFluids;
 import net.brdle.collectorsreap.common.item.food.*;
 import net.brdle.collectorsreap.compat.Mods;
+import net.brdle.collectorsreap.compat.brewinandchewin.CRBoozeItem;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -141,14 +144,6 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> POMEGRANATE_SMOOTHIE = registerItem("pomegranate_smoothie", () ->
 		new CompatDrinkable((new Item.Properties()).food(
 			Nutrition.POMEGRANATE_SMOOTHIE), true, false, "neapolitan"));
-	public static final RegistryObject<Item> DEIFIC_BLOOD = registerItem("deific_blood", () ->
-		new CompatDrinkable(
-			(new Item.Properties()).food(Nutrition.DEIFIC_BLOOD),
-			true,
-			false,
-			Util.item(Util.rl("brewinandchewin", "tankard"), Items.GLASS_BOTTLE),
-			"brewinandchewin"
-		));
 	public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake", () -> new BlockItem(CRBlocks.LIME_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
 	public static final RegistryObject<Item> LIME_CAKE_SLICE = registerItem("lime_cake_slice", () ->
 		new EffectSliceItem((new Item.Properties()).food(Nutrition.LIME_CAKE_SLICE)));
@@ -282,6 +277,17 @@ public class CRItems extends ModItems {
 		() -> new BlockItem(CRBlocks.LIME_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
 	public static final RegistryObject<Item> POMEGRANATE_ICE_CREAM_BLOCK = registerItem("pomegranate_ice_cream_block",
 		() -> new BlockItem(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
+
+	// Brewin and Chewin Compat
+	private static final ResourceLocation tankard = Util.rl("brewinandchewin", "tankard");
+	public static final RegistryObject<Item> DEIFIC_BLOOD = registerItem("deific_blood", () ->
+		Mods.stringLoaded("brewinandchewin") ?
+			new CRBoozeItem(CRFluids.DEIFIC_BLOOD.get(), (new Item.Properties())
+				.stacksTo(16)
+				.craftRemainder(Util.item(tankard, Items.GLASS_BOTTLE))
+				.food(Nutrition.DEIFIC_BLOOD)) :
+			new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+	);
 
 	// Urchin Test
 	public static final RegistryObject<Item> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block", CRBlocks.URCHIN_TEST_BLOCK);

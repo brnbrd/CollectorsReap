@@ -156,14 +156,6 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 600, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModCompat.getAgility(), 600, 0), 1F)
 		.build();
-	public static final FoodProperties DEIFIC_BLOOD = (new FoodProperties.Builder())
-		.alwaysEat()
-		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 1200, 2), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 1200, 1), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getRaging(), 1200, 1), 1F)
-		.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 2), 1F)
-		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 4), 1F)
-		.build();
 	public static final FoodProperties DELUXE_SALAD = (new FoodProperties.Builder())
 		.nutrition(10).saturationMod(0.75F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 0), 1F)
@@ -208,6 +200,16 @@ public class Nutrition {
 		.nutrition(4).saturationMod(0.25F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 200, 1), 1F)
 		.effect(() -> new MobEffectInstance(ModCompat.getSugarRush(), 200, 1), 1F).build();
+
+	public static final FoodProperties DEIFIC_BLOOD = (new FoodProperties.Builder())
+		.alwaysEat()
+		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 2400, 2), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 1800, 1), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getRaging(), 2400, 1), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 2), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 2400, 4), 1F)
+		.build();
+
 	public static final FoodProperties TIGER_PRAWN = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(0.1F)
 		.effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.75F).build();

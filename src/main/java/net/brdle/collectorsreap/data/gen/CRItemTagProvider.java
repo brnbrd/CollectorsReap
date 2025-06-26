@@ -181,6 +181,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.LIME_ICE_CREAM.get())
 			.add(CRItems.POMEGRANATE_ICE_CREAM.get());
 
+		// Brewin and Chewin
+		this.tag(CRItemTags.FERMENTED_DRINKS)
+			.add(CRItems.DEIFIC_BLOOD.get());
+
 		// Diet
 		this.tag(CRItemTags.DIET_FRUITS)
 			.add(CRItems.LIME.get())

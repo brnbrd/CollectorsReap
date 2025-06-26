@@ -94,6 +94,10 @@ public class ModCompat {
 		return Util.effect("brewinandchewin", "raging", getCaffeinated());
 	}
 
+	public static MobEffect getSweetHeart() {
+		return Util.effect("brewinandchewin", "sweet_heart", getCaffeinated());
+	}
+
 	public static MobEffect getTracer() {
 		return Util.effect("cosmopolitan", "tracer", MobEffects.GLOWING);
 	}

@@ -58,6 +58,9 @@ public class CRItemTags {
 	public static final TagKey<Item> MINT_LEAVES = Util.it("neapolitan", "mint_leaves");
 	public static final TagKey<Item> ROASTED_ADZUKI_BEANS = Util.it("neapolitan", "roasted_adzuki_beans");
 
+	// Brewin and Chewin
+	public static final TagKey<Item> FERMENTED_DRINKS = Util.it("brewinandchewin", "fermented_drinks");
+
 	// Atmospheric
 	public static final TagKey<Item> ALOE_LEAVES = Util.it("atmospheric", "aloe_leaves");
 	public static final TagKey<Item> PASSION_FRUIT = Util.it("atmospheric", "passion_fruit");
