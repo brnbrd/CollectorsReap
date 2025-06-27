@@ -220,8 +220,8 @@ public class Nutrition {
 		.alwaysEat()
 		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 2400, 1), 1F)
 		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 2400, 0), 1F)
-		.effect(() -> new MobEffectInstance(MobEffects.CONDUIT_POWER, 2400, 0), 1F)
-		.effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2400, 0), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.CONDUIT_POWER, 1800, 0), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 1800, 0), 1F)
 		.build();
 	public static final FoodProperties REANIMATORS_GARDEN = (new FoodProperties.Builder())
 		.alwaysEat()
