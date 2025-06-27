@@ -1,0 +1,7 @@
+{
+  "parent": "brewinandchewin:block/coaster_tankard",
+  "textures": {
+    "particle": "collectorsreap:block/coaster/rose_moon",
+    "tankard": "collectorsreap:block/coaster/rose_moon"
+  }
+}

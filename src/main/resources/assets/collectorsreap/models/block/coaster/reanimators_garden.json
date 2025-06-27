@@ -1,0 +1,7 @@
+{
+  "parent": "brewinandchewin:block/coaster_tankard",
+  "textures": {
+    "particle": "collectorsreap:block/coaster/reanimators_garden",
+    "tankard": "collectorsreap:block/coaster/reanimators_garden"
+  }
+}
