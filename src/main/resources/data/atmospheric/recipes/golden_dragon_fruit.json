@@ -10,6 +10,13 @@
         {
           "type": "forge:item_exists",
           "item": "atmospheric:golden_dragon_fruit"
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:fruits/dragon_fruit"
+          }
         }
       ],
       "recipe": {
@@ -19,14 +26,9 @@
           "#": {
             "tag": "forge:ingots/gold"
           },
-          "d": [
-            {
-              "item": "atmospheric:dragon_fruit"
-            },
-            {
-              "item": "collectorsreap:pink_dragon_fruit"
-            }
-          ]
+          "d": {
+            "tag": "forge:fruits/dragon_fruit"
+          }
         },
         "pattern": [
           "###",
