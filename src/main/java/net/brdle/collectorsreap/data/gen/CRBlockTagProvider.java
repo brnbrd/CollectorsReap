@@ -13,10 +13,11 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import java.util.concurrent.CompletableFuture;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class CRBlockTagProvider extends BlockTagsProvider {
 	public CRBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
@@ -25,43 +26,6 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 
 	@Override
 	public void addTags(HolderLookup.@NotNull Provider provider) {
-		// Farmer's Delight
-		this.tag(ModTags.MINEABLE_WITH_KNIFE)
-			.add(CRBlocks.PORTOBELLO_QUICHE.get())
-			.add(CRBlocks.LIME_PIE.get());
-		this.tag(ModTags.COMPOST_ACTIVATORS)
-			.add(CRBlocks.PORTOBELLO.get())
-			.add(CRBlocks.PORTOBELLO_COLONY.get());
-		this.tag(ModTags.UNAFFECTED_BY_RICH_SOIL)
-			.add(CRBlocks.PORTOBELLO_COLONY.get());
-		this.tag(ModTags.WILD_CROPS)
-			.add(CRBlocks.DRAGON_BUSH.get());
-		this.tag(BlockTags.SMALL_FLOWERS)
-			.add(CRBlocks.DRAGON_BUSH.get());
-
-
-		// Collector's Reap
-		this.tag(CRBlockTags.PORTOBELLO_SPAWNABLE_ON)
-			.addTag(ModTags.MUSHROOM_COLONY_GROWABLE_ON)
-			.addTag(BlockTags.MUSHROOM_GROW_BLOCK)
-			.addTag(BlockTags.DIRT);
-		this.tag(CRBlockTags.DRAGON_FRUIT_SPAWNABLE_ON)
-			.addTag(Tags.Blocks.SAND_RED);
-		this.tag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
-			.addOptional(Util.rl("mynethersdelight", "resurgent_soil"))
-			.addOptional(Util.rl("mynethersdelight", "resurgent_soil_farmland"));
-		this.tag(CRBlockTags.POMEGRANATE_FAST_ON)
-			.addTag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
-			.addTag(BlockTags.NYLIUM)
-			.addOptionalTag(Util.rl("nethersdelight", "rich_soul_soil"));
-		this.tag(CRBlockTags.CRAB_SPAWNABLE_ON)
-			.addTag(BlockTags.SAND)
-			.addTag(Tags.Blocks.GRAVEL)
-			.add(Blocks.WATER)
-			.add(Blocks.CLAY)
-			.addOptionalTag(Util.rl("quark", "crab_spawnable"))
-			.addOptionalTag(Util.rl("crabbersdelight", "crab_spawn_on"));
-
 		// Minecraft
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(CRBlocks.LIME_ICE_CREAM_BLOCK.get())
@@ -97,6 +61,46 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.CAULDRONS)
 			.add(CRBlocks.LIME_MILKSHAKE_CAULDRON.get())
 			.add(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON.get());
+
+		// Forge
+		this.tag(ForgeTags.MINEABLE_WITH_KNIFE)
+			.add(CRBlocks.PORTOBELLO_QUICHE.get())
+			.add(CRBlocks.LIME_PIE.get())
+			.add(CRBlocks.LIME_CAKE.get())
+			.add(CRBlocks.POMEGRANATE_CAKE.get());
+
+		// Farmer's Delight
+		this.tag(ModTags.COMPOST_ACTIVATORS)
+			.add(CRBlocks.PORTOBELLO.get())
+			.add(CRBlocks.PORTOBELLO_COLONY.get());
+		this.tag(ModTags.UNAFFECTED_BY_RICH_SOIL)
+			.add(CRBlocks.PORTOBELLO_COLONY.get());
+		this.tag(ModTags.WILD_CROPS)
+			.add(CRBlocks.DRAGON_BUSH.get());
+		this.tag(BlockTags.SMALL_FLOWERS)
+			.add(CRBlocks.DRAGON_BUSH.get());
+
+		// Collector's Reap
+		this.tag(CRBlockTags.PORTOBELLO_SPAWNABLE_ON)
+			.addTag(ModTags.MUSHROOM_COLONY_GROWABLE_ON)
+			.addTag(BlockTags.MUSHROOM_GROW_BLOCK)
+			.addTag(BlockTags.DIRT);
+		this.tag(CRBlockTags.DRAGON_FRUIT_SPAWNABLE_ON)
+			.addTag(Tags.Blocks.SAND_RED);
+		this.tag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
+			.addOptional(Util.rl("mynethersdelight", "resurgent_soil"))
+			.addOptional(Util.rl("mynethersdelight", "resurgent_soil_farmland"));
+		this.tag(CRBlockTags.POMEGRANATE_FAST_ON)
+			.addTag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
+			.addTag(BlockTags.NYLIUM)
+			.addOptionalTag(Util.rl("nethersdelight", "rich_soul_soil"));
+		this.tag(CRBlockTags.CRAB_SPAWNABLE_ON)
+			.addTag(BlockTags.SAND)
+			.addTag(Tags.Blocks.GRAVEL)
+			.add(Blocks.WATER)
+			.add(Blocks.CLAY)
+			.addOptionalTag(Util.rl("quark", "crab_spawnable"))
+			.addOptionalTag(Util.rl("crabbersdelight", "crab_spawn_on"));
 
 		// Serene Seasons
 		this.tag(CRBlockTags.WINTER_CROPS);
