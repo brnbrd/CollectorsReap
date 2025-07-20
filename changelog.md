@@ -4,6 +4,8 @@
 # 1.3.5
 
 ### Updates
+- Added Surge effect
+  - Striking an enemy has a chance of summoning a lightning bolt
 - Added Pink Dragon Fruit
 - Added Pink Noodles
 - Added Dragon Stew

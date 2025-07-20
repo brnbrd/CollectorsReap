@@ -39,8 +39,8 @@ public class CREntities {
 			.clientTrackingRange(8)
 			.build(CollectorsReap.MODID + ".clam"));
 	public static final RegistryObject<EntityType<ChieftainCrab>> CHIEFTAIN_CRAB = ENTITIES.register("chieftain_crab",
-	 	() -> EntityType.Builder.of(ChieftainCrab::new, MobCategory.CREATURE)
-			.sized(0.7F, 0.6F)
+	 	() -> EntityType.Builder.of(ChieftainCrab::new, MobCategory.WATER_AMBIENT)
+			.sized(0.7F, 0.65F)
 			.clientTrackingRange(10)
 			.build(CollectorsReap.MODID + ".chieftain_crab"));
 	public static final RegistryObject<EntityType<UrchinDart>> URCHIN_DART = ENTITIES.register("urchin_dart",

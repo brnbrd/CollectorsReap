@@ -70,13 +70,13 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT = registerFood("pink_dragon_fruit",
 		Nutrition.PINK_DRAGON_FRUIT);
 	public static final RegistryObject<Item> PINK_NOODLES = registerFood("pink_noodles",
-		bowlFoodItem(Nutrition.PINK_NOODLES), false, false);
+		bowlFoodItem(Nutrition.PINK_NOODLES), true, false);
 	public static final RegistryObject<Item> DRAGON_STEW = registerFood("dragon_stew",
-		bowlFoodItem(Nutrition.DRAGON_STEW), false, false);
+		bowlFoodItem(Nutrition.DRAGON_STEW), true, false);
 	public static final RegistryObject<Item> TROPICAL_SHAVED_ICE = registerFood("tropical_shaved_ice",
 		bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE), false, false);
 	public static final RegistryObject<Item> DRAGONS_PASSION = registerDrink("dragons_passion",
-		drinkItem().food(Nutrition.DRAGONS_PASSION), false, false);
+		drinkItem().food(Nutrition.DRAGONS_PASSION), true, false);
 	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate",
 		() -> new Item((new Item.Properties())));
 	public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",
@@ -161,7 +161,8 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> TIGER_PRAWN_SPAWN_EGG = registerItem("tiger_prawn_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.TIGER_PRAWN, 0x7c7248, 0x613432, new Item.Properties()));
 	public static final RegistryObject<Item> TIGER_PRAWN_BUCKET = registerItem("tiger_prawn_bucket",
 		() -> new MobBucketItem(CREntities.TIGER_PRAWN, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1)));
-	public static final RegistryObject<Item> TIGER_PRAWN = registerFood("tiger_prawn", Nutrition.TIGER_PRAWN);
+	public static final RegistryObject<Item> TIGER_PRAWN = registerFood("tiger_prawn",
+		(new Item.Properties()).food(Nutrition.TIGER_PRAWN), true, false);
 	public static final RegistryObject<Item> COOKED_TIGER_PRAWN = registerFood("cooked_tiger_prawn", Nutrition.COOKED_TIGER_PRAWN);
 	public static final RegistryObject<Item> PRAWN_ROLL = registerFood("prawn_roll", Nutrition.PRAWN_ROLL);
 	public static final RegistryObject<Item> SALMON_WRAPPED_PRAWN = registerFood("salmon_wrapped_prawn",
@@ -381,8 +382,7 @@ public class CRItems extends ModItems {
 	}
 
 	public static RegistryObject<Item> registerFood(String name, FoodProperties properties) {
-		return registerItem(name, () -> new ConsumableItem((new Item.Properties()
-			.food(properties))));
+		return registerItem(name, () -> new ConsumableItem((new Item.Properties().food(properties))));
 	}
 
 	public static RegistryObject<Item> registerFood(String name, Item.Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip) {

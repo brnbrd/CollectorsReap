@@ -79,6 +79,8 @@
   "desc.collectorsreap.urchin_dart": "Urchin Darts are throwable projectiles that poison enemies for five seconds upon contact. Holding a bamboo in your offhand shoots a faster dart.",
   "effect.collectorsreap.corrosion": "Ăn Mòn",
   "effect.collectorsreap.corrosion.description": "Cung Cấp Axit Phòng Thủ.",
+  "effect.collectorsreap.surge": "Surge",
+  "effect.collectorsreap.surge.description": "Striking an enemy has a chance of summoning a lightning bolt.",
   "effect.collectorsreap.volatility": "Biến Động",
   "effect.collectorsreap.volatility.description": "Tạo Ra Sóng Sát Thương Của Mỗi Đòn Đánh.",
   "entity.collectorsreap.chieftain_crab": "Bát Cua Tù Trưởng",

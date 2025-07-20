@@ -1,0 +1,10 @@
+{
+  "values": [
+    {
+      "id": "#brewinandchewin:triggers_raging",
+      "required": false
+    },
+    "minecraft:mob_attack",
+    "minecraft:player_attack"
+  ]
+}

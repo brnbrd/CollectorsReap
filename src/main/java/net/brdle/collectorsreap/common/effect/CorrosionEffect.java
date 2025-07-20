@@ -6,7 +6,6 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 
 public class CorrosionEffect extends MobEffect {
-
 	/**
 	 * The player will emit acid particles that destroy incoming projectiles
 	 * Used weapon will take extra durability damage
@@ -17,7 +16,15 @@ public class CorrosionEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amp) {
-		entity.level().addParticle(CRParticleTypes.ACID.get(), entity.getRandomX(0.75D), entity.getRandomY() + 0.4D, entity.getRandomZ(0.75D), 0D, -0.02D, 0D);
+		entity.level().addParticle(
+			CRParticleTypes.ACID.get(),
+			entity.getRandomX(0.75D),
+			entity.getRandomY() + 0.4D,
+			entity.getRandomZ(0.75D),
+			0D,
+			-0.02D,
+			0D
+		);
 	}
 
 	/**

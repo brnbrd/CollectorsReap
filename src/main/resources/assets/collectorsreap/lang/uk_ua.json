@@ -79,6 +79,8 @@
   "desc.collectorsreap.urchin_dart": "Urchin Darts are throwable projectiles that poison enemies for five seconds upon contact. Holding a bamboo in your offhand shoots a faster dart.",
   "effect.collectorsreap.corrosion": "Корозія",
   "effect.collectorsreap.corrosion.description": "Дає гравцеві захисний, кислотний щит, що роз'їдає снаряди та пошкоджує атакуючу зброю.",
+  "effect.collectorsreap.surge": "Surge",
+  "effect.collectorsreap.surge.description": "Striking an enemy has a chance of summoning a lightning bolt.",
   "effect.collectorsreap.volatility": "Невловимість",
   "effect.collectorsreap.volatility.description": "Кожен удар, який гравець завдає сутності, створює ударну хвилю.",
   "entity.collectorsreap.chieftain_crab": "Chieftain Crab",

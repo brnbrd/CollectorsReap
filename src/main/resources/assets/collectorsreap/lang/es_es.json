@@ -79,6 +79,8 @@
   "desc.collectorsreap.urchin_dart": "Urchin Darts are throwable projectiles that poison enemies for five seconds upon contact. Holding a bamboo in your offhand shoots a faster dart.",
   "effect.collectorsreap.corrosion": "Corrosión",
   "effect.collectorsreap.corrosion.description": "Provee al usuario un escudo de ácido defensivo, corroyendo proyectiles y dañando las armas de ataque.",
+  "effect.collectorsreap.surge": "Surge",
+  "effect.collectorsreap.surge.description": "Striking an enemy has a chance of summoning a lightning bolt.",
   "effect.collectorsreap.volatility": "Volatilidad",
   "effect.collectorsreap.volatility.description": "Cada golpe que el usuario inflinja en una entidad crea una onda expansiva de daño",
   "entity.collectorsreap.chieftain_crab": "Cangrejo Jefe",

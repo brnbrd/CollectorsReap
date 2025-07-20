@@ -125,12 +125,14 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.YELLOW_TEA_GUMMY.get())
 			.add(CRItems.BLACK_TEA_GUMMY.get())
 			.add(CRItems.COFFEE_GUMMY.get());
-		this.tag(CRItemTags.CRAB_MEAT)
-			.add(CRItems.CHIEFTAIN_CRAB_MEAT.get())
-			.addOptional(Util.rl("ecologics", "crab_meat"));
-		this.tag(CRItemTags.CRAB_LEG)
-			.add(CRItems.CHIEFTAIN_LEG.get())
+		this.tag(CRItemTags.RAW_CRAB_MEAT)
 			.addOptional(Util.rl("quark", "crab_leg"));
+		this.tag(CRItemTags.COOKED_CRAB_MEAT)
+			.add(CRItems.CHIEFTAIN_CRAB_MEAT.get())
+			.add(CRItems.CHIEFTAIN_LEG.get())
+			.addOptional(Util.rl("crabbersdelight", "crab_legs"))
+			.addOptional(Util.rl("ecologics", "crab_meat"))
+			.addOptional(Util.rl("quark", "cooked_crab_leg"));
 		this.tag(CRItemTags.RAW_CLAM)
 			.add(CRItems.CLAM_MEAT.get())
 			.addOptional(Util.rl("crabbersdelight", "raw_clam_meat"));

@@ -79,6 +79,8 @@
   "desc.collectorsreap.urchin_dart": "命中した相手に毒を5秒間付与する投擲武器。オフハンドに竹を持つと発射速度が向上します。",
   "effect.collectorsreap.corrosion": "酸蝕",
   "effect.collectorsreap.corrosion.description": "発射物を溶かし武器を腐食させる、酸の防護膜を対象に付与します。",
+  "effect.collectorsreap.surge": "Surge",
+  "effect.collectorsreap.surge.description": "Striking an enemy has a chance of summoning a lightning bolt.",
   "effect.collectorsreap.volatility": "揮発性",
   "effect.collectorsreap.volatility.description": "対象が相手に与える攻撃は、ダメージを与える衝撃波を生み出します。",
   "entity.collectorsreap.chieftain_crab": "オカシラガニ",

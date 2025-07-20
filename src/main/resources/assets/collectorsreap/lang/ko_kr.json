@@ -79,6 +79,8 @@
   "desc.collectorsreap.urchin_dart": "Urchin Darts are throwable projectiles that poison enemies for five seconds upon contact. Holding a bamboo in your offhand shoots a faster dart.",
   "effect.collectorsreap.corrosion": "부식",
   "effect.collectorsreap.corrosion.description": "산성 방어막을 획득해 날아오는 발사체를 녹이고 공격한 무기의 내구도를 깎습니다.",
+  "effect.collectorsreap.surge": "Surge",
+  "effect.collectorsreap.surge.description": "Striking an enemy has a chance of summoning a lightning bolt.",
   "effect.collectorsreap.volatility": "휘발",
   "effect.collectorsreap.volatility.description": "공격시 광역 피해를 입히는 충격파가 발생합니다.",
   "entity.collectorsreap.chieftain_crab": "치프테인 크랩",

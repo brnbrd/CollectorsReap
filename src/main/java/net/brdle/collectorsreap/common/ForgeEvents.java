@@ -3,18 +3,20 @@ package net.brdle.collectorsreap.common;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.effect.CREffects;
+import net.brdle.collectorsreap.common.effect.SurgeEffect;
 import net.brdle.collectorsreap.common.entity.BeeGoToFruitBushGoal;
 import net.brdle.collectorsreap.common.entity.BeeGrowFruitGoal;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.data.CRDamageSources;
 import net.brdle.collectorsreap.data.CREntityTags;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.TamableAnimal;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.animal.Bee;
@@ -38,16 +40,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class ForgeEvents {
-
-	private static boolean validateVolatile(LivingEntity attacker) {
-		return (
-			attacker != null &&
-			attacker.hasEffect(CREffects.VOLATILITY.get()) &&
-			!attacker.getType().is(CREntityTags.INVOLATILE) &&
-			!(attacker instanceof Player p && p.getAttackStrengthScale(0F) != 1F)
-		);
-	}
-
 	@SubscribeEvent
 	public void onBeeJoin(EntityJoinLevelEvent e) {
 		if (e.getEntity() instanceof Bee bee) {
@@ -66,6 +58,56 @@ public class ForgeEvents {
 		}
 	}
 
+	// Surge
+	@SubscribeEvent
+	public void onSurgeDamage(LivingDamageEvent e) {
+		MobEffect surge = CREffects.SURGE.get();
+		if (
+			e.getSource().getEntity() instanceof LivingEntity living &&
+			living.level() instanceof ServerLevel server &&
+			living.hasEffect(surge) &&
+			(!(living instanceof Player player) || player.getAttackStrengthScale(0.0F) > 0.8F) &&
+			e.getSource().is(CRDamageSources.TRIGGERS_SURGE)
+		) {
+			MobEffectInstance effectInstance = living.getEffect(surge);
+			if (effectInstance != null) {
+				final int amplifier = effectInstance.getAmplifier();
+				if (server.getRandom().nextFloat() <= CREffects.SURGE_CHANCE) { // Chance of spawning lightning
+					LivingEntity hurt = e.getEntity();
+
+					// Spawn particles
+					for (int i = 0; i < 3; i++) {
+						SurgeEffect.emitParticles(hurt, amplifier);
+					}
+
+					// Spawn visual Lightning Bolt
+					LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(server);
+					if (bolt != null) {
+						bolt.moveTo(Vec3.atBottomCenterOf(hurt.getOnPos()));
+						bolt.setCause(living instanceof ServerPlayer ? (ServerPlayer) living : null);
+						bolt.setDamage(0F);
+						bolt.flashes = 1;
+						bolt.setVisualOnly(true);
+						server.addFreshEntity(bolt);
+					}
+
+					// Damage entity
+					hurt.hurt(hurt.damageSources().lightningBolt(), amplifier + 1F);
+
+					// Increment Surge amplifier or reset to zero
+					final int duration = effectInstance.getDuration();
+					living.removeEffect(surge);
+					if (duration > 10) {
+						int max = CREffects.MAX_SURGE;
+						int newAmp = amplifier == max ? 0 : Math.min(max, amplifier + 1);
+						living.addEffect(new MobEffectInstance(surge, duration, newAmp));
+					}
+				}
+			}
+		}
+	}
+
+	// Corrosion
 	@SubscribeEvent(priority = EventPriority.HIGH)
 	public void onCorrodeWeapon(LivingDamageEvent e) {
 		if (e.getEntity().hasEffect(CREffects.CORROSION.get()) && e.getSource().getEntity() instanceof Player p) {
@@ -78,6 +120,7 @@ public class ForgeEvents {
 		}
 	}
 
+	// Projectile Corrosion
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onCorrodeProjectile(ProjectileImpactEvent e) {
 		if (
@@ -103,6 +146,16 @@ public class ForgeEvents {
 				}
 			}
 		}
+	}
+
+	// Volatility
+	private boolean validateVolatile(LivingEntity attacker) {
+		return (
+			attacker != null &&
+			attacker.hasEffect(CREffects.VOLATILITY.get()) &&
+			!attacker.getType().is(CREntityTags.INVOLATILE) &&
+			!(attacker instanceof Player p && p.getAttackStrengthScale(0F) != 1F)
+		);
 	}
 
 	@SubscribeEvent

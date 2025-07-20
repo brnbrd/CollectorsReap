@@ -62,7 +62,9 @@ public class CRLanguageProvider extends LanguageProvider {
 		addEffect(CREffects.CORROSION, "Corrosion");
 		add(CREffects.CORROSION.get().getDescriptionId() + ".description", "Provides the user a defensive acid shield, corroding projectiles and damaging attack weapons.");
 		addEffect(CREffects.VOLATILITY, "Volatility");
-		add(CREffects.VOLATILITY.get().getDescriptionId() + ".description", "Each hit the user inflicts on an entity creates a shockwave of splash damage.");
+		add(CREffects.VOLATILITY.get().getDescriptionId() + ".description", "Striking an enemy creates a shockwave of splash damage.");
+		addEffect(CREffects.SURGE, "Surge");
+		add(CREffects.SURGE.get().getDescriptionId() + ".description", "Striking an enemy has a chance of summoning a lightning bolt.");
 	}
 
 	private void addBlocks() {

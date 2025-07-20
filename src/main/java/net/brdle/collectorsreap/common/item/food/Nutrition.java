@@ -13,16 +13,23 @@ import java.util.function.Supplier;
 
 public class Nutrition {
 	public static final FoodProperties PINK_DRAGON_FRUIT = (new FoodProperties.Builder())
-		.nutrition(3).saturationMod(0.2F).build();
+		.nutrition(3).saturationMod(0.2F)
+		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 200, 0), 1F).build();
 	public static final FoodProperties PINK_NOODLES = (new FoodProperties.Builder())
-		.nutrition(12).saturationMod(0.95F).build();
+		.nutrition(12).saturationMod(0.95F)
+		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 300, 1), 1F).build();
 	public static final FoodProperties DRAGON_STEW = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(1.15F).build();
+		.nutrition(6).saturationMod(1.15F)
+		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 300, 1), 1F).build();
 	public static final FoodProperties TROPICAL_SHAVED_ICE = (new FoodProperties.Builder())
 		.nutrition(15).saturationMod(0.6F)
-		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, false, true), 1F).build();
+		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, false, true), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 300, 1), 1F).build();
 	public static final FoodProperties DRAGONS_PASSION = (new FoodProperties.Builder())
-		.nutrition(5).saturationMod(1F).build();
+		.nutrition(5).saturationMod(1F)
+		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 400, 1), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getSpitting(), 400, 1), 1F)
+		.build();
 	public static final FoodProperties LIME = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(0.2F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 100, 0), 1F).build();

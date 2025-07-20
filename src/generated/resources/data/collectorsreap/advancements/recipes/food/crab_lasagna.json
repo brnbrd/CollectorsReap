@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_crab_meat": {
+          "has_cooked_crab": {
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:crab_meat"
+                  "tag": "forge:cooked_crab_meat"
                 }
               ]
             },
@@ -23,7 +23,7 @@
         },
         "requirements": [
           [
-            "has_crab_meat",
+            "has_cooked_crab",
             "has_the_recipe"
           ]
         ],

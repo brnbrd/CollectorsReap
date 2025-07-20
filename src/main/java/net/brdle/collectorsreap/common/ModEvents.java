@@ -13,7 +13,6 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
@@ -21,42 +20,36 @@ import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
 
 public class ModEvents {
-
 	@SubscribeEvent
-	public void setup(FMLCommonSetupEvent e) {
-		e.enqueueWork(() -> {
-			//Flammables
-
-			//Compostables
-			compost(CRItems.DRAGON_BUSH, 0.65F);
-			compost(CRItems.PINK_DRAGON_FRUIT, 0.3F);
-			compost(CRItems.DRAGON_FRUIT_SEEDS, 0.3F);
-			compost(CRItems.PORTOBELLO, 0.65F);
-			compost(CRItems.PORTOBELLO_COLONY, 1F);
-			compost(CRItems.BAKED_PORTOBELLO_CAP, 0.65F);
-			compost(CRItems.PORTOBELLO_QUICHE, 1F);
-			compost(CRItems.PORTOBELLO_QUICHE_SLICE, 0.85F);
-			compost(CRItems.PORTOBELLO_BURGER, 0.85F);
-			compost(CRItems.PORTOBELLO_RICE_SOUP, 0.85F);
-			compost(CRItems.POTATO_FRITTERS, 0.65F);
-			compost(CRItems.LIME, 0.3F);
-			compost(CRItems.LIME_SEEDS, 0.3F);
-			compost(CRItems.LIME_PIE, 1F);
-			compost(CRItems.LIME_PIE_SLICE, 0.85F);
-			compost(CRItems.POMEGRANATE, 0.3F);
-			compost(CRItems.POMEGRANATE_SLICE, 0.2F);
-			compost(CRItems.POMEGRANATE_SEEDS, 0.1F);
-			compost(CRItems.STYGIAN_POMEGRANATE, 0.35F);
-
-			//
+	public void setup(final FMLCommonSetupEvent event) {
+		event.enqueueWork(this::registerCompostables);
+		event.enqueueWork(() -> {
 			if (Mods.stringLoaded("neapolitan")) {
 				CRCauldronInteractions.registerCauldronInteractions();
 			}
 		});
 	}
 
-	public void compost(RegistryObject<Item> it, float value) {
-		ComposterBlock.COMPOSTABLES.put(it.get(), value);
+	private void registerCompostables() {
+		ComposterBlock.COMPOSTABLES.put(CRItems.DRAGON_BUSH.get(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PINK_DRAGON_FRUIT.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.DRAGON_FRUIT_SEEDS.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO.get(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_COLONY.get(), 1F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.BAKED_PORTOBELLO_CAP.get(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_QUICHE.get(), 1F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_QUICHE_SLICE.get(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_BURGER.get(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_RICE_SOUP.get(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.POTATO_FRITTERS.get(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LIME.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_SEEDS.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_PIE.get(), 1F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_PIE_SLICE.get(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.POMEGRANATE.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.POMEGRANATE_SLICE.get(), 0.2F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.POMEGRANATE_SEEDS.get(), 0.1F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.STYGIAN_POMEGRANATE.get(), 0.35F);
 	}
 
 	// Adds collectorsreap:enabled, etc. conditions

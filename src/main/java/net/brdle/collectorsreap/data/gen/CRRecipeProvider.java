@@ -104,9 +104,6 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CHIEFTAIN_CLAW.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 				CRItems.CHIEFTAIN_CRAB_MEAT.get(), 3),
 			"cutting/chieftain_claw", finished, enabled(CRItems.CHIEFTAIN_CLAW), enabled(CRItems.CHIEFTAIN_CRAB_MEAT));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CHIEFTAIN_LEG.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				CRItems.CHIEFTAIN_CRAB_MEAT.get(), 2),
-			"cutting/chieftain_legs", finished, enabled(CRItems.CHIEFTAIN_LEG), enabled(CRItems.CHIEFTAIN_CRAB_MEAT));
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CLAM.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 					CRItems.CLAM_MEAT.get(), 2)
 				.addResultWithChance(CRItems.CLAM_MEAT.get(), 0.5F)
@@ -254,28 +251,28 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.addIngredient(CRItemTags.CHEESE)
 				.addIngredient(ModItems.TOMATO_SAUCE.get())
 				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
-				.addIngredient(Ingredient.of(CRItemTags.CRAB_MEAT), 2)
-				.unlockedBy("has_crab_meat", has(CRItemTags.CRAB_MEAT)),
+				.addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB_MEAT), 2)
+				.unlockedBy("has_cooked_crab", has(CRItemTags.COOKED_CRAB_MEAT)),
 			"food/crab_lasagna", finished, enabled(CRItems.CRAB_LASAGNA), not(tagEmpty(CRItemTags.CHEESE)));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_LASAGNA.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.MILK)
 				.addIngredient(ModItems.TOMATO_SAUCE.get())
 				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
-				.addIngredient(Ingredient.of(CRItemTags.CRAB_MEAT), 2)
-				.unlockedBy("has_crab_meat", has(CRItemTags.CRAB_MEAT)),
+				.addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB_MEAT), 2)
+				.unlockedBy("has_cooked_crab", has(CRItemTags.COOKED_CRAB_MEAT)),
 			"food/crab_lasagna_from_milk", finished, enabled(CRItems.CRAB_LASAGNA), tagEmpty(CRItemTags.CHEESE));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_NOODLES.get(), 1, 200, 1F, Items.BOWL)
-				.addIngredient(Ingredient.of(CRItemTags.CRAB_MEAT), 2)
+				.addIngredient(Ingredient.of(CRItemTags.RAW_CRAB_MEAT), 2)
 				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
 				.addIngredient(ForgeTags.MILK)
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
-				.unlockedBy("has_crab_meat", has(CRItemTags.CRAB_MEAT)),
+				.addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB_MEAT), 2),
 			"food/crab_noodles", finished, enabled(CRItems.CRAB_NOODLES));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.BUTTERED_LEGS.get(), 1, 200, 1F, Items.BOWL)
-				.addIngredient(Ingredient.of(CRItemTags.CRAB_LEG), 3)
+				.addIngredient(CRItems.CHIEFTAIN_LEG.get(), 3)
 				.addIngredient(ForgeTags.MILK)
-				.unlockedBy("has_crab_legs", has(CRItemTags.CRAB_LEG)),
+				.unlockedBy("has_chieftain_leg", has(CRItems.CHIEFTAIN_LEG.get())),
 			"food/buttered_legs", finished, enabled(CRItems.BUTTERED_LEGS));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CLAM_CHOWDER.get(), 1, 200, 1F, Items.BREAD)
 				.addIngredient(CRItemTags.RAW_CLAM)
@@ -500,8 +497,8 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.BIG_RICE_BALL)
 				.requires(Items.DRIED_KELP)
 				.requires(ModItems.COOKED_RICE.get(), 3)
-				.requires(CRItemTags.CRAB_MEAT)
-				.unlockedBy("has_cooked_crab", has(CRItemTags.CRAB_MEAT)),
+				.requires(CRItemTags.COOKED_CRAB_MEAT)
+				.unlockedBy("has_cooked_crab", has(CRItemTags.COOKED_CRAB_MEAT)),
 			"food/big_rice_ball", finished, enabled(CRItems.BIG_RICE_BALL));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.LAND_AND_SEA_BURGER)
 				.requires(ForgeTags.BREAD)
