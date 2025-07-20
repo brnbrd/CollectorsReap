@@ -8,7 +8,7 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "lime_gummy"
+              "value": "pink_dragon_fruit_gummy"
             },
             {
               "type": "forge:mod_loaded",
@@ -22,7 +22,7 @@
         "heatRequirement": "heated",
         "ingredients": [
           {
-            "item": "collectorsreap:lime"
+            "item": "collectorsreap:pink_dragon_fruit"
           },
           {
             "item": "minecraft:sugar"
@@ -37,7 +37,7 @@
         "results": [
           {
             "count": 9,
-            "item": "collectorsreap:lime_gummy"
+            "item": "collectorsreap:pink_dragon_fruit_gummy"
           }
         ]
       }

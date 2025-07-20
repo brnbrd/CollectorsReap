@@ -192,6 +192,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.REANIMATORS_GARDEN, "Reanimator's Garden");
 		addItem(CRItems.LIME_GUMMY, "Lime Gummy");
 		addItem(CRItems.POMEGRANATE_GUMMY, "Pomegranate Gummy");
+		addItem(CRItems.PINK_DRAGON_FRUIT_GUMMY, "Pink Dragon Fruit Gummy");
 		addItem(CRItems.MELON_GUMMY, "Melon Gummy");
 		addItem(CRItems.APPLE_GUMMY, "Apple Gummy");
 		addItem(CRItems.GLOW_BERRY_GUMMY, "Glow Berry Gummy");

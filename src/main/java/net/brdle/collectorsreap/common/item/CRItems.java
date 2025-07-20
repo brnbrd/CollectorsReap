@@ -329,6 +329,7 @@ public class CRItems extends ModItems {
 	// Gummies
 	public static final RegistryObject<Item> LIME_GUMMY = registerGummy("lime", Nutrition.LIME_GUMMY);
 	public static final RegistryObject<Item> POMEGRANATE_GUMMY = registerGummy("pomegranate", Nutrition.POMEGRANATE_GUMMY);
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_GUMMY = registerGummy("pink_dragon_fruit", Nutrition.PINK_DRAGON_FRUIT_GUMMY);
 	public static final RegistryObject<Item> APPLE_GUMMY = registerGummy("apple", Nutrition.APPLE_GUMMY);
 	public static final RegistryObject<Item> GLOW_BERRY_GUMMY = registerGummy("glow_berry", Nutrition.GLOW_BERRY_GUMMY);
 	public static final RegistryObject<Item> MELON_GUMMY = registerItem("melon_gummy",

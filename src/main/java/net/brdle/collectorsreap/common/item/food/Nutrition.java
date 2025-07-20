@@ -320,6 +320,8 @@ public class Nutrition {
 		new MobEffectInstance(CREffects.CORROSION.get(), 100, 2));
 	public static final FoodProperties POMEGRANATE_GUMMY = GUMMY(() ->
 		new MobEffectInstance(CREffects.VOLATILITY.get(), 100, 2));
+	public static final FoodProperties PINK_DRAGON_FRUIT_GUMMY = GUMMY(() ->
+		new MobEffectInstance(CREffects.SURGE.get(), 200, 4));
 	public static final FoodProperties MELON_GUMMY = GUMMY(() ->
 		new MobEffectInstance(MobEffects.ABSORPTION, 200, 0));
 	public static final FoodProperties APPLE_GUMMY = GUMMY(() ->

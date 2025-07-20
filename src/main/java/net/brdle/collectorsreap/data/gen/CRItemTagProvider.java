@@ -106,6 +106,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.GUMMIES)
 			.add(CRItems.LIME_GUMMY.get())
 			.add(CRItems.POMEGRANATE_GUMMY.get())
+			.add(CRItems.PINK_DRAGON_FRUIT_GUMMY.get())
 			.add(CRItems.MELON_GUMMY.get())
 			.add(CRItems.APPLE_GUMMY.get())
 			.add(CRItems.GLOW_BERRY_GUMMY.get())

@@ -15,6 +15,7 @@
 - Added Hermit's Sour (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin))
 - Added Rosé Moon (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin))
 - Added Reanimator's Garden (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin) and [Atmospheric](https://www.curseforge.com/minecraft/mc-mods/atmospheric))
+- Added Pink Dragon Fruit Gummy
 - Glow Berry Gummy will now provide Tracer III in presence of [Cosmopolitan](https://www.curseforge.com/minecraft/mc-mods/cosmopolitan)
 - Added more Coaster item models for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin)
 

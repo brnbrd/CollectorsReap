@@ -8,38 +8,36 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "lime_gummy"
+              "value": "pink_dragon_fruit"
             },
             {
-              "type": "forge:mod_loaded",
-              "modid": "create"
+              "type": "collectorsreap:enabled",
+              "value": "pink_dragon_fruit_gummy"
             }
           ]
         }
       ],
       "recipe": {
-        "type": "create:mixing",
-        "heatRequirement": "heated",
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 1.0,
         "ingredients": [
           {
-            "item": "collectorsreap:lime"
+            "item": "collectorsreap:pink_dragon_fruit"
           },
           {
             "item": "minecraft:sugar"
           },
           {
-            "item": "minecraft:honey_block"
+            "item": "minecraft:honey_bottle"
           },
           {
             "item": "minecraft:kelp"
           }
         ],
-        "results": [
-          {
-            "count": 9,
-            "item": "collectorsreap:lime_gummy"
-          }
-        ]
+        "result": {
+          "item": "collectorsreap:pink_dragon_fruit_gummy"
+        }
       }
     }
   ]
