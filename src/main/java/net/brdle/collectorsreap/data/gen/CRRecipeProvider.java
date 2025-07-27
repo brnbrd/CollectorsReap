@@ -42,10 +42,11 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 	protected void buildRecipes(@NotNull Consumer<FinishedRecipe> finished) {
 		// Smelting
 		foodSmeltingRecipes("baked_portobello_cap", CRItems.PORTOBELLO.get(), CRItems.BAKED_PORTOBELLO_CAP.get(), 0.35F, finished);
-		foodSmeltingRecipes("platinum_bass", CRItems.PLATINUM_BASS.get(), CRItems.COOKED_PLATINUM_BASS.get(), 0.35F, finished);
-		foodSmeltingRecipes("platinum_bass_head", CRItems.PLATINUM_BASS_HEAD.get(), CRItems.COOKED_PLATINUM_BASS_HEAD.get(), 0.35F, finished);
-		foodSmeltingRecipes("platinum_bass_slice", CRItems.PLATINUM_BASS_SLICE.get(), CRItems.COOKED_PLATINUM_BASS_SLICE.get(), 0.35F, finished);
-		foodSmeltingRecipes("tiger_prawn", CRItems.TIGER_PRAWN.get(), CRItems.COOKED_TIGER_PRAWN.get(), 0.35F, finished);
+		foodSmeltingRecipes("dried_pink_dragon_fruit", CRItems.PINK_DRAGON_FRUIT.get(), CRItems.DRIED_PINK_DRAGON_FRUIT.get(), 0.35F, finished);
+		foodSmeltingRecipes("cooked_platinum_bass", CRItems.PLATINUM_BASS.get(), CRItems.COOKED_PLATINUM_BASS.get(), 0.35F, finished);
+		foodSmeltingRecipes("cooked_platinum_bass_head", CRItems.PLATINUM_BASS_HEAD.get(), CRItems.COOKED_PLATINUM_BASS_HEAD.get(), 0.35F, finished);
+		foodSmeltingRecipes("cooked_platinum_bass_slice", CRItems.PLATINUM_BASS_SLICE.get(), CRItems.COOKED_PLATINUM_BASS_SLICE.get(), 0.35F, finished);
+		foodSmeltingRecipes("cooked_tiger_prawn", CRItems.TIGER_PRAWN.get(), CRItems.COOKED_TIGER_PRAWN.get(), 0.35F, finished);
 
 		// Cutting
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_QUICHE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),

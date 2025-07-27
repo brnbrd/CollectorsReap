@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-27T15:22:55.3519965	Item Models: collectorsreap
+// 1.20.1	2025-07-27T15:43:37.9657942	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -43,6 +43,7 @@ e89f2586d27b34dba93468db984c5b608d09e0d2 assets/collectorsreap/models/item/drago
 bf7ce6001cd0cb881bd3e5c97b6781a79ccfb97a assets/collectorsreap/models/item/dragon_bush.json
 6d75bb922ef792900ad98eacaaaa723cd456bcc1 assets/collectorsreap/models/item/dragon_fruit_seeds.json
 4fbcd4c4b8ba63cf711acee07e503aaa87a7005e assets/collectorsreap/models/item/dragon_stew.json
+c4a2d39142164c673b5168a004a15dba8404685b assets/collectorsreap/models/item/dried_pink_dragon_fruit.json
 1166c9d7b97213bf472e8eb1bdaaee85f7fe92de assets/collectorsreap/models/item/fish_mix.json
 20d358545ae7a12561cf0bd01d35762e21cdf67f assets/collectorsreap/models/item/glazed_strider.json
 824066299419f1fa231c5242d0168a6ebacbeb3f assets/collectorsreap/models/item/glow_berry_gummy.json

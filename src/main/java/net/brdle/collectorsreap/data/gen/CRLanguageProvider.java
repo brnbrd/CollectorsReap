@@ -141,6 +141,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
 		addItem(CRItems.PORTOBELLO_QUICHE_SLICE, "Slice of Portobello Quiche");
 		addItem(CRItems.PINK_DRAGON_FRUIT, "Pink Dragon Fruit");
+		addItem(CRItems.DRIED_PINK_DRAGON_FRUIT, "Dried Pink Dragon Fruit");
 		addItem(CRItems.PINK_NOODLES, "Pink Noodles");
 		addItem(CRItems.DRAGON_STEW, "Dragon Stew");
 		addItem(CRItems.TROPICAL_SHAVED_ICE, "Tropical Shaved Ice");

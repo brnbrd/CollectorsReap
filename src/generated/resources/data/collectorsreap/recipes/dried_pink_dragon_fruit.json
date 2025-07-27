@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "collectorsreap:pink_dragon_fruit"
+  },
+  "result": "collectorsreap:dried_pink_dragon_fruit"
+}

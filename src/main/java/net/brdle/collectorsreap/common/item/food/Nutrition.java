@@ -16,7 +16,17 @@ public class Nutrition {
 		.nutrition(3).saturationMod(0.2F)
 		.effect(() -> new MobEffectInstance(
 			CREffects.SURGE.get(),
-			200,
+			400,
+			0,
+			false,
+			false,
+			true
+		), 1F).build();
+	public static final FoodProperties DRIED_PINK_DRAGON_FRUIT = (new FoodProperties.Builder())
+		.nutrition(6).saturationMod(0.4F)
+		.effect(() -> new MobEffectInstance(
+			CREffects.SURGE.get(),
+			800,
 			0,
 			false,
 			false,
@@ -26,29 +36,31 @@ public class Nutrition {
 		.nutrition(12).saturationMod(0.95F)
 		.effect(() -> new MobEffectInstance(
 			CREffects.SURGE.get(),
-			400,
-			1,
+			800,
+			0,
 			false,
 			false,
 			true
-		), 1F).build();
+		), 1F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties DRAGON_STEW = (new FoodProperties.Builder())
 		.nutrition(6).saturationMod(1.15F)
 		.effect(() -> new MobEffectInstance(
 			CREffects.SURGE.get(),
-			400,
-			1,
+			800,
+			0,
 			false,
 			false,
 			true
-		), 1F).build();
+		), 1F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties TROPICAL_SHAVED_ICE = (new FoodProperties.Builder())
 		.nutrition(15).saturationMod(0.6F)
 		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, true, true), 1F)
 		.effect(() -> new MobEffectInstance(
 			CREffects.SURGE.get(),
-			400,
-			1,
+			800,
+			0,
 			false,
 			false,
 			true
@@ -57,13 +69,13 @@ public class Nutrition {
 		.nutrition(5).saturationMod(1F)
 		.effect(() -> new MobEffectInstance(
 			CREffects.SURGE.get(),
-			400,
-			1,
+			800,
+			0,
 			false,
 			false,
 			true
 		), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getSpitting(), 400, 1), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getSpitting(), 800, 1), 1F)
 		.build();
 	public static final FoodProperties LIME = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(0.2F)
@@ -362,15 +374,16 @@ public class Nutrition {
 		new MobEffectInstance(CREffects.CORROSION.get(), 200, 2));
 	public static final FoodProperties POMEGRANATE_GUMMY = GUMMY(() ->
 		new MobEffectInstance(CREffects.VOLATILITY.get(), 200, 2));
-	public static final FoodProperties PINK_DRAGON_FRUIT_GUMMY = GUMMY(() ->
+	public static final FoodProperties PINK_DRAGON_FRUIT_GUMMY = GUMMY(List.of(() ->
 		new MobEffectInstance(
 			CREffects.SURGE.get(),
-			300,
+			600,
 			CREffects.MAX_SURGE,
 			false,
 			false,
 			true
-		));
+		), () ->
+		new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0)));
 	public static final FoodProperties MELON_GUMMY = GUMMY(() ->
 		new MobEffectInstance(MobEffects.ABSORPTION, 200, 0));
 	public static final FoodProperties APPLE_GUMMY = GUMMY(() ->

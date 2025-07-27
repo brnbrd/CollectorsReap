@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "collectorsreap:tiger_prawn_from_campfire_cooking"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "tiger_prawn": {
+    "dried_pink_dragon_fruit": {
       "conditions": {
         "items": [
           {
             "items": [
-              "collectorsreap:tiger_prawn"
+              "collectorsreap:pink_dragon_fruit"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "collectorsreap:dried_pink_dragon_fruit"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "tiger_prawn",
+      "dried_pink_dragon_fruit",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "collectorsreap:tiger_prawn_from_campfire_cooking"
+      "collectorsreap:dried_pink_dragon_fruit"
     ]
   },
   "sends_telemetry_event": false

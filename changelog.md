@@ -5,8 +5,10 @@
 
 ### Updates
 - Added Surge effect
-  - Striking an enemy has a chance of summoning a lightning bolt
+  - Increases melee damage; gaining amplifier with successful strikes
+  - Resets upon landing a hit at maximum amplifier
 - Added Pink Dragon Fruit
+- Added Drink Pink Dragon Fruit
 - Added Pink Noodles
 - Added Dragon Stew
 - Added Tropical Shaved Ice

@@ -1,13 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "collectorsreap:cooked_platinum_bass"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "platinum_bass": {
+    "cooked_platinum_bass": {
       "conditions": {
         "items": [
           {
@@ -18,11 +12,17 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "collectorsreap:cooked_platinum_bass"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "platinum_bass",
+      "cooked_platinum_bass",
       "has_the_recipe"
     ]
   ],

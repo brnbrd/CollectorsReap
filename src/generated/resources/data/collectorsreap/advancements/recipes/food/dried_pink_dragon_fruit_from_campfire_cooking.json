@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "cooked_platinum_bass_head": {
+    "dried_pink_dragon_fruit": {
       "conditions": {
         "items": [
           {
             "items": [
-              "collectorsreap:platinum_bass_head"
+              "collectorsreap:pink_dragon_fruit"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "collectorsreap:cooked_platinum_bass_head"
+        "recipe": "collectorsreap:dried_pink_dragon_fruit_from_campfire_cooking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "cooked_platinum_bass_head",
+      "dried_pink_dragon_fruit",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "collectorsreap:cooked_platinum_bass_head"
+      "collectorsreap:dried_pink_dragon_fruit_from_campfire_cooking"
     ]
   },
   "sends_telemetry_event": false

@@ -1,13 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "collectorsreap:platinum_bass_head_from_campfire_cooking"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "platinum_bass_head": {
+    "cooked_platinum_bass_head": {
       "conditions": {
         "items": [
           {
@@ -18,17 +12,23 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "collectorsreap:cooked_platinum_bass_head_from_campfire_cooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "platinum_bass_head",
+      "cooked_platinum_bass_head",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "collectorsreap:platinum_bass_head_from_campfire_cooking"
+      "collectorsreap:cooked_platinum_bass_head_from_campfire_cooking"
     ]
   },
   "sends_telemetry_event": false

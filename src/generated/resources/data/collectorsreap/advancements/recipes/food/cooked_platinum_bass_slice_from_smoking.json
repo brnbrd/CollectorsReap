@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "cooked_platinum_bass_head": {
+    "cooked_platinum_bass_slice": {
       "conditions": {
         "items": [
           {
             "items": [
-              "collectorsreap:platinum_bass_head"
+              "collectorsreap:platinum_bass_slice"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "collectorsreap:cooked_platinum_bass_head"
+        "recipe": "collectorsreap:cooked_platinum_bass_slice_from_smoking"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "cooked_platinum_bass_head",
+      "cooked_platinum_bass_slice",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "collectorsreap:cooked_platinum_bass_head"
+      "collectorsreap:cooked_platinum_bass_slice_from_smoking"
     ]
   },
   "sends_telemetry_event": false

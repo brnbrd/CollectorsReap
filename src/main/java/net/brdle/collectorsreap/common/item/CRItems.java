@@ -69,6 +69,8 @@ public class CRItems extends ModItems {
 		() -> new BlockItem(CRBlocks.DRAGON_BUSH.get(), new Item.Properties()));
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT = registerFood("pink_dragon_fruit",
 		new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT), true, false);
+	public static final RegistryObject<Item> DRIED_PINK_DRAGON_FRUIT = registerFood("dried_pink_dragon_fruit",
+		new Item.Properties().food(Nutrition.DRIED_PINK_DRAGON_FRUIT), true, false);
 	public static final RegistryObject<Item> PINK_NOODLES = registerFood("pink_noodles",
 		bowlFoodItem(Nutrition.PINK_NOODLES), true, false);
 	public static final RegistryObject<Item> DRAGON_STEW = registerFood("dragon_stew",
