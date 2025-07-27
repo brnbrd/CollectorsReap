@@ -26,11 +26,11 @@ public class Util {
 	public static final UUID BLOCK_REACH = UUID.fromString("6ba3d68d-2e14-4b88-92c8-5a6796650af3");
 
 	public static ResourceLocation rl(@NotNull String modid, @NotNull String path) {
-		return new ResourceLocation(modid, path);
+		return ResourceLocation.tryBuild(modid, path);
 	}
 
 	public static ResourceLocation rl(@NotNull String separated) {
-		return new ResourceLocation(separated);
+		return ResourceLocation.tryParse(separated);
 	}
 
 	public static ResourceLocation rl(ItemLike itemLike) {

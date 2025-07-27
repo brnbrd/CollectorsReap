@@ -17,10 +17,10 @@
         "experience": 1.0,
         "ingredients": [
           {
-            "tag": "forge:raw_crab_meat"
+            "tag": "forge:cooked_crab_meat"
           },
           {
-            "tag": "forge:raw_crab_meat"
+            "tag": "forge:cooked_crab_meat"
           },
           {
             "tag": "forge:pasta/raw_pasta"
@@ -33,12 +33,6 @@
           },
           {
             "tag": "forge:vegetables/onion"
-          },
-          {
-            "tag": "forge:cooked_crab_meat"
-          },
-          {
-            "tag": "forge:cooked_crab_meat"
           }
         ],
         "result": {

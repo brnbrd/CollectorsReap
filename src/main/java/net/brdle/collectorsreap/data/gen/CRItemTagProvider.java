@@ -29,6 +29,34 @@ public class CRItemTagProvider extends ItemTagsProvider {
 
 	@Override
 	public void addTags(HolderLookup.@NotNull Provider provider) {
+		// Collector's Reap
+		this.tag(CRItemTags.DART_SHOOTERS)
+			.add(Items.BAMBOO)
+			.addOptional(Util.rl("mynethersdelight", "powder_cannon"));
+		this.tag(CRItemTags.GUMMIES)
+			.add(CRItems.LIME_GUMMY.get())
+			.add(CRItems.POMEGRANATE_GUMMY.get())
+			.add(CRItems.PINK_DRAGON_FRUIT_GUMMY.get())
+			.add(CRItems.MELON_GUMMY.get())
+			.add(CRItems.APPLE_GUMMY.get())
+			.add(CRItems.GLOW_BERRY_GUMMY.get())
+			.add(CRItems.BANANA_GUMMY.get())
+			.add(CRItems.VANILLA_GUMMY.get())
+			.add(CRItems.CHOCOLATE_GUMMY.get())
+			.add(CRItems.STRAWBERRY_GUMMY.get())
+			.add(CRItems.MINT_GUMMY.get())
+			.add(CRItems.ADZUKI_GUMMY.get())
+			.add(CRItems.PUMPKIN_GUMMY.get())
+			.add(CRItems.SWEET_BERRY_GUMMY.get())
+			.add(CRItems.BEETROOT_GUMMY.get())
+			.add(CRItems.ALOE_GUMMY.get())
+			.add(CRItems.PASSION_FRUIT_GUMMY.get())
+			.add(CRItems.YUCCA_GUMMY.get())
+			.add(CRItems.GREEN_TEA_GUMMY.get())
+			.add(CRItems.YELLOW_TEA_GUMMY.get())
+			.add(CRItems.BLACK_TEA_GUMMY.get())
+			.add(CRItems.COFFEE_GUMMY.get());
+
 		// Minecraft
 		this.tag(ItemTags.TRIM_MATERIALS).add(CRItems.LUNAR_PEARL.get());
 		this.tag(ItemTags.WALLS)
@@ -70,6 +98,11 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.DRAGON_BUSH.get());
 		this.tag(ItemTags.SMALL_FLOWERS)
 			.add(CRItems.DRAGON_BUSH.get());
+		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS)
+			.addTag(CRItemTags.RAW_CRAB_MEAT)
+			.addTag(CRItemTags.RAW_CLAM)
+			.addTag(CRItemTags.RAW_PRAWN)
+			.addTag(CRItemTags.RAW_URCHIN);
 
 		// Forge
 		this.tag(CRItemTags.CHEESE).addOptional(Util.rl("brewinandchewin", "flaxen_cheese_wedge"));
@@ -103,29 +136,6 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.ICE_CREAM)
 			.add(CRItems.LIME_ICE_CREAM.get())
 			.add(CRItems.POMEGRANATE_ICE_CREAM.get());
-		this.tag(CRItemTags.GUMMIES)
-			.add(CRItems.LIME_GUMMY.get())
-			.add(CRItems.POMEGRANATE_GUMMY.get())
-			.add(CRItems.PINK_DRAGON_FRUIT_GUMMY.get())
-			.add(CRItems.MELON_GUMMY.get())
-			.add(CRItems.APPLE_GUMMY.get())
-			.add(CRItems.GLOW_BERRY_GUMMY.get())
-			.add(CRItems.BANANA_GUMMY.get())
-			.add(CRItems.VANILLA_GUMMY.get())
-			.add(CRItems.CHOCOLATE_GUMMY.get())
-			.add(CRItems.STRAWBERRY_GUMMY.get())
-			.add(CRItems.MINT_GUMMY.get())
-			.add(CRItems.ADZUKI_GUMMY.get())
-			.add(CRItems.PUMPKIN_GUMMY.get())
-			.add(CRItems.SWEET_BERRY_GUMMY.get())
-			.add(CRItems.BEETROOT_GUMMY.get())
-			.add(CRItems.ALOE_GUMMY.get())
-			.add(CRItems.PASSION_FRUIT_GUMMY.get())
-			.add(CRItems.YUCCA_GUMMY.get())
-			.add(CRItems.GREEN_TEA_GUMMY.get())
-			.add(CRItems.YELLOW_TEA_GUMMY.get())
-			.add(CRItems.BLACK_TEA_GUMMY.get())
-			.add(CRItems.COFFEE_GUMMY.get());
 		this.tag(CRItemTags.RAW_CRAB_MEAT)
 			.addOptional(Util.rl("quark", "crab_leg"));
 		this.tag(CRItemTags.COOKED_CRAB_MEAT)
@@ -137,6 +147,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.RAW_CLAM)
 			.add(CRItems.CLAM_MEAT.get())
 			.addOptional(Util.rl("crabbersdelight", "raw_clam_meat"));
+		this.tag(CRItemTags.RAW_URCHIN).add(CRItems.UNI.get());
 		this.tag(CRItemTags.RAW_PRAWN)
 			.add(CRItems.TIGER_PRAWN.get());
 		this.tag(CRItemTags.COOKED_PRAWN)
@@ -171,7 +182,6 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addOptional(Util.rl("naturalist", "duck_egg"))
 			.addOptional(Util.rl("autumnity", "turkey_egg"))
 			.addOptional(Util.rl("deep_aether", "quail_egg"));
-		this.tag(CRItemTags.DART_SHOOTERS).add(Items.BAMBOO);
 
 		// Neapolitan
 		this.addSelf(CRItemTags.BANANA);

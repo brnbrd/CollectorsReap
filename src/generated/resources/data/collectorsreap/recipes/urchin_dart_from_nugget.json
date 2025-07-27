@@ -11,8 +11,11 @@
               "value": "urchin_dart"
             },
             {
-              "type": "forge:tag_empty",
-              "tag": "forge:nuggets/copper"
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/copper"
+              }
             }
           ]
         }
@@ -22,7 +25,7 @@
         "category": "equipment",
         "key": {
           "c": {
-            "tag": "forge:ingots/copper"
+            "tag": "forge:nuggets/copper"
           },
           "f": {
             "tag": "forge:feathers"

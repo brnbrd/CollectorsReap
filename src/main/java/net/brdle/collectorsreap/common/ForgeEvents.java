@@ -10,9 +10,9 @@ import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.data.CRDamageSources;
 import net.brdle.collectorsreap.data.CREntityTags;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -59,50 +59,42 @@ public class ForgeEvents {
 	}
 
 	// Surge
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onSurgeDamage(LivingDamageEvent e) {
-		MobEffect surge = CREffects.SURGE.get();
+		final MobEffect surge = CREffects.SURGE.get();
+		final DamageSource source = e.getSource();
+		final LivingEntity hurt = e.getEntity();
 		if (
-			e.getSource().getEntity() instanceof LivingEntity living &&
-			living.level() instanceof ServerLevel server &&
+			source.is(CRDamageSources.TRIGGERS_SURGE) &&
+			source.getEntity() instanceof LivingEntity living &&
+			!living.level().isClientSide() &&
 			living.hasEffect(surge) &&
-			(!(living instanceof Player player) || player.getAttackStrengthScale(0.0F) > 0.8F) &&
-			e.getSource().is(CRDamageSources.TRIGGERS_SURGE)
+			(!(living instanceof Player player) || player.getAttackStrengthScale(0.0F) > 0.8F)
 		) {
-			MobEffectInstance effectInstance = living.getEffect(surge);
+			final MobEffectInstance effectInstance = living.getEffect(surge);
 			if (effectInstance != null) {
 				final int amplifier = effectInstance.getAmplifier();
-				if (server.getRandom().nextFloat() <= CREffects.SURGE_CHANCE) { // Chance of spawning lightning
-					LivingEntity hurt = e.getEntity();
 
-					// Spawn particles
-					for (int i = 0; i < 3; i++) {
-						SurgeEffect.emitParticles(hurt, amplifier);
-					}
-
-					// Spawn visual Lightning Bolt
-					LightningBolt bolt = EntityType.LIGHTNING_BOLT.create(server);
-					if (bolt != null) {
-						bolt.moveTo(Vec3.atBottomCenterOf(hurt.getOnPos()));
-						bolt.setCause(living instanceof ServerPlayer ? (ServerPlayer) living : null);
-						bolt.setDamage(0F);
-						bolt.flashes = 1;
-						bolt.setVisualOnly(true);
-						server.addFreshEntity(bolt);
-					}
-
-					// Damage entity
-					hurt.hurt(hurt.damageSources().lightningBolt(), amplifier + 1F);
-
-					// Increment Surge amplifier or reset to zero
-					final int duration = effectInstance.getDuration();
-					living.removeEffect(surge);
-					if (duration > 10) {
-						int max = CREffects.MAX_SURGE;
-						int newAmp = amplifier == max ? 0 : Math.min(max, amplifier + 1);
-						living.addEffect(new MobEffectInstance(surge, duration, newAmp));
-					}
+				// Hurt and knockback
+				e.setAmount(e.getAmount() + amplifier + 1F);
+				if (amplifier == CREffects.MAX_SURGE) {
+					SurgeEffect.emitParticles(hurt, 12);
+					hurt.knockback(2.2D, -living.getLookAngle().x(), -living.getLookAngle().z());
+				} else {
+					SurgeEffect.emitParticles(hurt, 3);
 				}
+
+				// Increment Surge amplifier or reset to zero
+				final int duration = effectInstance.getDuration();
+				living.removeEffect(surge);
+				living.addEffect(new MobEffectInstance(
+					surge,
+					duration,
+					amplifier >= CREffects.MAX_SURGE ? 0 : Math.min(CREffects.MAX_SURGE, amplifier + 1),
+					effectInstance.isAmbient(),
+					effectInstance.isVisible(),
+					effectInstance.showIcon()
+				));
 			}
 		}
 	}

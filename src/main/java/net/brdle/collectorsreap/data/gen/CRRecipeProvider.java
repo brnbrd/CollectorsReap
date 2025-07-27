@@ -262,12 +262,11 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.unlockedBy("has_cooked_crab", has(CRItemTags.COOKED_CRAB_MEAT)),
 			"food/crab_lasagna_from_milk", finished, enabled(CRItems.CRAB_LASAGNA), tagEmpty(CRItemTags.CHEESE));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_NOODLES.get(), 1, 200, 1F, Items.BOWL)
-				.addIngredient(Ingredient.of(CRItemTags.RAW_CRAB_MEAT), 2)
+				.addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB_MEAT), 2)
 				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
 				.addIngredient(ForgeTags.MILK)
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
-				.addIngredient(ForgeTags.VEGETABLES_ONION)
-				.addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB_MEAT), 2),
+				.addIngredient(ForgeTags.VEGETABLES_ONION),
 			"food/crab_noodles", finished, enabled(CRItems.CRAB_NOODLES));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.BUTTERED_LEGS.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItems.CHIEFTAIN_LEG.get(), 3)
@@ -694,10 +693,19 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.pattern("c")
 				.pattern("f")
 				.define('n', CRItems.URCHIN_NEEDLE.get())
+				.define('c', CRItemTags.NUGGETS_COPPER)
+				.define('f', Tags.Items.FEATHERS)
+				.unlockedBy("has_urchin_needle", has(CRItems.URCHIN_NEEDLE.get())),
+			"urchin_dart_from_nugget", finished, enabled(CRItems.URCHIN_DART), not(tagEmpty(CRItemTags.NUGGETS_COPPER)));
+		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CRItems.URCHIN_DART.get())
+				.pattern("n")
+				.pattern("c")
+				.pattern("f")
+				.define('n', CRItems.URCHIN_NEEDLE.get())
 				.define('c', Tags.Items.INGOTS_COPPER)
 				.define('f', Tags.Items.FEATHERS)
 				.unlockedBy("has_urchin_needle", has(CRItems.URCHIN_NEEDLE.get())),
-			"urchin_dart", finished, enabled(CRItems.URCHIN_DART));
+			"urchin_dart", finished, enabled(CRItems.URCHIN_DART), tagEmpty(CRItemTags.NUGGETS_COPPER));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CRItems.URCHIN_TEST_BLOCK.get())
 				.pattern("xxx")
 				.pattern("xxx")

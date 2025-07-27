@@ -6,7 +6,7 @@
         "criteria": {
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:urchin_dart"
+              "recipe": "collectorsreap:urchin_dart_from_nugget"
             },
             "trigger": "minecraft:recipe_unlocked"
           },
@@ -31,7 +31,7 @@
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:urchin_dart"
+            "collectorsreap:urchin_dart_from_nugget"
           ]
         },
         "sends_telemetry_event": false
@@ -45,8 +45,11 @@
               "value": "urchin_dart"
             },
             {
-              "type": "forge:tag_empty",
-              "tag": "forge:nuggets/copper"
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:nuggets/copper"
+              }
             }
           ]
         }

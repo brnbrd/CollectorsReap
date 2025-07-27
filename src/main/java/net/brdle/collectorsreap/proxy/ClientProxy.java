@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.proxy;
 import net.brdle.collectorsreap.client.model.*;
 import net.brdle.collectorsreap.client.particle.AcidParticle;
 import net.brdle.collectorsreap.client.particle.ShockwaveParticle;
+import net.brdle.collectorsreap.client.particle.SurgeParticle;
 import net.brdle.collectorsreap.client.renderer.*;
 import net.brdle.collectorsreap.common.CRParticleTypes;
 import net.brdle.collectorsreap.common.entity.CREntities;
@@ -51,5 +52,6 @@ public class ClientProxy extends CommonProxy {
 	public void registerParticles(RegisterParticleProvidersEvent e) {
 		e.registerSpriteSet(CRParticleTypes.ACID.get(), AcidParticle.Provider::new);
 		e.registerSpriteSet(CRParticleTypes.SHOCKWAVE.get(), ShockwaveParticle.Provider::new);
+		e.registerSpriteSet(CRParticleTypes.SURGE.get(), SurgeParticle.Provider::new);
 	}
 }

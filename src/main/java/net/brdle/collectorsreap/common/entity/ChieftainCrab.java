@@ -54,7 +54,7 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 		return (
 			Mob.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 25D)
-				.add(Attributes.MOVEMENT_SPEED, 0.25D)
+				.add(Attributes.MOVEMENT_SPEED, 0.2D)
 				.add(Attributes.ATTACK_DAMAGE, 2D)
 		);
 	}
@@ -70,10 +70,10 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 8F, 2D, 2D));
 		this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1D));
 		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6F));
+		this.goalSelector.addGoal(5, new AvoidEntityGoal<>(this, Player.class, 6F, 1.5D, 2D));
 		this.goalSelector.addGoal(6, new RandomSwimmingGoal(this, 0.75D, 50));
 		this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
 	}

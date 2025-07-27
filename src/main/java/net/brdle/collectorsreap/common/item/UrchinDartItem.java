@@ -46,8 +46,8 @@ public class UrchinDartItem extends Item {
 				level.playSound(null, player.getX(), player.getY(), player.getZ(), CRSoundEvents.URCHIN_DART_THROW.get(), SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 				player.getCooldowns().addCooldown(this, 20);
 				if (!level.isClientSide()) {
-					float velocity = player.getItemInHand(InteractionHand.OFF_HAND).is(CRItemTags.DART_SHOOTERS) ?
-						2.8F : 2.1F;
+					float velocity = player.getItemInHand(InteractionHand.OFF_HAND)
+						.is(CRItemTags.DART_SHOOTERS) ? 2.8F : 2.1F;
 					UrchinDart dart = new UrchinDart(player, level);
 					dart.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, velocity, 1F);
 					level.addFreshEntity(dart);
