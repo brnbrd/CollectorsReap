@@ -80,7 +80,7 @@
   "effect.collectorsreap.corrosion": "Коррозия",
   "effect.collectorsreap.corrosion.description": "Даёт игроку защитный кислотный щит, разъедающим снаряды и наносящим урон атакующему оружию.",
   "effect.collectorsreap.surge": "Surge",
-  "effect.collectorsreap.surge.description": "Striking an enemy has a chance of summoning a lightning bolt.",
+  "effect.collectorsreap.surge.description": "Increases melee damage; gaining amplifier with successful strikes. Resets upon landing a hit at maximum amplifier.",
   "effect.collectorsreap.volatility": "Летучесть",
   "effect.collectorsreap.volatility.description": "Каждый удар, наносимый игроком, создает волну с уроном по площади.",
   "entity.collectorsreap.chieftain_crab": "Краб-вождь",

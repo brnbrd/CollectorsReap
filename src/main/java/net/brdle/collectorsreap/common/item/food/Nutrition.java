@@ -26,7 +26,7 @@ public class Nutrition {
 		.nutrition(12).saturationMod(0.95F)
 		.effect(() -> new MobEffectInstance(
 			CREffects.SURGE.get(),
-			300,
+			400,
 			1,
 			false,
 			false,
@@ -36,7 +36,7 @@ public class Nutrition {
 		.nutrition(6).saturationMod(1.15F)
 		.effect(() -> new MobEffectInstance(
 			CREffects.SURGE.get(),
-			300,
+			400,
 			1,
 			false,
 			false,
@@ -44,10 +44,10 @@ public class Nutrition {
 		), 1F).build();
 	public static final FoodProperties TROPICAL_SHAVED_ICE = (new FoodProperties.Builder())
 		.nutrition(15).saturationMod(0.6F)
-		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, false, true), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, true, true), 1F)
 		.effect(() -> new MobEffectInstance(
 			CREffects.SURGE.get(),
-			300,
+			400,
 			1,
 			false,
 			false,
@@ -287,11 +287,13 @@ public class Nutrition {
 	public static final FoodProperties PRAWN_PO_BOY = (new FoodProperties.Builder())
 		.nutrition(10).saturationMod(0.85F).build();
 	public static final FoodProperties PRAWN_STEW = (new FoodProperties.Builder())
-		.nutrition(10).saturationMod(0.85F).build();
+		.nutrition(10).saturationMod(0.85F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties PRAWN_CEVICHE = (new FoodProperties.Builder())
 		.nutrition(8).saturationMod(0.85F).build();
 	public static final FoodProperties PRAWN_NOODLES = (new FoodProperties.Builder())
-		.nutrition(12).saturationMod(0.95F).build();
+		.nutrition(12).saturationMod(0.95F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties UNI = (new FoodProperties.Builder())
 		.nutrition(5).saturationMod(0.6F).build();
 	public static final FoodProperties UNI_ROLL = (new FoodProperties.Builder())
@@ -322,7 +324,8 @@ public class Nutrition {
 	public static final FoodProperties CRAB_MISO = (new FoodProperties.Builder())
 		.nutrition(9).saturationMod(1F).build();
 	public static final FoodProperties CRAB_NOODLES = (new FoodProperties.Builder())
-		.nutrition(13).saturationMod(0.95F).build();
+		.nutrition(13).saturationMod(0.95F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties CRAB_LASAGNA = (new FoodProperties.Builder())
 		.nutrition(10).saturationMod(0.7F).build();
 	public static final FoodProperties BUTTERED_LEGS = (new FoodProperties.Builder())
@@ -331,7 +334,7 @@ public class Nutrition {
 		.nutrition(10).saturationMod(0.9F).build();
 	public static final FoodProperties LAND_AND_SEA_BURGER = (new FoodProperties.Builder())
 		.nutrition(12).saturationMod(0.8F)
-		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1F)
 		.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 200, 0), 1F).build();
 	public static final FoodProperties CLAM_MEAT = (new FoodProperties.Builder())
@@ -339,13 +342,17 @@ public class Nutrition {
 	public static final FoodProperties CLAM_ROLL = (new FoodProperties.Builder())
 		.nutrition(7).saturationMod(0.5F).build();
 	public static final FoodProperties CLAM_CHOWDER = (new FoodProperties.Builder())
-		.nutrition(8).saturationMod(0.85F).build();
+		.nutrition(8).saturationMod(0.85F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties CLAM_PASTA = (new FoodProperties.Builder())
-		.nutrition(11).saturationMod(0.85F).build();
+		.nutrition(11).saturationMod(0.85F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties CLAM_MEATBALL_STEW = (new FoodProperties.Builder())
-		.nutrition(10).saturationMod(0.85F).build();
+		.nutrition(10).saturationMod(0.85F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties SEA_WRAP = (new FoodProperties.Builder())
-		.nutrition(14).saturationMod(1F).build();
+		.nutrition(14).saturationMod(1F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1F).build();
 	public static final FoodProperties SHIMMERING_APPLE = (new FoodProperties.Builder())
 		.nutrition(8).saturationMod(1.25F).build();
 
@@ -358,7 +365,7 @@ public class Nutrition {
 	public static final FoodProperties PINK_DRAGON_FRUIT_GUMMY = GUMMY(() ->
 		new MobEffectInstance(
 			CREffects.SURGE.get(),
-			400,
+			300,
 			CREffects.MAX_SURGE,
 			false,
 			false,

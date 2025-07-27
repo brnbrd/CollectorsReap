@@ -68,13 +68,13 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> DRAGON_BUSH = registerItem("dragon_bush",
 		() -> new BlockItem(CRBlocks.DRAGON_BUSH.get(), new Item.Properties()));
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT = registerFood("pink_dragon_fruit",
-		Nutrition.PINK_DRAGON_FRUIT);
+		new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT), true, false);
 	public static final RegistryObject<Item> PINK_NOODLES = registerFood("pink_noodles",
 		bowlFoodItem(Nutrition.PINK_NOODLES), true, false);
 	public static final RegistryObject<Item> DRAGON_STEW = registerFood("dragon_stew",
 		bowlFoodItem(Nutrition.DRAGON_STEW), true, false);
 	public static final RegistryObject<Item> TROPICAL_SHAVED_ICE = registerFood("tropical_shaved_ice",
-		bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE), false, false);
+		bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE), true, false);
 	public static final RegistryObject<Item> DRAGONS_PASSION = registerDrink("dragons_passion",
 		drinkItem().food(Nutrition.DRAGONS_PASSION), true, false);
 	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate",
@@ -92,7 +92,7 @@ public class CRItems extends ModItems {
 			CRBlocks.LIME_BUSH.get(), (new Item.Properties())
 		));
 	public static final RegistryObject<Item> LIME = registerFood("lime",
-		Nutrition.LIME);
+		new Item.Properties().food(Nutrition.LIME), true, false);
 	public static final RegistryObject<Item> LIME_SLICE = registerFood("lime_slice",
 		new Item.Properties().food(Nutrition.LIME_SLICE), true, false);
 	public static final RegistryObject<Item> CANDIED_LIME = registerFood("candied_lime",
@@ -169,11 +169,11 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.SALMON_WRAPPED_PRAWN), false, false);
 	public static final RegistryObject<Item> PRAWN_PO_BOY = registerFood("prawn_po_boy", Nutrition.PRAWN_PO_BOY);
 	public static final RegistryObject<Item> PRAWN_STEW = registerFood("prawn_stew",
-		bowlFoodItem(Nutrition.PRAWN_STEW), false, false);
+		bowlFoodItem(Nutrition.PRAWN_STEW), true, false);
 	public static final RegistryObject<Item> PRAWN_CEVICHE = registerFood("prawn_ceviche",
 		bowlFoodItem(Nutrition.PRAWN_CEVICHE), false, false);
 	public static final RegistryObject<Item> PRAWN_NOODLES = registerFood("prawn_noodles",
-		bowlFoodItem(Nutrition.PRAWN_NOODLES), false, false);
+		bowlFoodItem(Nutrition.PRAWN_NOODLES), true, false);
 
 	// Urchin
 	public static final RegistryObject<Item> URCHIN_SPAWN_EGG = registerItem("urchin_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.URCHIN, 0x9990d7, 0x21132d, new Item.Properties()));
@@ -216,7 +216,7 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> CRAB_MISO = registerFood("crab_miso",
 		bowlFoodItem(Nutrition.CRAB_MISO), false, false);
 	public static final RegistryObject<Item> CRAB_NOODLES = registerFood("crab_noodles",
-		bowlFoodItem(Nutrition.CRAB_NOODLES), false, false);
+		bowlFoodItem(Nutrition.CRAB_NOODLES), true, false);
 	public static final RegistryObject<Item> CRAB_LASAGNA = registerFood("crab_lasagna",
 		bowlFoodItem(Nutrition.CRAB_LASAGNA), false, false);
 	public static final RegistryObject<Item> BUTTERED_LEGS = registerFood("buttered_legs",

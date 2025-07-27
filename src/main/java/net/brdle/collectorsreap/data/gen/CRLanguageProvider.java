@@ -64,7 +64,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addEffect(CREffects.VOLATILITY, "Volatility");
 		add(CREffects.VOLATILITY.get().getDescriptionId() + ".description", "Striking an enemy creates a shockwave of splash damage.");
 		addEffect(CREffects.SURGE, "Surge");
-		add(CREffects.SURGE.get().getDescriptionId() + ".description", "Striking an enemy has a chance of summoning a lightning bolt.");
+		add(CREffects.SURGE.get().getDescriptionId() + ".description", "Increases melee damage; gaining amplifier with successful strikes. Resets upon landing a hit at maximum amplifier.");
 	}
 
 	private void addBlocks() {
