@@ -69,7 +69,7 @@ public class ForgeEvents {
 			source.getEntity() instanceof LivingEntity living &&
 			!living.level().isClientSide() &&
 			living.hasEffect(surge) &&
-			(!(living instanceof Player player) || player.getAttackStrengthScale(0.0F) > 0.8F)
+			(!(living instanceof Player player) || player.getAttackStrengthScale(0F) > 0.8F)
 		) {
 			final MobEffectInstance effectInstance = living.getEffect(surge);
 			if (effectInstance != null) {

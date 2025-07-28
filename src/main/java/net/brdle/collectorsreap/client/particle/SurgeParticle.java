@@ -10,11 +10,21 @@ import org.jetbrains.annotations.Nullable;
 
 @OnlyIn(Dist.CLIENT)
 public class SurgeParticle extends TextureSheetParticle {
-	SurgeParticle(ClientLevel level, double x, double y, double z) {
-		super(level, x, y, z, 0D, 0D, 0D);
-		this.quadSize *= 0.75F;
-		this.lifetime = Math.max((int)(6.0D / (Math.random() * 0.8D + 0.6D)), 1);
+	private final SpriteSet sprites;
+
+	SurgeParticle(ClientLevel level, double x, double y, double z, SpriteSet sprites) {
+		super(level, x, y, z);
 		this.hasPhysics = false;
+		this.gravity = 0F;
+		this.friction = 1F;
+		this.sprites = sprites;
+		this.lifetime = 7;
+		this.setSpriteFromAge(sprites);
+	}
+
+	public void tick() {
+		super.tick();
+		this.setSpriteFromAge(this.sprites);
 	}
 
 	@Override
@@ -24,17 +34,15 @@ public class SurgeParticle extends TextureSheetParticle {
 
 	@OnlyIn(Dist.CLIENT)
 	public static class Provider implements ParticleProvider<SimpleParticleType> {
-		private final SpriteSet sprite;
+		private final SpriteSet sprites;
 
 		public Provider(SpriteSet sprites) {
-			this.sprite = sprites;
+			this.sprites = sprites;
 		}
 
 		@Override
 		public @Nullable Particle createParticle(@NotNull SimpleParticleType type, @NotNull ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-			SurgeParticle surge = new SurgeParticle(level, x, y, z);
-			surge.pickSprite(this.sprite);
-			return surge;
+			return new SurgeParticle(level, x, y, z, this.sprites);
 		}
 	}
 }

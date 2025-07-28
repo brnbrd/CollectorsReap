@@ -21,13 +21,13 @@ public class SurgeEffect extends MobEffect {
 	 */
 	@Override
 	public boolean isDurationEffectTick(int duration, int amplifier) {
-		return duration % 10 == 0;
+		return duration % 2 == 0;
 	}
 
 	@Override
 	public void applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
 		if (amplifier == CREffects.MAX_SURGE) {
-			SurgeEffect.emitParticles(entity, 10);
+			SurgeEffect.emitParticles(entity, 2);
 		}
 	}
 
@@ -36,9 +36,9 @@ public class SurgeEffect extends MobEffect {
 			for (int i = 0; i < amount; i ++) {
 				server.sendParticles(
 					CRParticleTypes.SURGE.get(),
-					entity.getRandomX(0.5D),
+					entity.getRandomX(0.55D),
 					entity.getRandomY() + 0.4D,
-					entity.getRandomZ(0.5D),
+					entity.getRandomZ(0.55D),
 					1,
 					0D,
 					0D,

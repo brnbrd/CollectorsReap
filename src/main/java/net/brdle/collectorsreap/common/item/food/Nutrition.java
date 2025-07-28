@@ -402,8 +402,8 @@ public class Nutrition {
 	public static final FoodProperties CHOCOLATE_GUMMY = GUMMY(() ->
 		new MobEffectInstance(ModCompat.getSugarRush(), 200, 4));
 	public static final FoodProperties MINT_GUMMY = GUMMY(List.of(() ->
-		new MobEffectInstance(ModCompat.getBerserking(), 300, 0), () ->
-		new MobEffectInstance(MobEffects.DAMAGE_BOOST, 300, 0)));
+		new MobEffectInstance(ModCompat.getBerserking(), 800, 0), () ->
+		new MobEffectInstance(MobEffects.DAMAGE_BOOST, 800, 0)));
 	public static final FoodProperties ADZUKI_GUMMY = GUMMY(() ->
 		new MobEffectInstance(ModCompat.getHarmony(), 40, 2));
 	public static final FoodProperties PUMPKIN_GUMMY = GUMMY(List.of(() ->
