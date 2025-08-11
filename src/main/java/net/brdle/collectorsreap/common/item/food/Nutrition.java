@@ -216,32 +216,6 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 600, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1F)
 		.build();
-	public static final FoodProperties LIME_CAKE_SLICE = (new FoodProperties.Builder())
-		.nutrition(2).saturationMod(0.1F)
-		.fast()
-		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1F)
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 300, 0), 1F)
-		.build();
-	public static final FoodProperties POMEGRANATE_CAKE_SLICE = (new FoodProperties.Builder())
-		.nutrition(2).saturationMod(0.1F)
-		.fast()
-		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1F)
-		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 300, 0), 1F)
-		.build();
-	public static final FoodProperties LIME_ICE_CREAM = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(0.4F)
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 1), 1F)
-		.build();
-	public static final FoodProperties LIME_MILKSHAKE = (new FoodProperties.Builder())
-		.nutrition(2).saturationMod(1.5F).alwaysEat()
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 1), 1F).build();
-	public static final FoodProperties POMEGRANATE_ICE_CREAM = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(0.4F)
-		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1600, 1), 1F)
-		.build();
-	public static final FoodProperties POMEGRANATE_MILKSHAKE = (new FoodProperties.Builder())
-		.nutrition(2).saturationMod(1.5F).alwaysEat()
-		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 800, 1), 1F).build();
 	public static final FoodProperties STRAWBERRY_JAM_BUN = (new FoodProperties.Builder())
 		.nutrition(6).saturationMod(0.5F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 400, 0), 1F)
@@ -254,7 +228,48 @@ public class Nutrition {
 		.nutrition(4).saturationMod(0.25F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 200, 1), 1F)
 		.effect(() -> new MobEffectInstance(ModCompat.getSugarRush(), 200, 1), 1F).build();
-
+	public static final FoodProperties LIME_CAKE_SLICE = (new FoodProperties.Builder())
+		.nutrition(2).saturationMod(0.1F)
+		.fast()
+		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 300, 0), 1F)
+		.build();
+	public static final FoodProperties POMEGRANATE_CAKE_SLICE = (new FoodProperties.Builder())
+		.nutrition(2).saturationMod(0.1F)
+		.fast()
+		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 300, 0), 1F)
+		.build();
+	public static final FoodProperties PINK_DRAGON_FRUIT_CAKE_SLICE = (new FoodProperties.Builder())
+		.nutrition(2).saturationMod(0.1F)
+		.fast()
+		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 300, 0), 1F)
+		.build();
+	public static final FoodProperties LIME_ICE_CREAM = (new FoodProperties.Builder())
+		.nutrition(6).saturationMod(0.4F)
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 1), 1F)
+		.build();
+	public static final FoodProperties POMEGRANATE_ICE_CREAM = (new FoodProperties.Builder())
+		.nutrition(6).saturationMod(0.4F)
+		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1600, 1), 1F)
+		.build();
+	public static final FoodProperties PINK_DRAGON_FRUIT_ICE_CREAM = (new FoodProperties.Builder())
+		.nutrition(6).saturationMod(0.4F)
+		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 1600, 0, false, false, true), 1F)
+		.build();
+	public static final FoodProperties LIME_MILKSHAKE = (new FoodProperties.Builder())
+		.nutrition(2).saturationMod(1.5F).alwaysEat()
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 1), 1F)
+		.build();
+	public static final FoodProperties POMEGRANATE_MILKSHAKE = (new FoodProperties.Builder())
+		.nutrition(2).saturationMod(1.5F).alwaysEat()
+		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 800, 1), 1F)
+		.build();
+	public static final FoodProperties PINK_DRAGON_FRUIT_MILKSHAKE = (new FoodProperties.Builder())
+		.nutrition(2).saturationMod(1.5F).alwaysEat()
+		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 800, 0, false, false, true), 1F)
+		.build();
 	public static final FoodProperties DEIFIC_BLOOD = (new FoodProperties.Builder())
 		.alwaysEat()
 		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 2400, 2), 1F)

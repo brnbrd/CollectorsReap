@@ -30,6 +30,7 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(CRBlocks.LIME_ICE_CREAM_BLOCK.get())
 			.add(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get())
+			.add(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get())
 			.add(CRBlocks.PLATINUM_BASS_ROE.get())
 			.add(CRBlocks.TIGER_PRAWN_ROE.get());
 		this.tag(BlockTags.MINEABLE_WITH_AXE)
@@ -60,14 +61,16 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.URCHIN_TEST_TILE_STAIRS.get());
 		this.tag(BlockTags.CAULDRONS)
 			.add(CRBlocks.LIME_MILKSHAKE_CAULDRON.get())
-			.add(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON.get());
+			.add(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON.get())
+			.add(CRBlocks.PINK_DRAGON_FRUIT_MILKSHAKE_CAULDRON.get());
 
 		// Forge
 		this.tag(ForgeTags.MINEABLE_WITH_KNIFE)
 			.add(CRBlocks.PORTOBELLO_QUICHE.get())
 			.add(CRBlocks.LIME_PIE.get())
 			.add(CRBlocks.LIME_CAKE.get())
-			.add(CRBlocks.POMEGRANATE_CAKE.get());
+			.add(CRBlocks.POMEGRANATE_CAKE.get())
+			.add(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get());
 
 		// Farmer's Delight
 		this.tag(ModTags.COMPOST_ACTIVATORS)

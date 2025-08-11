@@ -17,7 +17,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -146,12 +145,18 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> POMEGRANATE_SMOOTHIE = registerItem("pomegranate_smoothie", () ->
 		new CompatDrinkable((new Item.Properties()).food(
 			Nutrition.POMEGRANATE_SMOOTHIE), true, false, "neapolitan"));
-	public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake", () -> new BlockItem(CRBlocks.LIME_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
-	public static final RegistryObject<Item> LIME_CAKE_SLICE = registerItem("lime_cake_slice", () ->
-		new EffectSliceItem((new Item.Properties()).food(Nutrition.LIME_CAKE_SLICE)));
-	public static final RegistryObject<Item> POMEGRANATE_CAKE = registerItem("pomegranate_cake", () -> new BlockItem(CRBlocks.POMEGRANATE_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
-	public static final RegistryObject<Item> POMEGRANATE_CAKE_SLICE = registerItem("pomegranate_cake_slice", () ->
-		new EffectSliceItem((new Item.Properties()).food(Nutrition.POMEGRANATE_CAKE_SLICE)));
+	public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake",
+		() -> new BlockItem(CRBlocks.LIME_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
+	public static final RegistryObject<Item> LIME_CAKE_SLICE = registerItem("lime_cake_slice",
+		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.LIME_CAKE_SLICE)));
+	public static final RegistryObject<Item> POMEGRANATE_CAKE = registerItem("pomegranate_cake",
+		() -> new BlockItem(CRBlocks.POMEGRANATE_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
+	public static final RegistryObject<Item> POMEGRANATE_CAKE_SLICE = registerItem("pomegranate_cake_slice",
+		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.POMEGRANATE_CAKE_SLICE)));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CAKE = registerItem("pink_dragon_fruit_cake",
+		() -> new BlockItem(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CAKE_SLICE = registerItem("pink_dragon_fruit_cake_slice",
+		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.PINK_DRAGON_FRUIT_CAKE_SLICE)));
 	public static final RegistryObject<Item> LIME_CRATE = registerBlock(CRBlocks.LIME_CRATE);
 	public static final RegistryObject<Item> POMEGRANATE_CRATE = registerBlock(CRBlocks.POMEGRANATE_CRATE);
 	public static final RegistryObject<Item> STYGIAN_POMEGRANATE_CRATE = registerBlock(CRBlocks.STYGIAN_POMEGRANATE_CRATE);
@@ -272,14 +277,20 @@ public class CRItems extends ModItems {
 		() -> new ShakeItem(new Item.Properties().food(Nutrition.LIME_MILKSHAKE)));
 	public static final RegistryObject<Item> POMEGRANATE_MILKSHAKE = registerItem("pomegranate_milkshake",
 		() -> new ShakeItem(new Item.Properties().food(Nutrition.POMEGRANATE_MILKSHAKE)));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_MILKSHAKE = registerItem("pink_dragon_fruit_milkshake",
+		() -> new ShakeItem(new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT_MILKSHAKE)));
 	public static final RegistryObject<Item> LIME_ICE_CREAM = registerItem("lime_ice_cream",
 		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.LIME_ICE_CREAM)));
 	public static final RegistryObject<Item> POMEGRANATE_ICE_CREAM = registerItem("pomegranate_ice_cream",
 		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.POMEGRANATE_ICE_CREAM)));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_ICE_CREAM = registerItem("pink_dragon_fruit_ice_cream",
+		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.PINK_DRAGON_FRUIT_ICE_CREAM)));
 	public static final RegistryObject<Item> LIME_ICE_CREAM_BLOCK = registerItem("lime_ice_cream_block",
 		() -> new BlockItem(CRBlocks.LIME_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
 	public static final RegistryObject<Item> POMEGRANATE_ICE_CREAM_BLOCK = registerItem("pomegranate_ice_cream_block",
 		() -> new BlockItem(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK = registerItem("pink_dragon_fruit_ice_cream_block",
+		() -> new BlockItem(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
 
 	// Brewin and Chewin Compat
 	private static final ResourceLocation tankard = Util.rl("brewinandchewin", "tankard");

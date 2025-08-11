@@ -86,8 +86,27 @@ public class CRBlockStateProvider extends BlockStateProvider {
 		this.candleCakeBlock(CRBlocks.GREEN_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
 		this.candleCakeBlock(CRBlocks.RED_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
 		this.candleCakeBlock(CRBlocks.BLACK_CANDLE_POMEGRANATE_CAKE, CRBlocks.POMEGRANATE_CAKE);
+		this.cakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.WHITE_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.ORANGE_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.MAGENTA_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.LIGHT_BLUE_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.YELLOW_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.LIME_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.PINK_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.GRAY_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.LIGHT_GRAY_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.CYAN_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.PURPLE_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.BLUE_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.BROWN_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.GREEN_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.RED_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
+		this.candleCakeBlock(CRBlocks.BLACK_CANDLE_PINK_DRAGON_FRUIT_CAKE, CRBlocks.PINK_DRAGON_FRUIT_CAKE);
 		this.simpleBlock(CRBlocks.LIME_ICE_CREAM_BLOCK.get());
 		this.simpleBlock(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get());
+		this.simpleBlock(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get());
 		this.simpleBlock(CRBlocks.URCHIN_TEST_BLOCK.get(), this.models().cubeBottomTop(
 			"urchin_test_block",
 			resourceBlock("urchin_test_block_side"),

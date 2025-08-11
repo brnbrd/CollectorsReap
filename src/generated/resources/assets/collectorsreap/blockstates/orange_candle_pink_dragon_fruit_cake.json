@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "collectorsreap:block/orange_candle_pink_dragon_fruit_cake"
+    },
+    "lit=true": {
+      "model": "collectorsreap:block/orange_candle_pink_dragon_fruit_cake_lit"
+    }
+  }
+}

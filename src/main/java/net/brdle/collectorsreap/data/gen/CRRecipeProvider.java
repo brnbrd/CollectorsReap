@@ -87,6 +87,9 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 				CRItems.POMEGRANATE_CAKE_SLICE.get(), 7),
 			"cutting/pomegranate_cake", finished, enabled(CRItems.POMEGRANATE_CAKE), enabled(CRItems.POMEGRANATE_CAKE_SLICE));
+		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PINK_DRAGON_FRUIT_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+				CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE.get(), 7),
+			"cutting/pink_dragon_fruit_cake", finished, enabled(CRItems.PINK_DRAGON_FRUIT_CAKE), enabled(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE));
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.URCHIN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 					CRItems.UNI.get(), 2)
 				.addResult(CRItems.URCHIN_TEST.get())
@@ -642,12 +645,12 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.pattern("ele")
 				.pattern("lll")
 				.pattern("scm")
-				.define('l', CRItems.LIME.get())
+				.define('l', CRItems.LIME_SLICE.get())
 				.define('e', Tags.Items.EGGS)
 				.define('s', Items.SUGAR)
 				.define('m', ForgeTags.MILK)
 				.define('c', ModItems.PIE_CRUST.get())
-				.unlockedBy("has_lime", has(CRItems.LIME.get())),
+				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
 			"food/lime_pie", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_PIE));
 		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CRItems.LIME_PIE.get(), 1)
 				.requires(CRItems.LIME_PIE_SLICE.get(), 4)
@@ -689,6 +692,21 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.requires(CRItems.POMEGRANATE_CAKE_SLICE.get(), 7)
 				.unlockedBy("has_pomegranate_cake_slice", has(CRItems.POMEGRANATE_CAKE_SLICE.get())),
 			"food/pomegranate_cake_from_slices", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SLICE), enabled(CRItems.POMEGRANATE_CAKE), enabled(CRItems.POMEGRANATE_CAKE_SLICE));
+		wrap(shaped(RecipeCategory.FOOD, CRItems.PINK_DRAGON_FRUIT_CAKE)
+				.pattern("mpm")
+				.pattern("ses")
+				.pattern("wpw")
+				.define('e', Tags.Items.EGGS)
+				.define('m', ForgeTags.MILK)
+				.define('p', CRItems.PINK_DRAGON_FRUIT.get())
+				.define('s', Items.SUGAR)
+				.define('w', ForgeTags.GRAIN_WHEAT)
+				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
+			"food/pink_dragon_fruit_cake", finished, enabled(CRItems.PINK_DRAGON_FRUIT), enabled(CRItems.PINK_DRAGON_FRUIT_CAKE));
+		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CRItems.PINK_DRAGON_FRUIT_CAKE.get(), 1)
+				.requires(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE.get(), 7)
+				.unlockedBy("has_pink_dragon_fruit_cake_slice", has(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE.get())),
+			"food/pink_dragon_fruit_cake_from_slices", finished, enabled(CRItems.PINK_DRAGON_FRUIT), enabled(CRItems.PINK_DRAGON_FRUIT_CAKE), enabled(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CRItems.URCHIN_DART.get())
 				.pattern("n")
 				.pattern("c")
@@ -857,11 +875,11 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		// Neapolitan Compat
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.LIME_ICE_CREAM)
 				.requires(Items.BOWL)
-				.requires(CRItemTags.FRUITS_LIME)
+				.requires(CRItems.LIME.get())
 				.requires(ForgeTags.MILK)
 				.requires(CRItemTags.ICE_CUBES)
 				.requires(Items.SUGAR)
-				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+				.unlockedBy("has_lime", has(CRItems.LIME.get())),
 			"food/lime_ice_cream", finished, enabled(CRItems.LIME_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.LIME_MILKSHAKE, 3)
 				.requires(Items.GLASS_BOTTLE, 3)
@@ -879,11 +897,11 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"lime_ice_cream_block", finished, enabled(CRItems.LIME_ICE_CREAM_BLOCK), enabled(CRItems.LIME_ICE_CREAM), modLoaded("neapolitan"));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.POMEGRANATE_ICE_CREAM)
 				.requires(Items.BOWL)
-				.requires(CRItemTags.FRUITS_POMEGRANATE)
+				.requires(CRItems.POMEGRANATE_SLICE.get())
 				.requires(ForgeTags.MILK)
 				.requires(CRItemTags.ICE_CUBES)
 				.requires(Items.SUGAR)
-				.unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
+				.unlockedBy("has_pomegranate", has(CRItems.POMEGRANATE_SLICE.get())),
 			"food/pomegranate_ice_cream", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.POMEGRANATE_MILKSHAKE, 3)
 				.requires(Items.GLASS_BOTTLE, 3)
@@ -899,6 +917,29 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.define('i', CRItems.POMEGRANATE_ICE_CREAM.get())
 				.unlockedBy("has_pomegranate_ice_cream", has(CRItems.POMEGRANATE_ICE_CREAM.get())),
 			"pomegranate_ice_cream_block", finished, enabled(CRItems.POMEGRANATE_ICE_CREAM_BLOCK), enabled(CRItems.POMEGRANATE_ICE_CREAM), modLoaded("neapolitan"));
+		wrap(shapeless(RecipeCategory.FOOD, CRItems.PINK_DRAGON_FRUIT_ICE_CREAM)
+				.requires(Items.BOWL)
+				.requires(CRItems.PINK_DRAGON_FRUIT.get())
+				.requires(ForgeTags.MILK)
+				.requires(CRItemTags.ICE_CUBES)
+				.requires(Items.SUGAR)
+				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
+			"food/pink_dragon_fruit_ice_cream", finished, enabled(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
+		wrap(shapeless(RecipeCategory.FOOD, CRItems.PINK_DRAGON_FRUIT_MILKSHAKE, 3)
+				.requires(Items.GLASS_BOTTLE, 3)
+				.requires(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM.get())
+				.requires(ForgeTags.MILK)
+				.unlockedBy("has_pink_dragon_fruit_ice_cream", has(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM.get())),
+			"food/pink_dragon_fruit_milkshake", finished, enabled(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM), enabled(CRItems.PINK_DRAGON_FRUIT_MILKSHAKE), modLoaded("neapolitan"));
+		wrap(shaped(RecipeCategory.BUILDING_BLOCKS, CRItems.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK, 8)
+				.pattern("sss")
+				.pattern("sis")
+				.pattern("sss")
+				.define('s', Blocks.SNOW_BLOCK)
+				.define('i', CRItems.PINK_DRAGON_FRUIT_ICE_CREAM.get())
+				.unlockedBy("has_pink_dragon_fruit_ice_cream", has(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM.get())),
+			"pink_dragon_fruit_ice_cream_block", finished, enabled(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK), enabled(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM), modLoaded("neapolitan"));
+
 	}
 
 	private InventoryChangeTrigger.TriggerInstance has(ItemLike... items) {

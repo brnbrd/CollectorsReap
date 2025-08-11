@@ -8,16 +8,19 @@
   - Increases melee damage; gaining amplifier with successful strikes
   - Resets upon landing a hit at maximum amplifier
 - Added Pink Dragon Fruit
-- Added Drink Pink Dragon Fruit
+- Added Pink Dragon Fruit Gummy
+- Added Pink Dragon Fruit Cake
+- Added Dried Pink Dragon Fruit
 - Added Pink Noodles
 - Added Dragon Stew
 - Added Tropical Shaved Ice
 - Added Dragon's Passion
+- Added Pink Dragon Fruit Ice Cream and Block (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
+- Added Pink Dragon Fruit Milkshake (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
 - Added Deific Blood (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin))
 - Added Hermit's Sour (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin))
 - Added Rosé Moon (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin))
 - Added Reanimator's Garden (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin) and [Atmospheric](https://www.curseforge.com/minecraft/mc-mods/atmospheric))
-- Added Pink Dragon Fruit Gummy
 - Lime Gummy now provides Corrosion for 0:10
 - Pomegranate Gummy now provides Volatility for 0:10
 - Apple Gummy now provides Comfort for 0:45

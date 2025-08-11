@@ -76,6 +76,25 @@ public class CRBlocks {
 	public static final RegistryObject<Block> RED_CANDLE_POMEGRANATE_CAKE = registerBlock("red_candle_pomegranate_cake", () -> new EffectCandleCakeBlock(CRBlocks.POMEGRANATE_CAKE.get(), Blocks.RED_CANDLE, copy(CANDLE_POMEGRANATE_CAKE.get())));
 	public static final RegistryObject<Block> BLACK_CANDLE_POMEGRANATE_CAKE = registerBlock("black_candle_pomegranate_cake", () -> new EffectCandleCakeBlock(CRBlocks.POMEGRANATE_CAKE.get(), Blocks.BLACK_CANDLE, copy(CANDLE_POMEGRANATE_CAKE.get())));
 
+	public static final RegistryObject<Block> PINK_DRAGON_FRUIT_CAKE = registerBlock("pink_dragon_fruit_cake", () -> new EffectCakeBlock(copy(Blocks.CAKE), CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE));
+	public static final RegistryObject<Block> CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.CANDLE, copy(Blocks.CAKE).lightLevel(litBlockEmission(3))));
+	public static final RegistryObject<Block> WHITE_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("white_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.WHITE_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> ORANGE_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("orange_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.ORANGE_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> MAGENTA_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("magenta_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.MAGENTA_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> LIGHT_BLUE_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("light_blue_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.LIGHT_BLUE_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> YELLOW_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("yellow_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.YELLOW_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> LIME_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("lime_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.LIME_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> PINK_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("pink_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.PINK_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> GRAY_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("gray_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.GRAY_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> LIGHT_GRAY_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("light_gray_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.LIGHT_GRAY_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> CYAN_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("cyan_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.CYAN_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> PURPLE_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("purple_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.PURPLE_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> BLUE_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("blue_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.BLUE_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> BROWN_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("brown_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.BROWN_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> GREEN_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("green_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.GREEN_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> RED_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("red_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.RED_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+	public static final RegistryObject<Block> BLACK_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("black_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.BLACK_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
+
 	public static final RegistryObject<Block> LIME_BUSH = registerBlock("lime_bush",
 		() -> new LimeBushBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).forceSolidOff().instabreak().sound(SoundType.SWEET_BERRY_BUSH).noOcclusion().pushReaction(PushReaction.DESTROY)));
 	public static final RegistryObject<Block> POMEGRANATE_BUSH = registerBlock("pomegranate_bush",
@@ -98,6 +117,8 @@ public class CRBlocks {
 		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(0.2F).sound(SoundType.SNOW)));
 	public static final RegistryObject<Block> POMEGRANATE_ICE_CREAM_BLOCK = BLOCKS.register("pomegranate_ice_cream_block",
 		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(0.2F).sound(SoundType.SNOW)));
+	public static final RegistryObject<Block> PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK = BLOCKS.register("pink_dragon_fruit_ice_cream_block",
+		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(0.2F).sound(SoundType.SNOW)));
 	public static final RegistryObject<Block> LIME_MILKSHAKE_CAULDRON = BLOCKS.register("lime_milkshake_cauldron",
 		() -> new CRMilkshakeCauldronBlock(
 			Mods.stringLoaded("neapolitan") ?
@@ -108,6 +129,12 @@ public class CRBlocks {
 		() -> new CRMilkshakeCauldronBlock(
 			Mods.stringLoaded("neapolitan") ?
 				CRCauldronInteractions.POMEGRANATE_MILKSHAKE.map() :
+				CauldronInteraction.newInteractionMap())
+	);
+	public static final RegistryObject<Block> PINK_DRAGON_FRUIT_MILKSHAKE_CAULDRON = BLOCKS.register("pink_dragon_fruit_milkshake_cauldron",
+		() -> new CRMilkshakeCauldronBlock(
+			Mods.stringLoaded("neapolitan") ?
+				CRCauldronInteractions.PINK_DRAGON_FRUIT_MILKSHAKE.map() :
 				CauldronInteraction.newInteractionMap())
 	);
 

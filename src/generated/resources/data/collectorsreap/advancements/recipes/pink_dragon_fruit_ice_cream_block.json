@@ -1,0 +1,60 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_pink_dragon_fruit_ice_cream": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "collectorsreap:pink_dragon_fruit_ice_cream"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "collectorsreap:pink_dragon_fruit_ice_cream_block"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          }
+        },
+        "requirements": [
+          [
+            "has_pink_dragon_fruit_ice_cream",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "collectorsreap:pink_dragon_fruit_ice_cream_block"
+          ]
+        },
+        "sends_telemetry_event": false
+      },
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pink_dragon_fruit_ice_cream_block"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pink_dragon_fruit_ice_cream"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

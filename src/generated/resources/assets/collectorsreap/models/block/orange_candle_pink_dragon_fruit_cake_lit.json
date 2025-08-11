@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/template_cake_with_candle",
+  "textures": {
+    "bottom": "collectorsreap:block/pink_dragon_fruit_cake_bottom",
+    "candle": "minecraft:block/orange_candle_lit",
+    "particle": "collectorsreap:block/pink_dragon_fruit_cake_side",
+    "side": "collectorsreap:block/pink_dragon_fruit_cake_side",
+    "top": "collectorsreap:block/pink_dragon_fruit_cake_top"
+  }
+}

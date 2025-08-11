@@ -133,9 +133,6 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.MUSHROOMS_PORTOBELLO).add(CRItems.PORTOBELLO.get());
 		this.tag(Tags.Items.MUSHROOMS).addTag(CRItemTags.MUSHROOMS_PORTOBELLO);
 		this.tag(CRItemTags.TORTILLA).addOptional(Util.rl("culturaldelights", "tortilla"));
-		this.tag(CRItemTags.ICE_CREAM)
-			.add(CRItems.LIME_ICE_CREAM.get())
-			.add(CRItems.POMEGRANATE_ICE_CREAM.get());
 		this.tag(CRItemTags.RAW_CRAB_MEAT)
 			.addOptional(Util.rl("quark", "crab_leg"));
 		this.tag(CRItemTags.COOKED_CRAB_MEAT)
@@ -190,9 +187,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.addSelf(CRItemTags.MINT_LEAVES);
 		this.addSelf(CRItemTags.ROASTED_ADZUKI_BEANS);
 		this.tag(CRItemTags.RED_STRAWBERRIES).addOptional(Util.rl("neapolitan", "strawberries"));
-		this.tag(Util.it("neapolitan", "ice_cream"))
+		this.tag(CRItemTags.ICE_CREAM)
 			.add(CRItems.LIME_ICE_CREAM.get())
-			.add(CRItems.POMEGRANATE_ICE_CREAM.get());
+			.add(CRItems.POMEGRANATE_ICE_CREAM.get())
+			.add(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM.get());
 
 		// Brewin and Chewin
 		this.tag(CRItemTags.FERMENTED_DRINKS)
@@ -220,7 +218,8 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.PORTOBELLO_QUICHE.get())
 			.add(CRItems.LIME_CAKE.get())
 			.add(CRItems.LIME_PIE.get())
-			.add(CRItems.POMEGRANATE_CAKE.get());
+			.add(CRItems.POMEGRANATE_CAKE.get())
+			.add(CRItems.PINK_DRAGON_FRUIT_CAKE.get());
 
 		// Atmospheric
 		this.addSelf(CRItemTags.ALOE_LEAVES);

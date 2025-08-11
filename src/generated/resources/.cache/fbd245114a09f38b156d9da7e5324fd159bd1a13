@@ -1,4 +1,4 @@
-// 1.20.1	2025-07-27T17:23:54.1917626	Item Models: collectorsreap
+// 1.20.1	2025-08-10T18:17:40.1383703	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -75,8 +75,13 @@ abbae41fa500c207b8ede0586c4b43c6620d7c16 assets/collectorsreap/models/item/melon
 a7150a1969018156361fcbdba77c1d10b4f616cc assets/collectorsreap/models/item/passion_fruit_gummy.json
 af50504de896b1973158a3155c5e644d4053eb54 assets/collectorsreap/models/item/pearly_claw.json
 ad3adb14616f4d2d21ad47372bb78d7bf8fe2608 assets/collectorsreap/models/item/pink_dragon_fruit.json
+9f4b102215f77d7e48f88983e97f7683d186172e assets/collectorsreap/models/item/pink_dragon_fruit_cake.json
+1e775c3ddabe44a78a739b1f285717bc68c29b33 assets/collectorsreap/models/item/pink_dragon_fruit_cake_slice.json
 7ab46f4bab67342d465d4e8ef44f873d2f79b9f5 assets/collectorsreap/models/item/pink_dragon_fruit_crate.json
 2e893e8b25aabf95d9c459c5ae2fb0ef4123d48b assets/collectorsreap/models/item/pink_dragon_fruit_gummy.json
+c42c3c3ea4cb87eac86c365e2670d92379b226b8 assets/collectorsreap/models/item/pink_dragon_fruit_ice_cream.json
+bb0f800cb2453cb171017062c501629d726f00a4 assets/collectorsreap/models/item/pink_dragon_fruit_ice_cream_block.json
+6133e17eed618b7af9165b38b019b3e4520bf7d8 assets/collectorsreap/models/item/pink_dragon_fruit_milkshake.json
 9ad1425ace53a2b261c77a078310a3ca37f1d258 assets/collectorsreap/models/item/pink_limeade.json
 8846110849dd8ece4cd263825764df8c1c3fabbb assets/collectorsreap/models/item/pink_noodles.json
 d15323f24282273a5eeb030b02299f5ebb84128d assets/collectorsreap/models/item/platinum_bass.json

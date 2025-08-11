@@ -32,7 +32,7 @@
             "item": "minecraft:bowl"
           },
           {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:lime"
           },
           {
             "tag": "forge:milk"

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "collectorsreap:block/pink_dragon_fruit_ice_cream_block"
+  }
+}
