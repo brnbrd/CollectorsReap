@@ -163,8 +163,6 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> STYGIAN_POMEGRANATE_CRATE = registerBlock(CRBlocks.STYGIAN_POMEGRANATE_CRATE);
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CRATE = registerBlock(CRBlocks.PINK_DRAGON_FRUIT_CRATE);
 
-	public static final RegistryObject<Item> SEA_WRAP = registerFood("sea_wrap", Nutrition.SEA_WRAP);
-
 	// Tiger Prawn
 	public static final RegistryObject<Item> TIGER_PRAWN_SPAWN_EGG = registerItem("tiger_prawn_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.TIGER_PRAWN, 0x7c7248, 0x613432, new Item.Properties()));
 	public static final RegistryObject<Item> TIGER_PRAWN_BUCKET = registerItem("tiger_prawn_bucket",
@@ -244,9 +242,11 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> CLAM_CHOWDER = registerFood("clam_chowder",
 		(new Item.Properties()).food(Nutrition.CLAM_CHOWDER).stacksTo(16), true, false);
 	public static final RegistryObject<Item> CLAM_PASTA = registerFood("clam_pasta",
-		bowlFoodItem(Nutrition.CLAM_PASTA), false, false);
+		bowlFoodItem(Nutrition.CLAM_PASTA), true, false);
 	public static final RegistryObject<Item> CLAM_MEATBALL_STEW = registerFood("clam_meatball_stew",
-		bowlFoodItem(Nutrition.CLAM_MEATBALL_STEW), false, false);
+		bowlFoodItem(Nutrition.CLAM_MEATBALL_STEW), true, false);
+	public static final RegistryObject<Item> SEA_WRAP = registerFood("sea_wrap",
+		(new Item.Properties()).food(Nutrition.SEA_WRAP), true, false);
 	public static final RegistryObject<Item> LUNAR_PEARL = registerItem("lunar_pearl",
 		() -> new PearlItem((new Item.Properties())));
 	public static final RegistryObject<Item> SHIMMERING_APPLE = registerItem("shimmering_apple",
