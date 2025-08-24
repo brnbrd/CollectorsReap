@@ -1,0 +1,9 @@
+{
+  "values": [
+    "collectorsreap:limeade",
+    {
+      "id": "#forge:juices/lime_juice",
+      "required": false
+    }
+  ]
+}

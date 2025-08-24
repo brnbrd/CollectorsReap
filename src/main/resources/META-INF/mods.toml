@@ -53,6 +53,13 @@ configBackground = "collectorsreap:textures/block/pomegranate_ice_cream_block.pn
 	side = "BOTH"
 
 [[dependencies.collectorsreap]]
+	modId = "abnormals_delight"
+	mandatory = false
+	versionRange = "[5,)"
+	ordering = "AFTER"
+	side = "BOTH"
+
+[[dependencies.collectorsreap]]
 	modId = "atmospheric"
 	mandatory = false
 	versionRange = "[6.1,)"

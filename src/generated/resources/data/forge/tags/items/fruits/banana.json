@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "neapolitan:banana",
+      "id": "forge:fruits/banana",
       "required": false
     }
   ]

@@ -21,6 +21,7 @@
 - Added Hermit's Sour (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin))
 - Added Rosé Moon (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin))
 - Added Reanimator's Garden (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin) and [Atmospheric](https://www.curseforge.com/minecraft/mc-mods/atmospheric))
+- Clam Chowder now provides Comfort for 3:00
 - Lime Gummy now provides Corrosion for 0:10
 - Pomegranate Gummy now provides Volatility for 0:10
 - Apple Gummy now provides Comfort for 0:45

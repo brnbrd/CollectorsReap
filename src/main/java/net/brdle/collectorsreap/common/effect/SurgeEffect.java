@@ -8,6 +8,10 @@ import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 
 public class SurgeEffect extends MobEffect {
+	public static final int MAX_SURGE = 2;
+	public static final float SURGE_ZERO_MULTIPLIER = 1.2F;
+	public static final float SURGE_ONE_MULTIPLIER = 1.4F;
+	public static final float SURGE_TWO_MULTIPLIER = 1.6F;
 
 	/**
 	 * Striking an enemy can summon a lightning bolt
@@ -26,7 +30,7 @@ public class SurgeEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
-		if (amplifier == CREffects.MAX_SURGE) {
+		if (amplifier == SurgeEffect.MAX_SURGE) {
 			SurgeEffect.emitParticles(entity, 2);
 		}
 	}

@@ -8,8 +8,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class CREffects {
-	public static final int MAX_SURGE = 2;
-
 	public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, CollectorsReap.MODID);
 
 	public static final RegistryObject<MobEffect> CORROSION = EFFECTS.register("corrosion",

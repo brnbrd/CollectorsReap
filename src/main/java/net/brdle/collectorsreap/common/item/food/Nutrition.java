@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.common.item.food;
 
 import net.brdle.collectorsreap.common.effect.CREffects;
+import net.brdle.collectorsreap.common.effect.SurgeEffect;
 import net.brdle.collectorsreap.compat.ModCompat;
 import net.brdle.collectorsreap.compat.Mods;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -274,8 +275,8 @@ public class Nutrition {
 		.alwaysEat()
 		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 2400, 2), 1F)
 		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 1800, 1), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getRaging(), 2400, 1), 1F)
-		.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 2), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getRaging(), 2400, 0), 1F)
+		.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 0), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 2400, 4), 1F)
 		.build();
 	public static final FoodProperties HERMITS_SOUR = (new FoodProperties.Builder())
@@ -370,7 +371,7 @@ public class Nutrition {
 		.nutrition(7).saturationMod(0.5F).build();
 	public static final FoodProperties CLAM_CHOWDER = (new FoodProperties.Builder())
 		.nutrition(8).saturationMod(0.85F)
-		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
+		.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties CLAM_PASTA = (new FoodProperties.Builder())
 		.nutrition(11).saturationMod(0.85F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
@@ -393,7 +394,7 @@ public class Nutrition {
 		new MobEffectInstance(
 			CREffects.SURGE.get(),
 			600,
-			CREffects.MAX_SURGE,
+			SurgeEffect.MAX_SURGE,
 			false,
 			false,
 			true

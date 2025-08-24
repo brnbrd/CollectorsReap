@@ -54,7 +54,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE) + ".pollination", "A flowering Pomegranate Bush will grow fruit in the Overworld when pollinated by a Bee.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.STYGIAN_POMEGRANATE), "A dangerous variant that can be rarely picked from Pomegranate Bushes growing on Resurgent Soil.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PINK_DRAGON_FRUIT), "Pink Dragon Fruits can be found as a wild bush in the badlands.");
-		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.URCHIN_DART), "Throwable projectiles that poison enemies for five seconds upon contact. Holding a bamboo in your offhand shoots the dart for higher velocity.");
+		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.URCHIN_DART), "Poisonous projectiles that can be thrown by hand or fired using Bamboo in your offhand.");
 		add("config.jade.plugin_" + CollectorsReap.MODID + ".crop_progress", "Crop Progress");
 	}
 

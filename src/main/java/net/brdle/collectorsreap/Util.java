@@ -158,4 +158,8 @@ public class Util {
 	public static String name(RegistryObject<?> reg) {
 		return reg.getId().getPath();
 	}
+
+	public static float roundToHalf(float x) {
+		return (float) Math.round(x * 0.5F) / 0.5F;
+	}
 }

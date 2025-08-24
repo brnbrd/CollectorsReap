@@ -16,7 +16,7 @@
         "type": "brewinandchewin:fermenting",
         "basefluid": {
           "count": 1000,
-          "fluid": "brewinandchewin:vodka"
+          "fluid": "brewinandchewin:red_rum"
         },
         "experience": 1.0,
         "fermentingtime": 4800,

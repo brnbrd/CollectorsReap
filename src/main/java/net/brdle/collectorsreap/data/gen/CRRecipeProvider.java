@@ -380,7 +380,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"lime_dye_from_slice", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.TROPICAL_SHAVED_ICE)
 				.requires(Items.BOWL)
-				.requires(CRItemTags.RED_STRAWBERRIES)
+				.requires(CRItemTags.FRUITS_STRAWBERRY)
 				.requires(CRItems.PINK_DRAGON_FRUIT.get())
 				.requires(CRItemTags.ICE_CUBES)
 				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
@@ -446,11 +446,12 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.unlockedBy("has_limeade", has(CRItems.LIMEADE.get())),
 			"food/mint_limeade", finished, enabled(CRItems.MINT_LIMEADE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.MINT_LEAVES)));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.POMEGRANATE_SMOOTHIE)
-				.requires(Ingredient.of(CRItemTags.BANANA), 1)
 				.requires(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 2)
+				.requires(Ingredient.of(CRItemTags.FRUITS_BANANA), 1)
+				.requires(Ingredient.of(CRItemTags.ICE_CUBES))
 				.requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
-			"food/pomegranate_smoothie", finished, enabled(CRItems.POMEGRANATE_SMOOTHIE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.BANANA)));
+			"food/pomegranate_smoothie", finished, enabled(CRItems.POMEGRANATE_SMOOTHIE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.FRUITS_BANANA)), not(tagEmpty(CRItemTags.ICE_CUBES)));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.SALMON_TARTARE)
 				.requires(Ingredient.of(ForgeTags.RAW_FISHES_SALMON), 3)
 				.requires(CRItemTags.FRUITS_CITRUS)
@@ -493,10 +494,10 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.STRAWBERRY_JAM_BUN)
 				.requires(ForgeTags.DOUGH)
 				.requires(ForgeTags.MILK)
-				.requires(CRItemTags.RED_STRAWBERRIES)
+				.requires(CRItemTags.FRUITS_STRAWBERRY)
 				.requires(CRItemTags.FRUITS_LIME)
-				.unlockedBy("has_strawberries", has(CRItemTags.RED_STRAWBERRIES)),
-			"food/strawberry_jam_bun", finished, enabled(CRItems.STRAWBERRY_JAM_BUN), not(tagEmpty(CRItemTags.RED_STRAWBERRIES)), modLoaded("neapolitan"));
+				.unlockedBy("has_strawberries", has(CRItemTags.FRUITS_STRAWBERRY)),
+			"food/strawberry_jam_bun", finished, enabled(CRItems.STRAWBERRY_JAM_BUN), not(tagEmpty(CRItemTags.FRUITS_STRAWBERRY)), modLoaded("neapolitan"));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.BIG_RICE_BALL)
 				.requires(Items.DRIED_KELP)
 				.requires(ModItems.COOKED_RICE.get(), 3)

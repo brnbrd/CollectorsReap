@@ -76,11 +76,23 @@ public class ForgeEvents {
 		) {
 			final MobEffectInstance effectInstance = living.getEffect(surge);
 			if (effectInstance != null) {
+				final float beforeDamage = e.getAmount();
 				final int amplifier = effectInstance.getAmplifier();
 
-				// Hurt and knockback
-				e.setAmount(e.getAmount() + amplifier + 1F);
-				if (amplifier == CREffects.MAX_SURGE) {
+				// Hurt
+				e.setAmount(
+					Util.roundToHalf((beforeDamage + amplifier + 1F) *
+						switch (amplifier) {
+							case 0 -> SurgeEffect.SURGE_ZERO_MULTIPLIER;
+							case 1 -> SurgeEffect.SURGE_ONE_MULTIPLIER;
+							case 2 -> SurgeEffect.SURGE_TWO_MULTIPLIER;
+							default -> 1F;
+						}
+					)
+				);
+
+				// Knockback
+				if (amplifier == SurgeEffect.MAX_SURGE) {
 					SurgeEffect.emitParticles(hurt, 12);
 					hurt.knockback(2.2D, -living.getLookAngle().x(), -living.getLookAngle().z());
 				} else {
@@ -93,7 +105,7 @@ public class ForgeEvents {
 				living.addEffect(new MobEffectInstance(
 					surge,
 					duration,
-					amplifier >= CREffects.MAX_SURGE ? 0 : Math.min(CREffects.MAX_SURGE, amplifier + 1),
+					amplifier >= SurgeEffect.MAX_SURGE ? 0 : Math.min(SurgeEffect.MAX_SURGE, amplifier + 1),
 					effectInstance.isAmbient(),
 					effectInstance.isVisible(),
 					effectInstance.showIcon()

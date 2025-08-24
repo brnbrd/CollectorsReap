@@ -179,14 +179,20 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addOptional(Util.rl("naturalist", "duck_egg"))
 			.addOptional(Util.rl("autumnity", "turkey_egg"))
 			.addOptional(Util.rl("deep_aether", "quail_egg"));
+		this.tag(CRItemTags.JUICES_LIME)
+			.add(CRItems.LIMEADE.get())
+			.addOptionalTag(Util.rl("forge", "juices/lime_juice"));
+		this.tag(CRItemTags.JUICES)
+			.addTag(CRItemTags.JUICES_LIME)
+			.add(ModItems.MELON_JUICE.get());
 
 		// Neapolitan
-		this.addSelf(CRItemTags.BANANA);
+		this.addSelf(CRItemTags.FRUITS_BANANA);
 		this.addSelf(CRItemTags.DRIED_VANILLA_PODS);
 		this.addSelf(CRItemTags.CHOCOLATE_BAR);
 		this.addSelf(CRItemTags.MINT_LEAVES);
 		this.addSelf(CRItemTags.ROASTED_ADZUKI_BEANS);
-		this.tag(CRItemTags.RED_STRAWBERRIES).addOptional(Util.rl("neapolitan", "strawberries"));
+		this.tag(CRItemTags.FRUITS_STRAWBERRY).addOptional(Util.rl("neapolitan", "strawberries"));
 		this.tag(CRItemTags.ICE_CREAM)
 			.add(CRItems.LIME_ICE_CREAM.get())
 			.add(CRItems.POMEGRANATE_ICE_CREAM.get())

@@ -43,15 +43,23 @@ public class UrchinDartItem extends Item {
 	public void releaseUsing(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity entity, int timeLeft) {
 		if (entity instanceof Player player) {
 			if (this.getUseDuration(stack) - timeLeft >= 10) {
-				level.playSound(null, player.getX(), player.getY(), player.getZ(), CRSoundEvents.URCHIN_DART_THROW.get(), SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 				player.getCooldowns().addCooldown(this, 20);
 				if (!level.isClientSide()) {
-					float velocity = player.getItemInHand(InteractionHand.OFF_HAND)
-						.is(CRItemTags.DART_SHOOTERS) ? 2.8F : 2.1F;
+					boolean holdingShooter = player.getItemInHand(InteractionHand.OFF_HAND).is(CRItemTags.DART_SHOOTERS);
+					float velocity = holdingShooter ? 3F : 2F;
+					float inaccuracy = holdingShooter ? 1.1F : 1.5F;
 					UrchinDart dart = new UrchinDart(player, level);
-					dart.shootFromRotation(player, player.getXRot(), player.getYRot(), 0F, velocity, 1F);
+					dart.shootFromRotation(
+						player,
+						player.getXRot(),
+						player.getYRot(),
+						0F,
+						velocity,
+						inaccuracy
+					);
 					level.addFreshEntity(dart);
 				}
+				level.playSound(null, player.getX(), player.getY(), player.getZ(), CRSoundEvents.URCHIN_DART_THROW.get(), SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 				player.awardStat(Stats.ITEM_USED.get(this));
 				if (!player.getAbilities().instabuild) {
 					stack.shrink(1);

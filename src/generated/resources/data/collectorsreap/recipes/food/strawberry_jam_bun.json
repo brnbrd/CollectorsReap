@@ -14,7 +14,7 @@
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "neapolitan:red_strawberries"
+                "tag": "forge:fruits/strawberry"
               }
             },
             {
@@ -35,7 +35,7 @@
             "tag": "forge:milk"
           },
           {
-            "tag": "neapolitan:red_strawberries"
+            "tag": "forge:fruits/strawberry"
           },
           {
             "tag": "forge:fruits/lime"

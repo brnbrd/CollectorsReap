@@ -20,6 +20,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
@@ -55,11 +56,11 @@ public class CRItems extends ModItems {
 
 	public static final RegistryObject<Item> DRAGON_FRUIT_SEEDS = registerItem("dragon_fruit_seeds",
 		() -> new ItemNameBlockItem(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), basicItem()) {
-			public void registerBlocks(Map<Block, Item> blockToItemMap, Item item) {
+			public void registerBlocks(@NotNull Map<Block, Item> blockToItemMap, Item item) {
 				super.registerBlocks(blockToItemMap, item);
 				blockToItemMap.put(CRBlocks.PINK_DRAGON_FRUIT_CROP.get(), item);
 			}
-			public void removeFromBlockToItemMap(Map<Block, Item> blockToItemMap, Item itemIn) {
+			public void removeFromBlockToItemMap(@NotNull Map<Block, Item> blockToItemMap, Item itemIn) {
 				super.removeFromBlockToItemMap(blockToItemMap, itemIn);
 				blockToItemMap.remove(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
 			}
@@ -241,7 +242,7 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> CLAM_MEAT = registerFood("clam_meat", Nutrition.CLAM_MEAT);
 	public static final RegistryObject<Item> CLAM_ROLL = registerFood("clam_roll", Nutrition.CLAM_ROLL);
 	public static final RegistryObject<Item> CLAM_CHOWDER = registerFood("clam_chowder",
-		bowlFoodItem(Nutrition.CLAM_CHOWDER), false, false);
+		(new Item.Properties()).food(Nutrition.CLAM_CHOWDER).stacksTo(16), true, false);
 	public static final RegistryObject<Item> CLAM_PASTA = registerFood("clam_pasta",
 		bowlFoodItem(Nutrition.CLAM_PASTA), false, false);
 	public static final RegistryObject<Item> CLAM_MEATBALL_STEW = registerFood("clam_meatball_stew",

@@ -10,6 +10,8 @@ public class CRItemTags {
 	// Forge
 	public static final TagKey<Item> FRUITS = forge("fruits");
 	public static final TagKey<Item> FRUITS_CITRUS = forge("fruits/citrus");
+	public static final TagKey<Item> FRUITS_BANANA = forge("fruits/banana");
+	public static final TagKey<Item> FRUITS_STRAWBERRY = forge("fruits/strawberry");
 	public static final TagKey<Item> FRUITS_POMEGRANATE = forge("fruits/pomegranate");
 	public static final TagKey<Item> SEEDS_POMEGRANATE = forge("seeds/pomegranate");
 	public static final TagKey<Item> FRUITS_LIME = forge("fruits/lime");
@@ -39,6 +41,8 @@ public class CRItemTags {
 	public static final TagKey<Item> ROE_FISH = forge("roe/fish");
 	public static final TagKey<Item> ROE_PRAWN = forge("roe/prawn");
 	public static final TagKey<Item> NUGGETS_COPPER = forge("nuggets/copper");
+	public static final TagKey<Item> JUICES = forge("juices");
+	public static final TagKey<Item> JUICES_LIME = forge("juices/lime");
 
 	// CR
 	public static final TagKey<Item> GUMMIES = cr("gummies");
@@ -53,10 +57,8 @@ public class CRItemTags {
 
 	// Neapolitan
 	public static final TagKey<Item> ICE_CREAM = Util.it("neapolitan", "ice_cream");
-	public static final TagKey<Item> BANANA = Util.it("neapolitan", "banana");
 	public static final TagKey<Item> DRIED_VANILLA_PODS = Util.it("neapolitan", "dried_vanilla_pods");
 	public static final TagKey<Item> CHOCOLATE_BAR = Util.it("neapolitan", "chocolate_bar");
-	public static final TagKey<Item> RED_STRAWBERRIES = Util.it("neapolitan", "red_strawberries");
 	public static final TagKey<Item> MINT_LEAVES = Util.it("neapolitan", "mint_leaves");
 	public static final TagKey<Item> ROASTED_ADZUKI_BEANS = Util.it("neapolitan", "roasted_adzuki_beans");
 
