@@ -88,7 +88,7 @@ public class Clam extends WaterGroundCreature {
 	}
 
 	@Override
-	public @Nullable SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor worldIn, @NotNull DifficultyInstance difficultyIn, @NotNull MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
+	public SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor worldIn, @NotNull DifficultyInstance difficultyIn, @NotNull MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
 		if (dataTag == null) {
 			setVariant(getRandom().nextInt(VARIANTS));
 		} else if (dataTag.contains("Variant", 3)) {

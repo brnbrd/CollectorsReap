@@ -32,10 +32,9 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fluids.FluidType;
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import javax.annotation.Nonnull;
-import java.util.UUID;
 
 public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(ChieftainCrab.class, EntityDataSerializers.BOOLEAN);
@@ -50,11 +49,11 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 		this.setAirSupply(300);
 	}
 
-	public static AttributeSupplier.@NotNull Builder createAttributes() {
+	public static @NotNull AttributeSupplier.Builder createAttributes() {
 		return (
 			Mob.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 25D)
-				.add(Attributes.MOVEMENT_SPEED, 0.2D)
+				.add(Attributes.MOVEMENT_SPEED, 0.25D)
 				.add(Attributes.ATTACK_DAMAGE, 2D)
 		);
 	}
@@ -79,7 +78,7 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	@Override
-	public @Nonnull MobType getMobType() {
+	public @NotNull MobType getMobType() {
 		return MobType.ARTHROPOD;
 	}
 
@@ -183,7 +182,7 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	@Override
-	public @Nullable SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor worldIn, @NotNull DifficultyInstance difficultyIn, @NotNull MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
+	public @NotNull SpawnGroupData finalizeSpawn(@NotNull ServerLevelAccessor worldIn, @NotNull DifficultyInstance difficultyIn, @NotNull MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
 		if (dataTag != null && dataTag.contains("Health", 99)) {
 			this.setHealth(dataTag.getFloat("Health"));
 		}
@@ -206,8 +205,8 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	@Override
-	protected float getWaterSlowDown() {
-		return 0.98F;
+	public float getWaterSlowDown() {
+		return 0.9F;
 	}
 
 	@Override
@@ -216,17 +215,7 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	@Override
-	public boolean isPushedByFluid(FluidType type) {
-		return false;
-	}
-
-	@Override
-	public boolean causeFallDamage(float pFallDistance, float pMultiplier, @NotNull DamageSource pSource) {
-		return false;
-	}
-
-	@Override
-	public boolean canBeLeashed(@NotNull Player pPlayer) {
+	public boolean canBeLeashed(@NotNull Player player) {
 		return false;
 	}
 
@@ -251,19 +240,18 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	@Override
-	public void setRemainingPersistentAngerTime(int pTime) {
-		this.remainingPersistentAngerTime = pTime;
+	public void setRemainingPersistentAngerTime(int time) {
+		this.remainingPersistentAngerTime = time;
 	}
 
-	@Nullable
 	@Override
-	public UUID getPersistentAngerTarget() {
+	public @Nullable UUID getPersistentAngerTarget() {
 		return this.persistentAngerTarget;
 	}
 
 	@Override
-	public void setPersistentAngerTarget(@Nullable UUID pTarget) {
-		this.persistentAngerTarget = pTarget;
+	public void setPersistentAngerTarget(@Nullable UUID target) {
+		this.persistentAngerTarget = target;
 	}
 
 	@Override
