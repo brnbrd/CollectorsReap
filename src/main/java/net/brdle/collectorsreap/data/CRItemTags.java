@@ -7,7 +7,16 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
 public class CRItemTags {
+	// CR
+	public static final TagKey<Item> GUMMIES = cr("gummies");
+	public static final TagKey<Item> HOT_NETHER_FRUIT = cr("hot_nether_fruit");
+	public static final TagKey<Item> DART_SHOOTERS = cr("dart_shooters");
+
 	// Forge
+	public static final TagKey<Item> STORAGE_BLOCKS_LIME = forge("storage_blocks/lime");
+	public static final TagKey<Item> STORAGE_BLOCKS_POMEGRANATE = forge("storage_blocks/pomegranate");
+	public static final TagKey<Item> STORAGE_BLOCKS_STYGIAN_POMEGRANATE = forge("storage_blocks/stygian_pomegranate");
+	public static final TagKey<Item> STORAGE_BLOCKS_PINK_DRAGON_FRUIT = forge("storage_blocks/pink_dragon_fruit");
 	public static final TagKey<Item> FRUITS = forge("fruits");
 	public static final TagKey<Item> FRUITS_CITRUS = forge("fruits/citrus");
 	public static final TagKey<Item> FRUITS_BANANA = forge("fruits/banana");
@@ -43,11 +52,6 @@ public class CRItemTags {
 	public static final TagKey<Item> NUGGETS_COPPER = forge("nuggets/copper");
 	public static final TagKey<Item> JUICES = forge("juices");
 	public static final TagKey<Item> JUICES_LIME = forge("juices/lime");
-
-	// CR
-	public static final TagKey<Item> GUMMIES = cr("gummies");
-	public static final TagKey<Item> HOT_NETHER_FRUIT = cr("hot_nether_fruit");
-	public static final TagKey<Item> DART_SHOOTERS = cr("dart_shooters");
 
 	// Diet
 	public static final TagKey<Item> DIET_FRUITS = Util.it("diet", "fruits");

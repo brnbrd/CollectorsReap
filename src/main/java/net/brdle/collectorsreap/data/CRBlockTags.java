@@ -5,8 +5,8 @@ import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.entity.CREntities;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import org.jetbrains.annotations.NotNull;
 
 public class CRBlockTags {
 	// Collector's Reap
@@ -15,6 +15,12 @@ public class CRBlockTags {
 	public static final TagKey<Block> POMEGRANATE_FAST_ON = bind(CollectorsReap.MODID, "pomegranate_fast_on");
 	public static final TagKey<Block> STYGIAN_POMEGRANATE_GROWABLE_ON = bind(CollectorsReap.MODID, "stygian_pomegranate_growable_on");
 	public static final TagKey<Block> CRAB_SPAWNABLE_ON = bind(CollectorsReap.MODID, "crab_spawnable_on");
+
+	// Forge
+	public static final TagKey<Block> STORAGE_BLOCKS_LIME = forge("storage_blocks/lime");
+	public static final TagKey<Block> STORAGE_BLOCKS_POMEGRANATE = forge("storage_blocks/pomegranate");
+	public static final TagKey<Block> STORAGE_BLOCKS_STYGIAN_POMEGRANATE = forge("storage_blocks/stygian_pomegranate");
+	public static final TagKey<Block> STORAGE_BLOCKS_PINK_DRAGON_FRUIT = forge("storage_blocks/pink_dragon_fruit");
 
 	// Serene Seasons
 	public static final TagKey<Block> WINTER_CROPS = bind("sereneseasons", "winter_crops");
@@ -37,5 +43,9 @@ public class CRBlockTags {
 
 	private static TagKey<Block> bind(String modid, String name) {
 		return BlockTags.create(Util.rl(modid, name));
+	}
+
+	private static TagKey<Block> forge(@NotNull String name) {
+		return bind("forge", name);
 	}
 }

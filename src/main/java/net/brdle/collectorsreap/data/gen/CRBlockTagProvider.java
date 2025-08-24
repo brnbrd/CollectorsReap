@@ -65,6 +65,15 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.PINK_DRAGON_FRUIT_MILKSHAKE_CAULDRON.get());
 
 		// Forge
+		this.tag(CRBlockTags.STORAGE_BLOCKS_LIME).add(CRBlocks.LIME_CRATE.get());
+		this.tag(CRBlockTags.STORAGE_BLOCKS_POMEGRANATE).add(CRBlocks.POMEGRANATE_CRATE.get());
+		this.tag(CRBlockTags.STORAGE_BLOCKS_STYGIAN_POMEGRANATE).add(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get());
+		this.tag(CRBlockTags.STORAGE_BLOCKS_PINK_DRAGON_FRUIT).add(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get());
+		this.tag(Tags.Blocks.STORAGE_BLOCKS)
+			.addTag(CRBlockTags.STORAGE_BLOCKS_LIME)
+			.addTag(CRBlockTags.STORAGE_BLOCKS_POMEGRANATE)
+			.addTag(CRBlockTags.STORAGE_BLOCKS_STYGIAN_POMEGRANATE)
+			.addTag(CRBlockTags.STORAGE_BLOCKS_PINK_DRAGON_FRUIT);
 		this.tag(ForgeTags.MINEABLE_WITH_KNIFE)
 			.add(CRBlocks.PORTOBELLO_QUICHE.get())
 			.add(CRBlocks.LIME_PIE.get())

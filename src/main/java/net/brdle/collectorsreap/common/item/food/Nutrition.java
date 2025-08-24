@@ -352,10 +352,11 @@ public class Nutrition {
 	public static final FoodProperties CRAB_MISO = (new FoodProperties.Builder())
 		.nutrition(9).saturationMod(1F).build();
 	public static final FoodProperties CRAB_NOODLES = (new FoodProperties.Builder())
-		.nutrition(13).saturationMod(0.95F)
+		.nutrition(13).saturationMod(0.75F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties CRAB_LASAGNA = (new FoodProperties.Builder())
-		.nutrition(10).saturationMod(0.7F).build();
+		.nutrition(10).saturationMod(0.85F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1F).build();
 	public static final FoodProperties BUTTERED_LEGS = (new FoodProperties.Builder())
 		.nutrition(10).saturationMod(0.95F).build();
 	public static final FoodProperties BIG_RICE_BALL = (new FoodProperties.Builder())

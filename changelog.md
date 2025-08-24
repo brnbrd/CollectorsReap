@@ -27,7 +27,7 @@
 - Apple Gummy now provides Comfort for 0:45
 - Vanilla Gummy now provides Vanilla Scent for 0:10
 - Glow Berry Gummy will now provide Tracer III in presence of [Cosmopolitan](https://www.curseforge.com/minecraft/mc-mods/cosmopolitan)
-- Urchin Dart can be crafted using `forge:nuggets/copper` if the tag is populated
+- Urchin Dart can be crafted using `forge:nuggets/copper`
 - Powder Cannon from [My Nether's Delight](https://www.curseforge.com/minecraft/mc-mods/my-nethers-delight) can be used as an Urchin Dart shooter
 - Added more Coaster item models for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin)
 

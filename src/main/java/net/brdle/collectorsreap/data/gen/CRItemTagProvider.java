@@ -105,6 +105,15 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.RAW_URCHIN);
 
 		// Forge
+		this.tag(CRItemTags.STORAGE_BLOCKS_LIME).add(CRItems.LIME_CRATE.get());
+		this.tag(CRItemTags.STORAGE_BLOCKS_POMEGRANATE).add(CRItems.POMEGRANATE_CRATE.get());
+		this.tag(CRItemTags.STORAGE_BLOCKS_STYGIAN_POMEGRANATE).add(CRItems.STYGIAN_POMEGRANATE_CRATE.get());
+		this.tag(CRItemTags.STORAGE_BLOCKS_PINK_DRAGON_FRUIT).add(CRItems.PINK_DRAGON_FRUIT_CRATE.get());
+		this.tag(Tags.Items.STORAGE_BLOCKS)
+			.addTag(CRItemTags.STORAGE_BLOCKS_LIME)
+			.addTag(CRItemTags.STORAGE_BLOCKS_POMEGRANATE)
+			.addTag(CRItemTags.STORAGE_BLOCKS_STYGIAN_POMEGRANATE)
+			.addTag(CRItemTags.STORAGE_BLOCKS_PINK_DRAGON_FRUIT);
 		this.tag(CRItemTags.CHEESE).addOptional(Util.rl("brewinandchewin", "flaxen_cheese_wedge"));
 		this.tag(CRItemTags.forge("fruits/dragonfruit"))
 			.add(CRItems.PINK_DRAGON_FRUIT.get())
