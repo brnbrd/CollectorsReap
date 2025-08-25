@@ -82,10 +82,10 @@ public class ForgeEvents {
 				// Hurt
 				e.setAmount(
 					Util.roundToHalf((beforeDamage + amplifier + 1F) *
-						switch (amplifier) {
-							case 0 -> SurgeEffect.SURGE_ZERO_MULTIPLIER;
-							case 1 -> SurgeEffect.SURGE_ONE_MULTIPLIER;
-							case 2 -> SurgeEffect.SURGE_TWO_MULTIPLIER;
+						(float) switch (amplifier) {
+							case 0 -> CRConfig.SURGE_ZERO_MULTIPLIER.get();
+							case 1 -> CRConfig.SURGE_ONE_MULTIPLIER.get();
+							case 2 -> CRConfig.SURGE_TWO_MULTIPLIER.get();
 							default -> 1F;
 						}
 					)

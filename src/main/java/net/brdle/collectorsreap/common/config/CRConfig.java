@@ -6,45 +6,58 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.registries.RegistryObject;
 import java.util.HashMap;
-import java.util.Map;
 
 public class CRConfig {
-
 	public static final ForgeConfigSpec COMMON;
-	private static final Map<String, ForgeConfigSpec.BooleanValue> ITEMS = new HashMap<>();
+	private static final HashMap<String, ForgeConfigSpec.BooleanValue> ITEM_VALUES;
 
 	// COMMON
-	public static ForgeConfigSpec.BooleanValue LIME_POLLINATION;
-	public static ForgeConfigSpec.BooleanValue POMEGRANATE_POLLINATION;
-	public static ForgeConfigSpec.BooleanValue FAST_POLLINATE;
+	public static final ForgeConfigSpec.BooleanValue LIME_POLLINATION;
+	public static final ForgeConfigSpec.BooleanValue POMEGRANATE_POLLINATION;
+	public static final ForgeConfigSpec.BooleanValue FAST_POLLINATE;
+	public static final ForgeConfigSpec.DoubleValue SURGE_ZERO_MULTIPLIER;
+	public static final ForgeConfigSpec.DoubleValue SURGE_ONE_MULTIPLIER;
+	public static final ForgeConfigSpec.DoubleValue SURGE_TWO_MULTIPLIER;
 
 	static {
-		ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
+		final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-		COMMON_BUILDER.comment("Enabled items").push("Items");
+		BUILDER.push("Behavior");
+		LIME_POLLINATION = BUILDER
+			.comment("Whether Lime Bushes require Bee pollination to reach final growth stage.")
+			.define("lime_pollination", true);
+		POMEGRANATE_POLLINATION = BUILDER
+			.comment("Whether Pomegranate Bushes require Bee pollination to reach final growth stage in the Overworld.")
+			.define("pomegranate_pollination", true);
+		FAST_POLLINATE = BUILDER
+			.comment("Whether bee pollination of bushes should occur much quicker (when Bee collides with it) rather than on Bee's AI scheduled timing. Use this if having issues with pollination.")
+			.define("fast_pollinate", false);
+		BUILDER.pop();
+
+		BUILDER.push("Effects");
+		SURGE_ZERO_MULTIPLIER = BUILDER
+			.comment("Attack damage multiplier gained from Surge I.")
+			.defineInRange("surge_zero_multiplier", 1.2D, 1.0D, 10.0D);
+		SURGE_ONE_MULTIPLIER = BUILDER
+			.comment("Attack damage multiplier gained from Surge II.")
+			.defineInRange("surge_one_multiplier", 1.4D, 1.0D, 10.0D);
+		SURGE_TWO_MULTIPLIER = BUILDER
+			.comment("Attack damage multiplier gained from Surge III.")
+			.defineInRange("surge_two_multiplier", 1.6D, 1.0D, 10.0D);
+		BUILDER.pop();
+
+		ITEM_VALUES = new HashMap<>();
+		BUILDER.push("Items");
 		CRItems.ITEMS.getEntries().stream()
 			.map(obj -> obj.getId().getPath())
 			.sorted()
-			.forEach(name -> put(COMMON_BUILDER, name));
-		COMMON_BUILDER.pop();
-
-		COMMON_BUILDER.push("Behavior");
-		LIME_POLLINATION = COMMON_BUILDER
-			.comment("Whether Lime Bushes require Bee pollination to reach final growth stage.")
-			.define("lime_pollination", true);
-		POMEGRANATE_POLLINATION = COMMON_BUILDER
-			.comment("Whether Pomegranate Bushes require Bee pollination to reach final growth stage in the Overworld.")
-			.define("pomegranate_pollination", true);
-		FAST_POLLINATE = COMMON_BUILDER
-			.comment("Whether bee pollination of bushes should occur much quicker (when Bee collides with it) rather than on Bee's AI scheduled timing. Use this if having issues with pollination.")
-			.define("fast_pollinate", false);
-		COMMON_BUILDER.pop();
-
-		COMMON = COMMON_BUILDER.build();
+			.forEach(name -> defineItem(BUILDER, name));
+		BUILDER.pop();
+		COMMON = BUILDER.build();
 	}
 
 	public static boolean verify(String item) {
-		return contains(item) && ITEMS.get(item).get();
+		return contains(item) && ITEM_VALUES.get(item).get();
 	}
 
 	public static boolean verify(RegistryObject<Item> item) {
@@ -55,11 +68,11 @@ public class CRConfig {
 		return verify(Util.name(item));
 	}
 
-	private static void put(ForgeConfigSpec.Builder builder, String name) {
-		CRConfig.ITEMS.put(name, builder.define(name, true));
+	private static void defineItem(ForgeConfigSpec.Builder builder, String name) {
+		ITEM_VALUES.put(name, builder.define(name, true));
 	}
 
 	private static boolean contains(String item) {
-		return ITEMS.containsKey(item);
+		return ITEM_VALUES.containsKey(item);
 	}
 }

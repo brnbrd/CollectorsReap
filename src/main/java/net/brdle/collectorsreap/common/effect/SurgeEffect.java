@@ -9,12 +9,9 @@ import org.jetbrains.annotations.NotNull;
 
 public class SurgeEffect extends MobEffect {
 	public static final int MAX_SURGE = 2;
-	public static final float SURGE_ZERO_MULTIPLIER = 1.2F;
-	public static final float SURGE_ONE_MULTIPLIER = 1.4F;
-	public static final float SURGE_TWO_MULTIPLIER = 1.6F;
 
 	/**
-	 * Striking an enemy can summon a lightning bolt
+	 * Extra damage when striking an enemy, building up power with strikes
 	 */
 	protected SurgeEffect() {
 		super(MobEffectCategory.BENEFICIAL, 0xF1A3D2);
