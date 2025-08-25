@@ -33,6 +33,7 @@
 
 ### Fixes
 - Some items that previously didn't display effects in their tooltip now do
+- Fixed Key Lime Pie texture alignment
 
 
 ## 1.3.4
