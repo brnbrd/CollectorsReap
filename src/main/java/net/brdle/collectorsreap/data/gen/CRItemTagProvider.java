@@ -56,6 +56,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.YELLOW_TEA_GUMMY.get())
 			.add(CRItems.BLACK_TEA_GUMMY.get())
 			.add(CRItems.COFFEE_GUMMY.get());
+		this.tag(CRItemTags.CHIEFTAIN_CRAB_FOOD)
+			.addTag(CRItemTags.CLAM)
+			.addTag(CRItemTags.RAW_CLAM);
 
 		// Minecraft
 		this.tag(ItemTags.TRIM_MATERIALS).add(CRItems.LUNAR_PEARL.get());
@@ -150,6 +153,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addOptional(Util.rl("crabbersdelight", "crab_legs"))
 			.addOptional(Util.rl("ecologics", "crab_meat"))
 			.addOptional(Util.rl("quark", "cooked_crab_leg"));
+		this.tag(CRItemTags.CLAM)
+			.add(CRItems.CLAM.get())
+			.addOptional(Util.rl("crabbersdelight", "clam"));
 		this.tag(CRItemTags.RAW_CLAM)
 			.add(CRItems.CLAM_MEAT.get())
 			.addOptional(Util.rl("crabbersdelight", "raw_clam_meat"));

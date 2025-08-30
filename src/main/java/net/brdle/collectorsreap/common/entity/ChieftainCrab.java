@@ -2,6 +2,7 @@ package net.brdle.collectorsreap.common.entity;
 
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.data.CRBlockTags;
+import net.brdle.collectorsreap.data.CRItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -53,7 +54,7 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 		return (
 			Mob.createMobAttributes()
 				.add(Attributes.MAX_HEALTH, 25D)
-				.add(Attributes.MOVEMENT_SPEED, 0.25D)
+				.add(Attributes.MOVEMENT_SPEED, 0.3D)
 				.add(Attributes.ATTACK_DAMAGE, 2D)
 		);
 	}
@@ -69,7 +70,8 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 
 	protected void registerGoals() {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
-		this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(1, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
 		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1D));
 		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6F));
 		this.goalSelector.addGoal(5, new AvoidEntityGoal<>(this, Player.class, 6F, 1.5D, 2D));
@@ -139,8 +141,8 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	@Override
-	public void setFromBucket(boolean pFromBucket) {
-		this.entityData.set(FROM_BUCKET, pFromBucket);
+	public void setFromBucket(boolean fromBucket) {
+		this.entityData.set(FROM_BUCKET, fromBucket);
 	}
 
 	@Override
@@ -190,6 +192,11 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	@Override
+	public boolean isFood(ItemStack stack) {
+		return stack.is(CRItemTags.CHIEFTAIN_CRAB_FOOD);
+	}
+
+	@Override
 	public @Nullable AgeableMob getBreedOffspring(@NotNull ServerLevel level, @NotNull AgeableMob other) {
 		return CREntities.CHIEFTAIN_CRAB.get().create(level);
 	}
@@ -215,12 +222,7 @@ public class ChieftainCrab extends Animal implements NeutralMob, Bucketable {
 	}
 
 	@Override
-	public boolean canBeLeashed(@NotNull Player player) {
-		return false;
-	}
-
-	@Override
-	protected SoundEvent getHurtSound(@NotNull DamageSource pDamageSource) {
+	protected SoundEvent getHurtSound(@NotNull DamageSource damageSource) {
 		return SoundEvents.TROPICAL_FISH_HURT;
 	}
 

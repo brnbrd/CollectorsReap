@@ -197,13 +197,13 @@ public class Nutrition {
 		.build();
 	public static final FoodProperties LIME_GREEN_TEA = (new FoodProperties.Builder())
 		.alwaysEat()
+		.effect(() -> new MobEffectInstance(ModCompat.getVitality(), 3600, 0), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 0), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getVitality(), 1200, 0), 1F)
 		.build();
 	public static final FoodProperties POMEGRANATE_BLACK_TEA = (new FoodProperties.Builder())
 		.alwaysEat()
+		.effect(() -> new MobEffectInstance(ModCompat.getMaturity(), 600, 0), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getMaturity(), 1200, 0), 1F)
 		.build();
 	public static final FoodProperties POMEGRANATE_SMOOTHIE = (new FoodProperties.Builder())
 		.nutrition(3).saturationMod(0.166F)

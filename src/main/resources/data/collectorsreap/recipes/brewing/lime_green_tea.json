@@ -11,15 +11,12 @@
               "value": "lime_green_tea"
             },
             {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:tag_empty",
-                "tag": "forge:tea_leaves/green"
-              }
-            },
-            {
               "type": "forge:mod_loaded",
               "modid": "farmersrespite"
+            },
+            {
+              "type": "forge:item_exists",
+              "item": "farmersrespite:green_tea"
             }
           ]
         }
@@ -28,16 +25,13 @@
         "type": "farmersrespite:brewing",
         "base": {
           "count": 1000,
-          "fluid": "minecraft:water"
+          "fluid": "farmersrespite:green_tea"
         },
-        "cookingtime": 2400,
+        "cookingtime": 1200,
         "experience": 0.35,
         "ingredients": [
           {
             "tag": "forge:fruits/lime"
-          },
-          {
-            "tag": "forge:tea_leaves/green"
           }
         ],
         "result": {

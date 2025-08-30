@@ -11,6 +11,7 @@ public class CRItemTags {
 	public static final TagKey<Item> GUMMIES = cr("gummies");
 	public static final TagKey<Item> HOT_NETHER_FRUIT = cr("hot_nether_fruit");
 	public static final TagKey<Item> DART_SHOOTERS = cr("dart_shooters");
+	public static final TagKey<Item> CHIEFTAIN_CRAB_FOOD = cr("chieftain_crab_food");
 
 	// Forge
 	public static final TagKey<Item> STORAGE_BLOCKS_LIME = forge("storage_blocks/lime");
@@ -36,6 +37,7 @@ public class CRItemTags {
 	public static final TagKey<Item> COFFEE_BEANS = forge("coffee_beans");
 	public static final TagKey<Item> RAW_CRAB_MEAT = forge("raw_crab_meat");
 	public static final TagKey<Item> COOKED_CRAB_MEAT = forge("cooked_crab_meat");
+	public static final TagKey<Item> CLAM = forge("clam");
 	public static final TagKey<Item> RAW_CLAM = forge("raw_clam");
 	public static final TagKey<Item> RAW_URCHIN = forge("raw_urchin");
 	public static final TagKey<Item> RAW_PRAWN = forge("raw_prawn");

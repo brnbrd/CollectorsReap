@@ -1,10 +1,11 @@
-// 1.20.1	2025-08-25T15:33:11.2094916	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2025-08-30T13:17:47.4453279	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
 a740abeb613a7024a35910efe912a50a6ee62045 data/atmospheric/tags/items/yucca_fruit.json
 748e9338cb0e08e973af854da7e0a45c328db6fb data/autumnity/tags/items/snail_snacks.json
 d50b079e648b866cfdbbc59feeeec814ec391a64 data/brewinandchewin/tags/items/fermented_drinks.json
+bc152e3055d651ccdad9d17d1bffdbb9ebde35b5 data/collectorsreap/tags/items/chieftain_crab_food.json
 e0f1081b33dba4a0923dc182be2af337db73c5bb data/collectorsreap/tags/items/dart_shooters.json
 ff8a483f39a54d0513300f71482aab57ea79c9fd data/collectorsreap/tags/items/gummies.json
 88055c196d1b1d1dc8d81f028dba0bb58d473524 data/collectorsreap/tags/items/hot_nether_fruit.json
@@ -15,6 +16,7 @@ ff8a483f39a54d0513300f71482aab57ea79c9fd data/collectorsreap/tags/items/gummies.
 239c83436e79910a542752ec670434fd45a1fa58 data/farmersdelight/tags/items/cabbage_roll_ingredients.json
 e8c935b46f78b33b0caa4da2d5ff093a9b7ec404 data/farmersdelight/tags/items/wild_crops.json
 fe63f8c3ef63f67fc77ab4980e0a4b77082cee44 data/forge/tags/items/cheese.json
+168e185b50eb550a93ccf073e812daf0ab7f2f2d data/forge/tags/items/clam.json
 a8065ce90afaf0435704b6ddde9324fea9dd89e1 data/forge/tags/items/coffee_beans.json
 e260661428d1742c6e84ba84f74856e2d0e5ab5f data/forge/tags/items/cooked_crab_meat.json
 fcf99e6f110fcae994598f43ef0f6aef5f03c708 data/forge/tags/items/cooked_fishes.json

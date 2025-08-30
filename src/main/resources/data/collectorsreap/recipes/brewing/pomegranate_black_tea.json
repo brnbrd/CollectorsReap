@@ -20,6 +20,10 @@
             {
               "type": "forge:mod_loaded",
               "modid": "farmersrespite"
+            },
+            {
+              "type": "forge:item_exists",
+              "item": "farmersrespite:black_tea"
             }
           ]
         }
@@ -28,16 +32,13 @@
         "type": "farmersrespite:brewing",
         "base": {
           "count": 1000,
-          "fluid": "minecraft:water"
+          "fluid": "farmersrespite:black_tea"
         },
-        "cookingtime": 2400,
+        "cookingtime": 1200,
         "experience": 0.35,
         "ingredients": [
           {
             "tag": "forge:fruits/pomegranate"
-          },
-          {
-            "tag": "forge:tea_leaves/black"
           }
         ],
         "result": {
