@@ -8,6 +8,7 @@
   - Increases melee damage; gaining amplifier with successful strikes
   - Resets upon landing a hit at maximum amplifier
 - Added Pink Dragon Fruit
+  - Dragon Bush can be found in the Badlands biome
 - Added Pink Dragon Fruit Gummy
 - Added Pink Dragon Fruit Cake
 - Added Dried Pink Dragon Fruit
