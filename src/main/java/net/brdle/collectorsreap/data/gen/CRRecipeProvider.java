@@ -257,14 +257,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
 				.addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB_MEAT), 2)
 				.unlockedBy("has_cooked_crab", has(CRItemTags.COOKED_CRAB_MEAT)),
-			"food/crab_lasagna", finished, enabled(CRItems.CRAB_LASAGNA), not(tagEmpty(CRItemTags.CHEESE)));
-		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_LASAGNA.get(), 1, 200, 1F, Items.BOWL)
-				.addIngredient(ForgeTags.MILK)
-				.addIngredient(ModItems.TOMATO_SAUCE.get())
-				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
-				.addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB_MEAT), 2)
-				.unlockedBy("has_cooked_crab", has(CRItemTags.COOKED_CRAB_MEAT)),
-			"food/crab_lasagna_from_milk", finished, enabled(CRItems.CRAB_LASAGNA), tagEmpty(CRItemTags.CHEESE));
+			"food/crab_lasagna", finished, enabled(CRItems.CRAB_LASAGNA));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_NOODLES.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB_MEAT), 2)
 				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
@@ -321,13 +314,19 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.addIngredient(ForgeTags.VEGETABLES_POTATO)
 				.unlockedBy("has_cooked_prawn", has(CRItemTags.COOKED_PRAWN)),
 			"food/prawn_stew", finished, enabled(CRItems.PRAWN_STEW));
-		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PLATINUM_BASS_STEW.get(), 1, 200, 1F)
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PLATINUM_BASS_STEW.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItems.PLATINUM_BASS_HEAD.get())
 				.addIngredient(CRItems.PLATINUM_BASS_SLICE.get())
 				.addIngredient(ForgeTags.GRAIN_RICE)
 				.addIngredient(CRItemTags.FRUITS_LIME)
 				.unlockedBy("has_platinum_bass_head", has(CRItems.PLATINUM_BASS_HEAD.get())),
 			"food/platinum_bass_stew", finished, enabled(CRItems.PLATINUM_BASS_STEW));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CREAM_CHEESE.get(), 1, 12000, 1F, Items.BOWL)
+				.addIngredient(ForgeTags.MILK)
+				.addIngredient(CRItemTags.FRUITS_LIME)
+				.addIngredient(CRItemTags.FRUITS_LIME)
+				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+			"food/cream_cheese", finished, enabled(CRItems.CREAM_CHEESE), not(modLoaded("brewinandchewin")));
 
 		// Crafting
 		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRItems.PINK_DRAGON_FRUIT, 9)
@@ -626,18 +625,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.define('e', Tags.Items.EGGS)
 				.define('r', ModItems.PIE_CRUST.get())
 				.unlockedBy("has_portobello", has(CRItemTags.MUSHROOMS_PORTOBELLO)),
-			"food/portobello_quiche", finished, enabled(CRItems.PORTOBELLO_QUICHE), not(tagEmpty(CRItemTags.CHEESE)));
-		wrap(shaped(RecipeCategory.FOOD, CRItems.PORTOBELLO_QUICHE)
-				.pattern("pop")
-				.pattern("mmm")
-				.pattern("ere")
-				.define('p', CRItemTags.MUSHROOMS_PORTOBELLO)
-				.define('o', ForgeTags.VEGETABLES_ONION)
-				.define('m', ForgeTags.MILK)
-				.define('e', Tags.Items.EGGS)
-				.define('r', ModItems.PIE_CRUST.get())
-				.unlockedBy("has_portobello", has(CRItemTags.MUSHROOMS_PORTOBELLO)),
-			"food/portobello_quiche_from_milk", finished, enabled(CRItems.PORTOBELLO_QUICHE), tagEmpty(CRItemTags.CHEESE));
+			"food/portobello_quiche", finished, enabled(CRItems.PORTOBELLO_QUICHE));
 		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CRItems.PORTOBELLO_QUICHE.get(), 1)
 				.requires(CRItems.PORTOBELLO_QUICHE_SLICE.get(), 4)
 				.unlockedBy("has_portobello_quiche_slice", has(CRItems.PORTOBELLO_QUICHE_SLICE.get())),

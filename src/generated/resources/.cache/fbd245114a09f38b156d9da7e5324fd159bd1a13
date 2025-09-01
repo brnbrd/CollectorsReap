@@ -1,4 +1,4 @@
-// 1.20.1	2025-08-30T13:17:47.432336	Item Models: collectorsreap
+// 1.20.1	2025-09-01T08:12:30.65044	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -36,6 +36,7 @@ caf518a4223b5845b7931310d5526d490c881fe8 assets/collectorsreap/models/item/clam_
 b3ec01ff2712dee8521a256be1d817a14a150226 assets/collectorsreap/models/item/crab_lasagna.json
 28e8f563d25f51caff9f497bf65f2209b5d6c99b assets/collectorsreap/models/item/crab_miso.json
 a9eacaf29650dd5297e36ce042addb5086185ceb assets/collectorsreap/models/item/crab_noodles.json
+059aeeff7a1f52067adff7d2de337fc493cd0d7a assets/collectorsreap/models/item/cream_cheese.json
 65c1291027378fac40205c9b17c349f6299f38c1 assets/collectorsreap/models/item/crimson_carrot_roast.json
 a46ae0d5ee7b83356ffa9fba928491773b45a2f1 assets/collectorsreap/models/item/deific_blood.json
 607b14139019a384422dc58f34b4f71748b2d7d6 assets/collectorsreap/models/item/deluxe_salad.json

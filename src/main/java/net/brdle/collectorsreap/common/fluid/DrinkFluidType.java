@@ -13,7 +13,7 @@ public class DrinkFluidType extends FluidType {
 	private final int tintColor;
 
 	public DrinkFluidType(int tintColor) {
-		super(Properties.create()
+		super(FluidType.Properties.create()
 			.sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
 			.sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
 			.sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH)

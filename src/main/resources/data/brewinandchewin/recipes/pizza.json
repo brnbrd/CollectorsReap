@@ -1,0 +1,40 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:item_exists",
+          "item": "brewinandchewin:pizza"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "f": {
+            "tag": "forge:cheese"
+          },
+          "p": {
+            "tag": "brewinandchewin:pizza_toppings"
+          },
+          "t": {
+            "item": "farmersdelight:tomato_sauce"
+          },
+          "w": {
+            "tag": "forge:grain/wheat"
+          }
+        },
+        "pattern": [
+          " f ",
+          "ptp",
+          "www"
+        ],
+        "result": {
+          "item": "brewinandchewin:pizza"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

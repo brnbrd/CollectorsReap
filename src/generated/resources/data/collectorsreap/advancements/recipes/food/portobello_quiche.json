@@ -36,20 +36,8 @@
       },
       "conditions": [
         {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "collectorsreap:enabled",
-              "value": "portobello_quiche"
-            },
-            {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:tag_empty",
-                "tag": "forge:cheese"
-              }
-            }
-          ]
+          "type": "collectorsreap:enabled",
+          "value": "portobello_quiche"
         }
       ]
     }

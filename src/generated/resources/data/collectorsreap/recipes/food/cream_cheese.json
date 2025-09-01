@@ -8,11 +8,14 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "crab_lasagna"
+              "value": "cream_cheese"
             },
             {
-              "type": "forge:tag_empty",
-              "tag": "forge:cheese"
+              "type": "forge:not",
+              "value": {
+                "type": "forge:mod_loaded",
+                "modid": "brewinandchewin"
+              }
             }
           ]
         }
@@ -22,27 +25,21 @@
         "container": {
           "item": "minecraft:bowl"
         },
-        "cookingtime": 200,
+        "cookingtime": 12000,
         "experience": 1.0,
         "ingredients": [
           {
             "tag": "forge:milk"
           },
           {
-            "item": "farmersdelight:tomato_sauce"
+            "tag": "forge:fruits/lime"
           },
           {
-            "tag": "forge:pasta/raw_pasta"
-          },
-          {
-            "tag": "forge:cooked_crab_meat"
-          },
-          {
-            "tag": "forge:cooked_crab_meat"
+            "tag": "forge:fruits/lime"
           }
         ],
         "result": {
-          "item": "collectorsreap:crab_lasagna"
+          "item": "collectorsreap:cream_cheese"
         }
       }
     }

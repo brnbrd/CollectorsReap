@@ -40,6 +40,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		add(FarmersDelight.MODID + ".tooltip.melon_gummy", "Minor Instant Health");
 		add(FarmersDelight.MODID + ".tooltip.strawberry_gummy", "Instant Health");
 		add("trim_material." + CollectorsReap.MODID + ".pearl", "Pearl Material");
+		add("fluid_type." + CollectorsReap.MODID + ".cream_cheese_type", "Cream Cheese");
 		add("fluid_type." + CollectorsReap.MODID + ".lime_green_tea_type", "Lime Green Tea");
 		add("fluid_type." + CollectorsReap.MODID + ".pomegranate_black_tea_type", "Pomegranate Black Tea");
 		add("fluid_type." + CollectorsReap.MODID + ".deific_blood_type", "Deific Blood");
@@ -196,6 +197,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.GLAZED_STRIDER, "Glazed Strider");
 		addItem(CRItems.CRIMSON_CARROT_ROAST, "Crimson Carrot Roast");
 		addItem(CRItems.DELUXE_SALAD, "Deluxe Salad");
+		addItem(CRItems.CREAM_CHEESE, "Cream Cheese");
 		addItem(CRItems.LIME_CAKE_SLICE, "Slice of Lime Cake");
 		addItem(CRItems.POMEGRANATE_CAKE_SLICE, "Slice of Pomegranate Cake");
 		addItem(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE, "Slice of Pink Dragon Fruit Cake");

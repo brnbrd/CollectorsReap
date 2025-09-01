@@ -4,11 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_cooked_crab": {
+          "has_lime": {
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:cooked_crab_meat"
+                  "tag": "forge:fruits/lime"
                 }
               ]
             },
@@ -16,20 +16,20 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/crab_lasagna_from_milk"
+              "recipe": "collectorsreap:food/cream_cheese"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_cooked_crab",
+            "has_lime",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/crab_lasagna_from_milk"
+            "collectorsreap:food/cream_cheese"
           ]
         },
         "sends_telemetry_event": true
@@ -40,11 +40,14 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "crab_lasagna"
+              "value": "cream_cheese"
             },
             {
-              "type": "forge:tag_empty",
-              "tag": "forge:cheese"
+              "type": "forge:not",
+              "value": {
+                "type": "forge:mod_loaded",
+                "modid": "brewinandchewin"
+              }
             }
           ]
         }

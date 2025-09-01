@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "brewinandchewin"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "cream_cheese"
+        },
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:salt"
+        }
+      ],
+      "recipe": {
+        "type": "brewinandchewin:fermenting",
+        "basefluid": {
+          "count": 1000,
+          "fluid": "minecraft:milk"
+        },
+        "experience": 1.0,
+        "fermentingtime": 12000,
+        "ingredients": [
+          {
+            "tag": "forge:fruits/lime"
+          },
+          {
+            "tag": "forge:fruits/lime"
+          }
+        ],
+        "recipe_book_tab": "meals",
+        "result": {
+          "count": 1000,
+          "fluid": "collectorsreap:cream_cheese"
+        },
+        "temperature": 5
+      }
+    }
+  ]
+}

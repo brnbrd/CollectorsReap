@@ -126,6 +126,8 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.POMEGRANATE_CHICKEN), true, false);
 	public static final RegistryObject<Item> DELUXE_SALAD = registerFood("deluxe_salad",
 		bowlFoodItem(Nutrition.DELUXE_SALAD), true, false);
+	public static final RegistryObject<Item> CREAM_CHEESE = registerFood("cream_cheese",
+		bowlFoodItem(Nutrition.CREAM_CHEESE), false, false);
 	public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerDrink("pomegranate_custard",
 		drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), true, false);
 	public static final RegistryObject<Item> LIMEADE = registerDrink("limeade",

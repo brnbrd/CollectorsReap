@@ -217,6 +217,8 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 600, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 600, 0), 1F)
 		.build();
+	public static final FoodProperties CREAM_CHEESE = (new FoodProperties.Builder())
+		.nutrition(4).saturationMod(0.5F).build();
 	public static final FoodProperties STRAWBERRY_JAM_BUN = (new FoodProperties.Builder())
 		.nutrition(6).saturationMod(0.5F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 400, 0), 1F)
