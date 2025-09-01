@@ -1,9 +1,6 @@
 {
   "values": [
-    "collectorsreap:cream_cheese",
-    {
-      "id": "brewinandchewin:flaxen_cheese_wedge",
-      "required": false
-    }
+    "#forge:cheese/mild/cream",
+    "#forge:cheese/mild/flaxen"
   ]
 }

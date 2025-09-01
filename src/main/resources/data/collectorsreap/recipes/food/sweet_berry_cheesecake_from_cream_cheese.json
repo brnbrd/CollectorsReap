@@ -32,7 +32,7 @@
             "item": "minecraft:sweet_berries"
           },
           {
-            "item": "collectorsreap:cream_cheese"
+            "tag": "forge:cheese/mild/cream"
           },
           {
             "item": "farmersdelight:pie_crust"

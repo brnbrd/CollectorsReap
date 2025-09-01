@@ -252,7 +252,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.unlockedBy("has_crab_bucket", has(CRItems.CHIEFTAIN_CRAB_BUCKET.get())),
 			"food/chieftain_crab", finished, enabled("chieftain_crab"));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_LASAGNA.get(), 1, 200, 1F, Items.BOWL)
-				.addIngredient(CRItemTags.CHEESE)
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
 				.addIngredient(ModItems.TOMATO_SAUCE.get())
 				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
 				.addIngredient(Ingredient.of(CRItemTags.COOKED_CRAB_MEAT), 2)

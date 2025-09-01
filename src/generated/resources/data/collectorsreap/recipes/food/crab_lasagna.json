@@ -17,7 +17,7 @@
         "experience": 1.0,
         "ingredients": [
           {
-            "tag": "forge:cheese"
+            "tag": "forge:cheese/mild/cream"
           },
           {
             "item": "farmersdelight:tomato_sauce"
