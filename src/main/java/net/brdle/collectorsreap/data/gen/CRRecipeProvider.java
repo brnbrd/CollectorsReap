@@ -424,12 +424,12 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/limeade", finished, enabled(CRItems.LIMEADE));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.BERRY_LIMEADE)
 				.requires(CRItems.LIMEADE.get(), 1)
-				.requires(Ingredient.of(ForgeTags.BERRIES), 3)
+				.requires(Ingredient.of(ForgeTags.BERRIES), 2)
 				.unlockedBy("has_limeade", has(CRItems.LIMEADE.get())),
 			"food/berry_limeade", finished, enabled(CRItems.BERRY_LIMEADE));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.PINK_LIMEADE)
 				.requires(CRItems.LIMEADE.get(), 1)
-				.requires(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 3)
+				.requires(Ingredient.of(CRItemTags.FRUITS_POMEGRANATE), 2)
 				.unlockedBy("has_limeade", has(CRItems.LIMEADE.get())),
 			"food/pink_limeade", finished, enabled(CRItems.PINK_LIMEADE));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.MINT_LIMEADE)
