@@ -13,10 +13,10 @@
         "category": "misc",
         "ingredients": [
           {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:lime_slice"
           },
           {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:lime_slice"
           },
           {
             "item": "minecraft:sugar"

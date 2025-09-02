@@ -39,12 +39,28 @@ public class JEIPlugin implements IModPlugin {
 		registration.addItemStackInfo(Util.gs(CRItems.PORTOBELLO), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO)));
 
 		if (!Mods.stringLoaded("farmersrespite")) {
+			registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, List.of(
+				CRItems.STRONG_LIMEADE.get().getDefaultInstance(),
+				CRItems.LIME_GREEN_TEA.get().getDefaultInstance(),
+				CRItems.POMEGRANATE_BLACK_TEA.get().getDefaultInstance()
+			));
 			registration.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, List.of(
+				new FluidStack(CRFluids.LIME_JUICE.get(), 1000),
+				new FluidStack(CRFluids.STRONG_LIME_JUICE.get(), 1000),
+				new FluidStack(CRFluids.BERRY_LIMEADE.get(), 1000),
+				new FluidStack(CRFluids.PINK_LIMEADE.get(), 1000),
+				new FluidStack(CRFluids.MINT_LIMEADE.get(), 1000),
 				new FluidStack(CRFluids.LIME_GREEN_TEA.get(), 1000),
 				new FluidStack(CRFluids.POMEGRANATE_BLACK_TEA.get(), 1000)
 			));
 		}
 		if (!Mods.stringLoaded("brewinandchewin")) {
+			registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, List.of(
+				CRItems.DEIFIC_BLOOD.get().getDefaultInstance(),
+				CRItems.HERMITS_SOUR.get().getDefaultInstance(),
+				CRItems.ROSE_MOON.get().getDefaultInstance(),
+				CRItems.REANIMATORS_GARDEN.get().getDefaultInstance()
+			));
 			registration.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, List.of(
 				new FluidStack(CRFluids.DEIFIC_BLOOD.get(), 1000),
 				new FluidStack(CRFluids.HERMITS_SOUR.get(), 1000),

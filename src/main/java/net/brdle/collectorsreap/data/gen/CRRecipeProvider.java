@@ -417,7 +417,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
 			"food/portobello_burger_from_bun", finished, enabled(CRItems.PORTOBELLO_BURGER), not(tagEmpty(CRItemTags.BURGER_BUN)));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.LIMEADE)
-				.requires(Ingredient.of(CRItemTags.FRUITS_LIME), 2)
+				.requires(CRItems.LIME_SLICE.get(), 2)
 				.requires(Items.SUGAR)
 				.requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),

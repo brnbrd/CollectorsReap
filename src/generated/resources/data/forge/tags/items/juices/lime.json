@@ -1,6 +1,7 @@
 {
   "values": [
     "collectorsreap:limeade",
+    "collectorsreap:strong_limeade",
     {
       "id": "#forge:juices/lime_juice",
       "required": false

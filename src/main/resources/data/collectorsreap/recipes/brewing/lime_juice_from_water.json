@@ -16,15 +16,11 @@
             },
             {
               "type": "collectorsreap:enabled",
-              "value": "lime_green_tea"
+              "value": "limeade"
             },
             {
               "type": "forge:mod_loaded",
               "modid": "farmersrespite"
-            },
-            {
-              "type": "forge:item_exists",
-              "item": "farmersrespite:green_tea"
             }
           ]
         }
@@ -33,18 +29,21 @@
         "type": "farmersrespite:brewing",
         "base": {
           "count": 1000,
-          "fluid": "farmersrespite:green_tea"
+          "fluid": "minecraft:water"
         },
-        "cookingtime": 1200,
+        "cookingtime": 2400,
         "experience": 0.35,
         "ingredients": [
           {
             "item": "collectorsreap:lime_slice"
+          },
+          {
+            "item": "minecraft:sugar"
           }
         ],
         "result": {
           "count": 1000,
-          "fluid": "collectorsreap:lime_green_tea"
+          "fluid": "collectorsreap:lime_juice"
         }
       }
     }

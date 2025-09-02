@@ -80,14 +80,14 @@ public class Nutrition {
 		.build();
 	public static final FoodProperties LIME = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(0.2F)
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 100, 0), 1F).build();
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 200, 0), 1F).build();
 	public static final FoodProperties LIME_SLICE = (new FoodProperties.Builder())
 		.nutrition(1).saturationMod(0.2F).fast()
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 60, 0), 1F).build();
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 100, 0), 1F).build();
 	public static final FoodProperties LIME_PIE_SLICE = (new FoodProperties.Builder())
 		.nutrition(3).saturationMod(0.2F)
 		.fast()
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 200, 1), 1F).build();
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 300, 1), 1F).build();
 	public static final FoodProperties LIME_POPSICLE = (new FoodProperties.Builder())
 		.nutrition(3).saturationMod(0.2F)
 		.fast()
@@ -96,14 +96,14 @@ public class Nutrition {
 		.nutrition(3).saturationMod(0.2F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 100, 0), 1F).build();
 	public static final FoodProperties HONEY_LIME_CHICKEN = (new FoodProperties.Builder())
-		.nutrition(14).saturationMod(0.78F)
+		.nutrition(14).saturationMod(0.75F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 400, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties MEDITERRANEAN_SALMON = (new FoodProperties.Builder())
-		.nutrition(14).saturationMod(0.78F)
+		.nutrition(14).saturationMod(0.75F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties SALMON_TARTARE = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(0.67F)
+		.nutrition(6).saturationMod(0.65F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties POTATO_FRITTERS = (new FoodProperties.Builder())
 		.nutrition(7).saturationMod(1F)
@@ -112,7 +112,7 @@ public class Nutrition {
 		.nutrition(3).saturationMod(1F).fast()
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 200, 0), 1F).build();
 	public static final FoodProperties COD_CEVICHE = (new FoodProperties.Builder())
-		.nutrition(11).saturationMod(0.73F)
+		.nutrition(11).saturationMod(0.75F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties POMEGRANATE_SLICE = (new FoodProperties.Builder())
 		.nutrition(4).saturationMod(0.5F)
@@ -135,7 +135,7 @@ public class Nutrition {
 		.nutrition(14).saturationMod(0.85F)
 		.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties PORTOBELLO_RISOTTO = (new FoodProperties.Builder())
-		.nutrition(12).saturationMod(0.83F)
+		.nutrition(12).saturationMod(0.85F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties PORTOBELLO_PASTA = (new FoodProperties.Builder())
 		.nutrition(13).saturationMod(0.8F)
@@ -151,15 +151,15 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 400, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties POMEGRANATE_MUTTON = (new FoodProperties.Builder())
-		.nutrition(14).saturationMod(0.78F)
+		.nutrition(14).saturationMod(0.75F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties POMEGRANATE_PORK = (new FoodProperties.Builder())
-		.nutrition(16).saturationMod(0.81F)
+		.nutrition(16).saturationMod(0.8F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties POMEGRANATE_CHICKEN = (new FoodProperties.Builder())
-		.nutrition(14).saturationMod(0.78F)
+		.nutrition(14).saturationMod(0.75F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties POMEGRANATE_CUSTARD = (new FoodProperties.Builder())
@@ -170,30 +170,35 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties SPICY_GRENADINE_JELLY = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(2.33F)
+		.nutrition(6).saturationMod(2.35F)
 		.effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1800, 0), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1F).build();
 	public static final FoodProperties LIMEADE = (new FoodProperties.Builder())
 		.alwaysEat()
 		.nutrition(3).saturationMod(0.2F)
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 900, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 0), 1F)
+		.build();
+	public static final FoodProperties STRONG_LIMEADE = (new FoodProperties.Builder())
+		.alwaysEat()
+		.nutrition(3).saturationMod(0.2F)
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 1), 1F)
 		.build();
 	public static final FoodProperties BERRY_LIMEADE = (new FoodProperties.Builder())
 		.alwaysEat()
 		.nutrition(5).saturationMod(0.2F)
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 900, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 0), 1F)
 		.build();
 	public static final FoodProperties PINK_LIMEADE = (new FoodProperties.Builder())
 		.alwaysEat()
 		.nutrition(5).saturationMod(1F)
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 900, 0), 1F)
-		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 900, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1F)
 		.build();
 	public static final FoodProperties MINT_LIMEADE = (new FoodProperties.Builder())
 		.alwaysEat()
-		.nutrition(6).saturationMod(0.33F)
-		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 900, 0), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getBerserking(), 900, 0), 1F)
+		.nutrition(6).saturationMod(0.35F)
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 0), 1F)
+		.effect(() -> new MobEffectInstance(ModCompat.getBerserking(), 1200, 0), 1F)
 		.build();
 	public static final FoodProperties LIME_GREEN_TEA = (new FoodProperties.Builder())
 		.alwaysEat()
@@ -206,7 +211,7 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1F)
 		.build();
 	public static final FoodProperties POMEGRANATE_SMOOTHIE = (new FoodProperties.Builder())
-		.nutrition(3).saturationMod(0.166F)
+		.nutrition(3).saturationMod(0.2F)
 		.alwaysEat()
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 600, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModCompat.getAgility(), 600, 0), 1F)
@@ -224,7 +229,7 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 400, 0), 1F)
 		.build();
 	public static final FoodProperties POMEGRANATE_BEAN_SALAD = (new FoodProperties.Builder())
-		.nutrition(8).saturationMod(0.375F)
+		.nutrition(8).saturationMod(0.35F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 400, 0), 1F)
 		.effect(() -> new MobEffectInstance(ModCompat.getHarmony(), 400, 0), 1F).build();
 	public static final FoodProperties CHOCOLATE_ARILS = (new FoodProperties.Builder())

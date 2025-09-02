@@ -1,0 +1,51 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lime"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lime_slice"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "limeade"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "mint_limeade"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "neapolitan"
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "neapolitan:mint_leaves"
+          }
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersrespite"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:kettle_pouring",
+        "amount": 250,
+        "container": {
+          "item": "minecraft:glass_bottle"
+        },
+        "fluid": "collectorsreap:mint_limeade",
+        "output": {
+          "item": "collectorsreap:mint_limeade"
+        }
+      }
+    }
+  ]
+}

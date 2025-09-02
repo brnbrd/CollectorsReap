@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
@@ -26,32 +27,44 @@ public class CRItemModelProvider extends ItemModelProvider {
 	protected void registerModels() {
 		for (RegistryObject<Item> entry : CRItems.ITEMS.getEntries()) {
 			ResourceLocation id = entry.getId();
-			if (entry == CRItems.URCHIN_DART) {
-				continue;
-			} else if (!(isBasic(entry))) {
-				if (entry.get() instanceof ForgeSpawnEggItem) {
-					spawnEgg(id);
+			if (id != null) {
+				if (entry == CRItems.URCHIN_DART) {
 					continue;
-				} else if (entry == CRItems.DRAGON_BUSH) {
-					itemGeneratedModel(CRItems.DRAGON_BUSH.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.DRAGON_BUSH)));
-					continue;
-				} else if (entry == CRItems.PORTOBELLO) {
-					itemGeneratedModel(CRItems.PORTOBELLO.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO)));
-					continue;
-				} else if (entry == CRItems.PORTOBELLO_COLONY) {
-					itemGeneratedModel(CRItems.PORTOBELLO_COLONY.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO_COLONY) + "_stage3"));
-					continue;
-				} else if (entry.get() instanceof BlockItem b) {
-					if (b.getBlock() instanceof WallBlock) {
-						wallInventory(id.getPath(), Util.rl(id.getNamespace(), "block/" + id.getPath().replace("_wall", "s")));
+				} else if (!(isBasic(entry))) {
+					if (entry.get() instanceof ForgeSpawnEggItem) {
+						spawnEgg(id);
 						continue;
-					} else if (!(entry.get() instanceof ItemNameBlockItem)) {
-						withExistingParent(id.getPath(), Util.cr("block/" + id.getPath()));
+					} else if (id.getPath().startsWith("strong_")) {
+						getBuilder(id.toString())
+							.parent(new ModelFile.UncheckedModelFile("item/generated"))
+							.texture("layer0", Util.cr("item/" + id.getPath().replace("strong_", "")));
 						continue;
+					} else if (id.getPath().startsWith("long_")) {
+						getBuilder(id.toString())
+							.parent(new ModelFile.UncheckedModelFile("item/generated"))
+							.texture("layer0", Util.cr("item/" + id.getPath().replace("long_", "")));
+						continue;
+					} else if (entry == CRItems.DRAGON_BUSH) {
+						itemGeneratedModel(CRItems.DRAGON_BUSH.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.DRAGON_BUSH)));
+						continue;
+					} else if (entry == CRItems.PORTOBELLO) {
+						itemGeneratedModel(CRItems.PORTOBELLO.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO)));
+						continue;
+					} else if (entry == CRItems.PORTOBELLO_COLONY) {
+						itemGeneratedModel(CRItems.PORTOBELLO_COLONY.get(), CRBlockStateProvider.resourceBlock(Util.name(CRItems.PORTOBELLO_COLONY) + "_stage3"));
+						continue;
+					} else if (entry.get() instanceof BlockItem b) {
+						if (b.getBlock() instanceof WallBlock) {
+							wallInventory(id.getPath(), Util.rl(id.getNamespace(), "block/" + id.getPath().replace("_wall", "s")));
+							continue;
+						} else if (!(entry.get() instanceof ItemNameBlockItem)) {
+							withExistingParent(id.getPath(), Util.cr("block/" + id.getPath()));
+							continue;
+						}
 					}
 				}
+				basicItem(id);
 			}
-			basicItem(id);
 		}
 	}
 

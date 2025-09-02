@@ -1,0 +1,58 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lime"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lime_slice"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "limeade"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "mint_limeade"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "neapolitan"
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "neapolitan:mint_leaves"
+          }
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersrespite"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:brewing",
+        "base": {
+          "count": 1000,
+          "fluid": "collectorsreap:lime_juice"
+        },
+        "cookingtime": 2400,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "tag": "neapolitan:mint_leaves"
+          }
+        ],
+        "result": {
+          "count": 1000,
+          "fluid": "collectorsreap:mint_limeade"
+        }
+      }
+    }
+  ]
+}

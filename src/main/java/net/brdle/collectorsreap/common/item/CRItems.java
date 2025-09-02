@@ -130,6 +130,8 @@ public class CRItems extends ModItems {
 		drinkItem().food(Nutrition.DRAGONS_PASSION), true, false);
 	public static final RegistryObject<Item> LIMEADE = registerDrink("limeade",
 		drinkItem().food(Nutrition.LIMEADE), true, false);
+	public static final RegistryObject<Item> STRONG_LIMEADE = registerDrink("strong_limeade",
+		drinkItem().food(Nutrition.STRONG_LIMEADE), true, false);
 	public static final RegistryObject<Item> BERRY_LIMEADE = registerDrink("berry_limeade",
 		drinkItem().food(Nutrition.BERRY_LIMEADE), true, false);
 	public static final RegistryObject<Item> PINK_LIMEADE = registerDrink("pink_limeade",

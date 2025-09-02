@@ -41,6 +41,11 @@ public class CRLanguageProvider extends LanguageProvider {
 		add(FarmersDelight.MODID + ".tooltip.strawberry_gummy", "Instant Health");
 		add("trim_material." + CollectorsReap.MODID + ".pearl", "Pearl Material");
 		add("fluid_type." + CollectorsReap.MODID + ".cream_cheese_type", "Cream Cheese");
+		add("fluid_type." + CollectorsReap.MODID + ".lime_juice_type", "Limeade");
+		add("fluid_type." + CollectorsReap.MODID + ".strong_lime_juice_type", "Limeade");
+		add("fluid_type." + CollectorsReap.MODID + ".berry_limeade_type", "Berry Limeade");
+		add("fluid_type." + CollectorsReap.MODID + ".pink_limeade_type", "Pink Limeade");
+		add("fluid_type." + CollectorsReap.MODID + ".mint_limeade_type", "Mint Limeade");
 		add("fluid_type." + CollectorsReap.MODID + ".lime_green_tea_type", "Lime Green Tea");
 		add("fluid_type." + CollectorsReap.MODID + ".pomegranate_black_tea_type", "Pomegranate Black Tea");
 		add("fluid_type." + CollectorsReap.MODID + ".deific_blood_type", "Deific Blood");
@@ -179,6 +184,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.SALMON_TARTARE, "Salmon Tartare");
 		addItem(CRItems.POTATO_FRITTERS, "Potato Fritters");
 		addItem(CRItems.LIMEADE, "Limeade");
+		addItem(CRItems.STRONG_LIMEADE, "Limeade");
 		addItem(CRItems.BERRY_LIMEADE, "Berry Limeade");
 		addItem(CRItems.MINT_LIMEADE, "Mint Limeade");
 		addItem(CRItems.LIME_GREEN_TEA, "Lime Green Tea");

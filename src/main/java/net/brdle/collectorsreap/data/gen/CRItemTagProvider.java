@@ -235,6 +235,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addOptional(Util.rl("deep_aether", "quail_egg"));
 		this.tag(CRItemTags.JUICES_LIME)
 			.add(CRItems.LIMEADE.get())
+			.add(CRItems.STRONG_LIMEADE.get())
 			.addOptionalTag(Util.rl("forge", "juices/lime_juice"));
 		this.tag(CRItemTags.JUICES)
 			.addTag(CRItemTags.JUICES_LIME)

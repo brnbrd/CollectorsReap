@@ -14,6 +14,66 @@ public class CRFluids {
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, CollectorsReap.MODID);
 	public static final DeferredRegister<FluidType> TYPES = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, CollectorsReap.MODID);
 
+	public static final RegistryObject<FluidType> LIME_JUICE_TYPE = TYPES.register("lime_juice_type",
+		() -> new DrinkFluidType(0xFF7AD10D));
+	public static final RegistryObject<FlowingFluid> LIME_JUICE = FLUIDS.register("lime_juice",
+		() -> new ForgeFlowingFluid.Source(CRFluids.LIME_JUICE_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_LIME_JUICE = FLUIDS.register("flowing_lime_juice",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.LIME_JUICE_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties LIME_JUICE_PROPERTIES = new ForgeFlowingFluid.Properties(
+		LIME_JUICE_TYPE,
+		LIME_JUICE,
+		FLOWING_LIME_JUICE
+	);
+
+	public static final RegistryObject<FluidType> STRONG_LIME_JUICE_TYPE = TYPES.register("strong_lime_juice_type",
+		() -> new DrinkFluidType(0xFF7AD10D));
+	public static final RegistryObject<FlowingFluid> STRONG_LIME_JUICE = FLUIDS.register("strong_lime_juice",
+		() -> new ForgeFlowingFluid.Source(CRFluids.STRONG_LIME_JUICE_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_STRONG_LIME_JUICE = FLUIDS.register("flowing_strong_lime_juice",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.STRONG_LIME_JUICE_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties STRONG_LIME_JUICE_PROPERTIES = new ForgeFlowingFluid.Properties(
+		STRONG_LIME_JUICE_TYPE,
+		STRONG_LIME_JUICE,
+		FLOWING_STRONG_LIME_JUICE
+	);
+
+	public static final RegistryObject<FluidType> BERRY_LIMEADE_TYPE = TYPES.register("berry_limeade_type",
+		() -> new DrinkFluidType(0xFFE3552A));
+	public static final RegistryObject<FlowingFluid> BERRY_LIMEADE = FLUIDS.register("berry_limeade",
+		() -> new ForgeFlowingFluid.Source(CRFluids.BERRY_LIMEADE_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_BERRY_LIMEADE = FLUIDS.register("flowing_berry_limeade",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.BERRY_LIMEADE_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties BERRY_LIMEADE_PROPERTIES = new ForgeFlowingFluid.Properties(
+		BERRY_LIMEADE_TYPE,
+		BERRY_LIMEADE,
+		FLOWING_BERRY_LIMEADE
+	);
+
+	public static final RegistryObject<FluidType> PINK_LIMEADE_TYPE = TYPES.register("pink_limeade_type",
+		() -> new DrinkFluidType(0xFFFFAB99));
+	public static final RegistryObject<FlowingFluid> PINK_LIMEADE = FLUIDS.register("pink_limeade",
+		() -> new ForgeFlowingFluid.Source(CRFluids.PINK_LIMEADE_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_PINK_LIMEADE = FLUIDS.register("flowing_pink_limeade",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.PINK_LIMEADE_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties PINK_LIMEADE_PROPERTIES = new ForgeFlowingFluid.Properties(
+		PINK_LIMEADE_TYPE,
+		PINK_LIMEADE,
+		FLOWING_PINK_LIMEADE
+	);
+
+	public static final RegistryObject<FluidType> MINT_LIMEADE_TYPE = TYPES.register("mint_limeade_type",
+		() -> new DrinkFluidType(0xFF57E94A));
+	public static final RegistryObject<FlowingFluid> MINT_LIMEADE = FLUIDS.register("mint_limeade",
+		() -> new ForgeFlowingFluid.Source(CRFluids.MINT_LIMEADE_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_MINT_LIMEADE = FLUIDS.register("flowing_mint_limeade",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.MINT_LIMEADE_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties MINT_LIMEADE_PROPERTIES = new ForgeFlowingFluid.Properties(
+		MINT_LIMEADE_TYPE,
+		MINT_LIMEADE,
+		FLOWING_MINT_LIMEADE
+	);
+
 	public static final RegistryObject<FluidType> LIME_GREEN_TEA_TYPE = TYPES.register("lime_green_tea_type",
 		() -> new DrinkFluidType(0xFF95ac38));
 	public static final RegistryObject<FlowingFluid> LIME_GREEN_TEA = FLUIDS.register("lime_green_tea",
