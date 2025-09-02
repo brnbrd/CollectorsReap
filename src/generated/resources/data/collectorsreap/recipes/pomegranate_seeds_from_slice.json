@@ -1,5 +1,6 @@
 {
-  "advancements": [
+  "type": "forge:conditional",
+  "recipes": [
     {
       "conditions": [
         {
@@ -19,7 +20,19 @@
             }
           ]
         }
-      ]
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "collectorsreap:pomegranate_slice"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:pomegranate_seeds"
+        }
+      }
     }
   ]
 }

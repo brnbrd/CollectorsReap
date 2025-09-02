@@ -106,6 +106,35 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.RAW_CLAM)
 			.addTag(CRItemTags.RAW_PRAWN)
 			.addTag(CRItemTags.RAW_URCHIN);
+		this.tag(ModTags.DRINKS)
+			.addTag(CRItemTags.JUICES)
+			.addTag(CRItemTags.FERMENTED_DRINKS)
+			.add(CRItems.DRAGONS_PASSION.get())
+			.add(CRItems.BERRY_LIMEADE.get())
+			.add(CRItems.PINK_LIMEADE.get())
+			.add(CRItems.MINT_LIMEADE.get())
+			.add(CRItems.LIME_GREEN_TEA.get())
+			.add(CRItems.POMEGRANATE_BLACK_TEA.get())
+			.add(CRItems.POMEGRANATE_SMOOTHIE.get());
+
+		// Brewin and Chewin
+		this.tag(CRItemTags.FERMENTED_DRINKS)
+			.add(CRItems.DEIFIC_BLOOD.get())
+			.add(CRItems.HERMITS_SOUR.get())
+			.add(CRItems.ROSE_MOON.get())
+			.add(CRItems.REANIMATORS_GARDEN.get());
+
+		// Neapolitan
+		this.addSelf(CRItemTags.FRUITS_BANANA);
+		this.addSelf(CRItemTags.DRIED_VANILLA_PODS);
+		this.addSelf(CRItemTags.CHOCOLATE_BAR);
+		this.addSelf(CRItemTags.MINT_LEAVES);
+		this.addSelf(CRItemTags.ROASTED_ADZUKI_BEANS);
+		this.tag(CRItemTags.FRUITS_STRAWBERRY).addOptional(Util.rl("neapolitan", "strawberries"));
+		this.tag(CRItemTags.ICE_CREAM)
+			.add(CRItems.LIME_ICE_CREAM.get())
+			.add(CRItems.POMEGRANATE_ICE_CREAM.get())
+			.add(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM.get());
 
 		// Forge
 		this.tag(CRItemTags.STORAGE_BLOCKS_LIME).add(CRItems.LIME_CRATE.get());
@@ -210,25 +239,6 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.JUICES)
 			.addTag(CRItemTags.JUICES_LIME)
 			.add(ModItems.MELON_JUICE.get());
-
-		// Neapolitan
-		this.addSelf(CRItemTags.FRUITS_BANANA);
-		this.addSelf(CRItemTags.DRIED_VANILLA_PODS);
-		this.addSelf(CRItemTags.CHOCOLATE_BAR);
-		this.addSelf(CRItemTags.MINT_LEAVES);
-		this.addSelf(CRItemTags.ROASTED_ADZUKI_BEANS);
-		this.tag(CRItemTags.FRUITS_STRAWBERRY).addOptional(Util.rl("neapolitan", "strawberries"));
-		this.tag(CRItemTags.ICE_CREAM)
-			.add(CRItems.LIME_ICE_CREAM.get())
-			.add(CRItems.POMEGRANATE_ICE_CREAM.get())
-			.add(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM.get());
-
-		// Brewin and Chewin
-		this.tag(CRItemTags.FERMENTED_DRINKS)
-			.add(CRItems.DEIFIC_BLOOD.get())
-			.add(CRItems.HERMITS_SOUR.get())
-			.add(CRItems.ROSE_MOON.get())
-			.add(CRItems.REANIMATORS_GARDEN.get());
 
 		// Diet
 		this.tag(CRItemTags.DIET_FRUITS)

@@ -30,8 +30,7 @@
             "item": "collectorsreap:lime_slice"
           },
           {
-            "chance": 0.5,
-            "item": "collectorsreap:lime_seeds"
+            "item": "minecraft:lime_dye"
           }
         ],
         "tool": {

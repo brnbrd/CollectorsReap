@@ -77,8 +77,6 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.DRAGON_STEW), true, false);
 	public static final RegistryObject<Item> TROPICAL_SHAVED_ICE = registerFood("tropical_shaved_ice",
 		bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE), true, false);
-	public static final RegistryObject<Item> DRAGONS_PASSION = registerDrink("dragons_passion",
-		drinkItem().food(Nutrition.DRAGONS_PASSION), true, false);
 	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate",
 		() -> new Item((new Item.Properties())));
 	public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",
@@ -128,8 +126,8 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.DELUXE_SALAD), true, false);
 	public static final RegistryObject<Item> CREAM_CHEESE = registerFood("cream_cheese",
 		bowlFoodItem(Nutrition.CREAM_CHEESE), false, false);
-	public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerDrink("pomegranate_custard",
-		drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), true, false);
+	public static final RegistryObject<Item> DRAGONS_PASSION = registerDrink("dragons_passion",
+		drinkItem().food(Nutrition.DRAGONS_PASSION), true, false);
 	public static final RegistryObject<Item> LIMEADE = registerDrink("limeade",
 		drinkItem().food(Nutrition.LIMEADE), true, false);
 	public static final RegistryObject<Item> BERRY_LIMEADE = registerDrink("berry_limeade",
@@ -148,6 +146,8 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> POMEGRANATE_SMOOTHIE = registerItem("pomegranate_smoothie", () ->
 		new CompatDrinkable((new Item.Properties()).food(
 			Nutrition.POMEGRANATE_SMOOTHIE), true, false, "neapolitan"));
+	public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerDrink("pomegranate_custard",
+		drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), true, false);
 	public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake",
 		() -> new BlockItem(CRBlocks.LIME_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
 	public static final RegistryObject<Item> LIME_CAKE_SLICE = registerItem("lime_cake_slice",

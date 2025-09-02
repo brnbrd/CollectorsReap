@@ -57,7 +57,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"cutting/portobello_colony", finished, enabled(CRItems.PORTOBELLO));
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 					CRItems.LIME_SLICE.get(), 2)
-				.addResultWithChance(CRItems.LIME_SEEDS.get(), 0.5F),
+				.addResult(Items.LIME_DYE),
 			"cutting/lime", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE));
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.DRAGON_BUSH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 					CRItems.PINK_DRAGON_FRUIT.get(), 1)
@@ -74,9 +74,6 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 					CRItems.POMEGRANATE_SLICE.get(), 4)
 				.addResultWithChance(Items.RED_DYE, 1F, 2),
 			"cutting/pomegranate", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE_SLICE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				CRItems.POMEGRANATE_SEEDS.get(), 1),
-			"cutting/pomegranate_slice", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SLICE), enabled(CRItems.POMEGRANATE_SEEDS));
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.STYGIAN_POMEGRANATE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 					CRItems.POMEGRANATE_SLICE.get(), 5)
 				.addResult(Items.GUNPOWDER, 2),
@@ -365,18 +362,14 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.requires(CRItems.STYGIAN_POMEGRANATE.get(), 9)
 				.unlockedBy("has_stygian_pomegranate", has(CRItems.STYGIAN_POMEGRANATE.get())),
 			"stygian_pomegranate_crate", finished, enabled(CRItems.STYGIAN_POMEGRANATE), enabled(CRItems.STYGIAN_POMEGRANATE_CRATE));
-		wrap(shapeless(RecipeCategory.FOOD, Items.RED_DYE, 1)
-				.requires(CRItems.POMEGRANATE_SLICE.get())
-				.unlockedBy("has_pomegranate_slice", has(CRItems.POMEGRANATE_SLICE.get())),
-			"red_dye_from_pomegranate_slice", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SLICE));
 		wrap(shapeless(RecipeCategory.MISC, CRItems.LIME_SEEDS, 1)
 				.requires(CRItems.LIME.get())
 				.unlockedBy("has_lime", has(CRItems.LIME.get())),
 			"lime_seeds_from_lime", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SEEDS));
-		wrap(shapeless(RecipeCategory.MISC, Items.LIME_DYE, 1)
-				.requires(CRItems.LIME_SLICE.get())
-				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
-			"lime_dye_from_slice", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE));
+		wrap(shapeless(RecipeCategory.MISC, CRItems.POMEGRANATE_SEEDS, 1)
+				.requires(CRItems.POMEGRANATE_SLICE.get())
+				.unlockedBy("has_pomegranate_slice", has(CRItems.POMEGRANATE_SLICE.get())),
+			"pomegranate_seeds_from_slice", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SLICE), enabled(CRItems.POMEGRANATE_SEEDS));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.TROPICAL_SHAVED_ICE)
 				.requires(Items.BOWL)
 				.requires(CRItemTags.FRUITS_STRAWBERRY)

@@ -18,7 +18,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:red_dye_from_pomegranate_slice"
+              "recipe": "collectorsreap:pomegranate_seeds_from_slice"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -31,7 +31,7 @@
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:red_dye_from_pomegranate_slice"
+            "collectorsreap:pomegranate_seeds_from_slice"
           ]
         },
         "sends_telemetry_event": false
@@ -47,6 +47,10 @@
             {
               "type": "collectorsreap:enabled",
               "value": "pomegranate_slice"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate_seeds"
             }
           ]
         }
