@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "platinum_bass_stew"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "platinum_bass_stew"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_slice"
+            }
+          ]
         }
       ],
       "recipe": {
@@ -26,7 +35,7 @@
             "tag": "forge:grain/rice"
           },
           {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:lime_slice"
           }
         ],
         "result": {

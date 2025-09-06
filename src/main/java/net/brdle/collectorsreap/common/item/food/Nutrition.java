@@ -411,7 +411,11 @@ public class Nutrition {
 	public static final FoodProperties MELON_GUMMY = GUMMY(() ->
 		new MobEffectInstance(MobEffects.ABSORPTION, 200, 0));
 	public static final FoodProperties APPLE_GUMMY = GUMMY(() ->
-		new MobEffectInstance(ModEffects.COMFORT.get(), 900, 0));
+		new MobEffectInstance(
+			ModCompat.getExuberant(),
+			Mods.stringLoaded("cosmopolitan") ? 600 : 1800,
+			Mods.stringLoaded("cosmopolitan") ? 2 : 0
+		));
 	public static final FoodProperties GLOW_BERRY_GUMMY = GUMMY(() ->
 		new MobEffectInstance(
 			ModCompat.getTracer(),

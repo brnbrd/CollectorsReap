@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "potato_fritters"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "potato_fritters"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_slice"
+            }
+          ]
         }
       ],
       "recipe": {
@@ -17,10 +26,10 @@
             "tag": "forge:vegetables/potato"
           },
           {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:lime_slice"
           },
           {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:lime_slice"
           },
           {
             "tag": "forge:vegetables/onion"

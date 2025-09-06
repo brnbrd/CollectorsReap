@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "salmon_wrapped_prawn"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "salmon_wrapped_prawn"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_slice"
+            }
+          ]
         }
       ],
       "recipe": {
@@ -20,7 +29,7 @@
             "item": "farmersdelight:salmon_slice"
           },
           {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:lime_slice"
           },
           {
             "item": "minecraft:honey_bottle"

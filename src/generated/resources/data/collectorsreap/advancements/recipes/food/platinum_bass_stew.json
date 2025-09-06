@@ -38,8 +38,17 @@
       },
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "platinum_bass_stew"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "platinum_bass_stew"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_slice"
+            }
+          ]
         }
       ]
     }

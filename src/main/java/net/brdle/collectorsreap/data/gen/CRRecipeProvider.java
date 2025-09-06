@@ -157,30 +157,30 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.HONEY_LIME_CHICKEN.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_CHICKEN)
 				.addIngredient(Items.HONEY_BOTTLE)
-				.addIngredient(CRItemTags.FRUITS_LIME)
+				.addIngredient(CRItems.LIME_SLICE.get())
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(ForgeTags.GRAIN_RICE)
-				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
 			"food/honey_lime_chicken", finished, enabled("honey_lime_chicken"));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.MEDITERRANEAN_SALMON.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_FISHES_SALMON)
-				.addIngredient(CRItemTags.FRUITS_LIME)
+				.addIngredient(CRItems.LIME_SLICE.get())
 				.addIngredient(ForgeTags.VEGETABLES_POTATO)
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
-				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-			"food/mediterranean_salmon", finished, enabled("mediterranean_salmon"));
+				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
+			"food/mediterranean_salmon", finished, enabled(CRItems.MEDITERRANEAN_SALMON), enabled(CRItems.LIME_SLICE));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POTATO_FRITTERS.get(), 1, 200, 1F)
 				.addIngredient(ForgeTags.VEGETABLES_POTATO)
-				.addIngredient(Ingredient.of(CRItemTags.FRUITS_LIME), 2)
+				.addIngredient(CRItems.LIME_SLICE.get(), 2)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
-				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-			"food/potato_fritters", finished, enabled("potato_fritters"));
+				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
+			"food/potato_fritters", finished, enabled(CRItems.POTATO_FRITTERS), enabled(CRItems.LIME_SLICE));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CANDIED_LIME.get(), 3, 200, 1F)
 				.addIngredient(CRItems.LIME_SLICE.get(), 3)
 				.addIngredient(Items.HONEY_BOTTLE)
 				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
-			"food/candied_lime", finished, enabled("candied_lime"));
+			"food/candied_lime", finished, enabled(CRItems.CANDIED_LIME));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRIMSON_CARROT_ROAST.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(Items.CARROT)
 				.addIngredient(CRItemTags.FRUITS_POMEGRANATE)
@@ -300,10 +300,10 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.SALMON_WRAPPED_PRAWN.get(), 1, 200, 1F)
 				.addIngredient(CRItemTags.COOKED_PRAWN)
 				.addIngredient(ModItems.SALMON_SLICE.get())
-				.addIngredient(CRItemTags.FRUITS_LIME)
+				.addIngredient(CRItems.LIME_SLICE.get())
 				.addIngredient(Items.HONEY_BOTTLE)
 				.unlockedBy("has_cooked_prawn", has(CRItemTags.COOKED_PRAWN)),
-			"food/salmon_wrapped_prawn", finished, enabled(CRItems.SALMON_WRAPPED_PRAWN));
+			"food/salmon_wrapped_prawn", finished, enabled(CRItems.SALMON_WRAPPED_PRAWN), enabled(CRItems.LIME_SLICE));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PRAWN_STEW.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItemTags.COOKED_PRAWN)
 				.addIngredient(ForgeTags.MILK)
@@ -315,9 +315,9 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.addIngredient(CRItems.PLATINUM_BASS_HEAD.get())
 				.addIngredient(CRItems.PLATINUM_BASS_SLICE.get())
 				.addIngredient(ForgeTags.GRAIN_RICE)
-				.addIngredient(CRItemTags.FRUITS_LIME)
+				.addIngredient(CRItems.LIME_SLICE.get())
 				.unlockedBy("has_platinum_bass_head", has(CRItems.PLATINUM_BASS_HEAD.get())),
-			"food/platinum_bass_stew", finished, enabled(CRItems.PLATINUM_BASS_STEW));
+			"food/platinum_bass_stew", finished, enabled(CRItems.PLATINUM_BASS_STEW), enabled(CRItems.LIME_SLICE));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CREAM_CHEESE.get(), 1, 12000, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.MILK)
 				.addIngredient(CRItemTags.FRUITS_LIME)

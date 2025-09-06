@@ -6,6 +6,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import java.util.function.Supplier;
 import org.jetbrains.annotations.Nullable;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class ModCompat {
 	@Nullable
@@ -100,5 +101,9 @@ public class ModCompat {
 
 	public static MobEffect getTracer() {
 		return Util.effect("cosmopolitan", "tracer", MobEffects.GLOWING);
+	}
+
+	public static MobEffect getExuberant() {
+		return Util.effect("cosmopolitan", "exuberant", ModEffects.COMFORT.get());
 	}
 }

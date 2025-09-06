@@ -1,0 +1,6 @@
+{
+  "parent": "brewinandchewin:block/coaster_cookie",
+  "textures": {
+    "cookie": "collectorsreap:block/coaster/lime_cookie"
+  }
+}

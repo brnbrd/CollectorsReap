@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "mediterranean_salmon"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "mediterranean_salmon"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_slice"
+            }
+          ]
         }
       ],
       "recipe": {
@@ -20,7 +29,7 @@
             "tag": "forge:raw_fishes/salmon"
           },
           {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:lime_slice"
           },
           {
             "tag": "forge:vegetables/potato"

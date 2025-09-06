@@ -23,7 +23,7 @@
             "item": "minecraft:honey_bottle"
           },
           {
-            "tag": "forge:fruits/lime"
+            "item": "collectorsreap:lime_slice"
           },
           {
             "tag": "forge:vegetables/onion"
