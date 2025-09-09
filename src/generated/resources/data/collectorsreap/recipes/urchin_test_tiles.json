@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "urchin_test"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "urchin_test"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "urchin_test_tiles"
+            }
+          ]
         }
       ],
       "recipe": {

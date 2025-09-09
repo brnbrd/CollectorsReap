@@ -43,6 +43,10 @@
               "value": "strawberry_jam_bun"
             },
             {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",

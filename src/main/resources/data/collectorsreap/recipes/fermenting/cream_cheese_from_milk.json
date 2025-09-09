@@ -12,6 +12,10 @@
           "value": "cream_cheese"
         },
         {
+          "type": "collectorsreap:enabled",
+          "value": "lime"
+        },
+        {
           "type": "forge:tag_empty",
           "tag": "forge:salt"
         }

@@ -4,34 +4,34 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_the_recipe": {
-            "conditions": {
-              "recipe": "collectorsreap:stonecutting/urchin_test_tile_stairs_from_block"
-            },
-            "trigger": "minecraft:recipe_unlocked"
-          },
-          "has_urchin_test_block": {
+          "has_lime_slice": {
             "conditions": {
               "items": [
                 {
                   "items": [
-                    "collectorsreap:urchin_test_block"
+                    "collectorsreap:lime_slice"
                   ]
                 }
               ]
             },
             "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "collectorsreap:food/lime_pie_from_condensed_milk"
+            },
+            "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_urchin_test_block",
+            "has_lime_slice",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:stonecutting/urchin_test_tile_stairs_from_block"
+            "collectorsreap:food/lime_pie_from_condensed_milk"
           ]
         },
         "sends_telemetry_event": false
@@ -42,11 +42,22 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "urchin_test"
+              "value": "lime"
             },
             {
               "type": "collectorsreap:enabled",
-              "value": "urchin_test_tile_stairs"
+              "value": "lime_slice"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_pie"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:condensed_milk"
+              }
             }
           ]
         }

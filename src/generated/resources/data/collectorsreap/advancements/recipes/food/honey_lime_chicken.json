@@ -4,13 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_lime_slice": {
+          "has_lime": {
             "conditions": {
               "items": [
                 {
-                  "items": [
-                    "collectorsreap:lime_slice"
-                  ]
+                  "tag": "forge:fruits/lime"
                 }
               ]
             },
@@ -25,7 +23,7 @@
         },
         "requirements": [
           [
-            "has_lime_slice",
+            "has_lime",
             "has_the_recipe"
           ]
         ],
@@ -38,8 +36,17 @@
       },
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "honey_lime_chicken"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "honey_lime_chicken"
+            }
+          ]
         }
       ]
     }

@@ -24,23 +24,20 @@
           "c": {
             "item": "farmersdelight:pie_crust"
           },
-          "e": {
-            "tag": "forge:eggs"
-          },
           "l": {
-            "item": "collectorsreap:lime_slice"
+            "tag": "forge:fruits/lime"
           },
           "m": {
-            "tag": "forge:milk"
+            "tag": "forge:milk/milk_bottle"
           },
           "s": {
             "item": "minecraft:sugar"
           }
         },
         "pattern": [
-          "ele",
           "lll",
-          "scm"
+          "mmm",
+          "scs"
         ],
         "result": {
           "item": "collectorsreap:lime_pie"

@@ -4,11 +4,13 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_citrus": {
+          "has_lime_slice": {
             "conditions": {
               "items": [
                 {
-                  "tag": "forge:fruits/citrus"
+                  "items": [
+                    "collectorsreap:lime_slice"
+                  ]
                 }
               ]
             },
@@ -23,7 +25,7 @@
         },
         "requirements": [
           [
-            "has_citrus",
+            "has_lime_slice",
             "has_the_recipe"
           ]
         ],
@@ -36,8 +38,21 @@
       },
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "salmon_tartare"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_slice"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "salmon_tartare"
+            }
+          ]
         }
       ]
     }

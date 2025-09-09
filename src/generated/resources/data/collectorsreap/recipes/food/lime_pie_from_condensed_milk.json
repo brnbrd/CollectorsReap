@@ -16,37 +16,41 @@
             },
             {
               "type": "collectorsreap:enabled",
-              "value": "prawn_ceviche"
+              "value": "lime_pie"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:condensed_milk"
+              }
             }
           ]
         }
       ],
       "recipe": {
-        "type": "minecraft:crafting_shapeless",
+        "type": "minecraft:crafting_shaped",
         "category": "misc",
-        "ingredients": [
-          {
-            "tag": "forge:cooked_prawn"
+        "key": {
+          "c": {
+            "item": "farmersdelight:pie_crust"
           },
-          {
+          "l": {
             "item": "collectorsreap:lime_slice"
           },
-          {
-            "tag": "forge:salad_ingredients/cabbage"
-          },
-          {
-            "tag": "forge:vegetables/tomato"
-          },
-          {
-            "tag": "forge:vegetables/onion"
-          },
-          {
-            "item": "minecraft:bowl"
+          "m": {
+            "tag": "forge:condensed_milk"
           }
+        },
+        "pattern": [
+          "lll",
+          "lll",
+          "mcm"
         ],
         "result": {
-          "item": "collectorsreap:prawn_ceviche"
-        }
+          "item": "collectorsreap:lime_pie"
+        },
+        "show_notification": true
       }
     }
   ]

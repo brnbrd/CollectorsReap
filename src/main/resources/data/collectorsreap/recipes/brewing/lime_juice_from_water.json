@@ -12,10 +12,6 @@
             },
             {
               "type": "collectorsreap:enabled",
-              "value": "lime_slice"
-            },
-            {
-              "type": "collectorsreap:enabled",
               "value": "limeade"
             },
             {
@@ -35,7 +31,7 @@
         "experience": 0.35,
         "ingredients": [
           {
-            "item": "collectorsreap:lime_slice"
+            "tag": "forge:fruits/lime"
           },
           {
             "item": "minecraft:sugar"

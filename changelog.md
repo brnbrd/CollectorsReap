@@ -1,7 +1,7 @@
 ## Version History
 
 
-# 1.3.5
+# 1.4
 
 ### Updates
 - Added Surge effect
@@ -23,8 +23,8 @@
 - Added Rosé Moon (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin))
 - Added Reanimator's Garden (for [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin) and [Atmospheric](https://www.curseforge.com/minecraft/mc-mods/atmospheric))
 - Added Cream Cheese
-- Limeade's effect can now be strengthened in a Kettle with [Farmer's Respite](https://www.curseforge.com/minecraft/mc-mods/farmers-respite)
 - All Limeade variants can now be brewed in a Kettle with [Farmer's Respite](https://www.curseforge.com/minecraft/mc-mods/farmers-respite)
+  - Limeade can now be strengthened by adding Honey
 - Lime Green Tea is now brewed from Green Tea with [Farmer's Respite](https://www.curseforge.com/minecraft/mc-mods/farmers-respite)
 - Pomegranate Black Tea is now brewed from Black Tea with [Farmer's Respite](https://www.curseforge.com/minecraft/mc-mods/farmers-respite)
 - Clam Chowder now provides Comfort for 3:00

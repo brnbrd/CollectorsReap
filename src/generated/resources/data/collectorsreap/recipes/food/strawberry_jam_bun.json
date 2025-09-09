@@ -11,6 +11,10 @@
               "value": "strawberry_jam_bun"
             },
             {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
@@ -32,13 +36,13 @@
             "tag": "forge:dough"
           },
           {
-            "tag": "forge:milk"
-          },
-          {
             "tag": "forge:fruits/strawberry"
           },
           {
             "tag": "forge:fruits/lime"
+          },
+          {
+            "tag": "forge:milk"
           }
         ],
         "result": {

@@ -4,8 +4,21 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "salmon_tartare"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_slice"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "salmon_tartare"
+            }
+          ]
         }
       ],
       "recipe": {
@@ -22,7 +35,7 @@
             "tag": "forge:raw_fishes/salmon"
           },
           {
-            "tag": "forge:fruits/citrus"
+            "item": "collectorsreap:lime_slice"
           },
           {
             "item": "minecraft:bowl"

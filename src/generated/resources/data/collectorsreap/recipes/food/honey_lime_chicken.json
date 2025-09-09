@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "honey_lime_chicken"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "honey_lime_chicken"
+            }
+          ]
         }
       ],
       "recipe": {
@@ -23,7 +32,7 @@
             "item": "minecraft:honey_bottle"
           },
           {
-            "item": "collectorsreap:lime_slice"
+            "tag": "forge:fruits/lime"
           },
           {
             "tag": "forge:vegetables/onion"

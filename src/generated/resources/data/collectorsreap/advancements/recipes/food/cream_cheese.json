@@ -40,6 +40,10 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
               "value": "cream_cheese"
             },
             {

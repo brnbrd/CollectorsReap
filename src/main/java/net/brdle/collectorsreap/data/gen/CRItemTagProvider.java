@@ -163,13 +163,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addOptional(Util.rl("pamhc2trees", "dragonfruititem"));
 		this.tag(CRItemTags.FRUITS_DRAGON_FRUIT).addTag(CRItemTags.forge("fruits/dragonfruit"));
 		this.tag(CRItemTags.FRUITS_POMEGRANATE).add(CRItems.POMEGRANATE_SLICE.get());
-		this.tag(CRItemTags.FRUITS_LIME)
-			.add(CRItems.LIME.get())
-			.add(CRItems.LIME_SLICE.get());
+		this.tag(CRItemTags.FRUITS_LIME).add(CRItems.LIME.get());
 		this.tag(CRItemTags.FRUITS_CITRUS)
 			.addTag(CRItemTags.FRUITS_LIME)
-			.addOptionalTag(Util.rl("forge", "fruits/lemon"))
-			.addOptional(Util.rl("fruitsdelight", "lemon_slice"));
+			.addOptionalTag(Util.rl("forge", "fruits/lemon"));
 		this.tag(CRItemTags.FRUITS)
 			.addTag(CRItemTags.FRUITS_CITRUS)
 			.addTag(CRItemTags.FRUITS_POMEGRANATE)
@@ -240,6 +237,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.JUICES)
 			.addTag(CRItemTags.JUICES_LIME)
 			.add(ModItems.MELON_JUICE.get());
+		this.tag(CRItemTags.CONDENSED_MILK).addOptional(Util.rl("cosmopolitan", "condensed_milk_bottle"));
 
 		// Diet
 		this.tag(CRItemTags.DIET_FRUITS)

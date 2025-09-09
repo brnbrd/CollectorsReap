@@ -9,37 +9,41 @@
         },
         {
           "type": "collectorsreap:enabled",
-          "value": "rose_moon"
+          "value": "hermits_sour"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lime"
         }
       ],
       "recipe": {
         "type": "brewinandchewin:fermenting",
         "basefluid": {
           "count": 1000,
-          "fluid": "minecraft:water"
+          "fluid": "brewinandchewin:rice_wine"
         },
         "experience": 1.0,
         "fermentingtime": 4800,
         "ingredients": [
           {
-            "item": "collectorsreap:lunar_pearl"
+            "tag": "forge:fruits/lime"
           },
           {
-            "item": "collectorsreap:lunar_pearl"
+            "tag": "forge:fruits/lime"
           },
           {
-            "item": "minecraft:glow_ink_sac"
+            "tag": "forge:eggs"
           },
           {
-            "item": "minecraft:sweet_berries"
+            "item": "minecraft:sugar"
           }
         ],
         "recipe_book_tab": "drinks",
         "result": {
           "count": 1000,
-          "fluid": "collectorsreap:rose_moon"
+          "fluid": "collectorsreap:hermits_sour"
         },
-        "temperature": 1
+        "temperature": 5
       }
     }
   ]

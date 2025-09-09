@@ -10,6 +10,10 @@
         {
           "type": "collectorsreap:enabled",
           "value": "cream_cheese"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lime"
         }
       ],
       "recipe": {

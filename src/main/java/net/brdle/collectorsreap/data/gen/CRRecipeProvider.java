@@ -157,11 +157,11 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.HONEY_LIME_CHICKEN.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_CHICKEN)
 				.addIngredient(Items.HONEY_BOTTLE)
-				.addIngredient(CRItems.LIME_SLICE.get())
+				.addIngredient(CRItemTags.FRUITS_LIME)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(ForgeTags.GRAIN_RICE)
-				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
-			"food/honey_lime_chicken", finished, enabled("honey_lime_chicken"));
+				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+			"food/honey_lime_chicken", finished, enabled(CRItems.LIME), enabled(CRItems.HONEY_LIME_CHICKEN));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.MEDITERRANEAN_SALMON.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_FISHES_SALMON)
 				.addIngredient(CRItems.LIME_SLICE.get())
@@ -172,10 +172,10 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/mediterranean_salmon", finished, enabled(CRItems.MEDITERRANEAN_SALMON), enabled(CRItems.LIME_SLICE));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POTATO_FRITTERS.get(), 1, 200, 1F)
 				.addIngredient(ForgeTags.VEGETABLES_POTATO)
-				.addIngredient(CRItems.LIME_SLICE.get(), 2)
+				.addIngredient(CRItemTags.FRUITS_LIME)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
-				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
-			"food/potato_fritters", finished, enabled(CRItems.POTATO_FRITTERS), enabled(CRItems.LIME_SLICE));
+				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+			"food/potato_fritters", finished, enabled(CRItems.POTATO_FRITTERS), enabled(CRItems.LIME));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CANDIED_LIME.get(), 3, 200, 1F)
 				.addIngredient(CRItems.LIME_SLICE.get(), 3)
 				.addIngredient(Items.HONEY_BOTTLE)
@@ -320,10 +320,9 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/platinum_bass_stew", finished, enabled(CRItems.PLATINUM_BASS_STEW), enabled(CRItems.LIME_SLICE));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CREAM_CHEESE.get(), 1, 12000, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.MILK)
-				.addIngredient(CRItemTags.FRUITS_LIME)
-				.addIngredient(CRItemTags.FRUITS_LIME)
+				.addIngredient(Ingredient.of(CRItemTags.FRUITS_LIME), 2)
 				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-			"food/cream_cheese", finished, enabled(CRItems.CREAM_CHEESE), not(modLoaded("brewinandchewin")));
+			"food/cream_cheese", finished, enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE), not(modLoaded("brewinandchewin")));
 
 		// Crafting
 		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRItems.PINK_DRAGON_FRUIT, 9)
@@ -417,7 +416,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
 			"food/portobello_burger_from_bun", finished, enabled(CRItems.PORTOBELLO_BURGER), not(tagEmpty(CRItemTags.BURGER_BUN)));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.LIMEADE)
-				.requires(CRItems.LIME_SLICE.get(), 2)
+				.requires(Ingredient.of(CRItemTags.FRUITS_LIME), 2)
 				.requires(Items.SUGAR)
 				.requires(Items.GLASS_BOTTLE)
 				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
@@ -446,19 +445,19 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/pomegranate_smoothie", finished, enabled(CRItems.POMEGRANATE_SMOOTHIE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.FRUITS_BANANA)), not(tagEmpty(CRItemTags.ICE_CUBES)));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.SALMON_TARTARE)
 				.requires(Ingredient.of(ForgeTags.RAW_FISHES_SALMON), 3)
-				.requires(CRItemTags.FRUITS_CITRUS)
+				.requires(CRItems.LIME_SLICE.get())
 				.requires(Items.BOWL)
-				.unlockedBy("has_citrus", has(CRItemTags.FRUITS_CITRUS)),
-			"food/salmon_tartare", finished, enabled(CRItems.SALMON_TARTARE));
+				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
+			"food/salmon_tartare", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.SALMON_TARTARE));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.COD_CEVICHE)
 				.requires(ForgeTags.RAW_FISHES_COD)
-				.requires(CRItemTags.FRUITS_CITRUS)
+				.requires(CRItems.LIME_SLICE.get())
 				.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
 				.requires(ForgeTags.VEGETABLES_TOMATO)
 				.requires(ForgeTags.VEGETABLES_ONION)
 				.requires(Items.BOWL)
-				.unlockedBy("has_citrus", has(CRItemTags.FRUITS_CITRUS)),
-			"food/cod_ceviche", finished, enabled(CRItems.COD_CEVICHE));
+				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
+			"food/cod_ceviche", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.COD_CEVICHE));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.DELUXE_SALAD)
 				.requires(Items.APPLE)
 				.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
@@ -485,11 +484,11 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/chocolate_arils", finished, enabled(CRItems.CHOCOLATE_ARILS), not(tagEmpty(CRItemTags.CHOCOLATE_BAR)), modLoaded("neapolitan"));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.STRAWBERRY_JAM_BUN)
 				.requires(ForgeTags.DOUGH)
-				.requires(ForgeTags.MILK)
 				.requires(CRItemTags.FRUITS_STRAWBERRY)
 				.requires(CRItemTags.FRUITS_LIME)
+				.requires(ForgeTags.MILK)
 				.unlockedBy("has_strawberries", has(CRItemTags.FRUITS_STRAWBERRY)),
-			"food/strawberry_jam_bun", finished, enabled(CRItems.STRAWBERRY_JAM_BUN), not(tagEmpty(CRItemTags.FRUITS_STRAWBERRY)), modLoaded("neapolitan"));
+			"food/strawberry_jam_bun", finished, enabled(CRItems.STRAWBERRY_JAM_BUN), enabled(CRItems.LIME), not(tagEmpty(CRItemTags.FRUITS_STRAWBERRY)), modLoaded("neapolitan"));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.BIG_RICE_BALL)
 				.requires(Items.DRIED_KELP)
 				.requires(ModItems.COOKED_RICE.get(), 3)
@@ -541,13 +540,13 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/prawn_po_boy", finished, enabled(CRItems.PRAWN_PO_BOY));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.PRAWN_CEVICHE)
 				.requires(CRItemTags.COOKED_PRAWN)
-				.requires(CRItemTags.FRUITS_CITRUS)
+				.requires(CRItems.LIME_SLICE.get())
 				.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
 				.requires(ForgeTags.VEGETABLES_TOMATO)
 				.requires(ForgeTags.VEGETABLES_ONION)
 				.requires(Items.BOWL)
 				.unlockedBy("has_cooked_prawn", has(CRItemTags.COOKED_PRAWN)),
-			"food/prawn_ceviche", finished, enabled(CRItems.PRAWN_CEVICHE));
+			"food/prawn_ceviche", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.PRAWN_CEVICHE));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.FISH_MIX)
 				.requires(ModItems.SALMON_SLICE.get())
 				.requires(ModItems.COD_SLICE.get())
@@ -624,25 +623,33 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.unlockedBy("has_portobello_quiche_slice", has(CRItems.PORTOBELLO_QUICHE_SLICE.get())),
 			"food/portobello_quiche_from_slices", finished, enabled(CRItems.PORTOBELLO_QUICHE), enabled(CRItems.PORTOBELLO_QUICHE_SLICE));
 		wrap(shaped(RecipeCategory.FOOD, CRItems.LIME_PIE)
-				.pattern("ele")
 				.pattern("lll")
-				.pattern("scm")
-				.define('l', CRItems.LIME_SLICE.get())
-				.define('e', Tags.Items.EGGS)
+				.pattern("mmm")
+				.pattern("scs")
+				.define('l', CRItemTags.FRUITS_LIME)
 				.define('s', Items.SUGAR)
-				.define('m', ForgeTags.MILK)
+				.define('m', ForgeTags.MILK_BOTTLE)
+				.define('c', ModItems.PIE_CRUST.get())
+				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+			"food/lime_pie", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_PIE));
+		wrap(shaped(RecipeCategory.FOOD, CRItems.LIME_PIE)
+				.pattern("lll")
+				.pattern("lll")
+				.pattern("mcm")
+				.define('l', CRItems.LIME_SLICE.get())
+				.define('m', CRItemTags.CONDENSED_MILK)
 				.define('c', ModItems.PIE_CRUST.get())
 				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
-			"food/lime_pie", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_PIE));
+			"food/lime_pie_from_condensed_milk", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.LIME_PIE), not(tagEmpty(CRItemTags.CONDENSED_MILK)));
 		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CRItems.LIME_PIE.get(), 1)
 				.requires(CRItems.LIME_PIE_SLICE.get(), 4)
 				.unlockedBy("has_lime_pie_slice", has(CRItems.LIME_PIE_SLICE.get())),
 			"food/lime_pie_from_slices", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_PIE), enabled(CRItems.LIME_PIE_SLICE));
 		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CRItems.LIME_COOKIE.get(), 8)
-				.requires(CRItems.LIME.get())
+				.requires(CRItemTags.FRUITS_LIME)
 				.requires(ForgeTags.GRAIN_WHEAT)
 				.requires(ForgeTags.GRAIN_WHEAT)
-				.unlockedBy("has_lime", has(CRItems.LIME.get())),
+				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
 			"food/lime_cookie", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_COOKIE));
 		wrap(shaped(RecipeCategory.FOOD, CRItems.LIME_CAKE)
 				.pattern("mlm")
@@ -650,10 +657,10 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.pattern("wlw")
 				.define('e', Tags.Items.EGGS)
 				.define('m', ForgeTags.MILK)
-				.define('l', CRItems.LIME.get())
+				.define('l', CRItemTags.FRUITS_LIME)
 				.define('s', Items.SUGAR)
 				.define('w', ForgeTags.GRAIN_WHEAT)
-				.unlockedBy("has_lime", has(CRItems.LIME.get())),
+				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
 			"food/lime_cake", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_CAKE));
 		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CRItems.LIME_CAKE.get(), 1)
 				.requires(CRItems.LIME_CAKE_SLICE.get(), 7)
@@ -713,155 +720,155 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.pattern("xxx")
 				.define('x', CRItems.URCHIN_TEST.get())
 				.unlockedBy("has_urchin_test", has(CRItems.URCHIN_TEST.get())),
-			"urchin_test_block", finished, enabled(CRItems.URCHIN_TEST));
+			"urchin_test_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BLOCK));
 		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, CRItems.URCHIN_TEST.get(), 9)
 				.requires(CRItems.URCHIN_TEST_BLOCK.get(), 1)
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			"unpack_urchin_test_block", finished, enabled("urchin_test"));
+			"unpack_urchin_test_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BLOCK));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CRItems.URCHIN_TEST_BRICKS.get(), 4)
 				.pattern("xx")
 				.pattern("xx")
 				.define('x', CRItems.URCHIN_TEST_BLOCK.get())
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			"urchin_test_bricks", finished, enabled("urchin_test"));
+			"urchin_test_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICKS));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CRItems.URCHIN_TEST_BRICK_SLAB.get(), 6)
 				.pattern("xxx")
 				.define('x', CRItems.URCHIN_TEST_BRICKS.get())
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			"urchin_test_brick_slab", finished, enabled("urchin_test"));
+			"urchin_test_brick_slab", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICK_SLAB));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CRItems.URCHIN_TEST_BRICK_STAIRS.get(), 4)
 				.pattern("x  ")
 				.pattern("xx ")
 				.pattern("xxx")
 				.define('x', CRItems.URCHIN_TEST_BRICKS.get())
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			"urchin_test_brick_stairs", finished, enabled("urchin_test"));
+			"urchin_test_brick_stairs", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICK_STAIRS));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CRItems.URCHIN_TEST_BRICK_WALL.get(), 6)
 				.pattern("xxx")
 				.pattern("xxx")
 				.define('x', CRItems.URCHIN_TEST_BRICKS.get())
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			"urchin_test_brick_wall", finished, enabled("urchin_test"));
+			"urchin_test_brick_wall", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICK_WALL));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CRItems.URCHIN_TEST_TILES.get(), 4)
 				.pattern("xx")
 				.pattern("xx")
 				.define('x', CRItems.URCHIN_TEST_BRICKS.get())
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			"urchin_test_tiles", finished, enabled("urchin_test"));
+			"urchin_test_tiles", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILES));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CRItems.URCHIN_TEST_TILE_SLAB.get(), 6)
 				.pattern("xxx")
 				.define('x', CRItems.URCHIN_TEST_TILES.get())
 				.unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
-			"urchin_test_tile_slab", finished, enabled("urchin_test"));
+			"urchin_test_tile_slab", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_SLAB));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CRItems.URCHIN_TEST_TILE_STAIRS.get(), 4)
 				.pattern("x  ")
 				.pattern("xx ")
 				.pattern("xxx")
 				.define('x', CRItems.URCHIN_TEST_TILES.get())
 				.unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
-			"urchin_test_tile_stairs", finished, enabled("urchin_test"));
+			"urchin_test_tile_stairs", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICK_STAIRS));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CRItems.URCHIN_TEST_TILE_WALL.get(), 6)
 				.pattern("xxx")
 				.pattern("xxx")
 				.define('x', CRItems.URCHIN_TEST_TILES.get())
 				.unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
-			"urchin_test_tile_wall", finished, enabled("urchin_test"));
+			"urchin_test_tile_wall", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_WALL));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, CRItems.CHISELED_URCHIN_TEST_BRICKS.get())
 				.pattern("x")
 				.pattern("x")
 				.define('x', CRItems.URCHIN_TEST_BRICK_SLAB.get())
 				.unlockedBy("has_urchin_test_brick_slab", has(CRItems.URCHIN_TEST_BRICK_SLAB.get())),
-			"chiseled_urchin_test_bricks", finished, enabled("urchin_test"));
+			"chiseled_urchin_test_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.CHISELED_URCHIN_TEST_BRICKS));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_BRICKS.get())
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_bricks", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICKS));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILES.get())
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tiles", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tiles", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILES));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILES.get())
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tiles_from_bricks", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tiles_from_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICKS), enabled(CRItems.URCHIN_TEST_TILES));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
 					CRItems.CHISELED_URCHIN_TEST_BRICKS.get())
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.CHISELED_URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/chiseled_urchin_test_bricks", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/chiseled_urchin_test_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.CHISELED_URCHIN_TEST_BRICKS));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
 					CRItems.CHISELED_URCHIN_TEST_BRICKS.get())
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/chiseled_urchin_test_bricks_from_block", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/chiseled_urchin_test_bricks_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.CHISELED_URCHIN_TEST_BRICKS), enabled(CRItems.URCHIN_TEST_BLOCK));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_BRICK_SLAB.get(), 2)
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_slab", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_brick_slab", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICK_SLAB));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_BRICK_SLAB.get(), 2)
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_slab_from_block", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_brick_slab_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICK_SLAB));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_BRICK_STAIRS.get(), 1)
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_stairs", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_brick_stairs", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICK_STAIRS));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_BRICK_STAIRS.get(), 1)
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_stairs_from_block", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_brick_stairs_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICK_STAIRS));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_BRICK_WALL.get(), 1)
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_wall", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_brick_wall", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICK_WALL));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_BRICK_WALL.get(), 1)
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_wall_from_block", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_brick_wall_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_BRICK_WALL));
 
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_TILES.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILE_SLAB.get(), 2)
 				.unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_SLAB));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILE_SLAB.get(), 2)
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab_from_bricks", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab_from_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_SLAB));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILE_SLAB.get(), 2)
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab_from_block", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_SLAB));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_TILES.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILE_STAIRS.get(), 1)
 				.unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_STAIRS));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILE_STAIRS.get(), 1)
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs_from_bricks", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs_from_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_STAIRS));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILE_STAIRS.get(), 1)
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs_from_block", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_STAIRS));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_TILES.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILE_WALL.get(), 1)
 				.unlockedBy("has_urchin_test_tiles", has(CRItems.URCHIN_TEST_TILES.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_WALL));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILE_WALL.get(), 1)
 				.unlockedBy("has_urchin_test_bricks", has(CRItems.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall_from_bricks", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall_from_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_WALL));
 		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRItems.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
 					CRItems.URCHIN_TEST_TILE_WALL.get(), 1)
 				.unlockedBy("has_urchin_test_block", has(CRItems.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall_from_block", finished, enabled("urchin_test"));
+			CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRItems.URCHIN_TEST_TILE_WALL));
 
 		// Neapolitan Compat
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.LIME_ICE_CREAM)
 				.requires(Items.BOWL)
-				.requires(CRItems.LIME.get())
+				.requires(CRItemTags.FRUITS_LIME)
 				.requires(ForgeTags.MILK)
 				.requires(CRItemTags.ICE_CUBES)
 				.requires(Items.SUGAR)
-				.unlockedBy("has_lime", has(CRItems.LIME.get())),
+				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
 			"food/lime_ice_cream", finished, enabled(CRItems.LIME_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.LIME_MILKSHAKE, 3)
 				.requires(Items.GLASS_BOTTLE, 3)

@@ -52,6 +52,7 @@ public class CRItemTags {
 	public static final TagKey<Item> CHEESE_MILD_CREAM = forge("cheese/mild/cream");
 	public static final TagKey<Item> CHEESE_SPICY = forge("cheese/spicy");
 	public static final TagKey<Item> CHEESE_SWEET = forge("cheese/sweet");
+	public static final TagKey<Item> CONDENSED_MILK = forge("condensed_milk");
 	public static final TagKey<Item> ROE = forge("roe");
 	public static final TagKey<Item> ROE_FISH = forge("roe/fish");
 	public static final TagKey<Item> ROE_PRAWN = forge("roe/prawn");

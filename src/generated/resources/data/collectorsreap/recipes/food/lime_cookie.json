@@ -22,7 +22,7 @@
         "category": "misc",
         "ingredients": [
           {
-            "item": "collectorsreap:lime"
+            "tag": "forge:fruits/lime"
           },
           {
             "tag": "forge:grain/wheat"
