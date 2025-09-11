@@ -375,14 +375,14 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.requires(CRItems.PINK_DRAGON_FRUIT.get())
 				.requires(CRItemTags.ICE_CUBES)
 				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
-			"food/tropical_shaved_ice", finished, enabled(CRItems.TROPICAL_SHAVED_ICE));
+			"food/tropical_shaved_ice", finished, enabled(CRItems.TROPICAL_SHAVED_ICE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.FRUITS_STRAWBERRY)));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.DRAGONS_PASSION)
 				.requires(Items.GLASS_BOTTLE)
 				.requires(CRItems.PINK_DRAGON_FRUIT.get(), 2)
 				.requires(CRItemTags.PASSION_FRUIT)
 				.requires(Ingredient.of(Items.SUGAR, Items.HONEY_BOTTLE))
 				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
-			"food/dragons_passion", finished, enabled(CRItems.DRAGONS_PASSION));
+			"food/dragons_passion", finished, enabled(CRItems.DRAGONS_PASSION), modLoaded("atmospheric"), not(tagEmpty(CRItemTags.PASSION_FRUIT)));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.PORTOBELLO_WRAP)
 				.requires(ForgeTags.BREAD)
 				.requires(CRItems.BAKED_PORTOBELLO_CAP.get())

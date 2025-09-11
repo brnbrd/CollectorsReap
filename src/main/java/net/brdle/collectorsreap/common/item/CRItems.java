@@ -7,6 +7,7 @@ import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.fluid.CRFluids;
 import net.brdle.collectorsreap.common.item.food.*;
 import net.brdle.collectorsreap.compat.Mods;
+import net.brdle.collectorsreap.compat.brewinandchewin.BrewinChewinCompat;
 import net.brdle.collectorsreap.compat.brewinandchewin.CRBoozeItem;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
 import net.minecraft.resources.ResourceLocation;
@@ -20,13 +21,13 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MushroomColonyItem;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import java.util.Map;
 import java.util.function.Supplier;
+import org.jetbrains.annotations.NotNull;
 
 public class CRItems extends ModItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CollectorsReap.MODID);
@@ -65,8 +66,8 @@ public class CRItems extends ModItems {
 				blockToItemMap.remove(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
 			}
 		});
-	public static final RegistryObject<Item> DRAGON_BUSH = registerItem("dragon_bush",
-		() -> new BlockItem(CRBlocks.DRAGON_BUSH.get(), new Item.Properties()));
+	public static final RegistryObject<Item> DRAGON_BUSH = registerItem("dragon_bush", () ->
+		new BlockItem(CRBlocks.DRAGON_BUSH.get(), new Item.Properties()));
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT = registerFood("pink_dragon_fruit",
 		new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT), true, false);
 	public static final RegistryObject<Item> DRIED_PINK_DRAGON_FRUIT = registerFood("dried_pink_dragon_fruit",
@@ -75,22 +76,21 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.PINK_NOODLES), true, false);
 	public static final RegistryObject<Item> DRAGON_STEW = registerFood("dragon_stew",
 		bowlFoodItem(Nutrition.DRAGON_STEW), true, false);
-	public static final RegistryObject<Item> TROPICAL_SHAVED_ICE = registerFood("tropical_shaved_ice",
-		bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE), true, false);
-	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate",
-		() -> new Item((new Item.Properties())));
+	public static final RegistryObject<Item> TROPICAL_SHAVED_ICE = registerItem("tropical_shaved_ice", () ->
+		new CompatConsumable(bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE),
+			true, false, "neapolitan"));
+	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate", () ->
+		new Item((new Item.Properties())));
 	public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",
 		new Item.Properties().food(Nutrition.POMEGRANATE_SLICE), true, false);
-	public static final RegistryObject<Item> POMEGRANATE_SEEDS = registerItem("pomegranate_seeds",
-		() -> new FruitBushSeedsItem(
+	public static final RegistryObject<Item> POMEGRANATE_SEEDS = registerItem("pomegranate_seeds", () ->
+		new FruitBushSeedsItem(
 			CRBlocks.POMEGRANATE_BUSH.get(), (new Item.Properties()).food(Nutrition.POMEGRANATE_SEEDS)
 		));
-	public static final RegistryObject<Item> STYGIAN_POMEGRANATE = registerItem("stygian_pomegranate",
-		() -> new StygianPomegranateItem((new Item.Properties()).food(Nutrition.STYGIAN_POMEGRANATE)));
-	public static final RegistryObject<Item> LIME_SEEDS = registerItem("lime_seeds",
-		() -> new FruitBushSeedsItem(
-			CRBlocks.LIME_BUSH.get(), (new Item.Properties())
-		));
+	public static final RegistryObject<Item> STYGIAN_POMEGRANATE = registerItem("stygian_pomegranate", () ->
+		new StygianPomegranateItem((new Item.Properties()).food(Nutrition.STYGIAN_POMEGRANATE)));
+	public static final RegistryObject<Item> LIME_SEEDS = registerItem("lime_seeds", () ->
+		new FruitBushSeedsItem(CRBlocks.LIME_BUSH.get(), (new Item.Properties())));
 	public static final RegistryObject<Item> LIME = registerFood("lime",
 		new Item.Properties().food(Nutrition.LIME), true, false);
 	public static final RegistryObject<Item> LIME_SLICE = registerFood("lime_slice",
@@ -126,8 +126,9 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.DELUXE_SALAD), true, false);
 	public static final RegistryObject<Item> CREAM_CHEESE = registerFood("cream_cheese",
 		bowlFoodItem(Nutrition.CREAM_CHEESE), true, false);
-	public static final RegistryObject<Item> DRAGONS_PASSION = registerDrink("dragons_passion",
-		drinkItem().food(Nutrition.DRAGONS_PASSION), true, false);
+	public static final RegistryObject<Item> DRAGONS_PASSION = registerItem("dragons_passion", () ->
+		new CompatDrinkable((new Item.Properties()).food(
+			Nutrition.DRAGONS_PASSION), true, false, "atmospheric"));
 	public static final RegistryObject<Item> LIMEADE = registerDrink("limeade",
 		drinkItem().food(Nutrition.LIMEADE), true, false);
 	public static final RegistryObject<Item> STRONG_LIMEADE = registerDrink("strong_limeade",
@@ -298,38 +299,25 @@ public class CRItems extends ModItems {
 		() -> new BlockItem(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
 
 	// Brewin and Chewin Compat
-	private static final ResourceLocation tankard = Util.rl("brewinandchewin", "tankard");
 	public static final RegistryObject<Item> DEIFIC_BLOOD = registerItem("deific_blood", () ->
 		Mods.stringLoaded("brewinandchewin") ?
-			new CRBoozeItem(CRFluids.DEIFIC_BLOOD.get(), (new Item.Properties())
-				.stacksTo(16)
-				.craftRemainder(Util.item(tankard, Items.GLASS_BOTTLE))
-				.food(Nutrition.DEIFIC_BLOOD)) :
-			new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+		BrewinChewinCompat.DEIFIC_BLOOD.get() :
+		new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
 	);
 	public static final RegistryObject<Item> HERMITS_SOUR = registerItem("hermits_sour", () ->
 		Mods.stringLoaded("brewinandchewin") ?
-			new CRBoozeItem(CRFluids.HERMITS_SOUR.get(), (new Item.Properties())
-				.stacksTo(16)
-				.craftRemainder(Util.item(tankard, Items.GLASS_BOTTLE))
-				.food(Nutrition.HERMITS_SOUR)) :
-			new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+		BrewinChewinCompat.HERMITS_SOUR.get() :
+		new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
 	);
 	public static final RegistryObject<Item> ROSE_MOON = registerItem("rose_moon", () ->
 		Mods.stringLoaded("brewinandchewin") ?
-			new CRBoozeItem(CRFluids.ROSE_MOON.get(), (new Item.Properties())
-				.stacksTo(16)
-				.craftRemainder(Util.item(tankard, Items.GLASS_BOTTLE))
-				.food(Nutrition.ROSE_MOON)) :
-			new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+		BrewinChewinCompat.ROSE_MOON.get() :
+		new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
 	);
 	public static final RegistryObject<Item> REANIMATORS_GARDEN = registerItem("reanimators_garden", () ->
 		Mods.stringLoaded("brewinandchewin") ?
-			new CRBoozeItem(CRFluids.REANIMATORS_GARDEN.get(), (new Item.Properties())
-				.stacksTo(16)
-				.craftRemainder(Util.item(tankard, Items.GLASS_BOTTLE))
-				.food(Nutrition.REANIMATORS_GARDEN)) :
-			new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+		BrewinChewinCompat.REANIMATORS_GARDEN.get() :
+		new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
 	);
 
 	// Urchin Test

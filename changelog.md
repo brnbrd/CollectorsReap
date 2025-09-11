@@ -1,6 +1,14 @@
 ## Version History
 
 
+# 1.4.1
+
+### Fixes
+- Fixed startup crash without [Brewin' and Chewin'](https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin)
+- Tropical Shaved Ice is no longer enabled without [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan)
+- Dragon's Passion is no longer enabled without [Atmospheric](https://www.curseforge.com/minecraft/mc-mods/atmospheric)
+
+
 # 1.4
 
 ### Updates

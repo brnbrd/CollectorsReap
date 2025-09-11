@@ -4,8 +4,24 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "dragons_passion"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "dragons_passion"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "atmospheric"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "atmospheric:passion_fruit"
+              }
+            }
+          ]
         }
       ],
       "recipe": {

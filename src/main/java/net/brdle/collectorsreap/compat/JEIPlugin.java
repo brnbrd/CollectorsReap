@@ -62,6 +62,7 @@ public class JEIPlugin implements IModPlugin {
 				CRItems.REANIMATORS_GARDEN.get().getDefaultInstance()
 			));
 			registration.getIngredientManager().removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, List.of(
+				new FluidStack(CRFluids.CREAM_CHEESE.get(), 1000),
 				new FluidStack(CRFluids.DEIFIC_BLOOD.get(), 1000),
 				new FluidStack(CRFluids.HERMITS_SOUR.get(), 1000),
 				new FluidStack(CRFluids.ROSE_MOON.get(), 1000),

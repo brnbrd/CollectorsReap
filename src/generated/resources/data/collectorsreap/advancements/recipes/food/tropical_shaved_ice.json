@@ -38,8 +38,24 @@
       },
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "tropical_shaved_ice"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "tropical_shaved_ice"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:fruits/strawberry"
+              }
+            }
+          ]
         }
       ]
     }
