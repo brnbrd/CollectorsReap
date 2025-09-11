@@ -54,20 +54,25 @@ public class Urchin extends WaterGroundCreature {
 	}
 
 	@Override
-	public boolean hurt(@NotNull DamageSource source, float pAmount) {
-		Entity entity = source.getEntity();
+	public boolean hurt(@NotNull DamageSource source, float amount) {
+		final boolean superHurt = super.hurt(source, amount);
 		if (
+			superHurt &&
 			!this.level().isClientSide() &&
-				entity instanceof LivingEntity living &&
-				!this.isInvulnerableTo(source) &&
-				!source.isIndirect()
+			source.getEntity() instanceof final LivingEntity attacker &&
+			!this.isInvulnerableTo(source) &&
+			!source.isIndirect()
 		) {
-			DamageSource thorns = living.damageSources().thorns(this);
-			if (!living.isInvulnerableTo(thorns)) {
-				living.hurt(thorns, 3F);
+			final DamageSource thorns = this.damageSources().thorns(this);
+			if (
+				!this.isDeadOrDying() &&
+				!attacker.isDeadOrDying() &&
+				!attacker.isInvulnerableTo(thorns)
+			) {
+				attacker.hurt(thorns, 2F);
+				attacker.addEffect(new MobEffectInstance(MobEffects.POISON, 60, 0), this);
 			}
-			living.addEffect(new MobEffectInstance(MobEffects.POISON, 100, 0), this);
 		}
-		return super.hurt(source, pAmount);
+		return superHurt;
 	}
 }
