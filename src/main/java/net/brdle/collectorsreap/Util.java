@@ -106,7 +106,7 @@ public class Util {
 		return item(location, backup.get());
 	}
 
-	public static ItemStack gs(Supplier<Item> r) {
+	public static ItemStack getStack(Supplier<Item> r) {
 		return r.get().getDefaultInstance();
 	}
 

@@ -51,13 +51,13 @@ public class ForgeEvents {
 	@SubscribeEvent
 	public void onWanderingTrader(WandererTradesEvent e) {
 		if (CRConfig.verify(CRItems.LIME)) {
-			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.gs(CRItems.LIME_SEEDS), 5, 1, 1));
+			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.getStack(CRItems.LIME_SEEDS), 5, 1, 1));
 		}
 		if (CRConfig.verify(CRItems.PINK_DRAGON_FRUIT)) {
-			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.gs(CRItems.DRAGON_FRUIT_SEEDS), 5, 1, 1));
+			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.getStack(CRItems.DRAGON_FRUIT_SEEDS), 5, 1, 1));
 		}
 		if (CRConfig.verify(CRItems.PORTOBELLO)) {
-			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.BROWN_MUSHROOM, 4), Util.gs(CRItems.PORTOBELLO), 10, 1, 1));
+			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.BROWN_MUSHROOM, 4), Util.getStack(CRItems.PORTOBELLO), 10, 1, 1));
 		}
 	}
 

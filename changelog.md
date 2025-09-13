@@ -4,6 +4,7 @@
 # 1.4.2
 
 ### Updates
+- Added a backup recipe for Reanimator's Garden, not requiring ingredients from [Atmospheric](https://www.curseforge.com/minecraft/mc-mods/atmospheric)
 - Renamed `Veggie Wrap` to `Portobello Wrap` in English translations
 
 

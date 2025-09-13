@@ -1,0 +1,112 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "reanimators_garden"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "brewinandchewin"
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:item_exists",
+            "item": "atmospheric:blood_orange"
+          }
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:tag_empty",
+            "tag": "forge:fruits/strawberry"
+          }
+        }
+      ],
+      "recipe": {
+        "type": "brewinandchewin:fermenting",
+        "basefluid": {
+          "count": 1000,
+          "fluid": "brewinandchewin:saccharine_rum"
+        },
+        "experience": 1.0,
+        "fermentingtime": 4800,
+        "ingredients": [
+          {
+            "tag": "forge:fruits/lime"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "tag": "forge:fruits/strawberry"
+          },
+          {
+            "tag": "forge:fruits/strawberry"
+          }
+        ],
+        "recipe_book_tab": "drinks",
+        "result": {
+          "count": 1000,
+          "fluid": "collectorsreap:reanimators_garden"
+        },
+        "temperature": 2
+      }
+    },
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "reanimators_garden"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "brewinandchewin"
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:item_exists",
+            "item": "atmospheric:blood_orange"
+          }
+        },
+        {
+          "type": "forge:tag_empty",
+          "tag": "forge:fruits/strawberry"
+        }
+      ],
+      "recipe": {
+        "type": "brewinandchewin:fermenting",
+        "basefluid": {
+          "count": 1000,
+          "fluid": "brewinandchewin:saccharine_rum"
+        },
+        "experience": 1.0,
+        "fermentingtime": 4800,
+        "ingredients": [
+          {
+            "tag": "forge:fruits/lime"
+          },
+          {
+            "tag": "forge:fruits/pomegranate"
+          },
+          {
+            "item": "minecraft:apple"
+          },
+          {
+            "item": "minecraft:apple"
+          }
+        ],
+        "recipe_book_tab": "drinks",
+        "result": {
+          "count": 1000,
+          "fluid": "collectorsreap:reanimators_garden"
+        },
+        "temperature": 2
+      }
+    }
+  ]
+}

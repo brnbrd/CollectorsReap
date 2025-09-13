@@ -4,15 +4,20 @@
     {
       "conditions": [
         {
+          "type": "collectorsreap:enabled",
+          "value": "reanimators_garden"
+        },
+        {
           "type": "forge:mod_loaded",
           "modid": "brewinandchewin"
         },
         {
-          "type": "forge:not",
-          "value": {
-            "type": "forge:tag_empty",
-            "tag": "forge:fruits/blood_orange"
-          }
+          "type": "forge:mod_loaded",
+          "modid": "atmospheric"
+        },
+        {
+          "type": "forge:item_exists",
+          "item": "atmospheric:blood_orange"
         },
         {
           "type": "forge:not",
@@ -20,10 +25,6 @@
             "type": "forge:tag_empty",
             "tag": "forge:fruits/passion_fruit"
           }
-        },
-        {
-          "type": "collectorsreap:enabled",
-          "value": "reanimators_garden"
         }
       ],
       "recipe": {
@@ -42,7 +43,7 @@
             "tag": "forge:fruits/pomegranate"
           },
           {
-            "tag": "forge:fruits/blood_orange"
+            "item": "atmospheric:blood_orange"
           },
           {
             "tag": "forge:fruits/passion_fruit"
