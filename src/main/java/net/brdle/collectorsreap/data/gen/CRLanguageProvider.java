@@ -161,7 +161,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.PORTOBELLO_BURGER, "Portoburger");
 		addItem(CRItems.PORTOBELLO_PASTA, "Pasta with Mushroom");
 		addItem(CRItems.PORTOBELLO_RISOTTO, "Portobello Risotto");
-		addItem(CRItems.PORTOBELLO_WRAP, "Veggie Wrap");
+		addItem(CRItems.PORTOBELLO_WRAP, "Portobello Wrap");
 		addItem(CRItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
 		addItem(CRItems.PORTOBELLO_QUICHE_SLICE, "Slice of Portobello Quiche");
 		addItem(CRItems.PINK_DRAGON_FRUIT, "Pink Dragon Fruit");

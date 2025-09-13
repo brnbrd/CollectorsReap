@@ -3,6 +3,9 @@
 
 # 1.4.2
 
+### Updates
+- Renamed `Veggie Wrap` to `Portobello Wrap` in English translations
+
 
 # 1.4.1
 
