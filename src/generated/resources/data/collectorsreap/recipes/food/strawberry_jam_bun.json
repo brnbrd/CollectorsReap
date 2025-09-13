@@ -24,6 +24,13 @@
             {
               "type": "forge:mod_loaded",
               "modid": "neapolitan"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:item_exists",
+                "item": "sob:strawberry_jam"
+              }
             }
           ]
         }
@@ -36,13 +43,16 @@
             "tag": "forge:dough"
           },
           {
-            "tag": "forge:fruits/strawberry"
+            "tag": "forge:milk"
           },
           {
             "tag": "forge:fruits/lime"
           },
           {
-            "tag": "forge:milk"
+            "tag": "forge:fruits/strawberry"
+          },
+          {
+            "tag": "forge:fruits/strawberry"
           }
         ],
         "result": {

@@ -14,7 +14,7 @@
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "neapolitan:banana"
+                "tag": "forge:fruits/banana"
               }
             },
             {
@@ -30,7 +30,7 @@
         "experience": 1.0,
         "ingredients": [
           {
-            "tag": "neapolitan:banana"
+            "tag": "forge:fruits/banana"
           },
           {
             "item": "minecraft:sugar"

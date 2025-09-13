@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-13T11:15:31.7272911	Recipes
+// 1.20.1	2025-09-13T12:30:52.9079912	Recipes
 f675d5755fabc608553d9bbb803bcaeec477fdf6 data/collectorsreap/advancements/recipes/chiseled_urchin_test_bricks.json
 ffff41205e9b83cc8ab9d38ce39c06fa7e8f6ae7 data/collectorsreap/advancements/recipes/cutting/chieftain_claw.json
 51d613fd6d246740518e1ed57afea6e6deea518e data/collectorsreap/advancements/recipes/cutting/chieftain_crab.json
@@ -107,7 +107,7 @@ e010f6d07eaee86e04639c534e50629e18bc02e3 data/collectorsreap/advancements/recipe
 4d392f7a7ca8210096229c19f2de50c7da981bcc data/collectorsreap/advancements/recipes/food/sea_wrap_from_tortilla.json
 65f8f813164adb0f9cb1717c130bb3f2fe961bf3 data/collectorsreap/advancements/recipes/food/shimmering_apple.json
 1753d80d5b275cd41a1afb54b1f4c2193d973e89 data/collectorsreap/advancements/recipes/food/spicy_grenadine_jelly.json
-71153ddb69f3c6dc56ad07cc84e470e336c08f30 data/collectorsreap/advancements/recipes/food/strawberry_jam_bun.json
+1c0410e81b362e7e680579556d3ec4536a21c5f7 data/collectorsreap/advancements/recipes/food/strawberry_jam_bun.json
 b6c2f430cf73703654f6abf00da808752413f2c0 data/collectorsreap/advancements/recipes/food/stuffed_portobello_cap.json
 bedfdc2fd976ddf920cd248541a82203a1340f53 data/collectorsreap/advancements/recipes/food/tropical_shaved_ice.json
 84c764cfc2d919b7ff635b5c38518115d81d41b9 data/collectorsreap/advancements/recipes/food/uni_roll.json
@@ -267,7 +267,7 @@ b70a6260e6d3d0b2e5ca6fc341a778bff9b53393 data/collectorsreap/recipes/food/sea_wr
 6c801a7ceae0848b4f99cf935e1b43950cc95674 data/collectorsreap/recipes/food/sea_wrap_from_tortilla.json
 865f9e2b620020ee9c23f553232587d14e73650b data/collectorsreap/recipes/food/shimmering_apple.json
 4372748a3cdf7826e1e81336c84f3bb762c6e8fc data/collectorsreap/recipes/food/spicy_grenadine_jelly.json
-91b1ea4663be2bbead8d202c9f714275de263881 data/collectorsreap/recipes/food/strawberry_jam_bun.json
+5ce28141617a8193078c3f3bc5f39a3a6b8bac33 data/collectorsreap/recipes/food/strawberry_jam_bun.json
 24f958b8f4b943a12d9170c2ff5a416c031ffcce data/collectorsreap/recipes/food/stuffed_portobello_cap.json
 4689a3f3d8973475ec1c685342fcd7b2136e1c07 data/collectorsreap/recipes/food/tropical_shaved_ice.json
 5e3400ac14a5cb18e6856fe0553350fb9141f521 data/collectorsreap/recipes/food/uni_roll.json

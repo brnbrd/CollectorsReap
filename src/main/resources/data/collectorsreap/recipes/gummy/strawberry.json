@@ -14,7 +14,7 @@
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "neapolitan:red_strawberries"
+                "tag": "forge:fruits/strawberry"
               }
             },
             {
@@ -30,7 +30,7 @@
         "experience": 1.0,
         "ingredients": [
           {
-            "tag": "neapolitan:red_strawberries"
+            "tag": "forge:fruits/strawberry"
           },
           {
             "item": "minecraft:sugar"

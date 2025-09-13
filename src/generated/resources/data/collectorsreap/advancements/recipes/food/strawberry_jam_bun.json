@@ -56,6 +56,13 @@
             {
               "type": "forge:mod_loaded",
               "modid": "neapolitan"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:item_exists",
+                "item": "sob:strawberry_jam"
+              }
             }
           ]
         }

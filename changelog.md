@@ -4,8 +4,13 @@
 # 1.4.2
 
 ### Updates
+- Strawberry Jam Bun now provides 8 nutrition and Instant Health
+  - Can now be crafted using Strawberry Jam from [Smidgeon o' Bliss REMASTERED](https://www.curseforge.com/minecraft/mc-mods/smidgeon-o-bliss-remastered)
 - Added a backup recipe for Reanimator's Garden, not requiring ingredients from [Atmospheric](https://www.curseforge.com/minecraft/mc-mods/atmospheric)
 - Renamed `Veggie Wrap` to `Portobello Wrap` in English translations
+
+### Fixes
+- Fixed some gummy recipes using outdated tags
 
 
 # 1.4.1

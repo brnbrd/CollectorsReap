@@ -1,0 +1,46 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "strawberry_jam_bun"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lime"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "neapolitan"
+        },
+        {
+          "type": "forge:item_exists",
+          "item": "sob:strawberry_jam"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "tag": "forge:dough"
+          },
+          {
+            "tag": "forge:milk"
+          },
+          {
+            "item": "sob:strawberry_jam"
+          },
+          {
+            "tag": "forge:fruits/lime"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:strawberry_jam_bun"
+        }
+      }
+    }
+  ]
+}

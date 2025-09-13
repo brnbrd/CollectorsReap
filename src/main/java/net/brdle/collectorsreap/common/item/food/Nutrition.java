@@ -227,7 +227,8 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 400, 1), 1F)
 		.build();
 	public static final FoodProperties STRAWBERRY_JAM_BUN = (new FoodProperties.Builder())
-		.nutrition(7).saturationMod(0.5F)
+		.nutrition(8).saturationMod(0.55F)
+		.effect(() -> new MobEffectInstance(MobEffects.HEAL, 1, 0), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 0), 1F)
 		.build();
 	public static final FoodProperties POMEGRANATE_BEAN_SALAD = (new FoodProperties.Builder())
@@ -397,7 +398,8 @@ public class Nutrition {
 		.nutrition(8).saturationMod(1.25F).build();
 
 	// Gummies
-	public static final FoodProperties STRAWBERRY_GUMMY = GUMMY();
+	public static final FoodProperties STRAWBERRY_GUMMY = GUMMY(() ->
+		new MobEffectInstance(MobEffects.HEAL, 1, 2));
 	public static final FoodProperties LIME_GUMMY = GUMMY(() ->
 		new MobEffectInstance(CREffects.CORROSION.get(), 200, 2));
 	public static final FoodProperties POMEGRANATE_GUMMY = GUMMY(() ->

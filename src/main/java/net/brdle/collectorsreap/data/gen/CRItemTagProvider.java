@@ -125,12 +125,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.REANIMATORS_GARDEN.get());
 
 		// Neapolitan
-		this.addSelf(CRItemTags.FRUITS_BANANA);
 		this.addSelf(CRItemTags.DRIED_VANILLA_PODS);
 		this.addSelf(CRItemTags.CHOCOLATE_BAR);
 		this.addSelf(CRItemTags.MINT_LEAVES);
 		this.addSelf(CRItemTags.ROASTED_ADZUKI_BEANS);
-		this.tag(CRItemTags.FRUITS_STRAWBERRY).addOptional(Util.rl("neapolitan", "strawberries"));
 		this.tag(CRItemTags.ICE_CREAM)
 			.add(CRItems.LIME_ICE_CREAM.get())
 			.add(CRItems.POMEGRANATE_ICE_CREAM.get())

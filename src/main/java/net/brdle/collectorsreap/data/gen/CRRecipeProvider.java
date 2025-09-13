@@ -484,11 +484,11 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/chocolate_arils", finished, enabled(CRItems.CHOCOLATE_ARILS), not(tagEmpty(CRItemTags.CHOCOLATE_BAR)), modLoaded("neapolitan"));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.STRAWBERRY_JAM_BUN)
 				.requires(ForgeTags.DOUGH)
-				.requires(CRItemTags.FRUITS_STRAWBERRY)
-				.requires(CRItemTags.FRUITS_LIME)
 				.requires(ForgeTags.MILK)
+				.requires(CRItemTags.FRUITS_LIME)
+				.requires(Ingredient.of(CRItemTags.FRUITS_STRAWBERRY), 2)
 				.unlockedBy("has_strawberries", has(CRItemTags.FRUITS_STRAWBERRY)),
-			"food/strawberry_jam_bun", finished, enabled(CRItems.STRAWBERRY_JAM_BUN), enabled(CRItems.LIME), not(tagEmpty(CRItemTags.FRUITS_STRAWBERRY)), modLoaded("neapolitan"));
+			"food/strawberry_jam_bun", finished, enabled(CRItems.STRAWBERRY_JAM_BUN), enabled(CRItems.LIME), not(tagEmpty(CRItemTags.FRUITS_STRAWBERRY)), modLoaded("neapolitan"), not(itemExists("sob", "strawberry_jam")));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.BIG_RICE_BALL)
 				.requires(Items.DRIED_KELP)
 				.requires(ModItems.COOKED_RICE.get(), 3)

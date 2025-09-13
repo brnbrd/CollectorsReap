@@ -14,7 +14,7 @@
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "neapolitan:banana"
+                "tag": "forge:fruits/banana"
               }
             },
             {
@@ -33,7 +33,7 @@
         "heatRequirement": "heated",
         "ingredients": [
           {
-            "tag": "neapolitan:banana"
+            "tag": "forge:fruits/banana"
           },
           {
             "item": "minecraft:sugar"
