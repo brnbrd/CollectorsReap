@@ -13,11 +13,10 @@ import net.minecraft.world.level.storage.loot.functions.SmeltItemFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 import java.util.stream.Stream;
+import org.jetbrains.annotations.NotNull;
 
 public class CREntityLoot extends EntityLootSubProvider {
-
 	public CREntityLoot() {
 		super(FeatureFlags.REGISTRY.allFlags());
 	}

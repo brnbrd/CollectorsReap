@@ -19,12 +19,12 @@ import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import java.util.function.Consumer;
+import org.jetbrains.annotations.NotNull;
 
 public class CRRecipeProvider extends RecipeProvider implements IConditionBuilder {
 	public CRRecipeProvider(PackOutput output) {

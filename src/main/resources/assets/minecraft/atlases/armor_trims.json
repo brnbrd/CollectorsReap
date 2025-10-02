@@ -36,9 +36,9 @@
         "trims/models/armor/host",
         "trims/models/armor/host_leggings"
       ],
-      "palette_key": "trims/color_palettes/trim_palette",
+      "palette_key": "minecraft:trims/color_palettes/trim_palette",
       "permutations": {
-        "pearl": "collectorsreap:trims/color_palettes/pearl"
+        "collectorsreap_pearl": "collectorsreap:trims/color_palettes/pearl"
       }
     }
   ]
