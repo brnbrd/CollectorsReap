@@ -34,6 +34,13 @@ configBackground="collectorsreap:textures/block/urchin_test_bricks.png"
 	side="BOTH"
 
 [[dependencies.collectorsreap]]
+	modId="blueprint"
+	mandatory=true
+	versionRange="[7.1.3,)"
+	ordering="AFTER"
+	side="BOTH"
+
+[[dependencies.collectorsreap]]
 	modId="nethersdelight"
 	mandatory=false
 	versionRange="[0,)"

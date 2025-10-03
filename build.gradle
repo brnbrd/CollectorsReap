@@ -52,7 +52,7 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'collectorsreap', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'farmersdelight'
+            args '--mod', 'collectorsreap', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'farmersdelight', '--existing-mod', 'blueprint'
             mods {
                 collectorsreap {
                     source sourceSets.main
@@ -72,22 +72,10 @@ repositories {
             includeGroup "curse.maven"
         }
     }
-    maven {
-        name = "Jared's maven"
-        url = "https://maven.blamejared.com/"
-    }
-    maven {
-        name = "Abnormals Maven"
-        url = "https://maven.jaackson.me"
-    }
-    maven {
-        name = "Registrate Maven"
-        url = "https://maven.tterrag.com/"
-    }
-    maven {
-        name = "AppleSkin Maven"
-        url = "https://maven.ryanliptak.com/"
-    }
+    maven { url "https://maven.blamejared.com/" }
+	maven { url "https://maven.teamabnormals.com/" }
+    maven { url "https://maven.tterrag.com/" }
+    maven { url "https://maven.ryanliptak.com/" }
 }
 
 dependencies {
@@ -101,7 +89,7 @@ dependencies {
 	implementation fg.deobf("curse.maven:farmers-respite-551453:${farmers_respite_version}")
 	implementation fg.deobf("curse.maven:brewin-and-chewin-637808:${brewin_and_chewin_version}")
 	implementation fg.deobf("curse.maven:let-fish-love-941186:${let_fish_love_version}")
-	implementation fg.deobf("curse.maven:blueprint-382216:${blueprint_version}")
+	implementation fg.deobf("com.teamabnormals:blueprint:${mc_version}-${blueprint_version}")
 	compileOnly fg.deobf("curse.maven:neapolitan-382016:${neapolitan_version}")
 }
 
