@@ -16,6 +16,8 @@ public class CREffects {
 		VolatilityEffect::new);
 	public static final RegistryObject<MobEffect> SURGE = EFFECTS.register("surge",
 		SurgeEffect::new);
+	public static final RegistryObject<MobEffect> REBOUND = EFFECTS.register("rebound",
+		ReboundEffect::new);
 
 	public static void create(IEventBus bus) {
 		EFFECTS.register(bus);

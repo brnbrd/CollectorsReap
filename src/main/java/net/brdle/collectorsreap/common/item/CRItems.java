@@ -55,6 +55,11 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> PORTOBELLO_QUICHE_SLICE = registerFood("portobello_quiche_slice",
 		Nutrition.PORTOBELLO_QUICHE_SLICE);
 
+	// Lucuma
+	public static final RegistryObject<Item> LUCUMA = registerItem("lucuma", () ->
+		new LucumaItem((new Item.Properties()).food(Nutrition.LUCUMA)));
+
+	// Pink Dragon Fruit
 	public static final RegistryObject<Item> DRAGON_FRUIT_SEEDS = registerItem("dragon_fruit_seeds",
 		() -> new ItemNameBlockItem(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), basicItem()) {
 			public void registerBlocks(@NotNull Map<Block, Item> blockToItemMap, Item item) {
@@ -79,6 +84,8 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> TROPICAL_SHAVED_ICE = registerItem("tropical_shaved_ice", () ->
 		new CompatConsumable(bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE),
 			true, false, "neapolitan"));
+
+	// Pomegranate
 	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate", () ->
 		new Item((new Item.Properties())));
 	public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",

@@ -13,7 +13,6 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class ShimmeringPearlItem extends PearlItem {
-
 	public ShimmeringPearlItem(Properties properties) {
 		super(properties);
 	}

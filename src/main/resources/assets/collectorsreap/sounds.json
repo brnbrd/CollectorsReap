@@ -102,5 +102,12 @@
       }
     ],
     "subtitle": "collectorsreap.subtitle.platinum_bass.hurt"
+  },
+  "effect.rebound.heal": {
+    "subtitle": "collectorsreap.subtitle.rebound.heal",
+    "sounds": [
+      "block/brewing_stand/brew1",
+      "block/brewing_stand/brew2"
+    ]
   }
 }

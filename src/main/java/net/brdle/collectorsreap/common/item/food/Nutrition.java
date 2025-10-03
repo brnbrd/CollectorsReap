@@ -13,6 +13,16 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class Nutrition {
+	public static final FoodProperties LUCUMA = (new FoodProperties.Builder())
+		.nutrition(2).saturationMod(0.1F)
+		.effect(() -> new MobEffectInstance(
+			CREffects.REBOUND.get(),
+			400,
+			0,
+			false,
+			false,
+			true
+		), 1F).build();
 	public static final FoodProperties PINK_DRAGON_FRUIT = (new FoodProperties.Builder())
 		.nutrition(3).saturationMod(0.2F)
 		.effect(() -> new MobEffectInstance(

@@ -28,6 +28,7 @@ public class CRItemTags {
 	public static final TagKey<Item> SEEDS_LIME = forge("seeds/lime");
 	public static final TagKey<Item> FRUITS_DRAGON_FRUIT = forge("fruits/dragon_fruit");
 	public static final TagKey<Item> SEEDS_DRAGON_FRUIT = forge("seeds/dragon_fruit");
+	public static final TagKey<Item> FRUITS_LUCUMA = forge("fruits/lucuma");
 	public static final TagKey<Item> MUSHROOMS_PORTOBELLO = forge("mushrooms/portobello");
 	public static final TagKey<Item> TORTILLA = forge("tortilla");
 	public static final TagKey<Item> ICE_CUBES = forge("ice_cubes");

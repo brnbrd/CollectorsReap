@@ -11,6 +11,7 @@ import net.brdle.collectorsreap.data.CRDamageSources;
 import net.brdle.collectorsreap.data.CREntityTags;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
@@ -61,8 +62,35 @@ public class ForgeEvents {
 		}
 	}
 
-	// Surge
+	// Rebound
 	@SubscribeEvent(priority = EventPriority.HIGHEST) // Apply damage modifiers early
+	public void onReboundDamage(LivingDamageEvent e) {
+		final LivingEntity hurt = e.getEntity();
+		final MobEffect rebound = CREffects.REBOUND.get();
+		if (
+			!hurt.level().isClientSide() &&
+			hurt.hasEffect(rebound) &&
+			e.getAmount() > 0F &&
+			hurt.level() instanceof ServerLevel server &&
+			server.getRandom().nextFloat() <= CRConfig.REBOUND_CHANCE.get() // 15% chance to recover
+		) {
+			final MobEffectInstance effectInstance = hurt.getEffect(rebound);
+			if (effectInstance != null) {
+				final float recoveredHealth = (6F * effectInstance.getAmplifier()) + 10F;
+				final float initialDamage = e.getAmount();
+				if (recoveredHealth > initialDamage) {
+					e.setAmount(0F);
+					hurt.heal(recoveredHealth - initialDamage);
+				} else {
+					e.setAmount(initialDamage - recoveredHealth);
+				}
+				server.playSound(null, hurt.getX(), hurt.getY(), hurt.getZ(), CRSoundEvents.REBOUND_HEAL.get(), SoundSource.NEUTRAL, 0.8F, 0.8F);
+			}
+		}
+	}
+
+	// Surge
+	@SubscribeEvent(priority = EventPriority.HIGH) // Apply damage modifiers early
 	public void onSurgeDamage(LivingDamageEvent e) {
 		final MobEffect surge = CREffects.SURGE.get();
 		final DamageSource source = e.getSource();

@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-13T12:30:52.902179	Item Models: collectorsreap
+// 1.20.1	2025-10-02T12:16:13.5323191	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -68,6 +68,7 @@ ac034547ced1b98d0933a928b8594eda0dce606d assets/collectorsreap/models/item/lime_
 345aea5ac655a2f817aafb1c7b254e565eef928c assets/collectorsreap/models/item/lime_popsicle.json
 fcef6f4c4bd1c6b396dd186a190917184cf44d15 assets/collectorsreap/models/item/lime_seeds.json
 0ddc96ed8aee8ddc75c97f6d5879f748e9a56d4f assets/collectorsreap/models/item/lime_slice.json
+fb7e311403e44af69dec0dcb3aedeca19e170a48 assets/collectorsreap/models/item/lucuma.json
 0b1e5ba50ddd9a32fb7b803cb1821fbc87b15b74 assets/collectorsreap/models/item/lunar_pearl.json
 095a945e3d363cdf3f71f47a4fe32e93137cd6d4 assets/collectorsreap/models/item/mediterranean_salmon.json
 abbae41fa500c207b8ede0586c4b43c6620d7c16 assets/collectorsreap/models/item/melon_gummy.json

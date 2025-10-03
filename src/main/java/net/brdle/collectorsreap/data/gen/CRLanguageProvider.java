@@ -71,6 +71,8 @@ public class CRLanguageProvider extends LanguageProvider {
 		add(CREffects.VOLATILITY.get().getDescriptionId() + ".description", "Striking an enemy creates a shockwave of splash damage.");
 		addEffect(CREffects.SURGE, "Surge");
 		add(CREffects.SURGE.get().getDescriptionId() + ".description", "Increases melee damage; gaining amplifier with successful strikes. Resets upon landing a hit at maximum amplifier.");
+		addEffect(CREffects.REBOUND, "Rebound");
+		add(CREffects.REBOUND.get().getDescriptionId() + ".description", "Provides a chance to recover health when taking damage.");
 	}
 
 	private void addBlocks() {
@@ -164,6 +166,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.PORTOBELLO_WRAP, "Portobello Wrap");
 		addItem(CRItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
 		addItem(CRItems.PORTOBELLO_QUICHE_SLICE, "Slice of Portobello Quiche");
+		addItem(CRItems.LUCUMA, "Lucuma");
 		addItem(CRItems.PINK_DRAGON_FRUIT, "Pink Dragon Fruit");
 		addItem(CRItems.DRIED_PINK_DRAGON_FRUIT, "Dried Pink Dragon Fruit");
 		addItem(CRItems.PINK_NOODLES, "Pink Noodles");
@@ -306,5 +309,6 @@ public class CRLanguageProvider extends LanguageProvider {
 		add(CollectorsReap.MODID + ".subtitle.platinum_bass.flop", "Platinum Bass flops");
 		add(CollectorsReap.MODID + ".subtitle.platinum_bass.hurt", "Platinum Bass hurts");
 		add(CollectorsReap.MODID + ".subtitle.dragon_fruit.pick", "Dragon Fruits pop");
+		add(CollectorsReap.MODID + ".subtitle.rebound.heal", "Health rebounds");
 	}
 }

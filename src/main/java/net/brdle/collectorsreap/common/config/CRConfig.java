@@ -18,6 +18,7 @@ public class CRConfig {
 	public static final ForgeConfigSpec.DoubleValue SURGE_ZERO_MULTIPLIER;
 	public static final ForgeConfigSpec.DoubleValue SURGE_ONE_MULTIPLIER;
 	public static final ForgeConfigSpec.DoubleValue SURGE_TWO_MULTIPLIER;
+	public static final ForgeConfigSpec.DoubleValue REBOUND_CHANCE;
 
 	static {
 		final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
@@ -44,6 +45,9 @@ public class CRConfig {
 		SURGE_TWO_MULTIPLIER = BUILDER
 			.comment("Attack damage multiplier gained from Surge III.")
 			.defineInRange("surge_two_multiplier", 1.6D, 1.0D, 10.0D);
+		REBOUND_CHANCE = BUILDER
+			.comment("Chance to regain health with Rebound")
+			.defineInRange("rebound_chance", 0.15D, 0.01D, 1.0D);
 		BUILDER.pop();
 
 		ITEM_VALUES = new HashMap<>();

@@ -160,6 +160,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addOptional(Util.rl("atmospheric", "dragon_fruit"))
 			.addOptional(Util.rl("pamhc2trees", "dragonfruititem"));
 		this.tag(CRItemTags.FRUITS_DRAGON_FRUIT).addTag(CRItemTags.forge("fruits/dragonfruit"));
+		this.tag(CRItemTags.FRUITS_LUCUMA).add(CRItems.LUCUMA.get());
 		this.tag(CRItemTags.FRUITS_POMEGRANATE).add(CRItems.POMEGRANATE_SLICE.get());
 		this.tag(CRItemTags.FRUITS_LIME).add(CRItems.LIME.get());
 		this.tag(CRItemTags.FRUITS_CITRUS)
@@ -168,6 +169,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.FRUITS)
 			.addTag(CRItemTags.FRUITS_CITRUS)
 			.addTag(CRItemTags.FRUITS_POMEGRANATE)
+			.addTag(CRItemTags.FRUITS_LUCUMA)
 			.addTag(CRItemTags.FRUITS_DRAGON_FRUIT);
 		this.tag(CRItemTags.SEEDS_LIME).add(CRItems.LIME_SEEDS.get());
 		this.tag(CRItemTags.SEEDS_POMEGRANATE).add(CRItems.POMEGRANATE_SEEDS.get());

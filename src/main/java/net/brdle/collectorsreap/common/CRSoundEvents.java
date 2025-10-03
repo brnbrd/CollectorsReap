@@ -28,6 +28,8 @@ public class CRSoundEvents {
 		() -> SoundEvent.createVariableRangeEvent(Util.cr("entity.platinum_bass.flop")));
 	public static final RegistryObject<SoundEvent> PICK_DRAGON_FRUITS = SOUNDS.register("pick_dragon_fruits",
 		() -> SoundEvent.createVariableRangeEvent(Util.cr("block.dragon_fruit_bush.pick_dragon_fruits")));
+	public static final RegistryObject<SoundEvent> REBOUND_HEAL = SOUNDS.register("rebound_heal",
+		() -> SoundEvent.createVariableRangeEvent(Util.cr("effect.rebound.heal")));
 
 	public static void create(IEventBus bus) {
 		SOUNDS.register(bus);
