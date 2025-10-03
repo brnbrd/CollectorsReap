@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "type": "blueprint:paletted_permutations",
+      "palette_key": "minecraft:trims/color_palettes/trim_palette",
+      "permutations": {
+        "collectorsreap_pearl": "collectorsreap:trims/color_palettes/pearl"
+      },
+      "sources": [
+        {
+          "type": "minecraft:directory",
+          "prefix": "trims/models/armor/",
+          "source": "trims/models/armor"
+        }
+      ]
+    }
+  ]
+}

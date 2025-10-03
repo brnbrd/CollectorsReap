@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.data.gen;
 
+import net.brdle.collectorsreap.client.CRSpriteSourceProvider;
 import net.brdle.collectorsreap.data.CRRegistries;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -29,9 +30,11 @@ public class Generators {
 		gen.addProvider(e.includeServer(), new CRRecipeProvider(output));
 		gen.addProvider(e.includeServer(), new CRLootTableProvider(output));
 		gen.addProvider(e.includeServer(), new CRLootModifierProvider(output));
+		gen.addProvider(e.includeServer(), new CRTrimMaterialTagProvider(output, lookup, helper));
 
 		gen.addProvider(e.includeClient(), new CRBlockStateProvider(output, helper));
 		gen.addProvider(e.includeClient(), new CRItemModelProvider(output, helper));
 		gen.addProvider(e.includeClient(), new CRLanguageProvider(output));
+		gen.addProvider(e.includeClient(), new CRSpriteSourceProvider(output, helper));
 	}
 }

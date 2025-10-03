@@ -17,7 +17,7 @@ public class Nutrition {
 		.nutrition(2).saturationMod(0.1F)
 		.effect(() -> new MobEffectInstance(
 			CREffects.REBOUND.get(),
-			400,
+			1200,
 			0,
 			false,
 			false,
