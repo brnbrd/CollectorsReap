@@ -21,17 +21,12 @@ public class CorrosionEffect extends MobEffect {
 	 */
 	@Override
 	public boolean isDurationEffectTick(int duration, int amplifier) {
-		return duration % 2 == 0;
-	}
-
-	@Override
-	public void applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
-		CorrosionEffect.emitParticles(entity, amplifier + 1);
+		return false;
 	}
 
 	public static void emitParticles(@NotNull LivingEntity entity, int amount) {
 		if (entity.level() instanceof ServerLevel server) {
-			for (int i = 0; i < amount * 3; i ++) {
+			for (int i = 0; i < (amount + 2) * 2; i ++) {
 				server.sendParticles(
 					CRParticleTypes.ACID.get(),
 					entity.getRandomX(0.75D),

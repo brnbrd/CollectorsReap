@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class UrchinDart extends AbstractArrow {
-
 	public UrchinDart(EntityType<? extends UrchinDart> type, Level level) {
 		super(type, level);
 	}

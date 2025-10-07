@@ -2,7 +2,6 @@ package net.brdle.collectorsreap.common;
 
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,6 +29,8 @@ public class CRSoundEvents {
 		() -> SoundEvent.createVariableRangeEvent(Util.cr("block.dragon_fruit_bush.pick_dragon_fruits")));
 	public static final RegistryObject<SoundEvent> REBOUND_HEAL = SOUNDS.register("rebound_heal",
 		() -> SoundEvent.createVariableRangeEvent(Util.cr("effect.rebound.heal")));
+	public static final RegistryObject<SoundEvent> CORROSION_CORRODE = SOUNDS.register("corrosion_corrode",
+		() -> SoundEvent.createVariableRangeEvent(Util.cr("effect.corrosion.corrode")));
 
 	public static void create(IEventBus bus) {
 		SOUNDS.register(bus);

@@ -109,5 +109,11 @@
       "block/brewing_stand/brew1",
       "block/brewing_stand/brew2"
     ]
+  },
+  "effect.corrosion.corrode": {
+    "sounds": [
+      "random/fizz"
+    ],
+    "subtitle": "collectorsreap.subtitle.corrosion.corrode"
   }
 }

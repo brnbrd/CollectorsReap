@@ -310,5 +310,6 @@ public class CRLanguageProvider extends LanguageProvider {
 		add(CollectorsReap.MODID + ".subtitle.platinum_bass.hurt", "Platinum Bass hurts");
 		add(CollectorsReap.MODID + ".subtitle.dragon_fruit.pick", "Dragon Fruits pop");
 		add(CollectorsReap.MODID + ".subtitle.rebound.heal", "Health rebounds");
+		add(CollectorsReap.MODID + ".subtitle.corrosion.corrode", "Acid corrodes");
 	}
 }

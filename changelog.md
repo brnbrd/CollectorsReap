@@ -12,6 +12,7 @@
 
 ### Fixes
 - Fixed some gummy recipes using outdated tags
+- Fixed Pearl trim material not displaying properly with some templates
 
 
 # 1.4.1

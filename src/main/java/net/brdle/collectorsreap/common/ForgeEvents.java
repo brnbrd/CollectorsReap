@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.common;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.effect.CREffects;
+import net.brdle.collectorsreap.common.effect.CorrosionEffect;
 import net.brdle.collectorsreap.common.effect.SurgeEffect;
 import net.brdle.collectorsreap.common.entity.BeeGoToFruitBushGoal;
 import net.brdle.collectorsreap.common.entity.BeeGrowFruitGoal;
@@ -29,7 +30,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
@@ -142,43 +142,51 @@ public class ForgeEvents {
 		}
 	}
 
-	// Corrosion
+	// Weapon Corrosion
+	@SuppressWarnings("DataFlowIssue")
 	@SubscribeEvent(priority = EventPriority.HIGH)
 	public void onCorrodeWeapon(LivingDamageEvent e) {
-		if (e.getEntity().hasEffect(CREffects.CORROSION.get()) && e.getSource().getEntity() instanceof Player p) {
-			InteractionHand hand = p.getUsedItemHand();
-			ItemStack stack = p.getItemInHand(hand);
-			if (stack.isDamageableItem()) {
-				int damage = Objects.requireNonNull(e.getEntity().getEffect(CREffects.CORROSION.get())).getAmplifier();
-				stack.hurtAndBreak(damage, p, en -> en.broadcastBreakEvent(hand));
+		final LivingEntity victim = e.getEntity();
+		if (
+			e.getSource().getDirectEntity() instanceof LivingEntity attacker &&
+			victim.hasEffect(CREffects.CORROSION.get())
+		) {
+			final int amplifier = victim.getEffect(CREffects.CORROSION.get()).getAmplifier();
+			final InteractionHand hand = attacker.getUsedItemHand();
+			final ItemStack stack = attacker.getItemInHand(hand);
+			if (
+				victim.level() instanceof ServerLevel server &&
+				stack.isDamageableItem()
+			) {
+				stack.hurtAndBreak(amplifier, victim, en -> en.broadcastBreakEvent(hand));
+				CorrosionEffect.emitParticles(victim, amplifier);
+				server.playSound(null, victim.getX(), victim.getY(), victim.getZ(), CRSoundEvents.CORROSION_CORRODE.get(), SoundSource.NEUTRAL, 0.8F, 1.1F);
 			}
 		}
 	}
 
 	// Projectile Corrosion
+	@SuppressWarnings("DataFlowIssue")
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onCorrodeProjectile(ProjectileImpactEvent e) {
+		final Projectile projectile = e.getProjectile();
 		if (
-			e.getRayTraceResult().getType() == HitResult.Type.ENTITY &&
-			((EntityHitResult) e.getRayTraceResult()).getEntity() instanceof LivingEntity victim &&
+			!projectile.getType().is(CREntityTags.CORROSION_IMMUNE) &&
+			e.getRayTraceResult() instanceof EntityHitResult result &&
+			result.getEntity() instanceof LivingEntity victim &&
 			victim.hasEffect(CREffects.CORROSION.get())
 		) {
-			Projectile proj = e.getProjectile();
-			if (proj.getType().is(CREntityTags.CORROSION_IMMUNE)) {
-				return;
-			}
-			e.setCanceled(true);
-			if (!proj.level().isClientSide() && proj.level() instanceof ServerLevel server) {
-				for (int i = 0; i < 3; i++) {
-					server.sendParticles(CRParticleTypes.ACID.get(), proj.getRandomX(0.3D), proj.getRandomY(), proj.getRandomZ(0.3D), 1, 0D, 0D, 0D, 0D);
-				}
-				victim.playSound(SoundEvents.REDSTONE_TORCH_BURNOUT, 0.4F, 1.1F);
-				if (proj instanceof ThrownTrident trident) {
-					trident.tridentItem.hurt(5 * Objects.requireNonNull(victim.getEffect(CREffects.CORROSION.get())).getAmplifier(), trident.level().getRandom(), null);
+			final int amplifier = victim.getEffect(CREffects.CORROSION.get()).getAmplifier();
+			if (victim.level() instanceof ServerLevel server) {
+				e.setCanceled(true);
+				if (projectile instanceof ThrownTrident trident) {
+					trident.tridentItem.hurt(5 * amplifier, victim.getRandom(), null);
 				} else {
-					proj.discard();
-					proj.gameEvent(GameEvent.ENTITY_DIE);
+					projectile.discard();
+					projectile.gameEvent(GameEvent.ENTITY_DIE);
 				}
+				CorrosionEffect.emitParticles(victim, amplifier);
+				server.playSound(null, victim.getX(), victim.getY(), victim.getZ(), CRSoundEvents.CORROSION_CORRODE.get(), SoundSource.NEUTRAL, 0.8F, 1.1F);
 			}
 		}
 	}
