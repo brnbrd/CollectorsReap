@@ -22,6 +22,7 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import net.minecraft.world.entity.animal.Bee;
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrownTrident;
@@ -51,14 +52,18 @@ public class ForgeEvents {
 
 	@SubscribeEvent
 	public void onWanderingTrader(WandererTradesEvent e) {
-		if (CRConfig.verify(CRItems.LIME)) {
-			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.getStack(CRItems.LIME_SEEDS), 5, 1, 1));
+		final List<VillagerTrades.ItemListing> trades = e.getGenericTrades();
+		if (Util.enabled(CRItems.PORTOBELLO)) {
+			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.BROWN_MUSHROOM, 4), Util.getStack(CRItems.PORTOBELLO), 10, 1, 1));
 		}
-		if (CRConfig.verify(CRItems.PINK_DRAGON_FRUIT)) {
-			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.getStack(CRItems.DRAGON_FRUIT_SEEDS), 5, 1, 1));
+		if (Util.enabled(CRItems.LIME) && Util.enabled(CRItems.LIME_SEEDS)) {
+			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.getStack(CRItems.LIME_SEEDS), 5, 1, 1));
 		}
-		if (CRConfig.verify(CRItems.PORTOBELLO)) {
-			e.getGenericTrades().add((ent, r) -> new MerchantOffer(new ItemStack(Items.BROWN_MUSHROOM, 4), Util.getStack(CRItems.PORTOBELLO), 10, 1, 1));
+		if (Util.enabled(CRItems.PINK_DRAGON_FRUIT) && Util.enabled(CRItems.DRAGON_FRUIT_SEEDS)) {
+			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.getStack(CRItems.DRAGON_FRUIT_SEEDS), 5, 1, 1));
+		}
+		if (Util.enabled(CRItems.LUCUMA)) {
+			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.getStack(CRItems.LUCUMA), 5, 1, 1));
 		}
 	}
 
