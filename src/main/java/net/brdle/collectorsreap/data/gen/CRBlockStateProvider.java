@@ -5,6 +5,7 @@ import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.BuddingDragonFruitBlock;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.PortobelloColonyBlock;
+import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -17,11 +18,11 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
-import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import java.util.Arrays;
 import java.util.List;
+import org.jetbrains.annotations.Nullable;
 
 public class CRBlockStateProvider extends BlockStateProvider {
 	public CRBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -35,7 +36,7 @@ public class CRBlockStateProvider extends BlockStateProvider {
 
 	// Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java
 	public static ResourceLocation vanillaBlock(String path) {
-		return Util.mc("block/" + path);
+		return Modid.MC.rl("block/" + path);
 	}
 
 	@Override
@@ -244,7 +245,7 @@ public class CRBlockStateProvider extends BlockStateProvider {
 			String cakeName = Util.name(cake);
 			String candle = name.replace("_" + cakeName, "") + lit;
 			return ConfiguredModel.builder().modelFile(models()
-				.withExistingParent("block/" + name + lit, Util.mc("template_cake_with_candle"))
+				.withExistingParent("block/" + name + lit, Modid.MC.rl("template_cake_with_candle"))
 				.texture("bottom", resourceBlock(cakeName + "_bottom"))
 				.texture("candle", vanillaBlock(candle))
 				.texture("particle", resourceBlock(cakeName + "_side"))

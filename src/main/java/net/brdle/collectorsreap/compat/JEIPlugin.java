@@ -38,7 +38,7 @@ public class JEIPlugin implements IModPlugin {
 			.collect(Collectors.toCollection(ArrayList::new)); // Create new mutable list
 		final List<FluidStack> hiddenFluids = new ArrayList<>();
 
-		if (!Mods.stringLoaded("farmersrespite")) {
+		if (!Modid.FR.loaded()) {
 			hidden.addAll(List.of(
 				CRItems.STRONG_LIMEADE.get().getDefaultInstance(),
 				CRItems.LIME_GREEN_TEA.get().getDefaultInstance(),
@@ -54,7 +54,7 @@ public class JEIPlugin implements IModPlugin {
 				new FluidStack(CRFluids.POMEGRANATE_BLACK_TEA.get(), 1000)
 			));
 		}
-		if (!Mods.stringLoaded("brewinandchewin")) {
+		if (!Modid.BC.loaded()) {
 			hidden.addAll(List.of(
 				CRItems.DEIFIC_BLOOD.get().getDefaultInstance(),
 				CRItems.HERMITS_SOUR.get().getDefaultInstance(),
@@ -118,7 +118,7 @@ public class JEIPlugin implements IModPlugin {
 			registration.addItemStackInfo(Util.getStack(CRItems.URCHIN_DART), Component.translatable(dartTranslationKey));
 		}
 
-		if (Mods.stringLoaded("mynethersdelight")) {
+		if (Modid.MND.loaded()) {
 			if (CRConfig.verify(CRItems.STYGIAN_POMEGRANATE)) {
 				registration.addItemStackInfo(
 					Util.getStack(CRItems.STYGIAN_POMEGRANATE),

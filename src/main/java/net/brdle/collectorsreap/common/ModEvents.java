@@ -3,12 +3,11 @@ package net.brdle.collectorsreap.common;
 import net.brdle.collectorsreap.common.block.CRCauldronInteractions;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
 import net.brdle.collectorsreap.common.item.CRItems;
-import net.brdle.collectorsreap.common.item.CompatItem;
-import net.brdle.collectorsreap.common.item.food.CompatConsumable;
-import net.brdle.collectorsreap.common.item.food.CompatDrinkable;
-import net.brdle.collectorsreap.compat.Mods;
+import net.brdle.collectorsreap.compat.IConfigured;
+import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -24,7 +23,7 @@ public class ModEvents {
 	public void setup(final FMLCommonSetupEvent event) {
 		event.enqueueWork(this::registerCompostables);
 		event.enqueueWork(() -> {
-			if (Mods.stringLoaded("neapolitan")) {
+			if (Modid.N.loaded()) {
 				CRCauldronInteractions.registerCauldronInteractions();
 			}
 		});
@@ -64,15 +63,11 @@ public class ModEvents {
 	public void buildContents(BuildCreativeModeTabContentsEvent event) {
 		if (event.getTabKey() == ModCreativeTabs.TAB_FARMERS_DELIGHT.getKey()) {
 			CRItems.ITEMS.getEntries().stream().filter(RegistryObject::isPresent).forEach(object -> {
-				Item item = object.get();
-				if (
-					item instanceof CompatItem compat && !compat.loaded() ||
-					item instanceof CompatConsumable consume && !consume.loaded() ||
-					item instanceof CompatDrinkable drink && !drink.loaded()
-				) {
+				final Item item = object.get();
+				if (item instanceof IConfigured configured && !configured.enabled()) {
 					return;
 				}
-				event.accept(item.getDefaultInstance(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+				event.accept(new ItemStack(item), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 			});
 		}
 	}

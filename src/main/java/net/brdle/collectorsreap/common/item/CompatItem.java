@@ -1,8 +1,7 @@
 package net.brdle.collectorsreap.common.item;
 
-import joptsimple.internal.Strings;
-import net.brdle.collectorsreap.compat.Mods;
-import net.minecraft.ChatFormatting;
+import net.brdle.collectorsreap.compat.ICompat;
+import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -12,33 +11,21 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class CompatItem extends Item {
-	private final String[] modid;
+public class CompatItem extends Item implements ICompat {
+	private final Modid[] modid;
 
-	public CompatItem(Properties properties, String... modid) {
+	public CompatItem(Properties properties, Modid... modid) {
 		super(properties);
 		this.modid = modid;
 	}
 
-	public String[] getModid() {
+	public Modid[] getModid() {
 		return this.modid;
-	}
-
-	public boolean loaded() {
-		for (String mod : this.getModid()) {
-			if (Mods.stringLoaded(mod)) {
-				return true;
-			}
-		}
-		return this.getModid().length < 1;
 	}
 
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> comps, @NotNull TooltipFlag isAdvanced) {
-		if (!this.loaded()) {
-			comps.add(Component.translatable("tooltip.requires_modid"));
-			comps.add(Component.literal(Strings.join(this.getModid(), ", ")).withStyle(ChatFormatting.UNDERLINE));
-		}
+		this.enabledText(comps);
 		super.appendHoverText(stack, level, comps, isAdvanced);
 	}
 }

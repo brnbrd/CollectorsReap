@@ -3,7 +3,7 @@ package net.brdle.collectorsreap.common.item.food;
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.effect.SurgeEffect;
 import net.brdle.collectorsreap.compat.ModCompat;
-import net.brdle.collectorsreap.compat.Mods;
+import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -429,14 +429,14 @@ public class Nutrition {
 	public static final FoodProperties APPLE_GUMMY = GUMMY(() ->
 		new MobEffectInstance(
 			ModCompat.getExuberant(),
-			Mods.stringLoaded("cosmopolitan") ? 600 : 1800,
-			Mods.stringLoaded("cosmopolitan") ? 2 : 0
+			Modid.COS.loaded() ? 600 : 1800,
+			Modid.COS.loaded() ? 2 : 0
 		));
 	public static final FoodProperties GLOW_BERRY_GUMMY = GUMMY(() ->
 		new MobEffectInstance(
 			ModCompat.getTracer(),
 			600,
-			Mods.stringLoaded("cosmopolitan") ? 2 : 0
+			Modid.COS.loaded() ? 2 : 0
 		));
 	public static final FoodProperties BANANA_GUMMY = GUMMY(List.of(() ->
 		new MobEffectInstance(ModCompat.getAgility(), 200, 0), () ->

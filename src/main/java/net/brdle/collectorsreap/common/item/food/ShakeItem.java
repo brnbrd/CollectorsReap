@@ -1,14 +1,14 @@
 package net.brdle.collectorsreap.common.item.food;
 
+import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class ShakeItem extends CompatDrinkable {
-
 	public ShakeItem(Properties properties) {
-		super(properties, false, false, "neapolitan");
+		super(properties, false, false, Modid.N);
 	}
 
 	@Override

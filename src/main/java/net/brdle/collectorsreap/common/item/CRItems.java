@@ -4,13 +4,10 @@ import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.entity.CREntities;
-import net.brdle.collectorsreap.common.fluid.CRFluids;
 import net.brdle.collectorsreap.common.item.food.*;
-import net.brdle.collectorsreap.compat.Mods;
+import net.brdle.collectorsreap.compat.Modid;
 import net.brdle.collectorsreap.compat.brewinandchewin.BrewinChewinCompat;
-import net.brdle.collectorsreap.compat.brewinandchewin.CRBoozeItem;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -62,11 +59,11 @@ public class CRItems extends ModItems {
 	// Pink Dragon Fruit
 	public static final RegistryObject<Item> DRAGON_FRUIT_SEEDS = registerItem("dragon_fruit_seeds",
 		() -> new ItemNameBlockItem(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), basicItem()) {
-			public void registerBlocks(@NotNull Map<Block, Item> blockToItemMap, Item item) {
+			public void registerBlocks(@NotNull Map<Block, Item> blockToItemMap, @NotNull Item item) {
 				super.registerBlocks(blockToItemMap, item);
 				blockToItemMap.put(CRBlocks.PINK_DRAGON_FRUIT_CROP.get(), item);
 			}
-			public void removeFromBlockToItemMap(@NotNull Map<Block, Item> blockToItemMap, Item itemIn) {
+			public void removeFromBlockToItemMap(@NotNull Map<Block, Item> blockToItemMap, @NotNull Item itemIn) {
 				super.removeFromBlockToItemMap(blockToItemMap, itemIn);
 				blockToItemMap.remove(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
 			}
@@ -83,7 +80,7 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.DRAGON_STEW), true, false);
 	public static final RegistryObject<Item> TROPICAL_SHAVED_ICE = registerItem("tropical_shaved_ice", () ->
 		new CompatConsumable(bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE),
-			true, false, "neapolitan"));
+			true, false, Modid.N));
 
 	// Pomegranate
 	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate", () ->
@@ -135,7 +132,7 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.CREAM_CHEESE), true, false);
 	public static final RegistryObject<Item> DRAGONS_PASSION = registerItem("dragons_passion", () ->
 		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.DRAGONS_PASSION), true, false, "atmospheric"));
+			Nutrition.DRAGONS_PASSION), true, false, Modid.AT));
 	public static final RegistryObject<Item> LIMEADE = registerDrink("limeade",
 		drinkItem().food(Nutrition.LIMEADE), true, false);
 	public static final RegistryObject<Item> STRONG_LIMEADE = registerDrink("strong_limeade",
@@ -146,16 +143,16 @@ public class CRItems extends ModItems {
 		drinkItem().food(Nutrition.PINK_LIMEADE), true, false);
 	public static final RegistryObject<Item> MINT_LIMEADE = registerItem("mint_limeade", () ->
 		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.MINT_LIMEADE), true, false, "neapolitan"));
+			Nutrition.MINT_LIMEADE), true, false, Modid.N));
 	public static final RegistryObject<Item> LIME_GREEN_TEA = registerItem("lime_green_tea", () ->
 		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.LIME_GREEN_TEA), true, false, "farmersrespite"));
+			Nutrition.LIME_GREEN_TEA), true, false, Modid.FR));
 	public static final RegistryObject<Item> POMEGRANATE_BLACK_TEA = registerItem("pomegranate_black_tea", () ->
 		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.POMEGRANATE_BLACK_TEA), true, false, "farmersrespite"));
+			Nutrition.POMEGRANATE_BLACK_TEA), true, false, Modid.FR));
 	public static final RegistryObject<Item> POMEGRANATE_SMOOTHIE = registerItem("pomegranate_smoothie", () ->
 		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.POMEGRANATE_SMOOTHIE), true, false, "neapolitan"));
+			Nutrition.POMEGRANATE_SMOOTHIE), true, false, Modid.N));
 	public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerDrink("pomegranate_custard",
 		drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), true, false);
 	public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake",
@@ -271,21 +268,21 @@ public class CRItems extends ModItems {
 	// Nether's Delight Compat
 	public static final RegistryObject<Item> GLAZED_STRIDER = registerItem("glazed_strider",
 		() -> new CompatConsumable(bowlFoodItem(Nutrition.GLAZED_STRIDER),
-			true, false, "mynethersdelight", "nethersdelight"));
+			true, false, Modid.MND, Modid.ND));
 	public static final RegistryObject<Item> SPICY_GRENADINE_JELLY = registerItem("spicy_grenadine_jelly",
 		() -> new CompatConsumable(bowlFoodItem(Nutrition.SPICY_GRENADINE_JELLY),
-			true, false, "mynethersdelight", "nethersdelight"));
+			true, false, Modid.MND, Modid.ND));
 
 	// Neapolitan Compat
 	public static final RegistryObject<Item> STRAWBERRY_JAM_BUN = registerItem("strawberry_jam_bun",
 		() -> new CompatConsumable((new Item.Properties()).food(
-			Nutrition.STRAWBERRY_JAM_BUN), true, false, 1F, "neapolitan"));
+			Nutrition.STRAWBERRY_JAM_BUN), true, false, 1F, Modid.N));
 	public static final RegistryObject<Item> POMEGRANATE_BEAN_SALAD = registerItem("pomegranate_bean_salad",
 		() -> new CompatConsumable(bowlFoodItem(Nutrition.POMEGRANATE_BEAN_SALAD),
-			true, false, "neapolitan"));
+			true, false, Modid.N));
 	public static final RegistryObject<Item> CHOCOLATE_ARILS = registerItem("chocolate_arils",
 		() -> new CompatConsumable((new Item.Properties()).food(
-			Nutrition.CHOCOLATE_ARILS), true, false, "neapolitan"));
+			Nutrition.CHOCOLATE_ARILS), true, false, Modid.N));
 	public static final RegistryObject<Item> LIME_MILKSHAKE = registerItem("lime_milkshake",
 		() -> new ShakeItem(new Item.Properties().food(Nutrition.LIME_MILKSHAKE)));
 	public static final RegistryObject<Item> POMEGRANATE_MILKSHAKE = registerItem("pomegranate_milkshake",
@@ -307,24 +304,24 @@ public class CRItems extends ModItems {
 
 	// Brewin and Chewin Compat
 	public static final RegistryObject<Item> DEIFIC_BLOOD = registerItem("deific_blood", () ->
-		Mods.stringLoaded("brewinandchewin") ?
+		Modid.BC.loaded() ?
 		BrewinChewinCompat.DEIFIC_BLOOD.get() :
-		new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
 	);
 	public static final RegistryObject<Item> HERMITS_SOUR = registerItem("hermits_sour", () ->
-		Mods.stringLoaded("brewinandchewin") ?
+		Modid.BC.loaded() ?
 		BrewinChewinCompat.HERMITS_SOUR.get() :
-		new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
 	);
 	public static final RegistryObject<Item> ROSE_MOON = registerItem("rose_moon", () ->
-		Mods.stringLoaded("brewinandchewin") ?
+		Modid.BC.loaded() ?
 		BrewinChewinCompat.ROSE_MOON.get() :
-		new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
 	);
 	public static final RegistryObject<Item> REANIMATORS_GARDEN = registerItem("reanimators_garden", () ->
-		Mods.stringLoaded("brewinandchewin") ?
+		Modid.BC.loaded() ?
 		BrewinChewinCompat.REANIMATORS_GARDEN.get() :
-		new CompatDrinkable((new Item.Properties()), false, false, "brewinandchewin")
+		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
 	);
 
 	// Urchin Test
@@ -348,32 +345,34 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> MELON_GUMMY = registerItem("melon_gummy",
 		() -> new MelonGummyItem((new Item.Properties()).food(Nutrition.MELON_GUMMY)));
 	public static final RegistryObject<Item> STRAWBERRY_GUMMY = registerGummy("strawberry", Nutrition.STRAWBERRY_GUMMY);
-	public static final RegistryObject<Item> BANANA_GUMMY = registerGummy("banana", Nutrition.BANANA_GUMMY, "neapolitan");
-	public static final RegistryObject<Item> VANILLA_GUMMY = registerGummy("vanilla", Nutrition.VANILLA_GUMMY, "neapolitan");
-	public static final RegistryObject<Item> CHOCOLATE_GUMMY = registerGummy("chocolate", Nutrition.CHOCOLATE_GUMMY, "neapolitan");
-	public static final RegistryObject<Item> MINT_GUMMY = registerGummy("mint", Nutrition.MINT_GUMMY, "neapolitan");
-	public static final RegistryObject<Item> ADZUKI_GUMMY = registerGummy("adzuki", Nutrition.ADZUKI_GUMMY, "neapolitan");
-	public static final RegistryObject<Item> PUMPKIN_GUMMY = registerGummy("pumpkin", Nutrition.PUMPKIN_GUMMY, "seasonals");
-	public static final RegistryObject<Item> SWEET_BERRY_GUMMY = registerGummy("sweet_berry", Nutrition.SWEET_BERRY_GUMMY, "seasonals");
-	public static final RegistryObject<Item> BEETROOT_GUMMY = registerGummy("beetroot", Nutrition.BEETROOT_GUMMY, "seasonals");
-	public static final RegistryObject<Item> ALOE_GUMMY = registerGummy("aloe", Nutrition.ALOE_GUMMY, "atmospheric");
-	public static final RegistryObject<Item> PASSION_FRUIT_GUMMY = registerGummy("passion_fruit", Nutrition.PASSION_FRUIT_GUMMY, "atmospheric");
-	public static final RegistryObject<Item> YUCCA_GUMMY = registerGummy("yucca", Nutrition.YUCCA_GUMMY, "atmospheric");
-	public static final RegistryObject<Item> GREEN_TEA_GUMMY = registerGummy("green_tea", Nutrition.GREEN_TEA_GUMMY, "farmersrespite");
-	public static final RegistryObject<Item> YELLOW_TEA_GUMMY = registerGummy("yellow_tea", Nutrition.YELLOW_TEA_GUMMY, "farmersrespite");
-	public static final RegistryObject<Item> BLACK_TEA_GUMMY = registerGummy("black_tea", Nutrition.BLACK_TEA_GUMMY, "farmersrespite");
-	public static final RegistryObject<Item> COFFEE_GUMMY = registerGummy("coffee", Nutrition.COFFEE_GUMMY, "farmersrespite");
+	public static final RegistryObject<Item> BANANA_GUMMY = registerGummy("banana", Nutrition.BANANA_GUMMY, Modid.N);
+	public static final RegistryObject<Item> VANILLA_GUMMY = registerGummy("vanilla", Nutrition.VANILLA_GUMMY, Modid.N);
+	public static final RegistryObject<Item> CHOCOLATE_GUMMY = registerGummy("chocolate", Nutrition.CHOCOLATE_GUMMY, Modid.N);
+	public static final RegistryObject<Item> MINT_GUMMY = registerGummy("mint", Nutrition.MINT_GUMMY, Modid.N);
+	public static final RegistryObject<Item> ADZUKI_GUMMY = registerItem("adzuki_gummy",
+		() -> new AdzukiGummyItem((new Item.Properties()).food(Nutrition.ADZUKI_GUMMY)));
+	public static final RegistryObject<Item> PUMPKIN_GUMMY = registerGummy("pumpkin", Nutrition.PUMPKIN_GUMMY, Modid.SEAS);
+	public static final RegistryObject<Item> SWEET_BERRY_GUMMY = registerGummy("sweet_berry", Nutrition.SWEET_BERRY_GUMMY, Modid.SEAS);
+	public static final RegistryObject<Item> BEETROOT_GUMMY = registerGummy("beetroot", Nutrition.BEETROOT_GUMMY, Modid.SEAS);
+	public static final RegistryObject<Item> ALOE_GUMMY = registerItem("aloe_gummy",
+		() -> new AloeGummyItem((new Item.Properties()).food(Nutrition.ALOE_GUMMY)));
+	public static final RegistryObject<Item> PASSION_FRUIT_GUMMY = registerGummy("passion_fruit", Nutrition.PASSION_FRUIT_GUMMY, Modid.AT);
+	public static final RegistryObject<Item> YUCCA_GUMMY = registerGummy("yucca", Nutrition.YUCCA_GUMMY, Modid.AT);
+	public static final RegistryObject<Item> GREEN_TEA_GUMMY = registerGummy("green_tea", Nutrition.GREEN_TEA_GUMMY, Modid.FR);
+	public static final RegistryObject<Item> YELLOW_TEA_GUMMY = registerGummy("yellow_tea", Nutrition.YELLOW_TEA_GUMMY, Modid.FR);
+	public static final RegistryObject<Item> BLACK_TEA_GUMMY = registerGummy("black_tea", Nutrition.BLACK_TEA_GUMMY, Modid.FR);
+	public static final RegistryObject<Item> COFFEE_GUMMY = registerGummy("coffee", Nutrition.COFFEE_GUMMY, Modid.FR);
 
 	// Let Fish Love
 	public static final RegistryObject<Item> PLATINUM_BASS_ROE = registerItem("platinum_bass_roe", () ->
-		Mods.stringLoaded("letfishlove") ?
+		Modid.LFL.loaded() ?
 		LetFishLoveCompat.platinumBassRoeItem() :
-		new CompatItem(new Item.Properties(), "letfishlove")
+		new CompatItem(new Item.Properties(), Modid.LFL)
 	);
 	public static final RegistryObject<Item> TIGER_PRAWN_ROE = registerItem("tiger_prawn_roe", () ->
-		Mods.stringLoaded("letfishlove") ?
+		Modid.LFL.loaded() ?
 		LetFishLoveCompat.tigerPrawnRoeItem() :
-		new CompatItem(new Item.Properties(), "letfishlove")
+		new CompatItem(new Item.Properties(), Modid.LFL)
 	);
 
 	public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {
@@ -389,7 +388,7 @@ public class CRItems extends ModItems {
 			new GummyItem((new Item.Properties()).food(properties)));
 	}
 
-	public static RegistryObject<Item> registerGummy(String name, FoodProperties properties, String modid) {
+	public static RegistryObject<Item> registerGummy(String name, FoodProperties properties, Modid modid) {
 		return registerItem(name + "_gummy", () ->
 			new GummyItem((new Item.Properties()).food(properties), modid));
 	}

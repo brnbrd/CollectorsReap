@@ -1,109 +1,105 @@
 package net.brdle.collectorsreap.compat;
 
-import net.brdle.collectorsreap.Util;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTab;
 import java.util.function.Supplier;
-import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.registry.ModEffects;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 public class ModCompat {
 	@Nullable
-	public static CreativeModeTab ifLoaded(String modid, CreativeModeTab tab) {
+	public static CreativeModeTab ifLoaded(Modid modid, CreativeModeTab tab) {
 		return ifLoaded(modid, () -> tab);
 	}
 
 	@Nullable
-	public static CreativeModeTab ifLoaded(String modid, Supplier<CreativeModeTab> tab) {
-		if (Mods.stringLoaded(modid)) {
-			return tab.get();
-		} else {
-			return null;
-		}
+	public static CreativeModeTab ifLoaded(@NotNull Modid modid, Supplier<CreativeModeTab> tab) {
+		return modid.loaded() ? tab.get() : null;
 	}
 
 	public static MobEffect getCaffeinated() {
-		return Util.effect("farmersrespite", "caffeinated", MobEffects.CONFUSION);
+		return Modid.FR.effect("caffeinated", MobEffects.CONFUSION);
 	}
 
 	public static MobEffect getAgility() {
-		return Util.effect("neapolitan", "agility", MobEffects.CONFUSION);
+		return Modid.N.effect("agility", MobEffects.CONFUSION);
 	}
 
 	public static MobEffect getVanillaScent() {
-		return Util.effect("neapolitan", "vanilla_scent", MobEffects.CONFUSION);
+		return Modid.N.effect("vanilla_scent", MobEffects.CONFUSION);
 	}
 
 	public static MobEffect getSugarRush() {
-		return Util.effect("neapolitan", "sugar_rush", MobEffects.MOVEMENT_SPEED);
+		return Modid.N.effect("sugar_rush", MobEffects.MOVEMENT_SPEED);
 	}
 
 	public static MobEffect getBerserking() {
-		return Util.effect("neapolitan", "berserking", MobEffects.CONFUSION);
+		return Modid.N.effect("berserking", MobEffects.CONFUSION);
 	}
 
 	public static MobEffect getHarmony() {
-		return Util.effect("neapolitan", "harmony", MobEffects.CONFUSION);
+		return Modid.N.effect("harmony", MobEffects.CONFUSION);
 	}
 
 	public static MobEffect getSpitting() {
-		return Util.effect("atmospheric", "spitting", MobEffects.CONFUSION);
+		return Modid.AT.effect("spitting", MobEffects.CONFUSION);
 	}
 
 	public static MobEffect getPersistence() {
-		return Util.effect("atmospheric", "persistence", MobEffects.CONFUSION);
+		return Modid.AT.effect("persistence", MobEffects.CONFUSION);
 	}
 
 	public static MobEffect getRelief() {
-		return Util.effect("atmospheric", "relief", MobEffects.CONFUSION);
+		return Modid.AT.effect("relief", MobEffects.CONFUSION);
 	}
 
 	public static MobEffect getStuffed() {
-		return Util.effect("seasonals", "stuffed", MobEffects.CONFUSION);
+		return Modid.SEAS.effect("stuffed", MobEffects.CONFUSION);
 	}
 
 	public static MobEffect getThornResistance() {
-		return Util.effect("seasonals", "thorn_resistance", MobEffects.FIRE_RESISTANCE);
+		return Modid.SEAS.effect("thorn_resistance", MobEffects.FIRE_RESISTANCE);
 	}
 
 	public static MobEffect getRooted() {
-		return Util.effect("seasonals", "rooted", MobEffects.DAMAGE_RESISTANCE);
+		return Modid.SEAS.effect("rooted", MobEffects.DAMAGE_RESISTANCE);
 	}
 
 	public static MobEffect getVitality() {
-		return Util.effect("respiteful", "vitality", MobEffects.DIG_SPEED);
+		return Modid.RF.effect("vitality", MobEffects.DIG_SPEED);
 	}
 
 	public static MobEffect getTenacity() {
-		return Util.effect("respiteful", "tenacity", MobEffects.DAMAGE_RESISTANCE);
+		return Modid.RF.effect("tenacity", MobEffects.DAMAGE_RESISTANCE);
 	}
 
 	public static MobEffect getMaturity() {
-		return Util.effect("respiteful", "maturity", getCaffeinated());
+		return Modid.RF.effect("maturity", getCaffeinated());
 	}
 
 	public static MobEffect getTipsy() {
-		return Util.effect("brewinandchewin", "tipsy", getCaffeinated());
+		return Modid.BC.effect("tipsy", getCaffeinated());
 	}
 
 	public static MobEffect getIntoxication() {
-		return Util.effect("brewinandchewin", "intoxication", getCaffeinated());
+		return Modid.BC.effect("intoxication", getCaffeinated());
 	}
 
 	public static MobEffect getRaging() {
-		return Util.effect("brewinandchewin", "raging", getCaffeinated());
+		return Modid.BC.effect("raging", getCaffeinated());
 	}
 
 	public static MobEffect getSweetHeart() {
-		return Util.effect("brewinandchewin", "sweet_heart", getCaffeinated());
+		return Modid.BC.effect("sweet_heart", getCaffeinated());
 	}
 
 	public static MobEffect getTracer() {
-		return Util.effect("cosmopolitan", "tracer", MobEffects.GLOWING);
+		return Modid.COS.effect("tracer", MobEffects.GLOWING);
 	}
 
 	public static MobEffect getExuberant() {
-		return Util.effect("cosmopolitan", "exuberant", ModEffects.COMFORT.get());
+		return Modid.COS.effect("exuberant", ModEffects.COMFORT.get());
 	}
 }

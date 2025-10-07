@@ -1,62 +1,40 @@
 package net.brdle.collectorsreap.common.item.food;
 
-import joptsimple.internal.Strings;
-import net.brdle.collectorsreap.compat.Mods;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
+import net.brdle.collectorsreap.compat.ICompat;
+import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.fml.ModList;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
 
-public class CompatConsumable extends ConsumableItem {
-	private final String[] modid;
+public class CompatConsumable extends ConsumableItem implements ICompat {
+	private final Modid[] modid;
 	private final float heal;
 
-	public CompatConsumable(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, String... modid) {
+	public CompatConsumable(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, Modid... modid) {
 		super(properties, hasFoodEffectTooltip, hasCustomTooltip);
 		this.heal = 0F;
 		this.modid = modid;
 	}
 
-	public CompatConsumable(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, float heal, String... modid) {
+	public CompatConsumable(Properties properties, boolean hasFoodEffectTooltip, boolean hasCustomTooltip, float heal, Modid... modid) {
 		super(properties, hasFoodEffectTooltip, hasCustomTooltip);
 		this.heal = heal;
 		this.modid = modid;
 	}
 
-	public String[] getModid() {
+	public Modid[] getModid() {
 		return this.modid;
 	}
 
-	public boolean loaded() {
-		for (String mod : this.getModid()) {
-			if (Mods.stringLoaded(mod)) {
-				return true;
-			}
-		}
-		return this.getModid().length < 1;
-	}
-
-	@Override
-	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> comps, @NotNull TooltipFlag isAdvanced) {
-		if (!this.loaded()) {
-			comps.add(Component.translatable("tooltip.requires_modid"));
-			comps.add(Component.literal(Strings.join(this.getModid(), ", ")).withStyle(ChatFormatting.UNDERLINE));
-		}
-		super.appendHoverText(stack, level, comps, isAdvanced);
+	public float getHeal() {
+		return this.heal;
 	}
 
 	@Override
 	public void affectConsumer(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
 		super.affectConsumer(stack, level, consumer);
-		if (this.loaded() && this.heal > 0F) {
-			consumer.heal(this.heal);
-		}
+		if (this.enabled() && this.getHeal() > 0F) consumer.heal(this.getHeal());
 	}
 }
