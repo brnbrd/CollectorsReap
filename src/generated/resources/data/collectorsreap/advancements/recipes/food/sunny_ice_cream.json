@@ -18,7 +18,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:food/tricolor_ice_cream"
+              "recipe": "collectorsreap:food/sunny_ice_cream"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -31,7 +31,7 @@
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:food/tricolor_ice_cream"
+            "collectorsreap:food/sunny_ice_cream"
           ]
         },
         "sends_telemetry_event": false
@@ -42,7 +42,7 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "tricolor_ice_cream"
+              "value": "sunny_ice_cream"
             },
             {
               "type": "forge:not",

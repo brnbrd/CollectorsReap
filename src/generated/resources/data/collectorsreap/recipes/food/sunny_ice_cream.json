@@ -8,7 +8,7 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "tricolor_ice_cream"
+              "value": "sunny_ice_cream"
             },
             {
               "type": "forge:not",
@@ -51,7 +51,7 @@
           }
         ],
         "result": {
-          "item": "collectorsreap:tricolor_ice_cream"
+          "item": "collectorsreap:sunny_ice_cream"
         }
       }
     }

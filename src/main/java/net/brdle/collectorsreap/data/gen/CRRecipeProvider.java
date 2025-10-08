@@ -1017,7 +1017,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.define('i', CRItems.LUCUMA_ICE_CREAM.get())
 				.unlockedBy("has_lucuma_ice_cream", has(CRItems.LUCUMA_ICE_CREAM.get())),
 			"lucuma_ice_cream_block", finished, enabled(CRItems.LUCUMA_ICE_CREAM_BLOCK), enabled(CRItems.LUCUMA_ICE_CREAM), modLoaded("neapolitan"));
-		wrap(shapeless(RecipeCategory.FOOD, CRItems.TRICOLOR_ICE_CREAM, 1)
+		wrap(shapeless(RecipeCategory.FOOD, CRItems.SUNNY_ICE_CREAM, 1)
 				.requires(Items.BOWL)
 				.requires(CRItems.LUCUMA.get())
 				.requires(CRItemTags.DRIED_VANILLA_PODS)
@@ -1026,7 +1026,7 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.requires(CRItemTags.ICE_CUBES)
 				.requires(Items.SUGAR)
 				.unlockedBy("has_lucuma", has(CRItems.LUCUMA.get())),
-			"food/tricolor_ice_cream", finished, enabled(CRItems.TRICOLOR_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
+			"food/sunny_ice_cream", finished, enabled(CRItems.SUNNY_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
 	}
 
 	private InventoryChangeTrigger.TriggerInstance has(ItemLike... items) {

@@ -239,7 +239,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.POMEGRANATE_ICE_CREAM, "Pomegranate Ice Cream");
 		addItem(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM, "Pink Dragon Fruit Ice Cream");
 		addItem(CRItems.LUCUMA_ICE_CREAM, "Lucuma Ice Cream");
-		addItem(CRItems.TRICOLOR_ICE_CREAM, "Tricolor Ice Cream");
+		addItem(CRItems.SUNNY_ICE_CREAM, "Sunny Ice Cream");
 		addItem(CRItems.LIME_MILKSHAKE, "Lime Milkshake");
 		addItem(CRItems.POMEGRANATE_MILKSHAKE, "Pomegranate Milkshake");
 		addItem(CRItems.PINK_DRAGON_FRUIT_MILKSHAKE, "Pink Dragon Fruit Milkshake");

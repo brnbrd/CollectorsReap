@@ -280,23 +280,23 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 300, 0), 1F)
 		.build();
 	public static final FoodProperties LIME_ICE_CREAM = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(0.4F)
+		.nutrition(6).saturationMod(0.3F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 1), 1F)
 		.build();
 	public static final FoodProperties POMEGRANATE_ICE_CREAM = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(0.4F)
+		.nutrition(6).saturationMod(0.3F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1600, 1), 1F)
 		.build();
 	public static final FoodProperties PINK_DRAGON_FRUIT_ICE_CREAM = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(0.4F)
+		.nutrition(6).saturationMod(0.3F)
 		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 1600, 0, false, false, true), 1F)
 		.build();
 	public static final FoodProperties LUCUMA_ICE_CREAM = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(0.4F)
+		.nutrition(6).saturationMod(0.3F)
 		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 1600, 2), 1F)
 		.build();
-	public static final FoodProperties TRICOLOR_ICE_CREAM = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(0.4F)
+	public static final FoodProperties SUNNY_ICE_CREAM = (new FoodProperties.Builder())
+		.nutrition(12).saturationMod(0.3F)
 		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 1600, 1), 1F)
 		.effect(() -> new MobEffectInstance(ModCompat.getVanillaScent(), 200, 0), 1F)
 		.build();

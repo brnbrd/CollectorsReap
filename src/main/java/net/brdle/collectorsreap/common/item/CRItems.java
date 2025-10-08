@@ -139,8 +139,8 @@ public class CRItems extends ModItems {
 		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.PINK_DRAGON_FRUIT_ICE_CREAM)));
 	public static final RegistryObject<Item> LUCUMA_ICE_CREAM = registerItem("lucuma_ice_cream",
 		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.LUCUMA_ICE_CREAM)));
-	public static final RegistryObject<Item> TRICOLOR_ICE_CREAM = registerItem("tricolor_ice_cream",
-		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.TRICOLOR_ICE_CREAM)));
+	public static final RegistryObject<Item> SUNNY_ICE_CREAM = registerItem("sunny_ice_cream",
+		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.SUNNY_ICE_CREAM), 2F));
 
 	// Milkshakes
 	public static final RegistryObject<Item> LIME_MILKSHAKE = registerItem("lime_milkshake",

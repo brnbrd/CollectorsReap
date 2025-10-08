@@ -8,7 +8,7 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "tricolor_ice_cream"
+              "value": "sunny_ice_cream"
             },
             {
               "type": "forge:mod_loaded",
@@ -19,11 +19,8 @@
               "item": "neapolitan:vanilla_ice_cream"
             },
             {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:tag_empty",
-                "tag": "forge:fruits/strawberry"
-              }
+              "type": "forge:item_exists",
+              "item": "neapolitan:strawberry_ice_cream"
             }
           ]
         }
@@ -36,17 +33,21 @@
             "item": "neapolitan:vanilla_ice_cream"
           },
           {
-            "tag": "forge:fruits/lucuma"
+            "item": "neapolitan:strawberry_ice_cream"
           },
           {
-            "tag": "forge:fruits/strawberry"
+            "item": "collectorsreap:lucuma_ice_cream"
+          },
+          {
+            "item": "minecraft:bowl"
           },
           {
             "item": "minecraft:bowl"
           }
         ],
         "result": {
-          "item": "collectorsreap:tricolor_ice_cream"
+          "item": "collectorsreap:sunny_ice_cream",
+          "count": 2
         }
       }
     }
