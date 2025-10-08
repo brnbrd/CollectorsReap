@@ -11,14 +11,14 @@
                 "add": false,
                 "count": {
                   "type": "minecraft:uniform",
-                  "max": 12.0,
+                  "max": 8.0,
                   "min": 4.0
                 },
                 "function": "minecraft:set_count"
               }
             ],
-            "name": "collectorsreap:pomegranate_slice",
-            "weight": 10
+            "name": "collectorsreap:lunar_pearl",
+            "weight": 14
           }
         ],
         "index": 0,
@@ -27,5 +27,5 @@
     }
   ],
   "priority": "normal",
-  "selector": "minecraft:chests/bastion_hoglin_stable"
+  "selector": "minecraft:chests/shipwreck_treasure"
 }

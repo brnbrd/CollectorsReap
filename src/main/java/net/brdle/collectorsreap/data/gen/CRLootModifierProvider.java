@@ -27,7 +27,7 @@ public class CRLootModifierProvider extends LootModifierProvider {
 		this.entry("abandoned_mineshaft").selects(BuiltInLootTables.ABANDONED_MINESHAFT)
 			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
 				LootItem.lootTableItem(CRItems.LIME.get())
-					.setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))).build()
+					.setWeight(8).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))).build()
 			)));
 		this.entry("simple_dungeon").selects(BuiltInLootTables.SIMPLE_DUNGEON)
 			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
@@ -36,28 +36,37 @@ public class CRLootModifierProvider extends LootModifierProvider {
 			)));
 		this.entry("bastion_hoglin_stable").selects(BuiltInLootTables.BASTION_HOGLIN_STABLE)
 			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
-				LootItem.lootTableItem(CRItems.LIME_SEEDS.get())
-					.setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))).build(),
 				LootItem.lootTableItem(CRItems.POMEGRANATE_SLICE.get())
-					.setWeight(8).apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12))).build()
+					.setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12))).build()
 			)));
 		this.entry("bastion_other").selects(BuiltInLootTables.BASTION_OTHER)
 			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
 				LootItem.lootTableItem(CRItems.POMEGRANATE_SLICE.get())
-					.setWeight(8).apply(SetItemCountFunction.setCount(UniformGenerator.between(6, 16))).build()
+					.setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(6, 16))).build()
 			)));
 		this.entry("ancient_city").selects(BuiltInLootTables.ANCIENT_CITY)
 			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
-				LootItem.lootTableItem(CRItems.LUCUMA.get()).setWeight(10).build(),
-				LootItem.lootTableItem(CRItems.GILDED_LUCUMA.get()).setWeight(5).build()
+				LootItem.lootTableItem(CRItems.LUCUMA.get()).setWeight(4).build(),
+				LootItem.lootTableItem(CRItems.GILDED_LUCUMA.get()).setWeight(1).build()
 			)));
+		this.entry("shipwreck_treasure").selects(BuiltInLootTables.SHIPWRECK_TREASURE)
+			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
+				LootItem.lootTableItem(CRItems.LUNAR_PEARL.get())
+					.setWeight(14).apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 8))).build()
+			)));
+		this.entry("buried_treasure").selects(BuiltInLootTables.BURIED_TREASURE)
+			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
+				LootItem.lootTableItem(CRItems.LUNAR_PEARL.get())
+					.setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 7))).build()
+			)));
+
+		// Fishing
 		final LootItemCondition.Builder inRiver = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.RIVER));
 		final LootItemCondition.Builder inSwamp = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SWAMP));
 		final LootItemCondition.Builder inMangroveSwamp = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.MANGROVE_SWAMP));
 		final LootItemCondition.Builder inOcean = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OCEAN));
 		final LootItemCondition.Builder inWarmOcean = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARM_OCEAN));
 		final LootItemCondition.Builder inColdOcean = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.COLD_OCEAN));
-
 		this.entry(BuiltInLootTables.FISHING_FISH.getPath())
 			.selects(BuiltInLootTables.FISHING_FISH)
 			.addModifier(new LootPoolEntriesModifier(false, 0,
