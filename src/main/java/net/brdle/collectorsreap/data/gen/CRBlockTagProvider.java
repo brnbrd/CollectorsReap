@@ -64,7 +64,8 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.CAULDRONS)
 			.add(CRBlocks.LIME_MILKSHAKE_CAULDRON.get())
 			.add(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON.get())
-			.add(CRBlocks.PINK_DRAGON_FRUIT_MILKSHAKE_CAULDRON.get());
+			.add(CRBlocks.PINK_DRAGON_FRUIT_MILKSHAKE_CAULDRON.get())
+			.add(CRBlocks.LUCUMA_MILKSHAKE_CAULDRON.get());
 
 		// Forge
 		this.tag(CRBlockTags.STORAGE_BLOCKS_LIME).add(CRBlocks.LIME_CRATE.get());

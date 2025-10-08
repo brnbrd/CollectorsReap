@@ -56,6 +56,8 @@ public class CRItems extends ModItems {
 		() -> new BlockItem(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK = registerItem("pink_dragon_fruit_ice_cream_block",
 		() -> new BlockItem(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
+	public static final RegistryObject<Item> LUCUMA_ICE_CREAM_BLOCK = registerItem("lucuma_ice_cream_block",
+		() -> new BlockItem(CRBlocks.LUCUMA_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
 
 	// Wild Crop Blocks
 	public static final RegistryObject<Item> PORTOBELLO_COLONY = registerItem("portobello_colony",
@@ -131,6 +133,8 @@ public class CRItems extends ModItems {
 		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.POMEGRANATE_ICE_CREAM)));
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_ICE_CREAM = registerItem("pink_dragon_fruit_ice_cream",
 		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.PINK_DRAGON_FRUIT_ICE_CREAM)));
+	public static final RegistryObject<Item> LUCUMA_ICE_CREAM = registerItem("lucuma_ice_cream",
+		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.LUCUMA_ICE_CREAM)));
 
 	// Milkshakes
 	public static final RegistryObject<Item> LIME_MILKSHAKE = registerItem("lime_milkshake",
@@ -139,6 +143,8 @@ public class CRItems extends ModItems {
 		() -> new ShakeItem(new Item.Properties().food(Nutrition.POMEGRANATE_MILKSHAKE)));
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_MILKSHAKE = registerItem("pink_dragon_fruit_milkshake",
 		() -> new ShakeItem(new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT_MILKSHAKE)));
+	public static final RegistryObject<Item> LUCUMA_MILKSHAKE = registerItem("lucuma_milkshake",
+		() -> new ShakeItem(new Item.Properties().food(Nutrition.LUCUMA_MILKSHAKE)));
 
 	// Drinks
 	public static final RegistryObject<Item> DRAGONS_PASSION = registerItem("dragons_passion", () ->
@@ -208,10 +214,12 @@ public class CRItems extends ModItems {
 	// Lime
 	public static final RegistryObject<Item> CANDIED_LIME = registerFood("candied_lime",
 		new Item.Properties().food(Nutrition.CANDIED_LIME), true, false);
-	public static final RegistryObject<Item> LIME_POPSICLE = registerFood("lime_popsicle",
-		(new Item.Properties()).food(Nutrition.LIME_POPSICLE).craftRemainder(Items.STICK), true, false);
 	public static final RegistryObject<Item> LIME_COOKIE = registerFood("lime_cookie",
 		(new Item.Properties()).food(Nutrition.LIME_COOKIE), true, false);
+	public static final RegistryObject<Item> LIME_POPSICLE = registerFood("lime_popsicle",
+		(new Item.Properties()).food(Nutrition.LIME_POPSICLE).craftRemainder(Items.STICK), true, false);
+	public static final RegistryObject<Item> CREAM_CHEESE = registerFood("cream_cheese",
+		bowlFoodItem(Nutrition.CREAM_CHEESE), true, false);
 	public static final RegistryObject<Item> HONEY_LIME_CHICKEN = registerFood("honey_lime_chicken",
 		bowlFoodItem(Nutrition.HONEY_LIME_CHICKEN), true, false);
 	public static final RegistryObject<Item> MEDITERRANEAN_SALMON = registerFood("mediterranean_salmon",
@@ -232,8 +240,6 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.POMEGRANATE_CHICKEN), true, false);
 	public static final RegistryObject<Item> DELUXE_SALAD = registerFood("deluxe_salad",
 		bowlFoodItem(Nutrition.DELUXE_SALAD), true, false);
-	public static final RegistryObject<Item> CREAM_CHEESE = registerFood("cream_cheese",
-		bowlFoodItem(Nutrition.CREAM_CHEESE), true, false);
 
 	// Pomegranate
 

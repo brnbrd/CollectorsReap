@@ -285,6 +285,10 @@ public class Nutrition {
 		.nutrition(6).saturationMod(0.4F)
 		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 1600, 0, false, false, true), 1F)
 		.build();
+	public static final FoodProperties LUCUMA_ICE_CREAM = (new FoodProperties.Builder())
+		.nutrition(6).saturationMod(0.4F)
+		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 1600, 2), 1F)
+		.build();
 	public static final FoodProperties LIME_MILKSHAKE = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(1.5F).alwaysEat()
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 1), 1F)
@@ -296,6 +300,10 @@ public class Nutrition {
 	public static final FoodProperties PINK_DRAGON_FRUIT_MILKSHAKE = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(1.5F).alwaysEat()
 		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 800, 0, false, false, true), 1F)
+		.build();
+	public static final FoodProperties LUCUMA_MILKSHAKE = (new FoodProperties.Builder())
+		.nutrition(2).saturationMod(1.5F).alwaysEat()
+		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 1600, 0), 1F)
 		.build();
 	public static final FoodProperties DEIFIC_BLOOD = (new FoodProperties.Builder())
 		.alwaysEat()

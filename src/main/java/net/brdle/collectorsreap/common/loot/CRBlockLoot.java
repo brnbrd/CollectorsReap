@@ -134,9 +134,11 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(CRBlocks.LIME_ICE_CREAM_BLOCK.get());
 		this.dropSelf(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get());
 		this.dropSelf(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get());
+		this.dropSelf(CRBlocks.LUCUMA_ICE_CREAM_BLOCK.get());
 		this.dropOther(CRBlocks.LIME_MILKSHAKE_CAULDRON.get(), Blocks.CAULDRON);
 		this.dropOther(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON.get(), Blocks.CAULDRON);
 		this.dropOther(CRBlocks.PINK_DRAGON_FRUIT_MILKSHAKE_CAULDRON.get(), Blocks.CAULDRON);
+		this.dropOther(CRBlocks.LUCUMA_MILKSHAKE_CAULDRON.get(), Blocks.CAULDRON);
 		this.dropSelf(CRBlocks.URCHIN_TEST_BLOCK.get());
 		this.dropSelf(CRBlocks.URCHIN_TEST_BRICKS.get());
 		this.dropSelf(CRBlocks.URCHIN_TEST_BRICK_SLAB.get());

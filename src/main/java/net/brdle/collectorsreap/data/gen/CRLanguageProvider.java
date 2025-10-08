@@ -142,9 +142,11 @@ public class CRLanguageProvider extends LanguageProvider {
 		addBlock(CRBlocks.LIME_ICE_CREAM_BLOCK, "Lime Ice Cream Block");
 		addBlock(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK, "Pomegranate Ice Cream Block");
 		addBlock(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK, "Pink Dragon Fruit Ice Cream Block");
+		addBlock(CRBlocks.LUCUMA_ICE_CREAM_BLOCK, "Lucuma Ice Cream Block");
 		addBlock(CRBlocks.LIME_MILKSHAKE_CAULDRON, "Lime Milkshake Cauldron");
 		addBlock(CRBlocks.POMEGRANATE_MILKSHAKE_CAULDRON, "Pomegranate Milkshake Cauldron");
 		addBlock(CRBlocks.PINK_DRAGON_FRUIT_MILKSHAKE_CAULDRON, "Pink Dragon Fruit Milkshake Cauldron");
+		addBlock(CRBlocks.LUCUMA_MILKSHAKE_CAULDRON, "Lucuma Milkshake Cauldron");
 		addBlock(CRBlocks.URCHIN_TEST_BLOCK, "Urchin Test Block");
 		addBlock(CRBlocks.URCHIN_TEST_BRICKS, "Urchin Test Bricks");
 		addBlock(CRBlocks.URCHIN_TEST_BRICK_SLAB, "Urchin Test Brick Slab");
@@ -219,9 +221,11 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.LIME_ICE_CREAM, "Lime Ice Cream");
 		addItem(CRItems.POMEGRANATE_ICE_CREAM, "Pomegranate Ice Cream");
 		addItem(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM, "Pink Dragon Fruit Ice Cream");
+		addItem(CRItems.LUCUMA_ICE_CREAM, "Lucuma Ice Cream");
 		addItem(CRItems.LIME_MILKSHAKE, "Lime Milkshake");
 		addItem(CRItems.POMEGRANATE_MILKSHAKE, "Pomegranate Milkshake");
 		addItem(CRItems.PINK_DRAGON_FRUIT_MILKSHAKE, "Pink Dragon Fruit Milkshake");
+		addItem(CRItems.LUCUMA_MILKSHAKE, "Lucuma Milkshake");
 		addItem(CRItems.CHOCOLATE_ARILS, "Chocolate Arils");
 		addItem(CRItems.POMEGRANATE_BEAN_SALAD, "Pomegranate Bean Salad");
 		addItem(CRItems.STRAWBERRY_JAM_BUN, "Strawberry Jam Bun");

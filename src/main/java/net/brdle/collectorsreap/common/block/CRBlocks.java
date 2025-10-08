@@ -122,6 +122,8 @@ public class CRBlocks {
 		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).strength(0.2F).sound(SoundType.SNOW)));
 	public static final RegistryObject<Block> PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK = BLOCKS.register("pink_dragon_fruit_ice_cream_block",
 		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).strength(0.2F).sound(SoundType.SNOW)));
+	public static final RegistryObject<Block> LUCUMA_ICE_CREAM_BLOCK = BLOCKS.register("lucuma_ice_cream_block",
+		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(0.2F).sound(SoundType.SNOW)));
 	public static final RegistryObject<Block> LIME_MILKSHAKE_CAULDRON = BLOCKS.register("lime_milkshake_cauldron",
 		() -> new CRMilkshakeCauldronBlock(
 			Modid.N.loaded() ?
@@ -138,6 +140,12 @@ public class CRBlocks {
 		() -> new CRMilkshakeCauldronBlock(
 			Modid.N.loaded() ?
 			CRCauldronInteractions.PINK_DRAGON_FRUIT_MILKSHAKE.map() :
+			CauldronInteraction.newInteractionMap())
+	);
+	public static final RegistryObject<Block> LUCUMA_MILKSHAKE_CAULDRON = BLOCKS.register("lucuma_milkshake_cauldron",
+		() -> new CRMilkshakeCauldronBlock(
+			Modid.N.loaded() ?
+			CRCauldronInteractions.LUCUMA_MILKSHAKE.map() :
 			CauldronInteraction.newInteractionMap())
 	);
 

@@ -110,6 +110,7 @@ public class CRBlockStateProvider extends BlockStateProvider {
 		this.simpleBlock(CRBlocks.LIME_ICE_CREAM_BLOCK.get());
 		this.simpleBlock(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get());
 		this.simpleBlock(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get());
+		this.simpleBlock(CRBlocks.LUCUMA_ICE_CREAM_BLOCK.get());
 		this.simpleBlock(CRBlocks.URCHIN_TEST_BLOCK.get(), this.models().cubeBottomTop(
 			"urchin_test_block",
 			resourceBlock("urchin_test_block_side"),

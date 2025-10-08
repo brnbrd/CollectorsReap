@@ -977,7 +977,28 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.define('i', CRItems.PINK_DRAGON_FRUIT_ICE_CREAM.get())
 				.unlockedBy("has_pink_dragon_fruit_ice_cream", has(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM.get())),
 			"pink_dragon_fruit_ice_cream_block", finished, enabled(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK), enabled(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM), modLoaded("neapolitan"));
-
+		wrap(shapeless(RecipeCategory.FOOD, CRItems.LUCUMA_ICE_CREAM)
+				.requires(Items.BOWL)
+				.requires(CRItems.LUCUMA.get())
+				.requires(ForgeTags.MILK)
+				.requires(CRItemTags.ICE_CUBES)
+				.requires(Items.SUGAR)
+				.unlockedBy("has_lucuma", has(CRItems.LUCUMA.get())),
+			"food/lucuma_ice_cream", finished, enabled(CRItems.LUCUMA_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
+		wrap(shapeless(RecipeCategory.FOOD, CRItems.LUCUMA_MILKSHAKE, 3)
+				.requires(Items.GLASS_BOTTLE, 3)
+				.requires(CRItems.LUCUMA_ICE_CREAM.get())
+				.requires(ForgeTags.MILK)
+				.unlockedBy("has_lucuma_ice_cream", has(CRItems.LUCUMA_ICE_CREAM.get())),
+			"food/lucuma_milkshake", finished, enabled(CRItems.LUCUMA_ICE_CREAM), enabled(CRItems.LUCUMA_MILKSHAKE), modLoaded("neapolitan"));
+		wrap(shaped(RecipeCategory.BUILDING_BLOCKS, CRItems.LUCUMA_ICE_CREAM_BLOCK, 8)
+				.pattern("sss")
+				.pattern("sis")
+				.pattern("sss")
+				.define('s', Blocks.SNOW_BLOCK)
+				.define('i', CRItems.LUCUMA_ICE_CREAM.get())
+				.unlockedBy("has_lucuma_ice_cream", has(CRItems.LUCUMA_ICE_CREAM.get())),
+			"lucuma_ice_cream_block", finished, enabled(CRItems.LUCUMA_ICE_CREAM_BLOCK), enabled(CRItems.LUCUMA_ICE_CREAM), modLoaded("neapolitan"));
 	}
 
 	private InventoryChangeTrigger.TriggerInstance has(ItemLike... items) {

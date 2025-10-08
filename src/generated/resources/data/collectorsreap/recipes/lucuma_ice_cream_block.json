@@ -1,0 +1,48 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_ice_cream_block"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_ice_cream"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "key": {
+          "i": {
+            "item": "collectorsreap:lucuma_ice_cream"
+          },
+          "s": {
+            "item": "minecraft:snow_block"
+          }
+        },
+        "pattern": [
+          "sss",
+          "sis",
+          "sss"
+        ],
+        "result": {
+          "count": 8,
+          "item": "collectorsreap:lucuma_ice_cream_block"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}
