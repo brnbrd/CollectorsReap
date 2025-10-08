@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-07T12:30:46.9694772	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2025-10-07T16:46:42.398703	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
@@ -7,7 +7,7 @@ a740abeb613a7024a35910efe912a50a6ee62045 data/atmospheric/tags/items/yucca_fruit
 d50b079e648b866cfdbbc59feeeec814ec391a64 data/brewinandchewin/tags/items/fermented_drinks.json
 bc152e3055d651ccdad9d17d1bffdbb9ebde35b5 data/collectorsreap/tags/items/chieftain_crab_food.json
 e0f1081b33dba4a0923dc182be2af337db73c5bb data/collectorsreap/tags/items/dart_shooters.json
-ff8a483f39a54d0513300f71482aab57ea79c9fd data/collectorsreap/tags/items/gummies.json
+26632dd00d22bd44eb61d06d5b648ffb9fb2b026 data/collectorsreap/tags/items/gummies.json
 88055c196d1b1d1dc8d81f028dba0bb58d473524 data/collectorsreap/tags/items/hot_nether_fruit.json
 4ade3885f131d51fd808050df78ebb129d826f84 data/diet/tags/items/fruits.json
 44930d393f8ce0442362dc4dac89d839726332e7 data/diet/tags/items/proteins.json
@@ -68,6 +68,7 @@ e6d2989abc0c43896cdeb48a0dd883c7342c8f1c data/forge/tags/items/tea_leaves/green.
 7450018a52eec1eb19c054cbbd14deefa0baa164 data/letfishlove/tags/items/fish_food/collectorsreap/platinum_bass.json
 c23b5aceb0db24e7df8b571f876f733a24bde29d data/letfishlove/tags/items/fish_food/collectorsreap/tiger_prawn.json
 9aa06359ea3eada70b33c83e1ffa8fac6e76c216 data/minecraft/tags/items/fishes.json
+ed553df7854d019a127eb71e7d8e2c5c6de077e7 data/minecraft/tags/items/piglin_loved.json
 461e5b7194fed599f65c8db456e0e887d9bf8e06 data/minecraft/tags/items/slabs.json
 e8c935b46f78b33b0caa4da2d5ff093a9b7ec404 data/minecraft/tags/items/small_flowers.json
 9c66ee8eeb0c17ffabd4bed3839f9fead6387d5b data/minecraft/tags/items/stairs.json

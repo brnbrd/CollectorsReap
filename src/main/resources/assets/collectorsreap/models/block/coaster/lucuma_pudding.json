@@ -1,0 +1,6 @@
+{
+  "parent": "brewinandchewin:block/coaster_glow_berry_custard",
+  "textures": {
+    "custard": "collectorsreap:block/coaster/lucuma_pudding"
+  }
+}

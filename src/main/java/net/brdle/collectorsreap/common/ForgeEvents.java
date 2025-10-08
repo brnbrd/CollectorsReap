@@ -54,16 +54,24 @@ public class ForgeEvents {
 	public void onWanderingTrader(WandererTradesEvent e) {
 		final List<VillagerTrades.ItemListing> trades = e.getGenericTrades();
 		if (Util.enabled(CRItems.PORTOBELLO)) {
-			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.BROWN_MUSHROOM, 4), Util.getStack(CRItems.PORTOBELLO), 10, 1, 1));
+			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.BROWN_MUSHROOM, 4),
+				Util.getStack(CRItems.PORTOBELLO), 10, 1, 1));
 		}
 		if (Util.enabled(CRItems.LIME) && Util.enabled(CRItems.LIME_SEEDS)) {
-			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.getStack(CRItems.LIME_SEEDS), 5, 1, 1));
+			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),
+				Util.getStack(CRItems.LIME_SEEDS), 5, 1, 1));
 		}
 		if (Util.enabled(CRItems.PINK_DRAGON_FRUIT) && Util.enabled(CRItems.DRAGON_FRUIT_SEEDS)) {
-			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.getStack(CRItems.DRAGON_FRUIT_SEEDS), 5, 1, 1));
+			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),
+				Util.getStack(CRItems.DRAGON_FRUIT_SEEDS), 5, 1, 1));
 		}
 		if (Util.enabled(CRItems.LUCUMA)) {
-			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1), Util.getStack(CRItems.LUCUMA), 5, 1, 1));
+			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 3),
+				Util.getStack(CRItems.LUCUMA, 3), 5, 1, 1));
+			if (Util.enabled(CRItems.GILDED_LUCUMA)) {
+				trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 10),
+					Util.getStack(CRItems.GILDED_LUCUMA, 1), 5, 1, 1));
+			}
 		}
 	}
 

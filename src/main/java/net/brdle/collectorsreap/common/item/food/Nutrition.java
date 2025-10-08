@@ -15,14 +15,20 @@ import java.util.function.Supplier;
 public class Nutrition {
 	public static final FoodProperties LUCUMA = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(0.1F)
-		.effect(() -> new MobEffectInstance(
-			CREffects.REBOUND.get(),
-			1200,
-			0,
-			false,
-			false,
-			true
-		), 1F).build();
+		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 1200, 0), 1F).build();
+	public static final FoodProperties GILDED_LUCUMA = (new FoodProperties.Builder())
+		.nutrition(4).saturationMod(1.25F)
+		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 3600, 3), 1F).build();
+	public static final FoodProperties LUCUMA_BREAD = (new FoodProperties.Builder())
+		.nutrition(7).saturationMod(0.45F)
+		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 1600, 0), 1F).build();
+	public static final FoodProperties LUCUMA_PUDDING = (new FoodProperties.Builder())
+		.nutrition(8).saturationMod(0.65F)
+		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 1200, 1), 1F).build();
+	public static final FoodProperties LUCUMA_GAZPACHO = (new FoodProperties.Builder())
+		.nutrition(9).saturationMod(0.7F)
+		.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 2400, 0), 1F).build();
 	public static final FoodProperties PINK_DRAGON_FRUIT = (new FoodProperties.Builder())
 		.nutrition(3).saturationMod(0.2F)
 		.effect(() -> new MobEffectInstance(
@@ -415,15 +421,10 @@ public class Nutrition {
 	public static final FoodProperties POMEGRANATE_GUMMY = GUMMY(() ->
 		new MobEffectInstance(CREffects.VOLATILITY.get(), 200, 2));
 	public static final FoodProperties PINK_DRAGON_FRUIT_GUMMY = GUMMY(List.of(() ->
-		new MobEffectInstance(
-			CREffects.SURGE.get(),
-			600,
-			SurgeEffect.MAX_SURGE,
-			false,
-			false,
-			true
-		), () ->
+		new MobEffectInstance(CREffects.SURGE.get(), 600, SurgeEffect.MAX_SURGE), () ->
 		new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0)));
+	public static final FoodProperties LUCUMA_GUMMY = GUMMY(() ->
+		new MobEffectInstance(CREffects.REBOUND.get(), 200, 2));
 	public static final FoodProperties MELON_GUMMY = GUMMY(() ->
 		new MobEffectInstance(MobEffects.ABSORPTION, 200, 0));
 	public static final FoodProperties APPLE_GUMMY = GUMMY(() ->

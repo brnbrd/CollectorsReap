@@ -29,7 +29,7 @@ public class Generators {
 		gen.addProvider(e.includeServer(), new CRBiomeTagProvider(output, lookup, helper));
 		gen.addProvider(e.includeServer(), new CRRecipeProvider(output));
 		gen.addProvider(e.includeServer(), new CRLootTableProvider(output));
-		gen.addProvider(e.includeServer(), new CRLootModifierProvider(output));
+		gen.addProvider(e.includeServer(), new CRLootModifierProvider(output, lookup));
 		gen.addProvider(e.includeServer(), new CRTrimMaterialTagProvider(output, lookup, helper));
 
 		gen.addProvider(e.includeClient(), new CRBlockStateProvider(output, helper));

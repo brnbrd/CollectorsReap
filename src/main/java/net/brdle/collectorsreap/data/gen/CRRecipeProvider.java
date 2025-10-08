@@ -55,6 +55,10 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_COLONY.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 				CRItems.PORTOBELLO.get(), 5),
 			"cutting/portobello_colony", finished, enabled(CRItems.PORTOBELLO));
+		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LUCUMA.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+				Items.ORANGE_DYE, 1)
+				.addResult(Items.YELLOW_DYE, 1),
+			"cutting/lucuma", finished, enabled(CRItems.LUCUMA));
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 					CRItems.LIME_SLICE.get(), 2)
 				.addResult(Items.LIME_DYE),
@@ -154,6 +158,13 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.addIngredient(ForgeTags.VEGETABLES_CARROT)
 				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
 			"food/dragon_stew", finished, enabled(CRItems.DRAGON_STEW));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.LUCUMA_GAZPACHO.get(), 1, 200, 1F, Items.BOWL)
+				.addIngredient(CRItemTags.FRUITS_LUCUMA)
+				.addIngredient(ModItems.PUMPKIN_SLICE.get())
+				.addIngredient(ForgeTags.VEGETABLES_ONION)
+				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
+				.unlockedBy("has_lucuma", has(CRItemTags.FRUITS_LUCUMA)),
+			"food/lucuma_gazpacho", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_GAZPACHO));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.HONEY_LIME_CHICKEN.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_CHICKEN)
 				.addIngredient(Items.HONEY_BOTTLE)
@@ -415,6 +426,20 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.requires(ForgeTags.VEGETABLES_ONION)
 				.unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
 			"food/portobello_burger_from_bun", finished, enabled(CRItems.PORTOBELLO_BURGER), not(tagEmpty(CRItemTags.BURGER_BUN)));
+		wrap(shapeless(RecipeCategory.FOOD, CRItems.LUCUMA_BREAD)
+				.requires(ForgeTags.DOUGH)
+				.requires(CRItemTags.FRUITS_LUCUMA)
+				.requires(Items.SUGAR)
+				.unlockedBy("has_lucuma", has(CRItemTags.FRUITS_LUCUMA)),
+			"food/lucuma_bread", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_BREAD));
+		wrap(shapeless(RecipeCategory.FOOD, CRItems.LUCUMA_PUDDING)
+				.requires(CRItemTags.FRUITS_LUCUMA)
+				.requires(Items.SUGAR)
+				.requires(ForgeTags.EGGS)
+				.requires(ForgeTags.MILK)
+				.requires(Items.GLASS_BOTTLE)
+				.unlockedBy("has_lucuma", has(CRItemTags.FRUITS_LUCUMA)),
+			"food/lucuma_pudding", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_PUDDING));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.LIMEADE)
 				.requires(Ingredient.of(CRItemTags.FRUITS_LIME), 2)
 				.requires(Items.SUGAR)
@@ -581,6 +606,14 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 			"food/sea_wrap_from_tortilla", finished, enabled(CRItems.SEA_WRAP), not(tagEmpty(CRItemTags.TORTILLA)));
 
 		// Shaped Crafting
+		wrap(shaped(RecipeCategory.FOOD, CRItems.GILDED_LUCUMA)
+				.pattern("ggg")
+				.pattern("glg")
+				.pattern("ggg")
+				.define('g', Tags.Items.INGOTS_GOLD)
+				.define('l', CRItems.LUCUMA.get())
+				.unlockedBy("has_lucuma", has(CRItems.LUCUMA.get())),
+			"food/gilded_lucuma", finished, enabled(CRItems.LUCUMA), enabled(CRItems.GILDED_LUCUMA));
 		wrap(shaped(RecipeCategory.COMBAT, CRItems.SHIMMERING_PEARL, 2)
 				.pattern(" p ")
 				.pattern("pep")

@@ -55,6 +55,14 @@ public class CRItems extends ModItems {
 	// Lucuma
 	public static final RegistryObject<Item> LUCUMA = registerItem("lucuma", () ->
 		new LucumaItem((new Item.Properties()).food(Nutrition.LUCUMA)));
+	public static final RegistryObject<Item> GILDED_LUCUMA = registerItem("gilded_lucuma", () ->
+		new ConsumableItem((new Item.Properties()).food(Nutrition.GILDED_LUCUMA), true, false));
+	public static final RegistryObject<Item> LUCUMA_BREAD = registerItem("lucuma_bread", () ->
+		new ConsumableItem((new Item.Properties()).food(Nutrition.LUCUMA_BREAD), true, false));
+	public static final RegistryObject<Item> LUCUMA_PUDDING = registerItem("lucuma_pudding", () ->
+		new ConsumableItem(drinkItem().food(Nutrition.LUCUMA_PUDDING), true, false));
+	public static final RegistryObject<Item> LUCUMA_GAZPACHO = registerItem("lucuma_gazpacho", () ->
+		new ConsumableItem(bowlFoodItem(Nutrition.LUCUMA_GAZPACHO), true, false));
 
 	// Pink Dragon Fruit
 	public static final RegistryObject<Item> DRAGON_FRUIT_SEEDS = registerItem("dragon_fruit_seeds",
@@ -340,6 +348,7 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> LIME_GUMMY = registerGummy("lime", Nutrition.LIME_GUMMY);
 	public static final RegistryObject<Item> POMEGRANATE_GUMMY = registerGummy("pomegranate", Nutrition.POMEGRANATE_GUMMY);
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_GUMMY = registerGummy("pink_dragon_fruit", Nutrition.PINK_DRAGON_FRUIT_GUMMY);
+	public static final RegistryObject<Item> LUCUMA_GUMMY = registerGummy("lucuma", Nutrition.LUCUMA_GUMMY);
 	public static final RegistryObject<Item> APPLE_GUMMY = registerGummy("apple", Nutrition.APPLE_GUMMY);
 	public static final RegistryObject<Item> GLOW_BERRY_GUMMY = registerGummy("glow_berry", Nutrition.GLOW_BERRY_GUMMY);
 	public static final RegistryObject<Item> MELON_GUMMY = registerItem("melon_gummy",

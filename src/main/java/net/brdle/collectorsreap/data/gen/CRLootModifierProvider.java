@@ -1,53 +1,70 @@
 package net.brdle.collectorsreap.data.gen;
 
+import com.teamabnormals.blueprint.common.loot.modification.LootModifierProvider;
+import com.teamabnormals.blueprint.common.loot.modification.modifiers.LootPoolEntriesModifier;
 import net.brdle.collectorsreap.CollectorsReap;
-import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.item.CRItems;
-import net.brdle.collectorsreap.common.loot.AddItemLootModifier;
-import net.brdle.collectorsreap.common.loot.CRFishingLoot;
-import net.brdle.collectorsreap.common.loot.CRLootModifiers;
+import net.minecraft.advancements.critereon.LocationPredicate;
+import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.storage.loot.BuiltInLootTables;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraftforge.common.data.GlobalLootModifierProvider;
-import net.minecraftforge.common.loot.LootTableIdCondition;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
-public class CRLootModifierProvider extends GlobalLootModifierProvider {
-	public CRLootModifierProvider(PackOutput output) {
-		super(output, CollectorsReap.MODID);
+public class CRLootModifierProvider extends LootModifierProvider {
+	public CRLootModifierProvider(PackOutput output, CompletableFuture<Provider> provider) {
+		super(CollectorsReap.MODID, output, provider);
 	}
 
 	@Override
-	protected void start() {
-		add("cr_fishing", new CRFishingLoot(
-			new LootItemCondition[]{
-				LootTableIdCondition.builder(Util.rl("minecraft", "gameplay/fishing")).build()
-			},
-			CRLootModifiers.getLootTableReference("collectorsreap:gameplay/fishing/fishing"),
-			0.2F
-		));
-		add("lime_in_abandoned_mineshaft", new AddItemLootModifier(
-			new LootItemCondition[]{
-				LootTableIdCondition.builder(Util.rl("chests/abandoned_mineshaft")).build()
-			},
-			CRItems.LIME.get(), 1, 2, 0.3F
-		));
-		add("lime_seeds_in_dungeon", new AddItemLootModifier(
-			new LootItemCondition[]{
-				LootTableIdCondition.builder(Util.rl("chests/simple_dungeon")).build()
-			},
-			CRItems.LIME_SEEDS.get(), 2, 4, 0.4F
-		));
-		add("pomegranate_slice_in_bastion_hoglin_stable", new AddItemLootModifier(
-			new LootItemCondition[]{
-				LootTableIdCondition.builder(Util.rl("chests/bastion_hoglin_stable")).build()
-			},
-			CRItems.POMEGRANATE_SLICE.get(), 4, 12, 0.45F
-		));
-		add("pomegranate_seeds_in_bastion_other", new AddItemLootModifier(
-			new LootItemCondition[]{
-				LootTableIdCondition.builder(Util.rl("chests/bastion_other")).build()
-			},
-			CRItems.POMEGRANATE_SEEDS.get(), 6, 16, 0.3F
-		));
+	protected void registerEntries(Provider provider) {
+		this.entry("abandoned_mineshaft").selects(BuiltInLootTables.ABANDONED_MINESHAFT)
+			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
+				LootItem.lootTableItem(CRItems.LIME.get())
+					.setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))).build()
+			)));
+		this.entry("simple_dungeon").selects(BuiltInLootTables.SIMPLE_DUNGEON)
+			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
+				LootItem.lootTableItem(CRItems.LIME_SEEDS.get())
+					.setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))).build()
+			)));
+		this.entry("bastion_hoglin_stable").selects(BuiltInLootTables.BASTION_HOGLIN_STABLE)
+			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
+				LootItem.lootTableItem(CRItems.LIME_SEEDS.get())
+					.setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))).build(),
+				LootItem.lootTableItem(CRItems.POMEGRANATE_SLICE.get())
+					.setWeight(8).apply(SetItemCountFunction.setCount(UniformGenerator.between(4, 12))).build()
+			)));
+		this.entry("bastion_other").selects(BuiltInLootTables.BASTION_OTHER)
+			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
+				LootItem.lootTableItem(CRItems.POMEGRANATE_SLICE.get())
+					.setWeight(8).apply(SetItemCountFunction.setCount(UniformGenerator.between(6, 16))).build()
+			)));
+		this.entry("ancient_city").selects(BuiltInLootTables.ANCIENT_CITY)
+			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
+				LootItem.lootTableItem(CRItems.LUCUMA.get()).setWeight(10).build(),
+				LootItem.lootTableItem(CRItems.GILDED_LUCUMA.get()).setWeight(5).build()
+			)));
+		final LootItemCondition.Builder inRiver = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.RIVER));
+		final LootItemCondition.Builder inSwamp = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.SWAMP));
+		final LootItemCondition.Builder inMangroveSwamp = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.MANGROVE_SWAMP));
+		final LootItemCondition.Builder inOcean = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.OCEAN));
+		final LootItemCondition.Builder inWarmOcean = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.WARM_OCEAN));
+		final LootItemCondition.Builder inColdOcean = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.COLD_OCEAN));
+
+		this.entry(BuiltInLootTables.FISHING_FISH.getPath())
+			.selects(BuiltInLootTables.FISHING_FISH)
+			.addModifier(new LootPoolEntriesModifier(false, 0,
+				LootItem.lootTableItem(CRItems.PLATINUM_BASS.get()).setWeight(7).when(inRiver).build(),
+				LootItem.lootTableItem(CRItems.TIGER_PRAWN.get()).setWeight(9).when(inRiver.or(inSwamp).or(inMangroveSwamp)).build(),
+				LootItem.lootTableItem(CRItems.URCHIN.get()).setWeight(9).when(inOcean.or(inWarmOcean).or(inColdOcean)).build(),
+				LootItem.lootTableItem(CRItems.CLAM.get()).setWeight(10).when(inOcean.or(inWarmOcean).or(inColdOcean)).build()
+			));
 	}
 }

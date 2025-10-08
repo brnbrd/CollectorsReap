@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-07T12:30:46.9716753	Item Models: collectorsreap
+// 1.20.1	2025-10-07T16:46:42.3997165	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -46,6 +46,7 @@ bf7ce6001cd0cb881bd3e5c97b6781a79ccfb97a assets/collectorsreap/models/item/drago
 4fbcd4c4b8ba63cf711acee07e503aaa87a7005e assets/collectorsreap/models/item/dragon_stew.json
 c4a2d39142164c673b5168a004a15dba8404685b assets/collectorsreap/models/item/dried_pink_dragon_fruit.json
 1166c9d7b97213bf472e8eb1bdaaee85f7fe92de assets/collectorsreap/models/item/fish_mix.json
+c1378334e3fa8b674d9e4d46cef8226180d2935d assets/collectorsreap/models/item/gilded_lucuma.json
 20d358545ae7a12561cf0bd01d35762e21cdf67f assets/collectorsreap/models/item/glazed_strider.json
 824066299419f1fa231c5242d0168a6ebacbeb3f assets/collectorsreap/models/item/glow_berry_gummy.json
 d38fe28806758cf25f86c122eafa764677f1f721 assets/collectorsreap/models/item/green_tea_gummy.json
@@ -69,6 +70,10 @@ ac034547ced1b98d0933a928b8594eda0dce606d assets/collectorsreap/models/item/lime_
 fcef6f4c4bd1c6b396dd186a190917184cf44d15 assets/collectorsreap/models/item/lime_seeds.json
 0ddc96ed8aee8ddc75c97f6d5879f748e9a56d4f assets/collectorsreap/models/item/lime_slice.json
 fb7e311403e44af69dec0dcb3aedeca19e170a48 assets/collectorsreap/models/item/lucuma.json
+76dad01e5a760e72404f26dd311061691f4cfdcb assets/collectorsreap/models/item/lucuma_bread.json
+7e734f60bc6e9676f4b5a0ca7408ff618c797e93 assets/collectorsreap/models/item/lucuma_gazpacho.json
+7e1a1711df8a606b8054bbc909bebdcdc1b0f84c assets/collectorsreap/models/item/lucuma_gummy.json
+68992ea6cd060990cac10b50e1bdbd6962d50283 assets/collectorsreap/models/item/lucuma_pudding.json
 0b1e5ba50ddd9a32fb7b803cb1821fbc87b15b74 assets/collectorsreap/models/item/lunar_pearl.json
 095a945e3d363cdf3f71f47a4fe32e93137cd6d4 assets/collectorsreap/models/item/mediterranean_salmon.json
 abbae41fa500c207b8ede0586c4b43c6620d7c16 assets/collectorsreap/models/item/melon_gummy.json

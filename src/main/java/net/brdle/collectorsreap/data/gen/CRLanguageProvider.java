@@ -167,6 +167,10 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
 		addItem(CRItems.PORTOBELLO_QUICHE_SLICE, "Slice of Portobello Quiche");
 		addItem(CRItems.LUCUMA, "Lucuma");
+		addItem(CRItems.GILDED_LUCUMA, "Gilded Lucuma");
+		addItem(CRItems.LUCUMA_BREAD, "Lucuma Bread");
+		addItem(CRItems.LUCUMA_PUDDING, "Lucuma Pudding");
+		addItem(CRItems.LUCUMA_GAZPACHO, "Lucuma Gazpacho");
 		addItem(CRItems.PINK_DRAGON_FRUIT, "Pink Dragon Fruit");
 		addItem(CRItems.DRIED_PINK_DRAGON_FRUIT, "Dried Pink Dragon Fruit");
 		addItem(CRItems.PINK_NOODLES, "Pink Noodles");
@@ -226,6 +230,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.LIME_GUMMY, "Lime Gummy");
 		addItem(CRItems.POMEGRANATE_GUMMY, "Pomegranate Gummy");
 		addItem(CRItems.PINK_DRAGON_FRUIT_GUMMY, "Pink Dragon Fruit Gummy");
+		addItem(CRItems.LUCUMA_GUMMY, "Lucuma Gummy");
 		addItem(CRItems.MELON_GUMMY, "Melon Gummy");
 		addItem(CRItems.APPLE_GUMMY, "Apple Gummy");
 		addItem(CRItems.GLOW_BERRY_GUMMY, "Glow Berry Gummy");

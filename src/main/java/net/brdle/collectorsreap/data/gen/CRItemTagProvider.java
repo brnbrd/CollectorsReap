@@ -37,6 +37,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.LIME_GUMMY.get())
 			.add(CRItems.POMEGRANATE_GUMMY.get())
 			.add(CRItems.PINK_DRAGON_FRUIT_GUMMY.get())
+			.add(CRItems.LUCUMA_GUMMY.get())
 			.add(CRItems.MELON_GUMMY.get())
 			.add(CRItems.APPLE_GUMMY.get())
 			.add(CRItems.GLOW_BERRY_GUMMY.get())
@@ -71,6 +72,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(ItemTags.STAIRS)
 			.add(CRItems.URCHIN_TEST_BRICK_STAIRS.get())
 			.add(CRItems.URCHIN_TEST_TILE_STAIRS.get());
+		this.tag(ItemTags.PIGLIN_LOVED).add(CRItems.GILDED_LUCUMA.get());
 
 		// Fish
 		this.tag(ForgeTags.RAW_FISHES).addTag(CRItemTags.RAW_FISHES_BASS);

@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "gilded_lucuma"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "g": {
+            "tag": "forge:ingots/gold"
+          },
+          "l": {
+            "item": "collectorsreap:lucuma"
+          }
+        },
+        "pattern": [
+          "ggg",
+          "glg",
+          "ggg"
+        ],
+        "result": {
+          "item": "collectorsreap:gilded_lucuma"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

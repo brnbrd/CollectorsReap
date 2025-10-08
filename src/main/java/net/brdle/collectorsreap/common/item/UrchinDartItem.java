@@ -59,7 +59,7 @@ public class UrchinDartItem extends Item {
 					);
 					level.addFreshEntity(dart);
 				}
-				level.playSound(null, player.getX(), player.getY(), player.getZ(), CRSoundEvents.REBOUND_HEAL.get(), SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
+				level.playSound(null, player.getX(), player.getY(), player.getZ(), CRSoundEvents.URCHIN_DART_THROW.get(), SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 				player.awardStat(Stats.ITEM_USED.get(this));
 				if (!player.getAbilities().instabuild) {
 					stack.shrink(1);
