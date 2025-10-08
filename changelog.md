@@ -10,12 +10,13 @@
 - Added Lucuma
   - Can be found in Ancient City chests or received in trade from a Wandering Trader
 - Added Lucuma Gummy
-- Added Lucuma Cake
-- Added Lucuma Ice Cream, Block, and Milkshake (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
 - Added Gilded Lucuma
 - Added Lucuma Bread
 - Added Lucuma Pudding
 - Added Lucuma Gazpacho
+- Added Lucuma Cake
+- Added Lucuma Ice Cream, Block, and Milkshake (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
+- Added Tricolor Ice Cream (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
 - Strawberry Jam Bun now provides 8 nutrition and Instant Health
   - Can now be crafted using Strawberry Jam from [Smidgeon o' Bliss REMASTERED](https://www.curseforge.com/minecraft/mc-mods/smidgeon-o-bliss-remastered)
 - Added a backup recipe for Reanimator's Garden, not requiring ingredients from [Atmospheric](https://www.curseforge.com/minecraft/mc-mods/atmospheric)

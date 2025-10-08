@@ -1,0 +1,63 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_lucuma": {
+            "conditions": {
+              "items": [
+                {
+                  "items": [
+                    "collectorsreap:lucuma"
+                  ]
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "collectorsreap:food/tricolor_ice_cream"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          }
+        },
+        "requirements": [
+          [
+            "has_lucuma",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "collectorsreap:food/tricolor_ice_cream"
+          ]
+        },
+        "sends_telemetry_event": false
+      },
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "tricolor_ice_cream"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:ice_cubes"
+              }
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

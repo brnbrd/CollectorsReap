@@ -135,7 +135,8 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.LIME_ICE_CREAM.get())
 			.add(CRItems.POMEGRANATE_ICE_CREAM.get())
 			.add(CRItems.PINK_DRAGON_FRUIT_ICE_CREAM.get())
-			.add(CRItems.LUCUMA_ICE_CREAM.get());
+			.add(CRItems.LUCUMA_ICE_CREAM.get())
+			.add(CRItems.TRICOLOR_ICE_CREAM.get());
 
 		// Forge
 		this.tag(CRItemTags.STORAGE_BLOCKS_LIME).add(CRItems.LIME_CRATE.get());

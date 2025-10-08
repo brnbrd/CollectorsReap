@@ -1,0 +1,54 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "tricolor_ice_cream"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            },
+            {
+              "type": "forge:item_exists",
+              "item": "neapolitan:vanilla_ice_cream"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:fruits/strawberry"
+              }
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "neapolitan:vanilla_ice_cream"
+          },
+          {
+            "tag": "forge:fruits/lucuma"
+          },
+          {
+            "tag": "forge:fruits/strawberry"
+          },
+          {
+            "item": "minecraft:bowl"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:tricolor_ice_cream"
+        }
+      }
+    }
+  ]
+}

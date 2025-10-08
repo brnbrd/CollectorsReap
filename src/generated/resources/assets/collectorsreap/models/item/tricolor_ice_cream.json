@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "collectorsreap:item/tricolor_ice_cream"
+  }
+}
