@@ -340,10 +340,10 @@ public class CRItems extends ModItems {
 		(new Item.Properties()).food(Nutrition.SEA_WRAP), true, false);
 	public static final RegistryObject<Item> LUNAR_PEARL = registerItem("lunar_pearl",
 		() -> new PearlItem((new Item.Properties())));
-	public static final RegistryObject<Item> SHIMMERING_APPLE = registerItem("shimmering_apple",
-		() -> new ShimmeringAppleItem((new Item.Properties().food(Nutrition.SHIMMERING_APPLE))));
 	public static final RegistryObject<Item> SHIMMERING_PEARL = registerItem("shimmering_pearl",
 		() -> new ShimmeringPearlItem((new Item.Properties()).stacksTo(16)));
+	public static final RegistryObject<Item> SHIMMERING_APPLE = registerItem("shimmering_apple",
+		() -> new ShimmeringAppleItem((new Item.Properties().food(Nutrition.SHIMMERING_APPLE))));
 	public static final RegistryObject<Item> PEARLY_CLAW = registerItem("pearly_claw",
 		() -> new PearlyClawItem((new Item.Properties())));
 

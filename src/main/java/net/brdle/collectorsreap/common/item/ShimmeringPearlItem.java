@@ -8,18 +8,12 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class ShimmeringPearlItem extends PearlItem {
 	public ShimmeringPearlItem(Properties properties) {
 		super(properties);
-	}
-
-	@Override
-	public @NotNull Rarity getRarity(@NotNull ItemStack stack) {
-		return Rarity.UNCOMMON;
 	}
 
 	@Override
