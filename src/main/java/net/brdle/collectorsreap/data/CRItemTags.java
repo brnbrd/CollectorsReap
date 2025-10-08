@@ -18,6 +18,8 @@ public class CRItemTags {
 	public static final TagKey<Item> STORAGE_BLOCKS_POMEGRANATE = forge("storage_blocks/pomegranate");
 	public static final TagKey<Item> STORAGE_BLOCKS_STYGIAN_POMEGRANATE = forge("storage_blocks/stygian_pomegranate");
 	public static final TagKey<Item> STORAGE_BLOCKS_PINK_DRAGON_FRUIT = forge("storage_blocks/pink_dragon_fruit");
+	public static final TagKey<Item> STORAGE_BLOCKS_LUCUMA = forge("storage_blocks/lucuma");
+	public static final TagKey<Item> STORAGE_BLOCKS_GILDED_LUCUMA = forge("storage_blocks/gilded_lucuma");
 	public static final TagKey<Item> FRUITS = forge("fruits");
 	public static final TagKey<Item> FRUITS_CITRUS = forge("fruits/citrus");
 	public static final TagKey<Item> FRUITS_BANANA = forge("fruits/banana");

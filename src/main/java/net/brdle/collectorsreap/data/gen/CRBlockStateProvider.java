@@ -50,6 +50,8 @@ public class CRBlockStateProvider extends BlockStateProvider {
 		this.crateBlock(CRBlocks.POMEGRANATE_CRATE.get(), "pomegranate", true);
 		this.crateBlock(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get(), "stygian_pomegranate", true);
 		this.crateBlock(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get(), "pink_dragon_fruit", false);
+		this.crateBlock(CRBlocks.LUCUMA_CRATE.get(), "lucuma", true);
+		this.crateBlock(CRBlocks.GILDED_LUCUMA_CRATE.get(), "gilded_lucuma", true);
 		this.customStageBlock(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), Util.rl(FarmersDelight.MODID, "crop_cross"), "cross", BuddingDragonFruitBlock.AGE, Arrays.asList(0, 1, 2, 3, 3));
 		this.cakeBlock(CRBlocks.LIME_CAKE);
 		this.candleCakeBlock(CRBlocks.CANDLE_LIME_CAKE, CRBlocks.LIME_CAKE);

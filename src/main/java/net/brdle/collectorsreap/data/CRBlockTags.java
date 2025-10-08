@@ -21,6 +21,8 @@ public class CRBlockTags {
 	public static final TagKey<Block> STORAGE_BLOCKS_POMEGRANATE = forge("storage_blocks/pomegranate");
 	public static final TagKey<Block> STORAGE_BLOCKS_STYGIAN_POMEGRANATE = forge("storage_blocks/stygian_pomegranate");
 	public static final TagKey<Block> STORAGE_BLOCKS_PINK_DRAGON_FRUIT = forge("storage_blocks/pink_dragon_fruit");
+	public static final TagKey<Block> STORAGE_BLOCKS_LUCUMA = forge("storage_blocks/lucuma");
+	public static final TagKey<Block> STORAGE_BLOCKS_GILDED_LUCUMA = forge("storage_blocks/gilded_lucuma");
 
 	// Serene Seasons
 	public static final TagKey<Block> WINTER_CROPS = bind("sereneseasons", "winter_crops");

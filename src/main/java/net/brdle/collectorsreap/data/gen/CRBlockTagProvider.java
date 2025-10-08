@@ -38,7 +38,9 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.LIME_CRATE.get())
 			.add(CRBlocks.POMEGRANATE_CRATE.get())
 			.add(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get())
-			.add(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get());
+			.add(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get())
+			.add(CRBlocks.LUCUMA_CRATE.get())
+			.add(CRBlocks.GILDED_LUCUMA_CRATE.get());
 		this.tag(BlockTags.CLIMBABLE).add(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
 		this.tag(BlockTags.CROPS)
 			.add(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get());
@@ -69,11 +71,15 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(CRBlockTags.STORAGE_BLOCKS_POMEGRANATE).add(CRBlocks.POMEGRANATE_CRATE.get());
 		this.tag(CRBlockTags.STORAGE_BLOCKS_STYGIAN_POMEGRANATE).add(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get());
 		this.tag(CRBlockTags.STORAGE_BLOCKS_PINK_DRAGON_FRUIT).add(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get());
+		this.tag(CRBlockTags.STORAGE_BLOCKS_LUCUMA).add(CRBlocks.LUCUMA_CRATE.get());
+		this.tag(CRBlockTags.STORAGE_BLOCKS_GILDED_LUCUMA).add(CRBlocks.GILDED_LUCUMA_CRATE.get());
 		this.tag(Tags.Blocks.STORAGE_BLOCKS)
 			.addTag(CRBlockTags.STORAGE_BLOCKS_LIME)
 			.addTag(CRBlockTags.STORAGE_BLOCKS_POMEGRANATE)
 			.addTag(CRBlockTags.STORAGE_BLOCKS_STYGIAN_POMEGRANATE)
-			.addTag(CRBlockTags.STORAGE_BLOCKS_PINK_DRAGON_FRUIT);
+			.addTag(CRBlockTags.STORAGE_BLOCKS_PINK_DRAGON_FRUIT)
+			.addTag(CRBlockTags.STORAGE_BLOCKS_LUCUMA)
+			.addTag(CRBlockTags.STORAGE_BLOCKS_GILDED_LUCUMA);
 		this.tag(ForgeTags.MINEABLE_WITH_KNIFE)
 			.add(CRBlocks.PORTOBELLO_QUICHE.get())
 			.add(CRBlocks.LIME_PIE.get())

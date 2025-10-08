@@ -179,6 +179,8 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> POMEGRANATE_CRATE = registerBlock(CRBlocks.POMEGRANATE_CRATE);
 	public static final RegistryObject<Item> STYGIAN_POMEGRANATE_CRATE = registerBlock(CRBlocks.STYGIAN_POMEGRANATE_CRATE);
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CRATE = registerBlock(CRBlocks.PINK_DRAGON_FRUIT_CRATE);
+	public static final RegistryObject<Item> LUCUMA_CRATE = registerBlock(CRBlocks.LUCUMA_CRATE);
+	public static final RegistryObject<Item> GILDED_LUCUMA_CRATE = registerBlock(CRBlocks.GILDED_LUCUMA_CRATE);
 
 	// Tiger Prawn
 	public static final RegistryObject<Item> TIGER_PRAWN_SPAWN_EGG = registerItem("tiger_prawn_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.TIGER_PRAWN, 0x7c7248, 0x613432, new Item.Properties()));

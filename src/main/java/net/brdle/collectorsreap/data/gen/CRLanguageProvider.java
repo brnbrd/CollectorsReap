@@ -89,6 +89,8 @@ public class CRLanguageProvider extends LanguageProvider {
 		addBlock(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP, "Budding Pink Dragon Fruit Vine");
 		addBlock(CRBlocks.PINK_DRAGON_FRUIT_CROP, "Pink Dragon Fruit Vine");
 		addBlock(CRBlocks.PINK_DRAGON_FRUIT_CRATE, "Pink Dragon Fruit Crate");
+		addBlock(CRBlocks.LUCUMA_CRATE, "Lucuma Crate");
+		addBlock(CRBlocks.GILDED_LUCUMA_CRATE, "Gilded Lucuma Crate");
 		addBlock(CRBlocks.LIME_CAKE, "Lime Cake");
 		addBlock(CRBlocks.CANDLE_LIME_CAKE, "Lime Cake with Candle");
 		addBlock(CRBlocks.WHITE_CANDLE_LIME_CAKE, "Lime Cake with White Candle");

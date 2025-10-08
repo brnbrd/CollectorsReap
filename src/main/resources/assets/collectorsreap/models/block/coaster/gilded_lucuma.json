@@ -1,0 +1,6 @@
+{
+  "parent": "collectorsreap:block/coaster/lucuma",
+  "textures": {
+    "fruit": "collectorsreap:block/coaster/gilded_lucuma"
+  }
+}

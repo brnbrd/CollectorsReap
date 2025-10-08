@@ -348,6 +348,22 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.requires(CRItems.PINK_DRAGON_FRUIT.get())
 				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
 			"pink_dye_from_pink_dragon_fruit", finished, enabled(CRItems.PINK_DRAGON_FRUIT));
+		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRItems.LUCUMA, 9)
+				.requires(CRItems.LUCUMA_CRATE.get())
+				.unlockedBy("has_lucuma_crate", has(CRItems.LUCUMA_CRATE.get())),
+			"lucuma_from_lucuma_crate", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_CRATE));
+		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRItems.LUCUMA_CRATE)
+				.requires(CRItems.LUCUMA.get(), 9)
+				.unlockedBy("has_lucuma", has(CRItems.LUCUMA.get())),
+			"lucuma_crate", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_CRATE));
+		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRItems.GILDED_LUCUMA, 9)
+				.requires(CRItems.GILDED_LUCUMA_CRATE.get())
+				.unlockedBy("has_gilded_lucuma_crate", has(CRItems.GILDED_LUCUMA_CRATE.get())),
+			"gilded_lucuma_from_gilded_lucuma_crate", finished, enabled(CRItems.LUCUMA), enabled(CRItems.GILDED_LUCUMA), enabled(CRItems.GILDED_LUCUMA_CRATE));
+		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRItems.GILDED_LUCUMA_CRATE)
+				.requires(CRItems.GILDED_LUCUMA.get(), 9)
+				.unlockedBy("has_gilded_lucuma", has(CRItems.GILDED_LUCUMA.get())),
+			"gilded_lucuma_crate", finished, enabled(CRItems.LUCUMA), enabled(CRItems.GILDED_LUCUMA), enabled(CRItems.GILDED_LUCUMA_CRATE));
 		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRItems.LIME, 9)
 				.requires(CRItems.LIME_CRATE.get())
 				.unlockedBy("has_lime_crate", has(CRItems.LIME_CRATE.get())),

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.9.0",
+  "credit": "Made with Blockbench",
+  "ambientocclusion": false,
+  "textures": {
+    "fruit": "collectorsreap:block/coaster/lucuma",
+    "particle": "#fruit"
+  },
+  "elements": [
+    {
+      "from": [5, 0, 5],
+      "to": [11, 5, 11],
+      "rotation": {"angle": 0, "axis": "y", "origin": [6, 0, 5]},
+      "faces": {
+        "north": {"uv": [2, 11, 8, 16], "texture": "#fruit"},
+        "east": {"uv": [2, 11, 8, 16], "texture": "#fruit"},
+        "south": {"uv": [2, 11, 8, 16], "texture": "#fruit"},
+        "west": {"uv": [2, 11, 8, 16], "texture": "#fruit"},
+        "up": {"uv": [2, 2, 8, 8], "texture": "#fruit"},
+        "down": {"uv": [9, 2, 15, 8], "texture": "#fruit"}
+      }
+    },
+    {
+      "from": [7, 5, 8],
+      "to": [9, 7, 8],
+      "rotation": {"angle": 0, "axis": "y", "origin": [7, 5, 7]},
+      "faces": {
+        "north": {"uv": [4, 9, 6, 11], "texture": "#fruit"},
+        "east": {"uv": [0, 0, 0, 2], "texture": "#missing"},
+        "south": {"uv": [4, 9, 6, 11], "texture": "#fruit"},
+        "west": {"uv": [0, 0, 0, 2], "texture": "#missing"},
+        "up": {"uv": [0, 0, 2, 0], "texture": "#missing"},
+        "down": {"uv": [0, 0, 2, 0], "texture": "#missing"}
+      }
+    }
+  ]
+}

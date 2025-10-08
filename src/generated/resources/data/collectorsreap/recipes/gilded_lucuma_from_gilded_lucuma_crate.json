@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "gilded_lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "gilded_lucuma_crate"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "building",
+        "ingredients": [
+          {
+            "item": "collectorsreap:gilded_lucuma_crate"
+          }
+        ],
+        "result": {
+          "count": 9,
+          "item": "collectorsreap:gilded_lucuma"
+        }
+      }
+    }
+  ]
+}

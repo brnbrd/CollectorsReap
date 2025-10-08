@@ -3,6 +3,8 @@
     "#forge:storage_blocks/lime",
     "#forge:storage_blocks/pomegranate",
     "#forge:storage_blocks/stygian_pomegranate",
-    "#forge:storage_blocks/pink_dragon_fruit"
+    "#forge:storage_blocks/pink_dragon_fruit",
+    "#forge:storage_blocks/lucuma",
+    "#forge:storage_blocks/gilded_lucuma"
   ]
 }

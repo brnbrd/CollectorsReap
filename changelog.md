@@ -4,7 +4,7 @@
 # 1.4.2
 
 ### Updates
-- [Blueprint](https://www.curseforge.com/minecraft/mc-mods/blueprint) is now a required dependency
+- [Blueprint](https://www.curseforge.com/minecraft/mc-mods/blueprint) 7.1.3+ is now a required dependency
 - Strawberry Jam Bun now provides 8 nutrition and Instant Health
   - Can now be crafted using Strawberry Jam from [Smidgeon o' Bliss REMASTERED](https://www.curseforge.com/minecraft/mc-mods/smidgeon-o-bliss-remastered)
 - Added a backup recipe for Reanimator's Garden, not requiring ingredients from [Atmospheric](https://www.curseforge.com/minecraft/mc-mods/atmospheric)

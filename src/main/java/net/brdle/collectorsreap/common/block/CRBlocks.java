@@ -112,6 +112,10 @@ public class CRBlocks {
 		() -> new StygianPomegranateCrateBlock(MapColor.COLOR_CYAN));
 	public static final RegistryObject<Block> PINK_DRAGON_FRUIT_CRATE = BLOCKS.register("pink_dragon_fruit_crate",
 		() -> new WoodenCrateBlock(MapColor.COLOR_PINK));
+	public static final RegistryObject<Block> LUCUMA_CRATE = BLOCKS.register("lucuma_crate",
+		() -> new WoodenCrateBlock(MapColor.COLOR_ORANGE));
+	public static final RegistryObject<Block> GILDED_LUCUMA_CRATE = BLOCKS.register("gilded_lucuma_crate",
+		() -> new WoodenCrateBlock(MapColor.COLOR_YELLOW));
 	public static final RegistryObject<Block> LIME_ICE_CREAM_BLOCK = BLOCKS.register("lime_ice_cream_block",
 		() -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GREEN).strength(0.2F).sound(SoundType.SNOW)));
 	public static final RegistryObject<Block> POMEGRANATE_ICE_CREAM_BLOCK = BLOCKS.register("pomegranate_ice_cream_block",

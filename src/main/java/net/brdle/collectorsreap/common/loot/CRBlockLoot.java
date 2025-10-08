@@ -75,6 +75,8 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(CRBlocks.POMEGRANATE_CRATE.get());
 		this.dropSelf(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get());
 		this.dropSelf(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get());
+		this.dropSelf(CRBlocks.LUCUMA_CRATE.get());
+		this.dropSelf(CRBlocks.GILDED_LUCUMA_CRATE.get());
 		this.empty(CRBlocks.LIME_CAKE);
 		this.dropOther(CRBlocks.CANDLE_LIME_CAKE.get(), Blocks.CANDLE);
 		this.dropOther(CRBlocks.WHITE_CANDLE_LIME_CAKE.get(), Blocks.WHITE_CANDLE);
