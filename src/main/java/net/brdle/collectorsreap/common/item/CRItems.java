@@ -29,11 +29,167 @@ import org.jetbrains.annotations.NotNull;
 public class CRItems extends ModItems {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, CollectorsReap.MODID);
 
-	// Portobello
+	// Crates
+	public static final RegistryObject<Item> LIME_CRATE = registerBlock(CRBlocks.LIME_CRATE);
+	public static final RegistryObject<Item> POMEGRANATE_CRATE = registerBlock(CRBlocks.POMEGRANATE_CRATE);
+	public static final RegistryObject<Item> STYGIAN_POMEGRANATE_CRATE = registerBlock(CRBlocks.STYGIAN_POMEGRANATE_CRATE);
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CRATE = registerBlock(CRBlocks.PINK_DRAGON_FRUIT_CRATE);
+	public static final RegistryObject<Item> LUCUMA_CRATE = registerBlock(CRBlocks.LUCUMA_CRATE);
+	public static final RegistryObject<Item> GILDED_LUCUMA_CRATE = registerBlock(CRBlocks.GILDED_LUCUMA_CRATE);
+
+	// Urchin Test
+	public static final RegistryObject<Item> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block", CRBlocks.URCHIN_TEST_BLOCK);
+	public static final RegistryObject<Item> URCHIN_TEST_BRICKS = registerBlock("urchin_test_bricks", CRBlocks.URCHIN_TEST_BRICKS);
+	public static final RegistryObject<Item> URCHIN_TEST_BRICK_SLAB = registerBlock("urchin_test_brick_slab", CRBlocks.URCHIN_TEST_BRICK_SLAB);
+	public static final RegistryObject<Item> URCHIN_TEST_BRICK_STAIRS = registerBlock("urchin_test_brick_stairs", CRBlocks.URCHIN_TEST_BRICK_STAIRS);
+	public static final RegistryObject<Item> URCHIN_TEST_BRICK_WALL = registerBlock("urchin_test_brick_wall", CRBlocks.URCHIN_TEST_BRICK_WALL);
+	public static final RegistryObject<Item> CHISELED_URCHIN_TEST_BRICKS = registerBlock("chiseled_urchin_test_bricks", CRBlocks.CHISELED_URCHIN_TEST_BRICKS);
+	public static final RegistryObject<Item> URCHIN_TEST_TILES = registerBlock("urchin_test_tiles", CRBlocks.URCHIN_TEST_TILES);
+	public static final RegistryObject<Item> URCHIN_TEST_TILE_SLAB = registerBlock("urchin_test_tile_slab", CRBlocks.URCHIN_TEST_TILE_SLAB);
+	public static final RegistryObject<Item> URCHIN_TEST_TILE_STAIRS = registerBlock("urchin_test_tile_stairs", CRBlocks.URCHIN_TEST_TILE_STAIRS);
+	public static final RegistryObject<Item> URCHIN_TEST_TILE_WALL = registerBlock("urchin_test_tile_wall", CRBlocks.URCHIN_TEST_TILE_WALL);
+
+	// Ice Cream Blocks
+	public static final RegistryObject<Item> LIME_ICE_CREAM_BLOCK = registerItem("lime_ice_cream_block",
+		() -> new BlockItem(CRBlocks.LIME_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
+	public static final RegistryObject<Item> POMEGRANATE_ICE_CREAM_BLOCK = registerItem("pomegranate_ice_cream_block",
+		() -> new BlockItem(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK = registerItem("pink_dragon_fruit_ice_cream_block",
+		() -> new BlockItem(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
+
+	// Wild Crop Blocks
 	public static final RegistryObject<Item> PORTOBELLO_COLONY = registerItem("portobello_colony",
 		() -> new MushroomColonyItem(CRBlocks.PORTOBELLO_COLONY.get(),
 			(new Item.Properties())));
 	public static final RegistryObject<Item> PORTOBELLO = registerBlock(CRBlocks.PORTOBELLO);
+	public static final RegistryObject<Item> DRAGON_BUSH = registerItem("dragon_bush", () ->
+		new BlockItem(CRBlocks.DRAGON_BUSH.get(), new Item.Properties()));
+
+	// Fruits/Veggies
+	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate", () ->
+		new Item((new Item.Properties())));
+	public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",
+		new Item.Properties().food(Nutrition.POMEGRANATE_SLICE), true, false);
+	public static final RegistryObject<Item> STYGIAN_POMEGRANATE = registerItem("stygian_pomegranate", () ->
+		new StygianPomegranateItem((new Item.Properties()).food(Nutrition.STYGIAN_POMEGRANATE)));
+	public static final RegistryObject<Item> LIME = registerFood("lime",
+		new Item.Properties().food(Nutrition.LIME), true, false);
+	public static final RegistryObject<Item> LIME_SLICE = registerFood("lime_slice",
+		new Item.Properties().food(Nutrition.LIME_SLICE), true, false);
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT = registerFood("pink_dragon_fruit",
+		new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT), true, false);
+	public static final RegistryObject<Item> LUCUMA = registerItem("lucuma", () ->
+		new LucumaItem((new Item.Properties()).food(Nutrition.LUCUMA)));
+	public static final RegistryObject<Item> GILDED_LUCUMA = registerItem("gilded_lucuma", () ->
+		new ConsumableItem((new Item.Properties()).food(Nutrition.GILDED_LUCUMA), true, false));
+
+	// Seeds
+	public static final RegistryObject<Item> LIME_SEEDS = registerItem("lime_seeds", () ->
+		new FruitBushSeedsItem(CRBlocks.LIME_BUSH.get(), (new Item.Properties())));
+	public static final RegistryObject<Item> POMEGRANATE_SEEDS = registerItem("pomegranate_seeds", () ->
+		new FruitBushSeedsItem(
+			CRBlocks.POMEGRANATE_BUSH.get(), (new Item.Properties()).food(Nutrition.POMEGRANATE_SEEDS)
+		));
+	public static final RegistryObject<Item> DRAGON_FRUIT_SEEDS = registerItem("dragon_fruit_seeds",
+		() -> new ItemNameBlockItem(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), basicItem()) {
+			public void registerBlocks(@NotNull Map<Block, Item> blockToItemMap, @NotNull Item item) {
+				super.registerBlocks(blockToItemMap, item);
+				blockToItemMap.put(CRBlocks.PINK_DRAGON_FRUIT_CROP.get(), item);
+			}
+			public void removeFromBlockToItemMap(@NotNull Map<Block, Item> blockToItemMap, @NotNull Item itemIn) {
+				super.removeFromBlockToItemMap(blockToItemMap, itemIn);
+				blockToItemMap.remove(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
+			}
+		});
+
+	// Sliceable Blocks
+	public static final RegistryObject<Item> PORTOBELLO_QUICHE = registerBlock(CRBlocks.PORTOBELLO_QUICHE);
+	public static final RegistryObject<Item> PORTOBELLO_QUICHE_SLICE = registerFood("portobello_quiche_slice",
+		Nutrition.PORTOBELLO_QUICHE_SLICE);
+	public static final RegistryObject<Item> LIME_PIE = registerBlock(CRBlocks.LIME_PIE);
+	public static final RegistryObject<Item> LIME_PIE_SLICE = registerItem("lime_pie_slice", () ->
+		new EffectSliceItem((new Item.Properties()).food(Nutrition.LIME_PIE_SLICE)));
+
+	// Cakes & Slices
+	public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake",
+		() -> new BlockItem(CRBlocks.LIME_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
+	public static final RegistryObject<Item> LIME_CAKE_SLICE = registerItem("lime_cake_slice",
+		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.LIME_CAKE_SLICE)));
+	public static final RegistryObject<Item> POMEGRANATE_CAKE = registerItem("pomegranate_cake",
+		() -> new BlockItem(CRBlocks.POMEGRANATE_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
+	public static final RegistryObject<Item> POMEGRANATE_CAKE_SLICE = registerItem("pomegranate_cake_slice",
+		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.POMEGRANATE_CAKE_SLICE)));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CAKE = registerItem("pink_dragon_fruit_cake",
+		() -> new BlockItem(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CAKE_SLICE = registerItem("pink_dragon_fruit_cake_slice",
+		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.PINK_DRAGON_FRUIT_CAKE_SLICE)));
+
+	// Ice Cream
+	public static final RegistryObject<Item> LIME_ICE_CREAM = registerItem("lime_ice_cream",
+		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.LIME_ICE_CREAM)));
+	public static final RegistryObject<Item> POMEGRANATE_ICE_CREAM = registerItem("pomegranate_ice_cream",
+		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.POMEGRANATE_ICE_CREAM)));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_ICE_CREAM = registerItem("pink_dragon_fruit_ice_cream",
+		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.PINK_DRAGON_FRUIT_ICE_CREAM)));
+
+	// Milkshakes
+	public static final RegistryObject<Item> LIME_MILKSHAKE = registerItem("lime_milkshake",
+		() -> new ShakeItem(new Item.Properties().food(Nutrition.LIME_MILKSHAKE)));
+	public static final RegistryObject<Item> POMEGRANATE_MILKSHAKE = registerItem("pomegranate_milkshake",
+		() -> new ShakeItem(new Item.Properties().food(Nutrition.POMEGRANATE_MILKSHAKE)));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_MILKSHAKE = registerItem("pink_dragon_fruit_milkshake",
+		() -> new ShakeItem(new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT_MILKSHAKE)));
+
+	// Drinks
+	public static final RegistryObject<Item> DRAGONS_PASSION = registerItem("dragons_passion", () ->
+		new CompatDrinkable((new Item.Properties()).food(
+			Nutrition.DRAGONS_PASSION), true, false, Modid.AT));
+	public static final RegistryObject<Item> LIMEADE = registerDrink("limeade",
+		drinkItem().food(Nutrition.LIMEADE), true, false);
+	public static final RegistryObject<Item> STRONG_LIMEADE = registerDrink("strong_limeade",
+		drinkItem().food(Nutrition.STRONG_LIMEADE), true, false);
+	public static final RegistryObject<Item> BERRY_LIMEADE = registerDrink("berry_limeade",
+		drinkItem().food(Nutrition.BERRY_LIMEADE), true, false);
+	public static final RegistryObject<Item> PINK_LIMEADE = registerDrink("pink_limeade",
+		drinkItem().food(Nutrition.PINK_LIMEADE), true, false);
+	public static final RegistryObject<Item> MINT_LIMEADE = registerItem("mint_limeade", () ->
+		new CompatDrinkable((new Item.Properties()).food(
+			Nutrition.MINT_LIMEADE), true, false, Modid.N));
+	public static final RegistryObject<Item> LIME_GREEN_TEA = registerItem("lime_green_tea", () ->
+		new CompatDrinkable((new Item.Properties()).food(
+			Nutrition.LIME_GREEN_TEA), true, false, Modid.FR));
+	public static final RegistryObject<Item> POMEGRANATE_BLACK_TEA = registerItem("pomegranate_black_tea", () ->
+		new CompatDrinkable((new Item.Properties()).food(
+			Nutrition.POMEGRANATE_BLACK_TEA), true, false, Modid.FR));
+	public static final RegistryObject<Item> POMEGRANATE_SMOOTHIE = registerItem("pomegranate_smoothie", () ->
+		new CompatDrinkable((new Item.Properties()).food(
+			Nutrition.POMEGRANATE_SMOOTHIE), true, false, Modid.N));
+	public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerDrink("pomegranate_custard",
+		drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), true, false);
+	public static final RegistryObject<Item> LUCUMA_PUDDING = registerItem("lucuma_pudding", () ->
+		new ConsumableItem(drinkItem().food(Nutrition.LUCUMA_PUDDING), true, false));
+	public static final RegistryObject<Item> DEIFIC_BLOOD = registerItem("deific_blood", () ->
+		Modid.BC.loaded() ?
+		BrewinChewinCompat.DEIFIC_BLOOD.get() :
+		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
+	);
+	public static final RegistryObject<Item> HERMITS_SOUR = registerItem("hermits_sour", () ->
+		Modid.BC.loaded() ?
+		BrewinChewinCompat.HERMITS_SOUR.get() :
+		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
+	);
+	public static final RegistryObject<Item> ROSE_MOON = registerItem("rose_moon", () ->
+		Modid.BC.loaded() ?
+		BrewinChewinCompat.ROSE_MOON.get() :
+		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
+	);
+	public static final RegistryObject<Item> REANIMATORS_GARDEN = registerItem("reanimators_garden", () ->
+		Modid.BC.loaded() ?
+		BrewinChewinCompat.REANIMATORS_GARDEN.get() :
+		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
+	);
+
+	// Portobello
 	public static final RegistryObject<Item> BAKED_PORTOBELLO_CAP = registerFood("baked_portobello_cap",
 		Nutrition.BAKED_PORTOBELLO_CAP);
 	public static final RegistryObject<Item> STUFFED_PORTOBELLO_CAP = registerFood("stuffed_portobello_cap",
@@ -48,70 +204,10 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.PORTOBELLO_RISOTTO), true, false);
 	public static final RegistryObject<Item> PORTOBELLO_PASTA = registerFood("portobello_pasta",
 		bowlFoodItem(Nutrition.PORTOBELLO_PASTA), true, false);
-	public static final RegistryObject<Item> PORTOBELLO_QUICHE = registerBlock(CRBlocks.PORTOBELLO_QUICHE);
-	public static final RegistryObject<Item> PORTOBELLO_QUICHE_SLICE = registerFood("portobello_quiche_slice",
-		Nutrition.PORTOBELLO_QUICHE_SLICE);
 
-	// Lucuma
-	public static final RegistryObject<Item> LUCUMA = registerItem("lucuma", () ->
-		new LucumaItem((new Item.Properties()).food(Nutrition.LUCUMA)));
-	public static final RegistryObject<Item> GILDED_LUCUMA = registerItem("gilded_lucuma", () ->
-		new ConsumableItem((new Item.Properties()).food(Nutrition.GILDED_LUCUMA), true, false));
-	public static final RegistryObject<Item> LUCUMA_BREAD = registerItem("lucuma_bread", () ->
-		new ConsumableItem((new Item.Properties()).food(Nutrition.LUCUMA_BREAD), true, false));
-	public static final RegistryObject<Item> LUCUMA_PUDDING = registerItem("lucuma_pudding", () ->
-		new ConsumableItem(drinkItem().food(Nutrition.LUCUMA_PUDDING), true, false));
-	public static final RegistryObject<Item> LUCUMA_GAZPACHO = registerItem("lucuma_gazpacho", () ->
-		new ConsumableItem(bowlFoodItem(Nutrition.LUCUMA_GAZPACHO), true, false));
-
-	// Pink Dragon Fruit
-	public static final RegistryObject<Item> DRAGON_FRUIT_SEEDS = registerItem("dragon_fruit_seeds",
-		() -> new ItemNameBlockItem(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), basicItem()) {
-			public void registerBlocks(@NotNull Map<Block, Item> blockToItemMap, @NotNull Item item) {
-				super.registerBlocks(blockToItemMap, item);
-				blockToItemMap.put(CRBlocks.PINK_DRAGON_FRUIT_CROP.get(), item);
-			}
-			public void removeFromBlockToItemMap(@NotNull Map<Block, Item> blockToItemMap, @NotNull Item itemIn) {
-				super.removeFromBlockToItemMap(blockToItemMap, itemIn);
-				blockToItemMap.remove(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
-			}
-		});
-	public static final RegistryObject<Item> DRAGON_BUSH = registerItem("dragon_bush", () ->
-		new BlockItem(CRBlocks.DRAGON_BUSH.get(), new Item.Properties()));
-	public static final RegistryObject<Item> PINK_DRAGON_FRUIT = registerFood("pink_dragon_fruit",
-		new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT), true, false);
-	public static final RegistryObject<Item> DRIED_PINK_DRAGON_FRUIT = registerFood("dried_pink_dragon_fruit",
-		new Item.Properties().food(Nutrition.DRIED_PINK_DRAGON_FRUIT), true, false);
-	public static final RegistryObject<Item> PINK_NOODLES = registerFood("pink_noodles",
-		bowlFoodItem(Nutrition.PINK_NOODLES), true, false);
-	public static final RegistryObject<Item> DRAGON_STEW = registerFood("dragon_stew",
-		bowlFoodItem(Nutrition.DRAGON_STEW), true, false);
-	public static final RegistryObject<Item> TROPICAL_SHAVED_ICE = registerItem("tropical_shaved_ice", () ->
-		new CompatConsumable(bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE),
-			true, false, Modid.N));
-
-	// Pomegranate
-	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate", () ->
-		new Item((new Item.Properties())));
-	public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",
-		new Item.Properties().food(Nutrition.POMEGRANATE_SLICE), true, false);
-	public static final RegistryObject<Item> POMEGRANATE_SEEDS = registerItem("pomegranate_seeds", () ->
-		new FruitBushSeedsItem(
-			CRBlocks.POMEGRANATE_BUSH.get(), (new Item.Properties()).food(Nutrition.POMEGRANATE_SEEDS)
-		));
-	public static final RegistryObject<Item> STYGIAN_POMEGRANATE = registerItem("stygian_pomegranate", () ->
-		new StygianPomegranateItem((new Item.Properties()).food(Nutrition.STYGIAN_POMEGRANATE)));
-	public static final RegistryObject<Item> LIME_SEEDS = registerItem("lime_seeds", () ->
-		new FruitBushSeedsItem(CRBlocks.LIME_BUSH.get(), (new Item.Properties())));
-	public static final RegistryObject<Item> LIME = registerFood("lime",
-		new Item.Properties().food(Nutrition.LIME), true, false);
-	public static final RegistryObject<Item> LIME_SLICE = registerFood("lime_slice",
-		new Item.Properties().food(Nutrition.LIME_SLICE), true, false);
+	// Lime
 	public static final RegistryObject<Item> CANDIED_LIME = registerFood("candied_lime",
 		new Item.Properties().food(Nutrition.CANDIED_LIME), true, false);
-	public static final RegistryObject<Item> LIME_PIE = registerBlock(CRBlocks.LIME_PIE);
-	public static final RegistryObject<Item> LIME_PIE_SLICE = registerItem("lime_pie_slice", () ->
-		new EffectSliceItem((new Item.Properties()).food(Nutrition.LIME_PIE_SLICE)));
 	public static final RegistryObject<Item> LIME_POPSICLE = registerFood("lime_popsicle",
 		(new Item.Properties()).food(Nutrition.LIME_POPSICLE).craftRemainder(Items.STICK), true, false);
 	public static final RegistryObject<Item> LIME_COOKIE = registerFood("lime_cookie",
@@ -138,54 +234,27 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.DELUXE_SALAD), true, false);
 	public static final RegistryObject<Item> CREAM_CHEESE = registerFood("cream_cheese",
 		bowlFoodItem(Nutrition.CREAM_CHEESE), true, false);
-	public static final RegistryObject<Item> DRAGONS_PASSION = registerItem("dragons_passion", () ->
-		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.DRAGONS_PASSION), true, false, Modid.AT));
-	public static final RegistryObject<Item> LIMEADE = registerDrink("limeade",
-		drinkItem().food(Nutrition.LIMEADE), true, false);
-	public static final RegistryObject<Item> STRONG_LIMEADE = registerDrink("strong_limeade",
-		drinkItem().food(Nutrition.STRONG_LIMEADE), true, false);
-	public static final RegistryObject<Item> BERRY_LIMEADE = registerDrink("berry_limeade",
-		drinkItem().food(Nutrition.BERRY_LIMEADE), true, false);
-	public static final RegistryObject<Item> PINK_LIMEADE = registerDrink("pink_limeade",
-		drinkItem().food(Nutrition.PINK_LIMEADE), true, false);
-	public static final RegistryObject<Item> MINT_LIMEADE = registerItem("mint_limeade", () ->
-		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.MINT_LIMEADE), true, false, Modid.N));
-	public static final RegistryObject<Item> LIME_GREEN_TEA = registerItem("lime_green_tea", () ->
-		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.LIME_GREEN_TEA), true, false, Modid.FR));
-	public static final RegistryObject<Item> POMEGRANATE_BLACK_TEA = registerItem("pomegranate_black_tea", () ->
-		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.POMEGRANATE_BLACK_TEA), true, false, Modid.FR));
-	public static final RegistryObject<Item> POMEGRANATE_SMOOTHIE = registerItem("pomegranate_smoothie", () ->
-		new CompatDrinkable((new Item.Properties()).food(
-			Nutrition.POMEGRANATE_SMOOTHIE), true, false, Modid.N));
-	public static final RegistryObject<Item> POMEGRANATE_CUSTARD = registerDrink("pomegranate_custard",
-		drinkItem().food(Nutrition.POMEGRANATE_CUSTARD), true, false);
-	public static final RegistryObject<Item> LIME_CAKE = registerItem("lime_cake",
-		() -> new BlockItem(CRBlocks.LIME_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
-	public static final RegistryObject<Item> LIME_CAKE_SLICE = registerItem("lime_cake_slice",
-		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.LIME_CAKE_SLICE)));
-	public static final RegistryObject<Item> POMEGRANATE_CAKE = registerItem("pomegranate_cake",
-		() -> new BlockItem(CRBlocks.POMEGRANATE_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
-	public static final RegistryObject<Item> POMEGRANATE_CAKE_SLICE = registerItem("pomegranate_cake_slice",
-		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.POMEGRANATE_CAKE_SLICE)));
-	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CAKE = registerItem("pink_dragon_fruit_cake",
-		() -> new BlockItem(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
-	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CAKE_SLICE = registerItem("pink_dragon_fruit_cake_slice",
-		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.PINK_DRAGON_FRUIT_CAKE_SLICE)));
-	public static final RegistryObject<Item> LIME_CRATE = registerBlock(CRBlocks.LIME_CRATE);
-	public static final RegistryObject<Item> POMEGRANATE_CRATE = registerBlock(CRBlocks.POMEGRANATE_CRATE);
-	public static final RegistryObject<Item> STYGIAN_POMEGRANATE_CRATE = registerBlock(CRBlocks.STYGIAN_POMEGRANATE_CRATE);
-	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CRATE = registerBlock(CRBlocks.PINK_DRAGON_FRUIT_CRATE);
-	public static final RegistryObject<Item> LUCUMA_CRATE = registerBlock(CRBlocks.LUCUMA_CRATE);
-	public static final RegistryObject<Item> GILDED_LUCUMA_CRATE = registerBlock(CRBlocks.GILDED_LUCUMA_CRATE);
+
+	// Pomegranate
+
+	// Pink Dragon Fruit
+	public static final RegistryObject<Item> DRIED_PINK_DRAGON_FRUIT = registerFood("dried_pink_dragon_fruit",
+		new Item.Properties().food(Nutrition.DRIED_PINK_DRAGON_FRUIT), true, false);
+	public static final RegistryObject<Item> PINK_NOODLES = registerFood("pink_noodles",
+		bowlFoodItem(Nutrition.PINK_NOODLES), true, false);
+	public static final RegistryObject<Item> DRAGON_STEW = registerFood("dragon_stew",
+		bowlFoodItem(Nutrition.DRAGON_STEW), true, false);
+	public static final RegistryObject<Item> TROPICAL_SHAVED_ICE = registerItem("tropical_shaved_ice", () ->
+		new CompatConsumable(bowlFoodItem(Nutrition.TROPICAL_SHAVED_ICE),
+			true, false, Modid.N));
+
+	// Lucuma
+	public static final RegistryObject<Item> LUCUMA_BREAD = registerItem("lucuma_bread", () ->
+		new ConsumableItem((new Item.Properties()).food(Nutrition.LUCUMA_BREAD), true, false));
+	public static final RegistryObject<Item> LUCUMA_GAZPACHO = registerItem("lucuma_gazpacho", () ->
+		new ConsumableItem(bowlFoodItem(Nutrition.LUCUMA_GAZPACHO), true, false));
 
 	// Tiger Prawn
-	public static final RegistryObject<Item> TIGER_PRAWN_SPAWN_EGG = registerItem("tiger_prawn_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.TIGER_PRAWN, 0x7c7248, 0x613432, new Item.Properties()));
-	public static final RegistryObject<Item> TIGER_PRAWN_BUCKET = registerItem("tiger_prawn_bucket",
-		() -> new MobBucketItem(CREntities.TIGER_PRAWN, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1)));
 	public static final RegistryObject<Item> TIGER_PRAWN = registerFood("tiger_prawn",
 		(new Item.Properties()).food(Nutrition.TIGER_PRAWN), true, false);
 	public static final RegistryObject<Item> COOKED_TIGER_PRAWN = registerFood("cooked_tiger_prawn", Nutrition.COOKED_TIGER_PRAWN);
@@ -200,25 +269,7 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> PRAWN_NOODLES = registerFood("prawn_noodles",
 		bowlFoodItem(Nutrition.PRAWN_NOODLES), true, false);
 
-	// Urchin
-	public static final RegistryObject<Item> URCHIN_SPAWN_EGG = registerItem("urchin_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.URCHIN, 0x9990d7, 0x21132d, new Item.Properties()));
-	public static final RegistryObject<Item> URCHIN_BUCKET = registerItem("urchin_bucket",
-		() -> new MobBucketItem(CREntities.URCHIN, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1)));
-	public static final RegistryObject<Item> URCHIN = registerItem("urchin",
-		() -> new Item((new Item.Properties())));
-	public static final RegistryObject<Item> URCHIN_TEST = registerItem("urchin_test",
-		() -> new Item((new Item.Properties())));
-	public static final RegistryObject<Item> URCHIN_NEEDLE = registerItem("urchin_needle",
-		() -> new Item((new Item.Properties())));
-	public static final RegistryObject<Item> URCHIN_DART = registerItem("urchin_dart",
-		() -> new UrchinDartItem((new Item.Properties())));
-	public static final RegistryObject<Item> UNI = registerFood("uni", Nutrition.UNI);
-	public static final RegistryObject<Item> UNI_ROLL = registerFood("uni_roll", Nutrition.UNI_ROLL);
-
 	// Platinum Bass
-	public static final RegistryObject<Item> PLATINUM_BASS_SPAWN_EGG = registerItem("platinum_bass_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.PLATINUM_BASS, 0x091442, 0x7B8698, new Item.Properties()));
-	public static final RegistryObject<Item> PLATINUM_BASS_BUCKET = registerItem("platinum_bass_bucket",
-		() -> new MobBucketItem(CREntities.PLATINUM_BASS, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1)));
 	public static final RegistryObject<Item> PLATINUM_BASS = registerFood("platinum_bass", Nutrition.PLATINUM_BASS);
 	public static final RegistryObject<Item> COOKED_PLATINUM_BASS = registerFood("cooked_platinum_bass", Nutrition.COOKED_PLATINUM_BASS);
 	public static final RegistryObject<Item> PLATINUM_BASS_HEAD = registerFood("platinum_bass_head", Nutrition.PLATINUM_BASS_HEAD);
@@ -231,9 +282,6 @@ public class CRItems extends ModItems {
 		bowlFoodItem(Nutrition.FISH_MIX), false, false);
 
 	// Chieftain Crab
-	public static final RegistryObject<Item> CHIEFTAIN_CRAB_SPAWN_EGG = registerItem("chieftain_crab_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.CHIEFTAIN_CRAB, 0xB13125, 0xE1B865, new Item.Properties()));
-	public static final RegistryObject<Item> CHIEFTAIN_CRAB_BUCKET = registerItem("chieftain_crab_bucket",
-		() -> new MobBucketItem(CREntities.CHIEFTAIN_CRAB, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_AXOLOTL, (new Item.Properties()).stacksTo(1).craftRemainder(Items.BUCKET)));
 	public static final RegistryObject<Item> CHIEFTAIN_CRAB = registerItem("chieftain_crab", () -> new Item((new Item.Properties()).stacksTo(1).craftRemainder(Items.BOWL)));
 	public static final RegistryObject<Item> CHIEFTAIN_CLAW = registerFood("chieftain_claw", Nutrition.CHIEFTAIN_CLAW);
 	public static final RegistryObject<Item> CHIEFTAIN_LEG = registerFood("chieftain_leg", Nutrition.CHIEFTAIN_LEG);
@@ -250,10 +298,19 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> LAND_AND_SEA_BURGER = registerFood("land_and_sea_burger",
 		new Item.Properties().food(Nutrition.LAND_AND_SEA_BURGER), true, false);
 
+	// Urchin
+	public static final RegistryObject<Item> URCHIN = registerItem("urchin",
+		() -> new Item((new Item.Properties())));
+	public static final RegistryObject<Item> URCHIN_TEST = registerItem("urchin_test",
+		() -> new Item((new Item.Properties())));
+	public static final RegistryObject<Item> URCHIN_NEEDLE = registerItem("urchin_needle",
+		() -> new Item((new Item.Properties())));
+	public static final RegistryObject<Item> URCHIN_DART = registerItem("urchin_dart",
+		() -> new UrchinDartItem((new Item.Properties())));
+	public static final RegistryObject<Item> UNI = registerFood("uni", Nutrition.UNI);
+	public static final RegistryObject<Item> UNI_ROLL = registerFood("uni_roll", Nutrition.UNI_ROLL);
+
 	// Clam
-	public static final RegistryObject<Item> CLAM_SPAWN_EGG = registerItem("clam_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.CLAM, 0x775745, 0xC5A877, new Item.Properties()));
-	public static final RegistryObject<Item> CLAM_BUCKET = registerItem("clam_bucket",
-		() -> new MobBucketItem(CREntities.CLAM, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1)));
 	public static final RegistryObject<Item> CLAM = registerItem("clam",
 		() -> new Item((new Item.Properties())));
 	public static final RegistryObject<Item> CLAM_MEAT = registerFood("clam_meat", Nutrition.CLAM_MEAT);
@@ -293,58 +350,6 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> CHOCOLATE_ARILS = registerItem("chocolate_arils",
 		() -> new CompatConsumable((new Item.Properties()).food(
 			Nutrition.CHOCOLATE_ARILS), true, false, Modid.N));
-	public static final RegistryObject<Item> LIME_MILKSHAKE = registerItem("lime_milkshake",
-		() -> new ShakeItem(new Item.Properties().food(Nutrition.LIME_MILKSHAKE)));
-	public static final RegistryObject<Item> POMEGRANATE_MILKSHAKE = registerItem("pomegranate_milkshake",
-		() -> new ShakeItem(new Item.Properties().food(Nutrition.POMEGRANATE_MILKSHAKE)));
-	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_MILKSHAKE = registerItem("pink_dragon_fruit_milkshake",
-		() -> new ShakeItem(new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT_MILKSHAKE)));
-	public static final RegistryObject<Item> LIME_ICE_CREAM = registerItem("lime_ice_cream",
-		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.LIME_ICE_CREAM)));
-	public static final RegistryObject<Item> POMEGRANATE_ICE_CREAM = registerItem("pomegranate_ice_cream",
-		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.POMEGRANATE_ICE_CREAM)));
-	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_ICE_CREAM = registerItem("pink_dragon_fruit_ice_cream",
-		() -> new IceCreamItem((new Item.Properties()).food(Nutrition.PINK_DRAGON_FRUIT_ICE_CREAM)));
-	public static final RegistryObject<Item> LIME_ICE_CREAM_BLOCK = registerItem("lime_ice_cream_block",
-		() -> new BlockItem(CRBlocks.LIME_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
-	public static final RegistryObject<Item> POMEGRANATE_ICE_CREAM_BLOCK = registerItem("pomegranate_ice_cream_block",
-		() -> new BlockItem(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
-	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK = registerItem("pink_dragon_fruit_ice_cream_block",
-		() -> new BlockItem(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get(), (new Item.Properties())));
-
-	// Brewin and Chewin Compat
-	public static final RegistryObject<Item> DEIFIC_BLOOD = registerItem("deific_blood", () ->
-		Modid.BC.loaded() ?
-		BrewinChewinCompat.DEIFIC_BLOOD.get() :
-		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
-	);
-	public static final RegistryObject<Item> HERMITS_SOUR = registerItem("hermits_sour", () ->
-		Modid.BC.loaded() ?
-		BrewinChewinCompat.HERMITS_SOUR.get() :
-		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
-	);
-	public static final RegistryObject<Item> ROSE_MOON = registerItem("rose_moon", () ->
-		Modid.BC.loaded() ?
-		BrewinChewinCompat.ROSE_MOON.get() :
-		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
-	);
-	public static final RegistryObject<Item> REANIMATORS_GARDEN = registerItem("reanimators_garden", () ->
-		Modid.BC.loaded() ?
-		BrewinChewinCompat.REANIMATORS_GARDEN.get() :
-		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
-	);
-
-	// Urchin Test
-	public static final RegistryObject<Item> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block", CRBlocks.URCHIN_TEST_BLOCK);
-	public static final RegistryObject<Item> URCHIN_TEST_BRICKS = registerBlock("urchin_test_bricks", CRBlocks.URCHIN_TEST_BRICKS);
-	public static final RegistryObject<Item> URCHIN_TEST_BRICK_SLAB = registerBlock("urchin_test_brick_slab", CRBlocks.URCHIN_TEST_BRICK_SLAB);
-	public static final RegistryObject<Item> URCHIN_TEST_BRICK_STAIRS = registerBlock("urchin_test_brick_stairs", CRBlocks.URCHIN_TEST_BRICK_STAIRS);
-	public static final RegistryObject<Item> URCHIN_TEST_BRICK_WALL = registerBlock("urchin_test_brick_wall", CRBlocks.URCHIN_TEST_BRICK_WALL);
-	public static final RegistryObject<Item> CHISELED_URCHIN_TEST_BRICKS = registerBlock("chiseled_urchin_test_bricks", CRBlocks.CHISELED_URCHIN_TEST_BRICKS);
-	public static final RegistryObject<Item> URCHIN_TEST_TILES = registerBlock("urchin_test_tiles", CRBlocks.URCHIN_TEST_TILES);
-	public static final RegistryObject<Item> URCHIN_TEST_TILE_SLAB = registerBlock("urchin_test_tile_slab", CRBlocks.URCHIN_TEST_TILE_SLAB);
-	public static final RegistryObject<Item> URCHIN_TEST_TILE_STAIRS = registerBlock("urchin_test_tile_stairs", CRBlocks.URCHIN_TEST_TILE_STAIRS);
-	public static final RegistryObject<Item> URCHIN_TEST_TILE_WALL = registerBlock("urchin_test_tile_wall", CRBlocks.URCHIN_TEST_TILE_WALL);
 
 	// Gummies
 	public static final RegistryObject<Item> LIME_GUMMY = registerGummy("lime", Nutrition.LIME_GUMMY);
@@ -374,16 +379,33 @@ public class CRItems extends ModItems {
 	public static final RegistryObject<Item> BLACK_TEA_GUMMY = registerGummy("black_tea", Nutrition.BLACK_TEA_GUMMY, Modid.FR);
 	public static final RegistryObject<Item> COFFEE_GUMMY = registerGummy("coffee", Nutrition.COFFEE_GUMMY, Modid.FR);
 
+	// Spawn Eggs
+	public static final RegistryObject<Item> TIGER_PRAWN_SPAWN_EGG = registerItem("tiger_prawn_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.TIGER_PRAWN, 0x7c7248, 0x613432, new Item.Properties()));
+	public static final RegistryObject<Item> PLATINUM_BASS_SPAWN_EGG = registerItem("platinum_bass_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.PLATINUM_BASS, 0x091442, 0x7B8698, new Item.Properties()));
+	public static final RegistryObject<Item> CHIEFTAIN_CRAB_SPAWN_EGG = registerItem("chieftain_crab_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.CHIEFTAIN_CRAB, 0xB13125, 0xE1B865, new Item.Properties()));
+	public static final RegistryObject<Item> URCHIN_SPAWN_EGG = registerItem("urchin_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.URCHIN, 0x9990d7, 0x21132d, new Item.Properties()));
+	public static final RegistryObject<Item> CLAM_SPAWN_EGG = registerItem("clam_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.CLAM, 0x775745, 0xC5A877, new Item.Properties()));
+	public static final RegistryObject<Item> TIGER_PRAWN_BUCKET = registerItem("tiger_prawn_bucket",
+		() -> new MobBucketItem(CREntities.TIGER_PRAWN, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1)));
+	public static final RegistryObject<Item> PLATINUM_BASS_BUCKET = registerItem("platinum_bass_bucket",
+		() -> new MobBucketItem(CREntities.PLATINUM_BASS, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, (new Item.Properties()).stacksTo(1)));
+	public static final RegistryObject<Item> CHIEFTAIN_CRAB_BUCKET = registerItem("chieftain_crab_bucket",
+		() -> new MobBucketItem(CREntities.CHIEFTAIN_CRAB, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_AXOLOTL, (new Item.Properties()).stacksTo(1).craftRemainder(Items.BUCKET)));
+	public static final RegistryObject<Item> URCHIN_BUCKET = registerItem("urchin_bucket",
+		() -> new MobBucketItem(CREntities.URCHIN, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1)));
+	public static final RegistryObject<Item> CLAM_BUCKET = registerItem("clam_bucket",
+		() -> new MobBucketItem(CREntities.CLAM, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_TADPOLE, (new Item.Properties()).stacksTo(1)));
+
 	// Let Fish Love
-	public static final RegistryObject<Item> PLATINUM_BASS_ROE = registerItem("platinum_bass_roe", () ->
-		Modid.LFL.loaded() ?
-		LetFishLoveCompat.platinumBassRoeItem() :
-		new CompatItem(new Item.Properties(), Modid.LFL)
-	);
 	public static final RegistryObject<Item> TIGER_PRAWN_ROE = registerItem("tiger_prawn_roe", () ->
 		Modid.LFL.loaded() ?
 		LetFishLoveCompat.tigerPrawnRoeItem() :
 		new CompatItem(new Item.Properties(), Modid.LFL)
+	);
+	public static final RegistryObject<Item> PLATINUM_BASS_ROE = registerItem("platinum_bass_roe", () ->
+		Modid.LFL.loaded() ?
+			LetFishLoveCompat.platinumBassRoeItem() :
+			new CompatItem(new Item.Properties(), Modid.LFL)
 	);
 
 	public static RegistryObject<Item> registerBlock(RegistryObject<Block> block) {
