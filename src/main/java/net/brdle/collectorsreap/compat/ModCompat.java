@@ -23,26 +23,6 @@ public class ModCompat {
 		return Modid.FR.effect("caffeinated", MobEffects.CONFUSION);
 	}
 
-	public static MobEffect getAgility() {
-		return Modid.N.effect("agility", MobEffects.CONFUSION);
-	}
-
-	public static MobEffect getVanillaScent() {
-		return Modid.N.effect("vanilla_scent", MobEffects.CONFUSION);
-	}
-
-	public static MobEffect getSugarRush() {
-		return Modid.N.effect("sugar_rush", MobEffects.MOVEMENT_SPEED);
-	}
-
-	public static MobEffect getBerserking() {
-		return Modid.N.effect("berserking", MobEffects.CONFUSION);
-	}
-
-	public static MobEffect getHarmony() {
-		return Modid.N.effect("harmony", MobEffects.CONFUSION);
-	}
-
 	public static MobEffect getSpitting() {
 		return Modid.AT.effect("spitting", MobEffects.CONFUSION);
 	}

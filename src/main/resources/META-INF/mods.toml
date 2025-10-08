@@ -41,23 +41,16 @@ configBackground="collectorsreap:textures/block/urchin_test_bricks.png"
 	side="BOTH"
 
 [[dependencies.collectorsreap]]
-	modId="nethersdelight"
-	mandatory=false
-	versionRange="[0,)"
-	ordering="AFTER"
-	side="BOTH"
-
-[[dependencies.collectorsreap]]
-	modId="mynethersdelight"
-	mandatory=false
-	versionRange="[1.20.1-1.0,)"
-	ordering="AFTER"
-	side="BOTH"
-
-[[dependencies.collectorsreap]]
 	modId="neapolitan"
 	mandatory=false
 	versionRange="[5.1,)"
+	ordering="AFTER"
+	side="BOTH"
+
+[[dependencies.collectorsreap]]
+	modId="buzzier_bees"
+	mandatory=false
+	versionRange="[6.0.1,)"
 	ordering="AFTER"
 	side="BOTH"
 
@@ -72,6 +65,20 @@ configBackground="collectorsreap:textures/block/urchin_test_bricks.png"
 	modId="atmospheric"
 	mandatory=false
 	versionRange="[6.1,)"
+	ordering="AFTER"
+	side="BOTH"
+
+[[dependencies.collectorsreap]]
+	modId="nethersdelight"
+	mandatory=false
+	versionRange="[0,)"
+	ordering="AFTER"
+	side="BOTH"
+
+[[dependencies.collectorsreap]]
+	modId="mynethersdelight"
+	mandatory=false
+	versionRange="[1.20.1-1.0,)"
 	ordering="AFTER"
 	side="BOTH"
 
