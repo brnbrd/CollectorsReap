@@ -45,8 +45,8 @@ public class CRItemTags {
 	public static final TagKey<Item> RAW_URCHIN = forge("raw_urchin");
 	public static final TagKey<Item> RAW_PRAWN = forge("raw_prawn");
 	public static final TagKey<Item> COOKED_PRAWN = forge("cooked_prawn");
-	public static final TagKey<Item> RAW_FISHES_BASS = forge("raw_fishes/bass");
-	public static final TagKey<Item> COOKED_FISHES_BASS = forge("cooked_fishes/bass");
+	public static final TagKey<Item> RAW_FISHES_PLATINUM_BASS = forge("raw_fishes/platinum_bass");
+	public static final TagKey<Item> COOKED_FISHES_PLATINUM_BASS = forge("cooked_fishes/platinum_bass");
 	public static final TagKey<Item> RAW_HOGLIN = forge("raw_hoglin");
 	public static final TagKey<Item> RAW_STRIDER = forge("raw_strider");
 	public static final TagKey<Item> COOKIES = forge("cookies");

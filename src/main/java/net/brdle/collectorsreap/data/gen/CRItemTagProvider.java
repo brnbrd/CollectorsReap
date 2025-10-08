@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.data.gen;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.compat.Modid;
 import net.brdle.collectorsreap.data.CRItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -75,11 +76,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(ItemTags.PIGLIN_LOVED).add(CRItems.GILDED_LUCUMA.get());
 
 		// Fish
-		this.tag(ForgeTags.RAW_FISHES).addTag(CRItemTags.RAW_FISHES_BASS);
-		this.tag(ForgeTags.COOKED_FISHES).addTag(CRItemTags.COOKED_FISHES_BASS);
-		this.tag(ItemTags.FISHES)
-			.addTag(CRItemTags.RAW_FISHES_BASS)
-			.addTag(CRItemTags.COOKED_FISHES_BASS);
+		this.tag(ItemTags.FISHES).add(CRItems.PLATINUM_BASS.get());
+		this.tag(ForgeTags.RAW_FISHES).addTag(CRItemTags.RAW_FISHES_PLATINUM_BASS);
+		this.tag(ForgeTags.COOKED_FISHES).addTag(CRItemTags.COOKED_FISHES_PLATINUM_BASS);
 		this.tag(CRItemTags.ROE_FISH)
 			.add(CRItems.PLATINUM_BASS_ROE.get())
 			.addOptional(Util.rl("letfishlove", "tropical_fish_roe"))
@@ -97,6 +96,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.ROE)
 			.addTag(CRItemTags.ROE_FISH)
 			.addTag(CRItemTags.ROE_PRAWN);
+
+		// Stardew Fishing
+		this.tag(Modid.SF.it("starts_minigame"))
+			.add(CRItems.TIGER_PRAWN.get());
 
 		// Farmer's Delight
 		this.tag(ModTags.WILD_CROPS_ITEM)
@@ -208,10 +211,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.TIGER_PRAWN.get());
 		this.tag(CRItemTags.COOKED_PRAWN)
 			.add(CRItems.COOKED_TIGER_PRAWN.get());
-		this.tag(CRItemTags.RAW_FISHES_BASS)
+		this.tag(CRItemTags.RAW_FISHES_PLATINUM_BASS)
 			.add(CRItems.PLATINUM_BASS.get())
 			.add(CRItems.PLATINUM_BASS_SLICE.get());
-		this.tag(CRItemTags.COOKED_FISHES_BASS)
+		this.tag(CRItemTags.COOKED_FISHES_PLATINUM_BASS)
 			.add(CRItems.COOKED_PLATINUM_BASS.get())
 			.add(CRItems.COOKED_PLATINUM_BASS_SLICE.get());
 		this.tag(CRItemTags.HOT_NETHER_FRUIT)
