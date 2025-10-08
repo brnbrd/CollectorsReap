@@ -91,6 +91,9 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PINK_DRAGON_FRUIT_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 				CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE.get(), 7),
 			"cutting/pink_dragon_fruit_cake", finished, enabled(CRItems.PINK_DRAGON_FRUIT_CAKE), enabled(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE));
+		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LUCUMA_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
+				CRItems.LUCUMA_CAKE_SLICE.get(), 7),
+			"cutting/lucuma_cake", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_CAKE), enabled(CRItems.LUCUMA_CAKE_SLICE));
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.URCHIN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 					CRItems.UNI.get(), 2)
 				.addResult(CRItems.URCHIN_TEST.get())
@@ -745,6 +748,21 @@ public class CRRecipeProvider extends RecipeProvider implements IConditionBuilde
 				.requires(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE.get(), 7)
 				.unlockedBy("has_pink_dragon_fruit_cake_slice", has(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE.get())),
 			"food/pink_dragon_fruit_cake_from_slices", finished, enabled(CRItems.PINK_DRAGON_FRUIT), enabled(CRItems.PINK_DRAGON_FRUIT_CAKE), enabled(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE));
+		wrap(shaped(RecipeCategory.FOOD, CRItems.LUCUMA_CAKE)
+				.pattern("mlm")
+				.pattern("ses")
+				.pattern("wlw")
+				.define('e', Tags.Items.EGGS)
+				.define('m', ForgeTags.MILK)
+				.define('l', CRItemTags.FRUITS_LUCUMA)
+				.define('s', Items.SUGAR)
+				.define('w', ForgeTags.GRAIN_WHEAT)
+				.unlockedBy("has_lucuma", has(CRItemTags.FRUITS_LUCUMA)),
+			"food/lucuma_cake", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_CAKE));
+		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CRItems.LUCUMA_CAKE.get(), 1)
+				.requires(CRItems.LUCUMA_CAKE_SLICE.get(), 7)
+				.unlockedBy("has_lucuma_cake_slice", has(CRItems.LUCUMA_CAKE_SLICE.get())),
+			"food/lucuma_cake_from_slices", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_CAKE), enabled(CRItems.LUCUMA_CAKE_SLICE));
 		wrap(ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, CRItems.URCHIN_DART.get())
 				.pattern("n")
 				.pattern("c")

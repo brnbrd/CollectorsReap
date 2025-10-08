@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "collectorsreap:block/purple_candle_lucuma_cake"
+    },
+    "lit=true": {
+      "model": "collectorsreap:block/purple_candle_lucuma_cake_lit"
+    }
+  }
+}

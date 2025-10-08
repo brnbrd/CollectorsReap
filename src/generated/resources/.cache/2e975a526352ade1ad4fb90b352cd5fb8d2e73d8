@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-07T18:47:16.9895532	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2025-10-07T19:38:06.4608117	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
@@ -11,7 +11,7 @@ e0f1081b33dba4a0923dc182be2af337db73c5bb data/collectorsreap/tags/items/dart_sho
 88055c196d1b1d1dc8d81f028dba0bb58d473524 data/collectorsreap/tags/items/hot_nether_fruit.json
 4ade3885f131d51fd808050df78ebb129d826f84 data/diet/tags/items/fruits.json
 44930d393f8ce0442362dc4dac89d839726332e7 data/diet/tags/items/proteins.json
-4fff394c06619a916794ce061861f6495be1b3b7 data/diet/tags/items/special_food.json
+e34ac5202557dd98a2a5080b0dd2bf6b79da148c data/diet/tags/items/special_food.json
 507b42bfb4ad28acf617f26c41a5f2a4aef9307f data/diet/tags/items/vegetables.json
 239c83436e79910a542752ec670434fd45a1fa58 data/farmersdelight/tags/items/cabbage_roll_ingredients.json
 ace9d990336b6482ae2f05dcb55566656bb1dfad data/farmersdelight/tags/items/drinks.json

@@ -273,6 +273,12 @@ public class Nutrition {
 		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.SURGE.get(), 300, 0), 1F)
 		.build();
+	public static final FoodProperties LUCUMA_CAKE_SLICE = (new FoodProperties.Builder())
+		.nutrition(2).saturationMod(0.1F)
+		.fast()
+		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 400, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 300, 0), 1F)
+		.build();
 	public static final FoodProperties LIME_ICE_CREAM = (new FoodProperties.Builder())
 		.nutrition(6).saturationMod(0.4F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 1), 1F)

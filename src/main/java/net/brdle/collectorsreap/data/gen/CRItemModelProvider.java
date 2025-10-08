@@ -87,6 +87,7 @@ public class CRItemModelProvider extends ItemModelProvider {
 			CRItems.LIME_CAKE,
 			CRItems.POMEGRANATE_CAKE,
 			CRItems.PINK_DRAGON_FRUIT_CAKE,
+			CRItems.LUCUMA_CAKE,
 			CRItems.LIME_SEEDS,
 			CRItems.POMEGRANATE_SEEDS,
 			CRItems.DRAGON_FRUIT_SEEDS,

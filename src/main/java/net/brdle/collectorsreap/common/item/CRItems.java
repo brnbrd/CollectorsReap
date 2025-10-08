@@ -125,6 +125,10 @@ public class CRItems extends ModItems {
 		() -> new BlockItem(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_CAKE_SLICE = registerItem("pink_dragon_fruit_cake_slice",
 		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.PINK_DRAGON_FRUIT_CAKE_SLICE)));
+	public static final RegistryObject<Item> LUCUMA_CAKE = registerItem("lucuma_cake",
+		() -> new BlockItem(CRBlocks.LUCUMA_CAKE.get(), ((new Item.Properties()).stacksTo(1))));
+	public static final RegistryObject<Item> LUCUMA_CAKE_SLICE = registerItem("lucuma_cake_slice",
+		() -> new EffectSliceItem((new Item.Properties()).food(Nutrition.LUCUMA_CAKE_SLICE)));
 
 	// Ice Cream
 	public static final RegistryObject<Item> LIME_ICE_CREAM = registerItem("lime_ice_cream",

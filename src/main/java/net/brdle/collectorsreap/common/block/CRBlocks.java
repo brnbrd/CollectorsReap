@@ -94,6 +94,25 @@ public class CRBlocks {
 	public static final RegistryObject<Block> RED_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("red_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.RED_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
 	public static final RegistryObject<Block> BLACK_CANDLE_PINK_DRAGON_FRUIT_CAKE = registerBlock("black_candle_pink_dragon_fruit_cake", () -> new EffectCandleCakeBlock(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get(), Blocks.BLACK_CANDLE, copy(CANDLE_PINK_DRAGON_FRUIT_CAKE.get())));
 
+	public static final RegistryObject<Block> LUCUMA_CAKE = registerBlock("lucuma_cake", () -> new EffectCakeBlock(copy(Blocks.CAKE), CRItems.LUCUMA_CAKE_SLICE));
+	public static final RegistryObject<Block> CANDLE_LUCUMA_CAKE = registerBlock("candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.CANDLE, copy(Blocks.CAKE).lightLevel(litBlockEmission(3))));
+	public static final RegistryObject<Block> WHITE_CANDLE_LUCUMA_CAKE = registerBlock("white_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.WHITE_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> ORANGE_CANDLE_LUCUMA_CAKE = registerBlock("orange_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.ORANGE_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> MAGENTA_CANDLE_LUCUMA_CAKE = registerBlock("magenta_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.MAGENTA_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> LIGHT_BLUE_CANDLE_LUCUMA_CAKE = registerBlock("light_blue_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.LIGHT_BLUE_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> YELLOW_CANDLE_LUCUMA_CAKE = registerBlock("yellow_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.YELLOW_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> LIME_CANDLE_LUCUMA_CAKE = registerBlock("lime_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.LIME_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> PINK_CANDLE_LUCUMA_CAKE = registerBlock("pink_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.PINK_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> GRAY_CANDLE_LUCUMA_CAKE = registerBlock("gray_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.GRAY_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> LIGHT_GRAY_CANDLE_LUCUMA_CAKE = registerBlock("light_gray_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.LIGHT_GRAY_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> CYAN_CANDLE_LUCUMA_CAKE = registerBlock("cyan_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.CYAN_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> PURPLE_CANDLE_LUCUMA_CAKE = registerBlock("purple_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.PURPLE_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> BLUE_CANDLE_LUCUMA_CAKE = registerBlock("blue_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.BLUE_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> BROWN_CANDLE_LUCUMA_CAKE = registerBlock("brown_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.BROWN_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> GREEN_CANDLE_LUCUMA_CAKE = registerBlock("green_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.GREEN_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> RED_CANDLE_LUCUMA_CAKE = registerBlock("red_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.RED_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+	public static final RegistryObject<Block> BLACK_CANDLE_LUCUMA_CAKE = registerBlock("black_candle_lucuma_cake", () -> new EffectCandleCakeBlock(CRBlocks.LUCUMA_CAKE.get(), Blocks.BLACK_CANDLE, copy(CANDLE_LUCUMA_CAKE.get())));
+
 	public static final RegistryObject<Block> LIME_BUSH = registerBlock("lime_bush",
 		() -> new LimeBushBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).forceSolidOff().instabreak().sound(SoundType.SWEET_BERRY_BUSH).noOcclusion().pushReaction(PushReaction.DESTROY)));
 	public static final RegistryObject<Block> POMEGRANATE_BUSH = registerBlock("pomegranate_bush",

@@ -86,7 +86,8 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.LIME_PIE.get())
 			.add(CRBlocks.LIME_CAKE.get())
 			.add(CRBlocks.POMEGRANATE_CAKE.get())
-			.add(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get());
+			.add(CRBlocks.PINK_DRAGON_FRUIT_CAKE.get())
+			.add(CRBlocks.LUCUMA_CAKE.get());
 
 		// Farmer's Delight
 		this.tag(ModTags.COMPOST_ACTIVATORS)

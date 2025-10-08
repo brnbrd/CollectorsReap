@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-07T18:47:16.9917734	Item Models: collectorsreap
+// 1.20.1	2025-10-07T19:38:06.4628136	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -72,6 +72,8 @@ fcef6f4c4bd1c6b396dd186a190917184cf44d15 assets/collectorsreap/models/item/lime_
 0ddc96ed8aee8ddc75c97f6d5879f748e9a56d4f assets/collectorsreap/models/item/lime_slice.json
 fb7e311403e44af69dec0dcb3aedeca19e170a48 assets/collectorsreap/models/item/lucuma.json
 76dad01e5a760e72404f26dd311061691f4cfdcb assets/collectorsreap/models/item/lucuma_bread.json
+fa94301a6c4c7d8bdc818fa1325bcd41aca48ce2 assets/collectorsreap/models/item/lucuma_cake.json
+7c70720aa26814ff7044a8ab19d6a80342b097dd assets/collectorsreap/models/item/lucuma_cake_slice.json
 1d6e2e7142764defd9ba7bfe8e62f073b3c9273c assets/collectorsreap/models/item/lucuma_crate.json
 7e734f60bc6e9676f4b5a0ca7408ff618c797e93 assets/collectorsreap/models/item/lucuma_gazpacho.json
 7e1a1711df8a606b8054bbc909bebdcdc1b0f84c assets/collectorsreap/models/item/lucuma_gummy.json

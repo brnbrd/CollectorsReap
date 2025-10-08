@@ -1,0 +1,25 @@
+{
+  "advancements": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_cake"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_cake_slice"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

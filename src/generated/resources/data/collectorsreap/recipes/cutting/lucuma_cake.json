@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_cake"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_cake_slice"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "collectorsreap:lucuma_cake"
+          }
+        ],
+        "result": [
+          {
+            "count": 7,
+            "item": "collectorsreap:lucuma_cake_slice"
+          }
+        ],
+        "tool": {
+          "tag": "forge:tools/knives"
+        }
+      }
+    }
+  ]
+}

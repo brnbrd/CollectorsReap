@@ -1,0 +1,56 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_cake"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_cake_slice"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "collectorsreap:lucuma_cake_slice"
+          },
+          {
+            "item": "collectorsreap:lucuma_cake_slice"
+          },
+          {
+            "item": "collectorsreap:lucuma_cake_slice"
+          },
+          {
+            "item": "collectorsreap:lucuma_cake_slice"
+          },
+          {
+            "item": "collectorsreap:lucuma_cake_slice"
+          },
+          {
+            "item": "collectorsreap:lucuma_cake_slice"
+          },
+          {
+            "item": "collectorsreap:lucuma_cake_slice"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:lucuma_cake"
+        }
+      }
+    }
+  ]
+}

@@ -263,10 +263,11 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.CRAB_MISO.get());
 		this.tag(CRItemTags.SPECIAL_FOOD)
 			.add(CRItems.PORTOBELLO_QUICHE.get())
-			.add(CRItems.LIME_CAKE.get())
 			.add(CRItems.LIME_PIE.get())
+			.add(CRItems.LIME_CAKE.get())
 			.add(CRItems.POMEGRANATE_CAKE.get())
-			.add(CRItems.PINK_DRAGON_FRUIT_CAKE.get());
+			.add(CRItems.PINK_DRAGON_FRUIT_CAKE.get())
+			.add(CRItems.LUCUMA_CAKE.get());
 
 		// Atmospheric
 		this.addSelf(CRItemTags.ALOE_LEAVES);
