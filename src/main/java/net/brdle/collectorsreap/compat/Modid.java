@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.compat;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffect;
@@ -121,6 +122,7 @@ public enum Modid {
 	VGND("vegandelight"),
 	WB("wildberries"),
 	WS("windswept"),
+	WW("woodworks"),
 	YH("youkaishomecoming");
 
 	@NotNull private final String id;
@@ -191,6 +193,10 @@ public enum Modid {
 
 	public boolean blockExists(@NotNull String name) {
 		return this.loaded() && ForgeRegistries.BLOCKS.containsKey(this.rl(name));
+	}
+
+	public TagKey<Block> bt(String tag) {
+		return BlockTags.create(this.rl(tag));
 	}
 
 	@Nullable

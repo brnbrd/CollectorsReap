@@ -2,7 +2,7 @@ package net.brdle.collectorsreap.data.gen;
 
 import com.teamabnormals.blueprint.core.other.tags.BlueprintTrimMaterialTags;
 import net.brdle.collectorsreap.CollectorsReap;
-import net.brdle.collectorsreap.common.item.CRTrimMaterials;
+import net.brdle.collectorsreap.data.pack.CRTrimMaterials;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;

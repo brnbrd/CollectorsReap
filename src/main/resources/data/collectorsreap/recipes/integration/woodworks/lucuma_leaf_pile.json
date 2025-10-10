@@ -1,0 +1,31 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "leaf_piles"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "group": "leaf_pile",
+        "ingredients": [
+          {
+            "item": "collectorsreap:lucuma_leaves"
+          }
+        ],
+        "result": {
+          "count": 4,
+          "item": "collectorsreap:lucuma_leaf_pile"
+        }
+      }
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -83,6 +84,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(ItemTags.HANGING_SIGNS).add(CRBlocks.LUCUMA_HANGING_SIGN.get().asItem());
 		this.tag(ItemTags.BOATS).add(CRItems.LUCUMA_BOAT.get());
 		this.tag(ItemTags.CHEST_BOATS).add(CRItems.LUCUMA_CHEST_BOAT.get());
+		this.tag(ItemTags.SAPLINGS).add(CRBlocks.LUCUMA_SAPLING.get().asItem());
+		this.tag(ItemTags.LEAVES).add(CRBlocks.LUCUMA_LEAVES.get().asItem());
+
 		this.tag(ItemTags.TRIM_MATERIALS).add(CRItems.LUNAR_PEARL.get());
 		this.tag(ItemTags.WALLS)
 			.add(CRBlocks.URCHIN_TEST_BRICK_WALL.get().asItem())
@@ -120,6 +124,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		// Boatload
 		this.tag(Modid.BL.it("furnace_boats")).add(CRItems.LUCUMA_FURNACE_BOAT.get());
 		this.tag(Modid.BL.it("large_boats")).add(CRItems.LARGE_LUCUMA_BOAT.get());
+
+		// Woodworks
+		this.tag(Modid.WW.it("leaf_piles")).add(CRBlocks.LUCUMA_LEAF_PILE.get().asItem());
 
 		// Stardew Fishing
 		this.tag(Modid.SF.it("starts_minigame"))

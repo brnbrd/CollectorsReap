@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.common.block;
 
 import com.mojang.datafixers.util.Pair;
+import com.teamabnormals.blueprint.common.block.LeafPileBlock;
 import com.teamabnormals.blueprint.common.block.LogBlock;
 import com.teamabnormals.blueprint.common.block.WoodBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintCeilingHangingSignBlock;
@@ -12,6 +13,7 @@ import com.teamabnormals.blueprint.core.api.WoodTypeRegistryHelper;
 import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import net.brdle.collectorsreap.CollectorsReap;
+import net.brdle.collectorsreap.common.block.grower.LucumaTreeGrower;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.compat.Modid;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
@@ -71,6 +73,11 @@ public class CRBlocks {
 	public static final Pair<RegistryObject<BlueprintCeilingHangingSignBlock>, RegistryObject<BlueprintWallHangingSignBlock>> LUCUMA_HANGING_SIGNS = HELPER.createHangingSignBlock("lucuma", Properties.LUCUMA_WOOD_TYPE, Properties.LUCUMA.hangingSign());
 	public static final RegistryObject<BlueprintCeilingHangingSignBlock> LUCUMA_HANGING_SIGN = LUCUMA_HANGING_SIGNS.getFirst();
 	public static final RegistryObject<BlueprintWallHangingSignBlock> LUCUMA_WALL_HANGING_SIGN = LUCUMA_HANGING_SIGNS.getSecond();
+
+	public static final RegistryObject<Block> LUCUMA_SAPLING = HELPER.createBlock("lucuma_sapling", () -> new SaplingBlock(new LucumaTreeGrower(), PropertyUtil.sapling()));
+	public static final RegistryObject<Block> POTTED_LUCUMA_SAPLING = HELPER.createBlockNoItem("potted_lucuma_sapling", () -> new FlowerPotBlock(LUCUMA_SAPLING.get(), PropertyUtil.flowerPot()));
+	public static final RegistryObject<Block> LUCUMA_LEAVES = HELPER.createBlock("lucuma_leaves", () -> new LeavesBlock(Properties.LUCUMA.leaves()));
+	public static final RegistryObject<Block> LUCUMA_LEAF_PILE = HELPER.createBlock("lucuma_leaf_pile", () -> new LeafPileBlock(Properties.LUCUMA.leafPile()));
 
 	// Urchin Test
 	public static final RegistryObject<Block> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block", () -> new Block(Properties.URCHIN_TEST));

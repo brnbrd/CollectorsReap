@@ -4,19 +4,24 @@ import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.LimeBushBlock;
 import net.brdle.collectorsreap.common.block.PomegranateBushBlock;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.RegistryObject;
 import java.util.Collections;
 import org.jetbrains.annotations.NotNull;
@@ -186,6 +191,15 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(CRBlocks.LUCUMA_BUTTON.get());
 		this.dropSelf(CRBlocks.LUCUMA_SIGN.get());
 		this.dropSelf(CRBlocks.LUCUMA_HANGING_SIGN.get());
+		this.dropSelf(CRBlocks.LUCUMA_SAPLING.get());
+		this.dropPottedContents(CRBlocks.POTTED_LUCUMA_SAPLING.get());
+		this.add(CRBlocks.LUCUMA_LEAVES.get(), b -> createLeavesDrops(b,
+			CRBlocks.LUCUMA_SAPLING.get(), 0.05F, 0.0625F, 0.0833F, 0.1F));
+		this.leafPile(CRBlocks.LUCUMA_LEAF_PILE.get());
+	}
+
+	private void leafPile(Block block) {
+		this.add(block, b -> createMultifaceBlockDrops(b, MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS))));
 	}
 
 	@Override

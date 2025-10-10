@@ -48,6 +48,9 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.LUCUMA_CHEST_BOAT);
 		this.generatedItem(CRItems.LUCUMA_FURNACE_BOAT);
 		this.generatedItem(CRItems.LARGE_LUCUMA_BOAT);
+		this.flatBlock(CRBlocks.LUCUMA_SAPLING);
+		this.blockItem(CRBlocks.LUCUMA_LEAVES);
+		this.flatBlock(CRBlocks.LUCUMA_LEAF_PILE, Util.name(CRBlocks.LUCUMA_LEAVES));
 
 		// Urchin Test
 		this.blockItem(CRBlocks.URCHIN_TEST_BLOCK);

@@ -90,7 +90,7 @@ dependencies {
 	implementation fg.deobf("curse.maven:brewin-and-chewin-637808:${brewin_and_chewin_version}")
 	implementation fg.deobf("curse.maven:let-fish-love-941186:${let_fish_love_version}")
 	implementation fg.deobf("com.teamabnormals:blueprint:${mc_version}-${blueprint_version}")
-	implementation fg.deobf("curse.maven:boatload-337396:${boatload_version}")
+	implementation fg.deobf("com.teamabnormals:boatload:${mc_version}-${boatload_version}")
 	compileOnly fg.deobf("curse.maven:neapolitan-382016:${neapolitan_version}")
 }
 

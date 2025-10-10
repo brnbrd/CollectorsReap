@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.data.gen;
 import com.teamabnormals.blueprint.common.loot.modification.LootModifierProvider;
 import com.teamabnormals.blueprint.common.loot.modification.modifiers.LootPoolEntriesModifier;
 import net.brdle.collectorsreap.CollectorsReap;
+import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.advancements.critereon.LocationPredicate;
 import net.minecraft.core.HolderLookup.Provider;
@@ -46,7 +47,7 @@ public class CRLootModifierProvider extends LootModifierProvider {
 			)));
 		this.entry("ancient_city").selects(BuiltInLootTables.ANCIENT_CITY)
 			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
-				LootItem.lootTableItem(CRItems.LUCUMA.get()).setWeight(4).build(),
+				LootItem.lootTableItem(CRBlocks.LUCUMA_SAPLING.get()).setWeight(4).build(),
 				LootItem.lootTableItem(CRItems.GILDED_LUCUMA.get()).setWeight(1).build()
 			)));
 		this.entry("shipwreck_treasure").selects(BuiltInLootTables.SHIPWRECK_TREASURE)

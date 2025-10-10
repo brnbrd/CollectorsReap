@@ -13,10 +13,7 @@ import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -157,6 +154,9 @@ public class CRBlockModelProvider extends BlueprintBlockStateProvider {
 		this.button(CRBlocks.LUCUMA_BUTTON, this.blockTexture(CRBlocks.LUCUMA_PLANKS.get()));
 		this.signs(CRBlocks.LUCUMA_SIGNS, CRBlocks.LUCUMA_PLANKS);
 		this.hangingSignBlocks(CRBlocks.STRIPPED_LUCUMA_LOG, CRBlocks.LUCUMA_HANGING_SIGNS);
+		this.pottedPlant(CRBlocks.LUCUMA_SAPLING, CRBlocks.POTTED_LUCUMA_SAPLING);
+		this.leavesBlock(CRBlocks.LUCUMA_LEAVES);
+		this.leafPile(CRBlocks.LUCUMA_LEAF_PILE, this.blockTexture(CRBlocks.LUCUMA_LEAVES.get()), true);
 
 		// Roe
 		this.roeBlock(CRBlocks.PLATINUM_BASS_ROE.get());
@@ -219,6 +219,31 @@ public class CRBlockModelProvider extends BlueprintBlockStateProvider {
 
 	private void signs(Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> signs, Supplier<Block> planks) {
 		this.signBlock(signs.getFirst().get(), signs.getSecond().get(), this.blockTexture(planks.get()));
+	}
+
+	private void leafPile(RegistryObject<Block> leafPile, ResourceLocation texture, boolean tinted) {
+		ModelFile model = this.models().withExistingParent(Util.name(leafPile), "blueprint:block/" + (tinted ? "tinted_" : "") + "leaf_pile").texture("all", texture).renderType("cutout");
+		this.getMultipartBuilder(leafPile.get())
+			.part().modelFile(model).uvLock(true).rotationX(270).addModel().condition(BlockStateProperties.UP, true).end()
+			.part().modelFile(model).uvLock(true).rotationX(90).addModel().condition(BlockStateProperties.DOWN, true).end()
+			.part().modelFile(model).addModel().condition(BlockStateProperties.NORTH, true).end()
+			.part().modelFile(model).uvLock(true).rotationY(180).addModel().condition(BlockStateProperties.SOUTH, true).end()
+			.part().modelFile(model).uvLock(true).rotationY(90).addModel().condition(BlockStateProperties.EAST, true).end()
+			.part().modelFile(model).uvLock(true).rotationY(270).addModel().condition(BlockStateProperties.WEST, true).end();
+	}
+
+	private void pottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pot) {
+		this.pot(pot, this.blockTexture(plant.get()));
+		this.simpleCross(plant);
+	}
+
+	private void pot(RegistryObject<Block> pot, ResourceLocation texture) {
+		ModelFile model = this.models().withExistingParent(Util.name(pot), "block/flower_pot_cross").texture("plant", texture).renderType("cutout");
+		this.simpleBlock(pot.get(), model);
+	}
+
+	private void simpleCross(RegistryObject<Block> block) {
+		this.simpleBlock(block.get(), this.models().cross(Util.name(block), this.blockTexture(block.get())).renderType("cutout"));
 	}
 
 	private void crateBlock(Block block, String cropName, boolean customBottom) {

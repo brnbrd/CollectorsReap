@@ -1,6 +1,6 @@
-// 1.20.1	2025-10-10T08:11:45.5462451	Object Modifiers (loot_tables): collectorsreap
+// 1.20.1	2025-10-10T14:18:32.4419075	Object Modifiers (loot_tables): collectorsreap
 2b53b520ec8d7c6199c2f265f0bc0940a7bb70f6 data/collectorsreap/modifiers/loot_tables/abandoned_mineshaft.json
-5aa24fd207a6d12ea953b930a25442d8160bf09a data/collectorsreap/modifiers/loot_tables/ancient_city.json
+57615342a2adcea71a18e541b9bf445feb83bba9 data/collectorsreap/modifiers/loot_tables/ancient_city.json
 358b2f9f0ff1c71e91f825b910b3df0790269cb3 data/collectorsreap/modifiers/loot_tables/bastion_hoglin_stable.json
 a5087534e6b2e5f2c9af91cb156868580fe446bd data/collectorsreap/modifiers/loot_tables/bastion_other.json
 cb897956fb45b836623591438736551492e53e47 data/collectorsreap/modifiers/loot_tables/buried_treasure.json

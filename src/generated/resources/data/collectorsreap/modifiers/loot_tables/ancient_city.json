@@ -6,7 +6,7 @@
         "entries": [
           {
             "type": "minecraft:item",
-            "name": "collectorsreap:lucuma",
+            "name": "collectorsreap:lucuma_sapling",
             "weight": 4
           },
           {

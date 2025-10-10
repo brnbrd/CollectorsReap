@@ -1,6 +1,7 @@
-package net.brdle.collectorsreap.common.item;
+package net.brdle.collectorsreap.data.pack;
 
 import net.brdle.collectorsreap.Util;
+import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.network.chat.Component;

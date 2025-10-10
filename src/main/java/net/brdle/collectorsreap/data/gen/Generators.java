@@ -1,7 +1,7 @@
 package net.brdle.collectorsreap.data.gen;
 
 import net.brdle.collectorsreap.client.CRSpriteSourceProvider;
-import net.brdle.collectorsreap.data.CRRegistries;
+import net.brdle.collectorsreap.data.pack.CRRegistries;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;

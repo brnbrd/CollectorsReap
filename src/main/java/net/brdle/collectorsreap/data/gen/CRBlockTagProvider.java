@@ -4,6 +4,7 @@ import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.EffectCandleCakeBlock;
+import net.brdle.collectorsreap.compat.Modid;
 import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -73,6 +74,9 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.WALL_SIGNS).add(CRBlocks.LUCUMA_WALL_SIGN.get());
 		this.tag(BlockTags.CEILING_HANGING_SIGNS).add(CRBlocks.LUCUMA_HANGING_SIGN.get());
 		this.tag(BlockTags.WALL_HANGING_SIGNS).add(CRBlocks.LUCUMA_WALL_HANGING_SIGN.get());
+		this.tag(BlockTags.SAPLINGS).add(CRBlocks.LUCUMA_SAPLING.get());
+		this.tag(BlockTags.LEAVES).add(CRBlocks.LUCUMA_LEAVES.get());
+
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(CRBlocks.LIME_ICE_CREAM_BLOCK.get())
 			.add(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get())
@@ -87,6 +91,7 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get())
 			.add(CRBlocks.LUCUMA_CRATE.get())
 			.add(CRBlocks.GILDED_LUCUMA_CRATE.get());
+		this.tag(BlockTags.MINEABLE_WITH_HOE).add(CRBlocks.LUCUMA_LEAVES.get());
 		this.tag(BlockTags.CLIMBABLE).add(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
 		this.tag(BlockTags.CROPS)
 			.add(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get());
@@ -141,6 +146,9 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.DRAGON_BUSH.get());
 		this.tag(BlockTags.SMALL_FLOWERS)
 			.add(CRBlocks.DRAGON_BUSH.get());
+
+		// Woodworks
+		this.tag(Modid.WW.bt("leaf_piles")).add(CRBlocks.LUCUMA_LEAF_PILE.get());
 
 		// Serene Seasons
 		this.tag(CRBlockTags.WINTER_CROPS);

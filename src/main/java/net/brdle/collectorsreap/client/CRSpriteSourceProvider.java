@@ -2,7 +2,7 @@ package net.brdle.collectorsreap.client;
 
 import com.teamabnormals.blueprint.core.api.BlueprintTrims;
 import net.brdle.collectorsreap.CollectorsReap;
-import net.brdle.collectorsreap.common.item.CRTrimMaterials;
+import net.brdle.collectorsreap.data.pack.CRTrimMaterials;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.SpriteSourceProvider;
