@@ -52,12 +52,12 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.blockItem(CRBlocks.URCHIN_TEST_BRICKS);
 		this.blockItem(CRBlocks.URCHIN_TEST_BRICK_STAIRS);
 		this.blockItem(CRBlocks.URCHIN_TEST_BRICK_SLAB);
-		this.blockItem(CRBlocks.URCHIN_TEST_BRICK_WALL);
+		this.wallInventory(Util.name(CRBlocks.URCHIN_TEST_BRICK_WALL), resourceBlock(CRBlocks.URCHIN_TEST_BRICKS));
 		this.blockItem(CRBlocks.CHISELED_URCHIN_TEST_BRICKS);
 		this.blockItem(CRBlocks.URCHIN_TEST_TILES);
 		this.blockItem(CRBlocks.URCHIN_TEST_TILE_STAIRS);
 		this.blockItem(CRBlocks.URCHIN_TEST_TILE_SLAB);
-		this.blockItem(CRBlocks.URCHIN_TEST_TILE_WALL);
+		this.wallInventory(Util.name(CRBlocks.URCHIN_TEST_TILE_WALL), resourceBlock(CRBlocks.URCHIN_TEST_TILES));
 
 		// Ice Cream Blocks
 		this.blockItem(CRBlocks.LIME_ICE_CREAM_BLOCK);
