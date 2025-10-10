@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_pressure_plate"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "redstone",
+        "group": "wooden_pressure_plate",
+        "key": {
+          "#": {
+            "item": "collectorsreap:lucuma_planks"
+          }
+        },
+        "pattern": [
+          "##"
+        ],
+        "result": {
+          "item": "collectorsreap:lucuma_pressure_plate"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

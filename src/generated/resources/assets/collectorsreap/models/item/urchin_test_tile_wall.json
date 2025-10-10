@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "collectorsreap:block/urchin_test_tiles"
-  }
+  "parent": "collectorsreap:block/urchin_test_tile_wall"
 }

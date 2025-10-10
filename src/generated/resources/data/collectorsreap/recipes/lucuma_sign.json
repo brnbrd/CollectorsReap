@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_sign"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "wooden_sign",
+        "key": {
+          "#": {
+            "item": "collectorsreap:lucuma_planks"
+          },
+          "X": {
+            "tag": "forge:rods/wooden"
+          }
+        },
+        "pattern": [
+          "###",
+          "###",
+          " X "
+        ],
+        "result": {
+          "count": 3,
+          "item": "collectorsreap:lucuma_sign"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

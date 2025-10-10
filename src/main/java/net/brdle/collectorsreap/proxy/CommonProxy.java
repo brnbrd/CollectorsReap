@@ -24,9 +24,7 @@ public class CommonProxy {
 		forgeBus.register(new ForgeEvents());
 		modBus.register(new ModEvents());
 		modBus.register(new Generators());
-		CRBlocks.create(modBus);
 		CRFluids.create(modBus);
-		CRItems.create(modBus);
 		CREntities.create(modBus);
 		CRParticleTypes.create(modBus);
 		CREffects.create(modBus);

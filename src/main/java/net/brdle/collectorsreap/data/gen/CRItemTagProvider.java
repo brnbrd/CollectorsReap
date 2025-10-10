@@ -2,6 +2,7 @@ package net.brdle.collectorsreap.data.gen;
 
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
+import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.compat.Modid;
 import net.brdle.collectorsreap.data.CRItemTags;
@@ -31,6 +32,11 @@ public class CRItemTagProvider extends ItemTagsProvider {
 	@Override
 	public void addTags(HolderLookup.@NotNull Provider provider) {
 		// Collector's Reap
+		this.tag(CRItemTags.LUCUMA_LOGS)
+			.add(CRBlocks.LUCUMA_LOG.get().asItem())
+			.add(CRBlocks.LUCUMA_WOOD.get().asItem())
+			.add(CRBlocks.STRIPPED_LUCUMA_LOG.get().asItem())
+			.add(CRBlocks.STRIPPED_LUCUMA_WOOD.get().asItem());
 		this.tag(CRItemTags.DART_SHOOTERS)
 			.add(Items.BAMBOO)
 			.addOptional(Util.rl("mynethersdelight", "powder_cannon"));
@@ -63,16 +69,30 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.RAW_CLAM);
 
 		// Minecraft
+		this.tag(ItemTags.LOGS_THAT_BURN).addTag(CRItemTags.LUCUMA_LOGS);
+		this.tag(ItemTags.PLANKS).add(CRBlocks.LUCUMA_PLANKS.get().asItem());
+		this.tag(ItemTags.WOODEN_STAIRS).add(CRBlocks.LUCUMA_STAIRS.get().asItem());
+		this.tag(ItemTags.WOODEN_SLABS).add(CRBlocks.LUCUMA_SLAB.get().asItem());
+		this.tag(ItemTags.WOODEN_FENCES).add(CRBlocks.LUCUMA_FENCE.get().asItem());
+		this.tag(ItemTags.FENCE_GATES).add(CRBlocks.LUCUMA_FENCE_GATE.get().asItem());
+		this.tag(ItemTags.WOODEN_DOORS).add(CRBlocks.LUCUMA_DOOR.get().asItem());
+		this.tag(ItemTags.WOODEN_TRAPDOORS).add(CRBlocks.LUCUMA_TRAPDOOR.get().asItem());
+		this.tag(ItemTags.WOODEN_PRESSURE_PLATES).add(CRBlocks.LUCUMA_PRESSURE_PLATE.get().asItem());
+		this.tag(ItemTags.WOODEN_BUTTONS).add(CRBlocks.LUCUMA_BUTTON.get().asItem());
+		this.tag(ItemTags.SIGNS).add(CRBlocks.LUCUMA_SIGN.get().asItem());
+		this.tag(ItemTags.HANGING_SIGNS).add(CRBlocks.LUCUMA_HANGING_SIGN.get().asItem());
+		this.tag(ItemTags.BOATS).add(CRItems.LUCUMA_BOAT.get());
+		this.tag(ItemTags.CHEST_BOATS).add(CRItems.LUCUMA_CHEST_BOAT.get());
 		this.tag(ItemTags.TRIM_MATERIALS).add(CRItems.LUNAR_PEARL.get());
 		this.tag(ItemTags.WALLS)
-			.add(CRItems.URCHIN_TEST_BRICK_WALL.get())
-			.add(CRItems.URCHIN_TEST_TILE_WALL.get());
+			.add(CRBlocks.URCHIN_TEST_BRICK_WALL.get().asItem())
+			.add(CRBlocks.URCHIN_TEST_TILE_WALL.get().asItem());
 		this.tag(ItemTags.SLABS)
-			.add(CRItems.URCHIN_TEST_BRICK_SLAB.get())
-			.add(CRItems.URCHIN_TEST_TILE_SLAB.get());
+			.add(CRBlocks.URCHIN_TEST_BRICK_SLAB.get().asItem())
+			.add(CRBlocks.URCHIN_TEST_TILE_SLAB.get().asItem());
 		this.tag(ItemTags.STAIRS)
-			.add(CRItems.URCHIN_TEST_BRICK_STAIRS.get())
-			.add(CRItems.URCHIN_TEST_TILE_STAIRS.get());
+			.add(CRBlocks.URCHIN_TEST_BRICK_STAIRS.get().asItem())
+			.add(CRBlocks.URCHIN_TEST_TILE_STAIRS.get().asItem());
 		this.tag(ItemTags.PIGLIN_LOVED).add(CRItems.GILDED_LUCUMA.get());
 
 		// Fish
@@ -103,9 +123,9 @@ public class CRItemTagProvider extends ItemTagsProvider {
 
 		// Farmer's Delight
 		this.tag(ModTags.WILD_CROPS_ITEM)
-			.add(CRItems.DRAGON_BUSH.get());
+			.add(CRBlocks.DRAGON_BUSH.get().asItem());
 		this.tag(ItemTags.SMALL_FLOWERS)
-			.add(CRItems.DRAGON_BUSH.get());
+			.add(CRBlocks.DRAGON_BUSH.get().asItem());
 		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS)
 			.addTag(CRItemTags.RAW_CRAB_MEAT)
 			.addTag(CRItemTags.RAW_CLAM)
@@ -142,12 +162,13 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.SUNNY_ICE_CREAM.get());
 
 		// Forge
-		this.tag(CRItemTags.STORAGE_BLOCKS_LIME).add(CRItems.LIME_CRATE.get());
-		this.tag(CRItemTags.STORAGE_BLOCKS_POMEGRANATE).add(CRItems.POMEGRANATE_CRATE.get());
-		this.tag(CRItemTags.STORAGE_BLOCKS_STYGIAN_POMEGRANATE).add(CRItems.STYGIAN_POMEGRANATE_CRATE.get());
-		this.tag(CRItemTags.STORAGE_BLOCKS_PINK_DRAGON_FRUIT).add(CRItems.PINK_DRAGON_FRUIT_CRATE.get());
-		this.tag(CRItemTags.STORAGE_BLOCKS_LUCUMA).add(CRItems.LUCUMA_CRATE.get());
-		this.tag(CRItemTags.STORAGE_BLOCKS_GILDED_LUCUMA).add(CRItems.GILDED_LUCUMA_CRATE.get());
+		this.tag(Tags.Items.FENCE_GATES_WOODEN).add(CRBlocks.LUCUMA_FENCE_GATE.get().asItem());
+		this.tag(CRItemTags.STORAGE_BLOCKS_LIME).add(CRBlocks.LIME_CRATE.get().asItem());
+		this.tag(CRItemTags.STORAGE_BLOCKS_POMEGRANATE).add(CRBlocks.POMEGRANATE_CRATE.get().asItem());
+		this.tag(CRItemTags.STORAGE_BLOCKS_STYGIAN_POMEGRANATE).add(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get().asItem());
+		this.tag(CRItemTags.STORAGE_BLOCKS_PINK_DRAGON_FRUIT).add(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get().asItem());
+		this.tag(CRItemTags.STORAGE_BLOCKS_LUCUMA).add(CRBlocks.LUCUMA_CRATE.get().asItem());
+		this.tag(CRItemTags.STORAGE_BLOCKS_GILDED_LUCUMA).add(CRBlocks.GILDED_LUCUMA_CRATE.get().asItem());
 		this.tag(Tags.Items.STORAGE_BLOCKS)
 			.addTag(CRItemTags.STORAGE_BLOCKS_LIME)
 			.addTag(CRItemTags.STORAGE_BLOCKS_POMEGRANATE)

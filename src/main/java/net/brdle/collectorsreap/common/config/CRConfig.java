@@ -52,7 +52,7 @@ public class CRConfig {
 
 		ITEM_VALUES = new HashMap<>();
 		BUILDER.push("Items");
-		CRItems.ITEMS.getEntries().stream()
+		CRItems.HELPER.getDeferredRegister().getEntries().stream()
 			.map(obj -> obj.getId().getPath())
 			.sorted()
 			.forEach(name -> defineItem(BUILDER, name));

@@ -255,7 +255,7 @@ public class Util {
 		addEffects(entity, getFoodEffects(food));
 	}
 
-	public static ItemStack getStack(@Nullable Supplier<@Nullable Item> r, int... count) { // Only considers first vararg entry
+	public static ItemStack getStack(@Nullable Supplier<? extends ItemLike> r, int... count) { // Only considers first vararg entry
 		if (r == null || r.get() == null) return ItemStack.EMPTY;
 		return new ItemStack(Objects.requireNonNull(r.get()), count.length > 0 ? count[0] : 1);
 	}
@@ -320,25 +320,26 @@ public class Util {
 		return false;
 	}
 
-	public static boolean configEnabled(String item) {
-		return CRConfig.verify(item);
+	public static boolean configEnabled(String feature) {
+		return CRConfig.verify(feature);
 	}
 
-	public static boolean configEnabled(Item item) {
+	public static boolean configEnabled(@NotNull ItemLike item) {
 		return configEnabled(Util.name(item));
 	}
 
-	public static boolean enabled(Item item) {
+	public static boolean enabled(@NotNull ItemLike item) {
 		return (item instanceof IConfigured conf) ? conf.enabled() : configEnabled(item);
 	}
 
-	public static boolean enabled(Supplier<Item> item) {
+	public static boolean enabled(Supplier<? extends ItemLike> item) {
 		return enabled(item.get());
 	}
 
+	// Only for items, not other config variables
 	public static boolean enabled(String item) {
 		return (
-			CRItems.ITEMS.getEntries().stream()
+			CRItems.HELPER.getDeferredRegister().getEntries().stream()
 				.filter(reg -> reg.getId().getPath().equals(item))
 				.map(Util::enabled)
 				.findAny()

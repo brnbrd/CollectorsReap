@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_planks"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "collectorsreap:lucuma_door"
+          }
+        ],
+        "result": [
+          {
+            "item": "collectorsreap:lucuma_planks"
+          }
+        ],
+        "tool": {
+          "type": "farmersdelight:tool_action",
+          "action": "axe_dig"
+        }
+      }
+    }
+  ]
+}

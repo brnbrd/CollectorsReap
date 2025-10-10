@@ -8,6 +8,7 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.runtime.IIngredientManager;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
+import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.fluid.CRFluids;
 import net.brdle.collectorsreap.common.item.CRItems;
@@ -32,7 +33,7 @@ public class JEIPlugin implements IModPlugin {
 	public void registerRecipes(IRecipeRegistration registration) {
 		// Remove all disabled Items from JEI
 		final IIngredientManager manager = registration.getIngredientManager();
-		final List<ItemStack> hidden = CRItems.ITEMS.getEntries().stream()
+		final List<ItemStack> hidden = CRItems.HELPER.getDeferredRegister().getEntries().stream()
 			.filter(Predicate.not(CRConfig::verify)) // Keep disabled items (to add to hidden list)
 			.map(Util::getStack)
 			.collect(Collectors.toCollection(ArrayList::new)); // Create new mutable list
@@ -78,7 +79,7 @@ public class JEIPlugin implements IModPlugin {
 		}
 
 		// Portobello
-		registration.addItemStackInfo(Util.getStack(CRItems.PORTOBELLO), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO)));
+		registration.addItemStackInfo(Util.getStack(CRBlocks.PORTOBELLO), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRBlocks.PORTOBELLO)));
 
 		// Lime
 		String limeTranslationKey = "desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME);
@@ -107,7 +108,7 @@ public class JEIPlugin implements IModPlugin {
 
 		// Pink Dragon Fruit
 		String dragonFruitTranslationKey = "desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PINK_DRAGON_FRUIT);
-		List<ItemStack> dragonFruitStack = List.of(Util.getStack(CRItems.DRAGON_BUSH), Util.getStack(CRItems.PINK_DRAGON_FRUIT));
+		List<ItemStack> dragonFruitStack = List.of(Util.getStack(CRBlocks.DRAGON_BUSH), Util.getStack(CRItems.PINK_DRAGON_FRUIT));
 		if (CRConfig.verify(CRItems.PINK_DRAGON_FRUIT)) {
 			registration.addItemStackInfo(dragonFruitStack, Component.translatable(dragonFruitTranslationKey));
 		}

@@ -1,0 +1,40 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_boat"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "boat",
+        "key": {
+          "#": {
+            "item": "collectorsreap:lucuma_planks"
+          }
+        },
+        "pattern": [
+          "# #",
+          "###"
+        ],
+        "result": {
+          "item": "collectorsreap:lucuma_boat"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

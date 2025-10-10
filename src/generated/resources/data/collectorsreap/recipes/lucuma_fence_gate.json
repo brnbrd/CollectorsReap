@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_fence_gate"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "redstone",
+        "group": "wooden_fence_gate",
+        "key": {
+          "#": {
+            "tag": "forge:rods/wooden"
+          },
+          "W": {
+            "item": "collectorsreap:lucuma_planks"
+          }
+        },
+        "pattern": [
+          "#W#",
+          "#W#"
+        ],
+        "result": {
+          "item": "collectorsreap:lucuma_fence_gate"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

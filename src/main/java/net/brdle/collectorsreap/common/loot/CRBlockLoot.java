@@ -169,11 +169,28 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(CRBlocks.URCHIN_TEST_TILE_WALL.get());
 		this.dropOther(CRBlocks.PLATINUM_BASS_ROE.get(), CRItems.PLATINUM_BASS_ROE.get());
 		this.dropOther(CRBlocks.TIGER_PRAWN_ROE.get(), CRItems.TIGER_PRAWN_ROE.get());
+
+		// Lucuma wood
+		this.dropSelf(CRBlocks.LUCUMA_LOG.get());
+		this.dropSelf(CRBlocks.LUCUMA_WOOD.get());
+		this.dropSelf(CRBlocks.STRIPPED_LUCUMA_LOG.get());
+		this.dropSelf(CRBlocks.STRIPPED_LUCUMA_WOOD.get());
+		this.dropSelf(CRBlocks.LUCUMA_PLANKS.get());
+		this.dropSelf(CRBlocks.LUCUMA_STAIRS.get());
+		this.dropSelf(CRBlocks.LUCUMA_SLAB.get());
+		this.dropSelf(CRBlocks.LUCUMA_FENCE.get());
+		this.dropSelf(CRBlocks.LUCUMA_FENCE_GATE.get());
+		this.add(CRBlocks.LUCUMA_DOOR.get(), this::createDoorTable);
+		this.dropSelf(CRBlocks.LUCUMA_TRAPDOOR.get());
+		this.dropSelf(CRBlocks.LUCUMA_PRESSURE_PLATE.get());
+		this.dropSelf(CRBlocks.LUCUMA_BUTTON.get());
+		this.dropSelf(CRBlocks.LUCUMA_SIGN.get());
+		this.dropSelf(CRBlocks.LUCUMA_HANGING_SIGN.get());
 	}
 
 	@Override
 	protected @NotNull Iterable<Block> getKnownBlocks() {
-		return CRBlocks.BLOCKS.getEntries()
+		return CRBlocks.HELPER.getDeferredRegister().getEntries()
 			.stream()
 			.filter(reg -> {
 				return (

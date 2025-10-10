@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "stripped_lucuma_wood"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cutting",
+        "ingredients": [
+          {
+            "item": "collectorsreap:lucuma_wood"
+          }
+        ],
+        "result": [
+          {
+            "item": "collectorsreap:stripped_lucuma_wood"
+          },
+          {
+            "item": "farmersdelight:tree_bark"
+          }
+        ],
+        "tool": {
+          "type": "farmersdelight:tool_action",
+          "action": "axe_dig"
+        }
+      }
+    }
+  ]
+}

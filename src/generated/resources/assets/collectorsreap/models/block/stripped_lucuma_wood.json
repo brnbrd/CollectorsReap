@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "collectorsreap:block/stripped_lucuma_log",
+    "side": "collectorsreap:block/stripped_lucuma_log"
+  }
+}

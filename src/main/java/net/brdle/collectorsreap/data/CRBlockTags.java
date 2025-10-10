@@ -15,6 +15,7 @@ public class CRBlockTags {
 	public static final TagKey<Block> POMEGRANATE_FAST_ON = bind(CollectorsReap.MODID, "pomegranate_fast_on");
 	public static final TagKey<Block> STYGIAN_POMEGRANATE_GROWABLE_ON = bind(CollectorsReap.MODID, "stygian_pomegranate_growable_on");
 	public static final TagKey<Block> CRAB_SPAWNABLE_ON = bind(CollectorsReap.MODID, "crab_spawnable_on");
+	public static final TagKey<Block> LUCUMA_LOGS = bind(CollectorsReap.MODID, "lucuma_logs");
 
 	// Forge
 	public static final TagKey<Block> STORAGE_BLOCKS_LIME = forge("storage_blocks/lime");

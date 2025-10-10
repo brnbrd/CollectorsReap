@@ -12,6 +12,7 @@ public class CRItemTags {
 	public static final TagKey<Item> HOT_NETHER_FRUIT = cr("hot_nether_fruit");
 	public static final TagKey<Item> DART_SHOOTERS = cr("dart_shooters");
 	public static final TagKey<Item> CHIEFTAIN_CRAB_FOOD = cr("chieftain_crab_food");
+	public static final TagKey<Item> LUCUMA_LOGS = cr("lucuma_logs");
 
 	// Forge
 	public static final TagKey<Item> STORAGE_BLOCKS_LIME = forge("storage_blocks/lime");

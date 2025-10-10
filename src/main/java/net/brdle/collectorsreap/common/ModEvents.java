@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.common;
 
+import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.CRCauldronInteractions;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
 import net.brdle.collectorsreap.common.item.CRItems;
@@ -30,10 +31,10 @@ public class ModEvents {
 	}
 
 	private void registerCompostables() {
-		ComposterBlock.COMPOSTABLES.put(CRItems.DRAGON_BUSH.get(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRBlocks.DRAGON_BUSH.get(), 0.65F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.PINK_DRAGON_FRUIT.get(), 0.3F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.DRAGON_FRUIT_SEEDS.get(), 0.3F);
-		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO.get(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRBlocks.PORTOBELLO.get(), 0.65F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_COLONY.get(), 1F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.BAKED_PORTOBELLO_CAP.get(), 0.65F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_QUICHE.get(), 1F);
@@ -62,7 +63,7 @@ public class ModEvents {
 	@SubscribeEvent
 	public void buildContents(BuildCreativeModeTabContentsEvent event) {
 		if (event.getTabKey() == ModCreativeTabs.TAB_FARMERS_DELIGHT.getKey()) {
-			CRItems.ITEMS.getEntries().stream().filter(RegistryObject::isPresent).forEach(object -> {
+			CRItems.HELPER.getDeferredRegister().getEntries().stream().filter(RegistryObject::isPresent).forEach(object -> {
 				final Item item = object.get();
 				if (item instanceof IConfigured configured && !configured.enabled()) {
 					return;

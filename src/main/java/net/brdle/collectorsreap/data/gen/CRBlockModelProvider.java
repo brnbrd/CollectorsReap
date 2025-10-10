@@ -1,5 +1,9 @@
 package net.brdle.collectorsreap.data.gen;
 
+import com.mojang.datafixers.util.Pair;
+import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
+import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
+import com.teamabnormals.blueprint.core.data.client.BlueprintBlockStateProvider;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.BuddingDragonFruitBlock;
@@ -13,7 +17,6 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.properties.Property;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -22,21 +25,12 @@ import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 import org.jetbrains.annotations.Nullable;
 
-public class CRBlockStateProvider extends BlockStateProvider {
-	public CRBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
-		super(output, CollectorsReap.MODID, exFileHelper);
-	}
-
-	// Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java
-	public static ResourceLocation resourceBlock(String path) {
-		return Util.cr("block/" + path);
-	}
-
-	// Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java
-	public static ResourceLocation vanillaBlock(String path) {
-		return Modid.MC.rl("block/" + path);
+public class CRBlockModelProvider extends BlueprintBlockStateProvider {
+	public CRBlockModelProvider(final PackOutput output, final ExistingFileHelper helper) {
+		super(output, CollectorsReap.MODID, helper);
 	}
 
 	@Override
@@ -129,6 +123,8 @@ public class CRBlockStateProvider extends BlockStateProvider {
 		this.simpleBlock(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get());
 		this.simpleBlock(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get());
 		this.simpleBlock(CRBlocks.LUCUMA_ICE_CREAM_BLOCK.get());
+
+		// Urchin Test
 		this.simpleBlock(CRBlocks.URCHIN_TEST_BLOCK.get(), this.models().cubeBottomTop(
 			"urchin_test_block",
 			resourceBlock("urchin_test_block_side"),
@@ -136,19 +132,96 @@ public class CRBlockStateProvider extends BlockStateProvider {
 			resourceBlock("urchin_test_block_top")
 		));
 		this.simpleBlock(CRBlocks.URCHIN_TEST_BRICKS.get());
-		this.slabBlock((SlabBlock) CRBlocks.URCHIN_TEST_BRICK_SLAB.get(), resourceBlock("urchin_test_bricks"), resourceBlock("urchin_test_bricks"));
-		this.stairsBlock((StairBlock) CRBlocks.URCHIN_TEST_BRICK_STAIRS.get(), resourceBlock("urchin_test_bricks"));
-		this.wallBlock((WallBlock) CRBlocks.URCHIN_TEST_BRICK_WALL.get(), resourceBlock("urchin_test_bricks"));
-		this.simpleBlock(CRBlocks.CHISELED_URCHIN_TEST_BRICKS.get());
+		this.slab(CRBlocks.URCHIN_TEST_BRICK_SLAB, this.blockTexture(CRBlocks.URCHIN_TEST_BRICKS.get()));
+		this.stairs(CRBlocks.URCHIN_TEST_BRICK_STAIRS, this.blockTexture(CRBlocks.URCHIN_TEST_BRICKS.get()));
+		this.wall(CRBlocks.URCHIN_TEST_BRICK_WALL, this.blockTexture(CRBlocks.URCHIN_TEST_BRICKS.get()));
 		this.simpleBlock(CRBlocks.URCHIN_TEST_TILES.get());
-		this.slabBlock((SlabBlock) CRBlocks.URCHIN_TEST_TILE_SLAB.get(), resourceBlock("urchin_test_tiles"), resourceBlock("urchin_test_tiles"));
-		this.stairsBlock((StairBlock) CRBlocks.URCHIN_TEST_TILE_STAIRS.get(), resourceBlock("urchin_test_tiles"));
-		this.wallBlock((WallBlock) CRBlocks.URCHIN_TEST_TILE_WALL.get(), resourceBlock("urchin_test_tiles"));
+		this.slab(CRBlocks.URCHIN_TEST_TILE_SLAB, this.blockTexture(CRBlocks.URCHIN_TEST_TILES.get()));
+		this.stairs(CRBlocks.URCHIN_TEST_TILE_STAIRS, this.blockTexture(CRBlocks.URCHIN_TEST_TILES.get()));
+		this.wall(CRBlocks.URCHIN_TEST_TILE_WALL, this.blockTexture(CRBlocks.URCHIN_TEST_TILES.get()));
+		this.simpleBlock(CRBlocks.CHISELED_URCHIN_TEST_BRICKS.get());
+
+		// Lucuma
+		this.pillar(CRBlocks.STRIPPED_LUCUMA_LOG);
+		this.wood(CRBlocks.STRIPPED_LUCUMA_WOOD, this.blockTexture(CRBlocks.STRIPPED_LUCUMA_LOG.get()));
+		this.pillar(CRBlocks.LUCUMA_LOG);
+		this.wood(CRBlocks.LUCUMA_WOOD, this.blockTexture(CRBlocks.LUCUMA_LOG.get()));
+		this.simpleBlock(CRBlocks.LUCUMA_PLANKS.get());
+		this.slab(CRBlocks.LUCUMA_SLAB, this.blockTexture(CRBlocks.LUCUMA_PLANKS.get()));
+		this.stairs(CRBlocks.LUCUMA_STAIRS, this.blockTexture(CRBlocks.LUCUMA_PLANKS.get()));
+		this.fence(CRBlocks.LUCUMA_FENCE, this.blockTexture(CRBlocks.LUCUMA_PLANKS.get()));
+		this.fenceGate(CRBlocks.LUCUMA_FENCE_GATE, this.blockTexture(CRBlocks.LUCUMA_PLANKS.get()));
+		this.doorCutout(CRBlocks.LUCUMA_DOOR);
+		this.trapdoorCutout(CRBlocks.LUCUMA_TRAPDOOR);
+		this.pressurePlate(CRBlocks.LUCUMA_PRESSURE_PLATE, this.blockTexture(CRBlocks.LUCUMA_PLANKS.get()));
+		this.button(CRBlocks.LUCUMA_BUTTON, this.blockTexture(CRBlocks.LUCUMA_PLANKS.get()));
+		this.signs(CRBlocks.LUCUMA_SIGNS, CRBlocks.LUCUMA_PLANKS);
+		this.hangingSignBlocks(CRBlocks.STRIPPED_LUCUMA_LOG, CRBlocks.LUCUMA_HANGING_SIGNS);
+
+		// Roe
 		this.roeBlock(CRBlocks.PLATINUM_BASS_ROE.get());
 		this.roeBlock(CRBlocks.TIGER_PRAWN_ROE.get());
 	}
 
-	public void crateBlock(Block block, String cropName, boolean customBottom) {
+	private void stairs(RegistryObject<Block> stairs, ResourceLocation texture) {
+		this.stairsBlock((StairBlock) stairs.get(), texture);
+	}
+
+	private void slab(RegistryObject<Block> slab, ResourceLocation texture) {
+		this.slabBlock((SlabBlock) slab.get(), texture, texture);
+	}
+
+	private void wall(RegistryObject<Block> wall, ResourceLocation texture) {
+		this.wallBlock((WallBlock) wall.get(), texture);
+	}
+
+	private void wood(RegistryObject<Block> log, ResourceLocation texture) {
+		this.axisBlock((RotatedPillarBlock) log.get(), texture, texture);
+	}
+
+	private void pillar(RegistryObject<Block> pillar) {
+		this.axisBlock((RotatedPillarBlock) pillar.get(), this.blockTexture(pillar.get()), this.modLoc("block/" + Util.name(pillar) + "_top"));
+	}
+
+	private void fence(RegistryObject<Block> fence, ResourceLocation texture) {
+		this.fenceBlock((FenceBlock) fence.get(), texture);
+	}
+
+	private void fenceGate(RegistryObject<Block> gate, ResourceLocation texture) {
+		this.fenceGateBlock((FenceGateBlock) gate.get(), texture);
+	}
+
+	private void door(RegistryObject<Block> door) {
+		String name = Util.name(door);
+		this.doorBlock((DoorBlock) door.get(), name.replace("_door", ""), this.modLoc("block/" + name + "_bottom"), this.modLoc("block/" + name + "_top"));
+	}
+
+	private void doorCutout(RegistryObject<Block> door) {
+		String name = Util.name(door);
+		this.doorBlockWithRenderType((DoorBlock) door.get(), name.replace("_door", ""), this.modLoc("block/" + name + "_bottom"), this.modLoc("block/" + name + "_top"), "cutout");
+	}
+
+	private void trapdoor(RegistryObject<Block> trapdoor) {
+		this.trapdoorBlock((TrapDoorBlock) trapdoor.get(), this.blockTexture(trapdoor.get()), true);
+	}
+
+	private void trapdoorCutout(RegistryObject<Block> trapdoor) {
+		this.trapdoorBlockWithRenderType((TrapDoorBlock) trapdoor.get(), this.blockTexture(trapdoor.get()), true, "cutout");
+	}
+
+	private void pressurePlate(RegistryObject<Block> pressurePlate, ResourceLocation texture) {
+		this.pressurePlateBlock((PressurePlateBlock) pressurePlate.get(), texture);
+	}
+
+	private void button(RegistryObject<Block> button, ResourceLocation texture) {
+		this.buttonBlock((ButtonBlock) button.get(), texture);
+	}
+
+	private void signs(Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> signs, Supplier<Block> planks) {
+		this.signBlock(signs.getFirst().get(), signs.getSecond().get(), this.blockTexture(planks.get()));
+	}
+
+	private void crateBlock(Block block, String cropName, boolean customBottom) {
 		this.simpleBlock(block, models().cubeBottomTop(
 			Util.name(block),
 			resourceBlock(cropName + "_crate_side"),
@@ -165,7 +238,7 @@ public class CRBlockStateProvider extends BlockStateProvider {
 
 	private void cross(Block block) {
 		this.simpleBlock(block, models().cross("block/" + Util.name(block),
-			CRBlockStateProvider.resourceBlock(Util.name(block))).renderType("cutout"));
+			CRBlockModelProvider.resourceBlock(Util.name(block))).renderType("cutout"));
 	}
 	// Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.20/src/main/java/vectorwing/farmersdelight/data/BlockStates.java
 	public void customStageBlock(Block block, @Nullable ResourceLocation parent, String textureKey, IntegerProperty ageProperty, List<Integer> suffixes, Property<?>... ignored) {
@@ -285,5 +358,14 @@ public class CRBlockStateProvider extends BlockStateProvider {
 				.renderType("translucent")
 			).build();
 		});
+	}
+
+	public static ResourceLocation resourceBlock(String path) {
+		return Util.cr("block/" + path);
+	}
+
+	// Adapted from: https://github.com/vectorwing/FarmersDelight/blob/1.19/src/main/java/vectorwing/farmersdelight/data/BlockStates.java
+	public static ResourceLocation vanillaBlock(String path) {
+		return Modid.MC.rl("block/" + path);
 	}
 }

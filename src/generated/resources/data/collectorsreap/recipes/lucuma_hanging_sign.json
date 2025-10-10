@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_hanging_sign"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "hanging_sign",
+        "key": {
+          "#": {
+            "item": "collectorsreap:stripped_lucuma_log"
+          },
+          "X": {
+            "item": "minecraft:chain"
+          }
+        },
+        "pattern": [
+          "X X",
+          "###",
+          "###"
+        ],
+        "result": {
+          "count": 6,
+          "item": "collectorsreap:lucuma_hanging_sign"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

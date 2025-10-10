@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "collectorsreap:block/lucuma_slab"
+    },
+    "type=double": {
+      "model": "collectorsreap:block/lucuma_planks"
+    },
+    "type=top": {
+      "model": "collectorsreap:block/lucuma_slab_top"
+    }
+  }
+}

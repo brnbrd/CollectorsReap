@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.common;
 
 import net.brdle.collectorsreap.Util;
+import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.effect.CorrosionEffect;
@@ -53,9 +54,9 @@ public class ForgeEvents {
 	@SubscribeEvent
 	public void onWanderingTrader(WandererTradesEvent e) {
 		final List<VillagerTrades.ItemListing> trades = e.getGenericTrades();
-		if (Util.enabled(CRItems.PORTOBELLO)) {
+		if (Util.enabled(CRBlocks.PORTOBELLO)) {
 			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.BROWN_MUSHROOM, 4),
-				Util.getStack(CRItems.PORTOBELLO), 10, 1, 1));
+				Util.getStack(CRBlocks.PORTOBELLO), 10, 1, 1));
 		}
 		if (Util.enabled(CRItems.LIME) && Util.enabled(CRItems.LIME_SEEDS)) {
 			trades.add((ent, r) -> new MerchantOffer(new ItemStack(Items.EMERALD, 1),

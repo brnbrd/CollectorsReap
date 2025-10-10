@@ -53,7 +53,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("fluid_type." + CollectorsReap.MODID + ".rose_moon_type", "Rosé Moon");
 		add("fluid_type." + CollectorsReap.MODID + ".reanimators_garden_type", "Reanimator's Garden");
 		add("tooltip.requires_modid", "Requires modid:");
-		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PORTOBELLO), "Portobellos can be rarely found in meadows.");
+		add("desc." + CollectorsReap.MODID + "." + Util.name(CRBlocks.PORTOBELLO), "Portobellos can be rarely found in meadows.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Limes can be found as a wild bush in flower forests.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME) + ".pollination", "A flowering Lime Bush will grow fruit when pollinated by a Bee.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE), "Pomegranates can be found as a wild bush in warped forests.");
@@ -175,9 +175,30 @@ public class CRLanguageProvider extends LanguageProvider {
 		addBlock(CRBlocks.URCHIN_TEST_TILE_WALL, "Urchin Test Tile Wall");
 		addBlock(CRBlocks.PLATINUM_BASS_ROE, "Platinum Bass Roe");
 		addBlock(CRBlocks.TIGER_PRAWN_ROE, "Tiger Prawn Roe");
+
+		// Lucuma woodset
+		addBlock(CRBlocks.LUCUMA_LOG, "Lucuma Log");
+		addBlock(CRBlocks.LUCUMA_WOOD, "Lucuma Wood");
+		addBlock(CRBlocks.STRIPPED_LUCUMA_LOG, "Stripped Lucuma Log");
+		addBlock(CRBlocks.STRIPPED_LUCUMA_WOOD, "Stripped Lucuma Wood");
+		addBlock(CRBlocks.LUCUMA_PLANKS, "Lucuma Planks");
+		addBlock(CRBlocks.LUCUMA_STAIRS, "Lucuma Stairs");
+		addBlock(CRBlocks.LUCUMA_SLAB, "Lucuma Slab");
+		addBlock(CRBlocks.LUCUMA_FENCE, "Lucuma Fence");
+		addBlock(CRBlocks.LUCUMA_FENCE_GATE, "Lucuma Fence Gate");
+		addBlock(CRBlocks.LUCUMA_DOOR, "Lucuma Door");
+		addBlock(CRBlocks.LUCUMA_TRAPDOOR, "Lucuma Trapdoor");
+		addBlock(CRBlocks.LUCUMA_PRESSURE_PLATE, "Lucuma Pressure Plate");
+		addBlock(CRBlocks.LUCUMA_BUTTON, "Lucuma Button");
+		addBlock(CRBlocks.LUCUMA_SIGN, "Lucuma Sign");
+		addBlock(CRBlocks.LUCUMA_HANGING_SIGN, "Lucuma Hanging Sign");
 	}
 
 	private void addItems() {
+		// Lucuma wood
+		addItem(CRItems.LUCUMA_BOAT, "Lucuma Boat");
+		addItem(CRItems.LUCUMA_CHEST_BOAT, "Lucuma Boat with Chest");
+
 		addItem(CRItems.BAKED_PORTOBELLO_CAP, "Baked Portobello Cap");
 		addItem(CRItems.STUFFED_PORTOBELLO_CAP, "Stuffed Portobello");
 		addItem(CRItems.PORTOBELLO_BURGER, "Portoburger");

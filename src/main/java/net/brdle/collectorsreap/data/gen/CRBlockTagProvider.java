@@ -26,7 +26,53 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 
 	@Override
 	public void addTags(HolderLookup.@NotNull Provider provider) {
+		// Collector's Reap
+		this.tag(CRBlockTags.PORTOBELLO_SPAWNABLE_ON)
+			.addTag(ModTags.MUSHROOM_COLONY_GROWABLE_ON)
+			.addTag(BlockTags.MUSHROOM_GROW_BLOCK)
+			.addTag(BlockTags.DIRT);
+		this.tag(CRBlockTags.DRAGON_FRUIT_SPAWNABLE_ON)
+			.addTag(Tags.Blocks.SAND_RED);
+		this.tag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
+			.addOptional(Util.rl("mynethersdelight", "resurgent_soil"))
+			.addOptional(Util.rl("mynethersdelight", "resurgent_soil_farmland"));
+		this.tag(CRBlockTags.POMEGRANATE_FAST_ON)
+			.addTag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
+			.addTag(BlockTags.NYLIUM)
+			.addOptionalTag(Util.rl("nethersdelight", "rich_soul_soil"));
+		this.tag(CRBlockTags.CRAB_SPAWNABLE_ON)
+			.addTag(BlockTags.SAND)
+			.addTag(Tags.Blocks.GRAVEL)
+			.add(Blocks.WATER)
+			.add(Blocks.CLAY)
+			.addOptionalTag(Util.rl("quark", "crab_spawnable"))
+			.addOptionalTag(Util.rl("crabbersdelight", "crab_spawn_on"));
+		this.tag(CRBlockTags.LUCUMA_LOGS)
+			.add(CRBlocks.LUCUMA_LOG.get())
+			.add(CRBlocks.LUCUMA_WOOD.get())
+			.add(CRBlocks.STRIPPED_LUCUMA_LOG.get())
+			.add(CRBlocks.STRIPPED_LUCUMA_WOOD.get());
+
 		// Minecraft
+		CRBlocks.HELPER.getDeferredRegister().getEntries()
+			.stream()
+			.map(RegistryObject::get)
+			.filter(b -> b instanceof EffectCandleCakeBlock)
+			.forEach(b -> this.tag(BlockTags.CANDLE_CAKES).add(b));
+		this.tag(BlockTags.LOGS_THAT_BURN).addTag(CRBlockTags.LUCUMA_LOGS);
+		this.tag(BlockTags.PLANKS).add(CRBlocks.LUCUMA_PLANKS.get());
+		this.tag(BlockTags.WOODEN_STAIRS).add(CRBlocks.LUCUMA_STAIRS.get());
+		this.tag(BlockTags.WOODEN_SLABS).add(CRBlocks.LUCUMA_SLAB.get());
+		this.tag(BlockTags.WOODEN_FENCES).add(CRBlocks.LUCUMA_FENCE.get());
+		this.tag(BlockTags.FENCE_GATES).add(CRBlocks.LUCUMA_FENCE_GATE.get());
+		this.tag(BlockTags.WOODEN_DOORS).add(CRBlocks.LUCUMA_DOOR.get());
+		this.tag(BlockTags.WOODEN_TRAPDOORS).add(CRBlocks.LUCUMA_TRAPDOOR.get());
+		this.tag(BlockTags.WOODEN_PRESSURE_PLATES).add(CRBlocks.LUCUMA_PRESSURE_PLATE.get());
+		this.tag(BlockTags.WOODEN_BUTTONS).add(CRBlocks.LUCUMA_BUTTON.get());
+		this.tag(BlockTags.STANDING_SIGNS).add(CRBlocks.LUCUMA_SIGN.get());
+		this.tag(BlockTags.WALL_SIGNS).add(CRBlocks.LUCUMA_WALL_SIGN.get());
+		this.tag(BlockTags.CEILING_HANGING_SIGNS).add(CRBlocks.LUCUMA_HANGING_SIGN.get());
+		this.tag(BlockTags.WALL_HANGING_SIGNS).add(CRBlocks.LUCUMA_WALL_HANGING_SIGN.get());
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(CRBlocks.LIME_ICE_CREAM_BLOCK.get())
 			.add(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get())
@@ -47,11 +93,6 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.BEE_GROWABLES)
 			.add(CRBlocks.LIME_BUSH.get())
 			.add(CRBlocks.POMEGRANATE_BUSH.get());
-		CRBlocks.BLOCKS.getEntries()
-			.stream()
-			.map(RegistryObject::get)
-			.filter(b -> b instanceof EffectCandleCakeBlock)
-			.forEach(b -> this.tag(BlockTags.CANDLE_CAKES).add(b));
 		this.tag(BlockTags.WALLS)
 			.add(CRBlocks.URCHIN_TEST_BRICK_WALL.get())
 			.add(CRBlocks.URCHIN_TEST_TILE_WALL.get());
@@ -68,6 +109,7 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.LUCUMA_MILKSHAKE_CAULDRON.get());
 
 		// Forge
+		this.tag(Tags.Blocks.FENCE_GATES_WOODEN).add(CRBlocks.LUCUMA_FENCE_GATE.get());
 		this.tag(CRBlockTags.STORAGE_BLOCKS_LIME).add(CRBlocks.LIME_CRATE.get());
 		this.tag(CRBlockTags.STORAGE_BLOCKS_POMEGRANATE).add(CRBlocks.POMEGRANATE_CRATE.get());
 		this.tag(CRBlockTags.STORAGE_BLOCKS_STYGIAN_POMEGRANATE).add(CRBlocks.STYGIAN_POMEGRANATE_CRATE.get());
@@ -99,28 +141,6 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.DRAGON_BUSH.get());
 		this.tag(BlockTags.SMALL_FLOWERS)
 			.add(CRBlocks.DRAGON_BUSH.get());
-
-		// Collector's Reap
-		this.tag(CRBlockTags.PORTOBELLO_SPAWNABLE_ON)
-			.addTag(ModTags.MUSHROOM_COLONY_GROWABLE_ON)
-			.addTag(BlockTags.MUSHROOM_GROW_BLOCK)
-			.addTag(BlockTags.DIRT);
-		this.tag(CRBlockTags.DRAGON_FRUIT_SPAWNABLE_ON)
-			.addTag(Tags.Blocks.SAND_RED);
-		this.tag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
-			.addOptional(Util.rl("mynethersdelight", "resurgent_soil"))
-			.addOptional(Util.rl("mynethersdelight", "resurgent_soil_farmland"));
-		this.tag(CRBlockTags.POMEGRANATE_FAST_ON)
-			.addTag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
-			.addTag(BlockTags.NYLIUM)
-			.addOptionalTag(Util.rl("nethersdelight", "rich_soul_soil"));
-		this.tag(CRBlockTags.CRAB_SPAWNABLE_ON)
-			.addTag(BlockTags.SAND)
-			.addTag(Tags.Blocks.GRAVEL)
-			.add(Blocks.WATER)
-			.add(Blocks.CLAY)
-			.addOptionalTag(Util.rl("quark", "crab_spawnable"))
-			.addOptionalTag(Util.rl("crabbersdelight", "crab_spawn_on"));
 
 		// Serene Seasons
 		this.tag(CRBlockTags.WINTER_CROPS);

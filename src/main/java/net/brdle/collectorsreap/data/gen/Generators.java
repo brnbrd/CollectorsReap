@@ -32,7 +32,7 @@ public class Generators {
 		gen.addProvider(e.includeServer(), new CRLootModifierProvider(output, lookup));
 		gen.addProvider(e.includeServer(), new CRTrimMaterialTagProvider(output, lookup, helper));
 
-		gen.addProvider(e.includeClient(), new CRBlockStateProvider(output, helper));
+		gen.addProvider(e.includeClient(), new CRBlockModelProvider(output, helper));
 		gen.addProvider(e.includeClient(), new CRItemModelProvider(output, helper));
 		gen.addProvider(e.includeClient(), new CRLanguageProvider(output));
 		gen.addProvider(e.includeClient(), new CRSpriteSourceProvider(output, helper));

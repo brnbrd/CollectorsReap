@@ -1,13 +1,15 @@
-// 1.20.1	2025-10-08T12:43:53.1948317	Tags for minecraft:block mod id collectorsreap
+// 1.20.1	2025-10-09T19:20:22.4966701	Tags for minecraft:block mod id collectorsreap
 748e9338cb0e08e973af854da7e0a45c328db6fb data/autumnity/tags/blocks/snail_snacks.json
 6882be46df6274c3fa9ba4a4e7066427971a7fbd data/collectorsreap/tags/blocks/crab_spawnable_on.json
 7409da363d8a2741acbaedecf30696d4dee91e74 data/collectorsreap/tags/blocks/dragon_fruit_spawnable_on.json
+b03d8cb10dcb861b22c4da8fb09000c3d4f57326 data/collectorsreap/tags/blocks/lucuma_logs.json
 9fcca766e6223fb4dff1774d187235e66cf1ee7b data/collectorsreap/tags/blocks/pomegranate_fast_on.json
 81f77b55ede172828c1b1873033383b57422cdae data/collectorsreap/tags/blocks/portobello_spawnable_on.json
 5898b82e583c66fafc7071dd14bfad31dad04c54 data/collectorsreap/tags/blocks/stygian_pomegranate_growable_on.json
 87063e8a36abef5e203f8b6dc7f619b2d11fa5a4 data/farmersdelight/tags/blocks/compost_activators.json
 9ed15064ba35571c5cb978c62acf2534c5a3ab3d data/farmersdelight/tags/blocks/unaffected_by_rich_soil.json
 e8c935b46f78b33b0caa4da2d5ff093a9b7ec404 data/farmersdelight/tags/blocks/wild_crops.json
+831bb76b8eb6ca0f2c1d9b3f106841ebde883bd6 data/forge/tags/blocks/fence_gates/wooden.json
 e34ac5202557dd98a2a5080b0dd2bf6b79da148c data/forge/tags/blocks/mineable/knife.json
 ffc4d6613aec2812a2eb7fa543ca3bf4b304e804 data/forge/tags/blocks/storage_blocks.json
 215b914502d58ad5ca287373644de3f9d7c41209 data/forge/tags/blocks/storage_blocks/gilded_lucuma.json
@@ -22,14 +24,28 @@ d0e52aa664da2138270cd6f187d0c44f29bc457c data/forge/tags/blocks/storage_blocks/s
 4d87b4a393ab3838dcb58ed62a1b411ef7830dca data/minecraft/tags/blocks/bee_growables.json
 c9caafed174098f301a02e499cc49b458d7093fa data/minecraft/tags/blocks/candle_cakes.json
 fd7d0679938efd59fde2efa2819d36840aa9c443 data/minecraft/tags/blocks/cauldrons.json
+4b4050d8bc6c60abf24e6ea99d122fe41c8b0226 data/minecraft/tags/blocks/ceiling_hanging_signs.json
 d47ee2c8558e15c6fa63f25275751a6eed344391 data/minecraft/tags/blocks/climbable.json
 5bedf6721e38c36207a00c4160303e6d1a24227c data/minecraft/tags/blocks/crops.json
+831bb76b8eb6ca0f2c1d9b3f106841ebde883bd6 data/minecraft/tags/blocks/fence_gates.json
+d957b603af4233478e7339a932baa5d230fb976c data/minecraft/tags/blocks/logs_that_burn.json
 8d73c81d8d03804fc4a57038ea29948d77ff4573 data/minecraft/tags/blocks/mineable/axe.json
 7670d29f71e354c58816462ed2e7e4faaae62876 data/minecraft/tags/blocks/mineable/shovel.json
+e954d696fbb72b6c8652de4b1f17413cb6314716 data/minecraft/tags/blocks/planks.json
 461e5b7194fed599f65c8db456e0e887d9bf8e06 data/minecraft/tags/blocks/slabs.json
 e8c935b46f78b33b0caa4da2d5ff093a9b7ec404 data/minecraft/tags/blocks/small_flowers.json
 9c66ee8eeb0c17ffabd4bed3839f9fead6387d5b data/minecraft/tags/blocks/stairs.json
+9c2cbbc4cf7677645f6ab4787ce5da5e739167d1 data/minecraft/tags/blocks/standing_signs.json
 7d41522df67a59e91f4c46fc5b09bdd8baf8eff7 data/minecraft/tags/blocks/walls.json
+70f4e7ee2ab23d93237575ad138f27391b6ef217 data/minecraft/tags/blocks/wall_hanging_signs.json
+1de8a73433f2805c70bcefe65917bed421267000 data/minecraft/tags/blocks/wall_signs.json
+d16d1088f3602be8afed869bb91aff3db239c6e1 data/minecraft/tags/blocks/wooden_buttons.json
+64444de943204e73ddba0d4377fe3213490673b6 data/minecraft/tags/blocks/wooden_doors.json
+4dc4bdea77b53c39d6082ca37d4e9cdb8d690c95 data/minecraft/tags/blocks/wooden_fences.json
+6fad69ed7699c038cdb9b3795d97071539e37897 data/minecraft/tags/blocks/wooden_pressure_plates.json
+fdd5792c14637ed66ed0f8feac1c8a42217df3fb data/minecraft/tags/blocks/wooden_slabs.json
+2daacdd1f9497e047cd1d23dcb854cf6a538b95a data/minecraft/tags/blocks/wooden_stairs.json
+28c25b1121fb0e782c08f8a6dc3611ec215a27a1 data/minecraft/tags/blocks/wooden_trapdoors.json
 4d87b4a393ab3838dcb58ed62a1b411ef7830dca data/mynethersdelight/tags/blocks/not_propagate_plant.json
 87063e8a36abef5e203f8b6dc7f619b2d11fa5a4 data/mynethersdelight/tags/blocks/showcase_activators.json
 212c589c462de73ce283579a075f0a9e808e6810 data/sereneseasons/tags/blocks/autumn_crops.json
