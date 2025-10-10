@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-09T19:27:01.3686589	Item Models: collectorsreap
+// 1.20.1	2025-10-10T07:33:30.6624849	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -54,6 +54,7 @@ d38fe28806758cf25f86c122eafa764677f1f721 assets/collectorsreap/models/item/green
 98baf3ea1e6ca61695c353903970f4d9c2decab7 assets/collectorsreap/models/item/hermits_sour.json
 2192f4d9d4bea2b407f39f945a85e6dc973c0760 assets/collectorsreap/models/item/honey_lime_chicken.json
 e8d5b9be9760a736d6d53265db81ef2e0995c6d8 assets/collectorsreap/models/item/land_and_sea_burger.json
+be381d1774c76d49c3fa406e78071bc2d997e9fb assets/collectorsreap/models/item/large_lucuma_boat.json
 46f7f63c581b8219a5925ac32cc6d8bb9b958787 assets/collectorsreap/models/item/lime.json
 278ce3eee5d016f7d5bb41cd27845360968b9ed5 assets/collectorsreap/models/item/limeade.json
 ef7819ef790fbc0feb9e144c7e6692070401b53f assets/collectorsreap/models/item/lime_cake.json
@@ -81,6 +82,7 @@ fa94301a6c4c7d8bdc818fa1325bcd41aca48ce2 assets/collectorsreap/models/item/lucum
 34196b22a610a582a0f09e3fc651ea02ea6d7b67 assets/collectorsreap/models/item/lucuma_door.json
 4b64ce05485893ce496bec32ddcd90877410556e assets/collectorsreap/models/item/lucuma_fence.json
 2e38e78aae61ba13926734b3f0a7c4cfdc9b6e07 assets/collectorsreap/models/item/lucuma_fence_gate.json
+e592a7617a954e3ec4d3aee6c676dcaebe537e40 assets/collectorsreap/models/item/lucuma_furnace_boat.json
 7e734f60bc6e9676f4b5a0ca7408ff618c797e93 assets/collectorsreap/models/item/lucuma_gazpacho.json
 7e1a1711df8a606b8054bbc909bebdcdc1b0f84c assets/collectorsreap/models/item/lucuma_gummy.json
 2ff37e874017f9998b313248862c08876c8b3ac3 assets/collectorsreap/models/item/lucuma_hanging_sign.json

@@ -14,8 +14,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
 public class CRItemModelProvider extends BlueprintItemModelProvider {
-	public CRItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-		super(output, CollectorsReap.MODID, existingFileHelper);
+	public CRItemModelProvider(final PackOutput output, final ExistingFileHelper helper) {
+		super(output, CollectorsReap.MODID, helper);
 	}
 
 	@Override
@@ -46,6 +46,8 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRBlocks.LUCUMA_HANGING_SIGN);
 		this.generatedItem(CRItems.LUCUMA_BOAT);
 		this.generatedItem(CRItems.LUCUMA_CHEST_BOAT);
+		this.generatedItem(CRItems.LUCUMA_FURNACE_BOAT);
+		this.generatedItem(CRItems.LARGE_LUCUMA_BOAT);
 
 		// Urchin Test
 		this.blockItem(CRBlocks.URCHIN_TEST_BLOCK);

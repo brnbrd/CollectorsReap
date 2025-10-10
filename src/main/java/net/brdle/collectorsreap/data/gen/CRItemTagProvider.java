@@ -117,6 +117,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.ROE_FISH)
 			.addTag(CRItemTags.ROE_PRAWN);
 
+		// Boatload
+		this.tag(Modid.BL.it("furnace_boats")).add(CRItems.LUCUMA_FURNACE_BOAT.get());
+		this.tag(Modid.BL.it("large_boats")).add(CRItems.LARGE_LUCUMA_BOAT.get());
+
 		// Stardew Fishing
 		this.tag(Modid.SF.it("starts_minigame"))
 			.add(CRItems.TIGER_PRAWN.get());

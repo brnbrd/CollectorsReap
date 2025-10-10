@@ -1,11 +1,14 @@
 package net.brdle.collectorsreap.data.gen;
 
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
+import com.teamabnormals.boatload.core.data.server.BoatloadRecipeProvider;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.compat.Modid;
+import net.brdle.collectorsreap.compat.abnormals.CRBoatTypes;
 import net.brdle.collectorsreap.data.CRBlockTags;
 import net.brdle.collectorsreap.data.CRItemTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -1169,20 +1172,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.showNotification(true)
 			.group("hanging_sign"),
 			"lucuma_hanging_sign", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_HANGING_SIGN));
-		wrap(shaped(RecipeCategory.MISC, CRItems.LUCUMA_BOAT.get(), 1)
-			.pattern("# #")
-			.pattern("###")
-			.define('#', CRBlocks.LUCUMA_PLANKS.get())
-			.unlockedBy("has_lucuma_planks", has(CRBlocks.LUCUMA_PLANKS.get()))
-			.showNotification(true)
-			.group("boat"),
-			"lucuma_boat", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_BOAT));
-		wrap(shapeless(RecipeCategory.MISC, CRItems.LUCUMA_CHEST_BOAT.get(), 1)
-			.requires(Tags.Items.CHESTS_WOODEN)
-			.requires(CRItems.LUCUMA_BOAT.get())
-			.unlockedBy("has_lucuma_boat", has(CRItems.LUCUMA_BOAT.get()))
-			.group("chest_boat"),
-			"lucuma_chest_boat", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_CHEST_BOAT));
+		BoatloadRecipeProvider.boatRecipes(finished, CRBoatTypes.LUCUMA);
 	}
 
 	private InventoryChangeTrigger.TriggerInstance has(ItemLike... items) {

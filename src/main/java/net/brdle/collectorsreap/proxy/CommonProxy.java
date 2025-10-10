@@ -4,11 +4,9 @@ import net.brdle.collectorsreap.common.CRParticleTypes;
 import net.brdle.collectorsreap.common.CRSoundEvents;
 import net.brdle.collectorsreap.common.ForgeEvents;
 import net.brdle.collectorsreap.common.ModEvents;
-import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.fluid.CRFluids;
-import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.common.loot.CRLootItemConditions;
 import net.brdle.collectorsreap.common.loot.CRLootModifiers;
 import net.brdle.collectorsreap.common.world.CRFeatures;
@@ -17,7 +15,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 public class CommonProxy {
-
 	public void start() {
 		final var modBus = FMLJavaModLoadingContext.get().getModEventBus();
 		final var forgeBus = MinecraftForge.EVENT_BUS;

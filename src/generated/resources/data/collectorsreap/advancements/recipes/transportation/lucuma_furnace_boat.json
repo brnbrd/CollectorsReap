@@ -4,13 +4,11 @@
       "advancement": {
         "parent": "minecraft:recipes/root",
         "criteria": {
-          "has_lucuma_planks": {
+          "has_boat": {
             "conditions": {
               "items": [
                 {
-                  "items": [
-                    "collectorsreap:lucuma_planks"
-                  ]
+                  "tag": "minecraft:boats"
                 }
               ]
             },
@@ -18,37 +16,28 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:lucuma_boat"
+              "recipe": "collectorsreap:lucuma_furnace_boat"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
         },
         "requirements": [
           [
-            "has_lucuma_planks",
+            "has_boat",
             "has_the_recipe"
           ]
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:lucuma_boat"
+            "collectorsreap:lucuma_furnace_boat"
           ]
         },
         "sends_telemetry_event": false
       },
       "conditions": [
         {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "collectorsreap:enabled",
-              "value": "lucuma"
-            },
-            {
-              "type": "collectorsreap:enabled",
-              "value": "lucuma_boat"
-            }
-          ]
+          "type": "forge:mod_loaded",
+          "modid": "boatload"
         }
       ]
     }

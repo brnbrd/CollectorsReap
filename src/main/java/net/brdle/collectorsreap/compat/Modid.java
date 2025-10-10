@@ -35,6 +35,7 @@ public enum Modid {
 	BB("buzzier_bees"),
 	BC("brewinandchewin"),
 	BG("berry_good"),
+	BL("boatload"),
 	BOP("biomesoplenty"),
 	BTA("botania"),
 	BWG("biomeswevegone"),

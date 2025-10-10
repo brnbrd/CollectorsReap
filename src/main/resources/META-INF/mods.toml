@@ -48,6 +48,13 @@ configBackground="collectorsreap:textures/block/urchin_test_bricks.png"
 	side="BOTH"
 
 [[dependencies.collectorsreap]]
+	modId="boatload"
+	mandatory=false
+	versionRange="[5.0.1,)"
+	ordering="AFTER"
+	side="BOTH"
+
+[[dependencies.collectorsreap]]
 	modId="buzzier_bees"
 	mandatory=false
 	versionRange="[6.0.1,)"

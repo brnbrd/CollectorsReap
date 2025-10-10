@@ -256,14 +256,12 @@ public class CRBlocks {
 	}
 
 	public static class Properties {
-		// Block Set
 		public static final BlockSetType LUCUMA_BLOCK_SET = BlockSetTypeRegistryHelper.register(new BlockSetType(CollectorsReap.MODID + ":lucuma"));
 
-		// Wood Type
 		public static final WoodType LUCUMA_WOOD_TYPE = WoodTypeRegistryHelper.registerWoodType(new WoodType(CollectorsReap.MODID + ":lucuma", LUCUMA_BLOCK_SET));
-		public static final PropertyUtil.WoodSetProperties LUCUMA = PropertyUtil.WoodSetProperties.builder(MapColor.COLOR_BROWN).build();
 
-		// Block Properties
+		public static final PropertyUtil.WoodSetProperties LUCUMA = PropertyUtil.WoodSetProperties.builder(MapColor.TERRACOTTA_BROWN, MapColor.WOOD).build();
+
 		public static final BlockBehaviour.Properties URCHIN_TEST = BlockBehaviour.Properties.of().sound(SoundType.GILDED_BLACKSTONE).mapColor(MapColor.TERRACOTTA_WHITE);
 	}
 }

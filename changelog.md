@@ -17,6 +17,8 @@
 - Added Lucuma Cake
 - Added Lucuma Ice Cream, Block, and Milkshake (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
 - Added Sunny Ice Cream (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
+- Added Lucuma woodset
+- Added Lucuma Boat with Furnace and Large Lucuma Boat (for [Boatload](https://www.curseforge.com/minecraft/mc-mods/boatload))
 - Lunar Pearls can now be found in shipwreck and buried treasure chests
 - Strawberry Jam Bun now provides 8 nutrition and Instant Health
   - Can now be crafted using Strawberry Jam from [Smidgeon o' Bliss REMASTERED](https://www.curseforge.com/minecraft/mc-mods/smidgeon-o-bliss-remastered)

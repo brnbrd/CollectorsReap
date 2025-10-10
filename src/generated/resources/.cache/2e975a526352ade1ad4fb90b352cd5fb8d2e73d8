@@ -1,9 +1,11 @@
-// 1.20.1	2025-10-09T19:27:01.3675074	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2025-10-10T07:33:30.6598808	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
 a740abeb613a7024a35910efe912a50a6ee62045 data/atmospheric/tags/items/yucca_fruit.json
 748e9338cb0e08e973af854da7e0a45c328db6fb data/autumnity/tags/items/snail_snacks.json
+6aeabc7f523f01d2098de9e65930c2a0f2abb8a1 data/boatload/tags/items/furnace_boats.json
+e3edfcb720e67c84c4e132e9ea67d4231d56beda data/boatload/tags/items/large_boats.json
 d50b079e648b866cfdbbc59feeeec814ec391a64 data/brewinandchewin/tags/items/fermented_drinks.json
 bc152e3055d651ccdad9d17d1bffdbb9ebde35b5 data/collectorsreap/tags/items/chieftain_crab_food.json
 e0f1081b33dba4a0923dc182be2af337db73c5bb data/collectorsreap/tags/items/dart_shooters.json

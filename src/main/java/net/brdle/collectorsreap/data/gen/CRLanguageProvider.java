@@ -198,6 +198,8 @@ public class CRLanguageProvider extends LanguageProvider {
 		// Lucuma wood
 		addItem(CRItems.LUCUMA_BOAT, "Lucuma Boat");
 		addItem(CRItems.LUCUMA_CHEST_BOAT, "Lucuma Boat with Chest");
+		addItem(CRItems.LUCUMA_FURNACE_BOAT, "Lucuma Boat with Furnace");
+		addItem(CRItems.LARGE_LUCUMA_BOAT, "Large Lucuma Boat");
 
 		addItem(CRItems.BAKED_PORTOBELLO_CAP, "Baked Portobello Cap");
 		addItem(CRItems.STUFFED_PORTOBELLO_CAP, "Stuffed Portobello");

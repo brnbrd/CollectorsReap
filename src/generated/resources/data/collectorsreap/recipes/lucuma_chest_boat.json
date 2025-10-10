@@ -1,38 +1,16 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "chest_boat",
+  "ingredients": [
     {
-      "conditions": [
-        {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "collectorsreap:enabled",
-              "value": "lucuma"
-            },
-            {
-              "type": "collectorsreap:enabled",
-              "value": "lucuma_chest_boat"
-            }
-          ]
-        }
-      ],
-      "recipe": {
-        "type": "minecraft:crafting_shapeless",
-        "category": "misc",
-        "group": "chest_boat",
-        "ingredients": [
-          {
-            "tag": "forge:chests/wooden"
-          },
-          {
-            "item": "collectorsreap:lucuma_boat"
-          }
-        ],
-        "result": {
-          "item": "collectorsreap:lucuma_chest_boat"
-        }
-      }
+      "tag": "forge:chests/wooden"
+    },
+    {
+      "item": "collectorsreap:lucuma_boat"
     }
-  ]
+  ],
+  "result": {
+    "item": "collectorsreap:lucuma_chest_boat"
+  }
 }
