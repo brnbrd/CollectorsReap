@@ -36,6 +36,10 @@ public class CRLanguageProvider extends LanguageProvider {
 	}
 
 	private void addText() {
+		add("tooltip.disabled", "Disabled");
+		add("tooltip.requires_empty_tag", "Requires empty tag:");
+		add("tooltip.requires_tag", "Requires tag:");
+		add("tooltip.requires_modid", "Requires modid:");
 		add(FarmersDelight.MODID + ".tooltip.stygian_pomegranate", "Explosive");
 		add(FarmersDelight.MODID + ".tooltip.melon_gummy", "Minor Instant Health");
 		add(FarmersDelight.MODID + ".tooltip.strawberry_gummy", "Instant Health");
@@ -52,7 +56,6 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("fluid_type." + CollectorsReap.MODID + ".hermits_sour_type", "Hermit's Sour");
 		add("fluid_type." + CollectorsReap.MODID + ".rose_moon_type", "Rosé Moon");
 		add("fluid_type." + CollectorsReap.MODID + ".reanimators_garden_type", "Reanimator's Garden");
-		add("tooltip.requires_modid", "Requires modid:");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRBlocks.PORTOBELLO), "Portobellos can be rarely found in meadows.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Limes can be found as a wild bush in flower forests.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME) + ".pollination", "A flowering Lime Bush will grow fruit when pollinated by a Bee.");

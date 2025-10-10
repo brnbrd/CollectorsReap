@@ -315,6 +315,9 @@
   "item.collectorsreap.vanilla_gummy": "香草软糖",
   "item.collectorsreap.yellow_tea_gummy": "黄茶软糖",
   "item.collectorsreap.yucca_gummy": "丝兰果软糖",
+  "tooltip.disabled": "已禁用",
+  "tooltip.requires_empty_tag": "所需标签为空：",
   "tooltip.requires_modid": "需安装模组：",
+  "tooltip.requires_tag": "需要包含此标签的物品：",
   "trim_material.collectorsreap.pearl": "珍珠质"
 }

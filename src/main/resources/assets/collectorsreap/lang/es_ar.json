@@ -315,6 +315,9 @@
   "item.collectorsreap.vanilla_gummy": "Gomita de vainilla",
   "item.collectorsreap.yellow_tea_gummy": "Gomita de té amarillo",
   "item.collectorsreap.yucca_gummy": "Gomita de yuca",
+  "tooltip.disabled": "Disabled",
+  "tooltip.requires_empty_tag": "Requires empty tag:",
   "tooltip.requires_modid": "Requiere el modid:",
+  "tooltip.requires_tag": "Requires tag:",
   "trim_material.collectorsreap.pearl": "Pearl Material"
 }

@@ -360,7 +360,11 @@ public class Util {
 	}
 
 	public static MutableComponent tooltip(String key) {
-		return Component.translatable("tooltip." + CollectorsReap.MODID + "." + key);
+		return Component.translatable("tooltip." + key);
+	}
+
+	public static MutableComponent crTooltip(String key) {
+		return tooltip(CollectorsReap.MODID + "." + key);
 	}
 
 	public static float roundToHalf(float x) {

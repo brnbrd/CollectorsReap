@@ -315,6 +315,9 @@
   "item.collectorsreap.vanilla_gummy": "Ванильный мармелад",
   "item.collectorsreap.yellow_tea_gummy": "Мармелад из жёлтого чая",
   "item.collectorsreap.yucca_gummy": "Мармелад из юкки",
-  "tooltip.requires_modid": "Требуется мод:",
+  "tooltip.disabled": "Отключено",
+  "tooltip.requires_empty_tag": "Требуется пустой тег:",
+  "tooltip.requires_modid": "Требуется ID мода:",
+  "tooltip.requires_tag": "Требуется не пустой тег:",
   "trim_material.collectorsreap.pearl": "Жемчужная"
 }
