@@ -200,6 +200,13 @@ public class CRLanguageProvider extends LanguageProvider {
 		addBlock(CRBlocks.LUCUMA_LEAVES, "Lucuma Leaves");
 		addBlock(CRBlocks.LUCUMA_LEAF_PILE, "Pile of Lucuma Leaves");
 		addBlock(CRBlocks.LUCUMA_CABINET, "Lucuma Cabinet");
+		addBlock(CRBlocks.LUCUMA_BEEHIVE, "Lucuma Beehive");
+		addBlock(CRBlocks.LUCUMA_LADDER, "Lucuma Ladder");
+		addBlock(CRBlocks.LUCUMA_BOOKSHELF, "Lucuma Bookshelf");
+		addBlock(CRBlocks.CHISELED_LUCUMA_BOOKSHELF, "Chiseled Lucuma Bookshelf");
+		addBlock(CRBlocks.LUCUMA_BOARDS, "Lucuma Boards");
+		addBlock(CRBlocks.LUCUMA_CHEST, "Lucuma Chest");
+		addBlock(CRBlocks.TRAPPED_LUCUMA_CHEST, "Trapped Lucuma Chest");
 	}
 
 	private void addItems() {

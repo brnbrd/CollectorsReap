@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.compat;
 
+import com.teamabnormals.blueprint.core.Blueprint;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.minecraft.resources.ResourceLocation;
@@ -38,6 +39,7 @@ public enum Modid {
 	BG("berry_good"),
 	BL("boatload"),
 	BOP("biomesoplenty"),
+	BP(Blueprint.MOD_ID),
 	BTA("botania"),
 	BWG("biomeswevegone"),
 	C("create"),

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/ladder",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "collectorsreap:block/lucuma_ladder",
+    "texture": "collectorsreap:block/lucuma_ladder"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "collectorsreap:block/chiseled_lucuma_bookshelf_slot_mid_left",
+  "textures": {
+    "texture": "collectorsreap:block/chiseled_lucuma_bookshelf_occupied"
+  }
+}

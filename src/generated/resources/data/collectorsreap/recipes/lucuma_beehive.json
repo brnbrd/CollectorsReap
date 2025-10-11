@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_beehive"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "wooden_beehive",
+        "key": {
+          "#": {
+            "item": "collectorsreap:lucuma_planks"
+          },
+          "H": {
+            "item": "minecraft:honeycomb"
+          }
+        },
+        "pattern": [
+          "###",
+          "HHH",
+          "###"
+        ],
+        "result": {
+          "item": "collectorsreap:lucuma_beehive"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

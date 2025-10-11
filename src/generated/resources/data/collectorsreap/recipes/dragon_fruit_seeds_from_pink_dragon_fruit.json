@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "pink_dragon_fruit"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pink_dragon_fruit"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "dragon_fruit_seeds"
+            }
+          ]
         }
       ],
       "recipe": {
@@ -17,7 +26,7 @@
           }
         ],
         "result": {
-          "item": "minecraft:pink_dye"
+          "item": "collectorsreap:dragon_fruit_seeds"
         }
       }
     }

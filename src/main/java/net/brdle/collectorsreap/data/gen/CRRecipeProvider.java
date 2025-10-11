@@ -76,7 +76,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			"cutting/dragon_bush", finished, enabled(CRBlocks.DRAGON_BUSH), enabled(CRItems.PINK_DRAGON_FRUIT));
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PINK_DRAGON_FRUIT.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 					CRItems.DRAGON_FRUIT_SEEDS.get(), 1)
-				.addResultWithChance(Items.PINK_DYE, 1F, 1),
+				.addResult(Items.PINK_DYE, 1),
 			"cutting/pink_dragon_fruit", finished, enabled(CRItems.PINK_DRAGON_FRUIT));
 		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
 				CRItems.LIME_PIE_SLICE.get(), 4),
@@ -354,10 +354,6 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.requires(CRItems.PINK_DRAGON_FRUIT.get(), 9)
 				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
 			"pink_dragon_fruit_crate", finished, enabled(CRItems.PINK_DRAGON_FRUIT), enabled(CRBlocks.PINK_DRAGON_FRUIT_CRATE));
-		wrap(shapeless(RecipeCategory.MISC, Items.PINK_DYE, 1)
-				.requires(CRItems.PINK_DRAGON_FRUIT.get())
-				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
-			"pink_dye_from_pink_dragon_fruit", finished, enabled(CRItems.PINK_DRAGON_FRUIT));
 		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRItems.LUCUMA.get(), 9)
 				.requires(CRBlocks.LUCUMA_CRATE.get())
 				.unlockedBy("has_lucuma_crate", has(CRBlocks.LUCUMA_CRATE.get())),
@@ -406,6 +402,10 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.requires(CRItems.POMEGRANATE_SLICE.get())
 				.unlockedBy("has_pomegranate_slice", has(CRItems.POMEGRANATE_SLICE.get())),
 			"pomegranate_seeds_from_slice", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SLICE), enabled(CRItems.POMEGRANATE_SEEDS));
+		wrap(shapeless(RecipeCategory.MISC, CRItems.DRAGON_FRUIT_SEEDS.get(), 1)
+				.requires(CRItems.PINK_DRAGON_FRUIT.get())
+				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
+			"dragon_fruit_seeds_from_pink_dragon_fruit", finished, enabled(CRItems.PINK_DRAGON_FRUIT), enabled(CRItems.DRAGON_FRUIT_SEEDS));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.TROPICAL_SHAVED_ICE.get())
 				.requires(Items.BOWL)
 				.requires(CRItemTags.FRUITS_STRAWBERRY)
@@ -1182,6 +1182,69 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.showNotification(true)
 			.group("fd_cabinet"),
 			"lucuma_cabinet", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_CABINET));
+		wrap(shaped(RecipeCategory.MISC, CRBlocks.LUCUMA_BEEHIVE.get().asItem(), 1)
+			.pattern("###")
+			.pattern("HHH")
+			.pattern("###")
+			.define('#', CRBlocks.LUCUMA_PLANKS.get())
+			.define('H', Items.HONEYCOMB)
+			.unlockedBy("has_honeycomb", has(Items.HONEYCOMB))
+			.showNotification(true)
+			.group("wooden_beehive"),
+			"lucuma_beehive", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_BEEHIVE));
+		wrap(shaped(RecipeCategory.MISC, CRBlocks.LUCUMA_LADDER.get().asItem(), 4)
+			.pattern("S S")
+			.pattern("S#S")
+			.pattern("S S")
+			.define('#', CRBlocks.LUCUMA_PLANKS.get())
+			.define('S', Tags.Items.RODS_WOODEN)
+			.unlockedBy("has_lucuma_planks", has(CRBlocks.LUCUMA_PLANKS.get()))
+			.showNotification(true)
+			.group("wooden_ladder"),
+			"lucuma_ladder", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_LADDER));
+		wrap(shaped(RecipeCategory.BUILDING_BLOCKS, CRBlocks.LUCUMA_BOOKSHELF.get().asItem(), 1)
+			.pattern("###")
+			.pattern("XXX")
+			.pattern("###")
+			.define('#', CRBlocks.LUCUMA_PLANKS.get())
+			.define('X', Items.BOOK)
+			.unlockedBy("has_lucuma_planks_and_book", has(CRBlocks.LUCUMA_PLANKS.get(), Items.BOOK))
+			.showNotification(true)
+			.group("wooden_bookshelf"),
+			"lucuma_bookshelf", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_BOOKSHELF));
+		wrap(shaped(RecipeCategory.BUILDING_BLOCKS, CRBlocks.CHISELED_LUCUMA_BOOKSHELF.get().asItem(), 1)
+			.pattern("###")
+			.pattern("XXX")
+			.pattern("###")
+			.define('#', CRBlocks.LUCUMA_PLANKS.get())
+			.define('X', CRBlocks.LUCUMA_SLAB.get())
+			.unlockedBy("has_lucuma_planks_and_slab", has(CRBlocks.LUCUMA_PLANKS.get(), CRBlocks.LUCUMA_SLAB.get()))
+			.showNotification(true)
+			.group("chiseled_wooden_bookshelf"),
+			"chiseled_lucuma_bookshelf", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.CHISELED_LUCUMA_BOOKSHELF));
+		wrap(shaped(RecipeCategory.MISC, CRBlocks.LUCUMA_BOARDS.get().asItem(), 1)
+			.pattern("#")
+			.pattern("#")
+			.define('#', CRBlocks.LUCUMA_SLAB.get())
+			.unlockedBy("has_lucuma_slab", has(CRBlocks.LUCUMA_SLAB.get()))
+			.showNotification(true)
+			.group("wooden_boards"),
+			"lucuma_boards", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_BOARDS));
+		wrap(shaped(RecipeCategory.MISC, CRBlocks.LUCUMA_CHEST.get().asItem(), 1)
+			.pattern("###")
+			.pattern("# #")
+			.pattern("###")
+			.define('#', CRBlocks.LUCUMA_PLANKS.get())
+			.unlockedBy("has_lucuma_planks", has(CRBlocks.LUCUMA_PLANKS.get()))
+			.showNotification(true)
+			.group("wooden_chest"),
+			"lucuma_chest", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_CHEST));
+		wrap(shapeless(RecipeCategory.REDSTONE, CRBlocks.TRAPPED_LUCUMA_CHEST.get(), 1)
+			.requires(CRBlocks.LUCUMA_CHEST.get())
+			.requires(Items.TRIPWIRE_HOOK)
+			.unlockedBy("has_lucuma_chest", has(CRBlocks.LUCUMA_CHEST.get()))
+			.group("wooden_trapped_chest"),
+			"trapped_lucuma_chest", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.TRAPPED_LUCUMA_CHEST));
 		BoatloadRecipeProvider.boatRecipes(finished, CRBoatTypes.LUCUMA);
 	}
 

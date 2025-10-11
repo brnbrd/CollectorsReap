@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/chiseled_bookshelf_inventory",
+  "textures": {
+    "front": "collectorsreap:block/chiseled_lucuma_bookshelf_empty",
+    "side": "collectorsreap:block/chiseled_lucuma_bookshelf_side",
+    "top": "collectorsreap:block/chiseled_lucuma_bookshelf_top"
+  }
+}

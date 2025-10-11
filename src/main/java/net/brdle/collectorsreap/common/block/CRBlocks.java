@@ -1,9 +1,9 @@
 package net.brdle.collectorsreap.common.block;
 
 import com.mojang.datafixers.util.Pair;
-import com.teamabnormals.blueprint.common.block.LeafPileBlock;
-import com.teamabnormals.blueprint.common.block.LogBlock;
-import com.teamabnormals.blueprint.common.block.WoodBlock;
+import com.teamabnormals.blueprint.common.block.*;
+import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
+import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintCeilingHangingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallHangingSignBlock;
@@ -16,6 +16,7 @@ import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.common.block.grower.LucumaTreeGrower;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.compat.Modid;
+import net.brdle.collectorsreap.compat.abnormals.ChiseledLucumaBookshelfBlock;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.cauldron.CauldronInteraction;
@@ -75,7 +76,14 @@ public class CRBlocks {
 	public static final RegistryObject<BlueprintCeilingHangingSignBlock> LUCUMA_HANGING_SIGN = LUCUMA_HANGING_SIGNS.getFirst();
 	public static final RegistryObject<BlueprintWallHangingSignBlock> LUCUMA_WALL_HANGING_SIGN = LUCUMA_HANGING_SIGNS.getSecond();
 
-	public static final RegistryObject<Block> LUCUMA_CABINET = HELPER.createBlock("lucuma_cabinet", () -> new CabinetBlock(BlockBehaviour.Properties.copy(ModBlocks.OAK_CABINET.get())));
+	public static final RegistryObject<Block> LUCUMA_CABINET = HELPER.createFuelBlock("lucuma_cabinet", () -> new CabinetBlock(BlockBehaviour.Properties.copy(ModBlocks.OAK_CABINET.get())), 300);
+	public static final RegistryObject<Block> LUCUMA_BEEHIVE = HELPER.createBlock("lucuma_beehive", () -> new BlueprintBeehiveBlock(Properties.LUCUMA.beehive()));
+	public static final RegistryObject<Block> LUCUMA_LADDER = HELPER.createFuelBlock("lucuma_ladder",() -> new LadderBlock(Properties.LUCUMA.ladder()), 300);
+	public static final RegistryObject<Block> LUCUMA_BOOKSHELF = HELPER.createFuelBlock("lucuma_bookshelf", () -> new Block(Properties.LUCUMA.bookshelf()), 300);
+	public static final RegistryObject<Block> CHISELED_LUCUMA_BOOKSHELF = HELPER.createFuelBlock("chiseled_lucuma_bookshelf", () -> new ChiseledLucumaBookshelfBlock(Properties.LUCUMA.chiseledBookshelf()), 300);
+	public static final RegistryObject<Block> LUCUMA_BOARDS = HELPER.createFuelBlock("lucuma_boards", () -> new RotatedPillarBlock(Properties.LUCUMA.planks()), 300);
+	public static final RegistryObject<BlueprintChestBlock> LUCUMA_CHEST = HELPER.createChestBlock("lucuma", Properties.LUCUMA.chest());
+	public static final RegistryObject<BlueprintTrappedChestBlock> TRAPPED_LUCUMA_CHEST = HELPER.createTrappedChestBlockNamed("lucuma", Properties.LUCUMA.chest());
 
 	public static final RegistryObject<Block> LUCUMA_LEAVES = HELPER.createBlock("lucuma_leaves", () -> new LeavesBlock(Properties.LUCUMA.leaves()));
 	public static final RegistryObject<Block> LUCUMA_LEAF_PILE = HELPER.createBlock("lucuma_leaf_pile", () -> new LeafPileBlock(Properties.LUCUMA.leafPile()));

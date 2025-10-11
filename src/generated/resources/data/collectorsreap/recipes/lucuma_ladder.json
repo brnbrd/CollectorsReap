@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_ladder"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "wooden_ladder",
+        "key": {
+          "#": {
+            "item": "collectorsreap:lucuma_planks"
+          },
+          "S": {
+            "tag": "forge:rods/wooden"
+          }
+        },
+        "pattern": [
+          "S S",
+          "S#S",
+          "S S"
+        ],
+        "result": {
+          "count": 4,
+          "item": "collectorsreap:lucuma_ladder"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

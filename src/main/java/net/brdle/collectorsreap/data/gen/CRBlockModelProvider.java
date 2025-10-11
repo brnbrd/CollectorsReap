@@ -1,8 +1,11 @@
 package net.brdle.collectorsreap.data.gen;
 
 import com.mojang.datafixers.util.Pair;
+import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
+import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
+import com.teamabnormals.blueprint.core.Blueprint;
 import com.teamabnormals.blueprint.core.data.client.BlueprintBlockStateProvider;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
@@ -10,6 +13,7 @@ import net.brdle.collectorsreap.common.block.BuddingDragonFruitBlock;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.PortobelloColonyBlock;
 import net.brdle.collectorsreap.compat.Modid;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -159,6 +163,12 @@ public class CRBlockModelProvider extends BlueprintBlockStateProvider {
 		this.leavesBlock(CRBlocks.LUCUMA_LEAVES);
 		this.leafPile(CRBlocks.LUCUMA_LEAF_PILE, this.blockTexture(CRBlocks.LUCUMA_LEAVES.get()), true);
 		this.cabinetBlock(CRBlocks.LUCUMA_CABINET.get(), "lucuma");
+		this.beehive(CRBlocks.LUCUMA_BEEHIVE);
+		this.ladder(CRBlocks.LUCUMA_LADDER);
+		this.bookshelf(CRBlocks.LUCUMA_BOOKSHELF, CRBlocks.LUCUMA_PLANKS);
+		this.chiseledBookshelfBlock(CRBlocks.CHISELED_LUCUMA_BOOKSHELF, ALTERNATE_BOOKSHELF_POSITIONS);
+		this.boards(CRBlocks.LUCUMA_BOARDS);
+		this.chests(CRBlocks.LUCUMA_CHEST, CRBlocks.TRAPPED_LUCUMA_CHEST, this.blockTexture(CRBlocks.LUCUMA_PLANKS.get()));
 
 		// Roe
 		this.roeBlock(CRBlocks.PLATINUM_BASS_ROE.get());
@@ -267,6 +277,38 @@ public class CRBlockModelProvider extends BlueprintBlockStateProvider {
 				resourceBlock(woodType + "_cabinet_front" + suffix),
 				resourceBlock(woodType + "_cabinet_top"));
 		});
+	}
+
+	private void beehive(RegistryObject<Block> beehive) {
+		String name = Util.name(beehive);
+		ModelFile model = this.models().orientable(name, this.modLoc("block/" + name + "_side"), this.modLoc("block/" + name + "_front"), this.modLoc("block/" + name + "_end"));
+		ModelFile model_honey = this.models().orientable(name + "_honey", this.modLoc("block/" + name + "_side"), this.modLoc("block/" + name + "_front_honey"), this.modLoc("block/" + name + "_end"));
+		this.horizontalBlock(beehive.get(), s -> s.getValue(BeehiveBlock.HONEY_LEVEL) == 5 ? model_honey : model);
+	}
+
+	private void ladder(RegistryObject<Block> ladder) {
+		ResourceLocation texture = this.blockTexture(ladder.get());
+		this.horizontalBlock(ladder.get(), this.models().withExistingParent(Util.name(ladder), "block/ladder").texture("particle", texture).renderType("cutout").texture("texture", texture));
+	}
+
+	private void bookshelf(RegistryObject<Block> bookshelf, Supplier<Block> planks) {
+		this.simpleBlock(bookshelf.get(), this.models().cubeColumn(Util.name(bookshelf), this.blockTexture(bookshelf.get()), this.blockTexture(planks.get())));
+	}
+
+	private void boards(RegistryObject<Block> boards) {
+		ResourceLocation texture = this.blockTexture(boards.get());
+		ModelFile boardsModel = this.models().getBuilder(Util.name(boards)).parent(new ModelFile.UncheckedModelFile(Modid.BP.rl("block/template_boards"))).texture("all", texture);
+		ModelFile boardsHorizontalModel = this.models().getBuilder(Util.name(boards) + "_horizontal").parent(new ModelFile.UncheckedModelFile(Modid.BP.rl("block/template_boards_horizontal"))).texture("all", texture);
+		this.getVariantBuilder(boards.get())
+			.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Y).modelForState().modelFile(boardsModel).addModel()
+			.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Z).modelForState().modelFile(boardsHorizontalModel).addModel()
+			.partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.X).modelForState().modelFile(boardsHorizontalModel).rotationY(270).addModel();
+	}
+
+	private void chests(RegistryObject<BlueprintChestBlock> chest, RegistryObject<BlueprintTrappedChestBlock> trapped, ResourceLocation texture) {
+		ModelFile model = this.models().getBuilder(Util.name(chest)).texture("particle", texture);
+		this.simpleBlock(chest.get(), model);
+		this.simpleBlock(trapped.get(), model);
 	}
 
 	private ModelFile existingModel(String path) {

@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "collectorsreap:block/lucuma_boards_horizontal",
+      "y": 270
+    },
+    "axis=y": {
+      "model": "collectorsreap:block/lucuma_boards"
+    },
+    "axis=z": {
+      "model": "collectorsreap:block/lucuma_boards_horizontal"
+    }
+  }
+}

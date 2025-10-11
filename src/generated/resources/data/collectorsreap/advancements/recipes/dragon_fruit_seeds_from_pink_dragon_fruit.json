@@ -18,7 +18,7 @@
           },
           "has_the_recipe": {
             "conditions": {
-              "recipe": "collectorsreap:pink_dye_from_pink_dragon_fruit"
+              "recipe": "collectorsreap:dragon_fruit_seeds_from_pink_dragon_fruit"
             },
             "trigger": "minecraft:recipe_unlocked"
           }
@@ -31,15 +31,24 @@
         ],
         "rewards": {
           "recipes": [
-            "collectorsreap:pink_dye_from_pink_dragon_fruit"
+            "collectorsreap:dragon_fruit_seeds_from_pink_dragon_fruit"
           ]
         },
         "sends_telemetry_event": false
       },
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "pink_dragon_fruit"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pink_dragon_fruit"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "dragon_fruit_seeds"
+            }
+          ]
         }
       ]
     }

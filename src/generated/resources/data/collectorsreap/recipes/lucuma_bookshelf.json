@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_bookshelf"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "building",
+        "group": "wooden_bookshelf",
+        "key": {
+          "#": {
+            "item": "collectorsreap:lucuma_planks"
+          },
+          "X": {
+            "item": "minecraft:book"
+          }
+        },
+        "pattern": [
+          "###",
+          "XXX",
+          "###"
+        ],
+        "result": {
+          "item": "collectorsreap:lucuma_bookshelf"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

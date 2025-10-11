@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "collectorsreap:block/lucuma_planks",
+    "side": "collectorsreap:block/lucuma_bookshelf"
+  }
+}

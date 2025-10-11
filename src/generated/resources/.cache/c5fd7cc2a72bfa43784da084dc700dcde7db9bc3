@@ -1,5 +1,11 @@
-// 1.20.1	2025-10-10T18:02:29.2610904	Tags for minecraft:block mod id collectorsreap
+// 1.20.1	2025-10-10T21:54:53.5987454	Tags for minecraft:block mod id collectorsreap
 748e9338cb0e08e973af854da7e0a45c328db6fb data/autumnity/tags/blocks/snail_snacks.json
+b800d2db5d6fcd23ef146ed61161e541d62e5b37 data/blueprint/tags/blocks/wooden_beehives.json
+962be467a5013213e78880d7841ff95fd6d13ca7 data/blueprint/tags/blocks/wooden_bookshelves.json
+6e2ccb158f5f47c13a6b80cd8db46db7c27835c3 data/blueprint/tags/blocks/wooden_chests.json
+7c2317e7f12994c8ca502a07c1d748fc5e0f5e08 data/blueprint/tags/blocks/wooden_chiseled_bookshelves.json
+ebe28b7994ee2717ac149e383a18f3034b53277f data/blueprint/tags/blocks/wooden_ladders.json
+10a08776533fbccfb19be016afa681988c7076bd data/blueprint/tags/blocks/wooden_trapped_chests.json
 6882be46df6274c3fa9ba4a4e7066427971a7fbd data/collectorsreap/tags/blocks/crab_spawnable_on.json
 7409da363d8a2741acbaedecf30696d4dee91e74 data/collectorsreap/tags/blocks/dragon_fruit_spawnable_on.json
 b03d8cb10dcb861b22c4da8fb09000c3d4f57326 data/collectorsreap/tags/blocks/lucuma_logs.json
@@ -58,3 +64,4 @@ fdd5792c14637ed66ed0f8feac1c8a42217df3fb data/minecraft/tags/blocks/wooden_slabs
 d47ee2c8558e15c6fa63f25275751a6eed344391 data/supplementaries/tags/blocks/hang_from_ropes.json
 748e9338cb0e08e973af854da7e0a45c328db6fb data/twilightforest/tags/blocks/portal/decoration.json
 a36b375ac340063bcb8d1fc3a6c71df62862f5e3 data/woodworks/tags/blocks/leaf_piles.json
+8f46f79666f74c75e6ed84def0ca0855bf0630a1 data/woodworks/tags/blocks/wooden_boards.json

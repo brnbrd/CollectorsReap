@@ -1,9 +1,15 @@
-// 1.20.1	2025-10-10T18:02:29.2590887	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2025-10-10T21:54:53.5975319	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
 a740abeb613a7024a35910efe912a50a6ee62045 data/atmospheric/tags/items/yucca_fruit.json
 748e9338cb0e08e973af854da7e0a45c328db6fb data/autumnity/tags/items/snail_snacks.json
+b800d2db5d6fcd23ef146ed61161e541d62e5b37 data/blueprint/tags/items/wooden_beehives.json
+962be467a5013213e78880d7841ff95fd6d13ca7 data/blueprint/tags/items/wooden_bookshelves.json
+6e2ccb158f5f47c13a6b80cd8db46db7c27835c3 data/blueprint/tags/items/wooden_chests.json
+7c2317e7f12994c8ca502a07c1d748fc5e0f5e08 data/blueprint/tags/items/wooden_chiseled_bookshelves.json
+ebe28b7994ee2717ac149e383a18f3034b53277f data/blueprint/tags/items/wooden_ladders.json
+10a08776533fbccfb19be016afa681988c7076bd data/blueprint/tags/items/wooden_trapped_chests.json
 6aeabc7f523f01d2098de9e65930c2a0f2abb8a1 data/boatload/tags/items/furnace_boats.json
 e3edfcb720e67c84c4e132e9ea67d4231d56beda data/boatload/tags/items/large_boats.json
 d50b079e648b866cfdbbc59feeeec814ec391a64 data/brewinandchewin/tags/items/fermented_drinks.json
@@ -111,3 +117,4 @@ cbd47de368751306e7d7f0cfb8054fc816b1695d data/some_assembly_required/tags/items/
 3e3ce51fe20970106efee67862b16099b5b66733 data/supplementaries/tags/items/cookies.json
 56b1914b339b1025387364245d6ea545bd2f3b90 data/supplementaries/tags/items/flower_box_plantable.json
 a36b375ac340063bcb8d1fc3a6c71df62862f5e3 data/woodworks/tags/items/leaf_piles.json
+8f46f79666f74c75e6ed84def0ca0855bf0630a1 data/woodworks/tags/items/wooden_boards.json

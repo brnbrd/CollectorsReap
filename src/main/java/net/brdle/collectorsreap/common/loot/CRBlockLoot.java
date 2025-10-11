@@ -8,6 +8,7 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -197,10 +198,21 @@ public class CRBlockLoot extends BlockLootSubProvider {
 			CRBlocks.LUCUMA_SAPLING.get(), 0.05F, 0.0625F, 0.0833F, 0.1F));
 		this.leafPile(CRBlocks.LUCUMA_LEAF_PILE.get());
 		this.dropSelf(CRBlocks.LUCUMA_CABINET.get());
+		this.add(CRBlocks.LUCUMA_BEEHIVE.get(), CRBlockLoot::createBeeHiveDrop);
+		this.dropSelf(CRBlocks.LUCUMA_LADDER.get());
+		this.bookshelf(CRBlocks.LUCUMA_BOOKSHELF.get());
+		this.dropWhenSilkTouch(CRBlocks.CHISELED_LUCUMA_BOOKSHELF.get());
+		this.dropSelf(CRBlocks.LUCUMA_BOARDS.get());
+		this.dropSelf(CRBlocks.LUCUMA_CHEST.get());
+		this.dropSelf(CRBlocks.TRAPPED_LUCUMA_CHEST.get());
 	}
 
 	private void leafPile(Block block) {
 		this.add(block, b -> createMultifaceBlockDrops(b, MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS))));
+	}
+
+	private void bookshelf(Block block) {
+		this.add(block, b -> createSingleItemTableWithSilkTouch(b, Items.BOOK, ConstantValue.exactly(3F)));
 	}
 
 	@Override

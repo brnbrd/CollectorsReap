@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.data.gen;
 
+import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
@@ -148,8 +149,15 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.SMALL_FLOWERS)
 			.add(CRBlocks.DRAGON_BUSH.get());
 
-		// Woodworks
-		this.tag(Modid.WW.bt("leaf_piles")).add(CRBlocks.LUCUMA_LEAF_PILE.get());
+		// Blueprint
+		this.tag(BlueprintBlockTags.LEAF_PILES).add(CRBlocks.LUCUMA_LEAF_PILE.get());
+		this.tag(BlueprintBlockTags.WOODEN_BEEHIVES).add(CRBlocks.LUCUMA_BEEHIVE.get());
+		this.tag(BlueprintBlockTags.WOODEN_LADDERS).add(CRBlocks.LUCUMA_LADDER.get());
+		this.tag(BlueprintBlockTags.WOODEN_BOOKSHELVES).add(CRBlocks.LUCUMA_BOOKSHELF.get());
+		this.tag(BlueprintBlockTags.WOODEN_CHISELED_BOOKSHELVES).add(CRBlocks.CHISELED_LUCUMA_BOOKSHELF.get());
+		this.tag(BlueprintBlockTags.WOODEN_BOARDS).add(CRBlocks.LUCUMA_BOARDS.get());
+		this.tag(BlueprintBlockTags.WOODEN_CHESTS).add(CRBlocks.LUCUMA_CHEST.get());
+		this.tag(BlueprintBlockTags.WOODEN_TRAPPED_CHESTS).add(CRBlocks.TRAPPED_LUCUMA_CHEST.get());
 
 		// Serene Seasons
 		this.tag(CRBlockTags.WINTER_CROPS);

@@ -52,6 +52,12 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.blockItem(CRBlocks.LUCUMA_LEAVES);
 		this.flatBlock(CRBlocks.LUCUMA_LEAF_PILE, Util.name(CRBlocks.LUCUMA_LEAVES));
 		this.blockItem(CRBlocks.LUCUMA_CABINET);
+		this.blockItem(CRBlocks.LUCUMA_BEEHIVE);
+		this.flatBlock(CRBlocks.LUCUMA_LADDER);
+		this.blockItem(CRBlocks.LUCUMA_BOOKSHELF);
+		this.blockItem(CRBlocks.LUCUMA_BOARDS);
+		this.chest(CRBlocks.LUCUMA_CHEST);
+		this.chest(CRBlocks.TRAPPED_LUCUMA_CHEST);
 
 		// Urchin Test
 		this.blockItem(CRBlocks.URCHIN_TEST_BLOCK);
@@ -285,6 +291,10 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 
 	private void flatBlock(RegistryObject<?> blockItem) {
 		this.withExistingParent(Util.name(blockItem), "item/generated").texture("layer0", resourceBlock(Util.name(blockItem)));
+	}
+
+	private void chest(RegistryObject<?> chestItem) {
+		this.withExistingParent(Util.name(chestItem), "blueprint:item/template_chest");
 	}
 
 	public static ResourceLocation resourceItem(String path) {

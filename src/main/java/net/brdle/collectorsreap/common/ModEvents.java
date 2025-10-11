@@ -31,25 +31,45 @@ public class ModEvents {
 	}
 
 	private void registerCompostables() {
-		ComposterBlock.COMPOSTABLES.put(CRBlocks.DRAGON_BUSH.get(), 0.65F);
-		ComposterBlock.COMPOSTABLES.put(CRItems.PINK_DRAGON_FRUIT.get(), 0.3F);
-		ComposterBlock.COMPOSTABLES.put(CRItems.DRAGON_FRUIT_SEEDS.get(), 0.3F);
+		// Portobello
 		ComposterBlock.COMPOSTABLES.put(CRBlocks.PORTOBELLO.get(), 0.65F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_COLONY.get(), 1F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.BAKED_PORTOBELLO_CAP.get(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.STUFFED_PORTOBELLO_CAP.get(), 1F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_QUICHE.get(), 1F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_QUICHE_SLICE.get(), 0.85F);
-		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_BURGER.get(), 0.85F);
-		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_RICE_SOUP.get(), 0.85F);
-		ComposterBlock.COMPOSTABLES.put(CRItems.POTATO_FRITTERS.get(), 0.65F);
+
+		// Lime
 		ComposterBlock.COMPOSTABLES.put(CRItems.LIME.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_SLICE.get(), 0.2F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_SEEDS.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_COOKIE.get(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.POTATO_FRITTERS.get(), 0.65F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_PIE.get(), 1F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_PIE_SLICE.get(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_CAKE.get(), 1F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_CAKE_SLICE.get(), 0.65F);
+
+		// Pomegranate
 		ComposterBlock.COMPOSTABLES.put(CRItems.POMEGRANATE.get(), 0.3F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.POMEGRANATE_SLICE.get(), 0.2F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.POMEGRANATE_SEEDS.get(), 0.1F);
-		ComposterBlock.COMPOSTABLES.put(CRItems.STYGIAN_POMEGRANATE.get(), 0.35F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.POMEGRANATE_CAKE.get(), 1F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.POMEGRANATE_CAKE_SLICE.get(), 0.65F);
+
+		// Pink Dragon Fruit
+		ComposterBlock.COMPOSTABLES.put(CRBlocks.DRAGON_BUSH.get().asItem(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PINK_DRAGON_FRUIT.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.DRAGON_FRUIT_SEEDS.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.DRIED_PINK_DRAGON_FRUIT.get(), 0.5F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PINK_DRAGON_FRUIT_CAKE.get(), 1F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE.get(), 0.65F);
+
+		// Lucuma
+		ComposterBlock.COMPOSTABLES.put(CRItems.LUCUMA.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LUCUMA_BREAD.get(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LUCUMA_CAKE.get(), 1F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.LUCUMA_CAKE_SLICE.get(), 0.65F);
 	}
 
 	// Adds collectorsreap:enabled, etc. conditions

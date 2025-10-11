@@ -1,5 +1,7 @@
 package net.brdle.collectorsreap.data.gen;
 
+import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
+import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
@@ -120,12 +122,17 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.ROE_FISH)
 			.addTag(CRItemTags.ROE_PRAWN);
 
-		// Boatload
-		this.tag(Modid.BL.it("furnace_boats")).add(CRItems.LUCUMA_FURNACE_BOAT.get());
-		this.tag(Modid.BL.it("large_boats")).add(CRItems.LARGE_LUCUMA_BOAT.get());
-
-		// Woodworks
-		this.tag(Modid.WW.it("leaf_piles")).add(CRBlocks.LUCUMA_LEAF_PILE.get().asItem());
+		// Blueprint
+		this.tag(BlueprintItemTags.FURNACE_BOATS).add(CRItems.LUCUMA_FURNACE_BOAT.get());
+		this.tag(BlueprintItemTags.LARGE_BOATS).add(CRItems.LARGE_LUCUMA_BOAT.get());
+		this.tag(BlueprintItemTags.LEAF_PILES).add(CRBlocks.LUCUMA_LEAF_PILE.get().asItem());
+		this.tag(BlueprintItemTags.WOODEN_BEEHIVES).add(CRBlocks.LUCUMA_BEEHIVE.get().asItem());
+		this.tag(BlueprintItemTags.WOODEN_LADDERS).add(CRBlocks.LUCUMA_LADDER.get().asItem());
+		this.tag(BlueprintItemTags.WOODEN_BOOKSHELVES).add(CRBlocks.LUCUMA_BOOKSHELF.get().asItem());
+		this.tag(BlueprintItemTags.WOODEN_CHISELED_BOOKSHELVES).add(CRBlocks.CHISELED_LUCUMA_BOOKSHELF.get().asItem());
+		this.tag(BlueprintItemTags.WOODEN_BOARDS).add(CRBlocks.LUCUMA_BOARDS.get().asItem());
+		this.tag(BlueprintItemTags.WOODEN_CHESTS).add(CRBlocks.LUCUMA_CHEST.get().asItem());
+		this.tag(BlueprintItemTags.WOODEN_TRAPPED_CHESTS).add(CRBlocks.TRAPPED_LUCUMA_CHEST.get().asItem());
 
 		// Stardew Fishing
 		this.tag(Modid.SF.it("starts_minigame"))
