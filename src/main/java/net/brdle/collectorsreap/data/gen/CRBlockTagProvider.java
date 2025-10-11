@@ -84,6 +84,7 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.PLATINUM_BASS_ROE.get())
 			.add(CRBlocks.TIGER_PRAWN_ROE.get());
 		this.tag(BlockTags.MINEABLE_WITH_AXE)
+			.add(CRBlocks.LUCUMA_CABINET.get())
 			.add(CRBlocks.PORTOBELLO.get())
 			.add(CRBlocks.LIME_CRATE.get())
 			.add(CRBlocks.POMEGRANATE_CRATE.get())

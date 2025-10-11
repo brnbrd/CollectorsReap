@@ -10,7 +10,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -133,6 +132,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.TIGER_PRAWN.get());
 
 		// Farmer's Delight
+		this.tag(ModTags.WOODEN_CABINETS).add(CRBlocks.LUCUMA_CABINET.get().asItem());
 		this.tag(ModTags.WILD_CROPS_ITEM)
 			.add(CRBlocks.DRAGON_BUSH.get().asItem());
 		this.tag(ItemTags.SMALL_FLOWERS)

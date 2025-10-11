@@ -1,0 +1,44 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lucuma_cabinet"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "group": "fd_cabinet",
+        "key": {
+          "S": {
+            "item": "collectorsreap:lucuma_slab"
+          },
+          "T": {
+            "item": "collectorsreap:lucuma_trapdoor"
+          }
+        },
+        "pattern": [
+          "SSS",
+          "T T",
+          "SSS"
+        ],
+        "result": {
+          "item": "collectorsreap:lucuma_cabinet"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

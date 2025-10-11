@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-10T14:18:32.4378864	Recipes
+// 1.20.1	2025-10-10T18:32:02.3912814	Recipes
 f675d5755fabc608553d9bbb803bcaeec477fdf6 data/collectorsreap/advancements/recipes/chiseled_urchin_test_bricks.json
 ffff41205e9b83cc8ab9d38ce39c06fa7e8f6ae7 data/collectorsreap/advancements/recipes/cutting/chieftain_claw.json
 51d613fd6d246740518e1ed57afea6e6deea518e data/collectorsreap/advancements/recipes/cutting/chieftain_crab.json
@@ -135,6 +135,7 @@ fa5202707528b1bab11d82b9ae1557e9c2293e7d data/collectorsreap/advancements/recipe
 f023f8e3ee6674ce30ca76bb214eb1771f3072fb data/collectorsreap/advancements/recipes/lime_ice_cream_block.json
 289e1e4f08063f8f3819ee1a9cd2ddde5a3b68a4 data/collectorsreap/advancements/recipes/lime_seeds_from_lime.json
 c9aa09ad29ff9d4670fcdf7f9eb8cbf55ac54cfd data/collectorsreap/advancements/recipes/lucuma_button.json
+54ffa66a5c8cf8d3e68be50dd193d0d4c42dd536 data/collectorsreap/advancements/recipes/lucuma_cabinet.json
 4388fc593335a0d7ab7f6710126c507978e8bf74 data/collectorsreap/advancements/recipes/lucuma_crate.json
 121990533af5d098e6f314ce017965c13db75966 data/collectorsreap/advancements/recipes/lucuma_door.json
 2b6e56ca7b24ee018b903909295a46e1da71b4e8 data/collectorsreap/advancements/recipes/lucuma_fence.json
@@ -336,6 +337,7 @@ e7c8e956c6abe96d8295788e094a9fab8bcc7a48 data/collectorsreap/recipes/lime_crate.
 3602ecfcceed975018fec04fdc7870fd79c2ecfe data/collectorsreap/recipes/lime_seeds_from_lime.json
 2de58a28227ec3baaf32965fd12c30721e4d3eba data/collectorsreap/recipes/lucuma_boat.json
 f9a810e9198d18fb1b47e2de128428576a0ec5f4 data/collectorsreap/recipes/lucuma_button.json
+cf3857fd2b496a77dab748bc034ad7bed8163651 data/collectorsreap/recipes/lucuma_cabinet.json
 bbf924bc99e2441257199ace625aa74d7dab4dc0 data/collectorsreap/recipes/lucuma_chest_boat.json
 000cab88bc2f10f3bc00b3a3e70168876413c73a data/collectorsreap/recipes/lucuma_crate.json
 d73e5ac301664e51428ac5b123546d1f03a18fc9 data/collectorsreap/recipes/lucuma_door.json

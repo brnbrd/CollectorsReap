@@ -30,6 +30,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
@@ -74,10 +75,12 @@ public class CRBlocks {
 	public static final RegistryObject<BlueprintCeilingHangingSignBlock> LUCUMA_HANGING_SIGN = LUCUMA_HANGING_SIGNS.getFirst();
 	public static final RegistryObject<BlueprintWallHangingSignBlock> LUCUMA_WALL_HANGING_SIGN = LUCUMA_HANGING_SIGNS.getSecond();
 
-	public static final RegistryObject<Block> LUCUMA_SAPLING = HELPER.createBlock("lucuma_sapling", () -> new SaplingBlock(new LucumaTreeGrower(), PropertyUtil.sapling()));
-	public static final RegistryObject<Block> POTTED_LUCUMA_SAPLING = HELPER.createBlockNoItem("potted_lucuma_sapling", () -> new FlowerPotBlock(LUCUMA_SAPLING.get(), PropertyUtil.flowerPot()));
+	public static final RegistryObject<Block> LUCUMA_CABINET = HELPER.createBlock("lucuma_cabinet", () -> new CabinetBlock(BlockBehaviour.Properties.copy(ModBlocks.OAK_CABINET.get())));
+
 	public static final RegistryObject<Block> LUCUMA_LEAVES = HELPER.createBlock("lucuma_leaves", () -> new LeavesBlock(Properties.LUCUMA.leaves()));
 	public static final RegistryObject<Block> LUCUMA_LEAF_PILE = HELPER.createBlock("lucuma_leaf_pile", () -> new LeafPileBlock(Properties.LUCUMA.leafPile()));
+	public static final RegistryObject<Block> LUCUMA_SAPLING = HELPER.createBlock("lucuma_sapling", () -> new SaplingBlock(new LucumaTreeGrower(), PropertyUtil.sapling()));
+	public static final RegistryObject<Block> POTTED_LUCUMA_SAPLING = HELPER.createBlockNoItem("potted_lucuma_sapling", () -> new FlowerPotBlock(LUCUMA_SAPLING.get(), PropertyUtil.flowerPot()));
 
 	// Urchin Test
 	public static final RegistryObject<Block> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block", () -> new Block(Properties.URCHIN_TEST));

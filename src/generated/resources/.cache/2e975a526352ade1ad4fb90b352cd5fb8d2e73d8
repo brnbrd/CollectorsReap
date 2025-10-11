@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-10T14:18:32.4315867	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2025-10-10T18:02:29.2590887	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
@@ -17,6 +17,7 @@ b03d8cb10dcb861b22c4da8fb09000c3d4f57326 data/collectorsreap/tags/items/lucuma_l
 e34ac5202557dd98a2a5080b0dd2bf6b79da148c data/diet/tags/items/special_food.json
 507b42bfb4ad28acf617f26c41a5f2a4aef9307f data/diet/tags/items/vegetables.json
 239c83436e79910a542752ec670434fd45a1fa58 data/farmersdelight/tags/items/cabbage_roll_ingredients.json
+67b75512ba2582a749e81aab1f63dda1e5e03b08 data/farmersdelight/tags/items/cabinets/wooden.json
 ace9d990336b6482ae2f05dcb55566656bb1dfad data/farmersdelight/tags/items/drinks.json
 e8c935b46f78b33b0caa4da2d5ff093a9b7ec404 data/farmersdelight/tags/items/wild_crops.json
 b2e3107ce82c23907b91d1bd27f31021a385173d data/forge/tags/items/cheese.json

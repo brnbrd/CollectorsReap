@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "collectorsreap:block/lucuma_cabinet_front",
+    "side": "collectorsreap:block/lucuma_cabinet_side",
+    "top": "collectorsreap:block/lucuma_cabinet_top"
+  }
+}

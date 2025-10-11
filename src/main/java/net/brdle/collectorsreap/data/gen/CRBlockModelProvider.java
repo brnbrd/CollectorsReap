@@ -19,6 +19,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import java.util.Arrays;
 import java.util.List;
@@ -157,6 +158,7 @@ public class CRBlockModelProvider extends BlueprintBlockStateProvider {
 		this.pottedPlant(CRBlocks.LUCUMA_SAPLING, CRBlocks.POTTED_LUCUMA_SAPLING);
 		this.leavesBlock(CRBlocks.LUCUMA_LEAVES);
 		this.leafPile(CRBlocks.LUCUMA_LEAF_PILE, this.blockTexture(CRBlocks.LUCUMA_LEAVES.get()), true);
+		this.cabinetBlock(CRBlocks.LUCUMA_CABINET.get(), "lucuma");
 
 		// Roe
 		this.roeBlock(CRBlocks.PLATINUM_BASS_ROE.get());
@@ -255,6 +257,16 @@ public class CRBlockModelProvider extends BlueprintBlockStateProvider {
 				Util.rl(FarmersDelight.MODID, "block/crate_bottom"),
 			resourceBlock(cropName + "_crate_top")
 		));
+	}
+
+	public void cabinetBlock(Block block, String woodType) {
+		this.horizontalBlock(block, state -> {
+			String suffix = state.getValue(CabinetBlock.OPEN) ? "_open" : "";
+			return models().orientable(Util.name(block) + suffix,
+				resourceBlock(woodType + "_cabinet_side"),
+				resourceBlock(woodType + "_cabinet_front" + suffix),
+				resourceBlock(woodType + "_cabinet_top"));
+		});
 	}
 
 	private ModelFile existingModel(String path) {

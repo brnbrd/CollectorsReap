@@ -1172,6 +1172,16 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.showNotification(true)
 			.group("hanging_sign"),
 			"lucuma_hanging_sign", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_HANGING_SIGN));
+		wrap(shaped(RecipeCategory.MISC, CRBlocks.LUCUMA_CABINET.get().asItem(), 1)
+			.pattern("SSS")
+			.pattern("T T")
+			.pattern("SSS")
+			.define('S', CRBlocks.LUCUMA_SLAB.get())
+			.define('T', CRBlocks.LUCUMA_TRAPDOOR.get())
+			.unlockedBy("has_lucuma_trapdoor", has(CRBlocks.LUCUMA_TRAPDOOR.get()))
+			.showNotification(true)
+			.group("fd_cabinet"),
+			"lucuma_cabinet", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_CABINET));
 		BoatloadRecipeProvider.boatRecipes(finished, CRBoatTypes.LUCUMA);
 	}
 

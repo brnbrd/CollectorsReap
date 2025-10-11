@@ -199,6 +199,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addBlock(CRBlocks.POTTED_LUCUMA_SAPLING, "Potted Lucuma Sapling");
 		addBlock(CRBlocks.LUCUMA_LEAVES, "Lucuma Leaves");
 		addBlock(CRBlocks.LUCUMA_LEAF_PILE, "Pile of Lucuma Leaves");
+		addBlock(CRBlocks.LUCUMA_CABINET, "Lucuma Cabinet");
 	}
 
 	private void addItems() {

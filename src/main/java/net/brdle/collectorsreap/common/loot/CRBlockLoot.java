@@ -196,6 +196,7 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.add(CRBlocks.LUCUMA_LEAVES.get(), b -> createLeavesDrops(b,
 			CRBlocks.LUCUMA_SAPLING.get(), 0.05F, 0.0625F, 0.0833F, 0.1F));
 		this.leafPile(CRBlocks.LUCUMA_LEAF_PILE.get());
+		this.dropSelf(CRBlocks.LUCUMA_CABINET.get());
 	}
 
 	private void leafPile(Block block) {

@@ -51,6 +51,7 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.flatBlock(CRBlocks.LUCUMA_SAPLING);
 		this.blockItem(CRBlocks.LUCUMA_LEAVES);
 		this.flatBlock(CRBlocks.LUCUMA_LEAF_PILE, Util.name(CRBlocks.LUCUMA_LEAVES));
+		this.blockItem(CRBlocks.LUCUMA_CABINET);
 
 		// Urchin Test
 		this.blockItem(CRBlocks.URCHIN_TEST_BLOCK);
