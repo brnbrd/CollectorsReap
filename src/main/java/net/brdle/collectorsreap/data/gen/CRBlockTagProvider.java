@@ -54,6 +54,11 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.LUCUMA_WOOD.get())
 			.add(CRBlocks.STRIPPED_LUCUMA_LOG.get())
 			.add(CRBlocks.STRIPPED_LUCUMA_WOOD.get());
+		this.tag(CRBlockTags.LUCUMA_ROOTS_CAN_GROW_THROUGH)
+			.addTag(CRBlockTags.LUCUMA_LOGS)
+			.addTag(BlockTags.SNOW)
+			.add(Blocks.MUD)
+			.add(Blocks.VINE);
 
 		// Minecraft
 		CRBlocks.HELPER.getDeferredRegister().getEntries()

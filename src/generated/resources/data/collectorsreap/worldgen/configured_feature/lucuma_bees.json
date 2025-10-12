@@ -14,10 +14,11 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:blob_foliage_placer",
-      "height": 4,
-      "offset": 2,
-      "radius": 2
+      "type": "minecraft:random_spread_foliage_placer",
+      "foliage_height": 2,
+      "leaf_placement_attempts": 80,
+      "offset": 0,
+      "radius": 3
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
@@ -30,18 +31,91 @@
         }
       }
     },
-    "force_dirt": true,
-    "ignore_vines": false,
+    "force_dirt": false,
+    "ignore_vines": true,
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
-      "limit": 1,
+      "limit": 2,
       "lower_size": 0,
-      "upper_size": 1
+      "upper_size": 2
+    },
+    "root_placer": {
+      "type": "minecraft:mangrove_root_placer",
+      "mangrove_root_placement": {
+        "can_grow_through": "#collectorsreap:lucuma_roots_can_grow_through",
+        "max_root_length": 2,
+        "max_root_width": 2,
+        "muddy_roots_in": [
+          "minecraft:mud",
+          "collectorsreap:lucuma_log"
+        ],
+        "muddy_roots_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "collectorsreap:lucuma_log",
+            "Properties": {
+              "axis": "y"
+            }
+          }
+        },
+        "random_skew_chance": 0.2
+      },
+      "root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "collectorsreap:lucuma_log",
+          "Properties": {
+            "axis": "y"
+          }
+        }
+      },
+      "trunk_offset_y": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 2,
+          "min_inclusive": 1
+        }
+      }
     },
     "trunk_placer": {
-      "type": "minecraft:straight_trunk_placer",
-      "base_height": 4,
-      "height_rand_a": 2,
+      "type": "minecraft:cherry_trunk_placer",
+      "base_height": 7,
+      "branch_count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": 1,
+            "weight": 1
+          },
+          {
+            "data": 2,
+            "weight": 1
+          },
+          {
+            "data": 3,
+            "weight": 1
+          }
+        ]
+      },
+      "branch_end_offset_from_top": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 0,
+          "min_inclusive": -1
+        }
+      },
+      "branch_horizontal_length": {
+        "type": "minecraft:uniform",
+        "value": {
+          "max_inclusive": 4,
+          "min_inclusive": 2
+        }
+      },
+      "branch_start_offset_from_top": {
+        "max_inclusive": -3,
+        "min_inclusive": -4
+      },
+      "height_rand_a": 1,
       "height_rand_b": 0
     },
     "trunk_provider": {

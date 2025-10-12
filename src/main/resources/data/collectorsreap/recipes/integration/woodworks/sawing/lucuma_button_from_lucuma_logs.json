@@ -1,0 +1,33 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "sawmill"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lucuma"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lucuma_button"
+        }
+      ],
+      "recipe": {
+        "type": "woodworks:sawmill",
+        "ingredient": {
+          "tag": "collectorsreap:lucuma_logs"
+        },
+        "result": "collectorsreap:lucuma_button",
+        "count": 4
+      }
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import net.brdle.collectorsreap.common.loot.CRLootItemConditions;
 import net.brdle.collectorsreap.common.loot.CRLootModifiers;
 import net.brdle.collectorsreap.common.world.CRFeatures;
 import net.brdle.collectorsreap.data.gen.Generators;
+import net.brdle.collectorsreap.data.pack.CRFoliagePlacerTypes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -29,5 +30,6 @@ public class CommonProxy {
 		CRLootItemConditions.create(modBus);
 		CRLootModifiers.create(modBus);
 		CRSoundEvents.create(modBus);
+		CRFoliagePlacerTypes.create(modBus);
 	}
 }

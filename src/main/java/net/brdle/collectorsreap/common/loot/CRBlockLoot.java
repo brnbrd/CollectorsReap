@@ -16,8 +16,8 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -31,6 +31,8 @@ public class CRBlockLoot extends BlockLootSubProvider {
 	public CRBlockLoot() {
 		super(Collections.emptySet(), FeatureFlags.REGISTRY.allFlags());
 	}
+
+	private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
 
 	@Override
 	protected void generate() {
@@ -194,8 +196,11 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(CRBlocks.LUCUMA_HANGING_SIGN.get());
 		this.dropSelf(CRBlocks.LUCUMA_SAPLING.get());
 		this.dropPottedContents(CRBlocks.POTTED_LUCUMA_SAPLING.get());
-		this.add(CRBlocks.LUCUMA_LEAVES.get(), b -> createLeavesDrops(b,
-			CRBlocks.LUCUMA_SAPLING.get(), 0.05F, 0.0625F, 0.0833F, 0.1F));
+		this.add(CRBlocks.LUCUMA_LEAVES.get(), block ->
+			createLeavesDrops(block, CRBlocks.LUCUMA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES)
+			.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+			.when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(CRItems.LUCUMA.get()))
+			.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.05F, 0.055555557F, 0.0625F, 0.08333334F, 0.25F)))));
 		this.leafPile(CRBlocks.LUCUMA_LEAF_PILE.get());
 		this.dropSelf(CRBlocks.LUCUMA_CABINET.get());
 		this.add(CRBlocks.LUCUMA_BEEHIVE.get(), CRBlockLoot::createBeeHiveDrop);

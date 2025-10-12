@@ -4,12 +4,12 @@
     {
       "conditions": [
         {
-          "type": "forge:mod_loaded",
-          "modid": "woodworks"
+          "type": "collectorsreap:enabled",
+          "value": "lucuma"
         },
         {
-          "type": "woodworks:config",
-          "value": "leaf_piles"
+          "type": "collectorsreap:enabled",
+          "value": "lucuma_leaf_pile"
         }
       ],
       "recipe": {
