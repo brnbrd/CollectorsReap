@@ -32,7 +32,7 @@ public class ModEvents {
 
 	private void registerCompostables() {
 		// Portobello
-		ComposterBlock.COMPOSTABLES.put(CRBlocks.PORTOBELLO.get(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRBlocks.PORTOBELLO.get().asItem(), 0.65F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.PORTOBELLO_COLONY.get(), 1F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.BAKED_PORTOBELLO_CAP.get(), 0.65F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.STUFFED_PORTOBELLO_CAP.get(), 1F);
