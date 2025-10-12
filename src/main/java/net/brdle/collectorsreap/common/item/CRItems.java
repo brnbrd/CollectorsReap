@@ -173,6 +173,11 @@ public class CRItems {
 		BrewinChewinCompat.REANIMATORS_GARDEN.get() :
 		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
 	);
+	public static final RegistryObject<Item> HEAVENS_CREAM = registerItem("heavens_cream", () ->
+		Modid.BC.loaded() ?
+		BrewinChewinCompat.HEAVENS_CREAM.get() :
+		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
+	);
 
 	// Tools
 	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> LUCUMA_BOATS = HELPER.createBoatAndChestBoatItem("lucuma", CRBlocks.LUCUMA_PLANKS);

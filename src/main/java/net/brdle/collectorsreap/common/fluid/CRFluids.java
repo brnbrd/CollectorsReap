@@ -146,6 +146,18 @@ public class CRFluids {
 		FLOWING_REANIMATORS_GARDEN
 	);
 
+	public static final RegistryObject<FluidType> HEAVENS_CREAM_TYPE = TYPES.register("heavens_cream_type",
+		() -> new DrinkFluidType(0xFFFACF6F));
+	public static final RegistryObject<FlowingFluid> HEAVENS_CREAM = FLUIDS.register("heavens_cream",
+		() -> new ForgeFlowingFluid.Source(CRFluids.HEAVENS_CREAM_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_HEAVENS_CREAM = FLUIDS.register("flowing_heavens_cream",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.HEAVENS_CREAM_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties HEAVENS_CREAM_PROPERTIES = new ForgeFlowingFluid.Properties(
+		HEAVENS_CREAM_TYPE,
+		HEAVENS_CREAM,
+		FLOWING_HEAVENS_CREAM
+	);
+
 	public static final RegistryObject<FluidType> CREAM_CHEESE_TYPE = TYPES.register("cream_cheese_type",
 		CreamCheeseFluidType::new);
 	public static final RegistryObject<FlowingFluid> CREAM_CHEESE = FLUIDS.register("cream_cheese",

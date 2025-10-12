@@ -56,6 +56,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("fluid_type." + CollectorsReap.MODID + ".hermits_sour_type", "Hermit's Sour");
 		add("fluid_type." + CollectorsReap.MODID + ".rose_moon_type", "Rosé Moon");
 		add("fluid_type." + CollectorsReap.MODID + ".reanimators_garden_type", "Reanimator's Garden");
+		add("fluid_type." + CollectorsReap.MODID + ".heavens_cream_type", "Heaven's Cream");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRBlocks.PORTOBELLO), "Portobellos can be rarely found in meadows.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Limes can be found as a wild bush in flower forests.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME) + ".pollination", "A flowering Lime Bush will grow fruit when pollinated by a Bee.");
@@ -289,6 +290,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.HERMITS_SOUR, "Hermit's Sour");
 		addItem(CRItems.ROSE_MOON, "Rosé Moon");
 		addItem(CRItems.REANIMATORS_GARDEN, "Reanimator's Garden");
+		addItem(CRItems.HEAVENS_CREAM, "Heaven's Cream");
 		addItem(CRItems.LIME_GUMMY, "Lime Gummy");
 		addItem(CRItems.POMEGRANATE_GUMMY, "Pomegranate Gummy");
 		addItem(CRItems.PINK_DRAGON_FRUIT_GUMMY, "Pink Dragon Fruit Gummy");

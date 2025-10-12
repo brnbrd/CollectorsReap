@@ -140,6 +140,7 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.HERMITS_SOUR);
 		this.generatedItem(CRItems.ROSE_MOON);
 		this.generatedItem(CRItems.REANIMATORS_GARDEN);
+		this.generatedItem(CRItems.HEAVENS_CREAM);
 
 		// Portobello
 		this.generatedItem(CRItems.BAKED_PORTOBELLO_CAP);

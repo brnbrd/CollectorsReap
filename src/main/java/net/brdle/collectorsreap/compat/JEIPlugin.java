@@ -60,14 +60,16 @@ public class JEIPlugin implements IModPlugin {
 				CRItems.DEIFIC_BLOOD.get().getDefaultInstance(),
 				CRItems.HERMITS_SOUR.get().getDefaultInstance(),
 				CRItems.ROSE_MOON.get().getDefaultInstance(),
-				CRItems.REANIMATORS_GARDEN.get().getDefaultInstance()
+				CRItems.REANIMATORS_GARDEN.get().getDefaultInstance(),
+				CRItems.HEAVENS_CREAM.get().getDefaultInstance()
 			));
 			hiddenFluids.addAll(List.of(
 				new FluidStack(CRFluids.CREAM_CHEESE.get(), 1000),
 				new FluidStack(CRFluids.DEIFIC_BLOOD.get(), 1000),
 				new FluidStack(CRFluids.HERMITS_SOUR.get(), 1000),
 				new FluidStack(CRFluids.ROSE_MOON.get(), 1000),
-				new FluidStack(CRFluids.REANIMATORS_GARDEN.get(), 1000)
+				new FluidStack(CRFluids.REANIMATORS_GARDEN.get(), 1000),
+				new FluidStack(CRFluids.HEAVENS_CREAM.get(), 1000)
 			));
 		}
 

@@ -35,4 +35,10 @@ public class BrewinChewinCompat {
 			.craftRemainder(Util.item(tankard, Items.GLASS_BOTTLE))
 			.food(Nutrition.REANIMATORS_GARDEN)
 	);
+	public static final Supplier<Item> HEAVENS_CREAM = () -> new CRBoozeItem(
+		CRFluids.HEAVENS_CREAM.get(), (new Item.Properties())
+			.stacksTo(16)
+			.craftRemainder(Util.item(tankard, Items.GLASS_BOTTLE))
+			.food(Nutrition.HEAVENS_CREAM)
+	);
 }

@@ -165,7 +165,8 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.DEIFIC_BLOOD.get())
 			.add(CRItems.HERMITS_SOUR.get())
 			.add(CRItems.ROSE_MOON.get())
-			.add(CRItems.REANIMATORS_GARDEN.get());
+			.add(CRItems.REANIMATORS_GARDEN.get())
+			.add(CRItems.HEAVENS_CREAM.get());
 
 		// Neapolitan
 		this.addSelf(CRItemTags.DRIED_VANILLA_PODS);

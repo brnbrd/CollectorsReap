@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-11T13:12:29.5593072	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2025-10-12T11:17:15.1910474	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
@@ -12,7 +12,7 @@ ebe28b7994ee2717ac149e383a18f3034b53277f data/blueprint/tags/items/wooden_ladder
 10a08776533fbccfb19be016afa681988c7076bd data/blueprint/tags/items/wooden_trapped_chests.json
 6aeabc7f523f01d2098de9e65930c2a0f2abb8a1 data/boatload/tags/items/furnace_boats.json
 e3edfcb720e67c84c4e132e9ea67d4231d56beda data/boatload/tags/items/large_boats.json
-d50b079e648b866cfdbbc59feeeec814ec391a64 data/brewinandchewin/tags/items/fermented_drinks.json
+8dbecefe46038dbfe2f627209eb5f91241fbef75 data/brewinandchewin/tags/items/fermented_drinks.json
 bc152e3055d651ccdad9d17d1bffdbb9ebde35b5 data/collectorsreap/tags/items/chieftain_crab_food.json
 e0f1081b33dba4a0923dc182be2af337db73c5bb data/collectorsreap/tags/items/dart_shooters.json
 26632dd00d22bd44eb61d06d5b648ffb9fb2b026 data/collectorsreap/tags/items/gummies.json
