@@ -6,9 +6,9 @@
 ### Updates
 - [Blueprint](https://www.curseforge.com/minecraft/mc-mods/blueprint) 7.1.3+ is now a required dependency
 - Added Rebound effect
-  - Provides a chance to recover health when taking damage.
-- Added Lucuma
-  - Can be found in Ancient City chests or received in trade from a Wandering Trader
+  - Provides a chance to recover health when taking damage
+- Added Lucuma woodset and fruit
+	- Sapling can be found in Ancient City chests or received in trade from a Wandering Trader
 - Added Lucuma Gummy
 - Added Gilded Lucuma
 - Added Lucuma Bread
@@ -17,7 +17,6 @@
 - Added Lucuma Cake
 - Added Lucuma Ice Cream, Block, and Milkshake (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
 - Added Sunny Ice Cream (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
-- Added Lucuma woodset
 - Added Lucuma Boat with Furnace and Large Lucuma Boat (for [Boatload](https://www.curseforge.com/minecraft/mc-mods/boatload))
 - Lunar Pearls can now be found in shipwreck and buried treasure chests
 - Strawberry Jam Bun now provides 8 nutrition and Instant Health

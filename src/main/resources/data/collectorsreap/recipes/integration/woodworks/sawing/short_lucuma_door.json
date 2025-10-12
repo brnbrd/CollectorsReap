@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:item_exists",
+          "item": "everycomp:dd/collectorsreap/short_lucuma_door"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "dramaticdoors"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "woodworks"
+        },
+        {
+          "type": "woodworks:config",
+          "value": "sawmill"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lucuma"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lucuma_door"
+        }
+      ],
+      "recipe": {
+        "type": "woodworks:sawmill",
+        "ingredient": {
+          "item": "collectorsreap:lucuma_door"
+        },
+        "result": "everycomp:dd/collectorsreap/short_lucuma_door",
+        "count": 2
+      }
+    }
+  ]
+}
