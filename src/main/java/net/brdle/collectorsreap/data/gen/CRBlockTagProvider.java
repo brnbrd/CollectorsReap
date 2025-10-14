@@ -36,12 +36,12 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(CRBlockTags.DRAGON_FRUIT_SPAWNABLE_ON)
 			.addTag(Tags.Blocks.SAND_RED);
 		this.tag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
-			.addOptional(Util.rl("mynethersdelight", "resurgent_soil"))
-			.addOptional(Util.rl("mynethersdelight", "resurgent_soil_farmland"));
+			.addOptional(Modid.MND.rl("resurgent_soil"))
+			.addOptional(Modid.MND.rl("resurgent_soil_farmland"))
+			.addOptional(Modid.ND.rl("rich_soul_soil"));
 		this.tag(CRBlockTags.POMEGRANATE_FAST_ON)
 			.addTag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)
-			.addTag(BlockTags.NYLIUM)
-			.addOptionalTag(Util.rl("nethersdelight", "rich_soul_soil"));
+			.addTag(BlockTags.NYLIUM);
 		this.tag(CRBlockTags.CRAB_SPAWNABLE_ON)
 			.addTag(BlockTags.SAND)
 			.addTag(Tags.Blocks.GRAVEL)

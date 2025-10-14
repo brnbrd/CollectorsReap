@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-14T13:28:59.539228	Tags for minecraft:block mod id collectorsreap
+// 1.20.1	2025-10-14T14:22:36.2326107	Tags for minecraft:block mod id collectorsreap
 748e9338cb0e08e973af854da7e0a45c328db6fb data/autumnity/tags/blocks/snail_snacks.json
 b800d2db5d6fcd23ef146ed61161e541d62e5b37 data/blueprint/tags/blocks/wooden_beehives.json
 962be467a5013213e78880d7841ff95fd6d13ca7 data/blueprint/tags/blocks/wooden_bookshelves.json
@@ -10,9 +10,9 @@ ebe28b7994ee2717ac149e383a18f3034b53277f data/blueprint/tags/blocks/wooden_ladde
 7409da363d8a2741acbaedecf30696d4dee91e74 data/collectorsreap/tags/blocks/dragon_fruit_spawnable_on.json
 b03d8cb10dcb861b22c4da8fb09000c3d4f57326 data/collectorsreap/tags/blocks/lucuma_logs.json
 c71091b8c5bcc77e87192b7dc2e146fb7451d321 data/collectorsreap/tags/blocks/lucuma_roots_can_grow_through.json
-9fcca766e6223fb4dff1774d187235e66cf1ee7b data/collectorsreap/tags/blocks/pomegranate_fast_on.json
+fb8c7b18b7a24c78e368049f7b4af7fece10f3c2 data/collectorsreap/tags/blocks/pomegranate_fast_on.json
 81f77b55ede172828c1b1873033383b57422cdae data/collectorsreap/tags/blocks/portobello_spawnable_on.json
-5898b82e583c66fafc7071dd14bfad31dad04c54 data/collectorsreap/tags/blocks/stygian_pomegranate_growable_on.json
+02b52f035f42652a0e05cead37d5a353d4001813 data/collectorsreap/tags/blocks/stygian_pomegranate_growable_on.json
 87063e8a36abef5e203f8b6dc7f619b2d11fa5a4 data/farmersdelight/tags/blocks/compost_activators.json
 9ed15064ba35571c5cb978c62acf2534c5a3ab3d data/farmersdelight/tags/blocks/unaffected_by_rich_soil.json
 e8c935b46f78b33b0caa4da2d5ff093a9b7ec404 data/farmersdelight/tags/blocks/wild_crops.json

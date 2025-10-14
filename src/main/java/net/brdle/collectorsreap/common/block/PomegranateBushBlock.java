@@ -24,6 +24,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.PlantType;
 import org.jetbrains.annotations.NotNull;
+import java.util.function.Supplier;
 
 public class PomegranateBushBlock extends FruitBushBlock {
 
@@ -67,8 +68,8 @@ public class PomegranateBushBlock extends FruitBushBlock {
 		return CRItems.POMEGRANATE.get();
 	}
 
-	public ItemStack getSpecialFruit() {
-		return new ItemStack(CRItems.STYGIAN_POMEGRANATE.get(), 1);
+	public Supplier<Item> getSpecialFruit() {
+		return CRItems.STYGIAN_POMEGRANATE;
 	}
 
 	@Override
@@ -76,20 +77,28 @@ public class PomegranateBushBlock extends FruitBushBlock {
 		return 10;
 	}
 
+	@Override
+	public boolean isSpecial(Level level, BlockPos pos) {
+		return super.isSpecial(level, pos) && level.getBlockState(pos.below()).is(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON);
+	}
+
 	// Can receive boost from Nether or block below.
 	@SuppressWarnings("deprecation")
 	@Override
-	public void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
-		if (state.getValue(AGE) < MAX_AGE && state.getValue(HALF) == DoubleBlockHalf.LOWER) {
-			int growthRate = (level.getBlockState(pos.below()).is(CRBlockTags.POMEGRANATE_FAST_ON)) ? 8 : 12;
-			if (level.dimension() == Level.NETHER) {
+	public void randomTick(@NotNull BlockState state, @NotNull ServerLevel server, @NotNull BlockPos pos, @NotNull RandomSource random) {
+		if (
+			state.getValue(AGE) < MAX_AGE &&
+			state.getValue(HALF) == DoubleBlockHalf.LOWER
+		) {
+			int growthRate = (server.getBlockState(pos.below()).is(CRBlockTags.POMEGRANATE_FAST_ON)) ? 8 : 12;
+			if (server.dimension() == Level.NETHER) {
 				growthRate -= 4;
 			} else if (state.getValue(AGE) == MAX_AGE - 1 && CRConfig.POMEGRANATE_POLLINATION.get()) {
 				return;
 			}
-			if (ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(growthRate) == 0)) {
-				this.performBonemeal(level, random, pos, state);
-				ForgeHooks.onCropsGrowPost(level, pos, state);
+			if (ForgeHooks.onCropsGrowPre(server, pos, state, random.nextInt(growthRate) == 0)) {
+				this.performBonemeal(server, random, pos, state);
+				ForgeHooks.onCropsGrowPost(server, pos, state);
 			}
 		}
 	}
@@ -106,16 +115,17 @@ public class PomegranateBushBlock extends FruitBushBlock {
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
+	public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity entity) {
 		if (
-			!pLevel.isClientSide() &&
-				CRConfig.POMEGRANATE_POLLINATION.get() &&
-				CRConfig.FAST_POLLINATE.get() &&
-				e instanceof Bee &&
-				pState.getValue(AGE) == MAX_AGE - 1 &&
-				pLevel.getRandom().nextInt(150) == 0
+			!level.isClientSide() &&
+			level instanceof ServerLevel server &&
+			CRConfig.POMEGRANATE_POLLINATION.get() &&
+			CRConfig.FAST_POLLINATE.get() &&
+			entity instanceof Bee &&
+			state.getValue(AGE) == MAX_AGE - 1 &&
+			level.getRandom().nextInt(150) == 0
 		) {
-			this.performBonemeal((ServerLevel) pLevel, pLevel.getRandom(), pPos, pState);
+			this.performBonemeal(server, level.getRandom(), pos, state);
 		}
 	}
 

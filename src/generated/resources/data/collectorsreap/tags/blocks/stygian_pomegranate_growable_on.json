@@ -7,6 +7,10 @@
     {
       "id": "mynethersdelight:resurgent_soil_farmland",
       "required": false
+    },
+    {
+      "id": "nethersdelight:rich_soul_soil",
+      "required": false
     }
   ]
 }

@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.common.block;
 
+import net.brdle.collectorsreap.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -35,6 +36,7 @@ import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
+import java.util.function.Supplier;
 
 public abstract class FruitBushBlock extends DoublePlantBlock implements BonemealableBlock {
 
@@ -108,8 +110,8 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 		return new ItemStack(this.getSeeds());
 	}
 
-	public ItemStack getSpecialFruit() {
-		return ItemStack.EMPTY;
+	public Supplier<@Nullable Item> getSpecialFruit() {
+		return () -> null;
 	}
 
 	public int getSpecialChance() {
@@ -119,8 +121,8 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 	public boolean isSpecial(Level level, BlockPos pos) {
 		int chance = this.getSpecialChance();
 		return (
-			!this.getSpecialFruit().isEmpty() &&
-			chance != 0 &&
+			this.getSpecialFruit().get() != null &
+			chance > 0 &&
 			level.getRandom().nextInt(chance) == 0
 		);
 	}
@@ -139,7 +141,7 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 			if (state.getBlock() instanceof PomegranateBushBlock && !player.getItemInHand(hand).is(Tags.Items.SHEARS)) {
 				player.hurt(player.damageSources().sweetBerryBush(), 1F);
 			}
-			dropFruit(level, pos);
+			this.dropFruit(level, pos);
 			level.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1F, 0.8F + level.random.nextFloat() * 0.4F);
 			BlockState picked = state.setValue(AGE, MAX_AGE - 2);
 			level.setBlock(pos, picked, 2); // Revert to pre-flowering
@@ -182,13 +184,9 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 	}
 
 	public void dropFruit(Level level, BlockPos pos) {
-		ItemStack stack;
-		if (this.isSpecial(level, pos)) { // Empty-checks getSpecialFruit
-			stack = this.getSpecialFruit().copy();
-		} else {
-			int additional = level.getRandom().nextIntBetweenInclusive(1, 2);
-			stack = new ItemStack(this.getFruit(), this.getNumFruit(additional));
-		}
+		ItemStack stack = (this.isSpecial(level, pos)) ?
+			Util.getStack(this.getSpecialFruit()) :
+			new ItemStack(this.getFruit(), this.getNumFruit(level.getRandom().nextIntBetweenInclusive(1, 2)));
 		Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), stack);
 	}
 }
