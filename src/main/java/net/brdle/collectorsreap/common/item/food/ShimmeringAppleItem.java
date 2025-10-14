@@ -57,7 +57,6 @@ public class ShimmeringAppleItem extends ConsumableItem {
 				!pair.getValue().isAmbient() &&
 				!pair.getValue().isInfiniteDuration() &&
 				pair.getValue().getDuration() > 200 &&
-				pair.getValue().isVisible() &&
 				pair.getValue().showIcon()
 			).forEach(entry -> {
 				List<MobEffect> effectList;

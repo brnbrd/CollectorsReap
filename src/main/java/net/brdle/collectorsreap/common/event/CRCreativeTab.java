@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.common.event;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.compat.IConfigured;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,7 +21,9 @@ public class CRCreativeTab {
 			.displayItems((params, output) ->
 				CRItems.HELPER.getDeferredRegister().getEntries().stream()
 					.filter(RegistryObject::isPresent)
-					.forEach(item -> output.accept(item.get()))
+					.map(RegistryObject::get)
+					.filter(item -> !(item instanceof IConfigured configured) || configured.enabled())
+					.forEach(output::accept)
 			).build());
 
 	public static void create(IEventBus bus) {
