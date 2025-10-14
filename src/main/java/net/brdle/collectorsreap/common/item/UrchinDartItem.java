@@ -1,6 +1,6 @@
 package net.brdle.collectorsreap.common.item;
 
-import net.brdle.collectorsreap.common.CRSoundEvents;
+import net.brdle.collectorsreap.common.event.CRSoundEvents;
 import net.brdle.collectorsreap.common.entity.UrchinDart;
 import net.brdle.collectorsreap.data.CRItemTags;
 import net.minecraft.sounds.SoundSource;

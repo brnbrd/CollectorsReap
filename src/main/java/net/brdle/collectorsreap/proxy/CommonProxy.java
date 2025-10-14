@@ -1,9 +1,10 @@
 package net.brdle.collectorsreap.proxy;
 
 import net.brdle.collectorsreap.common.CRParticleTypes;
-import net.brdle.collectorsreap.common.CRSoundEvents;
-import net.brdle.collectorsreap.common.ForgeEvents;
-import net.brdle.collectorsreap.common.ModEvents;
+import net.brdle.collectorsreap.common.event.CRCreativeTab;
+import net.brdle.collectorsreap.common.event.CRSoundEvents;
+import net.brdle.collectorsreap.common.event.ForgeEvents;
+import net.brdle.collectorsreap.common.event.ModEvents;
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.fluid.CRFluids;
@@ -26,6 +27,7 @@ public class CommonProxy {
 		CREntities.create(modBus);
 		CRParticleTypes.create(modBus);
 		CREffects.create(modBus);
+		CRCreativeTab.create(modBus);
 		CRFeatures.create(modBus);
 		CRLootItemConditions.create(modBus);
 		CRLootModifiers.create(modBus);

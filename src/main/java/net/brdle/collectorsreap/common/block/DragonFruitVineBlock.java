@@ -1,6 +1,6 @@
 package net.brdle.collectorsreap.common.block;
 
-import net.brdle.collectorsreap.common.CRSoundEvents;
+import net.brdle.collectorsreap.common.event.CRSoundEvents;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

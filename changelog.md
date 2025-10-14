@@ -29,6 +29,7 @@
   - Can now be crafted using Strawberry Jam from [Smidgeon o' Bliss REMASTERED](https://www.curseforge.com/minecraft/mc-mods/smidgeon-o-bliss-remastered)
 - Added a backup recipe for Reanimator's Garden, not requiring ingredients from [Atmospheric](https://www.curseforge.com/minecraft/mc-mods/atmospheric)
 - Renamed `Veggie Wrap` to `Portobello Wrap` in English translations
+- Moved all items to a Collector's Reap creative tab
 
 ### Fixes
 - Fixed some gummy recipes using outdated tags

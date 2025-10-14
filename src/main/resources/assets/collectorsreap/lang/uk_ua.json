@@ -348,6 +348,7 @@
   "item.collectorsreap.vernal_purge": "Vernal Purge",
   "item.collectorsreap.yellow_tea_gummy": "Желейка з жовтого чаю",
   "item.collectorsreap.yucca_gummy": "Юкова желейка",
+  "itemGroup.collectorsreap": "Collector's Reap",
   "tooltip.disabled": "Відключено",
   "tooltip.requires_empty_tag": "Requires empty tag:",
   "tooltip.requires_modid": "Вимагає мод:",

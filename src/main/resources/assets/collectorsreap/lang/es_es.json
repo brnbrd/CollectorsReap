@@ -348,6 +348,7 @@
   "item.collectorsreap.vernal_purge": "Vernal Purge",
   "item.collectorsreap.yellow_tea_gummy": "Gominola de té amarillo",
   "item.collectorsreap.yucca_gummy": "Gominola de yuca",
+  "itemGroup.collectorsreap": "Collector's Reap",
   "tooltip.disabled": "Disabled",
   "tooltip.requires_empty_tag": "Requires empty tag:",
   "tooltip.requires_modid": "Requiere el modid:",

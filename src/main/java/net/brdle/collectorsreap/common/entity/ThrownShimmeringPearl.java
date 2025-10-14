@@ -1,6 +1,6 @@
 package net.brdle.collectorsreap.common.entity;
 
-import net.brdle.collectorsreap.common.CRSoundEvents;
+import net.brdle.collectorsreap.common.event.CRSoundEvents;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;

@@ -1,23 +1,16 @@
-package net.brdle.collectorsreap.common;
+package net.brdle.collectorsreap.common.event;
 
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.block.CRCauldronInteractions;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
 import net.brdle.collectorsreap.common.item.CRItems;
-import net.brdle.collectorsreap.compat.IConfigured;
 import net.brdle.collectorsreap.compat.Modid;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
-import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
 
 public class ModEvents {
 	@SubscribeEvent
@@ -77,19 +70,6 @@ public class ModEvents {
 	public void registerSerializers(RegisterEvent e) {
 		if (e.getRegistryKey() == ForgeRegistries.RECIPE_SERIALIZERS.getRegistryKey()) {
 			CraftingHelper.register(EnabledCondition.Serializer.INSTANCE);
-		}
-	}
-
-	@SubscribeEvent
-	public void buildContents(BuildCreativeModeTabContentsEvent event) {
-		if (event.getTabKey() == ModCreativeTabs.TAB_FARMERS_DELIGHT.getKey()) {
-			CRItems.HELPER.getDeferredRegister().getEntries().stream().filter(RegistryObject::isPresent).forEach(object -> {
-				final Item item = object.get();
-				if (item instanceof IConfigured configured && !configured.enabled()) {
-					return;
-				}
-				event.accept(new ItemStack(item), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-			});
 		}
 	}
 }

@@ -348,6 +348,7 @@
   "item.collectorsreap.vernal_purge": "Vernal Purge",
   "item.collectorsreap.yellow_tea_gummy": "黄茶软糖",
   "item.collectorsreap.yucca_gummy": "丝兰果软糖",
+  "itemGroup.collectorsreap": "Collector's Reap",
   "tooltip.disabled": "已禁用",
   "tooltip.requires_empty_tag": "所需标签为空：",
   "tooltip.requires_modid": "需安装模组：",

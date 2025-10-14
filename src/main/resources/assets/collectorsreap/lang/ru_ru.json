@@ -348,6 +348,7 @@
   "item.collectorsreap.vernal_purge": "Vernal Purge",
   "item.collectorsreap.yellow_tea_gummy": "Мармелад из жёлтого чая",
   "item.collectorsreap.yucca_gummy": "Мармелад из юкки",
+  "itemGroup.collectorsreap": "Collector's Reap",
   "tooltip.disabled": "Отключено",
   "tooltip.requires_empty_tag": "Требуется пустой тег:",
   "tooltip.requires_modid": "Требуется ID мода:",

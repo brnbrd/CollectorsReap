@@ -1,6 +1,6 @@
 package net.brdle.collectorsreap.common.item;
 
-import net.brdle.collectorsreap.common.CRSoundEvents;
+import net.brdle.collectorsreap.common.event.CRSoundEvents;
 import net.brdle.collectorsreap.common.entity.ThrownShimmeringPearl;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;

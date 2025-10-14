@@ -1,6 +1,7 @@
-package net.brdle.collectorsreap.common;
+package net.brdle.collectorsreap.common.event;
 
 import net.brdle.collectorsreap.Util;
+import net.brdle.collectorsreap.common.CRParticleTypes;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.effect.CREffects;

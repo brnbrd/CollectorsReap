@@ -1,6 +1,6 @@
 package net.brdle.collectorsreap.common.entity;
 
-import net.brdle.collectorsreap.common.CRSoundEvents;
+import net.brdle.collectorsreap.common.event.CRSoundEvents;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;

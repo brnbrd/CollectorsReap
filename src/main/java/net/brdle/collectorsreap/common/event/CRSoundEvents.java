@@ -1,4 +1,4 @@
-package net.brdle.collectorsreap.common;
+package net.brdle.collectorsreap.common.event;
 
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
