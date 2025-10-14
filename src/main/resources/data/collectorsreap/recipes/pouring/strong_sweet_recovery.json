@@ -1,0 +1,36 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersrespite"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lucuma"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "sweet_recovery"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "strong_sweet_recovery"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:kettle_pouring",
+        "amount": 250,
+        "container": {
+          "item": "minecraft:glass_bottle"
+        },
+        "fluid": "collectorsreap:strong_sweet_recovery",
+        "output": {
+          "item": "collectorsreap:strong_sweet_recovery"
+        }
+      }
+    }
+  ]
+}

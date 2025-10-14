@@ -18,6 +18,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -25,18 +26,20 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
-import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
+import java.util.*;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import net.minecraftforge.registries.tags.ITagManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -233,6 +236,22 @@ public class Util {
 		);
 	}
 
+	// Returns True if effect is removed
+	public static boolean removeEffect(@NotNull LivingEntity entity, @NotNull MobEffect effect) {
+		if (
+			entity.hasEffect(effect) &&
+			!MinecraftForge.EVENT_BUS.post(new MobEffectEvent.Remove(entity, effect)) // True if event is canceled
+		) {
+			entity.removeEffect(effect);
+			return true;
+		}
+		return false;
+	}
+
+	public static void removeEffects(@NotNull LivingEntity entity, @NotNull Collection<MobEffect> effects) {
+		for (MobEffect effect :  effects) removeEffect(entity, effect);
+	}
+
 	// Will not add if effect is null
 	public static void addEffect(LivingEntity entity, @Nullable MobEffect effect, int duration, int amp) {
 		if (effect != null) entity.addEffect(new MobEffectInstance(effect, duration, amp));
@@ -253,6 +272,29 @@ public class Util {
 
 	public static void addFoodEffects(@NotNull final LivingEntity entity, @NotNull final FoodProperties food) {
 		addEffects(entity, getFoodEffects(food));
+	}
+
+	public static List<MobEffect> getCurableEffects(@NotNull final LivingEntity entity) {
+		final Collection<MobEffectInstance> active = entity.getActiveEffects();
+		return active.stream()
+			.filter(instance ->
+				instance.getEffect().getCategory().equals(MobEffectCategory.HARMFUL) &&
+				instance.isCurativeItem(new ItemStack(Items.MILK_BUCKET))
+			)
+			.map(MobEffectInstance::getEffect)
+			.toList();
+	}
+
+	public static void removeCurableEffects(@NotNull final LivingEntity entity) {
+		removeEffects(entity, getCurableEffects(entity));
+	}
+
+	public static List<MobEffect> getBeneficialEffects(@NotNull final LivingEntity entity) {
+		final Collection<MobEffectInstance> active = entity.getActiveEffects();
+		return active.stream()
+			.map(MobEffectInstance::getEffect)
+			.filter(effect -> effect.getCategory().equals(MobEffectCategory.BENEFICIAL))
+			.toList();
 	}
 
 	public static ItemStack getStack(@Nullable Supplier<? extends ItemLike> r, int... count) { // Only considers first vararg entry

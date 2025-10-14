@@ -158,6 +158,14 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.MINT_LIMEADE.get())
 			.add(CRItems.LIME_GREEN_TEA.get())
 			.add(CRItems.POMEGRANATE_BLACK_TEA.get())
+			.add(CRItems.VERNAL_PURGE.get())
+			.add(CRItems.STRONG_VERNAL_PURGE.get())
+			.add(CRItems.LIMBO_BREW.get())
+			.add(CRItems.LONG_LIMBO_BREW.get())
+			.add(CRItems.STRONG_LIMBO_BREW.get())
+			.add(CRItems.SWEET_RECOVERY.get())
+			.add(CRItems.LONG_SWEET_RECOVERY.get())
+			.add(CRItems.STRONG_SWEET_RECOVERY.get())
 			.add(CRItems.POMEGRANATE_SMOOTHIE.get());
 
 		// Brewin and Chewin

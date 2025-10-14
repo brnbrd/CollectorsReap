@@ -1,0 +1,36 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "vernal_purge"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "strong_vernal_purge"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "candied_lime"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersrespite"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:kettle_pouring",
+        "amount": 250,
+        "container": {
+          "item": "minecraft:glass_bottle"
+        },
+        "fluid": "collectorsreap:strong_vernal_purge",
+        "output": {
+          "item": "collectorsreap:strong_vernal_purge"
+        }
+      }
+    }
+  ]
+}

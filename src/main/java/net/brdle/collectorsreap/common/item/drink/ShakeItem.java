@@ -1,4 +1,4 @@
-package net.brdle.collectorsreap.common.item.food;
+package net.brdle.collectorsreap.common.item.drink;
 
 import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.sounds.SoundEvent;

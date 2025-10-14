@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersrespite"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "sweet_recovery"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "strong_sweet_recovery"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lucuma"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:brewing",
+        "base": {
+          "count": 1000,
+          "fluid": "collectorsreap:sweet_recovery"
+        },
+        "cookingtime": 1200,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "item": "minecraft:honey_bottle"
+          }
+        ],
+        "result": {
+          "count": 1000,
+          "fluid": "collectorsreap:strong_sweet_recovery"
+        }
+      }
+    }
+  ]
+}

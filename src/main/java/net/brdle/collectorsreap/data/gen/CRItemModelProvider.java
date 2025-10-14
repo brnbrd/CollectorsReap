@@ -8,6 +8,7 @@ import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -126,12 +127,20 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 
 		// Drinks
 		this.generatedItem(CRItems.LIMEADE);
-		this.item(CRItems.STRONG_LIMEADE, "limeade", "generated");
+		this.otherTexture(CRItems.STRONG_LIMEADE, CRItems.LIMEADE);
 		this.generatedItem(CRItems.BERRY_LIMEADE);
 		this.generatedItem(CRItems.PINK_LIMEADE);
 		this.generatedItem(CRItems.MINT_LIMEADE);
 		this.generatedItem(CRItems.LIME_GREEN_TEA);
 		this.generatedItem(CRItems.POMEGRANATE_BLACK_TEA);
+		this.generatedItem(CRItems.VERNAL_PURGE);
+		this.otherTexture(CRItems.STRONG_VERNAL_PURGE, CRItems.VERNAL_PURGE);
+		this.generatedItem(CRItems.LIMBO_BREW);
+		this.otherTexture(CRItems.LONG_LIMBO_BREW, CRItems.LIMBO_BREW);
+		this.otherTexture(CRItems.STRONG_LIMBO_BREW, CRItems.LIMBO_BREW);
+		this.generatedItem(CRItems.SWEET_RECOVERY);
+		this.otherTexture(CRItems.LONG_SWEET_RECOVERY, CRItems.SWEET_RECOVERY);
+		this.otherTexture(CRItems.STRONG_SWEET_RECOVERY, CRItems.SWEET_RECOVERY);
 		this.generatedItem(CRItems.POMEGRANATE_SMOOTHIE);
 		this.generatedItem(CRItems.POMEGRANATE_CUSTARD);
 		this.generatedItem(CRItems.DRAGONS_PASSION);
@@ -296,6 +305,10 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 
 	private void chest(RegistryObject<?> chestItem) {
 		this.withExistingParent(Util.name(chestItem), "blueprint:item/template_chest");
+	}
+
+	private void otherTexture(RegistryObject<? extends ItemLike> item, RegistryObject<? extends ItemLike> textureItem) {
+		this.item(item, Util.name(textureItem), "generated");
 	}
 
 	public static ResourceLocation resourceItem(String path) {

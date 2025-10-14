@@ -98,6 +98,102 @@ public class CRFluids {
 		FLOWING_POMEGRANATE_BLACK_TEA
 	);
 
+	public static final RegistryObject<FluidType> VERNAL_PURGE_TYPE = TYPES.register("vernal_purge_type",
+		() -> new DrinkFluidType(0xFF58421F));
+	public static final RegistryObject<FlowingFluid> VERNAL_PURGE = FLUIDS.register("vernal_purge",
+		() -> new ForgeFlowingFluid.Source(CRFluids.VERNAL_PURGE_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_VERNAL_PURGE = FLUIDS.register("flowing_vernal_purge",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.VERNAL_PURGE_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties VERNAL_PURGE_PROPERTIES = new ForgeFlowingFluid.Properties(
+		VERNAL_PURGE_TYPE,
+		VERNAL_PURGE,
+		FLOWING_VERNAL_PURGE
+	);
+
+	public static final RegistryObject<FluidType> STRONG_VERNAL_PURGE_TYPE = TYPES.register("strong_vernal_purge_type",
+		() -> new DrinkFluidType(0xFF58421F));
+	public static final RegistryObject<FlowingFluid> STRONG_VERNAL_PURGE = FLUIDS.register("strong_vernal_purge",
+		() -> new ForgeFlowingFluid.Source(CRFluids.STRONG_VERNAL_PURGE_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_STRONG_VERNAL_PURGE = FLUIDS.register("flowing_strong_vernal_purge",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.STRONG_VERNAL_PURGE_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties STRONG_VERNAL_PURGE_PROPERTIES = new ForgeFlowingFluid.Properties(
+		STRONG_VERNAL_PURGE_TYPE,
+		STRONG_VERNAL_PURGE,
+		FLOWING_STRONG_VERNAL_PURGE
+	);
+
+	public static final RegistryObject<FluidType> LIMBO_BREW_TYPE = TYPES.register("limbo_brew_type",
+		() -> new DrinkFluidType(0xFF3F1221));
+	public static final RegistryObject<FlowingFluid> LIMBO_BREW = FLUIDS.register("limbo_brew",
+		() -> new ForgeFlowingFluid.Source(CRFluids.LIMBO_BREW_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_LIMBO_BREW = FLUIDS.register("flowing_limbo_brew",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.LIMBO_BREW_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties LIMBO_BREW_PROPERTIES = new ForgeFlowingFluid.Properties(
+		LIMBO_BREW_TYPE,
+		LIMBO_BREW,
+		FLOWING_LIMBO_BREW
+	);
+
+	public static final RegistryObject<FluidType> LONG_LIMBO_BREW_TYPE = TYPES.register("long_limbo_brew_type",
+		() -> new DrinkFluidType(0xFF3F1221));
+	public static final RegistryObject<FlowingFluid> LONG_LIMBO_BREW = FLUIDS.register("long_limbo_brew",
+		() -> new ForgeFlowingFluid.Source(CRFluids.LONG_LIMBO_BREW_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_LONG_LIMBO_BREW = FLUIDS.register("flowing_long_limbo_brew",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.LONG_LIMBO_BREW_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties LONG_LIMBO_BREW_PROPERTIES = new ForgeFlowingFluid.Properties(
+		LONG_LIMBO_BREW_TYPE,
+		LONG_LIMBO_BREW,
+		FLOWING_LONG_LIMBO_BREW
+	);
+
+	public static final RegistryObject<FluidType> STRONG_LIMBO_BREW_TYPE = TYPES.register("strong_limbo_brew_type",
+		() -> new DrinkFluidType(0xFF3F1221));
+	public static final RegistryObject<FlowingFluid> STRONG_LIMBO_BREW = FLUIDS.register("strong_limbo_brew",
+		() -> new ForgeFlowingFluid.Source(CRFluids.STRONG_LIMBO_BREW_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_STRONG_LIMBO_BREW = FLUIDS.register("flowing_strong_limbo_brew",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.STRONG_LIMBO_BREW_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties STRONG_LIMBO_BREW_PROPERTIES = new ForgeFlowingFluid.Properties(
+		STRONG_LIMBO_BREW_TYPE,
+		STRONG_LIMBO_BREW,
+		FLOWING_STRONG_LIMBO_BREW
+	);
+
+	public static final RegistryObject<FluidType> SWEET_RECOVERY_TYPE = TYPES.register("sweet_recovery_type",
+		() -> new DrinkFluidType(0xFF98592A));
+	public static final RegistryObject<FlowingFluid> SWEET_RECOVERY = FLUIDS.register("sweet_recovery",
+		() -> new ForgeFlowingFluid.Source(CRFluids.SWEET_RECOVERY_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_SWEET_RECOVERY = FLUIDS.register("flowing_sweet_recovery",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.SWEET_RECOVERY_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties SWEET_RECOVERY_PROPERTIES = new ForgeFlowingFluid.Properties(
+		SWEET_RECOVERY_TYPE,
+		SWEET_RECOVERY,
+		FLOWING_SWEET_RECOVERY
+	);
+
+	public static final RegistryObject<FluidType> LONG_SWEET_RECOVERY_TYPE = TYPES.register("long_sweet_recovery_type",
+		() -> new DrinkFluidType(0xFF98592A));
+	public static final RegistryObject<FlowingFluid> LONG_SWEET_RECOVERY = FLUIDS.register("long_sweet_recovery",
+		() -> new ForgeFlowingFluid.Source(CRFluids.LONG_SWEET_RECOVERY_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_LONG_SWEET_RECOVERY = FLUIDS.register("flowing_long_sweet_recovery",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.LONG_SWEET_RECOVERY_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties LONG_SWEET_RECOVERY_PROPERTIES = new ForgeFlowingFluid.Properties(
+		LONG_SWEET_RECOVERY_TYPE,
+		LONG_SWEET_RECOVERY,
+		FLOWING_LONG_SWEET_RECOVERY
+	);
+
+	public static final RegistryObject<FluidType> STRONG_SWEET_RECOVERY_TYPE = TYPES.register("strong_sweet_recovery_type",
+		() -> new DrinkFluidType(0xFF98592A));
+	public static final RegistryObject<FlowingFluid> STRONG_SWEET_RECOVERY = FLUIDS.register("strong_sweet_recovery",
+		() -> new ForgeFlowingFluid.Source(CRFluids.STRONG_SWEET_RECOVERY_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> FLOWING_STRONG_SWEET_RECOVERY = FLUIDS.register("flowing_strong_sweet_recovery",
+		() -> new ForgeFlowingFluid.Flowing(CRFluids.STRONG_SWEET_RECOVERY_PROPERTIES));
+	public static final ForgeFlowingFluid.Properties STRONG_SWEET_RECOVERY_PROPERTIES = new ForgeFlowingFluid.Properties(
+		STRONG_SWEET_RECOVERY_TYPE,
+		STRONG_SWEET_RECOVERY,
+		FLOWING_STRONG_SWEET_RECOVERY
+	);
+
 	public static final RegistryObject<FluidType> DEIFIC_BLOOD_TYPE = TYPES.register("deific_blood_type",
 		() -> new DrinkFluidType(0xFFac1927));
 	public static final RegistryObject<FlowingFluid> DEIFIC_BLOOD = FLUIDS.register("deific_blood",

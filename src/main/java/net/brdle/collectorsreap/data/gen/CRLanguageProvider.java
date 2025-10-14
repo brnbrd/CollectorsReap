@@ -18,6 +18,7 @@ public class CRLanguageProvider extends LanguageProvider {
 	@Override
 	protected void addTranslations() {
 		addEntities();
+		addFluids();
 		addText();
 		addEffects();
 		addBlocks();
@@ -35,15 +36,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addEntityType(CREntities.SHIMMERING_PEARL, "Thrown Shimmering Pearl");
 	}
 
-	private void addText() {
-		add("tooltip.disabled", "Disabled");
-		add("tooltip.requires_empty_tag", "Requires empty tag:");
-		add("tooltip.requires_tag", "Requires tag:");
-		add("tooltip.requires_modid", "Requires modid:");
-		add(FarmersDelight.MODID + ".tooltip.stygian_pomegranate", "Explosive");
-		add(FarmersDelight.MODID + ".tooltip.melon_gummy", "Minor Instant Health");
-		add(FarmersDelight.MODID + ".tooltip.strawberry_gummy", "Instant Health");
-		add("trim_material." + CollectorsReap.MODID + ".pearl", "Pearl Material");
+	private void addFluids() {
 		add("fluid_type." + CollectorsReap.MODID + ".cream_cheese_type", "Cream Cheese");
 		add("fluid_type." + CollectorsReap.MODID + ".lime_juice_type", "Limeade");
 		add("fluid_type." + CollectorsReap.MODID + ".strong_lime_juice_type", "Limeade");
@@ -52,11 +45,33 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("fluid_type." + CollectorsReap.MODID + ".mint_limeade_type", "Mint Limeade");
 		add("fluid_type." + CollectorsReap.MODID + ".lime_green_tea_type", "Lime Green Tea");
 		add("fluid_type." + CollectorsReap.MODID + ".pomegranate_black_tea_type", "Pomegranate Black Tea");
+		add("fluid_type." + CollectorsReap.MODID + ".vernal_purge_type", "Vernal Purge");
+		add("fluid_type." + CollectorsReap.MODID + ".strong_vernal_purge_type", "Vernal Purge");
+		add("fluid_type." + CollectorsReap.MODID + ".limbo_brew_type", "Limbo Brew");
+		add("fluid_type." + CollectorsReap.MODID + ".long_limbo_brew_type", "Limbo Brew");
+		add("fluid_type." + CollectorsReap.MODID + ".strong_limbo_brew_type", "Limbo Brew");
+		add("fluid_type." + CollectorsReap.MODID + ".sweet_recovery_type", "Sweet Recovery");
+		add("fluid_type." + CollectorsReap.MODID + ".long_sweet_recovery_type", "Sweet Recovery");
+		add("fluid_type." + CollectorsReap.MODID + ".strong_sweet_recovery_type", "Sweet Recovery");
 		add("fluid_type." + CollectorsReap.MODID + ".deific_blood_type", "Deific Blood");
 		add("fluid_type." + CollectorsReap.MODID + ".hermits_sour_type", "Hermit's Sour");
 		add("fluid_type." + CollectorsReap.MODID + ".rose_moon_type", "Rosé Moon");
 		add("fluid_type." + CollectorsReap.MODID + ".reanimators_garden_type", "Reanimator's Garden");
 		add("fluid_type." + CollectorsReap.MODID + ".heavens_cream_type", "Heaven's Cream");
+	}
+
+	private void addText() {
+		add("tooltip.disabled", "Disabled");
+		add("tooltip.requires_empty_tag", "Requires empty tag:");
+		add("tooltip.requires_tag", "Requires tag:");
+		add("tooltip.requires_modid", "Requires modid:");
+		add(FarmersDelight.MODID + ".tooltip.stygian_pomegranate", "Explosive");
+		add(FarmersDelight.MODID + ".tooltip.vernal_purge", "Clears Harmful Effects");
+		add(FarmersDelight.MODID + ".tooltip.strong_vernal_purge", "Clears Harmful Effects");
+		add(FarmersDelight.MODID + ".tooltip.limbo_brew", "Extends Beneficial Effects by 30s");
+		add(FarmersDelight.MODID + ".tooltip.long_limbo_brew", "Extends Beneficial Effects by 15s");
+		add(FarmersDelight.MODID + ".tooltip.strong_limbo_brew", "Extends Beneficial Effects by 60s");
+		add("trim_material." + CollectorsReap.MODID + ".pearl", "Pearl Material");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRBlocks.PORTOBELLO), "Portobellos can be rarely found in meadows.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Limes can be found as a wild bush in flower forests.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME) + ".pollination", "A flowering Lime Bush will grow fruit when pollinated by a Bee.");
@@ -255,6 +270,14 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.MINT_LIMEADE, "Mint Limeade");
 		addItem(CRItems.LIME_GREEN_TEA, "Lime Green Tea");
 		addItem(CRItems.POMEGRANATE_BLACK_TEA, "Pomegranate Black Tea");
+		addItem(CRItems.VERNAL_PURGE, "Vernal Purge");
+		addItem(CRItems.STRONG_VERNAL_PURGE, "Vernal Purge");
+		addItem(CRItems.LIMBO_BREW, "Limbo Brew");
+		addItem(CRItems.LONG_LIMBO_BREW, "Limbo Brew");
+		addItem(CRItems.STRONG_LIMBO_BREW, "Limbo Brew");
+		addItem(CRItems.SWEET_RECOVERY, "Sweet Recovery");
+		addItem(CRItems.LONG_SWEET_RECOVERY, "Sweet Recovery");
+		addItem(CRItems.STRONG_SWEET_RECOVERY, "Sweet Recovery");
 		addItem(CRItems.POMEGRANATE_SMOOTHIE, "Pomegranate Smoothie");
 		addItem(CRItems.POMEGRANATE, "Pomegranate");
 		addItem(CRItems.POMEGRANATE_SEEDS, "Pomegranate Seeds");

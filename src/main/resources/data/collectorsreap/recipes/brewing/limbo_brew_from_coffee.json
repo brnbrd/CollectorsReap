@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:item_exists",
+          "item": "farmersrespite:coffee"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "limbo_brew"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pink_dragon_fruit"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:brewing",
+        "base": {
+          "count": 1000,
+          "fluid": "farmersrespite:coffee"
+        },
+        "cookingtime": 1200,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          },
+          {
+            "item": "collectorsreap:pink_dragon_fruit"
+          }
+        ],
+        "result": {
+          "count": 1000,
+          "fluid": "collectorsreap:limbo_brew"
+        }
+      }
+    }
+  ]
+}

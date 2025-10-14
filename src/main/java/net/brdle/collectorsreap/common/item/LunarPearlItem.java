@@ -4,8 +4,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class PearlItem extends Item {
-	public PearlItem(Properties properties) {
+public class LunarPearlItem extends Item {
+	public LunarPearlItem(Properties properties) {
 		super(properties);
 	}
 

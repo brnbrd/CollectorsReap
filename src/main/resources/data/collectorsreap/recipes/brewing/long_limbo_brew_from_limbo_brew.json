@@ -1,0 +1,43 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersrespite"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "limbo_brew"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "long_limbo_brew"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pink_dragon_fruit"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:brewing",
+        "base": {
+          "count": 1000,
+          "fluid": "collectorsreap:limbo_brew"
+        },
+        "cookingtime": 1200,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "tag": "forge:milk"
+          }
+        ],
+        "result": {
+          "count": 1000,
+          "fluid": "collectorsreap:long_limbo_brew"
+        }
+      }
+    }
+  ]
+}

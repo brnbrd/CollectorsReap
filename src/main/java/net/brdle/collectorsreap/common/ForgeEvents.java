@@ -142,11 +142,10 @@ public class ForgeEvents {
 				}
 
 				// Increment Surge amplifier or reset to zero
-				final int duration = effectInstance.getDuration();
-				living.removeEffect(surge);
+				Util.removeEffect(living, surge);
 				living.addEffect(new MobEffectInstance(
 					surge,
-					duration,
+					effectInstance.getDuration(),
 					amplifier >= SurgeEffect.MAX_SURGE ? 0 : Math.min(SurgeEffect.MAX_SURGE, amplifier + 1),
 					effectInstance.isAmbient(),
 					effectInstance.isVisible(),

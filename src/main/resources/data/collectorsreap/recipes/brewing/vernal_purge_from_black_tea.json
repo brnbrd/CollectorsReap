@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:item_exists",
+          "item": "farmersrespite:black_tea"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "vernal_purge"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "candied_lime"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:brewing",
+        "base": {
+          "count": 1000,
+          "fluid": "farmersrespite:black_tea"
+        },
+        "cookingtime": 1200,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "item": "collectorsreap:candied_lime"
+          },
+          {
+            "item": "collectorsreap:candied_lime"
+          }
+        ],
+        "result": {
+          "count": 1000,
+          "fluid": "collectorsreap:vernal_purge"
+        }
+      }
+    }
+  ]
+}

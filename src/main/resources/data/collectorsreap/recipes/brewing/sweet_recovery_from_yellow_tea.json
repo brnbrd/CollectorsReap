@@ -1,0 +1,42 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:item_exists",
+          "item": "farmersrespite:yellow_tea"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "sweet_recovery"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "lucuma"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:brewing",
+        "base": {
+          "count": 1000,
+          "fluid": "farmersrespite:yellow_tea"
+        },
+        "cookingtime": 1200,
+        "experience": 0.35,
+        "ingredients": [
+          {
+            "item": "collectorsreap:lucuma"
+          },
+          {
+            "item": "collectorsreap:lucuma"
+          }
+        ],
+        "result": {
+          "count": 1000,
+          "fluid": "collectorsreap:sweet_recovery"
+        }
+      }
+    }
+  ]
+}

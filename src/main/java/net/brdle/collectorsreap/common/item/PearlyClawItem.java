@@ -6,13 +6,13 @@ import net.brdle.collectorsreap.Util;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Rarity;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.util.Lazy;
 import org.jetbrains.annotations.NotNull;
 
-public class PearlyClawItem extends PearlItem {
+public class PearlyClawItem extends Item {
 	private final Lazy<Multimap<Attribute, AttributeModifier>> attributes;
 
 	public PearlyClawItem(Properties properties) {
@@ -26,8 +26,13 @@ public class PearlyClawItem extends PearlItem {
 	}
 
 	@Override
+	public boolean isFoil(@NotNull ItemStack stack) {
+		return true;
+	}
+
+	@Override
 	public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-		Multimap<Attribute, AttributeModifier> mods = super.getAttributeModifiers(slot, stack);
+		final Multimap<Attribute, AttributeModifier> mods = super.getAttributeModifiers(slot, stack);
 		if (slot.getType() == EquipmentSlot.Type.HAND) {
 			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 			builder.putAll(mods);
@@ -35,10 +40,5 @@ public class PearlyClawItem extends PearlItem {
 			return builder.build();
 		}
 		return mods;
-	}
-
-	@Override
-	public @NotNull Rarity getRarity(@NotNull ItemStack stack) {
-		return Rarity.UNCOMMON;
 	}
 }

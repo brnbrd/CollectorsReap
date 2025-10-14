@@ -43,7 +43,15 @@ public class JEIPlugin implements IModPlugin {
 			hidden.addAll(List.of(
 				CRItems.STRONG_LIMEADE.get().getDefaultInstance(),
 				CRItems.LIME_GREEN_TEA.get().getDefaultInstance(),
-				CRItems.POMEGRANATE_BLACK_TEA.get().getDefaultInstance()
+				CRItems.POMEGRANATE_BLACK_TEA.get().getDefaultInstance(),
+				CRItems.VERNAL_PURGE.get().getDefaultInstance(),
+				CRItems.STRONG_VERNAL_PURGE.get().getDefaultInstance(),
+				CRItems.LIMBO_BREW.get().getDefaultInstance(),
+				CRItems.LONG_LIMBO_BREW.get().getDefaultInstance(),
+				CRItems.STRONG_LIMBO_BREW.get().getDefaultInstance(),
+				CRItems.SWEET_RECOVERY.get().getDefaultInstance(),
+				CRItems.LONG_SWEET_RECOVERY.get().getDefaultInstance(),
+				CRItems.STRONG_SWEET_RECOVERY.get().getDefaultInstance()
 			));
 			hiddenFluids.addAll(List.of(
 				new FluidStack(CRFluids.LIME_JUICE.get(), 1000),
@@ -52,7 +60,15 @@ public class JEIPlugin implements IModPlugin {
 				new FluidStack(CRFluids.PINK_LIMEADE.get(), 1000),
 				new FluidStack(CRFluids.MINT_LIMEADE.get(), 1000),
 				new FluidStack(CRFluids.LIME_GREEN_TEA.get(), 1000),
-				new FluidStack(CRFluids.POMEGRANATE_BLACK_TEA.get(), 1000)
+				new FluidStack(CRFluids.POMEGRANATE_BLACK_TEA.get(), 1000),
+				new FluidStack(CRFluids.VERNAL_PURGE.get(), 1000),
+				new FluidStack(CRFluids.STRONG_VERNAL_PURGE.get(), 1000),
+				new FluidStack(CRFluids.LIMBO_BREW.get(), 1000),
+				new FluidStack(CRFluids.LONG_LIMBO_BREW.get(), 1000),
+				new FluidStack(CRFluids.STRONG_LIMBO_BREW.get(), 1000),
+				new FluidStack(CRFluids.SWEET_RECOVERY.get(), 1000),
+				new FluidStack(CRFluids.LONG_SWEET_RECOVERY.get(), 1000),
+				new FluidStack(CRFluids.STRONG_SWEET_RECOVERY.get(), 1000)
 			));
 		}
 		if (!Modid.BC.loaded()) {

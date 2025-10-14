@@ -1,0 +1,36 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "farmersrespite"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "limbo_brew"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "strong_limbo_brew"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pink_dragon_fruit"
+        }
+      ],
+      "recipe": {
+        "type": "farmersrespite:kettle_pouring",
+        "amount": 250,
+        "container": {
+          "item": "minecraft:glass_bottle"
+        },
+        "fluid": "collectorsreap:strong_limbo_brew",
+        "output": {
+          "item": "collectorsreap:strong_limbo_brew"
+        }
+      }
+    }
+  ]
+}

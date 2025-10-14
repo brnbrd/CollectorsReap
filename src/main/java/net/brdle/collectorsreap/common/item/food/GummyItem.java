@@ -13,15 +13,6 @@ public class GummyItem extends CompatConsumable {
 		super(prop, true, false, modid);
 	}
 
-	// Healing gummy will have custom tooltip
-	public GummyItem(Properties prop, float heal) {
-		super(prop, true, true, heal);
-	}
-
-	public GummyItem(Properties prop, boolean hasCustomTooltip, float heal, @NotNull Modid modid) {
-		super(prop, true, hasCustomTooltip, heal, modid);
-	}
-
 	@Override
 	public int getUseDuration(@NotNull ItemStack stack) {
 		return 14;
