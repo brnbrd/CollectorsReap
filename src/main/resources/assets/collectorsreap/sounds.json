@@ -1,5 +1,23 @@
 {
-  "block.dragon_fruit_bush.pick_dragon_fruits": {
+  "block.lime_bush.pick_lime": {
+    "subtitle": "collectorsreap.subtitle.lime.pick",
+    "sounds": [
+      {
+        "name": "block.sweet_berry_bush.pick_berries",
+        "type": "event"
+      }
+    ]
+  },
+  "block.pomegranate_bush.pick_pomegranate": {
+    "subtitle": "collectorsreap.subtitle.pomegranate.pick",
+    "sounds": [
+      {
+        "name": "block.sweet_berry_bush.pick_berries",
+        "type": "event"
+      }
+    ]
+  },
+  "block.dragon_fruit_bush.pick_dragon_fruit": {
     "subtitle": "collectorsreap.subtitle.dragon_fruit.pick",
     "sounds": [
       {

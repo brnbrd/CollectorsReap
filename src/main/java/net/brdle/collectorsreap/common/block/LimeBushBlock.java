@@ -1,10 +1,12 @@
 package net.brdle.collectorsreap.common.block;
 
 import net.brdle.collectorsreap.common.config.CRConfig;
+import net.brdle.collectorsreap.common.event.CRSoundEvents;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.Bee;
@@ -23,7 +25,6 @@ import net.minecraftforge.common.ForgeHooks;
 import org.jetbrains.annotations.NotNull;
 
 public class LimeBushBlock extends FruitBushBlock {
-
 	public static final VoxelShape SMALL_SHAPE = Block.box(4, 0, 4, 12, 11, 12);
 	private static final VoxelShape MEDIUM_SHAPE = Shapes.or(
 		Block.box(0D, 8D, 0D, 16D, 16D, 16D),
@@ -57,11 +58,6 @@ public class LimeBushBlock extends FruitBushBlock {
 	@Override
 	public Item getSeeds() {
 		return CRItems.LIME_SEEDS.get();
-	}
-
-	@Override
-	public boolean isSpecial(Level level, BlockPos pos) {
-		return false;
 	}
 
 	@SuppressWarnings("deprecation")
@@ -121,5 +117,10 @@ public class LimeBushBlock extends FruitBushBlock {
 	@Override
 	public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
 		return 30;
+	}
+
+	@Override
+	public SoundEvent getPickSound() {
+		return CRSoundEvents.PICK_LIME.get();
 	}
 }

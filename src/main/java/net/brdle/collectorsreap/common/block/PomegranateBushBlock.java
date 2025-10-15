@@ -1,16 +1,17 @@
 package net.brdle.collectorsreap.common.block;
 
 import net.brdle.collectorsreap.common.config.CRConfig;
+import net.brdle.collectorsreap.common.event.CRSoundEvents;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -23,11 +24,10 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.PlantType;
-import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
+import org.jetbrains.annotations.NotNull;
 
 public class PomegranateBushBlock extends FruitBushBlock {
-
 	private static final VoxelShape SAPLING_SHAPE = Block.box(3D, 0D, 3D, 13D, 5D, 13D);
 	private static final VoxelShape MID_GROWTH_SHAPE = Block.box(2D, 0D, 2D, 14D, 15D, 14D);
 	private static final VoxelShape SHAPE_LOWER = Block.box(5D, 0D, 5D, 11D, 16D, 11D);
@@ -74,7 +74,7 @@ public class PomegranateBushBlock extends FruitBushBlock {
 
 	@Override
 	public int getSpecialChance() {
-		return 10;
+		return CRConfig.STYGIAN_POMEGRANATE_RARITY.get();
 	}
 
 	@Override
@@ -147,5 +147,10 @@ public class PomegranateBushBlock extends FruitBushBlock {
 	@Override
 	public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
 		return 0;
+	}
+
+	@Override
+	public SoundEvent getPickSound() {
+		return CRSoundEvents.PICK_POMEGRANATE.get();
 	}
 }

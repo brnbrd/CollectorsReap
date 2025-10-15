@@ -56,8 +56,8 @@ public class DragonFruitVineBlock extends CropBlock {
 			return InteractionResult.PASS;
 		} else if (isMature) {
 			RandomSource random = level.getRandom();
-			Block.popResource(level, pos, new ItemStack(CRItems.PINK_DRAGON_FRUIT.get(), 1 + random.nextInt(2)));
-			level.playSound(null, pos, CRSoundEvents.PICK_DRAGON_FRUITS.get(), SoundSource.BLOCKS, 1F, 0.8F + random.nextFloat() * 0.4F);
+			popResource(level, pos, new ItemStack(CRItems.PINK_DRAGON_FRUIT.get(), 1 + random.nextInt(2)));
+			level.playSound(null, pos, CRSoundEvents.PICK_DRAGON_FRUIT.get(), SoundSource.BLOCKS, 1F, 0.8F + random.nextFloat() * 0.4F);
 			level.setBlock(pos, state.setValue(this.getAgeProperty(), 0), 2);
 			return InteractionResult.SUCCESS;
 		} else {
@@ -151,10 +151,10 @@ public class DragonFruitVineBlock extends CropBlock {
 
 	@Override
 	public boolean canSurvive(BlockState state, @NotNull LevelReader level, @NotNull BlockPos pos) {
-		return state.getValue(ROPELOGGED) ? (
-			level.getBlockState(pos.below()).is(CRBlocks.PINK_DRAGON_FRUIT_CROP.get()) &&
-			(level.getRawBrightness(pos, 0) >= 8 || level.canSeeSky(pos))
-		) : super.canSurvive(state, level, pos);
+		return state.getValue(ROPELOGGED) ?
+		(level.getBlockState(pos.below()).is(CRBlocks.PINK_DRAGON_FRUIT_CROP.get()) &&
+		(level.getRawBrightness(pos, 0) >= 8 || level.canSeeSky(pos))) :
+		super.canSurvive(state, level, pos);
 	}
 
 	@Override
@@ -185,8 +185,8 @@ public class DragonFruitVineBlock extends CropBlock {
 	}
 
 	public static void destroyAndPlaceRope(Level level, @NotNull BlockPos pos) {
-		Block configuredRopeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Configuration.DEFAULT_TOMATO_VINE_ROPE.get()));
-		Block finalRopeBlock = configuredRopeBlock != null ? configuredRopeBlock : ModBlocks.ROPE.get();
+		final Block configuredRopeBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(Configuration.DEFAULT_TOMATO_VINE_ROPE.get()));
+		final Block finalRopeBlock = configuredRopeBlock != null ? configuredRopeBlock : ModBlocks.ROPE.get();
 		level.setBlockAndUpdate(pos, finalRopeBlock.defaultBlockState());
 	}
 }

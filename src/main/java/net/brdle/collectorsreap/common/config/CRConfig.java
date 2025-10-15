@@ -15,6 +15,7 @@ public class CRConfig {
 	public static final ForgeConfigSpec.BooleanValue LIME_POLLINATION;
 	public static final ForgeConfigSpec.BooleanValue POMEGRANATE_POLLINATION;
 	public static final ForgeConfigSpec.BooleanValue FAST_POLLINATE;
+	public static final ForgeConfigSpec.IntValue STYGIAN_POMEGRANATE_RARITY;
 	public static final ForgeConfigSpec.DoubleValue SURGE_ZERO_MULTIPLIER;
 	public static final ForgeConfigSpec.DoubleValue SURGE_ONE_MULTIPLIER;
 	public static final ForgeConfigSpec.DoubleValue SURGE_TWO_MULTIPLIER;
@@ -24,15 +25,18 @@ public class CRConfig {
 		final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
 		BUILDER.push("Behavior");
+		FAST_POLLINATE = BUILDER
+			.comment("Whether bee pollination of bushes should occur much quicker (when Bee collides with it) rather than on Bee's AI scheduled timing. Use this if having issues with pollination.")
+			.define("fast_pollinate", false);
 		LIME_POLLINATION = BUILDER
 			.comment("Whether Lime Bushes require Bee pollination to reach final growth stage.")
 			.define("lime_pollination", true);
 		POMEGRANATE_POLLINATION = BUILDER
 			.comment("Whether Pomegranate Bushes require Bee pollination to reach final growth stage in the Overworld.")
 			.define("pomegranate_pollination", true);
-		FAST_POLLINATE = BUILDER
-			.comment("Whether bee pollination of bushes should occur much quicker (when Bee collides with it) rather than on Bee's AI scheduled timing. Use this if having issues with pollination.")
-			.define("fast_pollinate", false);
+		STYGIAN_POMEGRANATE_RARITY = BUILDER
+			.comment("(1/x) Chance to pick a Stygian Pomegranate from a bush when all conditions are met.")
+			.defineInRange("stygian_pomegranate_rarity", 10, 1, 100);
 		BUILDER.pop();
 
 		BUILDER.push("Effects");
