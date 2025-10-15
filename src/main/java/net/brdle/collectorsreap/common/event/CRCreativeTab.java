@@ -3,7 +3,7 @@ package net.brdle.collectorsreap.common.event;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.item.CRItems;
-import net.brdle.collectorsreap.compat.IConfigured;
+import net.brdle.collectorsreap.common.item.IConfigured;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

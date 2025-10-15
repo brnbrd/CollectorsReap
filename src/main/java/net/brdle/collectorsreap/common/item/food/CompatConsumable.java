@@ -1,6 +1,6 @@
 package net.brdle.collectorsreap.common.item.food;
 
-import net.brdle.collectorsreap.compat.ICompat;
+import net.brdle.collectorsreap.common.item.IConfigured;
 import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -8,7 +8,7 @@ import net.minecraft.world.level.Level;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import org.jetbrains.annotations.NotNull;
 
-public class CompatConsumable extends ConsumableItem implements ICompat {
+public class CompatConsumable extends ConsumableItem implements IConfigured {
 	private final Modid[] modid;
 	private final float heal;
 

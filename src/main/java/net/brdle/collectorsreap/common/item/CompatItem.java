@@ -1,6 +1,5 @@
 package net.brdle.collectorsreap.common.item;
 
-import net.brdle.collectorsreap.compat.ICompat;
 import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
@@ -11,7 +10,7 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class CompatItem extends Item implements ICompat {
+public class CompatItem extends Item implements IConfigured {
 	private final Modid[] modid;
 
 	public CompatItem(Properties properties, Modid... modid) {
