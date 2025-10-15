@@ -6,6 +6,12 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "lime"
+              }
+            ],
             "functions": [
               {
                 "add": false,

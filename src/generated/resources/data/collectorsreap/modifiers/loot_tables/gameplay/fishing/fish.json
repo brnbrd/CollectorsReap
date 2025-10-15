@@ -12,6 +12,10 @@
                 "predicate": {
                   "biome": "minecraft:river"
                 }
+              },
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "platinum_bass"
               }
             ],
             "name": "collectorsreap:platinum_bass",
@@ -42,6 +46,10 @@
                     }
                   }
                 ]
+              },
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "tiger_prawn"
               }
             ],
             "name": "collectorsreap:tiger_prawn",
@@ -72,6 +80,10 @@
                     }
                   }
                 ]
+              },
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "urchin"
               }
             ],
             "name": "collectorsreap:urchin",
@@ -102,6 +114,10 @@
                     }
                   }
                 ]
+              },
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "clam"
               }
             ],
             "name": "collectorsreap:clam",

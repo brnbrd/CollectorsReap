@@ -6,6 +6,12 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "lime_seeds"
+              }
+            ],
             "functions": [
               {
                 "add": false,

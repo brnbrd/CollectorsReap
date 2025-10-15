@@ -6,6 +6,12 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "pomegranate_slice"
+              }
+            ],
             "functions": [
               {
                 "add": false,

@@ -6,11 +6,23 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "lucuma_sapling"
+              }
+            ],
             "name": "collectorsreap:lucuma_sapling",
             "weight": 4
           },
           {
             "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "gilded_lucuma"
+              }
+            ],
             "name": "collectorsreap:gilded_lucuma"
           }
         ],

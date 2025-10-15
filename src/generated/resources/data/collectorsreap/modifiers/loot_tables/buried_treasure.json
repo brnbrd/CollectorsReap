@@ -6,6 +6,12 @@
         "entries": [
           {
             "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "lunar_pearl"
+              }
+            ],
             "functions": [
               {
                 "add": false,
