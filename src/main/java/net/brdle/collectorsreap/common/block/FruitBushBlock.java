@@ -1,6 +1,5 @@
 package net.brdle.collectorsreap.common.block;
 
-import net.brdle.collectorsreap.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -33,7 +32,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.Tags;
-import java.util.function.Supplier;
+import java.util.Optional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -108,12 +107,12 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 		return new ItemStack(this.getSeeds());
 	}
 
-	public Supplier<@Nullable Item> getSpecialFruit() {
-		return () -> null;
+	public Optional<Item> getSpecialFruit() {
+		return Optional.empty();
 	}
 
 	public boolean hasSpecialFruit() {
-		return this.getSpecialFruit().get() != null;
+		return this.getSpecialFruit().isPresent();
 	}
 
 	public int getSpecialChance() {
@@ -144,7 +143,7 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 				player.hurt(player.damageSources().sweetBerryBush(), 1F);
 			}
 			this.dropFruit(level, pos);
-			level.playSound(null, pos, this.getPickSound(), SoundSource.BLOCKS, 1F, 0.8F + level.random.nextFloat() * 0.4F);
+			level.playSound(null, pos, this.getPickSound(), SoundSource.BLOCKS, 1F, 0.8F + level.getRandom().nextFloat() * 0.4F);
 			BlockState picked = state.setValue(AGE, MAX_AGE - 2);
 			level.setBlock(pos, picked, 2); // Revert to pre-flowering
 			level.setBlock(pos.above(), picked.setValue(HALF, DoubleBlockHalf.UPPER), 2); // Revert upper to pre-flowering
@@ -158,9 +157,8 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 			level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, stunted));
 			player.getItemInHand(hand).hurtAndBreak(1, player, (b) -> b.broadcastBreakEvent(b.getUsedItemHand()));
 			return InteractionResult.sidedSuccess(level.isClientSide());
-		} else {
-			return super.use(state, level, pos, player, hand, hit);
 		}
+		return InteractionResult.PASS;
 	}
 
 	@Override
@@ -187,9 +185,10 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 
 	public void dropFruit(Level level, BlockPos pos) {
 		if (!level.isClientSide()) {
-			ItemStack stack = (this.isSpecial(level, pos)) ?
-				Util.getStack(this.getSpecialFruit()) :
-				new ItemStack(this.getFruit(), this.getNumFruit(level.getRandom().nextIntBetweenInclusive(1, 2)));
+			ItemStack stack =
+				this.isSpecial(level, pos) ?
+				new ItemStack(this.getSpecialFruit().get()) :
+				new ItemStack(this.getFruit(), this.getNumFruit(level.getRandom().nextIntBetweenInclusive(0, 2)));
 			popResource(level, pos, stack);
 		}
 	}

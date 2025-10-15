@@ -131,6 +131,13 @@ public class JEIPlugin implements IModPlugin {
 			registration.addItemStackInfo(dragonFruitStack, Component.translatable(dragonFruitTranslationKey));
 		}
 
+		// Lucuma
+		String lucumaTranslationKey = "desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LUCUMA);
+		List<ItemStack> lucumaStack = List.of(Util.getStack(CRBlocks.LUCUMA_SAPLING), Util.getStack(CRItems.LUCUMA));
+		if (CRConfig.verify(CRItems.LUCUMA)) {
+			registration.addItemStackInfo(lucumaStack, Component.translatable(lucumaTranslationKey));
+		}
+
 		// Urchin Dart
 		String dartTranslationKey = "desc." + CollectorsReap.MODID + "." + Util.name(CRItems.URCHIN_DART);
 		if (CRConfig.verify(CRItems.URCHIN_DART)) {

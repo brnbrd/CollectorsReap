@@ -7,7 +7,9 @@ import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
 
 public class CRLanguageProvider extends LanguageProvider {
@@ -79,6 +81,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.POMEGRANATE) + ".pollination", "A flowering Pomegranate Bush will grow fruit in the Overworld when pollinated by a Bee.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.STYGIAN_POMEGRANATE), "A dangerous variant that can be rarely picked from Pomegranate Bushes growing on Resurgent Soil.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PINK_DRAGON_FRUIT), "Pink Dragon Fruits can be found as a wild bush in the badlands.");
+		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LUCUMA), "Lucuma Saplings can be found in Ancient Cities, growing a tree that provides a powerful fruit.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.URCHIN_DART), "Poisonous projectiles that can be thrown by hand or fired using Bamboo in your offhand.");
 		add("itemGroup." + CollectorsReap.MODID, "Collector's Reap");
 		add("config.jade.plugin_" + CollectorsReap.MODID + ".crop_progress", "Crop Progress");

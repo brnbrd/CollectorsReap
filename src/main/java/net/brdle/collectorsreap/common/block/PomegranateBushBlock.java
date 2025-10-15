@@ -24,7 +24,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.PlantType;
-import java.util.function.Supplier;
+import java.util.Optional;
 import org.jetbrains.annotations.NotNull;
 
 public class PomegranateBushBlock extends FruitBushBlock {
@@ -68,8 +68,9 @@ public class PomegranateBushBlock extends FruitBushBlock {
 		return CRItems.POMEGRANATE.get();
 	}
 
-	public Supplier<Item> getSpecialFruit() {
-		return CRItems.STYGIAN_POMEGRANATE;
+	@Override
+	public Optional<Item> getSpecialFruit() {
+		return Optional.of(CRItems.STYGIAN_POMEGRANATE.get());
 	}
 
 	@Override
@@ -131,12 +132,12 @@ public class PomegranateBushBlock extends FruitBushBlock {
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
-		if (pContext instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee && CRConfig.POMEGRANATE_POLLINATION.get()) {
-			return pState.getValue(HALF) == DoubleBlockHalf.LOWER ?
+	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+		if (context instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee && CRConfig.POMEGRANATE_POLLINATION.get()) {
+			return state.getValue(HALF) == DoubleBlockHalf.LOWER ?
 				Block.box(0D, 0D, 0D, 16D, 8D, 16D) : Shapes.empty();
 		}
-		return getShape(pState, pLevel, pPos, pContext);
+		return getShape(state, level, pos, context);
 	}
 
 	@Override

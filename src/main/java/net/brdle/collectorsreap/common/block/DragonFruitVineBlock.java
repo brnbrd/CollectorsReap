@@ -14,7 +14,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
@@ -51,18 +50,14 @@ public class DragonFruitVineBlock extends CropBlock {
 
 	@Override
 	public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-		boolean isMature = this.isMaxAge(state);
-		if (!isMature && player.getItemInHand(hand).is(Items.BONE_MEAL)) {
-			return InteractionResult.PASS;
-		} else if (isMature) {
-			RandomSource random = level.getRandom();
+		if (this.isMaxAge(state)) {
+			final RandomSource random = level.getRandom();
 			popResource(level, pos, new ItemStack(CRItems.PINK_DRAGON_FRUIT.get(), 1 + random.nextInt(2)));
 			level.playSound(null, pos, CRSoundEvents.PICK_DRAGON_FRUIT.get(), SoundSource.BLOCKS, 1F, 0.8F + random.nextFloat() * 0.4F);
 			level.setBlock(pos, state.setValue(this.getAgeProperty(), 0), 2);
-			return InteractionResult.SUCCESS;
-		} else {
-			return super.use(state, level, pos, player, hand, hit);
+			return InteractionResult.sidedSuccess(level.isClientSide());
 		}
+		return InteractionResult.PASS;
 	}
 
 	@Override

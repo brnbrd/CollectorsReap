@@ -41,31 +41,25 @@ public class CRItems {
 		new MushroomColonyItem(CRBlocks.PORTOBELLO_COLONY.get(), (new Item.Properties())));
 	public static final RegistryObject<Item> PORTOBELLO = registerBlock(CRBlocks.PORTOBELLO);
 
-	// Fruits/Veggies
+	// Fruits/Veggies/Seeds
 	public static final RegistryObject<Item> POMEGRANATE = registerItem("pomegranate", () ->
 		new Item((new Item.Properties())));
 	public static final RegistryObject<Item> POMEGRANATE_SLICE = registerFood("pomegranate_slice",
 		new Item.Properties().food(Nutrition.POMEGRANATE_SLICE), true, false);
+	public static final RegistryObject<Item> POMEGRANATE_SEEDS = registerItem("pomegranate_seeds", () ->
+		new FruitBushSeedsItem(
+			CRBlocks.POMEGRANATE_BUSH.get(), (new Item.Properties()).food(Nutrition.POMEGRANATE_SEEDS)
+		));
 	public static final RegistryObject<Item> STYGIAN_POMEGRANATE = registerItem("stygian_pomegranate", () ->
 		new StygianPomegranateItem((new Item.Properties()).food(Nutrition.STYGIAN_POMEGRANATE)));
 	public static final RegistryObject<Item> LIME = registerFood("lime",
 		new Item.Properties().food(Nutrition.LIME), true, false);
 	public static final RegistryObject<Item> LIME_SLICE = registerFood("lime_slice",
 		new Item.Properties().food(Nutrition.LIME_SLICE), true, false);
-	public static final RegistryObject<Item> PINK_DRAGON_FRUIT = registerFood("pink_dragon_fruit",
-		new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT), true, false);
-	public static final RegistryObject<Item> LUCUMA = registerItem("lucuma", () ->
-		new LucumaItem((new Item.Properties()).food(Nutrition.LUCUMA)));
-	public static final RegistryObject<Item> GILDED_LUCUMA = registerItem("gilded_lucuma", () ->
-		new ConsumableItem((new Item.Properties()).food(Nutrition.GILDED_LUCUMA), true, false));
-
-	// Seeds
 	public static final RegistryObject<Item> LIME_SEEDS = registerItem("lime_seeds", () ->
 		new FruitBushSeedsItem(CRBlocks.LIME_BUSH.get(), (new Item.Properties())));
-	public static final RegistryObject<Item> POMEGRANATE_SEEDS = registerItem("pomegranate_seeds", () ->
-		new FruitBushSeedsItem(
-			CRBlocks.POMEGRANATE_BUSH.get(), (new Item.Properties()).food(Nutrition.POMEGRANATE_SEEDS)
-		));
+	public static final RegistryObject<Item> PINK_DRAGON_FRUIT = registerFood("pink_dragon_fruit",
+		new Item.Properties().food(Nutrition.PINK_DRAGON_FRUIT), true, false);
 	public static final RegistryObject<Item> DRAGON_FRUIT_SEEDS = registerItem("dragon_fruit_seeds", () ->
 		new ItemNameBlockItem(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get(), basicItem()) {
 			public void registerBlocks(@NotNull Map<Block, Item> blockToItemMap, @NotNull Item item) {
@@ -77,6 +71,10 @@ public class CRItems {
 				blockToItemMap.remove(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
 			}
 		});
+	public static final RegistryObject<Item> LUCUMA = registerItem("lucuma", () ->
+		new LucumaItem((new Item.Properties()).food(Nutrition.LUCUMA)));
+	public static final RegistryObject<Item> GILDED_LUCUMA = registerItem("gilded_lucuma", () ->
+		new ConsumableItem((new Item.Properties()).food(Nutrition.GILDED_LUCUMA), true, false));
 
 	// Sliceable Blocks
 	public static final RegistryObject<Item> PORTOBELLO_QUICHE = registerBlock(CRBlocks.PORTOBELLO_QUICHE);
