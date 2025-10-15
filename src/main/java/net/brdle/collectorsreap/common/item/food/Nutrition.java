@@ -2,7 +2,7 @@ package net.brdle.collectorsreap.common.item.food;
 
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.effect.SurgeEffect;
-import net.brdle.collectorsreap.compat.ModCompat;
+import net.brdle.collectorsreap.compat.CompatEffects;
 import net.brdle.collectorsreap.compat.Modid;
 import net.brdle.collectorsreap.compat.abnormals.BuzzierBeesCompat;
 import net.brdle.collectorsreap.compat.abnormals.NeapolitanCompat;
@@ -223,16 +223,16 @@ public class Nutrition {
 			false,
 			true
 		), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getSpitting(), 800, 1), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getSpitting(), 800, 1), 1F)
 		.build();
 	public static final FoodProperties LIME_GREEN_TEA = (new FoodProperties.Builder())
 		.alwaysEat()
-		.effect(() -> new MobEffectInstance(ModCompat.getVitality(), 3600, 0), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getVitality(), 3600, 0), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 1200, 0), 1F)
 		.build();
 	public static final FoodProperties POMEGRANATE_BLACK_TEA = (new FoodProperties.Builder())
 		.alwaysEat()
-		.effect(() -> new MobEffectInstance(ModCompat.getMaturity(), 600, 0), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getMaturity(), 600, 0), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 1200, 0), 1F)
 		.build();
 	public static final FoodProperties VERNAL_PURGE = (new FoodProperties.Builder())
@@ -363,41 +363,41 @@ public class Nutrition {
 		.build();
 	public static final FoodProperties DEIFIC_BLOOD = (new FoodProperties.Builder())
 		.alwaysEat()
-		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 2400, 2), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 1800, 1), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getRaging(), 2400, 0), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getTipsy(), 2400, 2), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getIntoxication(), 1800, 1), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getRaging(), 2400, 0), 1F)
 		.effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1800, 0), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.VOLATILITY.get(), 2400, 4), 1F)
 		.build();
 	public static final FoodProperties HERMITS_SOUR = (new FoodProperties.Builder())
 		.alwaysEat()
-		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 2400, 1), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 1800, 0), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getSweetHeart(), 2400, 1), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getTipsy(), 2400, 1), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getIntoxication(), 1800, 0), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getSweetHeart(), 2400, 1), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 2400, 4), 1F)
 		.build();
 	public static final FoodProperties ROSE_MOON = (new FoodProperties.Builder())
 		.alwaysEat()
-		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 3600, 2), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 3000, 0), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getTipsy(), 3600, 2), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getIntoxication(), 3000, 0), 1F)
 		.effect(() -> new MobEffectInstance(MobEffects.WATER_BREATHING, 1800, 0), 1F)
 		.effect(() -> new MobEffectInstance(MobEffects.CONDUIT_POWER, 1800, 0), 1F)
 		.effect(() -> new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 1800, 0), 1F)
 		.build();
 	public static final FoodProperties REANIMATORS_GARDEN = (new FoodProperties.Builder())
 		.alwaysEat()
-		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 3600, 2), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 2400, 0), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getSweetHeart(), 2400, 4), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getTipsy(), 3600, 2), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getIntoxication(), 2400, 0), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getSweetHeart(), 2400, 4), 1F)
 		.effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 2400, 3), 1F)
 		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 2), 1F)
 		.effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 2400, 2), 1F)
 		.build();
 	public static final FoodProperties HEAVENS_CREAM = (new FoodProperties.Builder())
 		.alwaysEat()
-		.effect(() -> new MobEffectInstance(ModCompat.getTipsy(), 3600, 2), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getIntoxication(), 2400, 0), 1F)
-		.effect(() -> new MobEffectInstance(ModCompat.getSweetHeart(), 2400, 2), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getTipsy(), 3600, 2), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getIntoxication(), 2400, 0), 1F)
+		.effect(() -> new MobEffectInstance(CompatEffects.getSweetHeart(), 2400, 2), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 2400, 4), 1F)
 		.build();
 
@@ -502,13 +502,13 @@ public class Nutrition {
 		new MobEffectInstance(MobEffects.ABSORPTION, 200, 0)));
 	public static final FoodProperties APPLE_GUMMY = GUMMY(() ->
 		new MobEffectInstance(
-			ModCompat.getExuberant(),
+			CompatEffects.getExuberant(),
 			Modid.COS.loaded() ? 600 : 1800,
 			Modid.COS.loaded() ? 2 : 0
 		));
 	public static final FoodProperties GLOW_BERRY_GUMMY = GUMMY(() ->
 		new MobEffectInstance(
-			ModCompat.getTracer(),
+			CompatEffects.getTracer(),
 			600,
 			Modid.COS.loaded() ? 2 : 0
 		));
@@ -525,26 +525,26 @@ public class Nutrition {
 	public static final FoodProperties ADZUKI_GUMMY = GUMMY(() ->
 		new MobEffectInstance(NeapolitanCompat.getHarmony(), 40, 2));
 	public static final FoodProperties PUMPKIN_GUMMY = GUMMY(List.of(() ->
-		new MobEffectInstance(ModCompat.getStuffed(), 600, 0), () ->
+		new MobEffectInstance(CompatEffects.getStuffed(), 600, 0), () ->
 		new MobEffectInstance(MobEffects.SATURATION, 200, 0)));
 	public static final FoodProperties SWEET_BERRY_GUMMY = GUMMY(() ->
-		new MobEffectInstance(ModCompat.getThornResistance(), 1200, 0));
+		new MobEffectInstance(CompatEffects.getThornResistance(), 1200, 0));
 	public static final FoodProperties BEETROOT_GUMMY = GUMMY(() ->
-		new MobEffectInstance(ModCompat.getRooted(), 1200, 0));
+		new MobEffectInstance(CompatEffects.getRooted(), 1200, 0));
 	public static final FoodProperties ALOE_GUMMY = GUMMY(() ->
-		new MobEffectInstance(ModCompat.getRelief(), 200, 3));
+		new MobEffectInstance(CompatEffects.getRelief(), 200, 3));
 	public static final FoodProperties PASSION_FRUIT_GUMMY = GUMMY(() ->
-		new MobEffectInstance(ModCompat.getSpitting(), 40, 3));
+		new MobEffectInstance(CompatEffects.getSpitting(), 40, 3));
 	public static final FoodProperties YUCCA_GUMMY = GUMMY(() ->
-		new MobEffectInstance(ModCompat.getPersistence(), 200, 3));
+		new MobEffectInstance(CompatEffects.getPersistence(), 200, 3));
 	public static final FoodProperties GREEN_TEA_GUMMY = GUMMY(() ->
-		new MobEffectInstance(ModCompat.getVitality(), 200, 2));
+		new MobEffectInstance(CompatEffects.getVitality(), 200, 2));
 	public static final FoodProperties YELLOW_TEA_GUMMY = GUMMY(() ->
-		new MobEffectInstance(ModCompat.getTenacity(), 200, 2));
+		new MobEffectInstance(CompatEffects.getTenacity(), 200, 2));
 	public static final FoodProperties BLACK_TEA_GUMMY = GUMMY(() ->
-		new MobEffectInstance(ModCompat.getMaturity(), 200, 2));
+		new MobEffectInstance(CompatEffects.getMaturity(), 200, 2));
 	public static final FoodProperties COFFEE_GUMMY = GUMMY(() ->
-		new MobEffectInstance(ModCompat.getCaffeinated(), 400, 3));
+		new MobEffectInstance(CompatEffects.getCaffeinated(), 400, 3));
 
 	private static FoodProperties GUMMY(List<Supplier<MobEffectInstance>> effects) {
 		FoodProperties.Builder properties = (new FoodProperties.Builder())

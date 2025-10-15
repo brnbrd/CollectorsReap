@@ -2,23 +2,9 @@ package net.brdle.collectorsreap.compat;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.CreativeModeTab;
-import java.util.function.Supplier;
 import vectorwing.farmersdelight.common.registry.ModEffects;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 
-public class ModCompat {
-	@Nullable
-	public static CreativeModeTab ifLoaded(Modid modid, CreativeModeTab tab) {
-		return ifLoaded(modid, () -> tab);
-	}
-
-	@Nullable
-	public static CreativeModeTab ifLoaded(@NotNull Modid modid, Supplier<CreativeModeTab> tab) {
-		return modid.loaded() ? tab.get() : null;
-	}
-
+public class CompatEffects {
 	public static MobEffect getCaffeinated() {
 		return Modid.FR.effect("caffeinated", MobEffects.CONFUSION);
 	}
