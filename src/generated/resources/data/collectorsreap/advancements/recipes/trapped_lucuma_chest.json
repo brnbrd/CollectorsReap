@@ -47,6 +47,10 @@
             {
               "type": "collectorsreap:enabled",
               "value": "trapped_lucuma_chest"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
             }
           ]
         }

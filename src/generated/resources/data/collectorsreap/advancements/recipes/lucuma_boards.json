@@ -47,6 +47,10 @@
             {
               "type": "collectorsreap:enabled",
               "value": "lucuma_boards"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
             }
           ]
         }

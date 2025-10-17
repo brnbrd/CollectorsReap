@@ -4,6 +4,7 @@ import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.common.item.IConfigured;
+import net.brdle.collectorsreap.proxy.CommonProxy;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,6 +22,7 @@ public class CRCreativeTab {
 			.displayItems((params, output) ->
 				CRItems.HELPER.getDeferredRegister().getEntries().stream()
 					.filter(RegistryObject::isPresent)
+					.filter(object -> !CommonProxy.getHiddenItems().contains(object))
 					.map(RegistryObject::get)
 					.filter(item -> !(item instanceof IConfigured configured) || configured.enabled())
 					.forEach(output::accept)

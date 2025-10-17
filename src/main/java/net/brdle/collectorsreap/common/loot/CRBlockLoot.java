@@ -200,7 +200,7 @@ public class CRBlockLoot extends BlockLootSubProvider {
 			createLeavesDrops(block, CRBlocks.LUCUMA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES)
 			.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
 			.when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(CRItems.LUCUMA.get()))
-			.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.05F, 0.055555557F, 0.0625F, 0.08333334F, 0.25F)))));
+			.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.04F, 0.05F, 0.06F, 0.07F, 0.25F)))));
 		this.leafPile(CRBlocks.LUCUMA_LEAF_PILE.get());
 		this.dropSelf(CRBlocks.LUCUMA_CABINET.get());
 		this.add(CRBlocks.LUCUMA_BEEHIVE.get(), CRBlockLoot::createBeeHiveDrop);

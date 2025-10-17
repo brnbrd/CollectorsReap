@@ -13,6 +13,10 @@
             {
               "type": "collectorsreap:enabled",
               "value": "lucuma_beehive"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
             }
           ]
         }

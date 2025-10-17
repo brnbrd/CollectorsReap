@@ -7,6 +7,7 @@ import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.compat.Modid;
 import net.brdle.collectorsreap.compat.abnormals.CRBoatTypes;
 import net.brdle.collectorsreap.data.CRItemTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -994,6 +995,8 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.showNotification(true)
 			.group("fd_cabinet"),
 			"lucuma_cabinet", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_CABINET));
+
+		// Woodworks
 		wrap(shaped(RecipeCategory.MISC, CRBlocks.LUCUMA_BEEHIVE.get().asItem(), 1)
 			.pattern("###")
 			.pattern("HHH")
@@ -1003,7 +1006,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.unlockedBy("has_honeycomb", has(Items.HONEYCOMB))
 			.showNotification(true)
 			.group("wooden_beehive"),
-			"lucuma_beehive", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_BEEHIVE));
+			"lucuma_beehive", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_BEEHIVE), modLoaded(Modid.WW.get()));
 		wrap(shaped(RecipeCategory.MISC, CRBlocks.LUCUMA_LADDER.get().asItem(), 4)
 			.pattern("S S")
 			.pattern("S#S")
@@ -1013,7 +1016,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.unlockedBy("has_lucuma_planks", has(CRBlocks.LUCUMA_PLANKS.get()))
 			.showNotification(true)
 			.group("wooden_ladder"),
-			"lucuma_ladder", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_LADDER));
+			"lucuma_ladder", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_LADDER), modLoaded(Modid.WW.get()));
 		wrap(shaped(RecipeCategory.BUILDING_BLOCKS, CRBlocks.LUCUMA_BOOKSHELF.get().asItem(), 1)
 			.pattern("###")
 			.pattern("XXX")
@@ -1023,7 +1026,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.unlockedBy("has_lucuma_planks_and_book", has(CRBlocks.LUCUMA_PLANKS.get(), Items.BOOK))
 			.showNotification(true)
 			.group("wooden_bookshelf"),
-			"lucuma_bookshelf", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_BOOKSHELF));
+			"lucuma_bookshelf", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_BOOKSHELF), modLoaded(Modid.WW.get()));
 		wrap(shaped(RecipeCategory.BUILDING_BLOCKS, CRBlocks.CHISELED_LUCUMA_BOOKSHELF.get().asItem(), 1)
 			.pattern("###")
 			.pattern("XXX")
@@ -1033,7 +1036,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.unlockedBy("has_lucuma_planks_and_slab", has(CRBlocks.LUCUMA_PLANKS.get(), CRBlocks.LUCUMA_SLAB.get()))
 			.showNotification(true)
 			.group("chiseled_wooden_bookshelf"),
-			"chiseled_lucuma_bookshelf", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.CHISELED_LUCUMA_BOOKSHELF));
+			"chiseled_lucuma_bookshelf", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.CHISELED_LUCUMA_BOOKSHELF), modLoaded(Modid.WW.get()));
 		wrap(shaped(RecipeCategory.MISC, CRBlocks.LUCUMA_BOARDS.get().asItem(), 1)
 			.pattern("#")
 			.pattern("#")
@@ -1041,7 +1044,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.unlockedBy("has_lucuma_slab", has(CRBlocks.LUCUMA_SLAB.get()))
 			.showNotification(true)
 			.group("wooden_boards"),
-			"lucuma_boards", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_BOARDS));
+			"lucuma_boards", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_BOARDS), modLoaded(Modid.WW.get()));
 		wrap(shaped(RecipeCategory.MISC, CRBlocks.LUCUMA_CHEST.get().asItem(), 1)
 			.pattern("###")
 			.pattern("# #")
@@ -1050,13 +1053,13 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.unlockedBy("has_lucuma_planks", has(CRBlocks.LUCUMA_PLANKS.get()))
 			.showNotification(true)
 			.group("wooden_chest"),
-			"lucuma_chest", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_CHEST));
+			"lucuma_chest", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_CHEST), modLoaded(Modid.WW.get()));
 		wrap(shapeless(RecipeCategory.REDSTONE, CRBlocks.TRAPPED_LUCUMA_CHEST.get(), 1)
 			.requires(CRBlocks.LUCUMA_CHEST.get())
 			.requires(Items.TRIPWIRE_HOOK)
 			.unlockedBy("has_lucuma_chest", has(CRBlocks.LUCUMA_CHEST.get()))
 			.group("wooden_trapped_chest"),
-			"trapped_lucuma_chest", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.TRAPPED_LUCUMA_CHEST));
+			"trapped_lucuma_chest", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.TRAPPED_LUCUMA_CHEST), modLoaded(Modid.WW.get()));
 		BoatloadRecipeProvider.boatRecipes(finished, CRBoatTypes.LUCUMA);
 	}
 

@@ -12,6 +12,7 @@ import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.fluid.CRFluids;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.proxy.CommonProxy;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -21,6 +22,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import javax.annotation.ParametersAreNonnullByDefault;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
@@ -33,26 +35,9 @@ public class JEIPlugin implements IModPlugin {
 	public void registerRecipes(IRecipeRegistration registration) {
 		// Remove all disabled Items from JEI
 		final IIngredientManager manager = registration.getIngredientManager();
-		final List<ItemStack> hidden = CRItems.HELPER.getDeferredRegister().getEntries().stream()
-			.filter(Predicate.not(CRConfig::verify)) // Keep disabled items (to add to hidden list)
-			.map(Util::getStack)
-			.collect(Collectors.toCollection(ArrayList::new)); // Create new mutable list
 		final List<FluidStack> hiddenFluids = new ArrayList<>();
 
 		if (!Modid.FR.loaded()) {
-			hidden.addAll(List.of(
-				CRItems.STRONG_LIMEADE.get().getDefaultInstance(),
-				CRItems.LIME_GREEN_TEA.get().getDefaultInstance(),
-				CRItems.POMEGRANATE_BLACK_TEA.get().getDefaultInstance(),
-				CRItems.VERNAL_PURGE.get().getDefaultInstance(),
-				CRItems.STRONG_VERNAL_PURGE.get().getDefaultInstance(),
-				CRItems.LIMBO_BREW.get().getDefaultInstance(),
-				CRItems.LONG_LIMBO_BREW.get().getDefaultInstance(),
-				CRItems.STRONG_LIMBO_BREW.get().getDefaultInstance(),
-				CRItems.SWEET_RECOVERY.get().getDefaultInstance(),
-				CRItems.LONG_SWEET_RECOVERY.get().getDefaultInstance(),
-				CRItems.STRONG_SWEET_RECOVERY.get().getDefaultInstance()
-			));
 			hiddenFluids.addAll(List.of(
 				new FluidStack(CRFluids.LIME_JUICE.get(), 1000),
 				new FluidStack(CRFluids.STRONG_LIME_JUICE.get(), 1000),
@@ -72,13 +57,6 @@ public class JEIPlugin implements IModPlugin {
 			));
 		}
 		if (!Modid.BC.loaded()) {
-			hidden.addAll(List.of(
-				CRItems.DEIFIC_BLOOD.get().getDefaultInstance(),
-				CRItems.HERMITS_SOUR.get().getDefaultInstance(),
-				CRItems.ROSE_MOON.get().getDefaultInstance(),
-				CRItems.REANIMATORS_GARDEN.get().getDefaultInstance(),
-				CRItems.HEAVENS_CREAM.get().getDefaultInstance()
-			));
 			hiddenFluids.addAll(List.of(
 				new FluidStack(CRFluids.CREAM_CHEESE.get(), 1000),
 				new FluidStack(CRFluids.DEIFIC_BLOOD.get(), 1000),
@@ -89,8 +67,13 @@ public class JEIPlugin implements IModPlugin {
 			));
 		}
 
-		if (!hidden.isEmpty()) {
-			manager.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, hidden);
+		if (!CommonProxy.getHiddenItems().isEmpty()) {
+			manager.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK,
+				CommonProxy.getHiddenItems().stream()
+					.map(RegistryObject::get)
+					.map(ItemStack::new)
+					.toList()
+			);
 		}
 		if (!hiddenFluids.isEmpty()) {
 			manager.removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, hiddenFluids);

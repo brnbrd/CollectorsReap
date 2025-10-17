@@ -75,8 +75,9 @@ public class CRBlocks {
 	public static final Pair<RegistryObject<BlueprintCeilingHangingSignBlock>, RegistryObject<BlueprintWallHangingSignBlock>> LUCUMA_HANGING_SIGNS = HELPER.createHangingSignBlock("lucuma", Properties.LUCUMA_WOOD_TYPE, Properties.LUCUMA.hangingSign());
 	public static final RegistryObject<BlueprintCeilingHangingSignBlock> LUCUMA_HANGING_SIGN = LUCUMA_HANGING_SIGNS.getFirst();
 	public static final RegistryObject<BlueprintWallHangingSignBlock> LUCUMA_WALL_HANGING_SIGN = LUCUMA_HANGING_SIGNS.getSecond();
-
 	public static final RegistryObject<Block> LUCUMA_CABINET = HELPER.createFuelBlock("lucuma_cabinet", () -> new CabinetBlock(BlockBehaviour.Properties.copy(ModBlocks.OAK_CABINET.get())), 300);
+
+	// Lucuma Woodworks
 	public static final RegistryObject<Block> LUCUMA_BEEHIVE = HELPER.createBlock("lucuma_beehive", () -> new BlueprintBeehiveBlock(Properties.LUCUMA.beehive()));
 	public static final RegistryObject<Block> LUCUMA_LADDER = HELPER.createFuelBlock("lucuma_ladder",() -> new LadderBlock(Properties.LUCUMA.ladder()), 300);
 	public static final RegistryObject<Block> LUCUMA_BOOKSHELF = HELPER.createFuelBlock("lucuma_bookshelf", () -> new Block(Properties.LUCUMA.bookshelf()), 300);

@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-17T14:03:35.276259	Loot Tables
+// 1.20.1	2025-10-17T14:28:34.1566519	Loot Tables
 f4a3c88fc95a893f684db7cc68e3f910e18b85fe data/collectorsreap/loot_tables/blocks/black_candle_lime_cake.json
 a7a8b0284665225cf8b550f38470725062af0acd data/collectorsreap/loot_tables/blocks/black_candle_lucuma_cake.json
 7337cd0965857540337f702aa5ef41aef53bdc2f data/collectorsreap/loot_tables/blocks/black_candle_pink_dragon_fruit_cake.json
@@ -65,7 +65,7 @@ ec1e8e1ce6b5f5713557b7e2d776f074d328074d data/collectorsreap/loot_tables/blocks/
 88b14548c95274b5fe1a30f5167e86cedfd91e13 data/collectorsreap/loot_tables/blocks/lucuma_ice_cream_block.json
 2d24880bc09855caa6304f73ddbf9848087900ec data/collectorsreap/loot_tables/blocks/lucuma_ladder.json
 48a53da273e45efb36aec9a12abd7e78a74330a1 data/collectorsreap/loot_tables/blocks/lucuma_leaf_pile.json
-ae10d6b0080e541d71f7d01b1d26adb430c56be9 data/collectorsreap/loot_tables/blocks/lucuma_leaves.json
+4febea6aa68c2f3db9bdbfdcea867d1929dcd73a data/collectorsreap/loot_tables/blocks/lucuma_leaves.json
 93548447ffd936c32a5a1c800e0dbeef1df44a5a data/collectorsreap/loot_tables/blocks/lucuma_log.json
 c030e4ff748c1727157ee2cf8b72296b6dc16a84 data/collectorsreap/loot_tables/blocks/lucuma_milkshake_cauldron.json
 60ae14b022c4fd86aad5a162dc3f1dd05f9a36b5 data/collectorsreap/loot_tables/blocks/lucuma_planks.json

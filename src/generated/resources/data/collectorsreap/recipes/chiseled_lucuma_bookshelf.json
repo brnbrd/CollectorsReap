@@ -13,6 +13,10 @@
             {
               "type": "collectorsreap:enabled",
               "value": "chiseled_lucuma_bookshelf"
+            },
+            {
+              "type": "forge:mod_loaded",
+              "modid": "woodworks"
             }
           ]
         }
