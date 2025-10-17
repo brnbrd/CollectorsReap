@@ -4,8 +4,17 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "pomegranate_mutton"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate_mutton"
+            }
+          ]
         }
       ],
       "recipe": {

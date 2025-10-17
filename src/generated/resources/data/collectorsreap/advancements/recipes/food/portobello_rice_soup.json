@@ -38,8 +38,21 @@
       },
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "portobello_rice_soup"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "portobello"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "baked_portobello_cap"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "portobello_rice_soup"
+            }
+          ]
         }
       ]
     }

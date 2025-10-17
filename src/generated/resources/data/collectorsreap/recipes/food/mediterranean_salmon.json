@@ -8,11 +8,15 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "mediterranean_salmon"
+              "value": "lime"
             },
             {
               "type": "collectorsreap:enabled",
               "value": "lime_slice"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "mediterranean_salmon"
             }
           ]
         }

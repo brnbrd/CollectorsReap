@@ -38,8 +38,17 @@
       },
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "dragon_stew"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pink_dragon_fruit"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "dragon_stew"
+            }
+          ]
         }
       ]
     }

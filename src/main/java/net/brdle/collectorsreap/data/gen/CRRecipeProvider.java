@@ -7,9 +7,7 @@ import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.crafting.EnabledCondition;
 import net.brdle.collectorsreap.common.item.CRItems;
-import net.brdle.collectorsreap.compat.Modid;
 import net.brdle.collectorsreap.compat.abnormals.CRBoatTypes;
-import net.brdle.collectorsreap.data.CRBlockTags;
 import net.brdle.collectorsreap.data.CRItemTags;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.PackOutput;
@@ -21,16 +19,13 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.common.crafting.ingredient.ToolActionIngredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.data.builder.CookingPotRecipeBuilder;
-import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 import java.util.function.Consumer;
 
 public class CRRecipeProvider extends BlueprintRecipeProvider implements IConditionBuilder {
@@ -39,7 +34,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 	}
 
 	private static void foodSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, Consumer<FinishedRecipe> consumer) {
-		String namePrefix = Util.cr(name).toString();
+		final String namePrefix = Util.cr(name).toString();
 		SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 200).unlockedBy(name, has(ingredient)).save(consumer);
 		SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 600).unlockedBy(name, has(ingredient)).save(consumer, namePrefix + "_from_campfire_cooking");
 		SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 100).unlockedBy(name, has(ingredient)).save(consumer, namePrefix + "_from_smoking");
@@ -55,76 +50,6 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 		foodSmeltingRecipes("cooked_platinum_bass_slice", CRItems.PLATINUM_BASS_SLICE.get(), CRItems.COOKED_PLATINUM_BASS_SLICE.get(), 0.35F, finished);
 		foodSmeltingRecipes("cooked_tiger_prawn", CRItems.TIGER_PRAWN.get(), CRItems.COOKED_TIGER_PRAWN.get(), 0.35F, finished);
 
-		// Cutting
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_QUICHE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				CRItems.PORTOBELLO_QUICHE_SLICE.get(), 4),
-			"cutting/portobello_quiche", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.PORTOBELLO_QUICHE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PORTOBELLO_COLONY.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				CRItems.PORTOBELLO.get(), 5),
-			"cutting/portobello_colony", finished, enabled(CRItems.PORTOBELLO));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LUCUMA.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				Items.ORANGE_DYE, 1)
-				.addResult(Items.YELLOW_DYE, 1),
-			"cutting/lucuma", finished, enabled(CRItems.LUCUMA));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-					CRItems.LIME_SLICE.get(), 2)
-				.addResult(Items.LIME_DYE),
-			"cutting/lime", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRBlocks.DRAGON_BUSH.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-					CRItems.PINK_DRAGON_FRUIT.get(), 1)
-				.addResultWithChance(Items.PINK_DYE, 0.3F, 1),
-			"cutting/dragon_bush", finished, enabled(CRBlocks.DRAGON_BUSH), enabled(CRItems.PINK_DRAGON_FRUIT));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PINK_DRAGON_FRUIT.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-					CRItems.DRAGON_FRUIT_SEEDS.get(), 1)
-				.addResult(Items.PINK_DYE, 1),
-			"cutting/pink_dragon_fruit", finished, enabled(CRItems.PINK_DRAGON_FRUIT));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_PIE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				CRItems.LIME_PIE_SLICE.get(), 4),
-			"cutting/lime_pie", finished, enabled(CRItems.LIME_PIE), enabled(CRItems.LIME_PIE_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-					CRItems.POMEGRANATE_SLICE.get(), 4)
-				.addResultWithChance(Items.RED_DYE, 1F, 2),
-			"cutting/pomegranate", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.STYGIAN_POMEGRANATE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-					CRItems.POMEGRANATE_SLICE.get(), 5)
-				.addResult(Items.GUNPOWDER, 2),
-			"cutting/stygian_pomegranate", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.STYGIAN_POMEGRANATE), enabled(CRItems.POMEGRANATE_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LIME_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				CRItems.LIME_CAKE_SLICE.get(), 7),
-			"cutting/lime_cake", finished, enabled(CRItems.LIME_CAKE), enabled(CRItems.LIME_CAKE_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.POMEGRANATE_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				CRItems.POMEGRANATE_CAKE_SLICE.get(), 7),
-			"cutting/pomegranate_cake", finished, enabled(CRItems.POMEGRANATE_CAKE), enabled(CRItems.POMEGRANATE_CAKE_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PINK_DRAGON_FRUIT_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE.get(), 7),
-			"cutting/pink_dragon_fruit_cake", finished, enabled(CRItems.PINK_DRAGON_FRUIT_CAKE), enabled(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.LUCUMA_CAKE.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				CRItems.LUCUMA_CAKE_SLICE.get(), 7),
-			"cutting/lucuma_cake", finished, enabled(CRItems.LUCUMA), enabled(CRItems.LUCUMA_CAKE), enabled(CRItems.LUCUMA_CAKE_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.URCHIN.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-					CRItems.UNI.get(), 2)
-				.addResult(CRItems.URCHIN_TEST.get())
-				.addResult(CRItems.URCHIN_NEEDLE.get(), 6),
-			"cutting/urchin", finished, enabled(CRItems.URCHIN), enabled(CRItems.UNI));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.PLATINUM_BASS.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-					CRItems.PLATINUM_BASS_SLICE.get(), 3)
-				.addResult(CRItems.PLATINUM_BASS_HEAD.get()),
-			"cutting/platinum_bass", finished, enabled(CRItems.PLATINUM_BASS), enabled(CRItems.PLATINUM_BASS_SLICE));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CHIEFTAIN_CRAB.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-					CRItems.CHIEFTAIN_CLAW.get(), 1)
-				.addResult(CRItems.CHIEFTAIN_LEG.get(), 4)
-				.addResult(CRItems.CHIEFTAIN_CRAB_MEAT.get(), 2)
-				.addResult(CRItems.CRAB_MISO.get()),
-			"cutting/chieftain_crab", finished, enabled(CRItems.CHIEFTAIN_CRAB));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CHIEFTAIN_CLAW.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-				CRItems.CHIEFTAIN_CRAB_MEAT.get(), 3),
-			"cutting/chieftain_claw", finished, enabled(CRItems.CHIEFTAIN_CLAW), enabled(CRItems.CHIEFTAIN_CRAB_MEAT));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(CRItems.CLAM.get()), Ingredient.of(ForgeTags.TOOLS_KNIVES),
-					CRItems.CLAM_MEAT.get(), 2)
-				.addResultWithChance(CRItems.CLAM_MEAT.get(), 0.5F)
-				.addResultWithChance(CRItems.LUNAR_PEARL.get(), 0.1F),
-			"cutting/clam", finished, enabled(CRItems.CLAM), enabled(CRItems.CLAM_MEAT));
-
 		// Cooking Pot
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PORTOBELLO_RISOTTO.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItems.BAKED_PORTOBELLO_CAP.get())
@@ -132,20 +57,20 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.addIngredient(ForgeTags.MILK)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
-			"food/portobello_risotto", finished, enabled("portobello_risotto"));
+			"food/portobello_risotto", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.BAKED_PORTOBELLO_CAP), enabled(CRItems.PORTOBELLO_RISOTTO));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PORTOBELLO_RICE_SOUP.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItems.BAKED_PORTOBELLO_CAP.get())
 				.addIngredient(ForgeTags.GRAIN_RICE)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(ForgeTags.VEGETABLES_CARROT)
 				.unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
-			"food/portobello_rice_soup", finished, enabled(CRItems.PORTOBELLO_RICE_SOUP));
+			"food/portobello_rice_soup", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.BAKED_PORTOBELLO_CAP), enabled(CRItems.PORTOBELLO_RICE_SOUP));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.STUFFED_PORTOBELLO_CAP.get(), 1, 200, 1F, CRItems.BAKED_PORTOBELLO_CAP.get())
 				.addIngredient(Items.BROWN_MUSHROOM)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
 				.unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
-			"food/stuffed_portobello_cap", finished, enabled("stuffed_portobello_cap"));
+			"food/stuffed_portobello_cap", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.BAKED_PORTOBELLO_CAP), enabled(CRItems.STUFFED_PORTOBELLO_CAP));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PORTOBELLO_PASTA.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItems.BAKED_PORTOBELLO_CAP.get())
 				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
@@ -153,21 +78,21 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(ForgeTags.MILK)
 				.unlockedBy("has_baked_portobello_cap", has(CRItems.BAKED_PORTOBELLO_CAP.get())),
-			"food/portobello_pasta", finished, enabled("portobello_pasta"));
+			"food/portobello_pasta", finished, enabled(CRItems.PORTOBELLO), enabled(CRItems.BAKED_PORTOBELLO_CAP), enabled(CRItems.PORTOBELLO_PASTA));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.PINK_NOODLES.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItems.PINK_DRAGON_FRUIT.get())
 				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
 				.addIngredient(ForgeTags.VEGETABLES_CARROT)
 				.addIngredient(ForgeTags.VEGETABLES_BEETROOT)
 				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
-			"food/pink_noodles", finished, enabled(CRItems.PINK_NOODLES));
+			"food/pink_noodles", finished, enabled(CRItems.PINK_DRAGON_FRUIT), enabled(CRItems.PINK_NOODLES));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.DRAGON_STEW.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItems.PINK_DRAGON_FRUIT.get())
 				.addIngredient(ForgeTags.RAW_PORK)
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
 				.addIngredient(ForgeTags.VEGETABLES_CARROT)
 				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
-			"food/dragon_stew", finished, enabled(CRItems.DRAGON_STEW));
+			"food/dragon_stew", finished, enabled(CRItems.PINK_DRAGON_FRUIT), enabled(CRItems.DRAGON_STEW));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.LUCUMA_GAZPACHO.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItemTags.FRUITS_LUCUMA)
 				.addIngredient(ModItems.PUMPKIN_SLICE.get())
@@ -182,7 +107,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(ForgeTags.GRAIN_RICE)
 				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-			"food/honey_lime_chicken", finished, enabled(CRItems.LIME), enabled(CRItems.HONEY_LIME_CHICKEN));
+			"food/honey_lime_chicken", finished, enabled(CRItems.HONEY_LIME_CHICKEN));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.MEDITERRANEAN_SALMON.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_FISHES_SALMON)
 				.addIngredient(CRItems.LIME_SLICE.get())
@@ -190,32 +115,32 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
-			"food/mediterranean_salmon", finished, enabled(CRItems.MEDITERRANEAN_SALMON), enabled(CRItems.LIME_SLICE));
+			"food/mediterranean_salmon", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.MEDITERRANEAN_SALMON));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POTATO_FRITTERS.get(), 1, 200, 1F)
 				.addIngredient(ForgeTags.VEGETABLES_POTATO)
 				.addIngredient(CRItemTags.FRUITS_LIME)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-			"food/potato_fritters", finished, enabled(CRItems.POTATO_FRITTERS), enabled(CRItems.LIME));
+			"food/potato_fritters", finished, enabled(CRItems.LIME), enabled(CRItems.POTATO_FRITTERS));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CANDIED_LIME.get(), 3, 200, 1F)
 				.addIngredient(CRItems.LIME_SLICE.get(), 3)
 				.addIngredient(Items.HONEY_BOTTLE)
 				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
-			"food/candied_lime", finished, enabled(CRItems.CANDIED_LIME));
+			"food/candied_lime", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.CANDIED_LIME));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRIMSON_CARROT_ROAST.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(Items.CARROT)
 				.addIngredient(CRItemTags.FRUITS_POMEGRANATE)
 				.addIngredient(Items.CRIMSON_FUNGUS)
 				.addIngredient(Items.WARPED_ROOTS)
 				.unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
-			"food/crimson_carrot_roast", finished, enabled(CRItems.CRIMSON_CARROT_ROAST));
+			"food/crimson_carrot_roast", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.CRIMSON_CARROT_ROAST));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POMEGRANATE_MUTTON.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_MUTTON)
 				.addIngredient(CRItemTags.FRUITS_POMEGRANATE)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(Items.WARPED_FUNGUS)
 				.unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
-			"food/pomegranate_mutton", finished, enabled(CRItems.POMEGRANATE_MUTTON));
+			"food/pomegranate_mutton", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_MUTTON));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POMEGRANATE_PORK.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_PORK)
 				.addIngredient(Items.HONEY_BOTTLE)
@@ -223,7 +148,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(Items.CARROT)
 				.unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
-			"food/pomegranate_pork", finished, enabled(CRItems.POMEGRANATE_PORK));
+			"food/pomegranate_pork", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_PORK));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POMEGRANATE_PORK.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItemTags.RAW_HOGLIN)
 				.addIngredient(Items.HONEY_BOTTLE)
@@ -231,7 +156,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
 				.addIngredient(Items.CARROT)
 				.unlockedBy("has_raw_hoglin", has(CRItemTags.RAW_HOGLIN)),
-			"food/pomegranate_pork_from_hoglin", finished, enabled(CRItems.POMEGRANATE_PORK), not(tagEmpty(CRItemTags.RAW_HOGLIN)));
+			"food/pomegranate_pork_from_hoglin", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_PORK), not(tagEmpty(CRItemTags.RAW_HOGLIN)));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POMEGRANATE_CHICKEN.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(ForgeTags.RAW_CHICKEN)
 				.addIngredient(CRItemTags.FRUITS_POMEGRANATE)
@@ -240,27 +165,27 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.addIngredient(Items.WARPED_FUNGUS)
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
 				.unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
-			"food/pomegranate_chicken", finished, enabled(CRItems.POMEGRANATE_CHICKEN));
+			"food/pomegranate_chicken", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_CHICKEN));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POMEGRANATE_CUSTARD.get(), 1, 200, 1F, Items.GLASS_BOTTLE)
 				.addIngredient(CRItemTags.FRUITS_POMEGRANATE)
 				.addIngredient(ForgeTags.MILK)
 				.addIngredient(Tags.Items.EGGS)
 				.addIngredient(Items.SUGAR)
 				.unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
-			"food/pomegranate_custard", finished, enabled(CRItems.POMEGRANATE_CUSTARD));
+			"food/pomegranate_custard", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.POMEGRANATE_CUSTARD));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.GLAZED_STRIDER.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItemTags.RAW_STRIDER)
 				.addIngredient(CRItemTags.FRUITS_POMEGRANATE)
 				.addIngredient(Items.CRIMSON_FUNGUS)
 				.addIngredient(Items.CRIMSON_ROOTS)
 				.unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
-			"food/glazed_strider", finished, enabled(CRItems.GLAZED_STRIDER), not(tagEmpty(CRItemTags.RAW_STRIDER)));
+			"food/glazed_strider", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.GLAZED_STRIDER), not(tagEmpty(CRItemTags.RAW_STRIDER)));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.SPICY_GRENADINE_JELLY.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(Ingredient.of(CRItemTags.HOT_NETHER_FRUIT), 2)
 				.addIngredient(Items.MAGMA_CREAM, 2)
 				.addIngredient(CRItemTags.FRUITS_POMEGRANATE)
 				.unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
-			"food/spicy_grenadine_jelly", finished, enabled(CRItems.SPICY_GRENADINE_JELLY), not(tagEmpty(CRItemTags.HOT_NETHER_FRUIT)));
+			"food/spicy_grenadine_jelly", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.SPICY_GRENADINE_JELLY), not(tagEmpty(CRItemTags.HOT_NETHER_FRUIT)));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CHIEFTAIN_CRAB.get(), 1, 600, 6F, Items.BOWL)
 				.addIngredient(CRItems.CHIEFTAIN_CRAB_BUCKET.get())
 				.addIngredient(ForgeTags.VEGETABLES_CARROT)
@@ -268,7 +193,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.addIngredient(ForgeTags.VEGETABLES_TOMATO)
 				.addIngredient(Items.DRIED_KELP)
 				.unlockedBy("has_crab_bucket", has(CRItems.CHIEFTAIN_CRAB_BUCKET.get())),
-			"food/chieftain_crab", finished, enabled("chieftain_crab"));
+			"food/chieftain_crab", finished, enabled(CRItems.CHIEFTAIN_CRAB));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CRAB_LASAGNA.get(), 1, 200, 1F, Items.BOWL)
 				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
 				.addIngredient(ModItems.TOMATO_SAUCE.get())
@@ -373,7 +298,7 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRItems.LIME.get(), 9)
 				.requires(CRBlocks.LIME_CRATE.get())
 				.unlockedBy("has_lime_crate", has(CRBlocks.LIME_CRATE.get())),
-			"lime_from_lime_crate", finished, enabled("lime"), enabled("lime_crate"));
+			"lime_from_lime_crate", finished, enabled(CRItems.LIME), enabled(CRBlocks.LIME_CRATE));
 		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRBlocks.LIME_CRATE.get().asItem())
 				.requires(CRItems.LIME.get(), 9)
 				.unlockedBy("has_lime", has(CRItems.LIME.get())),
@@ -853,87 +778,6 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.define('x', CRBlocks.URCHIN_TEST_BRICK_SLAB.get())
 				.unlockedBy("has_urchin_test_brick_slab", has(CRBlocks.URCHIN_TEST_BRICK_SLAB.get())),
 			"chiseled_urchin_test_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.CHISELED_URCHIN_TEST_BRICKS));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_BRICKS.get())
-				.unlockedBy("has_urchin_test_block", has(CRBlocks.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_BRICKS));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILES.get())
-				.unlockedBy("has_urchin_test_block", has(CRBlocks.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tiles", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_TILES));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILES.get())
-				.unlockedBy("has_urchin_test_bricks", has(CRBlocks.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tiles_from_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_BRICKS), enabled(CRBlocks.URCHIN_TEST_TILES));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.CHISELED_URCHIN_TEST_BRICKS.get())
-				.unlockedBy("has_urchin_test_bricks", has(CRBlocks.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/chiseled_urchin_test_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.CHISELED_URCHIN_TEST_BRICKS));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.CHISELED_URCHIN_TEST_BRICKS.get())
-				.unlockedBy("has_urchin_test_block", has(CRBlocks.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/chiseled_urchin_test_bricks_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.CHISELED_URCHIN_TEST_BRICKS), enabled(CRBlocks.URCHIN_TEST_BLOCK));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_BRICK_SLAB.get(), 2)
-				.unlockedBy("has_urchin_test_bricks", has(CRBlocks.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_slab", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_BRICK_SLAB));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_BRICK_SLAB.get(), 2)
-				.unlockedBy("has_urchin_test_block", has(CRBlocks.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_slab_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_BRICK_SLAB));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_BRICK_STAIRS.get(), 1)
-				.unlockedBy("has_urchin_test_bricks", has(CRBlocks.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_stairs", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_BRICK_STAIRS));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_BRICK_STAIRS.get(), 1)
-				.unlockedBy("has_urchin_test_block", has(CRBlocks.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_stairs_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_BRICK_STAIRS));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_BRICK_WALL.get(), 1)
-				.unlockedBy("has_urchin_test_bricks", has(CRBlocks.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_wall", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_BRICK_WALL));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_BRICK_WALL.get(), 1)
-				.unlockedBy("has_urchin_test_block", has(CRBlocks.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_brick_wall_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_BRICK_WALL));
-
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_TILES.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILE_SLAB.get(), 2)
-				.unlockedBy("has_urchin_test_tiles", has(CRBlocks.URCHIN_TEST_TILES.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_TILE_SLAB));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILE_SLAB.get(), 2)
-				.unlockedBy("has_urchin_test_bricks", has(CRBlocks.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab_from_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_TILE_SLAB));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILE_SLAB.get(), 2)
-				.unlockedBy("has_urchin_test_block", has(CRBlocks.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_slab_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_TILE_SLAB));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_TILES.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILE_STAIRS.get(), 1)
-				.unlockedBy("has_urchin_test_tiles", has(CRBlocks.URCHIN_TEST_TILES.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_TILE_STAIRS));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILE_STAIRS.get(), 1)
-				.unlockedBy("has_urchin_test_bricks", has(CRBlocks.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs_from_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_TILE_STAIRS));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILE_STAIRS.get(), 1)
-				.unlockedBy("has_urchin_test_block", has(CRBlocks.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_stairs_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_TILE_STAIRS));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_TILES.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILE_WALL.get(), 1)
-				.unlockedBy("has_urchin_test_tiles", has(CRBlocks.URCHIN_TEST_TILES.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_TILE_WALL));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BRICKS.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILE_WALL.get(), 1)
-				.unlockedBy("has_urchin_test_bricks", has(CRBlocks.URCHIN_TEST_BRICKS.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall_from_bricks", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_TILE_WALL));
-		wrap(SingleItemRecipeBuilder.stonecutting(Ingredient.of(CRBlocks.URCHIN_TEST_BLOCK.get()), RecipeCategory.DECORATIONS,
-					CRBlocks.URCHIN_TEST_TILE_WALL.get(), 1)
-				.unlockedBy("has_urchin_test_block", has(CRBlocks.URCHIN_TEST_BLOCK.get())),
-			CollectorsReap.MODID, "stonecutting/urchin_test_tile_wall_from_block", finished, enabled(CRItems.URCHIN_TEST), enabled(CRBlocks.URCHIN_TEST_TILE_WALL));
 
 		// Neapolitan Compat
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.LIME_ICE_CREAM.get())
@@ -1044,12 +888,6 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.showNotification(true)
 				.group("bark"),
 			"lucuma_wood", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_WOOD));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(
-			Ingredient.of(CRBlocks.LUCUMA_LOG.get()),
-			new ToolActionIngredient(ToolActions.AXE_DIG),
-			CRBlocks.STRIPPED_LUCUMA_LOG.get(), 1)
-			.addResult(ModItems.TREE_BARK.get(), 1),
-			"cutting/lucuma_log", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.STRIPPED_LUCUMA_LOG));
 		wrap(shaped(RecipeCategory.BUILDING_BLOCKS, CRBlocks.STRIPPED_LUCUMA_WOOD.get().asItem(), 3)
 				.pattern("##")
 				.pattern("##")
@@ -1058,37 +896,11 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.showNotification(true)
 				.group("bark"),
 			"stripped_lucuma_wood", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.STRIPPED_LUCUMA_WOOD));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(
-			Ingredient.of(CRBlocks.LUCUMA_WOOD.get()),
-			new ToolActionIngredient(ToolActions.AXE_DIG),
-			CRBlocks.STRIPPED_LUCUMA_WOOD.get(), 1)
-			.addResult(ModItems.TREE_BARK.get(), 1),
-			"cutting/lucuma_wood", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.STRIPPED_LUCUMA_WOOD));
 		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRBlocks.LUCUMA_PLANKS.get(), 4)
 			.requires(CRItemTags.LUCUMA_LOGS)
 			.unlockedBy("has_lucuma_logs", has(CRItemTags.LUCUMA_LOGS))
 			.group("planks"),
 			"lucuma_planks", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_PLANKS));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(
-			Ingredient.of(CRBlocks.LUCUMA_DOOR.get()),
-			new ToolActionIngredient(ToolActions.AXE_DIG),
-			CRBlocks.LUCUMA_PLANKS.get(), 1),
-			"cutting/lucuma_door", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_PLANKS));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(
-			Ingredient.of(CRBlocks.LUCUMA_TRAPDOOR.get()),
-			new ToolActionIngredient(ToolActions.AXE_DIG),
-			CRBlocks.LUCUMA_PLANKS.get(), 1),
-			"cutting/lucuma_trapdoor", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_PLANKS));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(
-			Ingredient.of(CRBlocks.LUCUMA_SIGN.get()),
-			new ToolActionIngredient(ToolActions.AXE_DIG),
-			CRBlocks.LUCUMA_PLANKS.get(), 1),
-			"cutting/lucuma_sign", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_PLANKS));
-		wrap(CuttingBoardRecipeBuilder.cuttingRecipe(
-			Ingredient.of(CRBlocks.LUCUMA_HANGING_SIGN.get()),
-			new ToolActionIngredient(ToolActions.AXE_DIG),
-			CRBlocks.LUCUMA_PLANKS.get(), 1),
-			"cutting/lucuma_hanging_sign", finished, enabled(CRItems.LUCUMA), enabled(CRBlocks.LUCUMA_PLANKS));
 		wrap(shaped(RecipeCategory.BUILDING_BLOCKS, CRBlocks.LUCUMA_STAIRS.get().asItem(), 4)
 			.pattern("#  ")
 			.pattern("## ")
@@ -1273,61 +1085,6 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.build(consumer, loc);
 	}
 
-	private void wrap(SingleItemRecipeBuilder builder, String modid, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
-		ResourceLocation loc = Util.rl(modid, name);
-		ConditionalRecipe.Builder cond;
-		if (conds.length > 1) {
-			cond = ConditionalRecipe.builder().addCondition(and(conds));
-		} else if (conds.length == 1) {
-			cond = ConditionalRecipe.builder().addCondition(conds[0]);
-		} else {
-			cond = ConditionalRecipe.builder();
-		}
-		FinishedRecipe[] recipe = new FinishedRecipe[1];
-		builder.save(f -> recipe[0] = f, loc);
-		cond.addRecipe(recipe[0])
-			.generateAdvancement()
-			.build(consumer, loc);
-	}
-
-	private void wrap(SmithingTransformRecipeBuilder builder, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
-		ResourceLocation loc = Util.cr(name);
-		ConditionalRecipe.Builder cond;
-		if (conds.length > 1) {
-			cond = ConditionalRecipe.builder().addCondition(and(conds));
-		} else if (conds.length == 1) {
-			cond = ConditionalRecipe.builder().addCondition(conds[0]);
-		} else {
-			cond = ConditionalRecipe.builder();
-		}
-		FinishedRecipe[] recipe = new FinishedRecipe[1];
-		builder.save(f -> recipe[0] = f, loc);
-		cond.addRecipe(recipe[0])
-			.generateAdvancement()
-			.build(consumer, loc);
-	}
-
-	private void wrap(CuttingBoardRecipeBuilder builder, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
-		wrap(builder, CollectorsReap.MODID, name, consumer, conds);
-	}
-
-	private void wrap(CuttingBoardRecipeBuilder builder, String modid, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
-		ResourceLocation loc = Util.rl(modid, name);
-		ConditionalRecipe.Builder cond;
-		if (conds.length > 1) {
-			cond = ConditionalRecipe.builder().addCondition(and(conds));
-		} else if (conds.length == 1) {
-			cond = ConditionalRecipe.builder().addCondition(conds[0]);
-		} else {
-			cond = ConditionalRecipe.builder();
-		}
-		FinishedRecipe[] recipe = new FinishedRecipe[1];
-		builder.build(f -> recipe[0] = f, loc);
-		cond.addRecipe(recipe[0])
-			.generateAdvancement()
-			.build(consumer, loc);
-	}
-
 	private void wrap(CookingPotRecipeBuilder builder, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
 		wrap(builder, CollectorsReap.MODID, name, consumer, conds);
 	}
@@ -1349,14 +1106,6 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			.build(consumer, loc);
 	}
 
-	private EnabledCondition enabled(RegistryObject<?> item) {
-		return new EnabledCondition(Util.name(item));
-	}
-
-	private EnabledCondition enabled(String name) {
-		return new EnabledCondition(name);
-	}
-
 	private ShapelessRecipeBuilder shapeless(RecipeCategory category, ItemLike returns, int... count) {
 		if (count.length > 0 && count[0] > 1) {
 			return ShapelessRecipeBuilder.shapeless(category, returns, count[0]);
@@ -1376,5 +1125,9 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			return ShapedRecipeBuilder.shaped(category, returns, count[0]);
 		}
 		return ShapedRecipeBuilder.shaped(category, returns);
+	}
+
+	private EnabledCondition enabled(RegistryObject<? extends ItemLike> item) {
+		return new EnabledCondition(Util.name(item));
 	}
 }

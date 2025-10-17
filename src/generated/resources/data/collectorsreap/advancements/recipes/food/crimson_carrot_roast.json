@@ -36,8 +36,17 @@
       },
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "crimson_carrot_roast"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "pomegranate"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "crimson_carrot_roast"
+            }
+          ]
         }
       ]
     }

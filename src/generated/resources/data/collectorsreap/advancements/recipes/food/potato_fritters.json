@@ -40,11 +40,11 @@
           "values": [
             {
               "type": "collectorsreap:enabled",
-              "value": "potato_fritters"
+              "value": "lime"
             },
             {
               "type": "collectorsreap:enabled",
-              "value": "lime"
+              "value": "potato_fritters"
             }
           ]
         }

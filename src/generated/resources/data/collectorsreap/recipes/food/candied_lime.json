@@ -4,8 +4,21 @@
     {
       "conditions": [
         {
-          "type": "collectorsreap:enabled",
-          "value": "candied_lime"
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime_slice"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "candied_lime"
+            }
+          ]
         }
       ],
       "recipe": {

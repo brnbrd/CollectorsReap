@@ -36,17 +36,8 @@
       },
       "conditions": [
         {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "collectorsreap:enabled",
-              "value": "lime"
-            },
-            {
-              "type": "collectorsreap:enabled",
-              "value": "honey_lime_chicken"
-            }
-          ]
+          "type": "collectorsreap:enabled",
+          "value": "honey_lime_chicken"
         }
       ]
     }
