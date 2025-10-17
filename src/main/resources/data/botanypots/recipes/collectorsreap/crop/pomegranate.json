@@ -6,6 +6,10 @@
         {
           "type": "forge:mod_loaded",
           "modid": "botanypots"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "pomegranate"
         }
       ],
       "recipe": {
@@ -61,6 +65,12 @@
         "drops": [
           {
             "chance": 1.00,
+            "output": {
+              "item": "collectorsreap:pomegranate"
+            }
+          },
+          {
+            "chance": 0.50,
             "output": {
               "item": "collectorsreap:pomegranate"
             }

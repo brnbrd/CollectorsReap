@@ -179,8 +179,8 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 		return true;
 	}
 
-	public int getNumFruit(int add) {
-		return 1 + add;
+	public int getMaxBonus() {
+		return 1;
 	}
 
 	public void dropFruit(Level level, BlockPos pos) {
@@ -188,7 +188,7 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 			ItemStack stack =
 				this.isSpecial(level, pos) ?
 				new ItemStack(this.getSpecialFruit().get()) :
-				new ItemStack(this.getFruit(), this.getNumFruit(level.getRandom().nextIntBetweenInclusive(0, 2)));
+				new ItemStack(this.getFruit(), 1 + level.getRandom().nextInt(this.getMaxBonus() + 1));
 			popResource(level, pos, stack);
 		}
 	}

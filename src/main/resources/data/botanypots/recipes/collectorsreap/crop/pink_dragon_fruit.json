@@ -9,55 +9,49 @@
         },
         {
           "type": "collectorsreap:enabled",
-          "value": "lime"
+          "value": "pink_dragon_fruit"
         }
       ],
       "recipe": {
         "type": "botanypots:crop",
         "seed": {
-          "item": "collectorsreap:lime_seeds"
+          "item": "collectorsreap:dragon_fruit_seeds"
         },
         "categories": [
           "dirt",
           "farmland"
         ],
-        "growthTicks": 1800,
+        "growthTicks": 1200,
+        "lightLevel": 14,
         "display": {
           "type": "botanypots:transitional",
           "phases": [
             {
-              "block": "collectorsreap:lime_bush",
+              "block": "collectorsreap:pink_dragon_fruits",
               "properties": {
                 "age": 0,
-                "half": "lower"
+                "ropelogged": false
               }
             },
             {
-              "block": "collectorsreap:lime_bush",
+              "block": "collectorsreap:pink_dragon_fruits",
               "properties": {
                 "age": 1,
-                "half": "lower"
+                "ropelogged": false
               }
             },
             {
-              "block": "collectorsreap:lime_bush",
+              "block": "collectorsreap:pink_dragon_fruits",
               "properties": {
                 "age": 2,
-                "half": "upper"
+                "ropelogged": false
               }
             },
             {
-              "block": "collectorsreap:lime_bush",
+              "block": "collectorsreap:pink_dragon_fruits",
               "properties": {
                 "age": 3,
-                "half": "upper"
-              }
-            },
-            {
-              "block": "collectorsreap:lime_bush",
-              "properties": {
-                "age": 4,
-                "half": "upper"
+                "ropelogged": false
               }
             }
           ]
@@ -66,19 +60,19 @@
           {
             "chance": 1.00,
             "output": {
-              "item": "collectorsreap:lime"
+              "item": "collectorsreap:pink_dragon_fruit"
             }
           },
           {
             "chance": 0.50,
             "output": {
-              "item": "collectorsreap:lime"
+              "item": "collectorsreap:pink_dragon_fruit"
             }
           },
           {
             "chance": 0.05,
             "output": {
-              "item": "collectorsreap:lime_seeds"
+              "item": "collectorsreap:dragon_fruit_seeds"
             }
           }
         ]
