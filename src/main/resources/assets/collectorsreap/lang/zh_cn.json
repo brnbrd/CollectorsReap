@@ -150,7 +150,7 @@
   "effect.collectorsreap.corrosion": "腐蚀",
   "effect.collectorsreap.corrosion.description": "防御性酸蚀护盾，能腐蚀袭来的弹射物与武器。",
   "effect.collectorsreap.rebound": "反弹",
-  "effect.collectorsreap.rebound.description": "在受到伤害时有机会恢复生命值。",
+  "effect.collectorsreap.rebound.description": "在受到伤害时有概率恢复生命值。",
   "effect.collectorsreap.surge": "激涌",
   "effect.collectorsreap.surge.description": "提升近战伤害，每成功击中一次目标获得一层增幅。当增幅达到最大层数后，再次击中目标将重置增幅层数。",
   "effect.collectorsreap.volatility": "波动性",
