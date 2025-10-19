@@ -456,12 +456,7 @@ public class CRItems {
 		return registerItem(name, () -> new BlockItem(block.get(), (new Item.Properties())));
 	}
 
-	public static RegistryObject<Item> registerGummy(String name, FoodProperties properties) {
-		return registerItem(name + "_gummy", () ->
-			new GummyItem((new Item.Properties()).food(properties)));
-	}
-
-	public static RegistryObject<Item> registerGummy(String name, FoodProperties properties, Modid modid) {
+	public static RegistryObject<Item> registerGummy(String name, FoodProperties properties, Modid... modid) {
 		return registerItem(name + "_gummy", () ->
 			new GummyItem((new Item.Properties()).food(properties), modid));
 	}

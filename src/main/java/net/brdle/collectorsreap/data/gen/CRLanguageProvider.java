@@ -314,7 +314,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.PINK_DRAGON_FRUIT_MILKSHAKE, "Pink Dragon Fruit Milkshake");
 		addItem(CRItems.LUCUMA_MILKSHAKE, "Lucuma Milkshake");
 		addItem(CRItems.CHOCOLATE_ARILS, "Chocolate Arils");
-		addItem(CRItems.POMEGRANATE_BEAN_SALAD, "Pomegranate Bean Salad");
+		addItem(CRItems.POMEGRANATE_BEAN_SALAD, "Pomegranate and Bean Salad");
 		addItem(CRItems.STRAWBERRY_JAM_BUN, "Strawberry Jam Bun");
 		addItem(CRItems.DEIFIC_BLOOD, "Deific Blood");
 		addItem(CRItems.HERMITS_SOUR, "Hermit's Sour");
