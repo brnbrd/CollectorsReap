@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-17T14:28:34.1606855	Item Models: collectorsreap
+// 1.20.1	2025-10-18T20:00:23.0096584	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -24,6 +24,7 @@ dbcda5d1b7458397515a89befb6992384be1bb80 assets/collectorsreap/models/item/clam_
 b64d2121c62551ffc72f6cd12cdc0a1724c3984a assets/collectorsreap/models/item/clam_chowder.json
 19823bb0a20ae05ed8536faed8c8eb4109e6c5cf assets/collectorsreap/models/item/clam_meat.json
 2948254f6ef02b57b6ae7a95c52d6982a015148e assets/collectorsreap/models/item/clam_meatball_stew.json
+c14bba94d5531e4e8b12be9332c40421ecac077e assets/collectorsreap/models/item/clam_meatball_stew_cup.json
 46fc253bfe1f00f2a7b98ee67fca4898020097f1 assets/collectorsreap/models/item/clam_pasta.json
 caf518a4223b5845b7931310d5526d490c881fe8 assets/collectorsreap/models/item/clam_roll.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/collectorsreap/models/item/clam_spawn_egg.json
@@ -44,6 +45,7 @@ e89f2586d27b34dba93468db984c5b608d09e0d2 assets/collectorsreap/models/item/drago
 bf7ce6001cd0cb881bd3e5c97b6781a79ccfb97a assets/collectorsreap/models/item/dragon_bush.json
 6d75bb922ef792900ad98eacaaaa723cd456bcc1 assets/collectorsreap/models/item/dragon_fruit_seeds.json
 4fbcd4c4b8ba63cf711acee07e503aaa87a7005e assets/collectorsreap/models/item/dragon_stew.json
+101544795ba48792c6436306a81bf80658d2f660 assets/collectorsreap/models/item/dragon_stew_cup.json
 c4a2d39142164c673b5168a004a15dba8404685b assets/collectorsreap/models/item/dried_pink_dragon_fruit.json
 1166c9d7b97213bf472e8eb1bdaaee85f7fe92de assets/collectorsreap/models/item/fish_mix.json
 c1378334e3fa8b674d9e4d46cef8226180d2935d assets/collectorsreap/models/item/gilded_lucuma.json
@@ -93,6 +95,7 @@ fa94301a6c4c7d8bdc818fa1325bcd41aca48ce2 assets/collectorsreap/models/item/lucum
 2e38e78aae61ba13926734b3f0a7c4cfdc9b6e07 assets/collectorsreap/models/item/lucuma_fence_gate.json
 e592a7617a954e3ec4d3aee6c676dcaebe537e40 assets/collectorsreap/models/item/lucuma_furnace_boat.json
 7e734f60bc6e9676f4b5a0ca7408ff618c797e93 assets/collectorsreap/models/item/lucuma_gazpacho.json
+26889cc69f9a588550f3ea4d77d24c5a9d1c7fac assets/collectorsreap/models/item/lucuma_gazpacho_cup.json
 7e1a1711df8a606b8054bbc909bebdcdc1b0f84c assets/collectorsreap/models/item/lucuma_gummy.json
 2ff37e874017f9998b313248862c08876c8b3ac3 assets/collectorsreap/models/item/lucuma_hanging_sign.json
 55de57b737e20d8f16346455744ce0a049ce2a2c assets/collectorsreap/models/item/lucuma_ice_cream.json
@@ -135,6 +138,7 @@ bca3be1e2559167e752afddc2be7df99ea786b42 assets/collectorsreap/models/item/plati
 d4efc3bc159cf4a106364d6649a0f5ae76fc5392 assets/collectorsreap/models/item/platinum_bass_slice.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/collectorsreap/models/item/platinum_bass_spawn_egg.json
 de1dc749396a3ed266e3349ded6ba54da03341dc assets/collectorsreap/models/item/platinum_bass_stew.json
+5039aea8bd8e8f53f122b163057a1dec2fccc8a0 assets/collectorsreap/models/item/platinum_bass_stew_cup.json
 512cfbb5816f3fe1fbe23ebed1e808cf9e0e7011 assets/collectorsreap/models/item/pomegranate.json
 e87f9aaa6dcdf913d921534fb71d5842c670346b assets/collectorsreap/models/item/pomegranate_bean_salad.json
 20850342ed88f9410c77215b831de0fe1aecaf1e assets/collectorsreap/models/item/pomegranate_black_tea.json
@@ -159,6 +163,7 @@ a2cd6bd2db99dc8457f6acd882f7ab0a29eb22c5 assets/collectorsreap/models/item/porto
 acd30062c3580ef50b8e397d464d4d2ea3f83a6b assets/collectorsreap/models/item/portobello_quiche.json
 84c00157354f99d40f55db1f67d278abab030ce5 assets/collectorsreap/models/item/portobello_quiche_slice.json
 2b34df7652aab6695b706db17a40a8d521c9c28c assets/collectorsreap/models/item/portobello_rice_soup.json
+80749c8bb7d263c9214152320bcaf33c5433c9be assets/collectorsreap/models/item/portobello_rice_soup_cup.json
 d2cd8bf8730997065e2eb38e508bf8d5e9a04624 assets/collectorsreap/models/item/portobello_risotto.json
 ef7c0d8034f8c631064a39b813c5e51893cebe39 assets/collectorsreap/models/item/portobello_wrap.json
 8e8da64c31c84e571f1fa7af293b1430f7677056 assets/collectorsreap/models/item/potato_fritters.json
@@ -167,6 +172,7 @@ e96c4fb3c05e04c258c07e928c26037c9313d319 assets/collectorsreap/models/item/prawn
 1844dc7807cbfc4efa2a0240546cdb8c139ad447 assets/collectorsreap/models/item/prawn_po_boy.json
 f61de317c2d2db4ce52bf3a0ddcb35abd77e1c17 assets/collectorsreap/models/item/prawn_roll.json
 adcc8f9ece8fbf46ac646677c04db9d8e83f93be assets/collectorsreap/models/item/prawn_stew.json
+d8e6d9d16acf4263542e0b2284fa5146a7f14241 assets/collectorsreap/models/item/prawn_stew_cup.json
 8d76357ffae0339aeb4806f99200ca82ca6a3eb2 assets/collectorsreap/models/item/pumpkin_gummy.json
 8e86a679bd990c410708c4df61bdf4d2162a9852 assets/collectorsreap/models/item/reanimators_garden.json
 df84e4261ed47b8ade92dece95b40b82ee56d7f3 assets/collectorsreap/models/item/rose_moon.json

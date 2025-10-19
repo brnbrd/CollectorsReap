@@ -24,6 +24,12 @@
 - Added Limbo Brew (for [Farmer's Respite](https://www.curseforge.com/minecraft/mc-mods/farmers-respite))
   - Extends beneficial effects
 - Added Sweet Recovery (for [Farmer's Respite](https://www.curseforge.com/minecraft/mc-mods/farmers-respite))
+- Added Wild Rice Soup Cup (for [Miner's Delight +](https://www.curseforge.com/minecraft/mc-mods/miners-delight-plus))
+- Added Dragon Stew Cup (for [Miner's Delight +](https://www.curseforge.com/minecraft/mc-mods/miners-delight-plus))
+- Added Lucuma Gazpacho Cup (for [Miner's Delight +](https://www.curseforge.com/minecraft/mc-mods/miners-delight-plus))
+- Added Clam and Meatball Stew Cup (for [Miner's Delight +](https://www.curseforge.com/minecraft/mc-mods/miners-delight-plus))
+- Added Prawn Stew Cup (for [Miner's Delight +](https://www.curseforge.com/minecraft/mc-mods/miners-delight-plus))
+- Added Platinum Bass Stew Cup (for [Miner's Delight +](https://www.curseforge.com/minecraft/mc-mods/miners-delight-plus))
 - Lunar Pearls can now be found in shipwreck and buried treasure chests
 - Strawberry Jam Bun now provides 8 nutrition and Instant Health
   - Can now be crafted using Strawberry Jam from [Smidgeon o' Bliss REMASTERED](https://www.curseforge.com/minecraft/mc-mods/smidgeon-o-bliss-remastered)

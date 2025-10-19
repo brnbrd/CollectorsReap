@@ -243,16 +243,19 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.PORTOBELLO_RISOTTO, "Portobello Risotto");
 		addItem(CRItems.PORTOBELLO_WRAP, "Portobello Wrap");
 		addItem(CRItems.PORTOBELLO_RICE_SOUP, "Wild Rice Soup");
+		addItem(CRItems.PORTOBELLO_RICE_SOUP_CUP, "Wild Rice Soup Cup");
 		addItem(CRItems.PORTOBELLO_QUICHE_SLICE, "Slice of Portobello Quiche");
 		addItem(CRItems.LUCUMA, "Lucuma");
 		addItem(CRItems.GILDED_LUCUMA, "Gilded Lucuma");
 		addItem(CRItems.LUCUMA_BREAD, "Lucuma Bread");
 		addItem(CRItems.LUCUMA_PUDDING, "Lucuma Pudding");
 		addItem(CRItems.LUCUMA_GAZPACHO, "Lucuma Gazpacho");
+		addItem(CRItems.LUCUMA_GAZPACHO_CUP, "Lucuma Gazpacho Cup");
 		addItem(CRItems.PINK_DRAGON_FRUIT, "Pink Dragon Fruit");
 		addItem(CRItems.DRIED_PINK_DRAGON_FRUIT, "Dried Pink Dragon Fruit");
 		addItem(CRItems.PINK_NOODLES, "Pink Noodles");
 		addItem(CRItems.DRAGON_STEW, "Dragon Stew");
+		addItem(CRItems.DRAGON_STEW_CUP, "Dragon Stew Cup");
 		addItem(CRItems.TROPICAL_SHAVED_ICE, "Tropical Shaved Ice");
 		addItem(CRItems.DRAGONS_PASSION, "Dragon's Passion");
 		addItem(CRItems.DRAGON_FRUIT_SEEDS, "Dragon Fruit Seeds");
@@ -348,6 +351,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.PRAWN_ROLL, "Prawn Roll");
 		addItem(CRItems.PRAWN_PO_BOY, "Prawn Po' Boy");
 		addItem(CRItems.PRAWN_STEW, "Prawn Stew");
+		addItem(CRItems.PRAWN_STEW_CUP, "Prawn Stew Cup");
 		addItem(CRItems.PRAWN_CEVICHE, "Prawn Ceviche");
 		addItem(CRItems.PRAWN_NOODLES, "Prawn Noodles");
 		addItem(CRItems.SALMON_WRAPPED_PRAWN, "Salmon Wrapped Prawn");
@@ -368,6 +372,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.PLATINUM_BASS_SLICE, "Raw Platinum Bass Slice");
 		addItem(CRItems.COOKED_PLATINUM_BASS_SLICE, "Cooked Platinum Bass Slice");
 		addItem(CRItems.PLATINUM_BASS_STEW, "Platinum Bass Stew");
+		addItem(CRItems.PLATINUM_BASS_STEW_CUP, "Platinum Bass Stew Cup");
 		addItem(CRItems.FISH_MIX, "Fish Mix");
 		addItem(CRItems.CHIEFTAIN_CRAB_SPAWN_EGG, "Chieftain Crab Spawn Egg");
 		addItem(CRItems.CHIEFTAIN_CRAB_BUCKET, "Bucket of Chieftain Crab");
@@ -393,6 +398,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.CLAM_CHOWDER, "Clam Chowder");
 		addItem(CRItems.CLAM_PASTA, "Pasta with Clams");
 		addItem(CRItems.CLAM_MEATBALL_STEW, "Clam and Meatball Stew");
+		addItem(CRItems.CLAM_MEATBALL_STEW_CUP, "Clam and Meatball Stew Cup");
 		addItem(CRItems.SEA_WRAP, "Sea Wrap");
 	}
 

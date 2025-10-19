@@ -1,0 +1,28 @@
+{
+  "entries": [
+    {
+      "bowl": "collectorsreap:portobello_rice_soup",
+      "cup": "collectorsreap:portobello_rice_soup_cup"
+    },
+    {
+      "bowl": "collectorsreap:dragon_stew",
+      "cup": "collectorsreap:dragon_stew_cup"
+    },
+    {
+      "bowl": "collectorsreap:lucuma_gazpacho",
+      "cup": "collectorsreap:lucuma_gazpacho_cup"
+    },
+    {
+      "bowl": "collectorsreap:clam_meatball_stew",
+      "cup": "collectorsreap:clam_meatball_stew_cup"
+    },
+    {
+      "bowl": "collectorsreap:prawn_stew",
+      "cup": "collectorsreap:prawn_stew_cup"
+    },
+    {
+      "bowl": "collectorsreap:platinum_bass_stew",
+      "cup": "collectorsreap:platinum_bass_stew_cup"
+    }
+  ]
+}

@@ -28,9 +28,13 @@ public class Nutrition {
 		.nutrition(8).saturationMod(0.65F)
 		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 1200, 1), 1F).build();
 	public static final FoodProperties LUCUMA_GAZPACHO = (new FoodProperties.Builder())
-		.nutrition(9).saturationMod(0.7F)
+		.nutrition(8).saturationMod(0.7F)
 		.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 6000, 0), 1F)
 		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 2400, 0), 1F).build();
+	public static final FoodProperties LUCUMA_GAZPACHO_CUP = (new FoodProperties.Builder())
+		.nutrition(4).saturationMod(0.35F)
+		.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3000, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 1200, 0), 1F).build();
 	public static final FoodProperties PINK_DRAGON_FRUIT = (new FoodProperties.Builder())
 		.nutrition(3).saturationMod(0.2F)
 		.effect(() -> new MobEffectInstance(
@@ -63,7 +67,7 @@ public class Nutrition {
 		), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties DRAGON_STEW = (new FoodProperties.Builder())
-		.nutrition(6).saturationMod(1.15F)
+		.nutrition(8).saturationMod(1.1F)
 		.effect(() -> new MobEffectInstance(
 			CREffects.SURGE.get(),
 			800,
@@ -73,6 +77,17 @@ public class Nutrition {
 			true
 		), 1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
+	public static final FoodProperties DRAGON_STEW_CUP = (new FoodProperties.Builder())
+		.nutrition(4).saturationMod(0.55F)
+		.effect(() -> new MobEffectInstance(
+			CREffects.SURGE.get(),
+			400,
+			0,
+			false,
+			false,
+			true
+		), 1F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1800, 0), 1F).build();
 	public static final FoodProperties TROPICAL_SHAVED_ICE = (new FoodProperties.Builder())
 		.nutrition(15).saturationMod(0.6F)
 		.effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 300, 4, false, true, true), 1F)
@@ -138,8 +153,11 @@ public class Nutrition {
 	public static final FoodProperties STUFFED_PORTOBELLO_CAP = (new FoodProperties.Builder())
 		.nutrition(10).saturationMod(0.8F).build();
 	public static final FoodProperties PORTOBELLO_RICE_SOUP = (new FoodProperties.Builder())
-		.nutrition(14).saturationMod(0.85F)
+		.nutrition(14).saturationMod(0.8F)
 		.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 3600, 0), 1F).build();
+	public static final FoodProperties PORTOBELLO_RICE_SOUP_CUP = (new FoodProperties.Builder())
+		.nutrition(7).saturationMod(0.4F)
+		.effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), 1800, 0), 1F).build();
 	public static final FoodProperties PORTOBELLO_RISOTTO = (new FoodProperties.Builder())
 		.nutrition(12).saturationMod(0.85F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
@@ -413,8 +431,11 @@ public class Nutrition {
 	public static final FoodProperties PRAWN_PO_BOY = (new FoodProperties.Builder())
 		.nutrition(10).saturationMod(0.85F).build();
 	public static final FoodProperties PRAWN_STEW = (new FoodProperties.Builder())
-		.nutrition(10).saturationMod(0.85F)
+		.nutrition(10).saturationMod(0.8F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
+	public static final FoodProperties PRAWN_STEW_CUP = (new FoodProperties.Builder())
+		.nutrition(5).saturationMod(0.4F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1800, 0), 1F).build();
 	public static final FoodProperties PRAWN_CEVICHE = (new FoodProperties.Builder())
 		.nutrition(9).saturationMod(0.85F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
@@ -440,6 +461,9 @@ public class Nutrition {
 	public static final FoodProperties PLATINUM_BASS_STEW = (new FoodProperties.Builder())
 		.nutrition(10).saturationMod(1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
+	public static final FoodProperties PLATINUM_BASS_STEW_CUP = (new FoodProperties.Builder())
+		.nutrition(5).saturationMod(0.5F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1800, 0), 1F).build();
 	public static final FoodProperties FISH_MIX = (new FoodProperties.Builder())
 		.nutrition(8).saturationMod(0.85F).build();
 	public static final FoodProperties CHIEFTAIN_CLAW = (new FoodProperties.Builder())
@@ -476,8 +500,11 @@ public class Nutrition {
 		.nutrition(11).saturationMod(0.85F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
 	public static final FoodProperties CLAM_MEATBALL_STEW = (new FoodProperties.Builder())
-		.nutrition(10).saturationMod(0.85F)
+		.nutrition(10).saturationMod(0.8F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 3600, 0), 1F).build();
+	public static final FoodProperties CLAM_MEATBALL_STEW_CUP = (new FoodProperties.Builder())
+		.nutrition(5).saturationMod(0.4F)
+		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 1800, 0), 1F).build();
 	public static final FoodProperties SEA_WRAP = (new FoodProperties.Builder())
 		.nutrition(14).saturationMod(1F)
 		.effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), 6000, 0), 1F).build();
@@ -547,13 +574,11 @@ public class Nutrition {
 		new MobEffectInstance(CompatEffects.getCaffeinated(), 400, 3));
 
 	private static FoodProperties GUMMY(List<Supplier<MobEffectInstance>> effects) {
-		FoodProperties.Builder properties = (new FoodProperties.Builder())
+		final FoodProperties.Builder properties = (new FoodProperties.Builder())
 			.alwaysEat()
 			.nutrition(2)
 			.saturationMod(0F);
-		for (Supplier<MobEffectInstance> effect : effects) {
-			properties.effect(effect, 1F);
-		}
+		for (Supplier<MobEffectInstance> effect : effects) properties.effect(effect, 1F);
 		return properties.build();
 	}
 

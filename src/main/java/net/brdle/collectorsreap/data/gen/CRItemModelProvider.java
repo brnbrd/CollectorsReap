@@ -156,9 +156,10 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.STUFFED_PORTOBELLO_CAP);
 		this.generatedItem(CRItems.PORTOBELLO_BURGER);
 		this.generatedItem(CRItems.PORTOBELLO_WRAP);
-		this.generatedItem(CRItems.PORTOBELLO_RICE_SOUP);
 		this.generatedItem(CRItems.PORTOBELLO_RISOTTO);
 		this.generatedItem(CRItems.PORTOBELLO_PASTA);
+		this.generatedItem(CRItems.PORTOBELLO_RICE_SOUP);
+		this.generatedItem(CRItems.PORTOBELLO_RICE_SOUP_CUP);
 
 		// Lime
 		this.generatedItem(CRItems.CANDIED_LIME);
@@ -180,23 +181,26 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 
 		// Pink Dragon Fruit
 		this.generatedItem(CRItems.DRIED_PINK_DRAGON_FRUIT);
+		this.generatedItem(CRItems.TROPICAL_SHAVED_ICE);
 		this.generatedItem(CRItems.PINK_NOODLES);
 		this.generatedItem(CRItems.DRAGON_STEW);
-		this.generatedItem(CRItems.TROPICAL_SHAVED_ICE);
+		this.generatedItem(CRItems.DRAGON_STEW_CUP);
 
 		// Lucuma
 		this.generatedItem(CRItems.LUCUMA_BREAD);
 		this.generatedItem(CRItems.LUCUMA_GAZPACHO);
+		this.generatedItem(CRItems.LUCUMA_GAZPACHO_CUP);
 
 		// Tiger Prawn
 		this.generatedItem(CRItems.TIGER_PRAWN);
 		this.generatedItem(CRItems.COOKED_TIGER_PRAWN);
-		this.generatedItem(CRItems.PRAWN_ROLL);
 		this.generatedItem(CRItems.SALMON_WRAPPED_PRAWN);
+		this.generatedItem(CRItems.PRAWN_ROLL);
 		this.generatedItem(CRItems.PRAWN_PO_BOY);
-		this.generatedItem(CRItems.PRAWN_STEW);
 		this.generatedItem(CRItems.PRAWN_CEVICHE);
 		this.generatedItem(CRItems.PRAWN_NOODLES);
+		this.generatedItem(CRItems.PRAWN_STEW);
+		this.generatedItem(CRItems.PRAWN_STEW_CUP);
 
 		// Platinum Bass
 		this.generatedItem(CRItems.PLATINUM_BASS);
@@ -205,8 +209,9 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.COOKED_PLATINUM_BASS_HEAD);
 		this.generatedItem(CRItems.PLATINUM_BASS_SLICE);
 		this.generatedItem(CRItems.COOKED_PLATINUM_BASS_SLICE);
-		this.generatedItem(CRItems.PLATINUM_BASS_STEW);
 		this.generatedItem(CRItems.FISH_MIX);
+		this.generatedItem(CRItems.PLATINUM_BASS_STEW);
+		this.generatedItem(CRItems.PLATINUM_BASS_STEW_CUP);
 
 		// Chieftain Crab
 		this.generatedItem(CRItems.CHIEFTAIN_CRAB);
@@ -231,10 +236,13 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.CLAM);
 		this.generatedItem(CRItems.CLAM_MEAT);
 		this.generatedItem(CRItems.CLAM_ROLL);
-		this.generatedItem(CRItems.CLAM_CHOWDER);
-		this.generatedItem(CRItems.CLAM_PASTA);
-		this.generatedItem(CRItems.CLAM_MEATBALL_STEW);
 		this.generatedItem(CRItems.SEA_WRAP);
+		this.generatedItem(CRItems.CLAM_PASTA);
+		this.generatedItem(CRItems.CLAM_CHOWDER);
+		this.generatedItem(CRItems.CLAM_MEATBALL_STEW);
+		this.generatedItem(CRItems.CLAM_MEATBALL_STEW_CUP);
+
+		// Lunar Pearl
 		this.generatedItem(CRItems.LUNAR_PEARL);
 		this.generatedItem(CRItems.SHIMMERING_PEARL);
 		this.generatedItem(CRItems.SHIMMERING_APPLE);
