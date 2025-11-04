@@ -3,11 +3,13 @@ package net.brdle.collectorsreap.data;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.entity.CREntities;
+import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 
 public class CRItemTags {
 	// CR
+	public static final TagKey<Item> GUMMIES_MOB_FEEDABLE = cr("gummies/mob_feedable");
 	public static final TagKey<Item> GUMMIES = cr("gummies");
 	public static final TagKey<Item> HOT_NETHER_FRUIT = cr("hot_nether_fruit");
 	public static final TagKey<Item> DART_SHOOTERS = cr("dart_shooters");
@@ -112,10 +114,10 @@ public class CRItemTags {
 		"fish_food/" + CollectorsReap.MODID + "/" + CREntities.TIGER_PRAWN.getId().getPath());
 
 	private static TagKey<Item> cr(String name) {
-		return Util.it(CollectorsReap.MODID, name);
+		return Modid.CR.it(name);
 	}
 
 	public static TagKey<Item> forge(String name) {
-		return Util.it("forge", name);
+		return Modid.LOADER.it(name);
 	}
 }

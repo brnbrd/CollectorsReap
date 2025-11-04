@@ -13,6 +13,7 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Supplier;
+import org.jetbrains.annotations.NotNull;
 
 public class Nutrition {
 	public static final FoodProperties LUCUMA = (new FoodProperties.Builder())
@@ -539,6 +540,8 @@ public class Nutrition {
 			600,
 			Modid.COS.loaded() ? 2 : 0
 		));
+	public static final FoodProperties CARROT_GUMMY = GUMMY(() ->
+		new MobEffectInstance(CompatEffects.getCarotene(), MobEffectInstance.INFINITE_DURATION, 0));
 	public static final FoodProperties BANANA_GUMMY = GUMMY(List.of(() ->
 		new MobEffectInstance(NeapolitanCompat.getAgility(), 200, 0), () ->
 		new MobEffectInstance(MobEffects.JUMP, 200, 2)));
@@ -551,6 +554,10 @@ public class Nutrition {
 		new MobEffectInstance(MobEffects.DAMAGE_BOOST, 800, 0)));
 	public static final FoodProperties ADZUKI_GUMMY = GUMMY(() ->
 		new MobEffectInstance(NeapolitanCompat.getHarmony(), 40, 2));
+	public static final FoodProperties BULLET_PEPPER_GUMMY = GUMMY(() ->
+		new MobEffectInstance(CompatEffects.getPungent(), 200, 3));
+	public static final FoodProperties WILD_BERRY_GUMMY = GUMMY(() ->
+		new MobEffectInstance(CompatEffects.getFrostResistance(), 100, 2));
 	public static final FoodProperties PUMPKIN_GUMMY = GUMMY(List.of(() ->
 		new MobEffectInstance(CompatEffects.getStuffed(), 600, 0), () ->
 		new MobEffectInstance(MobEffects.SATURATION, 200, 0)));
@@ -572,21 +579,29 @@ public class Nutrition {
 		new MobEffectInstance(CompatEffects.getMaturity(), 200, 2));
 	public static final FoodProperties COFFEE_GUMMY = GUMMY(() ->
 		new MobEffectInstance(CompatEffects.getCaffeinated(), 400, 3));
+	public static final FoodProperties PRICKLY_PEAR_GUMMY = GUMMY(() ->
+		new MobEffectInstance(CompatEffects.getSpite(), 100, 3));
+	public static final FoodProperties PEANUT_GUMMY = GUMMY(() ->
+		new MobEffectInstance(CompatEffects.getToughness(), 400, 1));
+	public static final FoodProperties ASPARAGUS_ASPIC = GUMMY(() ->
+		new MobEffectInstance(CompatEffects.getReach(), 200, 3));
+	public static final FoodProperties HEMP_GUMMY = GUMMY(() ->
+		new MobEffectInstance(CompatEffects.getPeace(), 1200, 4));
 
-	private static FoodProperties GUMMY(List<Supplier<MobEffectInstance>> effects) {
-		final FoodProperties.Builder properties = (new FoodProperties.Builder())
+	private static FoodProperties.Builder GUMMY() {
+		return new FoodProperties.Builder()
 			.alwaysEat()
 			.nutrition(2)
 			.saturationMod(0F);
-		for (Supplier<MobEffectInstance> effect : effects) properties.effect(effect, 1F);
-		return properties.build();
 	}
 
-	private static FoodProperties GUMMY(Supplier<MobEffectInstance> effect) {
+	private static FoodProperties GUMMY(@NotNull List<Supplier<MobEffectInstance>> effects) {
+		final FoodProperties.Builder builder = GUMMY();
+		effects.forEach(effect -> builder.effect(effect, 1F));
+		return builder.build();
+	}
+
+	private static FoodProperties GUMMY(@NotNull Supplier<MobEffectInstance> effect) {
 		return GUMMY(Collections.singletonList(effect));
-	}
-
-	private static FoodProperties GUMMY() {
-		return GUMMY(Collections.emptyList());
 	}
 }

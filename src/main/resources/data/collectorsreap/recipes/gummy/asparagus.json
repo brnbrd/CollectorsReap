@@ -1,0 +1,39 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "asparagus_aspic"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "sob"
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:vegetables/asparagus"
+          },
+          {
+            "tag": "forge:vegetables/carrot"
+          },
+          {
+            "tag": "forge:vegetables/onion"
+          },
+          {
+            "item": "minecraft:kelp"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:asparagus_aspic"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "create"
+        },
+        {
+          "type": "forge:item_exists",
+          "item": "sob:roasted_peanuts"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "peanut_gummy"
+        }
+      ],
+      "recipe": {
+        "type": "create:mixing",
+        "heatRequirement": "heated",
+        "ingredients": [
+          {
+            "item": "sob:roasted_peanuts"
+          },
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "item": "minecraft:honey_block"
+          },
+          {
+            "item": "minecraft:kelp"
+          }
+        ],
+        "results": [
+          {
+            "count": 9,
+            "item": "collectorsreap:peanut_gummy"
+          }
+        ]
+      }
+    }
+  ]
+}

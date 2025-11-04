@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-18T20:19:31.8074124	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2025-11-04T11:19:18.5054126	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
@@ -15,7 +15,8 @@ e3edfcb720e67c84c4e132e9ea67d4231d56beda data/boatload/tags/items/large_boats.js
 8dbecefe46038dbfe2f627209eb5f91241fbef75 data/brewinandchewin/tags/items/fermented_drinks.json
 bc152e3055d651ccdad9d17d1bffdbb9ebde35b5 data/collectorsreap/tags/items/chieftain_crab_food.json
 e0f1081b33dba4a0923dc182be2af337db73c5bb data/collectorsreap/tags/items/dart_shooters.json
-26632dd00d22bd44eb61d06d5b648ffb9fb2b026 data/collectorsreap/tags/items/gummies.json
+3feb0d40cadbeca7e5eb051aaf8b896e5a88bf18 data/collectorsreap/tags/items/gummies.json
+c0f7b9d7fdcbc34669b0c089c56ebc9a09a6aadb data/collectorsreap/tags/items/gummies/mob_feedable.json
 88055c196d1b1d1dc8d81f028dba0bb58d473524 data/collectorsreap/tags/items/hot_nether_fruit.json
 b03d8cb10dcb861b22c4da8fb09000c3d4f57326 data/collectorsreap/tags/items/lucuma_logs.json
 4ade3885f131d51fd808050df78ebb129d826f84 data/diet/tags/items/fruits.json
@@ -48,10 +49,13 @@ cb050f549bb8908dbdfd19f7deb632801a2d69bc data/forge/tags/items/fruits.json
 fa07aedec09509ee2c2a73ad09d57ccd453566f3 data/forge/tags/items/fruits/lime.json
 c9ce5a1929776fd61a9b9fe2770d709c2aadce80 data/forge/tags/items/fruits/lucuma.json
 ade986bad8e170a4abf3b1c6f7ac048d08df078f data/forge/tags/items/fruits/pomegranate.json
+6e03071a699f94c961135f9b813ca7b5551f23c2 data/forge/tags/items/fruits/prickly_pear.json
+d6c74500b2d44fbad3f18f4213772b35ce41a9ca data/forge/tags/items/fruits/wild_berries.json
 7a2436330692e3af71fe7a51e57fc6d865f7bab0 data/forge/tags/items/juices.json
 45a8302b1aee17263b36f6bbe32ebfa2845d22a7 data/forge/tags/items/juices/lime.json
 fe1e7d2a603fcb92f0b4dd9e48352c40aab12cd0 data/forge/tags/items/mushrooms.json
 748e9338cb0e08e973af854da7e0a45c328db6fb data/forge/tags/items/mushrooms/portobello.json
+b32edcec56be6472f567da7f006a64f2f264207f data/forge/tags/items/nuts/peanut.json
 8d43daa2f8c10dd8042e26410a9800ab7e25ef44 data/forge/tags/items/raw_clam.json
 e4bfec188fb63173110be9c4748fef5945689603 data/forge/tags/items/raw_crab_meat.json
 b876ea343d639f4dded7a3f03983b7cbf190200e data/forge/tags/items/raw_fishes.json
@@ -78,6 +82,8 @@ d0e52aa664da2138270cd6f187d0c44f29bc457c data/forge/tags/items/storage_blocks/st
 e6d2989abc0c43896cdeb48a0dd883c7342c8f1c data/forge/tags/items/tea_leaves/green.json
 0b7f3a6896ba83aa50e503c87cde1cc29c30f172 data/forge/tags/items/tea_leaves/yellow.json
 3f42128b4b110e2faf9c39acc4ea8cec58684613 data/forge/tags/items/tortilla.json
+6a85fa5d9df60402880a2bbe412c77408225c389 data/forge/tags/items/vegetables/asparagus.json
+ab7888498d1feab2d4422a53558b10619656c1dc data/forge/tags/items/vegetables/ginger.json
 7450018a52eec1eb19c054cbbd14deefa0baa164 data/letfishlove/tags/items/fish_food/collectorsreap/platinum_bass.json
 c23b5aceb0db24e7df8b571f876f733a24bde29d data/letfishlove/tags/items/fish_food/collectorsreap/tiger_prawn.json
 d705309dbf2cbb37c614bf9ffc40c183b1626865 data/minecraft/tags/items/boats.json
@@ -108,6 +114,7 @@ fdd5792c14637ed66ed0f8feac1c8a42217df3fb data/minecraft/tags/items/wooden_slabs.
 0206a95dc5fcd6aa437fd3dc10ff7761b3a18caa data/neapolitan/tags/items/ice_cream.json
 8583823663dfbb35d841575eaba3cc63c9d71db3 data/neapolitan/tags/items/mint_leaves.json
 52ed71cc15bb3d70d4f3238887079fdb47e8d4d5 data/neapolitan/tags/items/roasted_adzuki_beans.json
+c0f7b9d7fdcbc34669b0c089c56ebc9a09a6aadb data/nirvana/tags/items/nauseating.json
 3f5c49bbc67be7f6be08c20f1c2628f1683187b9 data/seasonals/tags/items/pumpkin_puree.json
 96dea34ef6e441467b1956f6d015c36950d2cec2 data/sereneseasons/tags/items/autumn_crops.json
 1146d7346da05da57675d3325b7bf1d7d5eee6b8 data/sereneseasons/tags/items/spring_crops.json

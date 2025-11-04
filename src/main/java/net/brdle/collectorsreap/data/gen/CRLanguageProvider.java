@@ -7,9 +7,7 @@ import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.FarmersDelight;
 
 public class CRLanguageProvider extends LanguageProvider {
@@ -21,6 +19,7 @@ public class CRLanguageProvider extends LanguageProvider {
 	protected void addTranslations() {
 		addEntities();
 		addFluids();
+		addTooltips();
 		addText();
 		addEffects();
 		addBlocks();
@@ -62,17 +61,22 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("fluid_type." + CollectorsReap.MODID + ".heavens_cream_type", "Heaven's Cream");
 	}
 
-	private void addText() {
-		add("tooltip.disabled", "Disabled");
-		add("tooltip.requires_empty_tag", "Requires empty tag:");
-		add("tooltip.requires_tag", "Requires tag:");
-		add("tooltip.requires_modid", "Requires modid:");
+	private void addTooltips() {
+		addTooltip("disabled", "Disabled");
+		addTooltip("requires_empty_tag", "Requires empty tag:");
+		addTooltip("requires_tag", "Requires tag:");
+		addTooltip("requires_modid", "Requires modid:");
+		addCRTooltip(Util.name(CRItems.HEMP_GUMMY) + ".when_feeding", "When fed to a mob:");
+		add(FarmersDelight.MODID + ".tooltip.asparagus_aspic", "Tastes Funny");
 		add(FarmersDelight.MODID + ".tooltip.stygian_pomegranate", "Explosive");
 		add(FarmersDelight.MODID + ".tooltip.vernal_purge", "Clears Harmful Effects");
 		add(FarmersDelight.MODID + ".tooltip.strong_vernal_purge", "Clears Harmful Effects");
 		add(FarmersDelight.MODID + ".tooltip.limbo_brew", "Extends Beneficial Effects by 30s");
 		add(FarmersDelight.MODID + ".tooltip.long_limbo_brew", "Extends Beneficial Effects by 15s");
 		add(FarmersDelight.MODID + ".tooltip.strong_limbo_brew", "Extends Beneficial Effects by 60s");
+	}
+
+	private void addText() {
 		add("trim_material." + CollectorsReap.MODID + ".pearl", "Pearl Material");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRBlocks.PORTOBELLO), "Portobellos can be rarely found in meadows.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LIME), "Limes can be found as a wild bush in flower forests.");
@@ -328,6 +332,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.MELON_GUMMY, "Melon Gummy");
 		addItem(CRItems.APPLE_GUMMY, "Apple Gummy");
 		addItem(CRItems.GLOW_BERRY_GUMMY, "Glow Berry Gummy");
+		addItem(CRItems.CARROT_GUMMY, "Carrot Gummy");
 		addItem(CRItems.BANANA_GUMMY, "Banana Gummy");
 		addItem(CRItems.VANILLA_GUMMY, "Vanilla Gummy");
 		addItem(CRItems.CHOCOLATE_GUMMY, "Chocolate Gummy");
@@ -338,12 +343,18 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.SWEET_BERRY_GUMMY, "Sweet Berry Gummy");
 		addItem(CRItems.BEETROOT_GUMMY, "Beetroot Gummy");
 		addItem(CRItems.ALOE_GUMMY, "Aloe Gummy");
+		addItem(CRItems.WILD_BERRY_GUMMY, "Wild Berry Gummy");
 		addItem(CRItems.PASSION_FRUIT_GUMMY, "Passion Fruit Gummy");
 		addItem(CRItems.YUCCA_GUMMY, "Yucca Gummy");
 		addItem(CRItems.GREEN_TEA_GUMMY, "Green Tea Gummy");
 		addItem(CRItems.YELLOW_TEA_GUMMY, "Yellow Tea Gummy");
 		addItem(CRItems.BLACK_TEA_GUMMY, "Black Tea Gummy");
 		addItem(CRItems.COFFEE_GUMMY, "Coffee Gummy");
+		addItem(CRItems.BULLET_PEPPER_GUMMY, "Bullet Pepper Gummy");
+		addItem(CRItems.PRICKLY_PEAR_GUMMY, "Prickly Pear Gummy");
+		addItem(CRItems.PEANUT_GUMMY, "Peanut Gummy");
+		addItem(CRItems.ASPARAGUS_ASPIC, "Asparagus Aspic");
+		addItem(CRItems.HEMP_GUMMY, "Weed Gummy");
 		addItem(CRItems.TIGER_PRAWN_SPAWN_EGG, "Tiger Prawn Spawn Egg");
 		addItem(CRItems.TIGER_PRAWN_BUCKET, "Bucket of Tiger Prawn");
 		addItem(CRItems.TIGER_PRAWN, "Raw Tiger Prawn");
@@ -415,5 +426,13 @@ public class CRLanguageProvider extends LanguageProvider {
 		add(CollectorsReap.MODID + ".subtitle.dragon_fruit.pick", "Dragon Fruit pops");
 		add(CollectorsReap.MODID + ".subtitle.rebound.heal", "Health rebounds");
 		add(CollectorsReap.MODID + ".subtitle.corrosion.corrode", "Acid corrodes");
+	}
+
+	public void addTooltip(String key, String translation) {
+		add("tooltip." + key, translation);
+	}
+
+	public void addCRTooltip(String key, String translation) {
+		addTooltip(CollectorsReap.MODID + "." + key, translation);
 	}
 }

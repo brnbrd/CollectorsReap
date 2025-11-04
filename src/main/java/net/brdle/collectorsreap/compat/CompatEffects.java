@@ -2,7 +2,9 @@ package net.brdle.collectorsreap.compat;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
+import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.registry.ModEffects;
+import java.util.function.Supplier;
 
 public class CompatEffects {
 	public static MobEffect getCaffeinated() {
@@ -67,5 +69,33 @@ public class CompatEffects {
 
 	public static MobEffect getExuberant() {
 		return Modid.COS.effect("exuberant", ModEffects.COMFORT.get());
+	}
+
+	public static MobEffect getCarotene() {
+		return Modid.COS.effect("carotene", MobEffects.NIGHT_VISION);
+	}
+
+	public static MobEffect getSpite() {
+		return Modid.SOB.effect("spite", MobEffects.FIRE_RESISTANCE);
+	}
+
+	public static MobEffect getToughness() {
+		return Modid.SOB.effect("toughness", MobEffects.DAMAGE_RESISTANCE);
+	}
+
+	public static MobEffect getReach() {
+		return Modid.SOB.effect("reach", MobEffects.DAMAGE_BOOST);
+	}
+
+	public static MobEffect getPeace() {
+		return Modid.NIRV.effect("peace", MobEffects.GLOWING);
+	}
+
+	public static MobEffect getFrostResistance() {
+		return Modid.WS.effect("frost_resistance", MobEffects.FIRE_RESISTANCE);
+	}
+
+	public static MobEffect getPungent() {
+		return Modid.MND.effect("pungent", MobEffects.FIRE_RESISTANCE);
 	}
 }

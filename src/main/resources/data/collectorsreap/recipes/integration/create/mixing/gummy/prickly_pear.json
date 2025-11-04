@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "create"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "sob"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "prickly_pear_gummy"
+        }
+      ],
+      "recipe": {
+        "type": "create:mixing",
+        "heatRequirement": "heated",
+        "ingredients": [
+          {
+            "tag": "forge:fruits/prickly_pear"
+          },
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "item": "minecraft:honey_block"
+          },
+          {
+            "item": "minecraft:kelp"
+          }
+        ],
+        "results": [
+          {
+            "count": 9,
+            "item": "collectorsreap:prickly_pear_gummy"
+          }
+        ]
+      }
+    }
+  ]
+}

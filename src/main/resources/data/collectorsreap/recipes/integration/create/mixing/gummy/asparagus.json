@@ -1,0 +1,46 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "create"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "sob"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "asparagus_aspic"
+        }
+      ],
+      "recipe": {
+        "type": "create:mixing",
+        "heatRequirement": "heated",
+        "ingredients": [
+          {
+            "tag": "forge:vegetables/asparagus"
+          },
+          {
+            "tag": "forge:vegetables/carrot"
+          },
+          {
+            "tag": "forge:storage_blocks/onion"
+          },
+          {
+            "item": "minecraft:kelp"
+          }
+
+        ],
+        "results": [
+          {
+            "count": 9,
+            "item": "collectorsreap:asparagus_aspic"
+          }
+        ]
+      }
+    }
+  ]
+}

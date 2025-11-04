@@ -10,12 +10,15 @@ import net.brdle.collectorsreap.common.effect.SurgeEffect;
 import net.brdle.collectorsreap.common.entity.BeeGoToFruitBushGoal;
 import net.brdle.collectorsreap.common.entity.BeeGrowFruitGoal;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.common.item.food.GummyItem;
 import net.brdle.collectorsreap.data.CRDamageSources;
 import net.brdle.collectorsreap.data.CREntityTags;
+import net.brdle.collectorsreap.data.CRItemTags;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -37,9 +40,12 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import vectorwing.farmersdelight.common.registry.ModParticleTypes;
+import vectorwing.farmersdelight.common.utility.MathUtils;
 import java.util.List;
 import java.util.Objects;
 
@@ -250,6 +256,42 @@ public class ForgeEvents {
 					mob.push(vec32.x() * d1, vec32.y() * d1 * 0.35D, vec32.z() * d1);
 				});
 			}
+		}
+	}
+
+	@SubscribeEvent
+	public void onFeedGummy(PlayerInteractEvent.EntityInteractSpecific e) {
+		final Player player = e.getEntity();
+		final ItemStack heldStack = e.getItemStack();
+		if (
+			heldStack.getItem() instanceof GummyItem gummy &&
+			heldStack.is(CRItemTags.GUMMIES_MOB_FEEDABLE) &&
+			e.getTarget() instanceof final Mob mob &&
+			mob.isAlive() &&
+			mob.isAffectedByPotions()
+		) {
+			if (player.level() instanceof final ServerLevel server) {
+				gummy.addEffects(heldStack, mob);
+				server.playSound(null, mob.blockPosition(), SoundEvents.GENERIC_EAT, SoundSource.PLAYERS, 0.65F, 0.65F);
+				for (int i = 0; i < 4; ++i) {
+					server.sendParticles(
+						ModParticleTypes.STAR.get(),
+						mob.getRandomX(0.6D),
+						mob.getRandomY(),
+						mob.getRandomZ(0.6D),
+						1,
+						MathUtils.RAND.nextGaussian() * 0.02D,
+						MathUtils.RAND.nextGaussian() * 0.02D,
+						MathUtils.RAND.nextGaussian() * 0.02D,
+						0D
+					);
+				}
+				if (!player.getAbilities().instabuild) {
+					heldStack.shrink(1);
+				}
+			}
+			e.setCancellationResult(InteractionResult.sidedSuccess(player.level().isClientSide()));
+			e.setCanceled(true);
 		}
 	}
 }

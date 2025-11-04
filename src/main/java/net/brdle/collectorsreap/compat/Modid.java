@@ -91,6 +91,7 @@ public enum Modid {
 	NF("nutritious_feast"),
 	ND("nethersdelight"),
 	NE("nethers_exoticism"),
+	NIRV("nirvana"),
 	NN("nourished_nether"),
 	OAD("oresabovediamonds"),
 	OG("oreganized"),

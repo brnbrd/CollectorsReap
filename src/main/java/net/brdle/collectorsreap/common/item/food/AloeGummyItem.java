@@ -7,8 +7,8 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 public class AloeGummyItem extends GummyItem {
-	public AloeGummyItem(Properties prop) {
-		super(prop, Modid.AT);
+	public AloeGummyItem(Properties prop, Modid... modid) {
+		super(prop, modid);
 	}
 
 	@Override

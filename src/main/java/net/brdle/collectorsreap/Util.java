@@ -207,8 +207,8 @@ public class Util {
 	private static MobEffect getBackup(@Nullable MobEffect[] backup) {
 		return (
 			(backup != null && backup.length > 0) ?
-				backup[0] :
-				null
+			backup[0] :
+			null
 		);
 	}
 
@@ -216,8 +216,8 @@ public class Util {
 	public static MobEffect effect(ResourceLocation effLocation, MobEffect... backup) {
 		return (
 			effectExists(effLocation) ?
-				ForgeRegistries.MOB_EFFECTS.getValue(effLocation) :
-				getBackup(backup)
+			ForgeRegistries.MOB_EFFECTS.getValue(effLocation) :
+			getBackup(backup)
 		);
 	}
 
@@ -265,8 +265,12 @@ public class Util {
 		for (MobEffectInstance effect : effects) entity.addEffect(new MobEffectInstance(effect));
 	}
 
-	public static List<MobEffectInstance> getFoodEffects(@NotNull final FoodProperties food) {
-		return food.getEffects().stream().map(Pair::getFirst).map(MobEffectInstance::new).toList();
+	public static @NotNull List<MobEffectInstance> getFoodEffects(@Nullable final FoodProperties food) {
+		return (
+			food == null ?
+			Collections.emptyList() :
+			food.getEffects().stream().map(Pair::getFirst).map(MobEffectInstance::new).toList()
+		);
 	}
 
 	public static void addFoodEffects(@NotNull final LivingEntity entity, @NotNull final FoodProperties food) {

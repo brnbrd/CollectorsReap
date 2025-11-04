@@ -92,6 +92,7 @@ dependencies {
 	implementation fg.deobf("com.teamabnormals:blueprint:${mc_version}-${blueprint_version}")
 	implementation fg.deobf("com.teamabnormals:boatload:${mc_version}-${boatload_version}")
 	compileOnly fg.deobf("curse.maven:neapolitan-382016:${neapolitan_version}")
+	compileOnly fg.deobf("curse.maven:nirvana-1278909:${nirvana_version}")
 }
 
 jar {

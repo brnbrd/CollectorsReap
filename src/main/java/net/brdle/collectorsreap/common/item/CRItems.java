@@ -18,6 +18,8 @@ import net.brdle.collectorsreap.compat.abnormals.CRBoatTypes;
 import net.brdle.collectorsreap.compat.brewinandchewin.BrewinChewinCompat;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
 import net.brdle.collectorsreap.compat.miners_delight.CupItem;
+import net.brdle.collectorsreap.compat.nirvana.NirvanaCompat;
+import net.brdle.collectorsreap.compat.sob.AsparagusAspicItem;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -34,8 +36,6 @@ import static vectorwing.farmersdelight.common.registry.ModItems.*;
 
 public class CRItems {
 	public static final ItemSubRegistryHelper HELPER = CollectorsReap.REGISTRY_HELPER.getItemSubHelper();
-
-	// Lucuma Wood
 
 	// Wild Crop Blocks
 	public static final RegistryObject<Item> PORTOBELLO_COLONY = registerItem("portobello_colony", () ->
@@ -365,11 +365,11 @@ public class CRItems {
 
 	// Urchin
 	public static final RegistryObject<Item> URCHIN = registerItem("urchin", () -> new Item((new Item.Properties())));
+	public static final RegistryObject<Item> UNI = registerFood("uni", Nutrition.UNI);
+	public static final RegistryObject<Item> UNI_ROLL = registerFood("uni_roll", Nutrition.UNI_ROLL);
 	public static final RegistryObject<Item> URCHIN_TEST = registerItem("urchin_test", () -> new Item((new Item.Properties())));
 	public static final RegistryObject<Item> URCHIN_NEEDLE = registerItem("urchin_needle", () -> new Item((new Item.Properties())));
 	public static final RegistryObject<Item> URCHIN_DART = registerItem("urchin_dart", () -> new UrchinDartItem((new Item.Properties())));
-	public static final RegistryObject<Item> UNI = registerFood("uni", Nutrition.UNI);
-	public static final RegistryObject<Item> UNI_ROLL = registerFood("uni_roll", Nutrition.UNI_ROLL);
 
 	// Other Compat
 	public static final RegistryObject<Item> GLAZED_STRIDER = registerItem("glazed_strider", () ->
@@ -388,32 +388,61 @@ public class CRItems {
 		new CompatConsumable((new Item.Properties()).food(
 			Nutrition.CHOCOLATE_ARILS), true, false, Modid.N));
 
-	// Gummies
+	// Vanilla/FD/CR Gummies
+	public static final RegistryObject<Item> MELON_GUMMY = registerGummy("melon", Nutrition.MELON_GUMMY);
 	public static final RegistryObject<Item> LIME_GUMMY = registerGummy("lime", Nutrition.LIME_GUMMY);
 	public static final RegistryObject<Item> POMEGRANATE_GUMMY = registerGummy("pomegranate", Nutrition.POMEGRANATE_GUMMY);
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_GUMMY = registerGummy("pink_dragon_fruit", Nutrition.PINK_DRAGON_FRUIT_GUMMY);
 	public static final RegistryObject<Item> LUCUMA_GUMMY = registerGummy("lucuma", Nutrition.LUCUMA_GUMMY);
-	public static final RegistryObject<Item> APPLE_GUMMY = registerGummy("apple", Nutrition.APPLE_GUMMY);
-	public static final RegistryObject<Item> GLOW_BERRY_GUMMY = registerGummy("glow_berry", Nutrition.GLOW_BERRY_GUMMY);
-	public static final RegistryObject<Item> MELON_GUMMY = registerGummy("melon", Nutrition.MELON_GUMMY);
-	public static final RegistryObject<Item> STRAWBERRY_GUMMY = registerGummy("strawberry", Nutrition.STRAWBERRY_GUMMY);
-	public static final RegistryObject<Item> BANANA_GUMMY = registerGummy("banana", Nutrition.BANANA_GUMMY, Modid.N);
-	public static final RegistryObject<Item> VANILLA_GUMMY = registerGummy("vanilla", Nutrition.VANILLA_GUMMY, Modid.N);
-	public static final RegistryObject<Item> CHOCOLATE_GUMMY = registerGummy("chocolate", Nutrition.CHOCOLATE_GUMMY, Modid.N);
-	public static final RegistryObject<Item> MINT_GUMMY = registerGummy("mint", Nutrition.MINT_GUMMY, Modid.N);
-	public static final RegistryObject<Item> ADZUKI_GUMMY = registerItem("adzuki_gummy", () ->
-		new AdzukiGummyItem((new Item.Properties()).food(Nutrition.ADZUKI_GUMMY)));
-	public static final RegistryObject<Item> ALOE_GUMMY = registerItem("aloe_gummy", () ->
-		new AloeGummyItem((new Item.Properties()).food(Nutrition.ALOE_GUMMY)));
-	public static final RegistryObject<Item> PASSION_FRUIT_GUMMY = registerGummy("passion_fruit", Nutrition.PASSION_FRUIT_GUMMY, Modid.AT);
-	public static final RegistryObject<Item> YUCCA_GUMMY = registerGummy("yucca", Nutrition.YUCCA_GUMMY, Modid.AT);
+
+	// Farmer's Respite/Respiteful Gummies
 	public static final RegistryObject<Item> GREEN_TEA_GUMMY = registerGummy("green_tea", Nutrition.GREEN_TEA_GUMMY, Modid.FR);
 	public static final RegistryObject<Item> YELLOW_TEA_GUMMY = registerGummy("yellow_tea", Nutrition.YELLOW_TEA_GUMMY, Modid.FR);
 	public static final RegistryObject<Item> BLACK_TEA_GUMMY = registerGummy("black_tea", Nutrition.BLACK_TEA_GUMMY, Modid.FR);
 	public static final RegistryObject<Item> COFFEE_GUMMY = registerGummy("coffee", Nutrition.COFFEE_GUMMY, Modid.FR);
+
+	// My Nether's Delight Gummies
+	public static final RegistryObject<Item> BULLET_PEPPER_GUMMY = registerGummy("bullet_pepper", Nutrition.BULLET_PEPPER_GUMMY, Modid.MND);
+
+	// Neapolitan Gummies
+	public static final RegistryObject<Item> STRAWBERRY_GUMMY = registerGummy("strawberry", Nutrition.STRAWBERRY_GUMMY);
+	public static final RegistryObject<Item> BANANA_GUMMY = registerGummy("banana", Nutrition.BANANA_GUMMY, Modid.N);
+	public static final RegistryObject<Item> VANILLA_GUMMY = registerGummy("vanilla", Nutrition.VANILLA_GUMMY, Modid.N);
+	public static final RegistryObject<Item> MINT_GUMMY = registerGummy("mint", Nutrition.MINT_GUMMY, Modid.N);
+	public static final RegistryObject<Item> ADZUKI_GUMMY = registerItem("adzuki_gummy", () ->
+		new AdzukiGummyItem((new Item.Properties()).food(Nutrition.ADZUKI_GUMMY)));
+	public static final RegistryObject<Item> CHOCOLATE_GUMMY = registerGummy("chocolate", Nutrition.CHOCOLATE_GUMMY, Modid.N);
+
+	// Atmospheric Gummies
+	public static final RegistryObject<Item> PASSION_FRUIT_GUMMY = registerGummy("passion_fruit", Nutrition.PASSION_FRUIT_GUMMY, Modid.AT);
+	public static final RegistryObject<Item> YUCCA_GUMMY = registerGummy("yucca", Nutrition.YUCCA_GUMMY, Modid.AT);
+	public static final RegistryObject<Item> ALOE_GUMMY = registerItem("aloe_gummy", () ->
+		new AloeGummyItem((new Item.Properties()).food(Nutrition.ALOE_GUMMY), Modid.AT));
+
+	// Windswept Gummies
+	public static final RegistryObject<Item> WILD_BERRY_GUMMY = registerGummy("wild_berry", Nutrition.WILD_BERRY_GUMMY, Modid.WS);
+
+	// Seasonals Gummies
 	public static final RegistryObject<Item> PUMPKIN_GUMMY = registerGummy("pumpkin", Nutrition.PUMPKIN_GUMMY, Modid.SEAS);
 	public static final RegistryObject<Item> SWEET_BERRY_GUMMY = registerGummy("sweet_berry", Nutrition.SWEET_BERRY_GUMMY, Modid.SEAS);
 	public static final RegistryObject<Item> BEETROOT_GUMMY = registerGummy("beetroot", Nutrition.BEETROOT_GUMMY, Modid.SEAS);
+
+	// Cosmopolitan Gummies
+	public static final RegistryObject<Item> APPLE_GUMMY = registerGummy("apple", Nutrition.APPLE_GUMMY);
+	public static final RegistryObject<Item> GLOW_BERRY_GUMMY = registerGummy("glow_berry", Nutrition.GLOW_BERRY_GUMMY);
+	public static final RegistryObject<Item> CARROT_GUMMY = registerGummy("carrot", Nutrition.CARROT_GUMMY, Modid.COS);
+
+	// Smidgeon o' Bliss Gummies
+	public static final RegistryObject<Item> PRICKLY_PEAR_GUMMY = registerGummy("prickly_pear", Nutrition.PRICKLY_PEAR_GUMMY, Modid.SOB);
+	public static final RegistryObject<Item> PEANUT_GUMMY = registerGummy("peanut", Nutrition.PEANUT_GUMMY, Modid.SOB);
+	public static final RegistryObject<Item> ASPARAGUS_ASPIC = registerItem("asparagus_aspic", () ->
+		new AsparagusAspicItem((new Item.Properties()).food(Nutrition.ASPARAGUS_ASPIC), Modid.SOB));
+
+	// Nirvana Gummies
+	public static final RegistryObject<Item> HEMP_GUMMY = registerItem("hemp_gummy", () ->
+		Modid.NIRV.loaded() ?
+		NirvanaCompat.hempGummyItem() :
+		new GummyItem((new Item.Properties()).food(Nutrition.HEMP_GUMMY), Modid.NIRV));
 
 	// Spawn Eggs
 	public static final RegistryObject<Item> TIGER_PRAWN_SPAWN_EGG = registerItem("tiger_prawn_spawn_egg", () -> new ForgeSpawnEggItem(CREntities.TIGER_PRAWN, 0x7c7248, 0x613432, new Item.Properties()));

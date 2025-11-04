@@ -1,6 +1,5 @@
 package net.brdle.collectorsreap.data.gen;
 
-import com.teamabnormals.blueprint.core.other.tags.BlueprintBlockTags;
 import com.teamabnormals.blueprint.core.other.tags.BlueprintItemTags;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
@@ -42,7 +41,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.DART_SHOOTERS)
 			.add(Items.BAMBOO)
 			.addOptional(Util.rl("mynethersdelight", "powder_cannon"));
+		this.tag(CRItemTags.GUMMIES_MOB_FEEDABLE)
+			.add(CRItems.HEMP_GUMMY.get());
 		this.tag(CRItemTags.GUMMIES)
+			.addTag(CRItemTags.GUMMIES_MOB_FEEDABLE)
 			.add(CRItems.LIME_GUMMY.get())
 			.add(CRItems.POMEGRANATE_GUMMY.get())
 			.add(CRItems.PINK_DRAGON_FRUIT_GUMMY.get())
@@ -50,6 +52,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.MELON_GUMMY.get())
 			.add(CRItems.APPLE_GUMMY.get())
 			.add(CRItems.GLOW_BERRY_GUMMY.get())
+			.add(CRItems.CARROT_GUMMY.get())
 			.add(CRItems.BANANA_GUMMY.get())
 			.add(CRItems.VANILLA_GUMMY.get())
 			.add(CRItems.CHOCOLATE_GUMMY.get())
@@ -60,12 +63,17 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.SWEET_BERRY_GUMMY.get())
 			.add(CRItems.BEETROOT_GUMMY.get())
 			.add(CRItems.ALOE_GUMMY.get())
+			.add(CRItems.WILD_BERRY_GUMMY.get())
 			.add(CRItems.PASSION_FRUIT_GUMMY.get())
 			.add(CRItems.YUCCA_GUMMY.get())
 			.add(CRItems.GREEN_TEA_GUMMY.get())
 			.add(CRItems.YELLOW_TEA_GUMMY.get())
 			.add(CRItems.BLACK_TEA_GUMMY.get())
-			.add(CRItems.COFFEE_GUMMY.get());
+			.add(CRItems.COFFEE_GUMMY.get())
+			.add(CRItems.BULLET_PEPPER_GUMMY.get())
+			.add(CRItems.PRICKLY_PEAR_GUMMY.get())
+			.add(CRItems.PEANUT_GUMMY.get())
+			.add(CRItems.ASPARAGUS_ASPIC.get());
 		this.tag(CRItemTags.CHIEFTAIN_CRAB_FOOD)
 			.addTag(CRItemTags.CLAM)
 			.addTag(CRItemTags.RAW_CLAM);
@@ -206,19 +214,22 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.CHEESE_MILD_CREAM).add(CRItems.CREAM_CHEESE.get());
 		this.tag(CRItemTags.CHEESE_MILD)
 			.addTag(CRItemTags.CHEESE_MILD_CREAM)
-			.addOptional(Util.rl("brewinandchewin", "flaxen_cheese_wedge"));
-		this.tag(CRItemTags.CHEESE_SPICY).addOptional(Util.rl("brewinandchewin", "scarlet_cheese_wedge"));
+			.addOptional(Modid.BC.rl("flaxen_cheese_wedge"));
+		this.tag(CRItemTags.CHEESE_SPICY).addOptional(Modid.BC.rl("scarlet_cheese_wedge"));
 		this.tag(CRItemTags.CHEESE_SWEET).addOptional(Util.rl("sob", "eumozz_cheese_wedge"));
 		this.tag(CRItemTags.CHEESE)
 			.addTag(CRItemTags.CHEESE_MILD)
 			.addTag(CRItemTags.CHEESE_SPICY)
 			.addTag(CRItemTags.CHEESE_SWEET)
-			.addOptionalTag(Util.rl("brewinandchewin", "cheese_wedges"));
+			.addOptionalTag(Modid.BC.rl("cheese_wedges"));
 		this.tag(CRItemTags.forge("fruits/dragonfruit"))
 			.add(CRItems.PINK_DRAGON_FRUIT.get())
-			.addOptional(Util.rl("atmospheric", "dragon_fruit"))
+			.addOptional(Modid.AT.rl("dragon_fruit"))
 			.addOptional(Util.rl("pamhc2trees", "dragonfruititem"));
 		this.tag(CRItemTags.FRUITS_DRAGON_FRUIT).addTag(CRItemTags.forge("fruits/dragonfruit"));
+		this.tag(CRItemTags.forge("fruits/prickly_pear"))
+			.addOptional(Modid.SOB.rl("prickly_pear"))
+			.addOptional(Modid.ECO.rl("prickly_pear"));
 		this.tag(CRItemTags.FRUITS_LUCUMA).add(CRItems.LUCUMA.get());
 		this.tag(CRItemTags.FRUITS_POMEGRANATE).add(CRItems.POMEGRANATE_SLICE.get());
 		this.tag(CRItemTags.FRUITS_LIME).add(CRItems.LIME.get());
@@ -297,6 +308,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.JUICES_LIME)
 			.add(ModItems.MELON_JUICE.get());
 		this.tag(CRItemTags.CONDENSED_MILK).addOptional(Util.rl("cosmopolitan", "condensed_milk_bottle"));
+		this.tag(CRItemTags.forge("nuts/peanut")).addOptional(Modid.SOB.rl("peanut"));
+		this.tag(CRItemTags.forge("vegetables/asparagus")).addOptional(Modid.SOB.rl("asparagus"));
+		this.tag(CRItemTags.forge("vegetables/ginger")).addOptional(Modid.WS.rl("ginger_root"));
+		this.tag(CRItemTags.forge("fruits/wild_berries")).addOptional(Modid.WS.rl("wild_berries"));
 
 		// Diet
 		this.tag(CRItemTags.DIET_FRUITS)
@@ -342,23 +357,26 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.SPRING_CROPS).add(CRItems.LIME_SEEDS.get());
 
 		// Tea and Coffee
-		this.tag(CRItemTags.TEA_LEAVES_GREEN).addOptional(Util.rl("farmersrespite", "green_tea_leaves"));
-		this.tag(CRItemTags.TEA_LEAVES_YELLOW).addOptional(Util.rl("farmersrespite", "yellow_tea_leaves"));
-		this.tag(CRItemTags.TEA_LEAVES_BLACK).addOptional(Util.rl("farmersrespite", "black_tea_leaves"));
-		this.tag(CRItemTags.COFFEE_BEANS).addOptional(Util.rl("farmersrespite", "coffee_beans"));
-
-		// SAS
-		this.addSelf(CRItemTags.BURGER_BUN);
+		this.tag(CRItemTags.TEA_LEAVES_GREEN).addOptional(Modid.FR.rl("green_tea_leaves"));
+		this.tag(CRItemTags.TEA_LEAVES_YELLOW).addOptional(Modid.FR.rl("yellow_tea_leaves"));
+		this.tag(CRItemTags.TEA_LEAVES_BLACK).addOptional(Modid.FR.rl("black_tea_leaves"));
+		this.tag(CRItemTags.COFFEE_BEANS).addOptional(Modid.FR.rl("coffee_beans"));
 
 		// Supplementaries
 		this.tag(CRItemTags.FLOWER_BOX_PLANTABLE)
 			.add(CRItems.PORTOBELLO_COLONY.get())
-			.addOptional(Util.rl("mynethersdelight", "warped_fungus_colony"))
-			.addOptional(Util.rl("mynethersdelight", "crimson_fungus_colony"));
+			.addOptional(Modid.MND.rl("warped_fungus_colony"))
+			.addOptional(Modid.MND.rl("crimson_fungus_colony"));
 
 		// Let Fish Love
 		this.tag(CRItemTags.FISH_FOOD_PLATINUM_BASS).add(CRItems.TIGER_PRAWN.get());
 		this.tag(CRItemTags.FISH_FOOD_TIGER_PRAWN).add(Items.SEAGRASS);
+
+		// Nirvana
+		this.tag(Modid.NIRV.it("nauseating")).add(CRItems.HEMP_GUMMY.get());
+
+		// SAS
+		this.addSelf(CRItemTags.BURGER_BUN);
 	}
 
 	@SuppressWarnings("UnusedReturnValue")

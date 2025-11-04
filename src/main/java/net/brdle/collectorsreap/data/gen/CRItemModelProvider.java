@@ -262,6 +262,7 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.LUCUMA_GUMMY);
 		this.generatedItem(CRItems.APPLE_GUMMY);
 		this.generatedItem(CRItems.GLOW_BERRY_GUMMY);
+		this.generatedItem(CRItems.CARROT_GUMMY);
 		this.generatedItem(CRItems.MELON_GUMMY);
 		this.generatedItem(CRItems.STRAWBERRY_GUMMY);
 		this.generatedItem(CRItems.BANANA_GUMMY);
@@ -273,12 +274,18 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.SWEET_BERRY_GUMMY);
 		this.generatedItem(CRItems.BEETROOT_GUMMY);
 		this.generatedItem(CRItems.ALOE_GUMMY);
+		this.generatedItem(CRItems.WILD_BERRY_GUMMY);
 		this.generatedItem(CRItems.PASSION_FRUIT_GUMMY);
 		this.generatedItem(CRItems.YUCCA_GUMMY);
 		this.generatedItem(CRItems.GREEN_TEA_GUMMY);
 		this.generatedItem(CRItems.YELLOW_TEA_GUMMY);
 		this.generatedItem(CRItems.BLACK_TEA_GUMMY);
 		this.generatedItem(CRItems.COFFEE_GUMMY);
+		this.generatedItem(CRItems.BULLET_PEPPER_GUMMY);
+		this.generatedItem(CRItems.PRICKLY_PEAR_GUMMY);
+		this.generatedItem(CRItems.PEANUT_GUMMY);
+		this.generatedItem(CRItems.ASPARAGUS_ASPIC);
+		this.generatedItem(CRItems.HEMP_GUMMY);
 
 		// Spawn Eggs
 		this.spawnEggItem(

@@ -1,5 +1,6 @@
 {
   "values": [
+    "#collectorsreap:gummies/mob_feedable",
     "collectorsreap:lime_gummy",
     "collectorsreap:pomegranate_gummy",
     "collectorsreap:pink_dragon_fruit_gummy",
@@ -7,6 +8,7 @@
     "collectorsreap:melon_gummy",
     "collectorsreap:apple_gummy",
     "collectorsreap:glow_berry_gummy",
+    "collectorsreap:carrot_gummy",
     "collectorsreap:banana_gummy",
     "collectorsreap:vanilla_gummy",
     "collectorsreap:chocolate_gummy",
@@ -17,11 +19,16 @@
     "collectorsreap:sweet_berry_gummy",
     "collectorsreap:beetroot_gummy",
     "collectorsreap:aloe_gummy",
+    "collectorsreap:wild_berry_gummy",
     "collectorsreap:passion_fruit_gummy",
     "collectorsreap:yucca_gummy",
     "collectorsreap:green_tea_gummy",
     "collectorsreap:yellow_tea_gummy",
     "collectorsreap:black_tea_gummy",
-    "collectorsreap:coffee_gummy"
+    "collectorsreap:coffee_gummy",
+    "collectorsreap:bullet_pepper_gummy",
+    "collectorsreap:prickly_pear_gummy",
+    "collectorsreap:peanut_gummy",
+    "collectorsreap:asparagus_aspic"
   ]
 }

@@ -1,0 +1,41 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "create"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "glow_berry_gummy"
+        }
+      ],
+      "recipe": {
+        "type": "create:mixing",
+        "heatRequirement": "heated",
+        "ingredients": [
+          {
+            "item": "minecraft:glow_berries"
+          },
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "item": "minecraft:honey_block"
+          },
+          {
+            "item": "minecraft:kelp"
+          }
+        ],
+        "results": [
+          {
+            "count": 9,
+            "item": "collectorsreap:glow_berry_gummy"
+          }
+        ]
+      }
+    }
+  ]
+}

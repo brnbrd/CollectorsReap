@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "create"
+        },
+        {
+          "type": "forge:item_exists",
+          "item": "nirvana:weed"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "hemp_gummy"
+        }
+      ],
+      "recipe": {
+        "type": "create:mixing",
+        "heatRequirement": "heated",
+        "ingredients": [
+          {
+            "item": "nirvana:weed"
+          },
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "item": "minecraft:honey_block"
+          },
+          {
+            "item": "minecraft:kelp"
+          }
+        ],
+        "results": [
+          {
+            "count": 9,
+            "item": "collectorsreap:hemp_gummy"
+          }
+        ]
+      }
+    }
+  ]
+}

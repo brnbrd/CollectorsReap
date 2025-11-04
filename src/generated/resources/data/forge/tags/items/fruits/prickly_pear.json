@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "sob:prickly_pear",
+      "required": false
+    },
+    {
+      "id": "ecologics:prickly_pear",
+      "required": false
+    }
+  ]
+}
