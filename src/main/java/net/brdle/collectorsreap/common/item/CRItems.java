@@ -209,6 +209,32 @@ public class CRItems {
 		new CompatDrinkable((new Item.Properties()), false, false, Modid.BC)
 	);
 
+	// Soups/Stews & Cups
+	public static final RegistryObject<Item> PORTOBELLO_RICE_SOUP = registerFood("portobello_rice_soup",
+		bowlFoodItem(Nutrition.PORTOBELLO_RICE_SOUP), true, false);
+	public static final RegistryObject<Item> PORTOBELLO_RICE_SOUP_CUP = registerItem("portobello_rice_soup_cup", () ->
+		new CupItem((new Item.Properties()).food(Nutrition.PORTOBELLO_RICE_SOUP_CUP), true, false));
+	public static final RegistryObject<Item> DRAGON_STEW = registerFood("dragon_stew",
+		bowlFoodItem(Nutrition.DRAGON_STEW), true, false);
+	public static final RegistryObject<Item> DRAGON_STEW_CUP = registerItem("dragon_stew_cup", () ->
+		new CupItem((new Item.Properties()).food(Nutrition.DRAGON_STEW_CUP), true, false));
+	public static final RegistryObject<Item> LUCUMA_GAZPACHO = registerFood("lucuma_gazpacho",
+		bowlFoodItem(Nutrition.LUCUMA_GAZPACHO), true, false);
+	public static final RegistryObject<Item> LUCUMA_GAZPACHO_CUP = registerItem("lucuma_gazpacho_cup", () ->
+		new CupItem((new Item.Properties()).food(Nutrition.LUCUMA_GAZPACHO_CUP), true, false));
+	public static final RegistryObject<Item> CLAM_MEATBALL_STEW = registerFood("clam_meatball_stew",
+		bowlFoodItem(Nutrition.CLAM_MEATBALL_STEW), true, false);
+	public static final RegistryObject<Item> CLAM_MEATBALL_STEW_CUP = registerItem("clam_meatball_stew_cup", () ->
+		new CupItem((new Item.Properties()).food(Nutrition.CLAM_MEATBALL_STEW_CUP), true, false));
+	public static final RegistryObject<Item> PRAWN_STEW = registerFood("prawn_stew",
+		bowlFoodItem(Nutrition.PRAWN_STEW), true, false);
+	public static final RegistryObject<Item> PRAWN_STEW_CUP = registerItem("prawn_stew_cup", () ->
+		new CupItem((new Item.Properties()).food(Nutrition.PRAWN_STEW_CUP), true, false));
+	public static final RegistryObject<Item> PLATINUM_BASS_STEW = registerFood("platinum_bass_stew",
+		bowlFoodItem(Nutrition.PLATINUM_BASS_STEW), true, false);
+	public static final RegistryObject<Item> PLATINUM_BASS_STEW_CUP = registerItem("platinum_bass_stew_cup", () ->
+		new CupItem((new Item.Properties()).food(Nutrition.PLATINUM_BASS_STEW_CUP), true, false));
+
 	// Tools
 	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> LUCUMA_BOATS = HELPER.createBoatAndChestBoatItem("lucuma", CRBlocks.LUCUMA_PLANKS);
 	public static final RegistryObject<Item> LUCUMA_BOAT = LUCUMA_BOATS.getFirst();
@@ -231,10 +257,6 @@ public class CRItems {
 		Nutrition.PORTOBELLO_BURGER);
 	public static final RegistryObject<Item> PORTOBELLO_WRAP = registerFood("portobello_wrap",
 		Nutrition.PORTOBELLO_WRAP);
-	public static final RegistryObject<Item> PORTOBELLO_RICE_SOUP = registerFood("portobello_rice_soup",
-		bowlFoodItem(Nutrition.PORTOBELLO_RICE_SOUP), true, false);
-	public static final RegistryObject<Item> PORTOBELLO_RICE_SOUP_CUP = registerItem("portobello_rice_soup_cup", () ->
-		new CupItem((new Item.Properties()).food(Nutrition.PORTOBELLO_RICE_SOUP_CUP), true, false));
 	public static final RegistryObject<Item> PORTOBELLO_RISOTTO = registerFood("portobello_risotto",
 		bowlFoodItem(Nutrition.PORTOBELLO_RISOTTO), true, false);
 	public static final RegistryObject<Item> PORTOBELLO_PASTA = registerFood("portobello_pasta",
@@ -280,18 +302,10 @@ public class CRItems {
 			true, false, Modid.N));
 	public static final RegistryObject<Item> PINK_NOODLES = registerFood("pink_noodles",
 		bowlFoodItem(Nutrition.PINK_NOODLES), true, false);
-	public static final RegistryObject<Item> DRAGON_STEW = registerFood("dragon_stew",
-		bowlFoodItem(Nutrition.DRAGON_STEW), true, false);
-	public static final RegistryObject<Item> DRAGON_STEW_CUP = registerItem("dragon_stew_cup", () ->
-		new CupItem((new Item.Properties()).food(Nutrition.DRAGON_STEW_CUP), true, false));
 
 	// Lucuma
 	public static final RegistryObject<Item> LUCUMA_BREAD = registerItem("lucuma_bread", () ->
 		new ConsumableItem((new Item.Properties()).food(Nutrition.LUCUMA_BREAD), true, false));
-	public static final RegistryObject<Item> LUCUMA_GAZPACHO = registerItem("lucuma_gazpacho", () ->
-		new ConsumableItem(bowlFoodItem(Nutrition.LUCUMA_GAZPACHO), true, false));
-	public static final RegistryObject<Item> LUCUMA_GAZPACHO_CUP = registerItem("lucuma_gazpacho_cup", () ->
-		new CupItem((new Item.Properties()).food(Nutrition.LUCUMA_GAZPACHO_CUP), true, false));
 
 	// Clam
 	public static final RegistryObject<Item> CLAM = registerItem("clam", () -> new Item((new Item.Properties())));
@@ -303,10 +317,6 @@ public class CRItems {
 		bowlFoodItem(Nutrition.CLAM_PASTA), true, false);
 	public static final RegistryObject<Item> CLAM_CHOWDER = registerFood("clam_chowder",
 		(new Item.Properties()).food(Nutrition.CLAM_CHOWDER).stacksTo(16), true, false);
-	public static final RegistryObject<Item> CLAM_MEATBALL_STEW = registerFood("clam_meatball_stew",
-		bowlFoodItem(Nutrition.CLAM_MEATBALL_STEW), true, false);
-	public static final RegistryObject<Item> CLAM_MEATBALL_STEW_CUP = registerItem("clam_meatball_stew_cup", () ->
-		new CupItem((new Item.Properties()).food(Nutrition.CLAM_MEATBALL_STEW_CUP), true, false));
 
 	// Lunar Pearl
 	public static final RegistryObject<Item> LUNAR_PEARL = registerItem("lunar_pearl", () ->
@@ -330,10 +340,6 @@ public class CRItems {
 		bowlFoodItem(Nutrition.PRAWN_CEVICHE), true, false);
 	public static final RegistryObject<Item> PRAWN_NOODLES = registerFood("prawn_noodles",
 		bowlFoodItem(Nutrition.PRAWN_NOODLES), true, false);
-	public static final RegistryObject<Item> PRAWN_STEW = registerFood("prawn_stew",
-		bowlFoodItem(Nutrition.PRAWN_STEW), true, false);
-	public static final RegistryObject<Item> PRAWN_STEW_CUP = registerItem("prawn_stew_cup", () ->
-		new CupItem((new Item.Properties()).food(Nutrition.PRAWN_STEW_CUP), true, false));
 
 	// Platinum Bass
 	public static final RegistryObject<Item> PLATINUM_BASS = registerFood("platinum_bass", Nutrition.PLATINUM_BASS);
@@ -344,10 +350,6 @@ public class CRItems {
 	public static final RegistryObject<Item> COOKED_PLATINUM_BASS_SLICE = registerFood("cooked_platinum_bass_slice", Nutrition.COOKED_PLATINUM_BASS_SLICE);
 	public static final RegistryObject<Item> FISH_MIX = registerFood("fish_mix",
 		bowlFoodItem(Nutrition.FISH_MIX), false, false);
-	public static final RegistryObject<Item> PLATINUM_BASS_STEW = registerFood("platinum_bass_stew",
-		bowlFoodItem(Nutrition.PLATINUM_BASS_STEW), true, false);
-	public static final RegistryObject<Item> PLATINUM_BASS_STEW_CUP = registerItem("platinum_bass_stew_cup", () ->
-		new CupItem((new Item.Properties()).food(Nutrition.PLATINUM_BASS_STEW_CUP), true, false));
 
 	// Chieftain Crab
 	public static final RegistryObject<Item> CHIEFTAIN_CRAB = registerItem("chieftain_crab", () -> new Item((new Item.Properties()).stacksTo(1).craftRemainder(Items.BOWL)));
