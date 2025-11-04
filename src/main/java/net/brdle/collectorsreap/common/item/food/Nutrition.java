@@ -6,6 +6,7 @@ import net.brdle.collectorsreap.compat.CompatEffects;
 import net.brdle.collectorsreap.compat.Modid;
 import net.brdle.collectorsreap.compat.abnormals.BuzzierBeesCompat;
 import net.brdle.collectorsreap.compat.abnormals.NeapolitanCompat;
+import net.brdle.collectorsreap.compat.mynethersdelight.MNDCompat;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -524,15 +525,15 @@ public class Nutrition {
 		new MobEffectInstance(CREffects.SURGE.get(), 600, SurgeEffect.MAX_SURGE), () ->
 		new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0)));
 	public static final FoodProperties LUCUMA_GUMMY = GUMMY(() ->
-		new MobEffectInstance(CREffects.REBOUND.get(), 200, 2));
+		new MobEffectInstance(CREffects.REBOUND.get(), 600, 2));
 	public static final FoodProperties MELON_GUMMY = GUMMY(List.of(() ->
 		new MobEffectInstance(MobEffects.HEAL, 1, 0), () ->
 		new MobEffectInstance(MobEffects.ABSORPTION, 200, 0)));
 	public static final FoodProperties APPLE_GUMMY = GUMMY(() ->
 		new MobEffectInstance(
 			CompatEffects.getExuberant(),
-			Modid.COS.loaded() ? 600 : 1800,
-			Modid.COS.loaded() ? 2 : 0
+			Modid.COS.loaded() ? 800 : 1800,
+			Modid.COS.loaded() ? 3 : 0
 		));
 	public static final FoodProperties GLOW_BERRY_GUMMY = GUMMY(() ->
 		new MobEffectInstance(
@@ -541,7 +542,7 @@ public class Nutrition {
 			Modid.COS.loaded() ? 2 : 0
 		));
 	public static final FoodProperties CARROT_GUMMY = GUMMY(() ->
-		new MobEffectInstance(CompatEffects.getCarotene(), MobEffectInstance.INFINITE_DURATION, 0));
+		new MobEffectInstance(MobEffects.NIGHT_VISION, 1200, 0));
 	public static final FoodProperties BANANA_GUMMY = GUMMY(List.of(() ->
 		new MobEffectInstance(NeapolitanCompat.getAgility(), 200, 0), () ->
 		new MobEffectInstance(MobEffects.JUMP, 200, 2)));
@@ -554,8 +555,9 @@ public class Nutrition {
 		new MobEffectInstance(MobEffects.DAMAGE_BOOST, 800, 0)));
 	public static final FoodProperties ADZUKI_GUMMY = GUMMY(() ->
 		new MobEffectInstance(NeapolitanCompat.getHarmony(), 40, 2));
-	public static final FoodProperties BULLET_PEPPER_GUMMY = GUMMY(() ->
-		new MobEffectInstance(CompatEffects.getPungent(), 200, 3));
+	public static final FoodProperties BULLET_PEPPER_GUMMY = GUMMY(List.of(() ->
+		new MobEffectInstance(MNDCompat.getBeneficialPungent(), 600, 3), () ->
+		new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 600, 0)));
 	public static final FoodProperties WILD_BERRY_GUMMY = GUMMY(() ->
 		new MobEffectInstance(CompatEffects.getFrostResistance(), 100, 2));
 	public static final FoodProperties PUMPKIN_GUMMY = GUMMY(List.of(() ->
@@ -579,8 +581,9 @@ public class Nutrition {
 		new MobEffectInstance(CompatEffects.getMaturity(), 200, 2));
 	public static final FoodProperties COFFEE_GUMMY = GUMMY(() ->
 		new MobEffectInstance(CompatEffects.getCaffeinated(), 400, 3));
-	public static final FoodProperties PRICKLY_PEAR_GUMMY = GUMMY(() ->
-		new MobEffectInstance(CompatEffects.getSpite(), 100, 3));
+	public static final FoodProperties PRICKLY_PEAR_GUMMY = GUMMY(List.of(() ->
+		new MobEffectInstance(CompatEffects.getSpite(), 1800, 0), () ->
+		new MobEffectInstance(MobEffects.REGENERATION, 400, 0)));
 	public static final FoodProperties PEANUT_GUMMY = GUMMY(() ->
 		new MobEffectInstance(CompatEffects.getToughness(), 400, 1));
 	public static final FoodProperties ASPARAGUS_ASPIC = GUMMY(() ->

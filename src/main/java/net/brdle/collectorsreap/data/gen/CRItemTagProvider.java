@@ -40,7 +40,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRBlocks.STRIPPED_LUCUMA_WOOD.get().asItem());
 		this.tag(CRItemTags.DART_SHOOTERS)
 			.add(Items.BAMBOO)
-			.addOptional(Util.rl("mynethersdelight", "powder_cannon"));
+			.addOptional(Modid.MND.rl("powder_cannon"));
 		this.tag(CRItemTags.GUMMIES_MOB_FEEDABLE)
 			.add(CRItems.HEMP_GUMMY.get());
 		this.tag(CRItemTags.GUMMIES)
@@ -114,16 +114,16 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(ForgeTags.COOKED_FISHES).addTag(CRItemTags.COOKED_FISHES_PLATINUM_BASS);
 		this.tag(CRItemTags.ROE_FISH)
 			.add(CRItems.PLATINUM_BASS_ROE.get())
-			.addOptional(Util.rl("letfishlove", "tropical_fish_roe"))
-			.addOptional(Util.rl("letfishlove", "salmon_roe"))
-			.addOptional(Util.rl("letfishlove", "pufferfish_roe"))
-			.addOptional(Util.rl("letfishlove", "cod_roe"))
-			.addOptional(Util.rl("letmorefishlove", "lanternfish_roe"))
-			.addOptional(Util.rl("letmorefishlove", "catfish_roe"))
-			.addOptional(Util.rl("letmorefishlove", "bass_roe"))
-			.addOptional(Util.rl("letmorefishlove", "pike_roe"))
-			.addOptional(Util.rl("letmorefishlove", "lionfish_roe"))
-			.addOptional(Util.rl("letmorefishlove", "perch_roe"));
+			.addOptional(Modid.LFL.rl("tropical_fish_roe"))
+			.addOptional(Modid.LFL.rl("salmon_roe"))
+			.addOptional(Modid.LFL.rl("pufferfish_roe"))
+			.addOptional(Modid.LFL.rl("cod_roe"))
+			.addOptional(Modid.LMFL.rl("lanternfish_roe"))
+			.addOptional(Modid.LMFL.rl("catfish_roe"))
+			.addOptional(Modid.LMFL.rl("bass_roe"))
+			.addOptional(Modid.LMFL.rl("pike_roe"))
+			.addOptional(Modid.LMFL.rl("lionfish_roe"))
+			.addOptional(Modid.LMFL.rl("perch_roe"));
 		this.tag(CRItemTags.ROE_PRAWN)
 			.add(CRItems.TIGER_PRAWN_ROE.get());
 		this.tag(CRItemTags.ROE)
@@ -216,7 +216,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.CHEESE_MILD_CREAM)
 			.addOptional(Modid.BC.rl("flaxen_cheese_wedge"));
 		this.tag(CRItemTags.CHEESE_SPICY).addOptional(Modid.BC.rl("scarlet_cheese_wedge"));
-		this.tag(CRItemTags.CHEESE_SWEET).addOptional(Util.rl("sob", "eumozz_cheese_wedge"));
+		this.tag(CRItemTags.CHEESE_SWEET).addOptional(Modid.SOB.rl("eumozz_cheese_wedge"));
 		this.tag(CRItemTags.CHEESE)
 			.addTag(CRItemTags.CHEESE_MILD)
 			.addTag(CRItemTags.CHEESE_SPICY)
@@ -235,7 +235,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.FRUITS_LIME).add(CRItems.LIME.get());
 		this.tag(CRItemTags.FRUITS_CITRUS)
 			.addTag(CRItemTags.FRUITS_LIME)
-			.addOptionalTag(Util.rl("forge", "fruits/lemon"));
+			.addOptionalTag(Modid.LOADER.rl("fruits/lemon"));
 		this.tag(CRItemTags.FRUITS)
 			.addTag(CRItemTags.FRUITS_CITRUS)
 			.addTag(CRItemTags.FRUITS_POMEGRANATE)
@@ -250,21 +250,21 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.SEEDS_DRAGON_FRUIT);
 		this.tag(CRItemTags.MUSHROOMS_PORTOBELLO).add(CRItems.PORTOBELLO.get());
 		this.tag(Tags.Items.MUSHROOMS).addTag(CRItemTags.MUSHROOMS_PORTOBELLO);
-		this.tag(CRItemTags.TORTILLA).addOptional(Util.rl("culturaldelights", "tortilla"));
+		this.tag(CRItemTags.TORTILLA).addOptional(Modid.CD.rl("tortilla"));
 		this.tag(CRItemTags.RAW_CRAB_MEAT)
-			.addOptional(Util.rl("quark", "crab_leg"));
+			.addOptional(Modid.Q.rl("crab_leg"));
 		this.tag(CRItemTags.COOKED_CRAB_MEAT)
 			.add(CRItems.CHIEFTAIN_CRAB_MEAT.get())
 			.add(CRItems.CHIEFTAIN_LEG.get())
-			.addOptional(Util.rl("crabbersdelight", "crab_legs"))
-			.addOptional(Util.rl("ecologics", "crab_meat"))
-			.addOptional(Util.rl("quark", "cooked_crab_leg"));
+			.addOptional(Modid.CRAB.rl("crab_legs"))
+			.addOptional(Modid.ECO.rl("crab_meat"))
+			.addOptional(Modid.Q.rl("cooked_crab_leg"));
 		this.tag(CRItemTags.CLAM)
 			.add(CRItems.CLAM.get())
-			.addOptional(Util.rl("crabbersdelight", "clam"));
+			.addOptional(Modid.CRAB.rl("clam"));
 		this.tag(CRItemTags.RAW_CLAM)
 			.add(CRItems.CLAM_MEAT.get())
-			.addOptional(Util.rl("crabbersdelight", "raw_clam_meat"));
+			.addOptional(Modid.CRAB.rl("raw_clam_meat"));
 		this.tag(CRItemTags.RAW_URCHIN).add(CRItems.UNI.get());
 		this.tag(CRItemTags.RAW_PRAWN)
 			.add(CRItems.TIGER_PRAWN.get());
@@ -277,15 +277,15 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.COOKED_PLATINUM_BASS.get())
 			.add(CRItems.COOKED_PLATINUM_BASS_SLICE.get());
 		this.tag(CRItemTags.HOT_NETHER_FRUIT)
-			.addOptionalTag(Util.rl("mynethersdelight", "bullet_pepper"))
-			.addOptional(Util.rl("nethersdelight", "propelpearl"));
+			.addOptionalTag(Modid.MND.rl("bullet_pepper"))
+			.addOptional(Modid.ND.rl("propelpearl"));
 		this.tag(CRItemTags.RAW_HOGLIN)
-			.addOptionalTag(Util.rl("forge", "hoglin_loin"))
-			.addOptionalTag(Util.rl("mynethersdelight", "raw_hoglin"))
-			.addOptional(Util.rl("nethersdelight", "hoglin_loin"));
+			.addOptionalTag(Modid.LOADER.rl("hoglin_loin"))
+			.addOptionalTag(Modid.MND.rl("raw_hoglin"))
+			.addOptional(Modid.ND.rl("hoglin_loin"));
 		this.tag(CRItemTags.RAW_STRIDER)
-			.addOptionalTag(Util.rl("mynethersdelight", "strider_meats"))
-			.addOptional(Util.rl("nethersdelight", "raw_strider"));
+			.addOptionalTag(Modid.MND.rl("strider_meats"))
+			.addOptional(Modid.ND.rl("raw_strider"));
 		this.tag(CRItemTags.COOKIES)
 			.add(Items.COOKIE)
 			.add(ModItems.HONEY_COOKIE.get())
@@ -295,19 +295,19 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.COOKIES);
 		this.tag(Tags.Items.EGGS)
 			.add(Items.TURTLE_EGG)
-			.addOptional(Util.rl("sullysmod", "tortoise_egg"))
-			.addOptional(Util.rl("naturalist", "tortoise_egg"))
-			.addOptional(Util.rl("naturalist", "duck_egg"))
-			.addOptional(Util.rl("autumnity", "turkey_egg"))
-			.addOptional(Util.rl("deep_aether", "quail_egg"));
+			.addOptional(Modid.SM.rl("tortoise_egg"))
+			.addOptional(Modid.NA.rl("tortoise_egg"))
+			.addOptional(Modid.NA.rl("duck_egg"))
+			.addOptional(Modid.AUT.rl("turkey_egg"))
+			.addOptional(Modid.DA.rl("quail_egg"));
 		this.tag(CRItemTags.JUICES_LIME)
 			.add(CRItems.LIMEADE.get())
 			.add(CRItems.STRONG_LIMEADE.get())
-			.addOptionalTag(Util.rl("forge", "juices/lime_juice"));
+			.addOptionalTag(Modid.LOADER.rl("juices/lime_juice"));
 		this.tag(CRItemTags.JUICES)
 			.addTag(CRItemTags.JUICES_LIME)
 			.add(ModItems.MELON_JUICE.get());
-		this.tag(CRItemTags.CONDENSED_MILK).addOptional(Util.rl("cosmopolitan", "condensed_milk_bottle"));
+		this.tag(CRItemTags.CONDENSED_MILK).addOptional(Modid.COS.rl("condensed_milk_bottle"));
 		this.tag(CRItemTags.forge("nuts/peanut")).addOptional(Modid.SOB.rl("peanut"));
 		this.tag(CRItemTags.forge("vegetables/asparagus")).addOptional(Modid.SOB.rl("asparagus"));
 		this.tag(CRItemTags.forge("vegetables/ginger")).addOptional(Modid.WS.rl("ginger_root"));

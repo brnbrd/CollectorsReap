@@ -4,17 +4,12 @@
     {
       "conditions": [
         {
-          "type": "forge:and",
-          "values": [
-            {
-              "type": "collectorsreap:enabled",
-              "value": "apple_gummy"
-            },
-            {
-              "type": "forge:mod_loaded",
-              "modid": "create"
-            }
-          ]
+          "type": "forge:mod_loaded",
+          "modid": "create"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "apple_gummy"
         }
       ],
       "recipe": {

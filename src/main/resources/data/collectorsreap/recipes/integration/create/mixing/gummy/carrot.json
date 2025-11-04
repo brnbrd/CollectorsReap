@@ -8,10 +8,6 @@
           "modid": "create"
         },
         {
-          "type": "forge:mod_loaded",
-          "modid": "sob"
-        },
-        {
           "type": "collectorsreap:enabled",
           "value": "carrot_gummy"
         }

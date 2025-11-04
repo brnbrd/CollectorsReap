@@ -14,10 +14,13 @@ import net.brdle.collectorsreap.common.item.drink.ShakeItem;
 import net.brdle.collectorsreap.common.item.drink.VernalPurgeItem;
 import net.brdle.collectorsreap.common.item.food.*;
 import net.brdle.collectorsreap.compat.Modid;
+import net.brdle.collectorsreap.compat.abnormals.AdzukiGummyItem;
+import net.brdle.collectorsreap.compat.abnormals.AloeGummyItem;
 import net.brdle.collectorsreap.compat.abnormals.CRBoatTypes;
 import net.brdle.collectorsreap.compat.brewinandchewin.BrewinChewinCompat;
 import net.brdle.collectorsreap.compat.letfishlove.LetFishLoveCompat;
 import net.brdle.collectorsreap.compat.miners_delight.CupItem;
+import net.brdle.collectorsreap.compat.mynethersdelight.StygianPomegranateItem;
 import net.brdle.collectorsreap.compat.nirvana.NirvanaCompat;
 import net.brdle.collectorsreap.compat.sob.AsparagusAspicItem;
 import net.minecraft.sounds.SoundEvents;
@@ -389,11 +392,16 @@ public class CRItems {
 			Nutrition.CHOCOLATE_ARILS), true, false, Modid.N));
 
 	// Vanilla/FD/CR Gummies
-	public static final RegistryObject<Item> MELON_GUMMY = registerGummy("melon", Nutrition.MELON_GUMMY);
 	public static final RegistryObject<Item> LIME_GUMMY = registerGummy("lime", Nutrition.LIME_GUMMY);
 	public static final RegistryObject<Item> POMEGRANATE_GUMMY = registerGummy("pomegranate", Nutrition.POMEGRANATE_GUMMY);
 	public static final RegistryObject<Item> PINK_DRAGON_FRUIT_GUMMY = registerGummy("pink_dragon_fruit", Nutrition.PINK_DRAGON_FRUIT_GUMMY);
 	public static final RegistryObject<Item> LUCUMA_GUMMY = registerGummy("lucuma", Nutrition.LUCUMA_GUMMY);
+	public static final RegistryObject<Item> MELON_GUMMY = registerGummy("melon", Nutrition.MELON_GUMMY);
+
+	// Vanilla/Cosmopolitan Gummies
+	public static final RegistryObject<Item> APPLE_GUMMY = registerGummy("apple", Nutrition.APPLE_GUMMY);
+	public static final RegistryObject<Item> GLOW_BERRY_GUMMY = registerGummy("glow_berry", Nutrition.GLOW_BERRY_GUMMY);
+	public static final RegistryObject<Item> CARROT_GUMMY = registerGummy("carrot", Nutrition.CARROT_GUMMY);
 
 	// Farmer's Respite/Respiteful Gummies
 	public static final RegistryObject<Item> GREEN_TEA_GUMMY = registerGummy("green_tea", Nutrition.GREEN_TEA_GUMMY, Modid.FR);
@@ -426,11 +434,6 @@ public class CRItems {
 	public static final RegistryObject<Item> PUMPKIN_GUMMY = registerGummy("pumpkin", Nutrition.PUMPKIN_GUMMY, Modid.SEAS);
 	public static final RegistryObject<Item> SWEET_BERRY_GUMMY = registerGummy("sweet_berry", Nutrition.SWEET_BERRY_GUMMY, Modid.SEAS);
 	public static final RegistryObject<Item> BEETROOT_GUMMY = registerGummy("beetroot", Nutrition.BEETROOT_GUMMY, Modid.SEAS);
-
-	// Cosmopolitan Gummies
-	public static final RegistryObject<Item> APPLE_GUMMY = registerGummy("apple", Nutrition.APPLE_GUMMY);
-	public static final RegistryObject<Item> GLOW_BERRY_GUMMY = registerGummy("glow_berry", Nutrition.GLOW_BERRY_GUMMY);
-	public static final RegistryObject<Item> CARROT_GUMMY = registerGummy("carrot", Nutrition.CARROT_GUMMY, Modid.COS);
 
 	// Smidgeon o' Bliss Gummies
 	public static final RegistryObject<Item> PRICKLY_PEAR_GUMMY = registerGummy("prickly_pear", Nutrition.PRICKLY_PEAR_GUMMY, Modid.SOB);

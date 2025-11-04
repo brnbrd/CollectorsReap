@@ -47,8 +47,8 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.addTag(Tags.Blocks.GRAVEL)
 			.add(Blocks.WATER)
 			.add(Blocks.CLAY)
-			.addOptionalTag(Util.rl("quark", "crab_spawnable"))
-			.addOptionalTag(Util.rl("crabbersdelight", "crab_spawn_on"));
+			.addOptionalTag(Modid.Q.rl("crab_spawnable"))
+			.addOptionalTag(Modid.CRAB.rl("crab_spawn_on"));
 		this.tag(CRBlockTags.LUCUMA_LOGS)
 			.add(CRBlocks.LUCUMA_LOG.get())
 			.add(CRBlocks.LUCUMA_WOOD.get())
@@ -191,8 +191,8 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(CRBlockTags.HANG_FROM_ROPES).add(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
 
 		// Other
-		this.tag(BlockTags.create(Util.rl("twilightforest", "portal/decoration"))).add(CRBlocks.PORTOBELLO.get());
-		this.tag(BlockTags.create(Util.rl("immersive_weathering", "small_mushrooms"))).add(CRBlocks.PORTOBELLO.get());
-		this.tag(BlockTags.create(Util.rl("autumnity", "snail_snacks"))).add(CRBlocks.PORTOBELLO.get());
+		this.tag(Modid.TF.bt("portal/decoration")).add(CRBlocks.PORTOBELLO.get());
+		this.tag(Modid.IW.bt("small_mushrooms")).add(CRBlocks.PORTOBELLO.get());
+		this.tag(Modid.AUT.bt("snail_snacks")).add(CRBlocks.PORTOBELLO.get());
 	}
 }

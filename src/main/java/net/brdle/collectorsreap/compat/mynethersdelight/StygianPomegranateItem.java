@@ -1,5 +1,6 @@
-package net.brdle.collectorsreap.common.item.food;
+package net.brdle.collectorsreap.compat.mynethersdelight;
 
+import net.brdle.collectorsreap.common.item.food.CompatConsumable;
 import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;

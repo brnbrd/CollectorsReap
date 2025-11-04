@@ -1,7 +1,7 @@
-package net.brdle.collectorsreap.common.item.food;
+package net.brdle.collectorsreap.compat.abnormals;
 
+import net.brdle.collectorsreap.common.item.food.GummyItem;
 import net.brdle.collectorsreap.compat.Modid;
-import net.brdle.collectorsreap.compat.abnormals.NeapolitanCompat;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
