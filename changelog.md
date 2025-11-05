@@ -30,6 +30,13 @@
 - Added Clam and Meatball Stew Cup (for [Miner's Delight +](https://www.curseforge.com/minecraft/mc-mods/miners-delight-plus))
 - Added Prawn Stew Cup (for [Miner's Delight +](https://www.curseforge.com/minecraft/mc-mods/miners-delight-plus))
 - Added Platinum Bass Stew Cup (for [Miner's Delight +](https://www.curseforge.com/minecraft/mc-mods/miners-delight-plus))
+- Added Carrot Gummy
+- Added Prickly Pear Gummy (for [Smidgeon o' Bliss REMASTERED](https://www.curseforge.com/minecraft/mc-mods/smidgeon-o-bliss-remastered))
+- Added Peanut Gummy (for [Smidgeon o' Bliss REMASTERED](https://www.curseforge.com/minecraft/mc-mods/smidgeon-o-bliss-remastered))
+- Added Asparagus Aspic (for [Smidgeon o' Bliss REMASTERED](https://www.curseforge.com/minecraft/mc-mods/smidgeon-o-bliss-remastered))
+- Added Wild Berry Gummy (for [Windswept!](https://www.curseforge.com/minecraft/mc-mods/windsweptmod))
+- Added Bullet Pepper Gummy (for [My Nether's Delight](https://www.curseforge.com/minecraft/mc-mods/my-nethers-delight))
+- Added Hemp Gummy (for [Nirvana](https://www.curseforge.com/minecraft/mc-mods/nirvana))
 - Lunar Pearls can now be found in shipwreck and buried treasure chests
 - Strawberry Jam Bun now provides 8 nutrition and Instant Health
   - Can now be crafted using Strawberry Jam from [Smidgeon o' Bliss REMASTERED](https://www.curseforge.com/minecraft/mc-mods/smidgeon-o-bliss-remastered)
