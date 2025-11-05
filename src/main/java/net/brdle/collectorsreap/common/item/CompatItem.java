@@ -24,7 +24,8 @@ public class CompatItem extends Item implements IConfigured {
 
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> comps, @NotNull TooltipFlag isAdvanced) {
-		this.enabledText(comps);
-		super.appendHoverText(stack, level, comps, isAdvanced);
+		if (this.enabledText(comps)) {
+			super.appendHoverText(stack, level, comps, isAdvanced);
+		}
 	}
 }

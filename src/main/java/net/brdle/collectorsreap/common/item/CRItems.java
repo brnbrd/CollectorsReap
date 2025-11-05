@@ -415,7 +415,7 @@ public class CRItems {
 	public static final RegistryObject<Item> BULLET_PEPPER_GUMMY = registerGummy("bullet_pepper", Nutrition.BULLET_PEPPER_GUMMY, Modid.MND);
 
 	// Neapolitan Gummies
-	public static final RegistryObject<Item> STRAWBERRY_GUMMY = registerGummy("strawberry", Nutrition.STRAWBERRY_GUMMY);
+	public static final RegistryObject<Item> STRAWBERRY_GUMMY = registerGummy("strawberry", Nutrition.STRAWBERRY_GUMMY, Modid.N);
 	public static final RegistryObject<Item> BANANA_GUMMY = registerGummy("banana", Nutrition.BANANA_GUMMY, Modid.N);
 	public static final RegistryObject<Item> VANILLA_GUMMY = registerGummy("vanilla", Nutrition.VANILLA_GUMMY, Modid.N);
 	public static final RegistryObject<Item> MINT_GUMMY = registerGummy("mint", Nutrition.MINT_GUMMY, Modid.N);
