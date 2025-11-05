@@ -188,7 +188,7 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 			ItemStack stack =
 				this.isSpecial(level, pos) ?
 				new ItemStack(this.getSpecialFruit().get()) :
-				new ItemStack(this.getFruit(), 1 + level.getRandom().nextInt(this.getMaxBonus() + 1));
+				new ItemStack(this.getFruit(), level.getRandom().nextIntBetweenInclusive(1, 1 + this.getMaxBonus()));
 			popResource(level, pos, stack);
 		}
 	}

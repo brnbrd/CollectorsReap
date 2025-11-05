@@ -78,7 +78,7 @@ public class CRItems {
 	public static final RegistryObject<Item> LUCUMA = registerItem("lucuma", () ->
 		new LucumaItem((new Item.Properties()).food(Nutrition.LUCUMA)));
 	public static final RegistryObject<Item> GILDED_LUCUMA = registerItem("gilded_lucuma", () ->
-		new ConsumableItem((new Item.Properties()).food(Nutrition.GILDED_LUCUMA), true, false));
+		new GildedLucumaItem((new Item.Properties()).food(Nutrition.GILDED_LUCUMA)));
 
 	// Sliceable Blocks
 	public static final RegistryObject<Item> PORTOBELLO_QUICHE = registerBlock(CRBlocks.PORTOBELLO_QUICHE);
