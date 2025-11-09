@@ -1,6 +1,13 @@
 ## Version History
 
 
+# 1.5.1
+
+### Updates
+- Changed Rarity tooltip of Gilded Lucuma to Rare
+- Added translations for item tags
+
+
 # 1.5
 
 ### Updates

@@ -6,8 +6,11 @@ import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.entity.CREntities;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.data.CRItemTags;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.TagKey;
 import net.minecraftforge.common.data.LanguageProvider;
+import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.FarmersDelight;
 
 public class CRLanguageProvider extends LanguageProvider {
@@ -24,6 +27,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addEffects();
 		addBlocks();
 		addItems();
+		addTags();
 		addSubtitles();
 	}
 
@@ -413,6 +417,15 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.SEA_WRAP, "Sea Wrap");
 	}
 
+	private void addTags() {
+		addItemTag(CRItemTags.GUMMIES, "Gummies");
+		addItemTag(CRItemTags.GUMMIES_MOB_FEEDABLE, "Mob Feedable Gummies");
+		addItemTag(CRItemTags.CHIEFTAIN_CRAB_FOOD, "Chieftain Crab Foods");
+		addItemTag(CRItemTags.DART_SHOOTERS, "Dart Shooters");
+		addItemTag(CRItemTags.HOT_NETHER_FRUIT, "Hot Nether Fruit");
+		addItemTag(CRItemTags.LUCUMA_LOGS, "Lucuma Logs");
+	}
+
 	private void addSubtitles() {
 		add(CollectorsReap.MODID + ".subtitle.urchin_dart.throw", "Urchin Dart thrown");
 		add(CollectorsReap.MODID + ".subtitle.urchin_dart.hit", "Urchin Dart hits");
@@ -426,6 +439,10 @@ public class CRLanguageProvider extends LanguageProvider {
 		add(CollectorsReap.MODID + ".subtitle.dragon_fruit.pick", "Dragon Fruit pops");
 		add(CollectorsReap.MODID + ".subtitle.rebound.heal", "Health rebounds");
 		add(CollectorsReap.MODID + ".subtitle.corrosion.corrode", "Acid corrodes");
+	}
+
+	public void addItemTag(@NotNull TagKey<?> tag, @NotNull String translation) {
+		add("tag.item." + tag.location().toLanguageKey(), translation);
 	}
 
 	public void addTooltip(String key, String translation) {
