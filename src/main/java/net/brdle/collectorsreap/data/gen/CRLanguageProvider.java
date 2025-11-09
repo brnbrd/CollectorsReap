@@ -442,7 +442,12 @@ public class CRLanguageProvider extends LanguageProvider {
 	}
 
 	public void addItemTag(@NotNull TagKey<?> tag, @NotNull String translation) {
-		add("tag.item." + tag.location().toLanguageKey(), translation);
+		add(
+			"tag.item." + tag.location()
+				.toLanguageKey()
+				.replace("/", "."),
+			translation
+		);
 	}
 
 	public void addTooltip(String key, String translation) {
