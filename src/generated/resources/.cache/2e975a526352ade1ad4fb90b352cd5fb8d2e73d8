@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-08T17:34:43.0414245	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2025-11-09T16:43:05.4705894	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
@@ -17,7 +17,7 @@ bc152e3055d651ccdad9d17d1bffdbb9ebde35b5 data/collectorsreap/tags/items/chieftai
 e0f1081b33dba4a0923dc182be2af337db73c5bb data/collectorsreap/tags/items/dart_shooters.json
 3feb0d40cadbeca7e5eb051aaf8b896e5a88bf18 data/collectorsreap/tags/items/gummies.json
 c0f7b9d7fdcbc34669b0c089c56ebc9a09a6aadb data/collectorsreap/tags/items/gummies/mob_feedable.json
-88055c196d1b1d1dc8d81f028dba0bb58d473524 data/collectorsreap/tags/items/hot_nether_fruit.json
+88055c196d1b1d1dc8d81f028dba0bb58d473524 data/collectorsreap/tags/items/hot_nether_fruits.json
 b03d8cb10dcb861b22c4da8fb09000c3d4f57326 data/collectorsreap/tags/items/lucuma_logs.json
 4ade3885f131d51fd808050df78ebb129d826f84 data/diet/tags/items/fruits.json
 44930d393f8ce0442362dc4dac89d839726332e7 data/diet/tags/items/proteins.json

@@ -41,10 +41,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.DART_SHOOTERS)
 			.add(Items.BAMBOO)
 			.addOptional(Modid.MND.rl("powder_cannon"));
-		this.tag(CRItemTags.GUMMIES_MOB_FEEDABLE)
+		this.tag(CRItemTags.MOB_FEEDABLE_GUMMIES)
 			.add(CRItems.HEMP_GUMMY.get());
 		this.tag(CRItemTags.GUMMIES)
-			.addTag(CRItemTags.GUMMIES_MOB_FEEDABLE)
+			.addTag(CRItemTags.MOB_FEEDABLE_GUMMIES)
 			.add(CRItems.LIME_GUMMY.get())
 			.add(CRItems.POMEGRANATE_GUMMY.get())
 			.add(CRItems.PINK_DRAGON_FRUIT_GUMMY.get())
@@ -112,7 +112,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(ItemTags.FISHES).add(CRItems.PLATINUM_BASS.get());
 		this.tag(ForgeTags.RAW_FISHES).addTag(CRItemTags.RAW_FISHES_PLATINUM_BASS);
 		this.tag(ForgeTags.COOKED_FISHES).addTag(CRItemTags.COOKED_FISHES_PLATINUM_BASS);
-		this.tag(CRItemTags.ROE_FISH)
+		this.tag(CRItemTags.FISH_ROE)
 			.add(CRItems.PLATINUM_BASS_ROE.get())
 			.addOptional(Modid.LFL.rl("tropical_fish_roe"))
 			.addOptional(Modid.LFL.rl("salmon_roe"))
@@ -124,11 +124,11 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addOptional(Modid.LMFL.rl("pike_roe"))
 			.addOptional(Modid.LMFL.rl("lionfish_roe"))
 			.addOptional(Modid.LMFL.rl("perch_roe"));
-		this.tag(CRItemTags.ROE_PRAWN)
+		this.tag(CRItemTags.PRAWN_ROE)
 			.add(CRItems.TIGER_PRAWN_ROE.get());
 		this.tag(CRItemTags.ROE)
-			.addTag(CRItemTags.ROE_FISH)
-			.addTag(CRItemTags.ROE_PRAWN);
+			.addTag(CRItemTags.FISH_ROE)
+			.addTag(CRItemTags.PRAWN_ROE);
 
 		// Blueprint
 		this.tag(BlueprintItemTags.FURNACE_BOATS).add(CRItems.LUCUMA_FURNACE_BOAT.get());
@@ -276,7 +276,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.COOKED_FISHES_PLATINUM_BASS)
 			.add(CRItems.COOKED_PLATINUM_BASS.get())
 			.add(CRItems.COOKED_PLATINUM_BASS_SLICE.get());
-		this.tag(CRItemTags.HOT_NETHER_FRUIT)
+		this.tag(CRItemTags.HOT_NETHER_FRUITS)
 			.addOptionalTag(Modid.MND.rl("bullet_pepper"))
 			.addOptional(Modid.ND.rl("propelpearl"));
 		this.tag(CRItemTags.RAW_HOGLIN)

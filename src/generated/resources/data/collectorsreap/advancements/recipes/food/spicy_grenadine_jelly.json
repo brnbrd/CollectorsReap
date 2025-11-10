@@ -50,7 +50,7 @@
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "collectorsreap:hot_nether_fruit"
+                "tag": "collectorsreap:hot_nether_fruits"
               }
             }
           ]

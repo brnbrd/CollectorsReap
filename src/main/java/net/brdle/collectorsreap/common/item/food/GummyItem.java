@@ -34,7 +34,7 @@ public class GummyItem extends CompatConsumable {
 	@Override
 	public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, @NotNull List<Component> comps, @NotNull TooltipFlag isAdvanced) {
 		super.appendHoverText(stack, level, comps, isAdvanced);
-		if (this.enabled() && stack.is(CRItemTags.GUMMIES_MOB_FEEDABLE)) {
+		if (this.enabled() && stack.is(CRItemTags.MOB_FEEDABLE_GUMMIES)) {
 			comps.add(Component.empty());
 			comps.add(Util.crTooltip(Util.name(this) + ".when_feeding").withStyle(ChatFormatting.GRAY));
 			for (MobEffectInstance effectInstance : this.getEffects(stack, null)) {

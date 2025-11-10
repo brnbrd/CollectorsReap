@@ -265,7 +265,7 @@ public class ForgeEvents {
 		final ItemStack heldStack = e.getItemStack();
 		if (
 			heldStack.getItem() instanceof GummyItem gummy &&
-			heldStack.is(CRItemTags.GUMMIES_MOB_FEEDABLE) &&
+			heldStack.is(CRItemTags.MOB_FEEDABLE_GUMMIES) &&
 			e.getTarget() instanceof final Mob mob &&
 			mob.isAlive() &&
 			mob.isAffectedByPotions()

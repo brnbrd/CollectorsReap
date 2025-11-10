@@ -119,8 +119,8 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			"food/mediterranean_salmon", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.MEDITERRANEAN_SALMON));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.POTATO_FRITTERS.get(), 1, 200, 1F)
 				.addIngredient(ForgeTags.VEGETABLES_POTATO)
-				.addIngredient(CRItemTags.FRUITS_LIME)
 				.addIngredient(ForgeTags.VEGETABLES_ONION)
+				.addIngredient(CRItemTags.FRUITS_LIME)
 				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
 			"food/potato_fritters", finished, enabled(CRItems.LIME), enabled(CRItems.POTATO_FRITTERS));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CANDIED_LIME.get(), 3, 200, 1F)
@@ -182,11 +182,11 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
 			"food/glazed_strider", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.GLAZED_STRIDER), not(tagEmpty(CRItemTags.RAW_STRIDER)));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.SPICY_GRENADINE_JELLY.get(), 1, 200, 1F, Items.BOWL)
-				.addIngredient(Ingredient.of(CRItemTags.HOT_NETHER_FRUIT), 2)
+				.addIngredient(Ingredient.of(CRItemTags.HOT_NETHER_FRUITS), 2)
 				.addIngredient(Items.MAGMA_CREAM, 2)
 				.addIngredient(CRItemTags.FRUITS_POMEGRANATE)
 				.unlockedBy("has_pomegranate_slice", has(CRItemTags.FRUITS_POMEGRANATE)),
-			"food/spicy_grenadine_jelly", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.SPICY_GRENADINE_JELLY), not(tagEmpty(CRItemTags.HOT_NETHER_FRUIT)));
+			"food/spicy_grenadine_jelly", finished, enabled(CRItems.POMEGRANATE), enabled(CRItems.SPICY_GRENADINE_JELLY), not(tagEmpty(CRItemTags.HOT_NETHER_FRUITS)));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CHIEFTAIN_CRAB.get(), 1, 600, 6F, Items.BOWL)
 				.addIngredient(CRItems.CHIEFTAIN_CRAB_BUCKET.get())
 				.addIngredient(ForgeTags.VEGETABLES_CARROT)

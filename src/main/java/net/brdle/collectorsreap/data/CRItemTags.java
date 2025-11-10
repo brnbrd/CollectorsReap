@@ -10,13 +10,16 @@ import net.minecraft.world.item.Item;
 public class CRItemTags {
 	// CR
 	public static final TagKey<Item> GUMMIES = cr("gummies");
-	public static final TagKey<Item> GUMMIES_MOB_FEEDABLE = cr("gummies/mob_feedable");
+	public static final TagKey<Item> MOB_FEEDABLE_GUMMIES = cr("gummies/mob_feedable");
 	public static final TagKey<Item> CHIEFTAIN_CRAB_FOOD = cr("chieftain_crab_food");
 	public static final TagKey<Item> DART_SHOOTERS = cr("dart_shooters");
-	public static final TagKey<Item> HOT_NETHER_FRUIT = cr("hot_nether_fruit");
+	public static final TagKey<Item> HOT_NETHER_FRUITS = cr("hot_nether_fruits");
 	public static final TagKey<Item> LUCUMA_LOGS = cr("lucuma_logs");
 
 	// Forge
+	public static final TagKey<Item> ROE = forge("roe");
+	public static final TagKey<Item> FISH_ROE = forge("roe/fish");
+	public static final TagKey<Item> PRAWN_ROE = forge("roe/prawn");
 	public static final TagKey<Item> STORAGE_BLOCKS_LIME = forge("storage_blocks/lime");
 	public static final TagKey<Item> STORAGE_BLOCKS_POMEGRANATE = forge("storage_blocks/pomegranate");
 	public static final TagKey<Item> STORAGE_BLOCKS_STYGIAN_POMEGRANATE = forge("storage_blocks/stygian_pomegranate");
@@ -59,9 +62,6 @@ public class CRItemTags {
 	public static final TagKey<Item> CHEESE_SPICY = forge("cheese/spicy");
 	public static final TagKey<Item> CHEESE_SWEET = forge("cheese/sweet");
 	public static final TagKey<Item> CONDENSED_MILK = forge("condensed_milk");
-	public static final TagKey<Item> ROE = forge("roe");
-	public static final TagKey<Item> ROE_FISH = forge("roe/fish");
-	public static final TagKey<Item> ROE_PRAWN = forge("roe/prawn");
 	public static final TagKey<Item> NUGGETS_COPPER = forge("nuggets/copper");
 	public static final TagKey<Item> JUICES = forge("juices");
 	public static final TagKey<Item> JUICES_LIME = forge("juices/lime");

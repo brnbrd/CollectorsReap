@@ -26,10 +26,10 @@
             "tag": "forge:vegetables/potato"
           },
           {
-            "tag": "forge:fruits/lime"
+            "tag": "forge:vegetables/onion"
           },
           {
-            "tag": "forge:vegetables/onion"
+            "tag": "forge:fruits/lime"
           }
         ],
         "result": {

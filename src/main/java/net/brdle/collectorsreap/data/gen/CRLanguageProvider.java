@@ -418,11 +418,17 @@ public class CRLanguageProvider extends LanguageProvider {
 	}
 
 	private void addTags() {
+		// Forge
+		addItemTag(CRItemTags.ROE, "Roe");
+		addItemTag(CRItemTags.FISH_ROE, "Fish Roe");
+		addItemTag(CRItemTags.PRAWN_ROE, "Prawn Roe");
+
+		// Collector's Reap
 		addItemTag(CRItemTags.GUMMIES, "Gummies");
-		addItemTag(CRItemTags.GUMMIES_MOB_FEEDABLE, "Mob Feedable Gummies");
+		addItemTag(CRItemTags.MOB_FEEDABLE_GUMMIES, "Mob Feedable Gummies");
 		addItemTag(CRItemTags.CHIEFTAIN_CRAB_FOOD, "Chieftain Crab Foods");
 		addItemTag(CRItemTags.DART_SHOOTERS, "Dart Shooters");
-		addItemTag(CRItemTags.HOT_NETHER_FRUIT, "Hot Nether Fruit");
+		addItemTag(CRItemTags.HOT_NETHER_FRUITS, "Hot Nether Fruits");
 		addItemTag(CRItemTags.LUCUMA_LOGS, "Lucuma Logs");
 	}
 

@@ -18,7 +18,7 @@
               "type": "forge:not",
               "value": {
                 "type": "forge:tag_empty",
-                "tag": "collectorsreap:hot_nether_fruit"
+                "tag": "collectorsreap:hot_nether_fruits"
               }
             }
           ]
@@ -33,10 +33,10 @@
         "experience": 1.0,
         "ingredients": [
           {
-            "tag": "collectorsreap:hot_nether_fruit"
+            "tag": "collectorsreap:hot_nether_fruits"
           },
           {
-            "tag": "collectorsreap:hot_nether_fruit"
+            "tag": "collectorsreap:hot_nether_fruits"
           },
           {
             "item": "minecraft:magma_cream"
