@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-09T16:43:05.4725934	Item Models: collectorsreap
+// 1.20.1	2025-11-15T14:02:54.5410641	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -9,6 +9,8 @@ d21b85edd3ea1d80a88c37083c497e284699d2ec assets/collectorsreap/models/item/banan
 fc45d8ab3073b2ab60f474a8564d6daad48ce982 assets/collectorsreap/models/item/berry_limeade.json
 d6a12c10796c966c37dab136a82c43c5cad439b1 assets/collectorsreap/models/item/big_rice_ball.json
 1e35c6d50eec4fc0b02a7565b85accec5250d71a assets/collectorsreap/models/item/black_tea_gummy.json
+956c5411f058eb0770dd31e3ab93045c15524ec1 assets/collectorsreap/models/item/bulbous_rose.json
+bb135b4000ed7dcc90d1e570832407e7b37990c0 assets/collectorsreap/models/item/bulbous_rose_seeds.json
 26353dedd94fbe223b732d64df4258b542609f78 assets/collectorsreap/models/item/bullet_pepper_gummy.json
 747a4114dd764207fae772802b8d612c2ff4f3b1 assets/collectorsreap/models/item/buttered_legs.json
 bc9fc985b15e5ec2237cbb2f5bc1ab1db8d70734 assets/collectorsreap/models/item/candied_lime.json
@@ -42,6 +44,8 @@ b3ec01ff2712dee8521a256be1d817a14a150226 assets/collectorsreap/models/item/crab_
 a9eacaf29650dd5297e36ce042addb5086185ceb assets/collectorsreap/models/item/crab_noodles.json
 059aeeff7a1f52067adff7d2de337fc493cd0d7a assets/collectorsreap/models/item/cream_cheese.json
 65c1291027378fac40205c9b17c349f6299f38c1 assets/collectorsreap/models/item/crimson_carrot_roast.json
+c1850ec40b4fb912f407594a7528826e65867196 assets/collectorsreap/models/item/damselflower.json
+a0111c78727229247cef1517a20d510bd880b912 assets/collectorsreap/models/item/damselflower_seeds.json
 a46ae0d5ee7b83356ffa9fba928491773b45a2f1 assets/collectorsreap/models/item/deific_blood.json
 607b14139019a384422dc58f34b4f71748b2d7d6 assets/collectorsreap/models/item/deluxe_salad.json
 e89f2586d27b34dba93468db984c5b608d09e0d2 assets/collectorsreap/models/item/dragons_passion.json
@@ -56,6 +60,8 @@ f4fa52a9cd04c6f09a2492688e2dbca78f110504 assets/collectorsreap/models/item/gilde
 20d358545ae7a12561cf0bd01d35762e21cdf67f assets/collectorsreap/models/item/glazed_strider.json
 824066299419f1fa231c5242d0168a6ebacbeb3f assets/collectorsreap/models/item/glow_berry_gummy.json
 d38fe28806758cf25f86c122eafa764677f1f721 assets/collectorsreap/models/item/green_tea_gummy.json
+0510c78408763848ec55f13c942471d0eff7f2a0 assets/collectorsreap/models/item/heartpetals.json
+8ce6ca9ec3eb7d2c36b60e0dd09a260e1fb3a299 assets/collectorsreap/models/item/heartpetals_seeds.json
 db611fa82b1adb4a339afd988980b970dcd879e4 assets/collectorsreap/models/item/heavens_cream.json
 59557d965e8d283755795186a3e0da94b8786117 assets/collectorsreap/models/item/hemp_gummy.json
 98baf3ea1e6ca61695c353903970f4d9c2decab7 assets/collectorsreap/models/item/hermits_sour.json
@@ -123,6 +129,8 @@ af0f9ffc6713d4048fe2e9349cccd58826fe2e84 assets/collectorsreap/models/item/lucum
 abbae41fa500c207b8ede0586c4b43c6620d7c16 assets/collectorsreap/models/item/melon_gummy.json
 357ca0ad966d3db338c64d24fb015b275037d617 assets/collectorsreap/models/item/mint_gummy.json
 08ec6f2a6c9a3d81f0b480208c83557d3fdf7af9 assets/collectorsreap/models/item/mint_limeade.json
+505a8e04b00ddd7ba8d8dd75d06f24e4589ed411 assets/collectorsreap/models/item/moontear.json
+f7d4018f7205e385455a82afcc8397280f3f02d8 assets/collectorsreap/models/item/moontear_seeds.json
 a7150a1969018156361fcbdba77c1d10b4f616cc assets/collectorsreap/models/item/passion_fruit_gummy.json
 702066eb314741f30550dd6ea6fcb38953a7d7a1 assets/collectorsreap/models/item/peanut_gummy.json
 af50504de896b1973158a3155c5e644d4053eb54 assets/collectorsreap/models/item/pearly_claw.json
@@ -187,6 +195,8 @@ df84e4261ed47b8ade92dece95b40b82ee56d7f3 assets/collectorsreap/models/item/rose_
 d8ad6caa6919bbd5c300b96fefd0845b284a0daa assets/collectorsreap/models/item/sea_wrap.json
 f9c1c80c837f61e1eee3928977783485c864a673 assets/collectorsreap/models/item/shimmering_apple.json
 803f3467e0dad25c5ac7d0bbb6664df84cc70c3c assets/collectorsreap/models/item/shimmering_pearl.json
+ed537ac28c2a4f0a80dc82c0e4f3dbdf1c37d0f2 assets/collectorsreap/models/item/skull_lily.json
+5fd5ed4dc6c04974c872d090dca556b8c945a713 assets/collectorsreap/models/item/skull_lily_seeds.json
 7f696e618fca0c39da36f6f33f5e7da0f5704402 assets/collectorsreap/models/item/spicy_grenadine_jelly.json
 226781c445029a8f1b33b334d03018e09dba6a25 assets/collectorsreap/models/item/strawberry_gummy.json
 7fb6fe8fb5b5ba66c4a4acf564e784fd5fd98ecd assets/collectorsreap/models/item/strawberry_jam_bun.json

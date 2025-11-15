@@ -96,6 +96,14 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(ItemTags.SAPLINGS).add(CRBlocks.LUCUMA_SAPLING.get().asItem());
 		this.tag(ItemTags.LEAVES).add(CRBlocks.LUCUMA_LEAVES.get().asItem());
 
+		this.tag(ItemTags.SMALL_FLOWERS)
+			.add(CRBlocks.DRAGON_BUSH.get().asItem())
+			.add(CRBlocks.DAMSELFLOWER.get().asItem())
+			.add(CRBlocks.MOONTEAR.get().asItem())
+			.add(CRBlocks.SKULL_LILY.get().asItem());
+		this.tag(ItemTags.TALL_FLOWERS)
+			.add(CRBlocks.BULBOUS_ROSE.get().asItem())
+			.add(CRBlocks.HEARTPETALS.get().asItem());
 		this.tag(ItemTags.TRIM_MATERIALS).add(CRItems.LUNAR_PEARL.get());
 		this.tag(ItemTags.WALLS)
 			.add(CRBlocks.URCHIN_TEST_BRICK_WALL.get().asItem())
@@ -149,8 +157,6 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		// Farmer's Delight
 		this.tag(ModTags.WOODEN_CABINETS).add(CRBlocks.LUCUMA_CABINET.get().asItem());
 		this.tag(ModTags.WILD_CROPS_ITEM)
-			.add(CRBlocks.DRAGON_BUSH.get().asItem());
-		this.tag(ItemTags.SMALL_FLOWERS)
 			.add(CRBlocks.DRAGON_BUSH.get().asItem());
 		this.tag(ModTags.CABBAGE_ROLL_INGREDIENTS)
 			.addTag(CRItemTags.RAW_CRAB_MEAT)
@@ -247,7 +253,12 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(Tags.Items.SEEDS)
 			.addTag(CRItemTags.SEEDS_LIME)
 			.addTag(CRItemTags.SEEDS_POMEGRANATE)
-			.addTag(CRItemTags.SEEDS_DRAGON_FRUIT);
+			.addTag(CRItemTags.SEEDS_DRAGON_FRUIT)
+			.add(CRItems.DAMSELFLOWER_SEEDS.get())
+			.add(CRItems.MOONTEAR_SEEDS.get())
+			.add(CRItems.SKULL_LILY_SEEDS.get())
+			.add(CRItems.BULBOUS_ROSE_SEEDS.get())
+			.add(CRItems.HEARTPETALS_SEEDS.get());
 		this.tag(CRItemTags.MUSHROOMS_PORTOBELLO).add(CRItems.PORTOBELLO.get());
 		this.tag(Tags.Items.MUSHROOMS).addTag(CRItemTags.MUSHROOMS_PORTOBELLO);
 		this.tag(CRItemTags.TORTILLA).addOptional(Modid.CD.rl("tortilla"));

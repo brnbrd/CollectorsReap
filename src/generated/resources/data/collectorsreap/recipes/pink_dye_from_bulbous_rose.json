@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "bulbous_rose"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "group": "pink_dye",
+        "ingredients": [
+          {
+            "item": "collectorsreap:bulbous_rose"
+          }
+        ],
+        "result": {
+          "count": 2,
+          "item": "minecraft:pink_dye"
+        }
+      }
+    }
+  ]
+}

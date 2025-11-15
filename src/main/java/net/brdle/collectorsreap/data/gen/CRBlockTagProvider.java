@@ -82,7 +82,39 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(BlockTags.WALL_HANGING_SIGNS).add(CRBlocks.LUCUMA_WALL_HANGING_SIGN.get());
 		this.tag(BlockTags.SAPLINGS).add(CRBlocks.LUCUMA_SAPLING.get());
 		this.tag(BlockTags.LEAVES).add(CRBlocks.LUCUMA_LEAVES.get());
-
+		this.tag(BlockTags.FLOWER_POTS)
+			.add(CRBlocks.POTTED_LUCUMA_SAPLING.get())
+			.add(CRBlocks.POTTED_DAMSELFLOWER.get())
+			.add(CRBlocks.POTTED_MOONTEAR.get())
+			.add(CRBlocks.POTTED_SKULL_LILY.get());
+		this.tag(BlockTags.SMALL_FLOWERS)
+			.add(CRBlocks.DRAGON_BUSH.get())
+			.add(CRBlocks.DAMSELFLOWER.get())
+			.add(CRBlocks.MOONTEAR.get())
+			.add(CRBlocks.SKULL_LILY.get());
+		this.tag(BlockTags.TALL_FLOWERS)
+			.add(CRBlocks.BULBOUS_ROSE.get())
+			.add(CRBlocks.HEARTPETALS.get());
+		this.tag(BlockTags.CROPS)
+			.add(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get())
+			.add(CRBlocks.BULBOUS_ROSE_CROP.get())
+			.add(CRBlocks.HEARTPETALS_CROP.get());
+		this.tag(BlockTags.BEE_GROWABLES)
+			.add(CRBlocks.LIME_BUSH.get())
+			.add(CRBlocks.POMEGRANATE_BUSH.get())
+			.add(CRBlocks.BULBOUS_ROSE_CROP.get())
+			.add(CRBlocks.HEARTPETALS_CROP.get());
+		this.tag(BlockTags.MAINTAINS_FARMLAND)
+			.add(CRBlocks.DAMSELFLOWER.get())
+			.add(CRBlocks.DAMSELFLOWER_CROP.get())
+			.add(CRBlocks.MOONTEAR.get())
+			.add(CRBlocks.MOONTEAR_CROP.get())
+			.add(CRBlocks.SKULL_LILY.get())
+			.add(CRBlocks.SKULL_LILY_CROP.get())
+			.add(CRBlocks.BULBOUS_ROSE.get())
+			.add(CRBlocks.BULBOUS_ROSE_CROP.get())
+			.add(CRBlocks.HEARTPETALS.get())
+			.add(CRBlocks.HEARTPETALS_CROP.get());
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
 			.add(CRBlocks.LIME_ICE_CREAM_BLOCK.get())
 			.add(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get())
@@ -100,11 +132,6 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.GILDED_LUCUMA_CRATE.get());
 		this.tag(BlockTags.MINEABLE_WITH_HOE).add(CRBlocks.LUCUMA_LEAVES.get());
 		this.tag(BlockTags.CLIMBABLE).add(CRBlocks.PINK_DRAGON_FRUIT_CROP.get());
-		this.tag(BlockTags.CROPS)
-			.add(CRBlocks.BUDDING_PINK_DRAGON_FRUIT_CROP.get());
-		this.tag(BlockTags.BEE_GROWABLES)
-			.add(CRBlocks.LIME_BUSH.get())
-			.add(CRBlocks.POMEGRANATE_BUSH.get());
 		this.tag(BlockTags.WALLS)
 			.add(CRBlocks.URCHIN_TEST_BRICK_WALL.get())
 			.add(CRBlocks.URCHIN_TEST_TILE_WALL.get());
@@ -150,8 +177,6 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 		this.tag(ModTags.UNAFFECTED_BY_RICH_SOIL)
 			.add(CRBlocks.PORTOBELLO_COLONY.get());
 		this.tag(ModTags.WILD_CROPS)
-			.add(CRBlocks.DRAGON_BUSH.get());
-		this.tag(BlockTags.SMALL_FLOWERS)
 			.add(CRBlocks.DRAGON_BUSH.get());
 
 		// Blueprint

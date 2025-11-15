@@ -170,6 +170,19 @@ public class CRLanguageProvider extends LanguageProvider {
 		addBlock(CRBlocks.GREEN_CANDLE_PINK_DRAGON_FRUIT_CAKE, "Pink Dragon Fruit Cake with Green Candle");
 		addBlock(CRBlocks.RED_CANDLE_PINK_DRAGON_FRUIT_CAKE, "Pink Dragon Fruit Cake with Red Candle");
 		addBlock(CRBlocks.BLACK_CANDLE_PINK_DRAGON_FRUIT_CAKE, "Pink Dragon Fruit Cake with Black Candle");
+		addBlock(CRBlocks.DAMSELFLOWER, "Damselflower");
+		addBlock(CRBlocks.DAMSELFLOWER_CROP, "Damselflower Crop");
+		addBlock(CRBlocks.POTTED_DAMSELFLOWER, "Potted Damselflower");
+		addBlock(CRBlocks.MOONTEAR, "Moontear");
+		addBlock(CRBlocks.MOONTEAR_CROP, "Moontear Crop");
+		addBlock(CRBlocks.POTTED_MOONTEAR, "Potted Moontear");
+		addBlock(CRBlocks.SKULL_LILY, "Skull Lily");
+		addBlock(CRBlocks.SKULL_LILY_CROP, "Skull Lily Crop");
+		addBlock(CRBlocks.POTTED_SKULL_LILY, "Potted Skull Lily");
+		addBlock(CRBlocks.BULBOUS_ROSE, "Bulbous Rose");
+		addBlock(CRBlocks.BULBOUS_ROSE_CROP, "Bulbous Rose Crop");
+		addBlock(CRBlocks.HEARTPETALS, "Heartpetals");
+		addBlock(CRBlocks.HEARTPETALS_CROP, "Heartpetals Crop");
 		addBlock(CRBlocks.LUCUMA_CAKE, "Lucuma Cake");
 		addBlock(CRBlocks.CANDLE_LUCUMA_CAKE, "Lucuma Cake with Candle");
 		addBlock(CRBlocks.WHITE_CANDLE_LUCUMA_CAKE, "Lucuma Cake with White Candle");
@@ -243,6 +256,13 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.LUCUMA_CHEST_BOAT, "Lucuma Boat with Chest");
 		addItem(CRItems.LUCUMA_FURNACE_BOAT, "Lucuma Boat with Furnace");
 		addItem(CRItems.LARGE_LUCUMA_BOAT, "Large Lucuma Boat");
+
+		// Sniffer Plant Seeds
+		addItem(CRItems.DAMSELFLOWER_SEEDS, "Damselflower Seeds");
+		addItem(CRItems.MOONTEAR_SEEDS, "Moontear Seeds");
+		addItem(CRItems.SKULL_LILY_SEEDS, "Skull Lily Seeds");
+		addItem(CRItems.BULBOUS_ROSE_SEEDS, "Bulbous Rose Seeds");
+		addItem(CRItems.HEARTPETALS_SEEDS, "Heartpetals Seeds");
 
 		addItem(CRItems.BAKED_PORTOBELLO_CAP, "Baked Portobello Cap");
 		addItem(CRItems.STUFFED_PORTOBELLO_CAP, "Stuffed Portobello");

@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "collectorsreap:block/heartpetals_crop_bottom_stage3",
+    "cross": "collectorsreap:block/heartpetals_crop_bottom_stage3"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "skull_lily"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "group": "white_dye",
+        "ingredients": [
+          {
+            "item": "collectorsreap:skull_lily"
+          }
+        ],
+        "result": {
+          "item": "minecraft:white_dye"
+        }
+      }
+    }
+  ]
+}

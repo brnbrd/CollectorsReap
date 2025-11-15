@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "moontear"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "group": "light_blue_dye",
+        "ingredients": [
+          {
+            "item": "collectorsreap:moontear"
+          }
+        ],
+        "result": {
+          "item": "minecraft:light_blue_dye"
+        }
+      }
+    }
+  ]
+}

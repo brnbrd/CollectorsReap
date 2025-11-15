@@ -4,8 +4,18 @@
 # 1.5.1
 
 ### Updates
+- Added new Sniffer plants:
+  - Damselflower
+  - Moontear
+  - Skull Lily
+  - Bulbous Rose
+  - Heartpetals
 - Changed Rarity tooltip of Gilded Lucuma to Rare
 - Added translations for item tags
+
+### Fixes
+- Added some missing block tags
+- Fixed count on some block loot tables
 
 
 # 1.5

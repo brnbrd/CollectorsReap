@@ -1,9 +1,10 @@
-// 1.20.1	2025-11-09T16:43:05.4765932	Object Modifiers (loot_tables): collectorsreap
+// 1.20.1	2025-11-15T14:02:54.547077	Object Modifiers (loot_tables): collectorsreap
 ec1dad0b1b9e11ce8fec57d41580786aa90448c1 data/collectorsreap/modifiers/loot_tables/abandoned_mineshaft.json
 dad92e4f19b6dd43036a15876b03aa5fe4dfb178 data/collectorsreap/modifiers/loot_tables/ancient_city.json
 ad783499dcae7bce823680c8f099e74621b204d9 data/collectorsreap/modifiers/loot_tables/bastion_hoglin_stable.json
 6eb5dffb50f4d7d9657557c167af6f01e1c1fc6b data/collectorsreap/modifiers/loot_tables/bastion_other.json
 61228e7ca20911b85e685aa8dfcb78946dad2ce7 data/collectorsreap/modifiers/loot_tables/buried_treasure.json
 84fa555c758954d6e92af6bea403cfcae035def3 data/collectorsreap/modifiers/loot_tables/gameplay/fishing/fish.json
+b6d698106df66fbc970b6447a20dad70fe21d113 data/collectorsreap/modifiers/loot_tables/gameplay/sniffer_digging.json
 d8256d34e6e7973fc7e4ead05ab220c2e62d8e5d data/collectorsreap/modifiers/loot_tables/shipwreck_treasure.json
 7d949e5bae4d7aa7da383692af08dd25794de504 data/collectorsreap/modifiers/loot_tables/simple_dungeon.json

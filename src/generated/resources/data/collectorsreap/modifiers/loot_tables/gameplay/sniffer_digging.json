@@ -1,0 +1,65 @@
+{
+  "modifiers": [
+    {
+      "type": "entries",
+      "config": {
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "damselflower_seeds"
+              }
+            ],
+            "name": "collectorsreap:damselflower_seeds"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "moontear_seeds"
+              }
+            ],
+            "name": "collectorsreap:moontear_seeds"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "skull_lily_seeds"
+              }
+            ],
+            "name": "collectorsreap:skull_lily_seeds"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "bulbous_rose_seeds"
+              }
+            ],
+            "name": "collectorsreap:bulbous_rose_seeds"
+          },
+          {
+            "type": "minecraft:item",
+            "conditions": [
+              {
+                "condition": "collectorsreap:enabled",
+                "item": "heartpetals_seeds"
+              }
+            ],
+            "name": "collectorsreap:heartpetals_seeds"
+          }
+        ],
+        "index": 0,
+        "replace": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:gameplay/sniffer_digging"
+}

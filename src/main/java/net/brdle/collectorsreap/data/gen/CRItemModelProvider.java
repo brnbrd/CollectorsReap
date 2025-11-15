@@ -82,6 +82,11 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.flatBlock(CRBlocks.PORTOBELLO_COLONY, Util.name(CRBlocks.PORTOBELLO_COLONY) + "_stage3");
 		this.flatBlock(CRBlocks.PORTOBELLO);
 		this.flatBlock(CRBlocks.DRAGON_BUSH);
+		this.flatBlock(CRBlocks.DAMSELFLOWER);
+		this.flatBlock(CRBlocks.MOONTEAR);
+		this.flatBlock(CRBlocks.SKULL_LILY);
+		this.flatBlock(CRBlocks.BULBOUS_ROSE, Util.name(CRBlocks.BULBOUS_ROSE) + "_top");
+		this.flatBlock(CRBlocks.HEARTPETALS, Util.name(CRBlocks.HEARTPETALS) + "_top");
 
 		// Fruits/Veggies
 		this.generatedItem(CRItems.POMEGRANATE);
@@ -97,6 +102,11 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.LIME_SEEDS);
 		this.generatedItem(CRItems.POMEGRANATE_SEEDS);
 		this.generatedItem(CRItems.DRAGON_FRUIT_SEEDS);
+		this.generatedItem(CRItems.DAMSELFLOWER_SEEDS);
+		this.generatedItem(CRItems.MOONTEAR_SEEDS);
+		this.generatedItem(CRItems.SKULL_LILY_SEEDS);
+		this.generatedItem(CRItems.BULBOUS_ROSE_SEEDS);
+		this.generatedItem(CRItems.HEARTPETALS_SEEDS);
 
 		// Sliceable Blocks
 		this.generatedItem(CRItems.PORTOBELLO_QUICHE);

@@ -332,6 +332,31 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.requires(CRItems.PINK_DRAGON_FRUIT.get())
 				.unlockedBy("has_pink_dragon_fruit", has(CRItems.PINK_DRAGON_FRUIT.get())),
 			"dragon_fruit_seeds_from_pink_dragon_fruit", finished, enabled(CRItems.PINK_DRAGON_FRUIT), enabled(CRItems.DRAGON_FRUIT_SEEDS));
+		wrap(shapeless(RecipeCategory.MISC, Items.PURPLE_DYE, 1)
+				.group("purple_dye")
+				.requires(CRBlocks.DAMSELFLOWER.get(), 1)
+				.unlockedBy("has_damselflower", has(CRBlocks.DAMSELFLOWER.get())),
+			"purple_dye_from_damselflower", finished, enabled(CRBlocks.DAMSELFLOWER));
+		wrap(shapeless(RecipeCategory.MISC, Items.LIGHT_BLUE_DYE, 1)
+				.group("light_blue_dye")
+				.requires(CRBlocks.MOONTEAR.get(), 1)
+				.unlockedBy("has_moontear", has(CRBlocks.MOONTEAR.get())),
+			"light_blue_dye_from_moontear", finished, enabled(CRBlocks.MOONTEAR));
+		wrap(shapeless(RecipeCategory.MISC, Items.WHITE_DYE, 1)
+				.group("white_dye")
+				.requires(CRBlocks.SKULL_LILY.get(), 1)
+				.unlockedBy("has_skull_lily", has(CRBlocks.SKULL_LILY.get())),
+			"white_dye_from_skull_lily", finished, enabled(CRBlocks.SKULL_LILY));
+		wrap(shapeless(RecipeCategory.MISC, Items.PINK_DYE, 2)
+				.group("pink_dye")
+				.requires(CRBlocks.BULBOUS_ROSE.get(), 1)
+				.unlockedBy("has_bulbous_rose", has(CRBlocks.BULBOUS_ROSE.get())),
+			"pink_dye_from_bulbous_rose", finished, enabled(CRBlocks.BULBOUS_ROSE));
+		wrap(shapeless(RecipeCategory.MISC, Items.RED_DYE, 2)
+				.group("red_dye")
+				.requires(CRBlocks.HEARTPETALS.get(), 1)
+				.unlockedBy("has_heartpetals", has(CRBlocks.HEARTPETALS.get())),
+			"red_dye_from_heartpetals", finished, enabled(CRBlocks.HEARTPETALS));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.TROPICAL_SHAVED_ICE.get())
 				.requires(Items.BOWL)
 				.requires(CRItemTags.FRUITS_STRAWBERRY)

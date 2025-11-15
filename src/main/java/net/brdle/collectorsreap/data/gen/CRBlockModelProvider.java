@@ -9,9 +9,7 @@ import com.teamabnormals.blueprint.core.Blueprint;
 import com.teamabnormals.blueprint.core.data.client.BlueprintBlockStateProvider;
 import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
-import net.brdle.collectorsreap.common.block.BuddingDragonFruitBlock;
-import net.brdle.collectorsreap.common.block.CRBlocks;
-import net.brdle.collectorsreap.common.block.PortobelloColonyBlock;
+import net.brdle.collectorsreap.common.block.*;
 import net.brdle.collectorsreap.compat.Modid;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
@@ -27,6 +25,7 @@ import vectorwing.farmersdelight.common.block.CabinetBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Supplier;
 import org.jetbrains.annotations.Nullable;
 
@@ -125,6 +124,16 @@ public class CRBlockModelProvider extends BlueprintBlockStateProvider {
 		this.simpleBlock(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get());
 		this.simpleBlock(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get());
 		this.simpleBlock(CRBlocks.LUCUMA_ICE_CREAM_BLOCK.get());
+
+		// Sniffer Plants
+		this.stageBlock(CRBlocks.DAMSELFLOWER_CROP.get(), DamselflowerCropBlock.AGE);
+		this.pottedPlant(CRBlocks.DAMSELFLOWER, CRBlocks.POTTED_DAMSELFLOWER);
+		this.stageBlock(CRBlocks.MOONTEAR_CROP.get(), MoontearCropBlock.AGE);
+		this.pottedPlant(CRBlocks.MOONTEAR, CRBlocks.POTTED_MOONTEAR);
+		this.stageBlock(CRBlocks.SKULL_LILY_CROP.get(), SkullLilyCropBlock.AGE);
+		this.pottedPlant(CRBlocks.SKULL_LILY, CRBlocks.POTTED_SKULL_LILY);
+		this.tallPlant(CRBlocks.BULBOUS_ROSE);
+		this.tallPlant(CRBlocks.HEARTPETALS);
 
 		// Urchin Test
 		this.simpleBlock(CRBlocks.URCHIN_TEST_BLOCK.get(), this.models().cubeBottomTop(
@@ -244,6 +253,15 @@ public class CRBlockModelProvider extends BlueprintBlockStateProvider {
 			.part().modelFile(model).uvLock(true).rotationY(270).addModel().condition(BlockStateProperties.WEST, true).end();
 	}
 
+	private void tallPlant(RegistryObject<Block> flower) {
+		String name = Util.name(flower);
+		Function<String, ModelFile> model = s -> this.models().cross(name + "_" + s, this.modLoc("block/" + name + "_" + s)).renderType("cutout");
+		this.itemModels().withExistingParent(name, "item/generated").texture("layer0", this.modLoc("block/" + name + "_top"));
+		this.getVariantBuilder(flower.get())
+			.partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).addModels(new ConfiguredModel(model.apply("top")))
+			.partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).addModels(new ConfiguredModel(model.apply("bottom")));
+	}
+
 	private void pottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pot) {
 		this.pot(pot, this.blockTexture(plant.get()));
 		this.simpleCross(plant);
@@ -341,21 +359,6 @@ public class CRBlockModelProvider extends BlueprintBlockStateProvider {
 			String stageName = Util.name(block) + "_stage" + state.getValue(ageProperty);
 			return ConfiguredModel.builder()
 				.modelFile(models().cross(stageName, resourceBlock(stageName)).renderType("cutout")).build();
-		}, ignored);
-	}
-
-	private void upperLowerStageBlock(Block block, IntegerProperty ageProperty, EnumProperty<DoubleBlockHalf> halfProperty, Property<?> ignored) {
-		getVariantBuilder(block).forAllStatesExcept(state -> {
-			String name = Util.name(block) + "_" + state.getValue(halfProperty).getSerializedName();
-			var mod = models()
-				.withExistingParent("block/" + name + "_stage" + state.getValue(ageProperty), Util.cr(name))
-				.texture("side", resourceBlock(Util.name(block) + "_side_stage" + state.getValue(ageProperty)))
-				.texture("plant", resourceBlock(Util.name(block) + "_plant_" + state.getValue(halfProperty).getSerializedName() + "_stage" + state.getValue(ageProperty)))
-				.texture("particle", resourceBlock(Util.name(block) + "_plant_" + state.getValue(halfProperty).getSerializedName() + "_stage" + state.getValue(ageProperty)));
-			if (state.getValue(halfProperty) == DoubleBlockHalf.UPPER) {
-				mod.texture("top", resourceBlock(Util.name(block) + "_top_stage" + state.getValue(ageProperty)));
-			}
-			return ConfiguredModel.builder().modelFile(mod).build();
 		}, ignored);
 	}
 

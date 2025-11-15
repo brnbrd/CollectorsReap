@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "collectorsreap:block/bulbous_rose_bottom"
+    },
+    "half=upper": {
+      "model": "collectorsreap:block/bulbous_rose_top"
+    }
+  }
+}

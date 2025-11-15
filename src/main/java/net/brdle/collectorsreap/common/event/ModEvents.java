@@ -63,6 +63,18 @@ public class ModEvents {
 		ComposterBlock.COMPOSTABLES.put(CRItems.LUCUMA_BREAD.get(), 0.65F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.LUCUMA_CAKE.get(), 1F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.LUCUMA_CAKE_SLICE.get(), 0.65F);
+
+		// Sniffer Plants
+		ComposterBlock.COMPOSTABLES.put(CRBlocks.DAMSELFLOWER.get().asItem(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.DAMSELFLOWER_SEEDS.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRBlocks.MOONTEAR.get().asItem(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.MOONTEAR_SEEDS.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRBlocks.SKULL_LILY.get().asItem(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.SKULL_LILY_SEEDS.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRBlocks.BULBOUS_ROSE.get().asItem(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.BULBOUS_ROSE_SEEDS.get(), 0.3F);
+		ComposterBlock.COMPOSTABLES.put(CRBlocks.HEARTPETALS.get().asItem(), 0.85F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.HEARTPETALS_SEEDS.get(), 0.3F);
 	}
 
 	// Adds collectorsreap:enabled, etc. conditions

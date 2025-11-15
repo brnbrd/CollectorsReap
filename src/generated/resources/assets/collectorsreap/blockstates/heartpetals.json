@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "collectorsreap:block/heartpetals_bottom"
+    },
+    "half=upper": {
+      "model": "collectorsreap:block/heartpetals_top"
+    }
+  }
+}

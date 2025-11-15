@@ -1,0 +1,27 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "heartpetals"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "group": "red_dye",
+        "ingredients": [
+          {
+            "item": "collectorsreap:heartpetals"
+          }
+        ],
+        "result": {
+          "count": 2,
+          "item": "minecraft:red_dye"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "collectorsreap:block/skull_lily_crop_stage0"
+    },
+    "age=1": {
+      "model": "collectorsreap:block/skull_lily_crop_stage1"
+    }
+  }
+}

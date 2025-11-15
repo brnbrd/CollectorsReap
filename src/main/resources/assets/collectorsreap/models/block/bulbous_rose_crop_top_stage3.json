@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cross",
+  "render_type": "minecraft:cutout",
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "collectorsreap:block/bulbous_rose_crop_top_stage3",
+    "cross": "collectorsreap:block/bulbous_rose_crop_top_stage3"
+  }
+}

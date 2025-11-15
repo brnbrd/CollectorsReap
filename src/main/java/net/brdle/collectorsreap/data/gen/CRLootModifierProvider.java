@@ -79,6 +79,20 @@ public class CRLootModifierProvider extends LootModifierProvider {
 					.apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 7)))
 					.when(enabled(CRItems.LUNAR_PEARL)).build()
 			)));
+		this.entry(BuiltInLootTables.SNIFFER_DIGGING.getPath())
+			.selects(BuiltInLootTables.SNIFFER_DIGGING)
+			.addModifier(new LootPoolEntriesModifier(false, 0, List.of(
+				LootItem.lootTableItem(CRItems.DAMSELFLOWER_SEEDS.get())
+					.when(enabled(CRItems.DAMSELFLOWER_SEEDS)).build(),
+				LootItem.lootTableItem(CRItems.MOONTEAR_SEEDS.get())
+					.when(enabled(CRItems.MOONTEAR_SEEDS)).build(),
+				LootItem.lootTableItem(CRItems.SKULL_LILY_SEEDS.get())
+					.when(enabled(CRItems.SKULL_LILY_SEEDS)).build(),
+				LootItem.lootTableItem(CRItems.BULBOUS_ROSE_SEEDS.get())
+					.when(enabled(CRItems.BULBOUS_ROSE_SEEDS)).build(),
+				LootItem.lootTableItem(CRItems.HEARTPETALS_SEEDS.get())
+					.when(enabled(CRItems.HEARTPETALS_SEEDS)).build()
+			)));
 
 		// Fishing
 		final LootItemCondition.Builder inRiver = LocationCheck.checkLocation(LocationPredicate.Builder.location().setBiome(Biomes.RIVER));

@@ -78,7 +78,7 @@ public class CRBlocks {
 	public static final RegistryObject<Block> LUCUMA_CABINET = HELPER.createFuelBlock("lucuma_cabinet", () -> new CabinetBlock(BlockBehaviour.Properties.copy(ModBlocks.OAK_CABINET.get())), 300);
 
 	// Lucuma Woodworks
-	public static final RegistryObject<Block> LUCUMA_BEEHIVE = HELPER.createBlock("lucuma_beehive", () -> new BlueprintBeehiveBlock(Properties.LUCUMA.beehive()));
+	public static final RegistryObject<Block> LUCUMA_BEEHIVE = registerBlock("lucuma_beehive", () -> new BlueprintBeehiveBlock(Properties.LUCUMA.beehive()));
 	public static final RegistryObject<Block> LUCUMA_LADDER = HELPER.createFuelBlock("lucuma_ladder",() -> new LadderBlock(Properties.LUCUMA.ladder()), 300);
 	public static final RegistryObject<Block> LUCUMA_BOOKSHELF = HELPER.createFuelBlock("lucuma_bookshelf", () -> new Block(Properties.LUCUMA.bookshelf()), 300);
 	public static final RegistryObject<Block> CHISELED_LUCUMA_BOOKSHELF = HELPER.createFuelBlock("chiseled_lucuma_bookshelf", () -> new ChiseledLucumaBookshelfBlock(Properties.LUCUMA.chiseledBookshelf()), 300);
@@ -86,10 +86,11 @@ public class CRBlocks {
 	public static final RegistryObject<BlueprintChestBlock> LUCUMA_CHEST = HELPER.createChestBlock("lucuma", Properties.LUCUMA.chest());
 	public static final RegistryObject<BlueprintTrappedChestBlock> TRAPPED_LUCUMA_CHEST = HELPER.createTrappedChestBlockNamed("lucuma", Properties.LUCUMA.chest());
 
-	public static final RegistryObject<Block> LUCUMA_LEAVES = HELPER.createBlock("lucuma_leaves", () -> new LeavesBlock(Properties.LUCUMA.leaves()));
-	public static final RegistryObject<Block> LUCUMA_LEAF_PILE = HELPER.createBlock("lucuma_leaf_pile", () -> new LeafPileBlock(Properties.LUCUMA.leafPile()));
-	public static final RegistryObject<Block> LUCUMA_SAPLING = HELPER.createBlock("lucuma_sapling", () -> new SaplingBlock(new LucumaTreeGrower(), PropertyUtil.sapling()));
-	public static final RegistryObject<Block> POTTED_LUCUMA_SAPLING = HELPER.createBlockNoItem("potted_lucuma_sapling", () -> new FlowerPotBlock(LUCUMA_SAPLING.get(), PropertyUtil.flowerPot()));
+	public static final RegistryObject<Block> LUCUMA_LEAVES = registerBlock("lucuma_leaves", () -> new LeavesBlock(Properties.LUCUMA.leaves()));
+	public static final RegistryObject<Block> LUCUMA_LEAF_PILE = registerBlock("lucuma_leaf_pile", () -> new LeafPileBlock(Properties.LUCUMA.leafPile()));
+	public static final RegistryObject<Block> LUCUMA_SAPLING = registerBlock("lucuma_sapling", () -> new SaplingBlock(new LucumaTreeGrower(), PropertyUtil.sapling()));
+	public static final RegistryObject<Block> POTTED_LUCUMA_SAPLING = registerBlockNoItem("potted_lucuma_sapling", () ->
+		new FlowerPotBlock(LUCUMA_SAPLING.get(), PropertyUtil.flowerPot()));
 
 	// Urchin Test
 	public static final RegistryObject<Block> URCHIN_TEST_BLOCK = registerBlock("urchin_test_block", () -> new Block(Properties.URCHIN_TEST));
@@ -131,6 +132,34 @@ public class CRBlocks {
 		() -> new BuddingDragonFruitBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 	public static final RegistryObject<Block> PINK_DRAGON_FRUIT_CROP = registerBlockNoItem("pink_dragon_fruits",
 		() -> new DragonFruitVineBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+
+	// Sniffer Plants
+	public static final RegistryObject<Block> DAMSELFLOWER_CROP = registerBlockNoItem("damselflower_crop", () ->
+		new DamselflowerCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> DAMSELFLOWER = registerBlock("damselflower", () ->
+		new FlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 5, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> POTTED_DAMSELFLOWER = registerBlockNoItem("potted_damselflower", () ->
+		new FlowerPotBlock(DAMSELFLOWER.get(), PropertyUtil.flowerPot()));
+	public static final RegistryObject<Block> MOONTEAR_CROP = registerBlockNoItem("moontear_crop", () ->
+		new MoontearCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> MOONTEAR = registerBlock("moontear", () ->
+		new FlowerBlock(() -> MobEffects.NIGHT_VISION, 5, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> POTTED_MOONTEAR = registerBlockNoItem("potted_moontear", () ->
+		new FlowerPotBlock(MOONTEAR.get(), PropertyUtil.flowerPot()));
+	public static final RegistryObject<Block> SKULL_LILY_CROP = registerBlockNoItem("skull_lily_crop", () ->
+		new SkullLilyCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> SKULL_LILY = registerBlock("skull_lily", () ->
+		new FlowerBlock(() -> MobEffects.POISON, 5, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> POTTED_SKULL_LILY = registerBlockNoItem("potted_skull_lily", () ->
+		new FlowerPotBlock(SKULL_LILY.get(), PropertyUtil.flowerPot()));
+	public static final RegistryObject<Block> BULBOUS_ROSE_CROP = registerBlockNoItem("bulbous_rose_crop", () ->
+		new BulbousRoseCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> BULBOUS_ROSE = registerBlock("bulbous_rose", () ->
+		new TallFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> HEARTPETALS_CROP = registerBlockNoItem("heartpetals_crop", () ->
+		new HeartpetalsCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
+	public static final RegistryObject<Block> HEARTPETALS = registerBlock("heartpetals", () ->
+		new TallFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 
 	// Sliceables
 	public static final RegistryObject<Block> PORTOBELLO_QUICHE = registerBlockNoItem("portobello_quiche",

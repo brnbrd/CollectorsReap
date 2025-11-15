@@ -1,0 +1,26 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "damselflower"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "group": "purple_dye",
+        "ingredients": [
+          {
+            "item": "collectorsreap:damselflower"
+          }
+        ],
+        "result": {
+          "item": "minecraft:purple_dye"
+        }
+      }
+    }
+  ]
+}

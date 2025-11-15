@@ -40,6 +40,18 @@ import static vectorwing.farmersdelight.common.registry.ModItems.*;
 public class CRItems {
 	public static final ItemSubRegistryHelper HELPER = CollectorsReap.REGISTRY_HELPER.getItemSubHelper();
 
+	// Sniffer Plants/Seeds
+	public static final RegistryObject<Item> DAMSELFLOWER_SEEDS = registerItem("damselflower_seeds", () ->
+		new ItemNameBlockItem(CRBlocks.DAMSELFLOWER_CROP.get(), basicItem()));
+	public static final RegistryObject<Item> MOONTEAR_SEEDS = registerItem("moontear_seeds", () ->
+		new ItemNameBlockItem(CRBlocks.MOONTEAR_CROP.get(), basicItem()));
+	public static final RegistryObject<Item> SKULL_LILY_SEEDS = registerItem("skull_lily_seeds", () ->
+		new ItemNameBlockItem(CRBlocks.SKULL_LILY_CROP.get(), basicItem()));
+	public static final RegistryObject<Item> BULBOUS_ROSE_SEEDS = registerItem("bulbous_rose_seeds", () ->
+		new ItemNameBlockItem(CRBlocks.BULBOUS_ROSE_CROP.get(), basicItem()));
+	public static final RegistryObject<Item> HEARTPETALS_SEEDS = registerItem("heartpetals_seeds", () ->
+		new ItemNameBlockItem(CRBlocks.HEARTPETALS_CROP.get(), basicItem()));
+
 	// Wild Crop Blocks
 	public static final RegistryObject<Item> PORTOBELLO_COLONY = registerItem("portobello_colony", () ->
 		new MushroomColonyItem(CRBlocks.PORTOBELLO_COLONY.get(), (new Item.Properties())));

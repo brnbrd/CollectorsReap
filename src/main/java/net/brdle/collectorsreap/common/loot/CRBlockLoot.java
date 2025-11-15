@@ -8,10 +8,12 @@ import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -167,16 +169,29 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropOther(CRBlocks.LUCUMA_MILKSHAKE_CAULDRON.get(), Blocks.CAULDRON);
 		this.dropSelf(CRBlocks.URCHIN_TEST_BLOCK.get());
 		this.dropSelf(CRBlocks.URCHIN_TEST_BRICKS.get());
-		this.dropSelf(CRBlocks.URCHIN_TEST_BRICK_SLAB.get());
+		this.add(CRBlocks.URCHIN_TEST_BRICK_SLAB.get(), this::createSlabItemTable);
 		this.dropSelf(CRBlocks.URCHIN_TEST_BRICK_STAIRS.get());
 		this.dropSelf(CRBlocks.URCHIN_TEST_BRICK_WALL.get());
 		this.dropSelf(CRBlocks.CHISELED_URCHIN_TEST_BRICKS.get());
 		this.dropSelf(CRBlocks.URCHIN_TEST_TILES.get());
-		this.dropSelf(CRBlocks.URCHIN_TEST_TILE_SLAB.get());
+		this.add(CRBlocks.URCHIN_TEST_TILE_SLAB.get(), this::createSlabItemTable);
 		this.dropSelf(CRBlocks.URCHIN_TEST_TILE_STAIRS.get());
 		this.dropSelf(CRBlocks.URCHIN_TEST_TILE_WALL.get());
 		this.dropOther(CRBlocks.PLATINUM_BASS_ROE.get(), CRItems.PLATINUM_BASS_ROE.get());
 		this.dropOther(CRBlocks.TIGER_PRAWN_ROE.get(), CRItems.TIGER_PRAWN_ROE.get());
+		this.dropOther(CRBlocks.DAMSELFLOWER_CROP.get(), CRItems.DAMSELFLOWER_SEEDS.get());
+		this.dropSelf(CRBlocks.DAMSELFLOWER.get());
+		this.dropPottedContents(CRBlocks.POTTED_DAMSELFLOWER.get());
+		this.dropOther(CRBlocks.MOONTEAR_CROP.get(), CRItems.MOONTEAR_SEEDS.get());
+		this.dropSelf(CRBlocks.MOONTEAR.get());
+		this.dropPottedContents(CRBlocks.POTTED_MOONTEAR.get());
+		this.dropOther(CRBlocks.SKULL_LILY_CROP.get(), CRItems.SKULL_LILY_SEEDS.get());
+		this.dropSelf(CRBlocks.SKULL_LILY.get());
+		this.dropPottedContents(CRBlocks.POTTED_SKULL_LILY.get());
+		this.tallCrop(CRBlocks.BULBOUS_ROSE_CROP.get(), CRItems.BULBOUS_ROSE_SEEDS.get());
+		this.tallFlower(CRBlocks.BULBOUS_ROSE.get());
+		this.tallCrop(CRBlocks.HEARTPETALS_CROP.get(), CRItems.HEARTPETALS_SEEDS.get());
+		this.tallFlower(CRBlocks.HEARTPETALS.get());
 
 		// Lucuma wood
 		this.dropSelf(CRBlocks.LUCUMA_LOG.get());
@@ -185,7 +200,7 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(CRBlocks.STRIPPED_LUCUMA_WOOD.get());
 		this.dropSelf(CRBlocks.LUCUMA_PLANKS.get());
 		this.dropSelf(CRBlocks.LUCUMA_STAIRS.get());
-		this.dropSelf(CRBlocks.LUCUMA_SLAB.get());
+		this.add(CRBlocks.LUCUMA_SLAB.get(), this::createSlabItemTable);
 		this.dropSelf(CRBlocks.LUCUMA_FENCE.get());
 		this.dropSelf(CRBlocks.LUCUMA_FENCE_GATE.get());
 		this.add(CRBlocks.LUCUMA_DOOR.get(), this::createDoorTable);
@@ -198,9 +213,12 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropPottedContents(CRBlocks.POTTED_LUCUMA_SAPLING.get());
 		this.add(CRBlocks.LUCUMA_LEAVES.get(), block ->
 			createLeavesDrops(block, CRBlocks.LUCUMA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES)
-			.withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
-			.when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionDecay(block, LootItem.lootTableItem(CRItems.LUCUMA.get()))
-			.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.04F, 0.05F, 0.06F, 0.07F, 0.25F)))));
+				.withPool(
+					LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+					.when(HAS_NO_SHEARS_OR_SILK_TOUCH)
+					.add(applyExplosionDecay(block, LootItem.lootTableItem(CRItems.LUCUMA.get()))
+						.when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.04F, 0.05F, 0.06F, 0.07F, 0.25F))
+				)));
 		this.leafPile(CRBlocks.LUCUMA_LEAF_PILE.get());
 		this.dropSelf(CRBlocks.LUCUMA_CABINET.get());
 		this.add(CRBlocks.LUCUMA_BEEHIVE.get(), CRBlockLoot::createBeeHiveDrop);
@@ -210,6 +228,17 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(CRBlocks.LUCUMA_BOARDS.get());
 		this.dropSelf(CRBlocks.LUCUMA_CHEST.get());
 		this.dropSelf(CRBlocks.TRAPPED_LUCUMA_CHEST.get());
+	}
+
+	private void tallCrop(Block block, Item seed) {
+		this.add(block, b -> LootTable.lootTable().withPool(this.applyExplosionCondition(seed, LootPool.lootPool()
+			.setRolls(ConstantValue.exactly(1.0F))
+			.add(LootItem.lootTableItem(seed).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b).setProperties(StatePropertiesPredicate.Builder.properties()
+				.hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))))));
+	}
+
+	private void tallFlower(Block block) {
+		this.add(block, b -> createSinglePropConditionTable(b, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
 	}
 
 	private void leafPile(Block block) {
