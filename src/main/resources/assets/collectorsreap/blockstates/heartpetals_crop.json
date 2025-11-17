@@ -23,6 +23,12 @@
     },
     "age=3,half=upper": {
       "model": "collectorsreap:block/heartpetals_crop_top_stage3"
+    },
+    "age=4,half=lower": {
+      "model": "collectorsreap:block/heartpetals_bottom"
+    },
+    "age=4,half=upper": {
+      "model": "collectorsreap:block/heartpetals_top"
     }
   }
 }

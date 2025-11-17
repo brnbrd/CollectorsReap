@@ -23,6 +23,12 @@
     },
     "age=3,half=upper": {
       "model": "collectorsreap:block/bulbous_rose_crop_top_stage3"
+    },
+    "age=4,half=lower": {
+      "model": "collectorsreap:block/bulbous_rose_bottom"
+    },
+    "age=4,half=upper": {
+      "model": "collectorsreap:block/bulbous_rose_top"
     }
   }
 }

@@ -188,9 +188,7 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropOther(CRBlocks.SKULL_LILY_CROP.get(), CRItems.SKULL_LILY_SEEDS.get());
 		this.dropSelf(CRBlocks.SKULL_LILY.get());
 		this.dropPottedContents(CRBlocks.POTTED_SKULL_LILY.get());
-		this.tallCrop(CRBlocks.BULBOUS_ROSE_CROP.get(), CRItems.BULBOUS_ROSE_SEEDS.get());
 		this.tallFlower(CRBlocks.BULBOUS_ROSE.get());
-		this.tallCrop(CRBlocks.HEARTPETALS_CROP.get(), CRItems.HEARTPETALS_SEEDS.get());
 		this.tallFlower(CRBlocks.HEARTPETALS.get());
 
 		// Lucuma wood
@@ -230,7 +228,7 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(CRBlocks.TRAPPED_LUCUMA_CHEST.get());
 	}
 
-	private void tallCrop(Block block, Item seed) {
+	private void tallCrop(Block block, Item seed, Item fruit) {
 		this.add(block, b -> LootTable.lootTable().withPool(this.applyExplosionCondition(seed, LootPool.lootPool()
 			.setRolls(ConstantValue.exactly(1.0F))
 			.add(LootItem.lootTableItem(seed).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(b).setProperties(StatePropertiesPredicate.Builder.properties()
@@ -256,7 +254,9 @@ public class CRBlockLoot extends BlockLootSubProvider {
 			.filter(reg -> {
 				return (
 					reg != CRBlocks.PORTOBELLO_COLONY &&
-					reg != CRBlocks.PINK_DRAGON_FRUIT_CROP
+					reg != CRBlocks.PINK_DRAGON_FRUIT_CROP &&
+					reg != CRBlocks.BULBOUS_ROSE_CROP &&
+					reg != CRBlocks.HEARTPETALS_CROP
 				);
 			})
 			.map(RegistryObject::get)

@@ -153,11 +153,11 @@ public class CRBlocks {
 	public static final RegistryObject<Block> POTTED_SKULL_LILY = registerBlockNoItem("potted_skull_lily", () ->
 		new FlowerPotBlock(SKULL_LILY.get(), PropertyUtil.flowerPot()));
 	public static final RegistryObject<Block> BULBOUS_ROSE_CROP = registerBlockNoItem("bulbous_rose_crop", () ->
-		new BulbousRoseCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
+		new TallFlowerCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
 	public static final RegistryObject<Block> BULBOUS_ROSE = registerBlock("bulbous_rose", () ->
 		new TallFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 	public static final RegistryObject<Block> HEARTPETALS_CROP = registerBlockNoItem("heartpetals_crop", () ->
-		new HeartpetalsCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
+		new TallFlowerCropBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));
 	public static final RegistryObject<Block> HEARTPETALS = registerBlock("heartpetals", () ->
 		new TallFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 

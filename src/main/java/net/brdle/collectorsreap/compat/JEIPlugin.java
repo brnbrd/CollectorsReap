@@ -19,8 +19,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 import javax.annotation.ParametersAreNonnullByDefault;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
