@@ -75,6 +75,7 @@ public enum Modid {
 	FU("frozenup"),
 	FUS("fusion"),
 	GO("goated"),
+	GR("grounded"),
 	HAB("habitat"),
 	HH("hearthandharvest"),
 	IN("incubation"),

@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.common.block;
 
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -31,7 +32,7 @@ public class BuddingDragonFruitBlock extends BuddingBushBlock implements Bonemea
 
 	@Override
 	protected boolean mayPlaceOn(BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
-		return state.is(ModBlocks.RICH_SOIL_FARMLAND.get()) || state.is(Blocks.FARMLAND);
+		return state.is(CRBlockTags.CROPS_PLANTABLE_ON);
 	}
 
 	@Override

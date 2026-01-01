@@ -39,7 +39,7 @@ public class PomegranateBushBlock extends FruitBushBlock {
 
 	@Override
 	protected boolean mayPlaceOn(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
-		return state.is(CRBlockTags.POMEGRANATE_FAST_ON) || super.mayPlaceOn(state, level, pos);
+		return state.is(CRBlockTags.POMEGRANATE_FAST_ON) || state.is(CRBlockTags.CROPS_PLANTABLE_ON);
 	}
 
 	@Override

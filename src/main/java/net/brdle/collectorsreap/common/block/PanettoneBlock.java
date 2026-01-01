@@ -191,7 +191,11 @@ public class PanettoneBlock extends Block {
 			final List<MobEffect> buffs = ForgeRegistries.MOB_EFFECTS.getValues()
 				.stream()
 				.filter(MobEffect::isBeneficial)
-				.filter(effect -> !consumer.hasEffect(effect))
+				.filter(effect -> (
+					!consumer.hasEffect(effect) &&
+					!effect.isInstantenous() &&
+					effect.isBeneficial()
+				))
 				.toList();
 			if (!buffs.isEmpty()) {
 				consumer.addEffect(new MobEffectInstance(

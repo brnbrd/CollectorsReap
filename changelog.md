@@ -6,6 +6,9 @@
 ### Updates
 - Added Panettone
 
+### Fixes
+- Fixed Sniffer plants not being plantable on all types of Farmland
+
 
 # 1.5.1
 

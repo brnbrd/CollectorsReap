@@ -15,6 +15,7 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import java.util.concurrent.CompletableFuture;
@@ -29,6 +30,11 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 	@Override
 	public void addTags(HolderLookup.@NotNull Provider provider) {
 		// Collector's Reap
+		this.tag(CRBlockTags.CROPS_PLANTABLE_ON)
+			.add(Blocks.FARMLAND)
+			.add(ModBlocks.RICH_SOIL_FARMLAND.get())
+			.addOptionalTag(Modid.GR.rl("farmlands"))
+			.addOptional(Modid.MND.rl("resurgent_soil_farmland"));
 		this.tag(CRBlockTags.PORTOBELLO_SPAWNABLE_ON)
 			.addTag(ModTags.MUSHROOM_COLONY_GROWABLE_ON)
 			.addTag(BlockTags.MUSHROOM_GROW_BLOCK)

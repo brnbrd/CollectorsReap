@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class CRBlockTags {
 	// Collector's Reap
+	public static final TagKey<Block> CROPS_PLANTABLE_ON = bind(CollectorsReap.MODID, "crops_plantable_on");
 	public static final TagKey<Block> PORTOBELLO_SPAWNABLE_ON = bind(CollectorsReap.MODID, "portobello_spawnable_on");
 	public static final TagKey<Block> DRAGON_FRUIT_SPAWNABLE_ON = bind(CollectorsReap.MODID, "dragon_fruit_spawnable_on");
 	public static final TagKey<Block> POMEGRANATE_FAST_ON = bind(CollectorsReap.MODID, "pomegranate_fast_on");
