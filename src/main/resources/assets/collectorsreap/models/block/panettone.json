@@ -1,0 +1,25 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"textures": {
+    "particle": "collectorsreap:block/panettone_top",
+    "bottom": "collectorsreap:block/panettone_bottom",
+    "side": "collectorsreap:block/panettone_side",
+		"top": "collectorsreap:block/panettone_top"
+	},
+	"elements": [
+		{
+			"from": [3, 0, 3],
+			"to": [13, 10, 13],
+			"faces": {
+				"north": {"uv": [3, 6, 13, 16], "texture": "#side"},
+				"east": {"uv": [3, 6, 13, 16], "texture": "#side"},
+				"south": {"uv": [3, 6, 13, 16], "texture": "#side"},
+				"west": {"uv": [3, 6, 13, 16], "texture": "#side"},
+				"up": {"uv": [3, 3, 13, 13], "texture": "#top"},
+				"down": {"uv": [3, 3, 13, 13], "texture": "#bottom", "cullface": "down" }
+			}
+		}
+	]
+}

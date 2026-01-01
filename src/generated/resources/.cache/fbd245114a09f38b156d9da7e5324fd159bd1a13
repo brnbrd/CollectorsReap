@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-16T17:35:26.0604746	Item Models: collectorsreap
+// 1.20.1	2026-01-01T01:17:08.9006782	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -131,6 +131,8 @@ abbae41fa500c207b8ede0586c4b43c6620d7c16 assets/collectorsreap/models/item/melon
 08ec6f2a6c9a3d81f0b480208c83557d3fdf7af9 assets/collectorsreap/models/item/mint_limeade.json
 505a8e04b00ddd7ba8d8dd75d06f24e4589ed411 assets/collectorsreap/models/item/moontear.json
 f7d4018f7205e385455a82afcc8397280f3f02d8 assets/collectorsreap/models/item/moontear_seeds.json
+9f9c7be5abb60be856484733845370a41da10b1c assets/collectorsreap/models/item/panettone.json
+bfb168c73728a043ca2ef70df0ec7cd1c3ccd508 assets/collectorsreap/models/item/panettone_slice.json
 a7150a1969018156361fcbdba77c1d10b4f616cc assets/collectorsreap/models/item/passion_fruit_gummy.json
 702066eb314741f30550dd6ea6fcb38953a7d7a1 assets/collectorsreap/models/item/peanut_gummy.json
 af50504de896b1973158a3155c5e644d4053eb54 assets/collectorsreap/models/item/pearly_claw.json

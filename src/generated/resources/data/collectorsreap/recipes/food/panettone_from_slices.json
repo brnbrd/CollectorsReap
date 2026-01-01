@@ -1,0 +1,50 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "panettone"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "panettone_slice"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:cooked_nuts"
+              }
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "item": "collectorsreap:panettone_slice"
+          },
+          {
+            "item": "collectorsreap:panettone_slice"
+          },
+          {
+            "item": "collectorsreap:panettone_slice"
+          },
+          {
+            "item": "collectorsreap:panettone_slice"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:panettone"
+        }
+      }
+    }
+  ]
+}

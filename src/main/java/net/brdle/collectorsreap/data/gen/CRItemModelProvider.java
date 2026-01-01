@@ -121,6 +121,8 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE);
 		this.generatedItem(CRItems.LUCUMA_CAKE);
 		this.generatedItem(CRItems.LUCUMA_CAKE_SLICE);
+		this.generatedItem(CRItems.PANETTONE);
+		this.generatedItem(CRItems.PANETTONE_SLICE);
 
 		// Ice Cream
 		this.generatedItem(CRItems.LIME_ICE_CREAM);

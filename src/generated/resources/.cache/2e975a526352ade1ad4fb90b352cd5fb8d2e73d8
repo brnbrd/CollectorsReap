@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-16T17:35:26.0604746	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2026-01-01T01:17:08.8976782	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
@@ -21,7 +21,7 @@ c0f7b9d7fdcbc34669b0c089c56ebc9a09a6aadb data/collectorsreap/tags/items/gummies/
 b03d8cb10dcb861b22c4da8fb09000c3d4f57326 data/collectorsreap/tags/items/lucuma_logs.json
 4ade3885f131d51fd808050df78ebb129d826f84 data/diet/tags/items/fruits.json
 44930d393f8ce0442362dc4dac89d839726332e7 data/diet/tags/items/proteins.json
-e34ac5202557dd98a2a5080b0dd2bf6b79da148c data/diet/tags/items/special_food.json
+5e978f080a2b7a81925bb4672bed44d2085bbb13 data/diet/tags/items/special_food.json
 507b42bfb4ad28acf617f26c41a5f2a4aef9307f data/diet/tags/items/vegetables.json
 239c83436e79910a542752ec670434fd45a1fa58 data/farmersdelight/tags/items/cabbage_roll_ingredients.json
 67b75512ba2582a749e81aab1f63dda1e5e03b08 data/farmersdelight/tags/items/cabinets/wooden.json
@@ -38,6 +38,7 @@ a8065ce90afaf0435704b6ddde9324fea9dd89e1 data/forge/tags/items/coffee_beans.json
 e260661428d1742c6e84ba84f74856e2d0e5ab5f data/forge/tags/items/cooked_crab_meat.json
 1e898b92a6bad67cf47d31e83a61822f3391aed7 data/forge/tags/items/cooked_fishes.json
 d0e079fbaabb8a11fc5541c60876765c04dbbe59 data/forge/tags/items/cooked_fishes/platinum_bass.json
+6dda00a98bd84e96f3851947743c0e3de4f28d22 data/forge/tags/items/cooked_nuts.json
 824d63187983d41e32a95b9690792003758245ee data/forge/tags/items/cooked_prawn.json
 7104c9e7bbc91243f65e443d91a4f12d11ba75d9 data/forge/tags/items/cookies.json
 ebd61208c46d8566aa1b8d9a574e938b725b71b9 data/forge/tags/items/eggs.json

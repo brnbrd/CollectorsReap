@@ -41,6 +41,7 @@ public class CRBlockLoot extends BlockLootSubProvider {
 		this.dropSelf(CRBlocks.PORTOBELLO.get());
 		this.empty(CRBlocks.PORTOBELLO_QUICHE);
 		this.empty(CRBlocks.LIME_PIE);
+		this.empty(CRBlocks.PANETTONE);
 		// Lime Bush drops Seeds and optional Limes
 		this.add(CRBlocks.LIME_BUSH.get(), (b) -> applyExplosionDecay(b,
 			LootTable.lootTable()

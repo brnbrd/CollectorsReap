@@ -162,6 +162,8 @@ public class CRBlocks {
 		new TallFlowerBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 
 	// Sliceables
+	public static final RegistryObject<Block> PANETTONE = registerBlockNoItem("panettone",
+		() -> new PanettoneBlock(copy(ModBlocks.APPLE_PIE), CRItems.PANETTONE_SLICE));
 	public static final RegistryObject<Block> PORTOBELLO_QUICHE = registerBlockNoItem("portobello_quiche",
 		() -> new PieBlock(copy(ModBlocks.APPLE_PIE), CRItems.PORTOBELLO_QUICHE_SLICE));
 	public static final RegistryObject<Block> LIME_PIE = registerBlockNoItem("lime_pie",

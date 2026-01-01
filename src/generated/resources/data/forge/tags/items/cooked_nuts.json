@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "windswept:roasted_chestnuts",
+      "required": false
+    },
+    {
+      "id": "sob:roasted_peanuts",
+      "required": false
+    }
+  ]
+}

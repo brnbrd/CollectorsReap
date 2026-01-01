@@ -319,10 +319,13 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.addTag(CRItemTags.JUICES_LIME)
 			.add(ModItems.MELON_JUICE.get());
 		this.tag(CRItemTags.CONDENSED_MILK).addOptional(Modid.COS.rl("condensed_milk_bottle"));
-		this.tag(CRItemTags.forge("nuts/peanut")).addOptional(Modid.SOB.rl("peanut"));
 		this.tag(CRItemTags.forge("vegetables/asparagus")).addOptional(Modid.SOB.rl("asparagus"));
 		this.tag(CRItemTags.forge("vegetables/ginger")).addOptional(Modid.WS.rl("ginger_root"));
 		this.tag(CRItemTags.forge("fruits/wild_berries")).addOptional(Modid.WS.rl("wild_berries"));
+		this.tag(CRItemTags.forge("nuts/peanut")).addOptional(Modid.SOB.rl("peanut"));
+		this.tag(CRItemTags.COOKED_NUTS)
+			.addOptional(Modid.WS.rl("roasted_chestnuts"))
+			.addOptional(Modid.SOB.rl("roasted_peanuts"));
 
 		// Diet
 		this.tag(CRItemTags.DIET_FRUITS)
@@ -345,7 +348,8 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.LIME_CAKE.get())
 			.add(CRItems.POMEGRANATE_CAKE.get())
 			.add(CRItems.PINK_DRAGON_FRUIT_CAKE.get())
-			.add(CRItems.LUCUMA_CAKE.get());
+			.add(CRItems.LUCUMA_CAKE.get())
+			.add(CRItems.PANETTONE.get());
 
 		// Atmospheric
 		this.addSelf(CRItemTags.ALOE_LEAVES);

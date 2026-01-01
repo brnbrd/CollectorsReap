@@ -12,6 +12,7 @@ import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.fluid.CRFluids;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.data.CRItemTags;
 import net.brdle.collectorsreap.proxy.CommonProxy;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -75,6 +76,13 @@ public class JEIPlugin implements IModPlugin {
 		}
 		if (!hiddenFluids.isEmpty()) {
 			manager.removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, hiddenFluids);
+		}
+
+		// Panettone
+		if (Util.tagEmpty(CRItemTags.COOKED_NUTS)) {
+			manager.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, List.of(
+				Util.getStack(CRItems.PANETTONE), Util.getStack(CRItems.PANETTONE_SLICE)
+			));
 		}
 
 		// Portobello

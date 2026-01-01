@@ -1,6 +1,12 @@
 ## Version History
 
 
+# 1.5.2
+
+### Updates
+- Added Panettone
+
+
 # 1.5.1
 
 ### Updates

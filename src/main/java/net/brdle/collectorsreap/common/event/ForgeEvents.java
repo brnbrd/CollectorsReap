@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.common.event;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.CRParticleTypes;
 import net.brdle.collectorsreap.common.block.CRBlocks;
+import net.brdle.collectorsreap.common.block.PanettoneBlock;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.effect.CREffects;
 import net.brdle.collectorsreap.common.effect.CorrosionEffect;
@@ -40,6 +41,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.ProjectileImpactEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -50,6 +52,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class ForgeEvents {
+	@SubscribeEvent(priority = EventPriority.HIGHEST)
+	public void onFinishPanettone(LivingEntityUseItemEvent.Finish e) {
+		PanettoneBlock.addRandomBuff(e.getEntity());
+	}
+
 	@SubscribeEvent
 	public void onBeeJoin(EntityJoinLevelEvent e) {
 		if (e.getEntity() instanceof Bee bee) {

@@ -42,6 +42,8 @@ public class ModEvents {
 		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_PIE_SLICE.get(), 0.85F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_CAKE.get(), 1F);
 		ComposterBlock.COMPOSTABLES.put(CRItems.LIME_CAKE_SLICE.get(), 0.65F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PANETTONE.get(), 1F);
+		ComposterBlock.COMPOSTABLES.put(CRItems.PANETTONE_SLICE.get(), 0.85F);
 
 		// Pomegranate
 		ComposterBlock.COMPOSTABLES.put(CRItems.POMEGRANATE.get(), 0.3F);

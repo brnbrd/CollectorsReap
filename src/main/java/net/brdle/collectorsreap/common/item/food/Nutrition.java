@@ -101,6 +101,10 @@ public class Nutrition {
 			false,
 			true
 		), 1F).build();
+	public static final FoodProperties PANETTONE_SLICE = (new FoodProperties.Builder())
+		.nutrition(8).saturationMod(0.75F)
+		.fast()
+		.build();
 	public static final FoodProperties LIME = (new FoodProperties.Builder())
 		.nutrition(2).saturationMod(0.2F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 200, 0), 1F).build();

@@ -563,9 +563,9 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.requires(ForgeTags.BREAD)
 				.requires(CRItems.CHIEFTAIN_CLAW.get())
 				.requires(CRItemTags.RAW_CLAM)
-				.requires(ForgeTags.COOKED_FISHES_COD)
-				.requires(ForgeTags.COOKED_FISHES_SALMON)
 				.requires(CRItemTags.COOKED_PRAWN)
+				.requires(ModItems.COOKED_COD_SLICE.get())
+				.requires(ModItems.COOKED_SALMON_SLICE.get())
 				.requires(Items.DRIED_KELP)
 				.requires(ModItems.COOKED_RICE.get())
 				.unlockedBy("has_claw", has(CRItems.CHIEFTAIN_CLAW.get())),
@@ -616,6 +616,22 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.define('h', Items.HEART_OF_THE_SEA)
 				.unlockedBy("has_chieftain_claw", has(CRItems.CHIEFTAIN_CLAW.get())),
 			"pearly_claw", finished, enabled(CRItems.PEARLY_CLAW));
+		wrap(shaped(RecipeCategory.FOOD, CRItems.PANETTONE.get())
+				.pattern("bcn")
+				.pattern("bcn")
+				.pattern("mds")
+				.define('b', ForgeTags.BERRIES)
+				.define('c', CRItemTags.FRUITS_CITRUS)
+				.define('n', CRItemTags.COOKED_NUTS)
+				.define('m', ForgeTags.MILK)
+				.define('d', ForgeTags.DOUGH)
+				.define('s', Items.SUGAR)
+				.unlockedBy("has_roasted_nuts", has(CRItemTags.COOKED_NUTS)),
+			"food/panettone", finished, enabled(CRItems.PANETTONE), not(tagEmpty(CRItemTags.COOKED_NUTS)));
+		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CRItems.PANETTONE.get(), 1)
+				.requires(CRItems.PANETTONE_SLICE.get(), 4)
+				.unlockedBy("has_panettone_slice", has(CRItems.PANETTONE_SLICE.get())),
+			"food/panettone_from_slices", finished, enabled(CRItems.PANETTONE), enabled(CRItems.PANETTONE_SLICE), not(tagEmpty(CRItemTags.COOKED_NUTS)));
 		wrap(shaped(RecipeCategory.FOOD, CRItems.PORTOBELLO_QUICHE.get())
 				.pattern("pop")
 				.pattern("mcm")

@@ -1,0 +1,58 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "panettone"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:cooked_nuts"
+              }
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "misc",
+        "key": {
+          "b": {
+            "tag": "forge:berries"
+          },
+          "c": {
+            "tag": "forge:fruits/citrus"
+          },
+          "d": {
+            "tag": "forge:dough"
+          },
+          "m": {
+            "tag": "forge:milk"
+          },
+          "n": {
+            "tag": "forge:cooked_nuts"
+          },
+          "s": {
+            "item": "minecraft:sugar"
+          }
+        },
+        "pattern": [
+          "bcn",
+          "bcn",
+          "mds"
+        ],
+        "result": {
+          "item": "collectorsreap:panettone"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

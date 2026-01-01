@@ -78,6 +78,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		add(FarmersDelight.MODID + ".tooltip.limbo_brew", "Extends Beneficial Effects by 30s");
 		add(FarmersDelight.MODID + ".tooltip.long_limbo_brew", "Extends Beneficial Effects by 15s");
 		add(FarmersDelight.MODID + ".tooltip.strong_limbo_brew", "Extends Beneficial Effects by 60s");
+		add(FarmersDelight.MODID + ".tooltip.panettone_slice", "Provides a random Beneficial Effect");
 	}
 
 	private void addText() {
@@ -122,6 +123,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addBlock(CRBlocks.PINK_DRAGON_FRUIT_CRATE, "Pink Dragon Fruit Crate");
 		addBlock(CRBlocks.LUCUMA_CRATE, "Lucuma Crate");
 		addBlock(CRBlocks.GILDED_LUCUMA_CRATE, "Gilded Lucuma Crate");
+		addBlock(CRBlocks.PANETTONE, "Panettone");
 		addBlock(CRBlocks.LIME_CAKE, "Lime Cake");
 		addBlock(CRBlocks.CANDLE_LIME_CAKE, "Lime Cake with Candle");
 		addBlock(CRBlocks.WHITE_CANDLE_LIME_CAKE, "Lime Cake with White Candle");
@@ -287,6 +289,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.TROPICAL_SHAVED_ICE, "Tropical Shaved Ice");
 		addItem(CRItems.DRAGONS_PASSION, "Dragon's Passion");
 		addItem(CRItems.DRAGON_FRUIT_SEEDS, "Dragon Fruit Seeds");
+		addItem(CRItems.PANETTONE_SLICE, "Slice of Panettone");
 		addItem(CRItems.LIME_PIE_SLICE, "Slice of Key Lime Pie");
 		addItem(CRItems.LIME, "Lime");
 		addItem(CRItems.LIME_SEEDS, "Lime Seeds");

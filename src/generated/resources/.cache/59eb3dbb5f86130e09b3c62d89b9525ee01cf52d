@@ -1,4 +1,4 @@
-// 1.20.1	2025-11-16T17:35:26.0564639	Loot Tables
+// 1.20.1	2026-01-01T01:17:08.8951634	Loot Tables
 f4a3c88fc95a893f684db7cc68e3f910e18b85fe data/collectorsreap/loot_tables/blocks/black_candle_lime_cake.json
 a7a8b0284665225cf8b550f38470725062af0acd data/collectorsreap/loot_tables/blocks/black_candle_lucuma_cake.json
 7337cd0965857540337f702aa5ef41aef53bdc2f data/collectorsreap/loot_tables/blocks/black_candle_pink_dragon_fruit_cake.json
@@ -90,6 +90,7 @@ a52bf56671c88678f9187a1ec56ba654c1a7640d data/collectorsreap/loot_tables/blocks/
 60f269012e123753c67766a47de3e0ab502cbd42 data/collectorsreap/loot_tables/blocks/orange_candle_lucuma_cake.json
 5802bca135570505dcb30eafcc91a2c57e3f0bda data/collectorsreap/loot_tables/blocks/orange_candle_pink_dragon_fruit_cake.json
 4d4be25655deec9c02d9bb7892ec38363cd4b886 data/collectorsreap/loot_tables/blocks/orange_candle_pomegranate_cake.json
+3d0fa14e2ae485acc917b766008ca2b544db77b7 data/collectorsreap/loot_tables/blocks/panettone.json
 2d33aa8956eb02a8555d8234772f4c65a4209522 data/collectorsreap/loot_tables/blocks/pink_candle_lime_cake.json
 c2f9cfe5dc612b1846c98a461f78bae61f4ed74b data/collectorsreap/loot_tables/blocks/pink_candle_lucuma_cake.json
 c266c292a750f1360630b01edf571dc7bbfe76ff data/collectorsreap/loot_tables/blocks/pink_candle_pink_dragon_fruit_cake.json
