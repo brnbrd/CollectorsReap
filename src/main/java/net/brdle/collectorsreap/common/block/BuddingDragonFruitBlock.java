@@ -5,14 +5,11 @@ import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.*;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import vectorwing.farmersdelight.common.block.BuddingBushBlock;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 import org.jetbrains.annotations.NotNull;
 
 public class BuddingDragonFruitBlock extends BuddingBushBlock implements BonemealableBlock {
@@ -66,7 +63,7 @@ public class BuddingDragonFruitBlock extends BuddingBushBlock implements Bonemea
 	@Override
 	public void performBonemeal(@NotNull ServerLevel level, @NotNull RandomSource random, @NotNull BlockPos pos, @NotNull BlockState state) {
 		int maxAge = getMaxAge();
-		int ageGrowth = Math.min(getAge(state) + Mth.nextInt(level.getRandom(), 1, 4), 7);
+		int ageGrowth = Math.min(getAge(state) + level.getRandom().nextInt(1, 4), 7);
 		if (ageGrowth <= maxAge) {
 			level.setBlockAndUpdate(pos, state.setValue(AGE, ageGrowth));
 		} else {
