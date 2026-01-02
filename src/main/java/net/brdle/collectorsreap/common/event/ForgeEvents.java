@@ -54,7 +54,9 @@ import java.util.Objects;
 public class ForgeEvents {
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public void onFinishPanettone(LivingEntityUseItemEvent.Finish e) {
-		PanettoneBlock.addRandomBuff(e.getEntity());
+		if (e.getItem().is(CRItems.PANETTONE_SLICE.get())) {
+			PanettoneBlock.addRandomBuff(e.getEntity());
+		}
 	}
 
 	@SubscribeEvent

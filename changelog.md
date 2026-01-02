@@ -1,6 +1,12 @@
 ## Version History
 
 
+# 1.5.3
+
+### Fixes
+- Fixed Panettone effect applying to all foods
+
+
 # 1.5.2
 
 ### Updates
