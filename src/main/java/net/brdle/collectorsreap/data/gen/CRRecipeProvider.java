@@ -446,8 +446,8 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.unlockedBy("has_pomegranate", has(CRItemTags.FRUITS_POMEGRANATE)),
 			"food/pomegranate_smoothie", finished, enabled(CRItems.POMEGRANATE_SMOOTHIE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.FRUITS_BANANA)), not(tagEmpty(CRItemTags.ICE_CUBES)));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.SALMON_TARTARE.get())
-				.requires(Ingredient.of(ForgeTags.RAW_FISHES_SALMON), 3)
-				.requires(CRItems.LIME_SLICE.get())
+				.requires(ModItems.SALMON_SLICE.get(), 3)
+				.requires(CRItems.LIME_SLICE.get(), 2)
 				.requires(Items.BOWL)
 				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
 			"food/salmon_tartare", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.SALMON_TARTARE));

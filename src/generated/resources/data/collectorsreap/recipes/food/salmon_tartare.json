@@ -26,13 +26,16 @@
         "category": "misc",
         "ingredients": [
           {
-            "tag": "forge:raw_fishes/salmon"
+            "item": "farmersdelight:salmon_slice"
           },
           {
-            "tag": "forge:raw_fishes/salmon"
+            "item": "farmersdelight:salmon_slice"
           },
           {
-            "tag": "forge:raw_fishes/salmon"
+            "item": "farmersdelight:salmon_slice"
+          },
+          {
+            "item": "collectorsreap:lime_slice"
           },
           {
             "item": "collectorsreap:lime_slice"

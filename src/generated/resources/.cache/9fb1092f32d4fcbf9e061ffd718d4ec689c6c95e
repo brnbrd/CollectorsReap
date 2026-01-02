@@ -1,4 +1,4 @@
-// 1.20.1	2026-01-01T01:17:08.9026772	Recipes
+// 1.20.1	2026-01-02T00:01:41.3561834	Recipes
 57c2c61de0db9aecdf53818569f70138b7f90559 data/collectorsreap/advancements/recipes/chiseled_lucuma_bookshelf.json
 f675d5755fabc608553d9bbb803bcaeec477fdf6 data/collectorsreap/advancements/recipes/chiseled_urchin_test_bricks.json
 c5c4fb15657414bca3973861918cd0afd6aa7392 data/collectorsreap/advancements/recipes/dragon_fruit_seeds_from_pink_dragon_fruit.json
@@ -267,7 +267,7 @@ f90b8b50fba20aa0e7bade0bc4cfb4a7a42e1dcc data/collectorsreap/recipes/food/prawn_
 f337151fba53d7c612e1e112e3dbaa56ccc4981a data/collectorsreap/recipes/food/prawn_po_boy.json
 8f992bd5606a4a4d1e789933affe28b2a77c8c08 data/collectorsreap/recipes/food/prawn_roll.json
 61ccde927ac2cb87ef274bd29ab2b6ca66c85337 data/collectorsreap/recipes/food/prawn_stew.json
-9a429c79d65073bfda235f9eb16891972d36ce13 data/collectorsreap/recipes/food/salmon_tartare.json
+97b0dc552cd98c370d22b2290c7a094bfb118713 data/collectorsreap/recipes/food/salmon_tartare.json
 71ae880b8c2b141b0af6906228a64357c4934b8a data/collectorsreap/recipes/food/salmon_wrapped_prawn.json
 82d3b855ed9624ed87b6456fbf1d7a0a4cfd72c7 data/collectorsreap/recipes/food/sea_wrap.json
 6c801a7ceae0848b4f99cf935e1b43950cc95674 data/collectorsreap/recipes/food/sea_wrap_from_tortilla.json
