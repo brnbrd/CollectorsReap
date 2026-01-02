@@ -25,14 +25,15 @@
     "1.4.1": "https://github.com/brnbrd/CollectorsReap/blob/1.20.1/changelog.md",
     "1.5": "https://github.com/brnbrd/CollectorsReap/blob/1.20.1/changelog.md",
     "1.5.1": "https://github.com/brnbrd/CollectorsReap/blob/1.20.1/changelog.md",
-    "1.5.2": "https://github.com/brnbrd/CollectorsReap/blob/1.20.1/changelog.md"
+    "1.5.2": "https://github.com/brnbrd/CollectorsReap/blob/1.20.1/changelog.md",
+    "1.5.3": "https://github.com/brnbrd/CollectorsReap/blob/1.20.1/changelog.md"
   },
   "promos": {
     "1.19-latest": "1.2.4",
     "1.19-recommended": "1.2.4",
     "1.19.2-latest": "1.2.4",
     "1.19.2-recommended": "1.2.4",
-    "1.20.1-latest": "1.5.2",
-    "1.20.1-recommended": "1.5.2"
+    "1.20.1-latest": "1.5.3",
+    "1.20.1-recommended": "1.5.3"
   }
 }
