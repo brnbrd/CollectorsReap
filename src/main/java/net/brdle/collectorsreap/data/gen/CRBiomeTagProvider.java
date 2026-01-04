@@ -7,19 +7,18 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import java.util.concurrent.CompletableFuture;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import java.util.concurrent.CompletableFuture;
 
 public class CRBiomeTagProvider extends BiomeTagsProvider {
-	public CRBiomeTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pProvider, @Nullable ExistingFileHelper existingFileHelper) {
-		super(pOutput, pProvider, CollectorsReap.MODID, existingFileHelper);
+	public CRBiomeTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper helper) {
+		super(output, provider, CollectorsReap.MODID, helper);
 	}
 
 	@Override
-	protected void addTags(HolderLookup.@NotNull Provider pProvider) {
+	protected void addTags(HolderLookup.@NotNull Provider provider) {
 		this.tag(CRBiomeTags.PORTOBELLO_SPAWNS).add(Biomes.MEADOW);
 		this.tag(CRBiomeTags.DRAGON_FRUIT_SPAWNS).addTag(BiomeTags.IS_BADLANDS);
 		this.tag(CRBiomeTags.LIME_SPAWNS).add(Biomes.FLOWER_FOREST);

@@ -26,6 +26,7 @@ public class Generators {
 		gen.addProvider(e.includeServer(), blockTags);
 		gen.addProvider(e.includeServer(), new CRItemTagProvider(output, lookup, blockTags.contentsGetter(), helper));
 		gen.addProvider(e.includeServer(), new CREntityTagProvider(output, lookup, helper));
+		gen.addProvider(e.includeServer(), new CRMobEffectTagProvider(output, lookup, helper));
 		gen.addProvider(e.includeServer(), new CRBiomeTagProvider(output, lookup, helper));
 		gen.addProvider(e.includeServer(), new CRRecipeProvider(output));
 		gen.addProvider(e.includeServer(), new CRLootTableProvider(output));

@@ -3,6 +3,8 @@
 # 1.5.4
 
 ### Updates
+- Added Mob Effect tag `collectorsreap:unobtainable_from_panettone`
+- Added config variable `panettone_duration` to define the length of Panettone's effect
 - Added a backup recipe for Panettone using `forge:nuts` if `forge:cooked_nuts` is empty
 
 

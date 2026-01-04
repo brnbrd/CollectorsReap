@@ -47,6 +47,7 @@ public enum Modid {
 	CAC("caverns_and_chasms"),
 	CAD("casualness_delight"),
 	CD("culturaldelights"),
+	COFH("cofh_core"),
 	COOK("cookielicious"),
 	COS("cosmopolitan"),
 	CRAB("crabbersdelight"),

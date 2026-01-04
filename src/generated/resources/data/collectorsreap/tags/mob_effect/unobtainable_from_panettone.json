@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "dungeonsdelight:ravenous_rush",
+      "required": false
+    },
+    {
+      "id": "cofh_core:true_invisibility",
+      "required": false
+    }
+  ]
+}

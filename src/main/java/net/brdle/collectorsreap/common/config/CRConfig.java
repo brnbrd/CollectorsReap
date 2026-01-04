@@ -16,6 +16,7 @@ public class CRConfig {
 	public static final ForgeConfigSpec.BooleanValue POMEGRANATE_POLLINATION;
 	public static final ForgeConfigSpec.BooleanValue FAST_POLLINATE;
 	public static final ForgeConfigSpec.IntValue STYGIAN_POMEGRANATE_RARITY;
+	public static final ForgeConfigSpec.IntValue PANETTONE_DURATION;
 	public static final ForgeConfigSpec.DoubleValue SURGE_ZERO_MULTIPLIER;
 	public static final ForgeConfigSpec.DoubleValue SURGE_ONE_MULTIPLIER;
 	public static final ForgeConfigSpec.DoubleValue SURGE_TWO_MULTIPLIER;
@@ -40,6 +41,9 @@ public class CRConfig {
 		BUILDER.pop();
 
 		BUILDER.push("Effects");
+		PANETTONE_DURATION = BUILDER
+			.comment("Length in seconds of effect gained by eating Panettone.")
+			.defineInRange("panettone_duration", 20, 0, 600);
 		SURGE_ZERO_MULTIPLIER = BUILDER
 			.comment("Attack damage multiplier gained from Surge I.")
 			.defineInRange("surge_zero_multiplier", 1.2D, 1.0D, 10.0D);

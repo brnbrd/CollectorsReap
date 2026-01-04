@@ -1,6 +1,8 @@
 package net.brdle.collectorsreap.common.block;
 
 import com.mojang.datafixers.util.Pair;
+import net.brdle.collectorsreap.common.config.CRConfig;
+import net.brdle.collectorsreap.data.CRMobEffectTags;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,6 +12,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -33,6 +36,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.tags.ITagManager;
 import vectorwing.farmersdelight.common.tag.ForgeTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 import java.util.List;
@@ -44,7 +49,6 @@ public class PanettoneBlock extends Block {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 3);
 	protected static final VoxelShape SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 10.0D, 13.0D);
-	public static final int BUFF_LENGTH = 400; // 20 seconds
 
 	public final Supplier<Item> slice;
 
@@ -188,21 +192,26 @@ public class PanettoneBlock extends Block {
 
 	public static void addRandomBuff(@NotNull LivingEntity consumer) {
 		if (!consumer.level().isClientSide()) {
-			final List<MobEffect> buffs = ForgeRegistries.MOB_EFFECTS.getValues()
-				.stream()
-				.filter(MobEffect::isBeneficial)
-				.filter(effect -> (
-					!consumer.hasEffect(effect) &&
-					!effect.isInstantenous() &&
-					effect.isBeneficial()
-				))
-				.toList();
-			if (!buffs.isEmpty()) {
-				consumer.addEffect(new MobEffectInstance(
-					Util.getRandom(buffs, consumer.getRandom()),
-					BUFF_LENGTH,
-					0
-				));
+			final int BUFF_LENGTH = CRConfig.PANETTONE_DURATION.get(); // Length in seconds
+			if (BUFF_LENGTH > 0) {
+				final IForgeRegistry<MobEffect> mobEffectRegistry = ForgeRegistries.MOB_EFFECTS;
+				final ITagManager<MobEffect> mobEffectTags = mobEffectRegistry.tags();
+				final List<MobEffect> buffs = mobEffectRegistry.getValues().stream()
+					.filter(effect -> (
+						!mobEffectTags.getTag(CRMobEffectTags.UNOBTAINABLE_FROM_PANETTONE).contains(effect) &&
+						!consumer.hasEffect(effect) &&
+						effect.isBeneficial() &&
+						!effect.isInstantenous()
+					)).toList();
+				if (buffs.isEmpty()) {
+					consumer.heal(1F);
+				} else {
+					consumer.addEffect(new MobEffectInstance(
+						Util.getRandom(buffs, consumer.getRandom()),
+						BUFF_LENGTH * 20,
+						0
+					));
+				}
 			}
 		}
 	}
