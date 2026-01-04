@@ -1,11 +1,17 @@
 ## Version History
 
+
 # 1.5.4
 
 ### Updates
 - Added Mob Effect tag `collectorsreap:unobtainable_from_panettone`
 - Added config variable `panettone_duration` to define the length of Panettone's effect
-- Added a backup recipe for Panettone using `forge:nuts` if `forge:cooked_nuts` is empty
+- Added Panettone backup recipes for when `forge:cooked_nuts` or `forge:nuts` tags are empty
+- Urchin Dart now applies Poison II for 0:08 (was 0:05)
+- Urchin Dart now does 1.5 base damage (was 2)
+
+### Fixes
+- Fixed Heaven's Cream recipe using an empty tag for Glow Berries
 
 
 # 1.5.3

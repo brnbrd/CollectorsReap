@@ -1,0 +1,54 @@
+{
+  "advancements": [
+    {
+      "advancement": {
+        "parent": "minecraft:recipes/root",
+        "criteria": {
+          "has_citrus": {
+            "conditions": {
+              "items": [
+                {
+                  "tag": "forge:fruits/citrus"
+                }
+              ]
+            },
+            "trigger": "minecraft:inventory_changed"
+          },
+          "has_the_recipe": {
+            "conditions": {
+              "recipe": "collectorsreap:food/panettone_from_citrus"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+          }
+        },
+        "requirements": [
+          [
+            "has_citrus",
+            "has_the_recipe"
+          ]
+        ],
+        "rewards": {
+          "recipes": [
+            "collectorsreap:food/panettone_from_citrus"
+          ]
+        },
+        "sends_telemetry_event": false
+      },
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "panettone"
+            },
+            {
+              "type": "forge:tag_empty",
+              "tag": "forge:nuts"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

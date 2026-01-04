@@ -644,6 +644,17 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.define('s', Items.SUGAR)
 				.unlockedBy("has_nuts", has(CRItemTags.NUTS)),
 			"food/panettone_from_nuts", finished, enabled(CRItems.PANETTONE), tagEmpty(CRItemTags.COOKED_NUTS), not(tagEmpty(CRItemTags.NUTS)));
+		wrap(shaped(RecipeCategory.FOOD, CRItems.PANETTONE.get())
+				.pattern("bbb")
+				.pattern("ccc")
+				.pattern("mds")
+				.define('b', ForgeTags.BERRIES)
+				.define('c', CRItemTags.FRUITS_CITRUS)
+				.define('m', ForgeTags.MILK)
+				.define('d', ForgeTags.DOUGH)
+				.define('s', Items.SUGAR)
+				.unlockedBy("has_citrus", has(CRItemTags.FRUITS_CITRUS)),
+			"food/panettone_from_citrus", finished, enabled(CRItems.PANETTONE), tagEmpty(CRItemTags.NUTS));
 		wrap(shaped(RecipeCategory.FOOD, CRItems.PORTOBELLO_QUICHE.get())
 				.pattern("pop")
 				.pattern("mcm")
