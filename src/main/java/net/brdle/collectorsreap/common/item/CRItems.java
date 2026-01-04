@@ -95,7 +95,7 @@ public class CRItems {
 	// Sliceable Blocks
 	public static final RegistryObject<Item> PANETTONE = registerBlock(CRBlocks.PANETTONE);
 	public static final RegistryObject<Item> PANETTONE_SLICE = registerItem("panettone_slice", () ->
-		new PanettoneSliceItem((new Item.Properties()).food(Nutrition.PANETTONE_SLICE)));
+		new ConsumableItem((new Item.Properties()).food(Nutrition.PANETTONE_SLICE), false, true));
 	public static final RegistryObject<Item> PORTOBELLO_QUICHE = registerBlock(CRBlocks.PORTOBELLO_QUICHE);
 	public static final RegistryObject<Item> PORTOBELLO_QUICHE_SLICE = registerFood("portobello_quiche_slice",
 		Nutrition.PORTOBELLO_QUICHE_SLICE);

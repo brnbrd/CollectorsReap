@@ -10,13 +10,6 @@
         {
           "type": "collectorsreap:enabled",
           "value": "panettone_slice"
-        },
-        {
-          "type": "forge:not",
-          "value": {
-            "type": "forge:tag_empty",
-            "tag": "forge:cooked_nuts"
-          }
         }
       ],
       "recipe": {

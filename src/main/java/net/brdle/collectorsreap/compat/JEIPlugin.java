@@ -78,13 +78,6 @@ public class JEIPlugin implements IModPlugin {
 			manager.removeIngredientsAtRuntime(ForgeTypes.FLUID_STACK, hiddenFluids);
 		}
 
-		// Panettone
-		if (Util.tagEmpty(CRItemTags.COOKED_NUTS) && Util.tagEmpty(CRItemTags.NUTS)) {
-			manager.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, List.of(
-				Util.getStack(CRItems.PANETTONE), Util.getStack(CRItems.PANETTONE_SLICE)
-			));
-		}
-
 		// Portobello
 		registration.addItemStackInfo(Util.getStack(CRBlocks.PORTOBELLO), Component.translatable("desc." + CollectorsReap.MODID + "." + Util.name(CRBlocks.PORTOBELLO)));
 

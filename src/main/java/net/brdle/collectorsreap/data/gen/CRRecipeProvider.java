@@ -628,10 +628,6 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.define('s', Items.SUGAR)
 				.unlockedBy("has_roasted_nuts", has(CRItemTags.COOKED_NUTS)),
 			"food/panettone", finished, enabled(CRItems.PANETTONE), not(tagEmpty(CRItemTags.COOKED_NUTS)));
-		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CRItems.PANETTONE.get(), 1)
-				.requires(CRItems.PANETTONE_SLICE.get(), 4)
-				.unlockedBy("has_panettone_slice", has(CRItems.PANETTONE_SLICE.get())),
-			"food/panettone_from_slices", finished, enabled(CRItems.PANETTONE), enabled(CRItems.PANETTONE_SLICE), not(tagEmpty(CRItemTags.COOKED_NUTS)));
 		wrap(shaped(RecipeCategory.FOOD, CRItems.PANETTONE.get())
 				.pattern("bcn")
 				.pattern("bcn")
@@ -655,6 +651,10 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.define('s', Items.SUGAR)
 				.unlockedBy("has_citrus", has(CRItemTags.FRUITS_CITRUS)),
 			"food/panettone_from_citrus", finished, enabled(CRItems.PANETTONE), tagEmpty(CRItemTags.NUTS));
+		wrap(ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, CRItems.PANETTONE.get(), 1)
+				.requires(CRItems.PANETTONE_SLICE.get(), 4)
+				.unlockedBy("has_panettone_slice", has(CRItems.PANETTONE_SLICE.get())),
+			"food/panettone_from_slices", finished, enabled(CRItems.PANETTONE), enabled(CRItems.PANETTONE_SLICE));
 		wrap(shaped(RecipeCategory.FOOD, CRItems.PORTOBELLO_QUICHE.get())
 				.pattern("pop")
 				.pattern("mcm")
