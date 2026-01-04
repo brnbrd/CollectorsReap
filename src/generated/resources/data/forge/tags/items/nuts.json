@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "windswept:chestnuts",
+      "required": false
+    },
+    {
+      "id": "sob:peanut",
+      "required": false
+    },
+    {
+      "id": "ecologics:walnut",
+      "required": false
+    }
+  ]
+}

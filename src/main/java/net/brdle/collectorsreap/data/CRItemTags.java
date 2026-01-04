@@ -65,6 +65,7 @@ public class CRItemTags {
 	public static final TagKey<Item> NUGGETS_COPPER = forge("nuggets/copper");
 	public static final TagKey<Item> JUICES = forge("juices");
 	public static final TagKey<Item> JUICES_LIME = forge("juices/lime");
+	public static final TagKey<Item> NUTS = forge("nuts");
 	public static final TagKey<Item> COOKED_NUTS = forge("cooked_nuts");
 
 	// Diet

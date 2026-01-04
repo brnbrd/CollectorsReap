@@ -1,4 +1,4 @@
-// 1.20.1	2026-01-02T00:01:41.3561834	Recipes
+// 1.20.1	2026-01-03T13:29:02.9020398	Recipes
 57c2c61de0db9aecdf53818569f70138b7f90559 data/collectorsreap/advancements/recipes/chiseled_lucuma_bookshelf.json
 f675d5755fabc608553d9bbb803bcaeec477fdf6 data/collectorsreap/advancements/recipes/chiseled_urchin_test_bricks.json
 c5c4fb15657414bca3973861918cd0afd6aa7392 data/collectorsreap/advancements/recipes/dragon_fruit_seeds_from_pink_dragon_fruit.json
@@ -63,6 +63,7 @@ f05ea686c3a09fd70d88f1c5c8b06d703734c4c2 data/collectorsreap/advancements/recipe
 b8b4ddd818eb77f9e5d9e477152c29bcee4edb27 data/collectorsreap/advancements/recipes/food/mediterranean_salmon.json
 eb4eda340fe207ee536061908550fcdd86787d4d data/collectorsreap/advancements/recipes/food/mint_limeade.json
 6b2bedbeb5d45f3cad0cf50d5047b0be1acd8579 data/collectorsreap/advancements/recipes/food/panettone.json
+41334ea1e0ba4cdae6ef9cc56be552d5f3dcb326 data/collectorsreap/advancements/recipes/food/panettone_from_nuts.json
 69773e194c88463dcbe10cb5697aa08b04e85796 data/collectorsreap/advancements/recipes/food/panettone_from_slices.json
 ef6dfa2ddb7e8d002287b1a73e3ac6c9f6b048bb data/collectorsreap/advancements/recipes/food/pink_dragon_fruit_cake.json
 574e73eedf9b42c924efb89209b309724f75d117 data/collectorsreap/advancements/recipes/food/pink_dragon_fruit_cake_from_slices.json
@@ -233,6 +234,7 @@ ffd330c6123139a9afb7c31ef66c6b7b888fb65e data/collectorsreap/recipes/food/lucuma
 a3c09b5351759f4cca1554c838baa784b51e026d data/collectorsreap/recipes/food/mediterranean_salmon.json
 88253772d015ee5b0c6c079b93bf73e68080b210 data/collectorsreap/recipes/food/mint_limeade.json
 3797845dbe9788246f466880464907227a940b19 data/collectorsreap/recipes/food/panettone.json
+82e1432ec6b67d3991f5619ffb7345b60411d520 data/collectorsreap/recipes/food/panettone_from_nuts.json
 76b3c8aea323a1c3d6f476670950f2f6b66372d5 data/collectorsreap/recipes/food/panettone_from_slices.json
 3abf7a49d1d63759800361d174ceade846c32390 data/collectorsreap/recipes/food/pink_dragon_fruit_cake.json
 7f361db6a1a6ebee6fc6ebd624978c7eaa30edc6 data/collectorsreap/recipes/food/pink_dragon_fruit_cake_from_slices.json

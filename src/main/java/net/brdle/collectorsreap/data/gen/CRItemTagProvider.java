@@ -323,6 +323,10 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.forge("vegetables/ginger")).addOptional(Modid.WS.rl("ginger_root"));
 		this.tag(CRItemTags.forge("fruits/wild_berries")).addOptional(Modid.WS.rl("wild_berries"));
 		this.tag(CRItemTags.forge("nuts/peanut")).addOptional(Modid.SOB.rl("peanut"));
+		this.tag(CRItemTags.NUTS)
+			.addOptional(Modid.WS.rl("chestnuts"))
+			.addOptional(Modid.SOB.rl("peanut"))
+			.addOptional(Modid.ECO.rl("walnut"));
 		this.tag(CRItemTags.COOKED_NUTS)
 			.addOptional(Modid.WS.rl("roasted_chestnuts"))
 			.addOptional(Modid.SOB.rl("roasted_peanuts"));

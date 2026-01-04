@@ -1,5 +1,10 @@
 ## Version History
 
+# 1.5.4
+
+### Updates
+- Added a backup recipe for Panettone using `forge:nuts` if `forge:cooked_nuts` is empty
+
 
 # 1.5.3
 

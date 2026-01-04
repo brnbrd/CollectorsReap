@@ -14,6 +14,6 @@ public class PanettoneSliceItem extends ConsumableItem implements IConfigured {
 
 	@Override
 	public @Nullable TagKey<Item> getDependencyTag() {
-		return CRItemTags.COOKED_NUTS;
+		return CRItemTags.NUTS;
 	}
 }

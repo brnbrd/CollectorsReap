@@ -1,4 +1,4 @@
-// 1.20.1	2026-01-01T01:17:08.8976782	Tags for minecraft:item mod id collectorsreap
+// 1.20.1	2026-01-03T16:50:46.4650533	Tags for minecraft:item mod id collectorsreap
 ae7e08f92dd075f34544c04d30c8a274b27bd792 data/atmospheric/tags/items/aloe_leaves.json
 3544f7ab18fa5c38ea94af7f6c3faaa47320cb35 data/atmospheric/tags/items/cochineal_food.json
 b1c02044b6eb4060b19a0ed4f40cbeaca19822c9 data/atmospheric/tags/items/passion_fruit.json
@@ -56,6 +56,7 @@ d6c74500b2d44fbad3f18f4213772b35ce41a9ca data/forge/tags/items/fruits/wild_berri
 45a8302b1aee17263b36f6bbe32ebfa2845d22a7 data/forge/tags/items/juices/lime.json
 fe1e7d2a603fcb92f0b4dd9e48352c40aab12cd0 data/forge/tags/items/mushrooms.json
 748e9338cb0e08e973af854da7e0a45c328db6fb data/forge/tags/items/mushrooms/portobello.json
+d67ee5358b05254dc9a229b445e2e7aab0c1b216 data/forge/tags/items/nuts.json
 b32edcec56be6472f567da7f006a64f2f264207f data/forge/tags/items/nuts/peanut.json
 8d43daa2f8c10dd8042e26410a9800ab7e25ef44 data/forge/tags/items/raw_clam.json
 e4bfec188fb63173110be9c4748fef5945689603 data/forge/tags/items/raw_crab_meat.json

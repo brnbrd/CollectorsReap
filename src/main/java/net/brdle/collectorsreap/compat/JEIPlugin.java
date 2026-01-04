@@ -79,7 +79,7 @@ public class JEIPlugin implements IModPlugin {
 		}
 
 		// Panettone
-		if (Util.tagEmpty(CRItemTags.COOKED_NUTS)) {
+		if (Util.tagEmpty(CRItemTags.COOKED_NUTS) && Util.tagEmpty(CRItemTags.NUTS)) {
 			manager.removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, List.of(
 				Util.getStack(CRItems.PANETTONE), Util.getStack(CRItems.PANETTONE_SLICE)
 			));
