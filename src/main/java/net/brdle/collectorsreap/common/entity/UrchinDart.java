@@ -24,10 +24,14 @@ public class UrchinDart extends AbstractArrow {
 	}
 
 	@Override
+	public double getBaseDamage() {
+		return 1.5D;
+	}
+
+	@Override
 	public void doPostHurtEffects(@NotNull LivingEntity target) {
 		super.doPostHurtEffects(target);
-		MobEffectInstance poison = new MobEffectInstance(MobEffects.POISON, 100, 1);
-		target.addEffect(poison, this.getEffectSource());
+		target.addEffect(new MobEffectInstance(MobEffects.POISON, 160, 1), this.getEffectSource());
 	}
 
 	@Override
