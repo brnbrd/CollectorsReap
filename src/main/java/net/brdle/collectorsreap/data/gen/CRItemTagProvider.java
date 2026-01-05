@@ -259,6 +259,7 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.SKULL_LILY_SEEDS.get())
 			.add(CRItems.BULBOUS_ROSE_SEEDS.get())
 			.add(CRItems.HEARTPETALS_SEEDS.get());
+		this.tag(CRItemTags.VEGETABLES_BULLET_PEPPER).addOptional(Modid.MND.rl("bullet_pepper"));
 		this.tag(CRItemTags.MUSHROOMS_PORTOBELLO).add(CRItems.PORTOBELLO.get());
 		this.tag(Tags.Items.MUSHROOMS).addTag(CRItemTags.MUSHROOMS_PORTOBELLO);
 		this.tag(CRItemTags.TORTILLA).addOptional(Modid.CD.rl("tortilla"));

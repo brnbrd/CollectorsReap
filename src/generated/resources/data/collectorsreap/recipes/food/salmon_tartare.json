@@ -12,10 +12,6 @@
             },
             {
               "type": "collectorsreap:enabled",
-              "value": "lime_slice"
-            },
-            {
-              "type": "collectorsreap:enabled",
               "value": "salmon_tartare"
             }
           ]
@@ -35,10 +31,7 @@
             "item": "farmersdelight:salmon_slice"
           },
           {
-            "item": "collectorsreap:lime_slice"
-          },
-          {
-            "item": "collectorsreap:lime_slice"
+            "tag": "forge:fruits/lime"
           },
           {
             "item": "minecraft:bowl"

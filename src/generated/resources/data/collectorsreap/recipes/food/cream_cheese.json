@@ -7,19 +7,19 @@
           "type": "forge:and",
           "values": [
             {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:mod_loaded",
+                "modid": "brewinandchewin"
+              }
+            },
+            {
               "type": "collectorsreap:enabled",
               "value": "lime"
             },
             {
               "type": "collectorsreap:enabled",
               "value": "cream_cheese"
-            },
-            {
-              "type": "forge:not",
-              "value": {
-                "type": "forge:mod_loaded",
-                "modid": "brewinandchewin"
-              }
             }
           ]
         }

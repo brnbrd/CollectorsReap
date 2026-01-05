@@ -4,6 +4,18 @@
 # 1.5.4
 
 ### Updates
+- Added Prawn Spread
+- Added Carbonara Pasta
+- Added Stuffed Pasta Shells
+- Added Bullet Pepper Popper (for [My Nether's Delight](https://www.curseforge.com/minecraft/mc-mods/my-nethers-delight))
+- Added Cannoli
+- Added Coffee Cannoli (for [Farmer's Respite](https://www.curseforge.com/minecraft/mc-mods/farmers-respite))
+- Added Chocolate Cannoli (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
+- Added Mint Cannoli (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
+- Added Strawberry Cannoli (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
+- Added Vanilla Cannoli (for [Neapolitan](https://www.curseforge.com/minecraft/mc-mods/neapolitan))
+- Spicy Grenadine Jelly now provides Pungent for 1:00
+- Vanilla Gummy now provides Vanilla Scent for 0:20
 - Added Mob Effect tag `collectorsreap:unobtainable_from_panettone`
 - Added config variable `panettone_duration` to define the length of Panettone's effect
 - Added Panettone backup recipes for when `forge:cooked_nuts` or `forge:nuts` tags are empty

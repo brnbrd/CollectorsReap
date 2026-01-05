@@ -269,9 +269,80 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.addIngredient(ForgeTags.MILK)
 				.addIngredient(Ingredient.of(CRItemTags.FRUITS_LIME), 2)
 				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
-			"food/cream_cheese", finished, enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE), not(modLoaded("brewinandchewin")));
+			"food/cream_cheese", finished, not(modLoaded(Modid.BC.get())), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CARBONARA_PASTA.get(), 1, 200, 1F, Items.BOWL)
+				.addIngredient(ModItems.BACON.get())
+				.addIngredient(ForgeTags.PASTA_RAW_PASTA)
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
+				.addIngredient(Tags.Items.MUSHROOMS)
+				.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
+			"food/carbonara_pasta", finished, enabled(CRItems.CARBONARA_PASTA), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.STUFFED_PASTA_SHELLS.get(), 1, 200, 1F, Items.BOWL)
+				.addIngredient(ForgeTags.DOUGH)
+				.addIngredient(ModItems.TOMATO_SAUCE.get())
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
+				.addIngredient(Tags.Items.MUSHROOMS)
+				.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
+			"food/stuffed_pasta_shells", finished, enabled(CRItems.STUFFED_PASTA_SHELLS), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.BULLET_PEPPER_POPPER.get(), 1, 200, 1F)
+				.addIngredient(CRItemTags.VEGETABLES_BULLET_PEPPER)
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
+				.addIngredient(CRItemTags.RAW_CLAM)
+				.addIngredient(ModItems.BACON.get())
+				.unlockedBy("has_bullet_pepper", has(CRItemTags.VEGETABLES_BULLET_PEPPER)),
+			"food/bullet_pepper_popper", finished, modLoaded(Modid.MND.get()), not(tagEmpty(CRItemTags.VEGETABLES_BULLET_PEPPER)), enabled(CRItems.BULLET_PEPPER_POPPER), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CANNOLI.get(), 1, 200, 1F)
+				.addIngredient(ForgeTags.DOUGH)
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
+				.addIngredient(Items.SUGAR, 2)
+				.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
+			"food/cannoli", finished, enabled(CRItems.CANNOLI), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.COFFEE_CANNOLI.get(), 1, 200, 1F)
+				.addIngredient(ForgeTags.DOUGH)
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
+				.addIngredient(Items.SUGAR)
+				.addIngredient(CRItemTags.COFFEE_BEANS)
+				.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
+			"food/coffee_cannoli", finished, modLoaded(Modid.FR.get()), not(tagEmpty(CRItemTags.COFFEE_BEANS)), enabled(CRItems.COFFEE_CANNOLI), enabled(CRItems.CANNOLI), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.CHOCOLATE_CANNOLI.get(), 1, 200, 1F)
+				.addIngredient(ForgeTags.DOUGH)
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
+				.addIngredient(Items.SUGAR)
+				.addIngredient(CRItemTags.CHOCOLATE_BAR)
+				.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
+			"food/chocolate_cannoli", finished, modLoaded(Modid.N.get()), not(tagEmpty(CRItemTags.CHOCOLATE_BAR)), enabled(CRItems.CHOCOLATE_CANNOLI), enabled(CRItems.CANNOLI), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.MINT_CANNOLI.get(), 1, 200, 1F)
+				.addIngredient(ForgeTags.DOUGH)
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
+				.addIngredient(Items.SUGAR)
+				.addIngredient(CRItemTags.MINT_LEAVES)
+				.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
+			"food/mint_cannoli", finished, modLoaded(Modid.N.get()), not(tagEmpty(CRItemTags.MINT_LEAVES)), enabled(CRItems.MINT_CANNOLI), enabled(CRItems.CANNOLI), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.STRAWBERRY_CANNOLI.get(), 1, 200, 1F)
+				.addIngredient(ForgeTags.DOUGH)
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
+				.addIngredient(Items.SUGAR)
+				.addIngredient(CRItemTags.FRUITS_STRAWBERRY)
+				.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
+			"food/strawberry_cannoli", finished, modLoaded(Modid.N.get()), not(tagEmpty(CRItemTags.FRUITS_STRAWBERRY)), enabled(CRItems.STRAWBERRY_CANNOLI), enabled(CRItems.CANNOLI), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.VANILLA_CANNOLI.get(), 1, 200, 1F)
+				.addIngredient(ForgeTags.DOUGH)
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
+				.addIngredient(Items.SUGAR)
+				.addIngredient(CRItemTags.DRIED_VANILLA_PODS)
+				.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
+			"food/vanilla_cannoli", finished, modLoaded(Modid.N.get()), not(tagEmpty(CRItemTags.DRIED_VANILLA_PODS)), enabled(CRItems.VANILLA_CANNOLI), enabled(CRItems.CANNOLI), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
 
 		// Crafting
+		wrap(shapeless(RecipeCategory.FOOD, CRItems.PRAWN_SPREAD.get())
+			.requires(CRItemTags.CHEESE_MILD_CREAM)
+			.requires(CRItemTags.COOKED_PRAWN)
+			.requires(ForgeTags.SALAD_INGREDIENTS_CABBAGE)
+			.requires(ForgeTags.VEGETABLES_TOMATO)
+			.requires(ForgeTags.VEGETABLES_ONION)
+			.requires(Items.BOWL)
+			.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
+			"food/prawn_spread", finished, enabled(CRItems.PRAWN_SPREAD), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
 		wrap(shapeless(RecipeCategory.BUILDING_BLOCKS, CRItems.PINK_DRAGON_FRUIT.get(), 9)
 				.requires(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get())
 				.unlockedBy("has_pink_dragon_fruit_crate", has(CRBlocks.PINK_DRAGON_FRUIT_CRATE.get())),
@@ -447,10 +518,10 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 			"food/pomegranate_smoothie", finished, enabled(CRItems.POMEGRANATE_SMOOTHIE), modLoaded("neapolitan"), not(tagEmpty(CRItemTags.FRUITS_BANANA)), not(tagEmpty(CRItemTags.ICE_CUBES)));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.SALMON_TARTARE.get())
 				.requires(ModItems.SALMON_SLICE.get(), 3)
-				.requires(CRItems.LIME_SLICE.get(), 2)
+				.requires(CRItemTags.FRUITS_LIME)
 				.requires(Items.BOWL)
-				.unlockedBy("has_lime_slice", has(CRItems.LIME_SLICE.get())),
-			"food/salmon_tartare", finished, enabled(CRItems.LIME), enabled(CRItems.LIME_SLICE), enabled(CRItems.SALMON_TARTARE));
+				.unlockedBy("has_lime", has(CRItemTags.FRUITS_LIME)),
+			"food/salmon_tartare", finished, enabled(CRItems.LIME), enabled(CRItems.SALMON_TARTARE));
 		wrap(shapeless(RecipeCategory.FOOD, CRItems.COD_CEVICHE.get())
 				.requires(ForgeTags.RAW_FISHES_COD)
 				.requires(CRItems.LIME_SLICE.get())

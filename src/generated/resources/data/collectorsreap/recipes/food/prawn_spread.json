@@ -1,0 +1,53 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "prawn_spread"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "cream_cheese"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shapeless",
+        "category": "misc",
+        "ingredients": [
+          {
+            "tag": "forge:cheese/mild/cream"
+          },
+          {
+            "tag": "forge:cooked_prawn"
+          },
+          {
+            "tag": "forge:salad_ingredients/cabbage"
+          },
+          {
+            "tag": "forge:vegetables/tomato"
+          },
+          {
+            "tag": "forge:vegetables/onion"
+          },
+          {
+            "item": "minecraft:bowl"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:prawn_spread"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "mynethersdelight"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "forge:vegetables/bullet_pepper"
+              }
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "bullet_pepper_popper"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "cream_cheese"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:vegetables/bullet_pepper"
+          },
+          {
+            "tag": "forge:cheese/mild/cream"
+          },
+          {
+            "tag": "forge:raw_clam"
+          },
+          {
+            "item": "farmersdelight:bacon"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:bullet_pepper_popper"
+        }
+      }
+    }
+  ]
+}

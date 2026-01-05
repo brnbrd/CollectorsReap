@@ -331,6 +331,16 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.CRIMSON_CARROT_ROAST, "Crimson Carrot Roast");
 		addItem(CRItems.DELUXE_SALAD, "Deluxe Salad");
 		addItem(CRItems.CREAM_CHEESE, "Cream Cheese");
+		addItem(CRItems.PRAWN_SPREAD, "Prawn Spread");
+		addItem(CRItems.CARBONARA_PASTA, "Carbonara Pasta");
+		addItem(CRItems.STUFFED_PASTA_SHELLS, "Stuffed Pasta Shells");
+		addItem(CRItems.BULLET_PEPPER_POPPER, "Bullet Pepper Popper");
+		addItem(CRItems.CANNOLI, "Cannoli");
+		addItem(CRItems.COFFEE_CANNOLI, "Coffee Cannoli");
+		addItem(CRItems.CHOCOLATE_CANNOLI, "Chocolate Cannoli");
+		addItem(CRItems.MINT_CANNOLI, "Mint Cannoli");
+		addItem(CRItems.STRAWBERRY_CANNOLI, "Strawberry Cannoli");
+		addItem(CRItems.VANILLA_CANNOLI, "Vanilla Cannoli");
 		addItem(CRItems.LIME_CAKE_SLICE, "Slice of Lime Cake");
 		addItem(CRItems.POMEGRANATE_CAKE_SLICE, "Slice of Pomegranate Cake");
 		addItem(CRItems.PINK_DRAGON_FRUIT_CAKE_SLICE, "Slice of Pink Dragon Fruit Cake");

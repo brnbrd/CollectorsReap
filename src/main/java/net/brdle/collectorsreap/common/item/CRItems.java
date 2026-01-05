@@ -277,26 +277,6 @@ public class CRItems {
 	public static final RegistryObject<Item> PORTOBELLO_PASTA = registerFood("portobello_pasta",
 		bowlFoodItem(Nutrition.PORTOBELLO_PASTA), true, false);
 
-	// Lime
-	public static final RegistryObject<Item> CANDIED_LIME = registerFood("candied_lime",
-		new Item.Properties().food(Nutrition.CANDIED_LIME), true, false);
-	public static final RegistryObject<Item> LIME_COOKIE = registerFood("lime_cookie",
-		(new Item.Properties()).food(Nutrition.LIME_COOKIE), true, false);
-	public static final RegistryObject<Item> LIME_POPSICLE = registerFood("lime_popsicle",
-		(new Item.Properties()).food(Nutrition.LIME_POPSICLE).craftRemainder(Items.STICK), true, false);
-	public static final RegistryObject<Item> CREAM_CHEESE = registerFood("cream_cheese",
-		bowlFoodItem(Nutrition.CREAM_CHEESE), true, false);
-	public static final RegistryObject<Item> HONEY_LIME_CHICKEN = registerFood("honey_lime_chicken",
-		bowlFoodItem(Nutrition.HONEY_LIME_CHICKEN), true, false);
-	public static final RegistryObject<Item> MEDITERRANEAN_SALMON = registerFood("mediterranean_salmon",
-		bowlFoodItem(Nutrition.MEDITERRANEAN_SALMON), true, false);
-	public static final RegistryObject<Item> SALMON_TARTARE = registerFood("salmon_tartare",
-		bowlFoodItem(Nutrition.SALMON_TARTARE), true, false);
-	public static final RegistryObject<Item> POTATO_FRITTERS = registerFood("potato_fritters",
-		(new Item.Properties()).food(Nutrition.POTATO_FRITTERS), true, false);
-	public static final RegistryObject<Item> COD_CEVICHE = registerFood("cod_ceviche",
-		bowlFoodItem(Nutrition.COD_CEVICHE), true, false);
-
 	// Pomegranate
 	public static final RegistryObject<Item> CRIMSON_CARROT_ROAST = registerFood("crimson_carrot_roast",
 		bowlFoodItem(Nutrition.CRIMSON_CARROT_ROAST), true, false);
@@ -321,6 +301,51 @@ public class CRItems {
 	// Lucuma
 	public static final RegistryObject<Item> LUCUMA_BREAD = registerItem("lucuma_bread", () ->
 		new ConsumableItem((new Item.Properties()).food(Nutrition.LUCUMA_BREAD), true, false));
+
+	// Lime
+	public static final RegistryObject<Item> CANDIED_LIME = registerFood("candied_lime",
+		new Item.Properties().food(Nutrition.CANDIED_LIME), true, false);
+	public static final RegistryObject<Item> LIME_COOKIE = registerFood("lime_cookie",
+		(new Item.Properties()).food(Nutrition.LIME_COOKIE), true, false);
+	public static final RegistryObject<Item> LIME_POPSICLE = registerFood("lime_popsicle",
+		(new Item.Properties()).food(Nutrition.LIME_POPSICLE).craftRemainder(Items.STICK), true, false);
+	public static final RegistryObject<Item> HONEY_LIME_CHICKEN = registerFood("honey_lime_chicken",
+		bowlFoodItem(Nutrition.HONEY_LIME_CHICKEN), true, false);
+	public static final RegistryObject<Item> MEDITERRANEAN_SALMON = registerFood("mediterranean_salmon",
+		bowlFoodItem(Nutrition.MEDITERRANEAN_SALMON), true, false);
+	public static final RegistryObject<Item> SALMON_TARTARE = registerFood("salmon_tartare",
+		bowlFoodItem(Nutrition.SALMON_TARTARE), true, false);
+	public static final RegistryObject<Item> POTATO_FRITTERS = registerFood("potato_fritters",
+		(new Item.Properties()).food(Nutrition.POTATO_FRITTERS), true, false);
+	public static final RegistryObject<Item> COD_CEVICHE = registerFood("cod_ceviche",
+		bowlFoodItem(Nutrition.COD_CEVICHE), true, false);
+
+	// Cream Cheese
+	public static final RegistryObject<Item> CREAM_CHEESE = registerFood("cream_cheese",
+		bowlFoodItem(Nutrition.CREAM_CHEESE), true, false);
+	public static final RegistryObject<Item> PRAWN_SPREAD = registerFood("prawn_spread",
+		bowlFoodItem(Nutrition.PRAWN_SPREAD), true, false);
+	public static final RegistryObject<Item> CARBONARA_PASTA = registerFood("carbonara_pasta",
+		bowlFoodItem(Nutrition.CARBONARA_PASTA), true, false);
+	public static final RegistryObject<Item> STUFFED_PASTA_SHELLS = registerFood("stuffed_pasta_shells",
+		bowlFoodItem(Nutrition.STUFFED_PASTA_SHELLS), true, false);
+	public static final RegistryObject<Item> CANNOLI = registerFood("cannoli",
+		(new Item.Properties()).food(Nutrition.CANNOLI), true, false);
+	public static final RegistryObject<Item> COFFEE_CANNOLI = registerItem("coffee_cannoli", () ->
+		new CompatConsumable((new Item.Properties()).food(Nutrition.COFFEE_CANNOLI),
+			true, false, Modid.FR));
+	public static final RegistryObject<Item> CHOCOLATE_CANNOLI = registerItem("chocolate_cannoli", () ->
+		new CompatConsumable((new Item.Properties()).food(Nutrition.CHOCOLATE_CANNOLI),
+			true, false, Modid.N));
+	public static final RegistryObject<Item> MINT_CANNOLI = registerItem("mint_cannoli", () ->
+		new CompatConsumable((new Item.Properties()).food(Nutrition.MINT_CANNOLI),
+			true, false, Modid.N));
+	public static final RegistryObject<Item> STRAWBERRY_CANNOLI = registerItem("strawberry_cannoli", () ->
+		new CompatConsumable((new Item.Properties()).food(Nutrition.STRAWBERRY_CANNOLI),
+			true, false, 1F, Modid.N));
+	public static final RegistryObject<Item> VANILLA_CANNOLI = registerItem("vanilla_cannoli", () ->
+		new CompatConsumable((new Item.Properties()).food(Nutrition.VANILLA_CANNOLI),
+			true, false, Modid.N));
 
 	// Clam
 	public static final RegistryObject<Item> CLAM = registerItem("clam", () -> new Item((new Item.Properties())));
@@ -398,9 +423,12 @@ public class CRItems {
 	public static final RegistryObject<Item> SPICY_GRENADINE_JELLY = registerItem("spicy_grenadine_jelly", () ->
 		new CompatConsumable(bowlFoodItem(Nutrition.SPICY_GRENADINE_JELLY),
 			true, false, Modid.MND, Modid.ND));
+	public static final RegistryObject<Item> BULLET_PEPPER_POPPER = registerItem("bullet_pepper_popper", () ->
+		new CompatConsumable((new Item.Properties()).food(
+			Nutrition.BULLET_PEPPER_POPPER), true, false, Modid.MND));
 	public static final RegistryObject<Item> STRAWBERRY_JAM_BUN = registerItem("strawberry_jam_bun", () ->
 		new CompatConsumable((new Item.Properties()).food(
-			Nutrition.STRAWBERRY_JAM_BUN), true, false, 1F, Modid.N));
+			Nutrition.STRAWBERRY_JAM_BUN), true, false, Modid.N));
 	public static final RegistryObject<Item> POMEGRANATE_BEAN_SALAD = registerItem("pomegranate_bean_salad", () ->
 		new CompatConsumable(bowlFoodItem(Nutrition.POMEGRANATE_BEAN_SALAD),
 			true, false, Modid.N));

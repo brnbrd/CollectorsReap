@@ -1,0 +1,51 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "collectorsreap:enabled",
+              "value": "carbonara_pasta"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "cream_cheese"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "container": {
+          "item": "minecraft:bowl"
+        },
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "item": "farmersdelight:bacon"
+          },
+          {
+            "tag": "forge:pasta/raw_pasta"
+          },
+          {
+            "tag": "forge:cheese/mild/cream"
+          },
+          {
+            "tag": "forge:mushrooms"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:carbonara_pasta"
+        }
+      }
+    }
+  ]
+}

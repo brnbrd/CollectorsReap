@@ -1,0 +1,63 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "neapolitan:dried_vanilla_pods"
+              }
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "vanilla_cannoli"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "cannoli"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "cream_cheese"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:dough"
+          },
+          {
+            "tag": "forge:cheese/mild/cream"
+          },
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "tag": "neapolitan:dried_vanilla_pods"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:vanilla_cannoli"
+        }
+      }
+    }
+  ]
+}

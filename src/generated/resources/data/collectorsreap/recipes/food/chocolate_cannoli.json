@@ -1,0 +1,63 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:and",
+          "values": [
+            {
+              "type": "forge:mod_loaded",
+              "modid": "neapolitan"
+            },
+            {
+              "type": "forge:not",
+              "value": {
+                "type": "forge:tag_empty",
+                "tag": "neapolitan:chocolate_bar"
+              }
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "chocolate_cannoli"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "cannoli"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "lime"
+            },
+            {
+              "type": "collectorsreap:enabled",
+              "value": "cream_cheese"
+            }
+          ]
+        }
+      ],
+      "recipe": {
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "tag": "forge:dough"
+          },
+          {
+            "tag": "forge:cheese/mild/cream"
+          },
+          {
+            "item": "minecraft:sugar"
+          },
+          {
+            "tag": "neapolitan:chocolate_bar"
+          }
+        ],
+        "result": {
+          "item": "collectorsreap:chocolate_cannoli"
+        }
+      }
+    }
+  ]
+}
