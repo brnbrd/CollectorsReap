@@ -183,6 +183,7 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.STUFFED_PASTA_SHELLS);
 		this.generatedItem(CRItems.BULLET_PEPPER_POPPER);
 		this.generatedItem(CRItems.CANNOLI);
+		this.generatedItem(CRItems.LUCUMA_CANNOLI);
 		this.generatedItem(CRItems.COFFEE_CANNOLI);
 		this.generatedItem(CRItems.CHOCOLATE_CANNOLI);
 		this.generatedItem(CRItems.MINT_CANNOLI);

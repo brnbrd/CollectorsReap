@@ -1,4 +1,4 @@
-// 1.20.1	2026-01-04T19:29:00.9461402	Recipes
+// 1.20.1	2026-01-06T19:34:02.4856803	Recipes
 57c2c61de0db9aecdf53818569f70138b7f90559 data/collectorsreap/advancements/recipes/chiseled_lucuma_bookshelf.json
 f675d5755fabc608553d9bbb803bcaeec477fdf6 data/collectorsreap/advancements/recipes/chiseled_urchin_test_bricks.json
 c5c4fb15657414bca3973861918cd0afd6aa7392 data/collectorsreap/advancements/recipes/dragon_fruit_seeds_from_pink_dragon_fruit.json
@@ -61,6 +61,7 @@ d67f7e68289648445f7b89822894ca141cadd4e0 data/collectorsreap/advancements/recipe
 929e773b365d8d5e54777ea9c6c14cff4eb980c8 data/collectorsreap/advancements/recipes/food/lucuma_bread.json
 573a971eff1914bcaa34b4e8deedb0e561b67c02 data/collectorsreap/advancements/recipes/food/lucuma_cake.json
 b51b0fd17d5024716eeea2abca271502e801e003 data/collectorsreap/advancements/recipes/food/lucuma_cake_from_slices.json
+6be7e40d7510aa198c1ee5926e918ac690cae38f data/collectorsreap/advancements/recipes/food/lucuma_cannoli.json
 ad6710998f7abdc0726e86aa3dbed6a364c595d3 data/collectorsreap/advancements/recipes/food/lucuma_gazpacho.json
 0bdffdb3e2d012436b5406c6a895db2ff7652e33 data/collectorsreap/advancements/recipes/food/lucuma_ice_cream.json
 f05ea686c3a09fd70d88f1c5c8b06d703734c4c2 data/collectorsreap/advancements/recipes/food/lucuma_milkshake.json
@@ -243,6 +244,7 @@ c63c049a625d452fa7b47e1d31c38742de1d46e9 data/collectorsreap/recipes/food/lime_i
 63b00ce312d7928c19cf3b6300727a81b685b2c4 data/collectorsreap/recipes/food/lucuma_bread.json
 4430332087db6f981f3a93a67b600bbc0e2a7dd9 data/collectorsreap/recipes/food/lucuma_cake.json
 fbe8027a26c7c2b42220d825f7bec417a56da69d data/collectorsreap/recipes/food/lucuma_cake_from_slices.json
+298ca55ad8716defe83da79126a147b57259fdd4 data/collectorsreap/recipes/food/lucuma_cannoli.json
 aa603dd534c29a3e2092cacc4b1d15374f5a24c2 data/collectorsreap/recipes/food/lucuma_gazpacho.json
 1d376f693d9b9f76b836ccd13abc88744d392310 data/collectorsreap/recipes/food/lucuma_ice_cream.json
 ffd330c6123139a9afb7c31ef66c6b7b888fb65e data/collectorsreap/recipes/food/lucuma_milkshake.json

@@ -336,6 +336,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.STUFFED_PASTA_SHELLS, "Stuffed Pasta Shells");
 		addItem(CRItems.BULLET_PEPPER_POPPER, "Bullet Pepper Popper");
 		addItem(CRItems.CANNOLI, "Cannoli");
+		addItem(CRItems.LUCUMA_CANNOLI, "Lucuma Cannoli");
 		addItem(CRItems.COFFEE_CANNOLI, "Coffee Cannoli");
 		addItem(CRItems.CHOCOLATE_CANNOLI, "Chocolate Cannoli");
 		addItem(CRItems.MINT_CANNOLI, "Mint Cannoli");

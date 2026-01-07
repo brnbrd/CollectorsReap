@@ -297,6 +297,13 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.addIngredient(Items.SUGAR, 2)
 				.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
 			"food/cannoli", finished, enabled(CRItems.CANNOLI), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
+		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.LUCUMA_CANNOLI.get(), 1, 200, 1F)
+				.addIngredient(ForgeTags.DOUGH)
+				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)
+				.addIngredient(Items.SUGAR)
+				.addIngredient(CRItemTags.FRUITS_LUCUMA)
+				.unlockedBy("has_cream_cheese", has(CRItemTags.CHEESE_MILD_CREAM)),
+			"food/lucuma_cannoli", finished, enabled(CRItems.LUCUMA_CANNOLI), enabled(CRItems.CANNOLI), enabled(CRItems.LUCUMA), enabled(CRItems.LIME), enabled(CRItems.CREAM_CHEESE));
 		wrap(CookingPotRecipeBuilder.cookingPotRecipe(CRItems.COFFEE_CANNOLI.get(), 1, 200, 1F)
 				.addIngredient(ForgeTags.DOUGH)
 				.addIngredient(CRItemTags.CHEESE_MILD_CREAM)

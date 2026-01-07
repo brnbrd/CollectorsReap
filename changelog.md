@@ -1,6 +1,12 @@
 ## Version History
 
 
+# 1.5.5
+
+### Updates
+- Added Lucuma Cannoli
+
+
 # 1.5.4
 
 ### Updates

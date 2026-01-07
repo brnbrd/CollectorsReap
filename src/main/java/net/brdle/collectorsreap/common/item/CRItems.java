@@ -331,6 +331,8 @@ public class CRItems {
 		bowlFoodItem(Nutrition.STUFFED_PASTA_SHELLS), true, false);
 	public static final RegistryObject<Item> CANNOLI = registerFood("cannoli",
 		(new Item.Properties()).food(Nutrition.CANNOLI), true, false);
+	public static final RegistryObject<Item> LUCUMA_CANNOLI = registerFood("lucuma_cannoli",
+		(new Item.Properties()).food(Nutrition.LUCUMA_CANNOLI), true, false);
 	public static final RegistryObject<Item> COFFEE_CANNOLI = registerItem("coffee_cannoli", () ->
 		new CompatConsumable((new Item.Properties()).food(Nutrition.COFFEE_CANNOLI),
 			true, false, Modid.FR));

@@ -304,6 +304,10 @@ public class Nutrition {
 	public static final FoodProperties CANNOLI = (new FoodProperties.Builder())
 		.nutrition(8).saturationMod(1.25F)
 		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 1), 1F).build();
+	public static final FoodProperties LUCUMA_CANNOLI = (new FoodProperties.Builder())
+		.nutrition(8).saturationMod(1.25F)
+		.effect(() -> new MobEffectInstance(CREffects.REBOUND.get(), 600, 0), 1F)
+		.effect(() -> new MobEffectInstance(CREffects.CORROSION.get(), 600, 1), 1F).build();
 	public static final FoodProperties COFFEE_CANNOLI = (new FoodProperties.Builder())
 		.nutrition(8).saturationMod(1.25F)
 		.effect(() -> new MobEffectInstance(CompatEffects.getCaffeinated(), 400, 2), 1F)
