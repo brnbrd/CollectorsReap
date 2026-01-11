@@ -1,5 +1,6 @@
 package net.brdle.collectorsreap.compat.jade;
 
+import net.brdle.collectorsreap.common.block.FruitBushBlock;
 import net.brdle.collectorsreap.common.block.TallBushCropBlock;
 import snownee.jade.api.IWailaClientRegistration;
 import snownee.jade.api.IWailaCommonRegistration;
@@ -10,11 +11,11 @@ import snownee.jade.api.WailaPlugin;
 public class CRJadePlugin implements IWailaPlugin {
 
 	@Override
-	public void register(IWailaCommonRegistration registration) {
-	}
+	public void register(IWailaCommonRegistration registration) {}
 
 	@Override
 	public void registerClient(IWailaClientRegistration registration) {
 		registration.registerBlockComponent(CRCropProgress.INSTANCE, TallBushCropBlock.class);
+		registration.registerBlockComponent(CRCropProgress.INSTANCE, FruitBushBlock.class);
 	}
 }
