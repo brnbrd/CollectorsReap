@@ -1,6 +1,9 @@
 {
   "type": "farmersdelight:wild_crop",
   "config": {
+    "tries": 25,
+    "xz_spread": 5,
+    "y_spread": 3,
     "primary_feature": {
       "feature": {
         "type": "minecraft:simple_block",
@@ -26,11 +29,7 @@
               {
                 "type": "minecraft:matching_block_tag",
                 "tag": "collectorsreap:dragon_fruit_spawnable_on",
-                "offset": [
-                  0,
-                  -1,
-                  0
-                ]
+                "offset": [0, -1, 0]
               }
             ]
           }
@@ -62,19 +61,12 @@
               {
                 "type": "minecraft:matching_block_tag",
                 "tag": "collectorsreap:dragon_fruit_spawnable_on",
-                "offset": [
-                  0,
-                  -1,
-                  0
-                ]
+                "offset": [0, -1, 0]
               }
             ]
           }
         }
       ]
-    },
-    "tries": 25,
-    "xz_spread": 5,
-    "y_spread": 3
+    }
   }
 }

@@ -1,7 +1,6 @@
 package net.brdle.collectorsreap.compat.jade;
 
 import net.brdle.collectorsreap.Util;
-import net.brdle.collectorsreap.common.block.FruitBushBlock;
 import net.brdle.collectorsreap.common.block.TallBushCropBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -14,6 +13,7 @@ import snownee.jade.api.config.IPluginConfig;
 
 public enum CRCropProgress implements IBlockComponentProvider {
 	INSTANCE;
+	public static final ResourceLocation CROP_PROGRESS = Util.cr("crop_progress");
 
 	private static void addMaturityTooltip(ITooltip tooltip, int age, int maxAge) {
 		tooltip.add(Component.translatable("tooltip.jade.crop_growth",
@@ -28,13 +28,11 @@ public enum CRCropProgress implements IBlockComponentProvider {
 		final BlockState state = blockAccessor.getBlockState();
 		if (state.getBlock() instanceof TallBushCropBlock crop) {
 			addMaturityTooltip(tooltip, state.getValue(crop.getAgeProperty()), crop.getMaxAge());
-		} else if (state.getBlock() instanceof FruitBushBlock fruitBush) {
-			addMaturityTooltip(tooltip, state.getValue(fruitBush.getAgeProperty()), fruitBush.getMaxAge());
 		}
 	}
 
 	@Override
 	public ResourceLocation getUid() {
-		return Util.cr("crop_progress");
+		return CROP_PROGRESS;
 	}
 }

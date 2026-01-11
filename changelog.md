@@ -6,6 +6,8 @@
 ### Updates
 - Added Straw Brush
 - Added Lucuma Cannoli
+- Shrunk bounding box for early stages of Sniffer plants
+- Lime Bush patches are now a bit more common in Flower Forests
 
 ### Fixes
 - Added back missing [Jade](https://www.curseforge.com/minecraft/mc-mods/jade) support for fruit bush growth

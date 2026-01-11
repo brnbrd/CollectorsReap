@@ -14,15 +14,12 @@ import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.PlantType;
 import java.util.Optional;
 import org.jetbrains.annotations.NotNull;
@@ -38,8 +35,8 @@ public class PomegranateBushBlock extends FruitBushBlock {
 	}
 
 	@Override
-	protected boolean mayPlaceOn(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
-		return state.is(CRBlockTags.POMEGRANATE_FAST_ON) || state.is(CRBlockTags.CROPS_PLANTABLE_ON);
+	public boolean mayPlaceOn(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
+		return super.mayPlaceOn(state, level, pos) || state.is(CRBlockTags.POMEGRANATE_FAST_ON);
 	}
 
 	@Override
@@ -49,12 +46,11 @@ public class PomegranateBushBlock extends FruitBushBlock {
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
-		return switch (state.getValue(AGE)) {
+	public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+		return switch (state.getValue(this.getAgeProperty())) {
 			case 0 -> SAPLING_SHAPE;
 			case 1 -> MID_GROWTH_SHAPE;
-			default -> state.hasProperty(HALF) && state.getValue(HALF) == DoubleBlockHalf.UPPER ?
-				SHAPE_UPPER : SHAPE_LOWER;
+			default -> this.isLower(state) ? SHAPE_LOWER : SHAPE_UPPER;
 		};
 	}
 
@@ -83,30 +79,24 @@ public class PomegranateBushBlock extends FruitBushBlock {
 		return super.isSpecial(level, pos) && level.getBlockState(pos.below()).is(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON);
 	}
 
-	// Can receive boost from Nether or block below.
-	@SuppressWarnings("deprecation")
 	@Override
-	public void randomTick(@NotNull BlockState state, @NotNull ServerLevel server, @NotNull BlockPos pos, @NotNull RandomSource random) {
-		if (
-			state.getValue(AGE) < MAX_AGE &&
-			state.getValue(HALF) == DoubleBlockHalf.LOWER
-		) {
-			int growthRate = (server.getBlockState(pos.below()).is(CRBlockTags.POMEGRANATE_FAST_ON)) ? 8 : 12;
-			if (server.dimension() == Level.NETHER) {
-				growthRate -= 4;
-			} else if (state.getValue(AGE) == MAX_AGE - 1 && CRConfig.POMEGRANATE_POLLINATION.get()) {
-				return;
-			}
-			if (ForgeHooks.onCropsGrowPre(server, pos, state, random.nextInt(growthRate) == 0)) {
-				this.performBonemeal(server, random, pos, state);
-				ForgeHooks.onCropsGrowPost(server, pos, state);
-			}
-		}
+	public boolean isRandomlyTicking(@NotNull BlockState state) {
+		return (
+			!(CRConfig.POMEGRANATE_POLLINATION.get() && state.getValue(this.getAgeProperty()) >= this.getMaxAge() - 1) &&
+			super.isRandomlyTicking(state)
+		);
 	}
 
+	// Can receive boost from Nether or block below.
 	@Override
-	public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, BlockState state, boolean isClient) {
-		return state.getValue(AGE) < MAX_AGE;
+	public void randomTick(@NotNull BlockState state, @NotNull ServerLevel server, @NotNull BlockPos pos, @NotNull RandomSource random) {
+		int growthRate = (server.getBlockState(pos.below()).is(CRBlockTags.POMEGRANATE_FAST_ON)) ? 8 : 12;
+		if (server.dimension() == Level.NETHER) {
+			growthRate -= 4;
+		}
+		if (random.nextInt(growthRate) == 0) {
+			this.grow(server, state, pos, 1);
+		}
 	}
 
 	@Override
@@ -114,7 +104,6 @@ public class PomegranateBushBlock extends FruitBushBlock {
 		return false;
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity entity) {
 		if (
@@ -122,11 +111,11 @@ public class PomegranateBushBlock extends FruitBushBlock {
 			level instanceof ServerLevel server &&
 			CRConfig.POMEGRANATE_POLLINATION.get() &&
 			CRConfig.FAST_POLLINATE.get() &&
-			entity instanceof Bee &&
-			state.getValue(AGE) == MAX_AGE - 1 &&
-			level.getRandom().nextInt(150) == 0
+			entity instanceof Bee bee &&
+			bee.hasNectar() &&
+			state.getValue(this.getAgeProperty()) == this.getMaxAge() - 1
 		) {
-			this.performBonemeal(server, level.getRandom(), pos, state);
+			this.grow(server, state, pos, 1);
 		}
 	}
 
@@ -134,8 +123,7 @@ public class PomegranateBushBlock extends FruitBushBlock {
 	@Override
 	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
 		if (context instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee && CRConfig.POMEGRANATE_POLLINATION.get()) {
-			return state.getValue(HALF) == DoubleBlockHalf.LOWER ?
-				Block.box(0D, 0D, 0D, 16D, 8D, 16D) : Shapes.empty();
+			return this.isLower(state) ? Block.box(0D, 0D, 0D, 16D, 8D, 16D) : Shapes.empty();
 		}
 		return getShape(state, level, pos, context);
 	}

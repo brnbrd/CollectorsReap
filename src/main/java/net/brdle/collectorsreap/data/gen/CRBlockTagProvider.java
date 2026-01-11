@@ -39,6 +39,9 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.addTag(ModTags.MUSHROOM_COLONY_GROWABLE_ON)
 			.addTag(BlockTags.MUSHROOM_GROW_BLOCK)
 			.addTag(BlockTags.DIRT);
+		this.tag(CRBlockTags.LIME_SPAWNABLE_ON)
+			.addTag(BlockTags.DIRT)
+			.addTag(CRBlockTags.CROPS_PLANTABLE_ON);
 		this.tag(CRBlockTags.DRAGON_FRUIT_SPAWNABLE_ON)
 			.addTag(Tags.Blocks.SAND_RED);
 		this.tag(CRBlockTags.STYGIAN_POMEGRANATE_GROWABLE_ON)

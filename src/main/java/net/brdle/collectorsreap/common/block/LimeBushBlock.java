@@ -3,6 +3,7 @@ package net.brdle.collectorsreap.common.block;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.event.CRSoundEvents;
 import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.data.CRBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -13,15 +14,12 @@ import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ForgeHooks;
 import org.jetbrains.annotations.NotNull;
 
 public class LimeBushBlock extends FruitBushBlock {
@@ -39,14 +37,18 @@ public class LimeBushBlock extends FruitBushBlock {
 		super(properties);
 	}
 
+	@Override
+	public boolean mayPlaceOn(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos) {
+		return super.mayPlaceOn(state, level, pos) || state.is(CRBlockTags.LIME_SPAWNABLE_ON);
+	}
+
 	@SuppressWarnings("deprecation")
 	@Override
-	public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
-		return switch (state.getValue(AGE)) {
+	public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+		return switch (state.getValue(this.getAgeProperty())) {
 			case 0 -> SMALL_SHAPE;
 			case 1 -> MEDIUM_SHAPE;
-			default -> state.hasProperty(HALF) && state.getValue(HALF) == DoubleBlockHalf.UPPER ?
-				SHAPE_UPPER : SHAPE_LOWER;
+			default -> this.isLower(state) ? SHAPE_LOWER : SHAPE_UPPER;
 		};
 	}
 
@@ -60,19 +62,18 @@ public class LimeBushBlock extends FruitBushBlock {
 		return CRItems.LIME_SEEDS.get();
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
-	public void randomTick(BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
-		int age = state.getValue(AGE);
-		if (
-			!(CRConfig.LIME_POLLINATION.get() && age == MAX_AGE - 1) && // Making sure we aren't a flowering state bush that needs pollination
-			age < MAX_AGE &&
-			state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(STUNTED) &&
-			level.getRawBrightness(pos.above().above(), 0) >= 9 &&
-			ForgeHooks.onCropsGrowPre(level, pos, state, random.nextInt(9) == 0)
-		) {
-			this.performBonemeal(level, random, pos, state);
-			ForgeHooks.onCropsGrowPost(level, pos, state);
+	public boolean isRandomlyTicking(@NotNull BlockState state) {
+		return (
+			!(CRConfig.LIME_POLLINATION.get() && state.getValue(this.getAgeProperty()) >= this.getMaxAge() - 1) &&
+			super.isRandomlyTicking(state)
+		);
+	}
+
+	@Override
+	public void randomTick(@NotNull BlockState state, @NotNull ServerLevel level, @NotNull BlockPos pos, @NotNull RandomSource random) {
+		if (level.getRawBrightness(pos.above().above(), 0) >= 9 && random.nextInt(9) == 0) {
+			this.grow(level, state, pos, 1);
 		}
 	}
 
@@ -81,28 +82,22 @@ public class LimeBushBlock extends FruitBushBlock {
 	public boolean isBonemealSuccess(@NotNull Level level, @NotNull RandomSource randomSource, @NotNull BlockPos blockPos, @NotNull BlockState blockState) {
 		return (
 			super.isBonemealSuccess(level, randomSource, blockPos, blockState) &&
-			(!CRConfig.LIME_POLLINATION.get() || blockState.getValue(AGE) < (MAX_AGE - 1))
+			(!CRConfig.LIME_POLLINATION.get() || blockState.getValue(this.getAgeProperty()) < this.getMaxAge() - 1)
 		);
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, BlockState state, boolean isClient) {
-		return state.getValue(AGE) < MAX_AGE;
-	}
-
-	@SuppressWarnings("deprecation")
-	@Override
-	public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity e) {
+	public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity entity) {
 		if (
 			!level.isClientSide() &&
 			level instanceof ServerLevel server &&
 			CRConfig.LIME_POLLINATION.get() &&
 			CRConfig.FAST_POLLINATE.get() &&
-			e instanceof Bee &&
-			state.getValue(AGE) == MAX_AGE - 1 &&
-			server.getRandom().nextInt(150) == 0
+			entity instanceof Bee bee &&
+			bee.hasNectar() &&
+			state.getValue(this.getAgeProperty()) == this.getMaxAge() - 1
 		) {
-			this.performBonemeal(server, server.getRandom(), pos, state);
+			this.grow(server, state, pos, 1);
 		}
 	}
 
@@ -111,7 +106,7 @@ public class LimeBushBlock extends FruitBushBlock {
 	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
 		if (context instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee && CRConfig.LIME_POLLINATION.get()) {
 			return (
-				state.getValue(HALF) == DoubleBlockHalf.LOWER ?
+				this.isLower(state) ?
 				Block.box(0D, 0D, 0D, 16D, 8D, 16D) :
 				Shapes.empty()
 			);

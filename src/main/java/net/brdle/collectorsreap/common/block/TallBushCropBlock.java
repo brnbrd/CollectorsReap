@@ -16,13 +16,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.common.PlantType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class TallBushCropBlock extends DoublePlantBlock implements BonemealableBlock {
 	public TallBushCropBlock(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.getStateDefinition().any()
+		this.registerDefaultState(this.defaultBlockState()
 			.setValue(this.getAgeProperty(), 0)
 			.setValue(HALF, DoubleBlockHalf.LOWER)
 		);
@@ -44,13 +46,19 @@ public abstract class TallBushCropBlock extends DoublePlantBlock implements Bone
 		super.createBlockStateDefinition(builder);
 	}
 
-	public @NotNull BlockState getStateForAge(final int age) {
-		return this.defaultBlockState().setValue(this.getAgeProperty(), age);
-	}
-
 	@Override
 	public @Nullable BlockState getStateForPlacement(@NotNull BlockPlaceContext context) {
-		return this.defaultBlockState();
+		final BlockPos blockpos = context.getClickedPos();
+		final Level level = context.getLevel();
+		return (
+			blockpos.getY() < level.getMaxBuildHeight() - 1 &&
+			level.getBlockState(blockpos.above()).canBeReplaced(context) ?
+			this.defaultBlockState() : null
+		);
+	}
+
+	public @NotNull BlockState getStateForAge(final int age) {
+		return this.defaultBlockState().setValue(this.getAgeProperty(), age);
 	}
 
 	public boolean isLower(@NotNull BlockState state) {
@@ -74,18 +82,8 @@ public abstract class TallBushCropBlock extends DoublePlantBlock implements Bone
 	}
 
 	@Override
-	public boolean canSurvive(@NotNull BlockState state, @NotNull LevelReader level, @NotNull BlockPos pos) {
-		if (this.isLower(state)) {
-			final BlockPos below = pos.below();
-			final BlockState belowState = level.getBlockState(below);
-			return (
-				this.mayPlaceOn(belowState, level, below) &&
-				belowState.canSustainPlant(level, below, Direction.UP, this) &&
-				this.sufficientLight(level, pos) &&
-				(!this.isTall(state) || this.isUpper(level.getBlockState(pos.above())))
-			);
-		}
-		return super.canSurvive(state, level, pos);
+	public PlantType getPlantType(BlockGetter level, BlockPos pos) {
+		return PlantType.PLAINS;
 	}
 
 	public boolean canGrowInto(LevelReader level, BlockPos pos) {
@@ -104,7 +102,10 @@ public abstract class TallBushCropBlock extends DoublePlantBlock implements Bone
 
 	public void grow(ServerLevel level, BlockState state, BlockPos pos, int ageIncrement) {
 		final int newAge = Math.min(state.getValue(this.getAgeProperty()) + ageIncrement, this.getMaxAge());
-		if (this.canGrow(level, pos, state, newAge)) {
+		if (
+			this.canGrow(level, pos, state, newAge) &&
+			ForgeHooks.onCropsGrowPre(level, pos, state, true)
+		) {
 			final BlockState newState = this.getStateForAge(newAge);
 			level.setBlock(pos, copyWaterloggedFrom(
 				level, pos, newState.setValue(HALF, DoubleBlockHalf.LOWER)
@@ -115,6 +116,7 @@ public abstract class TallBushCropBlock extends DoublePlantBlock implements Bone
 					level, above, newState.setValue(HALF, DoubleBlockHalf.UPPER)
 				), 3);
 			}
+			ForgeHooks.onCropsGrowPost(level, pos, state);
 		}
 	}
 
@@ -158,11 +160,6 @@ public abstract class TallBushCropBlock extends DoublePlantBlock implements Bone
 	public void setPlacedBy(@NotNull Level level, @NotNull BlockPos pos, @NotNull BlockState state, @NotNull LivingEntity placer, @NotNull ItemStack stack) {
 	}
 
-	@Override
-	public boolean isBonemealSuccess(@NotNull Level level, @NotNull RandomSource random, @NotNull BlockPos pos, @NotNull BlockState state) {
-		return true;
-	}
-
 	private @Nullable TallBushCropBlock.PosAndState getLowerHalf(LevelReader level, BlockPos pos, BlockState state) {
 		if (isLower(state)) {
 			return new TallBushCropBlock.PosAndState(pos, state);
@@ -171,6 +168,11 @@ public abstract class TallBushCropBlock extends DoublePlantBlock implements Bone
 			BlockState blockstate = level.getBlockState(blockpos);
 			return isLower(blockstate) ? new TallBushCropBlock.PosAndState(blockpos, blockstate) : null;
 		}
+	}
+
+	@Override
+	public boolean isBonemealSuccess(@NotNull Level level, @NotNull RandomSource random, @NotNull BlockPos pos, @NotNull BlockState state) {
+		return true;
 	}
 
 	@Override

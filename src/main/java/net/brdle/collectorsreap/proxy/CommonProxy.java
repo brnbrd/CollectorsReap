@@ -12,7 +12,6 @@ import net.brdle.collectorsreap.common.fluid.CRFluids;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.common.loot.CRLootItemConditions;
 import net.brdle.collectorsreap.common.loot.CRLootModifiers;
-import net.brdle.collectorsreap.common.world.CRFeatures;
 import net.brdle.collectorsreap.compat.Modid;
 import net.brdle.collectorsreap.data.gen.Generators;
 import net.brdle.collectorsreap.data.pack.CRFoliagePlacerTypes;
@@ -39,7 +38,6 @@ public class CommonProxy {
 		CRParticleTypes.create(modBus);
 		CREffects.create(modBus);
 		CRCreativeTab.create(modBus);
-		CRFeatures.create(modBus);
 		CRLootItemConditions.create(modBus);
 		CRLootModifiers.create(modBus);
 		CRSoundEvents.create(modBus);
