@@ -4,7 +4,14 @@
 # 1.5.5
 
 ### Updates
+- Added Straw Brush
 - Added Lucuma Cannoli
+
+### Fixes
+- Added back missing [Jade](https://www.curseforge.com/minecraft/mc-mods/jade) support for fruit bush growth
+
+### Translations
+- Updated ru_ru (merged [#67](https://github.com/brnbrd/CollectorsReap/pull/67))
 
 
 # 1.5.4

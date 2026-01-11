@@ -331,6 +331,14 @@ public class CRItemTagProvider extends ItemTagsProvider {
 		this.tag(CRItemTags.COOKED_NUTS)
 			.addOptional(Modid.WS.rl("roasted_chestnuts"))
 			.addOptional(Modid.SOB.rl("roasted_peanuts"));
+		this.tag(CRItemTags.ROPES)
+			.add(ModItems.ROPE.get())
+			.addOptional(Modid.SUP.rl("rope"))
+			.addOptional(Modid.Q.rl("rope"));
+		this.tag(CRItemTags.STRAW)
+			.add(ModItems.STRAW.get())
+			.addOptionalTag(Modid.SUP.rl("straw"))
+			.addOptional(Modid.SUP.rl("flax"));
 
 		// Diet
 		this.tag(CRItemTags.DIET_FRUITS)

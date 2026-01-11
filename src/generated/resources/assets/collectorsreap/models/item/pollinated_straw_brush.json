@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "collectorsreap:item/pollinated_straw_brush"
+  }
+}

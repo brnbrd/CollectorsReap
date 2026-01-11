@@ -1,0 +1,13 @@
+{
+  "values": [
+    "farmersdelight:straw",
+    {
+      "id": "#supplementaries:straw",
+      "required": false
+    },
+    {
+      "id": "supplementaries:flax",
+      "required": false
+    }
+  ]
+}

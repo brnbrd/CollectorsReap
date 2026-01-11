@@ -1,6 +1,7 @@
 package net.brdle.collectorsreap.client;
 
 import com.teamabnormals.blueprint.core.util.DataUtil;
+import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.client.model.*;
 import net.brdle.collectorsreap.client.particle.AcidParticle;
 import net.brdle.collectorsreap.client.particle.ShockwaveParticle;
@@ -9,8 +10,11 @@ import net.brdle.collectorsreap.client.renderer.*;
 import net.brdle.collectorsreap.common.CRParticleTypes;
 import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.entity.CREntities;
+import net.brdle.collectorsreap.common.item.CRItems;
+import net.brdle.collectorsreap.common.item.StrawBrushItem;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
@@ -19,6 +23,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.RegistryObject;
 import java.util.Arrays;
 import java.util.Collections;
@@ -27,6 +32,18 @@ import java.util.List;
 public class ClientEvents {
 	private static final List<RegistryObject<Block>> FOLIAGE_COLOR_BLOCKS = Arrays.asList(CRBlocks.LUCUMA_LEAVES, CRBlocks.LUCUMA_LEAF_PILE);
 	private static final List<RegistryObject<Block>> GRASS_COLOR_BLOCKS = Collections.emptyList();
+
+	@SubscribeEvent
+	public void setupClient(FMLClientSetupEvent e){
+		e.enqueueWork(() -> {
+			ItemProperties.register(
+				CRItems.STRAW_BRUSH.get(),
+				Util.cr("pollinated"),
+				(stack, level, entity, seed) ->
+					StrawBrushItem.isPollinated(stack) ? 1.0F : 0.0F
+			);
+		});
+	}
 
 	@SubscribeEvent
 	public void registerBlockColors(RegisterColorHandlersEvent.Block e) {
@@ -72,10 +89,4 @@ public class ClientEvents {
 		e.registerSpriteSet(CRParticleTypes.SHOCKWAVE.get(), ShockwaveParticle.Provider::new);
 		e.registerSpriteSet(CRParticleTypes.SURGE.get(), SurgeParticle.Provider::new);
 	}
-
-	/*
-	@SubscribeEvent
-    public void setupClient(FMLClientSetupEvent e){
-    }
-	*/
 }

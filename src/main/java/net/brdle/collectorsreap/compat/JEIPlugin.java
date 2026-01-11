@@ -12,7 +12,7 @@ import net.brdle.collectorsreap.common.block.CRBlocks;
 import net.brdle.collectorsreap.common.config.CRConfig;
 import net.brdle.collectorsreap.common.fluid.CRFluids;
 import net.brdle.collectorsreap.common.item.CRItems;
-import net.brdle.collectorsreap.data.CRItemTags;
+import net.brdle.collectorsreap.common.item.StrawBrushItem;
 import net.brdle.collectorsreap.proxy.CommonProxy;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -124,6 +124,15 @@ public class JEIPlugin implements IModPlugin {
 		String dartTranslationKey = "desc." + CollectorsReap.MODID + "." + Util.name(CRItems.URCHIN_DART);
 		if (CRConfig.verify(CRItems.URCHIN_DART)) {
 			registration.addItemStackInfo(Util.getStack(CRItems.URCHIN_DART), Component.translatable(dartTranslationKey));
+		}
+
+		// Straw Brush
+		String strawBrushTranslationKey = "desc." + CollectorsReap.MODID + "." + Util.name(CRItems.STRAW_BRUSH);
+		if (CRConfig.verify(CRItems.STRAW_BRUSH)) {
+			registration.addItemStackInfo(
+				List.of(Util.getStack(CRItems.STRAW_BRUSH), StrawBrushItem.getPollinatedStack()),
+				Component.translatable(strawBrushTranslationKey)
+			);
 		}
 
 		if (Modid.MND.loaded()) {

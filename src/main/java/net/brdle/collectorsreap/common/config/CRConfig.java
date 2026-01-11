@@ -21,6 +21,8 @@ public class CRConfig {
 	public static final ForgeConfigSpec.DoubleValue SURGE_ONE_MULTIPLIER;
 	public static final ForgeConfigSpec.DoubleValue SURGE_TWO_MULTIPLIER;
 	public static final ForgeConfigSpec.DoubleValue REBOUND_CHANCE;
+	public static final ForgeConfigSpec.IntValue STRAW_BRUSH_DURABILITY;
+	public static final ForgeConfigSpec.IntValue STRAW_BRUSH_BONE_MEALS;
 
 	static {
 		final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
@@ -38,12 +40,18 @@ public class CRConfig {
 		STYGIAN_POMEGRANATE_RARITY = BUILDER
 			.comment("(1/x) Chance to pick a Stygian Pomegranate from a bush when all conditions are met.")
 			.defineInRange("stygian_pomegranate_rarity", 10, 1, 100);
+		STRAW_BRUSH_DURABILITY = BUILDER
+			.comment("Maximum durability of the Straw Brush.")
+			.defineInRange("straw_brush_durability", 8, 1, Integer.MAX_VALUE);
+		STRAW_BRUSH_BONE_MEALS = BUILDER
+			.comment("Amount of times a Pollen Covered Straw Brush will perform a Bone Meal action on a growable.")
+			.defineInRange("straw_brush_bone_meals", 2, 1, 100);
 		BUILDER.pop();
 
 		BUILDER.push("Effects");
 		PANETTONE_DURATION = BUILDER
 			.comment("Length in seconds of effect gained by eating Panettone.")
-			.defineInRange("panettone_duration", 20, 0, 600);
+			.defineInRange("panettone_duration", 20, 0, Integer.MAX_VALUE);
 		SURGE_ZERO_MULTIPLIER = BUILDER
 			.comment("Attack damage multiplier gained from Surge I.")
 			.defineInRange("surge_zero_multiplier", 1.2D, 1.0D, 10.0D);

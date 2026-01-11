@@ -1,4 +1,4 @@
-// 1.20.1	2026-01-06T19:34:02.4819256	Item Models: collectorsreap
+// 1.20.1	2026-01-10T17:38:05.413325	Item Models: collectorsreap
 b183daae948efe76cbf209119af41701e5b72e95 assets/collectorsreap/models/item/adzuki_gummy.json
 56db9a7317e6d5a63c63af71a4011b16c66c00e7 assets/collectorsreap/models/item/aloe_gummy.json
 b27cb012c75da3137768f12a8074eab65874647a assets/collectorsreap/models/item/apple_gummy.json
@@ -161,6 +161,7 @@ d4efc3bc159cf4a106364d6649a0f5ae76fc5392 assets/collectorsreap/models/item/plati
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/collectorsreap/models/item/platinum_bass_spawn_egg.json
 de1dc749396a3ed266e3349ded6ba54da03341dc assets/collectorsreap/models/item/platinum_bass_stew.json
 5039aea8bd8e8f53f122b163057a1dec2fccc8a0 assets/collectorsreap/models/item/platinum_bass_stew_cup.json
+e23ae14a7c445cd8e306125c2c7850944b6456e8 assets/collectorsreap/models/item/pollinated_straw_brush.json
 512cfbb5816f3fe1fbe23ebed1e808cf9e0e7011 assets/collectorsreap/models/item/pomegranate.json
 e87f9aaa6dcdf913d921534fb71d5842c670346b assets/collectorsreap/models/item/pomegranate_bean_salad.json
 20850342ed88f9410c77215b831de0fe1aecaf1e assets/collectorsreap/models/item/pomegranate_black_tea.json
@@ -211,6 +212,7 @@ ed537ac28c2a4f0a80dc82c0e4f3dbdf1c37d0f2 assets/collectorsreap/models/item/skull
 92c7a2ddc1f45c0d639fd0e87999c1e7000ffa91 assets/collectorsreap/models/item/strawberry_cannoli.json
 226781c445029a8f1b33b334d03018e09dba6a25 assets/collectorsreap/models/item/strawberry_gummy.json
 7fb6fe8fb5b5ba66c4a4acf564e784fd5fd98ecd assets/collectorsreap/models/item/strawberry_jam_bun.json
+b1ad894aba038fd815c4ca14fce8ddbaa8003672 assets/collectorsreap/models/item/straw_brush.json
 f148a4bc25ded30451fae5018eedba6ca8d4ea03 assets/collectorsreap/models/item/stripped_lucuma_log.json
 17c22857ed96521375b99d104cb80ce5dfc90677 assets/collectorsreap/models/item/stripped_lucuma_wood.json
 33358f0590ef8738d1ef8832a4f30cc1b1ce47d7 assets/collectorsreap/models/item/strong_limbo_brew.json

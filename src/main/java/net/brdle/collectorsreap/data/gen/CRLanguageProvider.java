@@ -70,6 +70,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addTooltip("requires_empty_tag", "Requires empty tag:");
 		addTooltip("requires_tag", "Requires tag:");
 		addTooltip("requires_modid", "Requires modid:");
+		addCRTooltip(Util.name(CRItems.STRAW_BRUSH) + ".pollinated", "Pollen Covered");
 		addCRTooltip(Util.name(CRItems.HEMP_GUMMY) + ".when_feeding", "When fed to a mob:");
 		add(FarmersDelight.MODID + ".tooltip.asparagus_aspic", "Tastes Funny");
 		add(FarmersDelight.MODID + ".tooltip.stygian_pomegranate", "Explosive");
@@ -92,6 +93,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.PINK_DRAGON_FRUIT), "Pink Dragon Fruits can be found as a wild bush in the badlands.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.LUCUMA), "Lucuma Saplings can be found in Ancient Cities, growing a tree that provides a powerful fruit.");
 		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.URCHIN_DART), "Poisonous projectiles that can be thrown by hand or fired using Bamboo in your offhand.");
+		add("desc." + CollectorsReap.MODID + "." + Util.name(CRItems.STRAW_BRUSH), "Steal pollen from a Bee and use it to allow a plant to reach later stages.");
 		add("itemGroup." + CollectorsReap.MODID, "Collector's Reap");
 		add("config.jade.plugin_" + CollectorsReap.MODID + ".crop_progress", "Crop Progress");
 	}
@@ -422,6 +424,7 @@ public class CRLanguageProvider extends LanguageProvider {
 		addItem(CRItems.COOKED_PLATINUM_BASS_SLICE, "Cooked Platinum Bass Slice");
 		addItem(CRItems.PLATINUM_BASS_STEW, "Platinum Bass Stew");
 		addItem(CRItems.PLATINUM_BASS_STEW_CUP, "Platinum Bass Stew Cup");
+		addItem(CRItems.STRAW_BRUSH, "Straw Brush");
 		addItem(CRItems.FISH_MIX, "Fish Mix");
 		addItem(CRItems.CHIEFTAIN_CRAB_SPAWN_EGG, "Chieftain Crab Spawn Egg");
 		addItem(CRItems.CHIEFTAIN_CRAB_BUCKET, "Bucket of Chieftain Crab");
@@ -467,6 +470,8 @@ public class CRLanguageProvider extends LanguageProvider {
 	}
 
 	private void addSubtitles() {
+		add(CollectorsReap.MODID + ".subtitle.straw_brush.collect", "Straw Brush collects");
+		add(CollectorsReap.MODID + ".subtitle.straw_brush.pollinate", "Straw Brush pollinates");
 		add(CollectorsReap.MODID + ".subtitle.urchin_dart.throw", "Urchin Dart thrown");
 		add(CollectorsReap.MODID + ".subtitle.urchin_dart.hit", "Urchin Dart hits");
 		add(CollectorsReap.MODID + ".subtitle.shimmering_pearl.throw", "Shimmering Pearl flies");

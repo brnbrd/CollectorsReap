@@ -76,37 +76,47 @@ public class LimeBushBlock extends FruitBushBlock {
 		}
 	}
 
-	// Can use Bone Meal up until reaching final stage, unless pollination is off
+	// Reaching the final stage requires pollination
 	@Override
-	public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, BlockState state, boolean pIsClient) {
-		return state.getValue(AGE) < (MAX_AGE - 1) || (!(CRConfig.LIME_POLLINATION.get() && state.getValue(AGE) < MAX_AGE));
+	public boolean isBonemealSuccess(@NotNull Level level, @NotNull RandomSource randomSource, @NotNull BlockPos blockPos, @NotNull BlockState blockState) {
+		return (
+			super.isBonemealSuccess(level, randomSource, blockPos, blockState) &&
+			(!CRConfig.LIME_POLLINATION.get() || blockState.getValue(AGE) < (MAX_AGE - 1))
+		);
+	}
+
+	@Override
+	public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, BlockState state, boolean isClient) {
+		return state.getValue(AGE) < MAX_AGE;
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public void entityInside(@NotNull BlockState pState, @NotNull Level pLevel, @NotNull BlockPos pPos, @NotNull Entity e) {
+	public void entityInside(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Entity e) {
 		if (
-			!pLevel.isClientSide() &&
+			!level.isClientSide() &&
+			level instanceof ServerLevel server &&
 			CRConfig.LIME_POLLINATION.get() &&
 			CRConfig.FAST_POLLINATE.get() &&
 			e instanceof Bee &&
-			pState.getValue(AGE) == MAX_AGE - 1 &&
-			pLevel.getRandom().nextInt(150) == 0
+			state.getValue(AGE) == MAX_AGE - 1 &&
+			server.getRandom().nextInt(150) == 0
 		) {
-			this.performBonemeal((ServerLevel) pLevel, pLevel.getRandom(), pPos, pState);
+			this.performBonemeal(server, server.getRandom(), pos, state);
 		}
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState pState, @NotNull BlockGetter pLevel, @NotNull BlockPos pPos, @NotNull CollisionContext pContext) {
-		if (pContext instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee && CRConfig.LIME_POLLINATION.get()) {
+	public @NotNull VoxelShape getCollisionShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {
+		if (context instanceof EntityCollisionContext ent && ent.getEntity() instanceof Bee && CRConfig.LIME_POLLINATION.get()) {
 			return (
-				pState.getValue(HALF) == DoubleBlockHalf.LOWER ?
-					Block.box(0D, 0D, 0D, 16D, 8D, 16D) : Shapes.empty()
+				state.getValue(HALF) == DoubleBlockHalf.LOWER ?
+				Block.box(0D, 0D, 0D, 16D, 8D, 16D) :
+				Shapes.empty()
 			);
 		}
-		return getShape(pState, pLevel, pPos, pContext);
+		return getShape(state, level, pos, context);
 	}
 
 	@Override

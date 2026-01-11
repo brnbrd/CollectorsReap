@@ -1021,6 +1021,16 @@ public class CRRecipeProvider extends BlueprintRecipeProvider implements ICondit
 				.requires(Items.SUGAR)
 				.unlockedBy("has_lucuma", has(CRItems.LUCUMA.get())),
 			"food/sunny_ice_cream", finished, enabled(CRItems.SUNNY_ICE_CREAM), not(tagEmpty(CRItemTags.ICE_CUBES)), modLoaded("neapolitan"));
+		wrap(shaped(RecipeCategory.TOOLS, CRItems.STRAW_BRUSH.get(), 1)
+				.pattern("r")
+				.pattern("a")
+				.pattern("s")
+				.define('r', CRItemTags.STRAW)
+				.define('a', Tags.Items.GEMS_AMETHYST)
+				.define('s', Tags.Items.RODS_WOODEN)
+				.unlockedBy("has_amethyst", has(Tags.Items.GEMS_AMETHYST))
+				.showNotification(true),
+			"straw_brush", finished, enabled(CRItems.STRAW_BRUSH));
 
 		// Lucuma Wood
 		wrap(shaped(RecipeCategory.BUILDING_BLOCKS, CRBlocks.LUCUMA_WOOD.get().asItem(), 3)

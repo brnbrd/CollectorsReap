@@ -1,4 +1,80 @@
+
 {
+  "item.straw_brush.collect": {
+    "sounds": [
+      {
+        "name": "item/brush/brushing_generic1",
+        "pitch": 0.8,
+        "volume": 0.4
+      },
+      {
+        "name": "item/brush/brushing_generic2",
+        "pitch": 0.8,
+        "volume": 0.4
+      },
+      {
+        "name": "item/brush/brushing_generic3",
+        "pitch": 0.8,
+        "volume": 0.4
+      },
+      {
+        "name": "item/brush/brushing_generic4",
+        "pitch": 0.8,
+        "volume": 0.4
+      }
+    ],
+    "subtitle": "collectorsreap.subtitle.straw_brush.collect"
+  },
+  "item.straw_brush.pollinate": {
+    "sounds": [
+      "item/bonemeal/bonemeal1",
+      {
+        "name": "item/bonemeal/bonemeal1",
+        "pitch": 0.9
+      },
+      {
+        "name": "item/bonemeal/bonemeal1",
+        "pitch": 1.1
+      },
+      "item/bonemeal/bonemeal2",
+      {
+        "name": "item/bonemeal/bonemeal2",
+        "pitch": 0.9
+      },
+      {
+        "name": "item/bonemeal/bonemeal2",
+        "pitch": 1.1
+      },
+      "item/bonemeal/bonemeal3",
+      {
+        "name": "item/bonemeal/bonemeal3",
+        "pitch": 0.9
+      },
+      {
+        "name": "item/bonemeal/bonemeal3",
+        "pitch": 1.1
+      },
+      "item/bonemeal/bonemeal4",
+      {
+        "name": "item/bonemeal/bonemeal4",
+        "pitch": 0.9
+      },
+      {
+        "name": "item/bonemeal/bonemeal4",
+        "pitch": 1.1
+      },
+      "item/bonemeal/bonemeal5",
+      {
+        "name": "item/bonemeal/bonemeal5",
+        "pitch": 0.9
+      },
+      {
+        "name": "item/bonemeal/bonemeal5",
+        "pitch": 1.1
+      }
+    ],
+    "subtitle": "collectorsreap.subtitle.straw_brush.pollinate"
+  },
   "block.lime_bush.pick_lime": {
     "subtitle": "collectorsreap.subtitle.lime.pick",
     "sounds": [

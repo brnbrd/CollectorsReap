@@ -235,6 +235,7 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 		this.generatedItem(CRItems.FISH_MIX);
 		this.generatedItem(CRItems.PLATINUM_BASS_STEW);
 		this.generatedItem(CRItems.PLATINUM_BASS_STEW_CUP);
+		this.strawBrush(CRItems.STRAW_BRUSH);
 
 		// Chieftain Crab
 		this.generatedItem(CRItems.CHIEFTAIN_CRAB);
@@ -343,6 +344,17 @@ public class CRItemModelProvider extends BlueprintItemModelProvider {
 
 	private void chest(RegistryObject<?> chestItem) {
 		this.withExistingParent(Util.name(chestItem), "blueprint:item/template_chest");
+	}
+
+	private void strawBrush(RegistryObject<?> brushItem) {
+		this.withExistingParent(Util.name(brushItem), mcLoc("item/handheld"))
+			.texture("layer0", modLoc("item/straw_brush"))
+			.override()
+				.predicate(modLoc("pollinated"), 1F)
+				.model(
+					this.withExistingParent("pollinated_" + Util.name(brushItem), mcLoc("item/handheld"))
+						.texture("layer0", modLoc("item/pollinated_straw_brush"))
+			).end();
 	}
 
 	private void otherTexture(RegistryObject<? extends ItemLike> item, RegistryObject<? extends ItemLike> textureItem) {

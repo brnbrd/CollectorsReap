@@ -4,10 +4,12 @@ import net.brdle.collectorsreap.CollectorsReap;
 import net.brdle.collectorsreap.Util;
 import net.brdle.collectorsreap.common.item.CRItems;
 import net.brdle.collectorsreap.common.item.IConfigured;
+import net.brdle.collectorsreap.common.item.StrawBrushItem;
 import net.brdle.collectorsreap.proxy.CommonProxy;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -25,8 +27,17 @@ public class CRCreativeTab {
 					.filter(object -> !CommonProxy.getHiddenItems().contains(object))
 					.map(RegistryObject::get)
 					.filter(item -> !(item instanceof IConfigured configured) || configured.enabled())
-					.forEach(output::accept)
+					.forEach(item -> handleItem(item, output))
 			).build());
+
+	private static void handleItem(Item item, CreativeModeTab.Output output) {
+		if (item instanceof StrawBrushItem brush) {
+			output.accept(brush);
+			output.accept(StrawBrushItem.getPollinatedStack());
+			return;
+		}
+		output.accept(item);
+	}
 
 	public static void create(IEventBus bus) {
 		TABS.register(bus);

@@ -105,8 +105,8 @@ public class PomegranateBushBlock extends FruitBushBlock {
 	}
 
 	@Override
-	public boolean isValidBonemealTarget(@NotNull LevelReader pLevel, @NotNull BlockPos pPos, @NotNull BlockState pState, boolean pIsClient) {
-		return false;
+	public boolean isValidBonemealTarget(@NotNull LevelReader level, @NotNull BlockPos pos, BlockState state, boolean isClient) {
+		return state.getValue(AGE) < MAX_AGE;
 	}
 
 	@Override

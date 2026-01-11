@@ -1,0 +1,37 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "collectorsreap:enabled",
+          "value": "straw_brush"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:crafting_shaped",
+        "category": "equipment",
+        "key": {
+          "a": {
+            "tag": "forge:gems/amethyst"
+          },
+          "r": {
+            "tag": "forge:straw"
+          },
+          "s": {
+            "tag": "forge:rods/wooden"
+          }
+        },
+        "pattern": [
+          "r",
+          "a",
+          "s"
+        ],
+        "result": {
+          "item": "collectorsreap:straw_brush"
+        },
+        "show_notification": true
+      }
+    }
+  ]
+}

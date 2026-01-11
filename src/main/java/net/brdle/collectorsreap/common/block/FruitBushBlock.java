@@ -50,6 +50,14 @@ public abstract class FruitBushBlock extends DoublePlantBlock implements Bonemea
 		);
 	}
 
+	public final IntegerProperty getAgeProperty() {
+		return AGE;
+	}
+
+	public final int getMaxAge() {
+		return MAX_AGE;
+	}
+
 	public static void placeAt(LevelAccessor level, BlockState state, BlockPos pos, int flags) {
 		BlockState belowState = state.setValue(HALF, DoubleBlockHalf.LOWER).setValue(STUNTED, false);
 		if (!belowState.hasProperty(AGE)) {

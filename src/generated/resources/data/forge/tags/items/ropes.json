@@ -1,0 +1,13 @@
+{
+  "values": [
+    "farmersdelight:rope",
+    {
+      "id": "supplementaries:rope",
+      "required": false
+    },
+    {
+      "id": "quark:rope",
+      "required": false
+    }
+  ]
+}

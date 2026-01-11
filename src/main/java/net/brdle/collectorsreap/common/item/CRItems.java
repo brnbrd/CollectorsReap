@@ -251,6 +251,9 @@ public class CRItems {
 		new CupItem((new Item.Properties()).food(Nutrition.PLATINUM_BASS_STEW_CUP), true, false));
 
 	// Tools
+	public static final RegistryObject<Item> STRAW_BRUSH = registerItem("straw_brush", () ->
+		new StrawBrushItem((new Item.Properties()).durability(8)));
+	public static final RegistryObject<Item> URCHIN_DART = registerItem("urchin_dart", () -> new UrchinDartItem((new Item.Properties())));
 	public static final Pair<RegistryObject<Item>, RegistryObject<Item>> LUCUMA_BOATS = HELPER.createBoatAndChestBoatItem("lucuma", CRBlocks.LUCUMA_PLANKS);
 	public static final RegistryObject<Item> LUCUMA_BOAT = LUCUMA_BOATS.getFirst();
 	public static final RegistryObject<Item> LUCUMA_CHEST_BOAT = LUCUMA_BOATS.getSecond();
@@ -416,7 +419,6 @@ public class CRItems {
 	public static final RegistryObject<Item> UNI_ROLL = registerFood("uni_roll", Nutrition.UNI_ROLL);
 	public static final RegistryObject<Item> URCHIN_TEST = registerItem("urchin_test", () -> new Item((new Item.Properties())));
 	public static final RegistryObject<Item> URCHIN_NEEDLE = registerItem("urchin_needle", () -> new Item((new Item.Properties())));
-	public static final RegistryObject<Item> URCHIN_DART = registerItem("urchin_dart", () -> new UrchinDartItem((new Item.Properties())));
 
 	// Other Compat
 	public static final RegistryObject<Item> GLAZED_STRIDER = registerItem("glazed_strider", () ->

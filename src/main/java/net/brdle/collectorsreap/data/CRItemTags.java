@@ -68,6 +68,8 @@ public class CRItemTags {
 	public static final TagKey<Item> JUICES_LIME = forge("juices/lime");
 	public static final TagKey<Item> NUTS = forge("nuts");
 	public static final TagKey<Item> COOKED_NUTS = forge("cooked_nuts");
+	public static final TagKey<Item> ROPES = forge("ropes");
+	public static final TagKey<Item> STRAW = forge("straw");
 
 	// Diet
 	public static final TagKey<Item> DIET_FRUITS = Util.it("diet", "fruits");
