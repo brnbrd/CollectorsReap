@@ -1,4 +1,4 @@
-// 1.20.1	2026-01-10T17:38:05.4088192	Loot Tables
+// 1.20.1	2026-01-11T22:52:52.1562747	Loot Tables
 f4a3c88fc95a893f684db7cc68e3f910e18b85fe data/collectorsreap/loot_tables/blocks/black_candle_lime_cake.json
 a7a8b0284665225cf8b550f38470725062af0acd data/collectorsreap/loot_tables/blocks/black_candle_lucuma_cake.json
 7337cd0965857540337f702aa5ef41aef53bdc2f data/collectorsreap/loot_tables/blocks/black_candle_pink_dragon_fruit_cake.json
@@ -25,7 +25,7 @@ c1e546df6aa9f4548c19bfae63f821e2b2e3f965 data/collectorsreap/loot_tables/blocks/
 68a81f489dae0e898e1b0665abe861e77f430792 data/collectorsreap/loot_tables/blocks/cyan_candle_pomegranate_cake.json
 1bddcf794dc9cf6ee3d6b706382b6a91a8a5c9a2 data/collectorsreap/loot_tables/blocks/damselflower.json
 6a7656c7cc3be961f42ce16e4ba5500b9a2bdc55 data/collectorsreap/loot_tables/blocks/damselflower_crop.json
-7cc2ec6f9ab2072dfbfd95c6202462a9972b0271 data/collectorsreap/loot_tables/blocks/dragon_bush.json
+bfb68c8781992fcd8422c27291116e21672637ae data/collectorsreap/loot_tables/blocks/dragon_bush.json
 2c38daf1fd169e21ea73281e625c9e81f9bcad21 data/collectorsreap/loot_tables/blocks/gilded_lucuma_crate.json
 f03c687af8330c42c4844d637a7ab97966764fda data/collectorsreap/loot_tables/blocks/gray_candle_lime_cake.json
 eeb6129e894229bc39bb5c7a0e6e200b9a381e73 data/collectorsreap/loot_tables/blocks/gray_candle_lucuma_cake.json

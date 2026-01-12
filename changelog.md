@@ -7,6 +7,8 @@
 - Added Straw Brush
 - Added Lucuma Cannoli
 - Shrunk bounding box for early stages of Sniffer plants
+- Dragon Bushes can now be collected with Shears or Silk Touch
+	- Otherwise, they now drop Pink Dragon Fruit instead of Dragon Fruit Seeds
 - Lime Bush patches are now a bit more common in Flower Forests
 
 ### Fixes
