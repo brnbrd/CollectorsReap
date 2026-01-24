@@ -128,6 +128,7 @@ public class CRBlockTagProvider extends BlockTagsProvider {
 			.add(CRBlocks.LIME_ICE_CREAM_BLOCK.get())
 			.add(CRBlocks.POMEGRANATE_ICE_CREAM_BLOCK.get())
 			.add(CRBlocks.PINK_DRAGON_FRUIT_ICE_CREAM_BLOCK.get())
+			.add(CRBlocks.LUCUMA_ICE_CREAM_BLOCK.get())
 			.add(CRBlocks.PLATINUM_BASS_ROE.get())
 			.add(CRBlocks.TIGER_PRAWN_ROE.get());
 		this.tag(BlockTags.MINEABLE_WITH_AXE)
