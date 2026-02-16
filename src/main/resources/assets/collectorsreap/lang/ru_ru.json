@@ -413,6 +413,7 @@
   "tag.item.forge.roe.fish": "Рыбья икра",
   "tag.item.forge.roe.prawn": "Креветочная икра",
   "tooltip.collectorsreap.hemp_gummy.when_feeding": "При кормлении моба:",
+  "tooltip.collectorsreap.straw_brush.pollinated": "Pollen Covered",
   "tooltip.disabled": "Отключено",
   "tooltip.requires_empty_tag": "Требуется пустой тег:",
   "tooltip.requires_modid": "Требуется ID мода:",
