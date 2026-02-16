@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "justenoughbreeding"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "letfishlove"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "tiger_prawn_roe"
+        }
+      ],
+      "recipe": {
+        "type": "justenoughbreeding:breeding",
+        "mod": "collectorsreap",
+        "mobs": [
+          {
+            "tiger_prawn": {
+              "inputs": [
+                {
+                  "tag": "letfishlove:fish_food/collectorsreap/tiger_prawn"
+                }
+              ],
+              "outputs": [
+                {
+                  "item": "collectorsreap:tiger_prawn_roe",
+                  "amount": {
+                    "min": 1,
+                    "max": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
