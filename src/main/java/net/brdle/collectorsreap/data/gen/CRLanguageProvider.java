@@ -456,7 +456,8 @@ public class CRLanguageProvider extends LanguageProvider {
 
 	private void addTags() {
 		// Forge
-		addItemTag(CRItemTags.FRUITS_DRAGON_FRUIT, "Dragon Fruits");
+		addItemTag(CRItemTags.COOKED_MUSHROOMS, "Cooked Mushrooms");
+		addItemTag(CRItemTags.FRUITS_DRAGON_FRUIT, "Dragon Fruit");
 		addItemTag(CRItemTags.ROE, "Roe");
 		addItemTag(CRItemTags.FISH_ROE, "Fish Roe");
 		addItemTag(CRItemTags.PRAWN_ROE, "Prawn Roe");

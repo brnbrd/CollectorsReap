@@ -1,6 +1,12 @@
 ## Version History
 
 
+# 1.5.6
+
+### Updates
+- Added compat between [Just Enough Breeding](https://www.curseforge.com/minecraft/mc-mods/justenoughbreeding) and [Let Fish Love](https://www.curseforge.com/minecraft/mc-mods/let-fish-love)
+
+
 # 1.5.5
 
 ### Updates

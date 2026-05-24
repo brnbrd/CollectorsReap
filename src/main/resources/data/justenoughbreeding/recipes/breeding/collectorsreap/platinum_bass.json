@@ -1,0 +1,45 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "justenoughbreeding"
+        },
+        {
+          "type": "forge:mod_loaded",
+          "modid": "letfishlove"
+        },
+        {
+          "type": "collectorsreap:enabled",
+          "value": "platinum_bass_roe"
+        }
+      ],
+      "recipe": {
+        "type": "justenoughbreeding:breeding",
+        "mod": "collectorsreap",
+        "mobs": [
+          {
+            "platinum_bass": {
+              "inputs": [
+                {
+                  "tag": "letfishlove:fish_food/collectorsreap/platinum_bass"
+                }
+              ],
+              "outputs": [
+                {
+                  "item": "collectorsreap:platinum_bass_roe",
+                  "amount": {
+                    "min": 1,
+                    "max": 1
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

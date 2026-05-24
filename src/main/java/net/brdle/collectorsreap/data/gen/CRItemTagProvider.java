@@ -260,8 +260,6 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(CRItems.BULBOUS_ROSE_SEEDS.get())
 			.add(CRItems.HEARTPETALS_SEEDS.get());
 		this.tag(CRItemTags.VEGETABLES_BULLET_PEPPER).addOptional(Modid.MND.rl("bullet_pepper"));
-		this.tag(CRItemTags.MUSHROOMS_PORTOBELLO).add(CRItems.PORTOBELLO.get());
-		this.tag(Tags.Items.MUSHROOMS).addTag(CRItemTags.MUSHROOMS_PORTOBELLO);
 		this.tag(CRItemTags.TORTILLA).addOptional(Modid.CD.rl("tortilla"));
 		this.tag(CRItemTags.RAW_CRAB_MEAT)
 			.addOptional(Modid.Q.rl("crab_leg"));
@@ -339,6 +337,11 @@ public class CRItemTagProvider extends ItemTagsProvider {
 			.add(ModItems.STRAW.get())
 			.addOptionalTag(Modid.SUP.rl("straw"))
 			.addOptional(Modid.SUP.rl("flax"));
+		this.tag(CRItemTags.MUSHROOMS_PORTOBELLO).add(CRItems.PORTOBELLO.get());
+		this.tag(Tags.Items.MUSHROOMS).addTag(CRItemTags.MUSHROOMS_PORTOBELLO);
+		this.tag(CRItemTags.COOKED_MUSHROOMS)
+			.add(CRItems.BAKED_PORTOBELLO_CAP.get())
+			.addOptional(Modid.COS.rl("roasted_mushroom"));
 
 		// Diet
 		this.tag(CRItemTags.DIET_FRUITS)

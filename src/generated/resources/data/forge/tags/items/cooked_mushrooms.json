@@ -1,0 +1,9 @@
+{
+  "values": [
+    "collectorsreap:baked_portobello_cap",
+    {
+      "id": "cosmopolitan:roasted_mushroom",
+      "required": false
+    }
+  ]
+}
