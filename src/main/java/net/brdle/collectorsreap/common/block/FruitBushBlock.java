@@ -34,7 +34,7 @@ public abstract class FruitBushBlock extends TallBushCropBlock {
 
 	public FruitBushBlock(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.defaultBlockState()
+		this.registerDefaultState(this.stateDefinition.any()
 			.setValue(this.getAgeProperty(), 0)
 			.setValue(HALF, DoubleBlockHalf.LOWER)
 			.setValue(STUNTED, false)

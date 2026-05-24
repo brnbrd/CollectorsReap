@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 public abstract class TallBushCropBlock extends DoublePlantBlock implements BonemealableBlock {
 	public TallBushCropBlock(Properties properties) {
 		super(properties);
-		this.registerDefaultState(this.defaultBlockState()
+		this.registerDefaultState(this.stateDefinition.any()
 			.setValue(this.getAgeProperty(), 0)
 			.setValue(HALF, DoubleBlockHalf.LOWER)
 		);
@@ -44,17 +44,6 @@ public abstract class TallBushCropBlock extends DoublePlantBlock implements Bone
 	public void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(this.getAgeProperty());
 		super.createBlockStateDefinition(builder);
-	}
-
-	@Override
-	public @Nullable BlockState getStateForPlacement(@NotNull BlockPlaceContext context) {
-		final BlockPos blockpos = context.getClickedPos();
-		final Level level = context.getLevel();
-		return (
-			blockpos.getY() < level.getMaxBuildHeight() - 1 &&
-			level.getBlockState(blockpos.above()).canBeReplaced(context) ?
-			this.defaultBlockState() : null
-		);
 	}
 
 	public @NotNull BlockState getStateForAge(final int age) {
